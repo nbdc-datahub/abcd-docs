@@ -3893,51 +3893,11 @@
   {
     "objectID": "info/changelog.html",
     "href": "info/changelog.html",
-    "title": "Website changelog",
+    "title": "Changelog",
     "section": "",
-    "text": "Date: 2025-12-25 URL: https://docs.abcdstudy.org/v7.0.0/",
+    "text": "6.0.0\n Date: 2025-07-03 URL: https://docs.abcdstudy.org/v/6_0_0 \nInitial version of the data documentation website for ABCD release 6.0.0",
     "crumbs": [
-      "Website changelog"
-    ]
-  },
-  {
-    "objectID": "info/changelog.html#section-1",
-    "href": "info/changelog.html#section-1",
-    "title": "Website changelog",
-    "section": "",
-    "text": "Date: 2025-12-25 URL: https://docs.abcdstudy.org/v7.0.0/",
-    "crumbs": [
-      "Website changelog"
-    ]
-  },
-  {
-    "objectID": "info/changelog.html#section-3",
-    "href": "info/changelog.html#section-3",
-    "title": "Website changelog",
-    "section": "6.0.2",
-    "text": "6.0.2\n Date: 2025-06-25 URL: https://docs.abcdstudy.org/v6.0.2/ \n\nSome of the Family, Friends, & Community summary scores (e.g. MNBS) have some errors (i.e. 777’s were not coded as missing), so please note this in analysis.\nUnder Neurocognition NIH Toolbox section, added in Notes and special considerations: In cases with remote administration of the NIH Toolbox (see variable X that indicates remote or in person), the Crystallized Cognition Composite Score is not calculated.",
-    "crumbs": [
-      "Website changelog"
-    ]
-  },
-  {
-    "objectID": "info/changelog.html#section-4",
-    "href": "info/changelog.html#section-4",
-    "title": "Website changelog",
-    "section": "6.0.1",
-    "text": "6.0.1\n Date: 2025-06-15 URL: https://docs.abcdstudy.org/v6.0.1/ \n\nUnder Family, Friends, & Community, in the Wills Problem Solving Scale, added note: “Note that some values in the early years for wps_q(1-6)_y have 0’s, which do not map to the data dictionary and need to be filtered out.”\nUnder Mental Health CBCL measure, added note: “Based on ASEBA scoring,the DSM and subscale measures have a range &gt;= 50. The three CBCL Internalizing, Externalizing, and Total Problem scales have a full T-score range with a mean = 50 and SD = 10.”",
-    "crumbs": [
-      "Website changelog"
-    ]
-  },
-  {
-    "objectID": "info/changelog.html#section-5",
-    "href": "info/changelog.html#section-5",
-    "title": "Website changelog",
-    "section": "6.0.0",
-    "text": "6.0.0\n Date: 2025-06-06 URL: https://docs.abcdstudy.org/v6.0.0/",
-    "crumbs": [
-      "Website changelog"
+      "Changelog"
     ]
   },
   {
