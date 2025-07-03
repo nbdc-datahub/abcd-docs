@@ -1,0 +1,39 @@
+---
+title: "ABCD Data Documentation"
+format:
+  html:
+    toc: false
+---
+
+Welcome to the data documentation website of the Adolescent Brain Cognitive Development℠ (ABCD) Study!  
+Here you will find detailed information about the ABCD data resource, including
+
+- How to access and use the data responsibly.
+- Information about released instruments and variables.
+- Release-specific notes and known issues.
+- Tools for exploring, downloading, and analyzing the data.
+- General help and support resources.
+
+| | |
+|:-|:-|
+| [<span class="pill_blue_large">Study</span>](study/index.qmd) | Overview of the ABCD Study® and its goals. |
+| [<span class="pill_blue_large">Data usage</span>](usage/access.qmd) | How to request access, use the data responsibly, and cite the study. |
+| [<span class="pill_blue_large">Documentation</span>](documentation/curation/structure.qmd) | Curated information about data structure and contents. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Curation</span>](documentation/curation/structure.qmd) | Data organization, curation standards, and release formats. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Imaging</span>](documentation/imaging/index.qmd) | MRI data types, derived measures, and imaging protocols. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Non-imaging</span>](documentation/non_imaging/ab.qmd) | Surveys, biospecimens, neurocognitive tasks, and wearable sensors. |
+| &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Sub-studies</span>](documentation/substudies/covid.qmd) | Information about ABCD's substudies (e.g., Social Development; COVID-19; etc.). |
+| &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Release notes</span>](documentation/release_notes/6_0.qmd) | Data quality notes and known issues by release. |
+| [<span class="pill_blue_large">Tools</span>](tools/tools.qmd) | Tools and platforms for data exploration and analysis: [DEAP](https://abcd.deapscience.com/), [Lasso](https://nbdc-datashare.lassoinformatics.com/), [R packages](tools/r_packages.qmd). |
+
+### Additional Resources
+
+[**NBDC Data Hub**](https://nbdc-datahub.org): For accessing ABCD data and other datasets released through the NBDC platform.  
+[**ABCD Website**](https://abcdstudy.org): Official study website proving an overview of the design, aims, and updates.  
+[**ABCD-ReproNim**](https://www.abcd-repronim.org/materials.html): This course was designed to provide a comprehensive background to the ABCD dataset while and interactive instruction to enable rigorous and reproducible data analyses.  
+[**Now I Know My ABCD**](https://now-i-know-my-abcd.github.io/docs/intro.html): A community-run discussion forum for ABCD data users.
+  
+::: {.callout-note}
+The *Now I Know My ABCD* forum is managed by the research community and is not officially moderated by ABCD. For background on this initiative, see this [article](https://www.sciencedirect.com/science/article/pii/S1878929324000495?via%3Dihub).
+:::
+

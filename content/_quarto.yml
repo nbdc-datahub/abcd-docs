@@ -1,0 +1,134 @@
+project:
+  type: website
+  output-dir: ../docs
+
+execute:
+  freeze: auto
+  echo: false
+
+website:
+  reader-mode: false
+  google-analytics: "G-SB9F54HS16"
+  favicon: "assets/img/favicon/favicon.ico"
+  page-footer: <i>ABCD Study</i>®, <i>Teen Brains. Today’s Science. Brighter Future.</i>® and the ABCD Study Logo are registered marks of the U.S. Department of Health & Human Services (HHS). Adolescent Brain Cognitive Development℠ Study is a service mark of the U.S. Department of Health & Human Services (HHS).
+  navbar:
+    background: primary
+    logo: "assets/img/logo-abcd.png"
+    search: true
+    collapse: true
+    left:
+      - file: index.qmd
+        text: "{{< fa home >}}"
+      - file: study/index.qmd
+        text: "Study"
+      - sidebar:usage
+      - text: "Documentation"
+        menu: 
+        - text: "Curation & structure"
+          file: documentation/curation/structure.qmd
+        - text: "Non-imaging"
+          file: documentation/non_imaging/ab.qmd
+        - text: "Imaging"
+          file: documentation/imaging/index.qmd
+        - text: "Substudies"
+          file: documentation/substudies/covid.qmd
+        - text: "Release notes"
+          file: documentation/release_notes/6_0.qmd
+      - sidebar:tools
+      
+    right:
+      - sidebar:info
+      - text: Version
+        id: versions
+        menu: 
+          - text: "empty"
+
+  sidebar:
+    - id: study
+      title: "Study"
+      style: "floating"
+      pinned: true
+      collapse-level: 1
+      contents: study/index.qmd
+
+    - id: usage
+      title: "Data Usage"
+      style: "floating"
+      pinned: true
+      collapse-level: 1
+      contents: usage/*.qmd
+
+    - id: documentation
+      title: "Documentation"
+      style: "floating"
+      pinned: true
+      collapse-level: 1
+      contents:
+
+        - section: "Curation & structure"
+          contents: documentation/curation/*.qmd
+
+        - section: "Non-imaging data"
+          contents: documentation/non_imaging/*.qmd 
+
+        - text: "Imaging data"
+          href: documentation/imaging/index.qmd
+          contents:
+            - file: documentation/imaging/admin.qmd
+              text: "Administrative tables"
+
+            - section: "Data types"
+              contents: documentation/imaging/data_*.qmd
+              
+            - section: "Scan types"
+              contents: documentation/imaging/type_*.qmd  
+              
+            - section: "ABCD BIDS Community Collection (ABCC)"
+              contents: documentation/imaging/abcc_*.qmd
+
+        - section: "Substudy data"
+          contents: documentation/substudies/*.qmd
+          
+        - section: "Release notes"
+          contents: documentation/release_notes/*.qmd
+
+
+    - id: tools
+      title: "Tools"
+      style: "floating"
+      pinned: true
+      collapse-level: 1
+      contents: tools/*.qmd
+
+    - id: info
+      title: "{{< fa circle-info >}} Info"
+      style: "floating"
+      pinned: true
+      collapse-level: 1
+      contents: info/*.qmd
+
+format:
+  html:
+    theme:
+      - pulse
+      - assets/css/styles-abcd.scss
+    bibliography: assets/ref/references.bib
+    csl: assets/ref/chicago-author-date-no-title.csl
+    suppress-bibliography: false
+    page-layout: full
+    toc: true
+    toc-depth: 4
+    toc-expand: 1
+    include-in-header:
+      - text: |
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+          <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+          <script type="module" src="/assets/js/left_menu.min.js"></script>
+          <script type="module" src="/assets/js/version.min.js"></script>
+format-links: []
+resources:
+  - CNAME
+  - .nojekyll
+  - assets/js/left_menu.min.js

@@ -1,0 +1,6 @@
+name,description,values_examples,locked,tooltip_name
+<code>name</code>,The <i>name</i> of the categorical column/variable/question for which value/label pairs are reported,<code>ab_p_demo__benefit_001</code>,YES,
+<code>value</code>,The <i>value</i> of the level (how a categorical level is coded in the data),<b><u>Examples</u>:</b><br>0<br>1<br>777,YES,
+<code>order_level</code>,The <i>position</i> of the level,<b><u>Examples</u>:</b><br>1<br>2<br>3,YES,The order is used both to indicate in which order the response options were displayed to the participant and how they should be ordered in the data/visualizations
+<code>label</code>,The <i>label</i> of the level,"<b><u>Examples</u>:</b><br><i>""No""</i><br><i>""Yes""</i><br><i>""Decline to answer""</i>",YES,
+<code>label_es</code>,The <i>Spanish label</i> of the level,"<b><u>Examples</u>:</b><br><i>""No""</i><br><i>""Sí""</i><br><i>""Prefiero no responder""</i>",NO,

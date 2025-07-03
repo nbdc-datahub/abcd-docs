@@ -1,0 +1,44 @@
+---
+title: "Endocannabinoid"
+---
+
+# Domain overview
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+```{r}
+render_table_info("domain_abbr == 'ecb'")
+```
+
+---
+
+# Youth table {#ecb_y_ecb}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ecb_y_ecb")`  
+
+The Endocannabinoid (eCB) substudy consists of a short questionnaire and a blood draw completed in conjunction with the [core protocol blood draw](../non_imaging/ph.qmd#ph_y_bld).
+
+The eCB Substudy was impacted by the COVID-19 pandemic, which resulted in shut-downs in blood sample collection at several sites at varying rates from 2020-2022, resulting in greater rates of missing blood draws. Four parents consented/youth participants assented to the eCB substudy blood draw, but did not provide data so their data is missing. Many participants have longitudinal data, and sample collection is ongoing.
+
+## eCB Questionnaire 
+
+The eCB Questionnaire was designed in REDCap (by Krista Lisdahl, PhD and Cecilia Hillard, PhD) to measure state-based factors that have been previously shown to potentially impact circulating eCB levels (time of day the sample was collected, hours since last meal, drink and aerobic activity, last night's sleep duration, current pain and stress levels) (@cedernaes2016, @hanlon2015, @heyman2012, @monteleone2012) and were administered right before the [blood draw](../non_imaging/ph.qmd#ph_y_bld). All data was quality control reviewed by the Substance Use workgroup and the eCB Substudy Coordinator (supervised by KL).
+
+## eCB Quantified Levels
+
+Data were collected starting at the 2-year follow-up. Samples are collected at bi-yearly follow-up dates (i.e., 4-, 6-, 8-year follow-ups). Data include 3ml blood samples. Dr. Hillard’s laboratory extracted serum to measure (`N-arachidonoylethanolamine`, `AEA`; `2-arachidonoylglycerol`, `2-AG`), and endocannabinoid lipid mediators (`2-oleoylglycerol`, `2-OG`; `oleoylethanolamide`, `OEA`; `palmitoylethanolamide`, `PEA`). `AEA`, `2-AG`, `2-OG`, `OEA`, and `PEA` were quantified in lipids extracted from 0.4 ml of serum using isotope-dilution, mass spectrometry following the methods outlined in @spagnolo2016. Briefly, solid phase extraction columns are used to separate lipids after the addition of deuterated standards (150 pg/µl `AEA` and 1800 pg/µl `2-AG`). The LC-MS-MS analysis is conducted using an Agilent Technologies 6460 Triple Quad LC-MS with a Chromasil, 5 µ C18 column with dimensions of 250 x 2.00 mm. `AEA`, `2-AG`, `2OG`, `OEA`, and `PEA` amounts are determined using isotope dilution; standard curves are constructed from a set of 10 combos, each containing different `AEA`/`2AG` concentrations together with deuterated `AEA` and 2-AG at the same concentrations in the samples. The concentration ratios in the samples are calculated from area ratios using the slopes determined from the standard curves, and converted to concentrations using the amount of deuterated standard added and the original sample volume. Finalized `AEA`, `2-AG`, `PEA`, `OEA` and `2-OG` levels (pmol/mL) are provided and harmonized with the larger ABCD study dataset.
+
+**References**
+
+- @cedernaes2016
+- @hanlon2015
+- @heyman2012
+- @monteleone2012
+- @spagnolo2016
+
+---

@@ -1,0 +1,406 @@
+---
+title: "Friends, Family, & Community"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+
+```{r}
+render_table_info("domain_abbr == 'fc'")
+```
+<br>
+
+
+Read the below references to learn more about the Family, Friends, and Community (FC) domain.
+
+- @zucker2018
+- @gonzalez2021
+
+::: {.callout-important collapse="true" title="Responsible use warning: Friends, Family, & Community domain general" #use-fc}
+
+The ABCD Family, Friends, and Community (FC) data offer insights into contextual factors that may influence health trajectories. [1] ABCD upholds high ethical standards and intends for the research to contribute positively to society. To promote ethical data use and mitigate harmful misuse of data, we provide several readings for investigators working with FFC data:
+
+@cardenas-iniguez2023
+
+@duncan2024
+
+@feldsteinewing2022
+
+@lett2022
+
+@white2023
+:::
+
+# Youth tables
+
+## Wills Problem Solving Scale {#fc_y_wpss}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_wpss")`
+`r r_link_table("fc_y_wpss")`
+
+**Measure description:** This scale was derived from earlier coping measures [@wills2008] and has good internal consistency in studies with children and adolescents from various populations. It uses a systematic behavioral approach for how youth deal with problem situations through gathering information about the problem, considering alternative solutions to the problem, deciding about a plan of action, and implementing an active approach to do something to resolve the problem. Different usages of the scale have had 6-8 items; items with the highest correlation with early substance use were selected for this study.
+
+**Reference:** @wills2008
+
+## Activity Space {#fc_y_as}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_as")`
+`r r_link_table("fc_y_as")`
+
+**Measure description:** Activity Space (self-reported types of weekly routine locations) was measured using an adaptive version of the Ecological Interview [@mason2004] to assess where youth spend their time. Participants select places (not their home or school) from a list beginning with the place that they most often frequent on a weekly basis, such as friend's home, mall/stores, park, etc. Participants then answer 3 questions about each place: How safe do you feel at this place (0= not safe at all 5=somewhat safe 10=completely safe)?, How much stress do you feel at this place (0= not stressful at all, 5= somewhat stressful, 10= very stressful)?, and Is this place within 10 minutes walking distance (about ½ mile) from your home? 0= No; 1=Yes.
+
+**Reference:** @mason2004
+
+## Experience with Unfair Treatment Scale {#fc_y_eut}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_eut")`
+`r r_link_table("fc_y_eut")`
+
+**Measure description:** The initial set of items is from the 2006 Boston Youth Survey, and assesses experiences of unfair treatment over the past 12 months using a yes/no format. The remaining seven items are from the Measure of Perceived Discrimination assessing frequency of unfair or negative treatment due to ethnic background; responses are rated on a 5-point Likert scale from "Almost never" to "Very often" yielding a summary score reflecting mean responses across all items with higher scores indicating a greater degree of perceived unfair treatment.
+
+**Modifications since initial administration:** Starting at the 6-year follow-up, additional descriptors were added to some items for clarification. In addition, new questions were added to assess unfair treatment due to religious beliefs, social status, and accents. 
+
+**References:**
+
+- @garnett2014
+- @phinney1998
+
+## Neighborhood Safety/Crime Survey (PhenX) {#fc_y_nsc}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_nsc")`
+`r r_link_table("fc_y_nsc")`
+
+**Measure description:** The youth items, derived from the PhenX Neighborhood Safety Protocol, evaluates self-reported perceptions of neighborhood conditions, rated on a 5-point Likert scale ranging from "strongly agree (5)" to "strongly disagree (1)." The "neighborhood" is defined as "an area within about a 20-min walk (or about a mile) from your home."
+
+**Reference:** @mujahid2007
+
+## Acculturation Survey (PhenX) {#fc_y_aclt}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_aclt")`
+`r r_link_table("fc_y_aclt")`
+
+**Measure description:** This is a subset of questions from the PhenX Acculturation survey. Items assess the extent to which an individual adopts, integrates, or maintains cultural traits from different groups by assessing proficiency and preferences for speaking a given language in different settings. The items come from questions used by the National Latino and Asian American Study (NLAAS) [@alegria2004], originally derived from the "Short Acculturation Scale for Hispanics" [@marin1987]. These questions are answered independently by youth and parents.
+
+**Modifications since initial administration:** Since baseline, this instrument has an item querying self-reported proficiency in English. Starting with the 2-year follow-up, when a participant endorsed speaking another language, self-reported proficiency in the other language was also queried.
+
+**References:**
+
+- @alegria2004
+- @marin1987
+
+## Multigroup Ethnic Identity Measure (MEIM-R) {#fc_y_meim}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_meim")`
+`r r_link_table("fc_y_meim")`
+
+**Measure description:** The MEIM-R is a 6-item short form assessing ethnic identity [@phinney2007], yielding two subscales: Commitment and Exploration.
+
+**Modifications since initial administration:** Starting at the 5-year follow-up, the term "mixed" ethnicity was replaced with "multi-ethnic/multi-racial" and participants could select multiple race and ethnic groups.
+
+**Reference:** @phinney2007
+
+## Native-American Acculturation Scale (NAAS) {#fc_y_naa}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_naa")`
+`r r_link_table("fc_y_naa")`
+
+**Measure description:** The youth report Native-American Acculturation Scale (@garrett2000; @reynolds2012) (NAAS) is a set of 3 questions designed for youth who are American Indian or Alaska Native (parent reported at Baseline). For more information about the NAAS read @white2023.
+
+**References:**
+
+- @garrett2000
+- @reynolds2012
+- @white2023
+
+## Family Environment Scale (PhenX) {#fc_y_fes}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_fes")`
+`r r_link_table("fc_y_fes")`
+
+**Measure description:** The youth responds to 2 subscales, Family Conflict and Family Cohesion, of the Family Environment Scale (FES) [@moos1994] The Family Conflict scale consists of 9 items assessing the amount of openly expressed conflict among family members. The Family Cohesion subscale consists of 9 items assessing the degree of commitment, help, and support family members provide for one another. These subscales mirror those collected from the parent [Family Environment Scale (PhenX)](#fc_p_fes).
+
+**Reference:** @moos1994
+
+## Pet Ownership {#fc_y_pet}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_pet")`
+`r r_link_table("fc_y_pet")`
+
+**Measure description:** This single-item question was added to learn about current pet ownership among ABCD participants. Youth can endorse multiple selections among various types of animals listed or choose that they do not currently have a pet.
+
+**Reference:** @purewal2017
+ 
+## Values Scale {#fc_y_vs}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_vs")`
+`r r_link_table("fc_y_vs")`
+
+**Measure description:** This scale uses a subset of items derived from the Mexican American Cultural Values Scale [@knight2010], a measure consisting of 9 subscales reflecting values associated with Mexican/Mexican American and contemporary mainstream American beliefs, behaviors, and values. It is applicable to participants from all backgrounds. We retained 5 original subscales: Familism referent, Familism support, Familism obligation, Religion, and Independence/self-reliance, as these have been linked to substance use trajectories. The parent independently completes the same questionnaire ([Values Scale](#fc_p_vs)).
+
+- Baseline: none
+- Year 1: none
+- Year 2: 3 scales (family referent, obligation, and support)
+- Year 3: 2 scales (religion & independence/self-reliance)
+- Year 4: 3 scales (family referent, obligation, and support)
+- Year 5: no scales
+- Year 6: 2 scales (family referent & support)
+
+**Modifications since initial administration:** Factor analysis determined that the obligation subscale was highly correlated with the family referent and support subscales (rs \> .95) and that 2 scales: family referent and support, had comparable construct validity to a familism scale with 3 scales (referent, support, and obligation); thus the protocol was reduced to the family referent and support subscales starting at the 6 year follow-up.
+
+**Reference:** @knight2010
+
+## Children's Report of Parental Behavioral Inventory {#fc_y_crpbi}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_crpbi")`
+`r r_link_table("fc_y_crpbi")`
+
+**Measure description:** The Acceptance Scale is a subscale of the Child Report of Parent Behavior Inventory (CRPBI) [@schludermann1988; @schaefer1965; @barber1994; @barber1997]. We use a shortened version of the original 10-item scale, retaining the 5 items with the highest factor loadings. The Acceptance scale examines children's perceptions of caregiver warmth, acceptance, and responsiveness, and can be reported on for any significant adult caregiver. First, the scale is answered about the "parent participant"(the adult who completes the parent surveys). Next, the scale is answered about a second primary caregiver (a caregiver the child spends a significant amount of time with, such as another parent, step-parent, grandparent, aunt, uncle., etc). If no second primary caregiver, these items are skipped.
+
+**References:**
+
+- @schaefer1965
+- @schludermann1988
+- @barber1994
+- @barber1997
+
+## Multidimensional Neglectful Behavior Scale {#fc_y_mnbs}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_mnbs")`
+`r r_link_table("fc_y_mnbs")`
+
+**Measure description:** This 8-item scale was adapted from the "LONGSCAN About My Parents" measure to assess neglectful parental behaviors via youth self-report. The ABCD adaptation includes items with the highest factor loadings from the Monitoring Supervision subscale and age-appropriate items from the Educational Support subscale. Items query how often parents met the youth's needs in a variety of areas in the last year. Responses range from "0 = never” to “3 = a lot." The measure yields one overall mean score and two mean scores for each of the two subscales. The LONGSCAN measure was originally adapted from the Revised Neglectful Behavior Scale [@dubowitz2011].
+
+**Reference:** @dubowitz2011
+
+## Parental Monitoring {#fc_y_pm}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_pm")`
+`r r_link_table("fc_y_pm")`
+
+**Measure description:** The Parental Monitoring Questionnaire (PMQ) consists of items measuring several aspects of the parent-youth monitoring process including parents' knowledge of the teens whereabouts and parent-teen communication.
+
+**Reference:** @karoly2016
+
+## Peer Behavior Profile {#fc_y_pbp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_pbp")`
+`r r_link_table("fc_y_pbp")`
+
+**Measure description:** The Peer Behavior Profile consists of the Prosocial Peer Involvement subscale and the Rule Breaking/Delinquent Peer Involvement subscale that assess the extent to which the youth's friendship network consists of: (a) prosocial peers (e.g., friends who are excellent students), and/or (b) rule breaking peers (previously termed "delinquent" peers, e.g. friends who skip school, shoplift, etc.); the two sub-scales are not mutually exclusive.
+
+**References:**
+
+- @bingham1995
+- @hirschi2002
+- @jessor1977
+
+## Peer Network Health: Protective Scale {#fc_y_pnh}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_pnh")`
+`r r_link_table("fc_y_pnh")`
+
+**Measure description:** Youth report on three of their close friends' protective behaviors against substance use, such as encouraging not using substances, reducing use, and providing instrumental and psychological support.
+
+**Reference:** @mason2015
+
+## Resistance to Peer Influence {#fc_y_rpi}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_rpi")`
+`r r_link_table("fc_y_rpi")`
+
+**Measure description:** A 10-item survey assessing how independent or persuadable the youth view themself.
+
+**Notes and special considerations:** The format for the questions in the instrument used by ABCD is structured differently from the article referenced below. The format was changed to facilitate electronic data capture. Participants had only two response options per item. 
+
+**Reference:** @steinberg2007
+
+## School Attendance and Grades {#fc_y_sag}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_sag")`
+`r r_link_table("fc_y_sag")`
+
+**Measure description:** Questions on School Attendance and Grades obtain information from youth on self-reported number of unexcused school absences and grades. Unexcused absences are queried only for the "last 4 weeks" to facilitate accurate responding. Responses for current grades were adapted to allow reporting across various systems used in the United States. A version of this questionnaire was also given to parents [School Attendance and Grades](#fc_p_sag). This measure is administered in more detail to parents/caregivers.
+
+**Notes and special considerations:** Scoring of variables asking about grades obtained in the last year assigns a value of 1 to the highest possible grade and 12 to the lowest possible grade.
+
+**Reference:** @zucker2018
+
+## School Risk and Protective Factors (PhenX) {#fc_y_srpf}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_srpf")`
+`r r_link_table("fc_y_srpf")`
+
+**Measure description:** The School Risk and Protective Factors (SRPF) Survey is derived from the PhenX School Risk and Protective Factors protocol, from "The Communities That Care (CTC) Youth Survey" [@arthur2007]. Two items were cut due to redundancy across the battery (grade in school and skipping classes), and some items were re-worded for age appropriateness. The SRPF examines youth's perceptions of school experiences and school engagement and asks youth to report on school grades. Responses derive three subscale scores: School Environment, School Involvement, and School Disengagement.
+
+**Modifications since initial administration:** Starting with the 5-year follow-up the measure was shortened, based on IRT analyses, which led to including only the Involvement and Disengagement subscales. The 6-year follow-up includes only the School Environment and Disengagement subscales.
+
+**References:**
+
+- @arthur2007
+- @hamilton2011
+
+## Prosocial Behavior (PhenX) {#fc_y_psb}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_y_psb")`
+`r r_link_table("fc_y_psb")`
+
+**Measure description:** The Prosocial Behaviors questionnaire is a subscale from the "Strengths and Difficulties Questionnaire" [@goodman2003]. We use a shortened version of the "Prosocial Behavior" subscale from this instrument and retained the three items with the highest factor loadings. The Prosocial Behavior subscale assesses the tendency to engage in behaviors to help others. Youth reports on self. A parent version is also collected ([Prosocial Behavior (PhenX)](#parent-prosocial-behavior-survey-phenx)).
+
+**Reference:** @goodman2003
+
+# Parent tables
+
+## Community Cohesion (PhenX) {#fc_p_nce}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_nce")`
+`r r_link_table("fc_p_nce")`
+
+**Measure description:** This 10-item self-report measure, from the PhenX Neighborhood Collective Efficacy measure, assesses the level of social cohesion and willingness of neighbors to work together toward common goals in a neighborhood. Items use a 5-point Likert scale, from strongly agree to strongly disagree, or very likely to very unlikely, some of which are reverse scored, to generate two subscales (Community Cohesion and Community Control) and an overall summary score (Collective Efficacy). Questions on Community Cohesion focus on trust in a community (e.g., "This is a close-knit neighborhood;" "People in this neighborhood can be trusted"). Items that contribute to the Community Control subscale reflect neighbors' willingness to intervene (e.g., "If there was a fight in front of your house and someone was being beaten or threatened, how likely is it that your neighbors would break it up?").
+
+**Notes and special considerations:** Based on recommendations by the developers, a "Don't know" response is converted to a 3 ("Neither agree nor disagree") in the subscale mean scores. Due to the inclusion of "Don't Know" responses into the subscale mean scores, "Don't Know" responses are coded as "99" at the item level instead of "999." Over 5% of caregivers chose "Don't know" for multiple items across the waves.
+
+Based on information collected from our Audience Feedback groups and investigator input, the PhenX Community Cohesion subscale was discontinued after the 6-year follow-up.
+
+**Reference:** @nacjd1994
+
+## Neighborhood Safety/Crime Survey (PhenX) {#fc_p_nsc}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_nsc")`
+`r r_link_table("fc_p_nsc")`
+
+**Measure description:** This measure evaluates self-reported perceptions of neighborhood conditions., derived from "Safety from Crime" items [@mujahid2007; @echeverria2004].
+
+**References:**
+
+- @echeverria2004
+- @mujahid2007
+
+## Acculturation Survey (PhenX) {#fc_p_aclt}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_aclt")`
+`r r_link_table("fc_p_aclt")`
+
+**Measure description:** The Acculturation questionnaire is a subset of questions from the PhenX Acculturation survey protocol. These items assess the extent to which an individual adopts, integrates, or maintains cultural traits from different groups. These items assess level of participant acculturation -- that is, the process by which an individual from one cultural group adapts and borrows traits and values from another culture -- by assessing proficiency and preferences for speaking a given language in different settings. The PhenX items come from questions used by the National Latino and Asian American Study (NLAAS) [@alegria2004], which were originally derived from the "Short Acculturation Scale for Hispanics" [@marin1987]. These questions are answered independently by youth and parents.
+
+
+**References:**
+
+- @alegria2004
+- @marin1987
+
+## Multigroup Ethnic Identity-Revised Survey {#fc_p_meim}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_meim")`
+`r r_link_table("fc_p_meim")`
+
+**Measure description:** The MEIM-R is a 6-item short form assessing ethnic identity (Phinney and Ong, 2007), yielding two subscales: Commitment and Exploration.
+
+**Modifications since initial administration:** In early releases of ABCD data, lower values for summary scores indicated greater ethnic identity. This has since been re-coded so that higher values for summary score in the ABCD dataset now indicate greater ethnic identity.
+
+**Reference:** @phinney2007
+
+## Family Environment Scale (PhenX) {#fc_p_fes}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_fes")`
+`r r_link_table("fc_p_fes")`
+
+**Measure description:** The Conflict subscale from the Family Environment Scale (FES) [@moos1994] consists of 9 items assessing the amount of openly expressed Conflict among family members. This subscale mirrors that collected in the youth. The additional subscales of the FES assess the extent to which the family has an Intellectual-Cultural orientation (9 items), an Active-Recreational orientation (9 items), is Organized (9 items), is Supportive/Cohesive (Cohesion; this subscale mirrors that collected in the youth), and is Expressive in style (9 items). These subscales evaluate the three underlying dimensions of the family environment: Family Relationships, Personal Growth, and System Maintenance and Change, and have excellent external validity [@sanford1999; @moos1994].
+
+Family Conflict is assessed annually since Baseline. All 6 subscales are assessed at the 2-, 3-, 4-, 7-year follow-up. 4 subscales (Conflict, Cohesion, Active/Recreational, Organization) are assessed at the 5-year follow-up. Two subscales (Conflict, Cohesion) are assessed at the 6- and 8-year follow-up.
+
+**References:**
+
+- @moos1994
+- @sanford1999
+
+## Values Scale {#fc_p_vs}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_vs")`
+`r r_link_table("fc_p_vs")`
+
+**Measure description:** This scale uses a subset of items derived from the Mexican American Cultural Values Scale (MACVS) [@knight2010], a measure consisting of 9 subscales reflecting values associated with Mexican/Mexican American and contemporary mainstream American beliefs, behaviors, and values. We retained 5 original subscales: Familism referent, Familism support, Familism obligation, Religion, and Independence/self-reliance, which are of relevance to substance use trajectories. This is administered to participants and parents from all backgrounds. The youth independently completed a similar scale ([Values Scale](#fc_y_vs)).
+The values scale was administered as follows. 
+
+- Baseline through year 2: all 5 scales
+- Year 3: 2 scales (religion and independence/self reliance)
+- Year 4: 3 scales (family referent, obligation, and support)
+- Year 5: no scales
+- Year 6: 2 scales (family referent & support)
+
+**Modifications since initial administration:** In early releases of ABCD data, lower values for summary scores indicated greater family centric values. This has since been recoded so that higher values for summary score in the ABCD dataset now indicate greater family centric values. Factor analysis determined that 2 scales: family referent and support, had comparable construct validity to a familism scale with 3 scales (referent, support, and obligation) and thus the protocol was reduced to two subscales.
+
+**Notes and special considerations:**
+
+- At year 3, N = 2745 parents/caregivers received 3 scales (referent, support, and obligation) due to technical error
+- At year 4, N = 4047 parent/caregiver reports are missing for 3 scales (referent, support, and obligation) due to technical error in the protocol
+- At year 6, N = 2825 parents/caregivers completed the family obligation scale before the protocol modification
+
+**References:**
+
+- @knight2010
+- @phinney2007
+
+## Youth Driving {#fc_p_drv}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_drv")`
+`r r_link_table("fc_p_drv")`
+
+**Measure description:** This measure was adapted from the Checkpoints Risky Driving Scale Questionnaire. It is designed to assess risky driving behaviors, particularly in adolescent and young adult populations. The scale focuses on evaluating actions that may compromise safety on the road. Two additional drivers license questions are included.
+
+## Home Short Form {#fc_p_hsf}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_hsf")`
+`r r_link_table("fc_p_hsf")`
+
+**Measure description:** This measure consists  of items from two different instruments that capture information about early life environments and experiences in the home and with parents. The first six items are from the Cognitive Stimulation/Deprivation index of the HOME Inventory (Home Observation for Measurement of the Environment), to capture information on the home environment that foster or limit opportunities for intellectual growth (1,2). These items evaluate parental behaviors, materials, and resources that encourage learning, problem-solving, and language development. The final four items are from the Positive Parenting Practices from the National Survey of Children's Health and capture parental activities with youth.
+
+**References:**
+
+- @bradley1984
+- @bradley2001
+- @yamaoka2019
+
+## Parent Knowledge Scale {#fc_p_pk}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_pk")`
+`r r_link_table("fc_p_pk")`
+
+**Measure description:** The Parental Knowledge Scale measures how often parents know about the youth's whereabouts, companions, and activities. This scale is a modified version of the scale developed in @stattin2000, provided to the ABCD Study by Stattin.
+
+**Notes and special considerations:** The response scales of the constituent items go from high to low rather than low to high. As a result, HIGHER scores on the summary variable at present indicate less knowledge, not more.
+
+The item response scales differ across the items being averaged - some items have a response scale with 5 options, some with 4 options, some with 2 options. This impacts the creation and interpretation of the summary score.
+
+For variable: `fc_p_pk__knowl_007` ("Do you know which places your child visits when they are out with friends at night?"). A notably larger percentage of parents choose "decline to answer" as their response to this question than the percentage of parents who do so for other items on this scale. The percentage of "decline to answer" responses decreases longitudinally, which might indicate that parents were selecting "decline to answer" because they do not allow their children to be out with friends at night at younger ages - in other words, they see the question as inapplicable. We cannot confirm this possibility, but bring the larger percentage of "decline to answer" responses to users' attention when considering a summary score.
+
+For variable: `fc_p_pk__badreact_001` (“Do you avoid taking up certain issues with your child due to bad experiences, e.g. how the child reacted earlier?”) should not be combined with the other items into a summary score. Rather than asking about how much parents know, like the other items, this variable asks if parents avoid taking up certain issues with the youth due to the youth having reacted negatively in the past.
+
+**Reference:** @stattin2000
+
+## School Attendance and Grades {#fc_p_sag}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_sag")`
+`r r_link_table("fc_p_sag")`
+
+**Measure description:** Questions on School Attendance and Grades (SAG) obtain information from the parent on the number of youth excused and unexcused school absences, grades, and whether the youth has a current or past individualized education plan (IEP). Unexcused absences are queried for the "last 4 weeks" and the "last 12 months." Responses for current grades were adapted to allow reporting across various systems used in the United States. Youth are also given this instrument, see here, [Youth School Attendance and Grades](#fc_y_sag).
+
+**Modifications since initial administration:** At the 5-year follow-up, additional questions were added querying for reasons for an IEP. The 6-year follow-up replaces the IEP question with an item asking only for updates in the IEP plan since the prior visit. The 7-year follow-up included additional questions about access and timing of IEPs.
+
+**Notes and special considerations:** Scoring of variables asking about grades obtained in the last year is coded such that lower values reflect better grades and higher values reflect poorer grades.
+
+**Reference:** @zucker2018
+
+## Prosocial Behavior (PhenX) {#fc_p_psb}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("fc_p_psb")`
+`r r_link_table("fc_p_psb")`
+
+**Measure description:** The Prosocial Behaviors questionnaire is a subscale from the "Strengths and Difficulties Questionnaire" @goodman2003. We use a shortened version of the "Prosocial Behavior" subscale from this instrument. We have retained the three items with the highest factor loadings. The Prosocial Behavior subscale assesses tendency to engage in behaviors to help others. Parent reports on youth. A youth version of this instrument is also collected ([Prosocial Behavior (PhenX)](#fc_y_psb)).
+
+**Reference:** @goodman2003

@@ -1,0 +1,70 @@
+---
+title: "Structural MRI"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+```{r}
+render_table_info("sub_domain == 'Structural MRI'")
+```
+
+The Structural MRI (SMRI) data conatins T~1~-weighted (T~1~w) 3D structural images and T~2~-weighted (T~2~w) 3D structural images.
+
+## Image processing
+- corrected for gradient nonlinearity distortions [@jovicich2006]
+- T~2~w images registered to T~1~w images using mutual information [@wells1996]
+- Intensity non-uniformity correction based on tissue segmentation and sparse spatial smoothing
+- Resampled with 1 mm isotropic voxels into rigid alignment with an atlas brain
+
+## Cortical surface reconstruction
+- [FreeSurfer v7.1.1](https://surfer.nmr.mgh.harvard.edu)
+- Skull-stripping [@segonne2004]
+- White matter segmentation, initial mesh creation [@dale1999]
+- Correction of topological defects [@fischl2001; @segonne2007]
+- Surface optimization [@dale1999; @dale1993; @fischl2000]
+- Nonlinear registration to a spherical surface-based atlas [@fischl1999]
+  
+## Morphometry
+- Subcortical regional volume
+- Cortical volume
+- Cortical thickness [@fischl2000]
+- Cortical area [@chen2012; @joyner2009]
+- Sulcal depth [@fischl1999]
+
+## Image intensity measures
+- T~1~w and T~2~w intensity measures in white matter (-0.2 mm from gray/white boundary)
+- T~1~w and T~2~w intensity measures in gray matter (+0.2 mm from gray/white boundary)
+- Normalized T~1~w and T~2~w cortical gray/white intensity contrast [@westlye2009]
+
+## Regions of interest (ROIs)
+- Subcortical structures labeled with atlas-based segmentation [@fischl2002]
+- Cortical regions labeled with the Desikan atlas-based classification [@desikan2006]
+- Cortical regions labeled with the Destrieux atlas-based classification [@destrieux2010]
+- Fuzzy-cluster parcels, based on genetic correlation of surface area [@chen2012]; Note, all fuzzy clusters are based on genetic clustering of surface area data, even when applied to other phenotypes such as thickness and volume.
+
+
+# Methods
+
+Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in Hagler et al., 2019, NeuroImage. Image processing and analysis methods for the Adolescent Brain Cognitive Development Study (doi: [10.1016/j.neuroimage.2019.116091](https://doi.org/10.1016/j.neuroimage.2019.116091)). Changes to image processing and analysis methods in Release 4.0 are documented in Structural MRI Release Notes. No significant changes were made to the processing pipeline for Release 3.0, 5.0, or 6.0.
+
+# Notes
+
+## Effects of scanner instance and software version
+
+Multisite longitudinal MRI imaging data are potentially susceptible to influences of scanning parameters, scanner manufacturer, scanner model, and software version, which vary across sites, and sometimes across time. For more information, please refer to “Effects of scanner instance and software version” in [Imaging Overview Data Documentation](index.qmd).
+
+## High density, phased array head coils
+
+The ABCD acquisition sites use either 32 channel head or 64 channel head/neck coils, depending on availability. Standard correction methods, such as those used by FreeSurfer, are limited when compensating for steep spatial intensity variation, leading to inaccurate brain segmentation or cortical surface reconstruction. For example, brain tissue farther from the coils, such as the temporal and frontal poles, typically have lower intensity values resulting in focal underestimation of the white matter surface or the elimination of large pieces of the cortical surface reconstruction. Furthermore, brain tissue close to coils with extremely high intensity values may be mistaken for non-brain tissue (e.g., scalp). To overcome this, the ABCD minimally processed structural MRI (sMRI) files include an improved intensity inhomogeneity correction, using a smoothly varying bias field optimized to standardize image intensities within all white matter voxels.
+
+## Siemens normalized sMRI DICOMs
+
+Siemens scanners provide an intensity normalization procedure to correct for bias fields. As a result, Siemens scanners have two sets of DICOMs for each sMRI data series (i.e. T1, T2, T1_NORM, and T2_NORM). The non-normalized images with large intensity ranges (e.g. with a 64 channel head coil) may be clipped at 4095, impairing cortical reconstruction. The ABCD pipeline uses only the normalized sMRI (T1_NORM and T2_NORM), but both versions are included in the source data DICOMs and raw data NIfTI files.
+
+**Reference:** @hagler2019

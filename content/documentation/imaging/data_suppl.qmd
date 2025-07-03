@@ -1,0 +1,892 @@
+---
+title: "Supplementary tables"
+---
+
+# General Information
+
+This supplementary material features region of interest (ROI) names and descriptions for subcortical regions (aseg), cortical parcels (Desikan, Destrieux and Gordon), and fiber tracts (AtlasTrack); task fMRI contrasts of conditions (MID, SST, and nBack); names and descriptions of RSI measures.
+
+# ROI names and descriptions
+
+## Desikan 
+
+Cortical regions defined by anatomical parcellation (*aparc*) of the Desikan atlas included in sMRI, dMRI, and fMRI analyses [@desikan2006].
+
+| ROI name | Description |
+|:-----------------------------------|:-----------------------------------|
+| `cortdesikan_banksstslh` | banks of superior temporal sulcus (left hemisphere) |
+| `cortdesikan_caudalanteriorcingulatelh` | caudalanteriorcingulate (left hemisphere) |
+| `cortdesikan_caudalmiddlefrontallh` | caudalmiddlefrontal (left hemisphere) |
+| `cortdesikan_cuneuslh` | cuneus (left hemisphere) |
+| `cortdesikan_entorhinallh` | entorhinal (left hemisphere) |
+| `cortdesikan_fusiformlh` | fusiform (left hemisphere) |
+| `cortdesikan_inferiorparietallh` | inferiorparietal (left hemisphere) |
+| `cortdesikan_inferiortemporallh` | inferiortemporal (left hemisphere) |
+| `cortdesikan_isthmuscingulatelh` | isthmuscingulate (left hemisphere) |
+| `cortdesikan_lateraloccipitallh` | lateraloccipital (left hemisphere) |
+| `cortdesikan_lateralorbitofrontallh` | lateralorbitofrontal (left hemisphere) |
+| `cortdesikan_linguallh` | lingual (left hemisphere) |
+| `cortdesikan_medialorbitofrontallh` | medialorbitofrontal (left hemisphere) |
+| `cortdesikan_middletemporallh` | middletemporal (left hemisphere) |
+| `cortdesikan_parahippocampallh` | parahippocampal (left hemisphere) |
+| `cortdesikan_paracentrallh` | paracentral (left hemisphere) |
+| `cortdesikan_parsopercularislh` | parsopercularis (left hemisphere) |
+| `cortdesikan_parsorbitalislh` | parsorbitalis (left hemisphere) |
+| `cortdesikan_parstriangularislh` | parstriangularis (left hemisphere) |
+| `cortdesikan_pericalcarinelh` | pericalcarine (left hemisphere) |
+| `cortdesikan_postcentrallh` | postcentral (left hemisphere) |
+| `cortdesikan_posteriorcingulatelh` | posteriorcingulate (left hemisphere) |
+| `cortdesikan_precentrallh` | precentral (left hemisphere) |
+| `cortdesikan_precuneuslh` | precuneus (left hemisphere) |
+| `cortdesikan_rostralanteriorcingulatelh` | rostralanteriorcingulate (left hemisphere) |
+| `cortdesikan_rostralmiddlefrontallh` | rostralmiddlefrontal (left hemisphere) |
+| `cortdesikan_superiorfrontallh` | superiorfrontal (left hemisphere) |
+| `cortdesikan_superiorparietallh` | superiorparietal (left hemisphere) |
+| `cortdesikan_superiortemporallh` | superiortemporal (left hemisphere) |
+| `cortdesikan_supramarginallh` | supramarginal (left hemisphere) |
+| `cortdesikan_frontalpolelh` | frontalpole (left hemisphere) |
+| `cortdesikan_temporalpolelh` | temporalpole (left hemisphere) |
+| `cortdesikan_transversetemporallh` | transversetemporal (left hemisphere) |
+| `cortdesikan_insulalh` | insula (left hemisphere) |
+| `cortdesikan_banksstsrh` | banks of superior temporal sulcus (right hemisphere) |
+| `cortdesikan_caudalanteriorcingulaterh` | caudalanteriorcingulate (right hemisphere) |
+| `cortdesikan_caudalmiddlefrontalrh` | caudalmiddlefrontal (right hemisphere) |
+| `cortdesikan_cuneusrh` | cuneus (right hemisphere) |
+| `cortdesikan_entorhinalrh` | entorhinal (right hemisphere) |
+| `cortdesikan_fusiformrh` | fusiform (right hemisphere) |
+| `cortdesikan_inferiorparietalrh` | inferiorparietal (right hemisphere) |
+| `cortdesikan_inferiortemporalrh` | inferiortemporal (right hemisphere) |
+| `cortdesikan_isthmuscingulaterh` | isthmuscingulate (right hemisphere) |
+| `cortdesikan_lateraloccipitalrh` | lateraloccipital (right hemisphere) |
+| `cortdesikan_lateralorbitofrontalrh` | lateralorbitofrontal (right hemisphere) |
+| `cortdesikan_lingualrh` | lingual (right hemisphere) |
+| `cortdesikan_medialorbitofrontalrh` | medialorbitofrontal (right hemisphere) |
+| `cortdesikan_middletemporalrh` | middletemporal (right hemisphere) |
+| `cortdesikan_parahippocampalrh` | parahippocampal (right hemisphere) |
+| `cortdesikan_paracentralrh` | paracentral (right hemisphere) |
+| `cortdesikan_parsopercularisrh` | parsopercularis (right hemisphere) |
+| `cortdesikan_parsorbitalisrh` | parsorbitalis (right hemisphere) |
+| `cortdesikan_parstriangularisrh` | parstriangularis (right hemisphere) |
+| `cortdesikan_pericalcarinerh` | pericalcarine (right hemisphere) |
+| `cortdesikan_postcentralrh` | postcentral (right hemisphere) |
+| `cortdesikan_posteriorcingulaterh` | posteriorcingulate (right hemisphere) |
+| `cortdesikan_precentralrh` | precentral (right hemisphere) |
+| `cortdesikan_precuneusrh` | precuneus (right hemisphere) |
+| `cortdesikan_rostralanteriorcingulaterh` | rostralanteriorcingulate (right hemisphere) |
+| `cortdesikan_rostralmiddlefrontalrh` | rostralmiddlefrontal (right hemisphere) |
+| `cortdesikan_superiorfrontalrh` | superiorfrontal (right hemisphere) |
+| `cortdesikan_superiorparietalrh` | superiorparietal (right hemisphere) |
+| `cortdesikan_superiortemporalrh` | superiortemporal (right hemisphere) |
+| `cortdesikan_supramarginalrh` | supramarginal (right hemisphere) |
+| `cortdesikan_frontalpolerh` | frontalpole (right hemisphere) |
+| `cortdesikan_temporalpolerh` | temporalpole (right hemisphere) |
+| `cortdesikan_transversetemporalrh` | transversetemporal (right hemisphere) |
+| `cortdesikan_insularh` | insula (right hemisphere) |
+| `cortdesikan_mean.lh` | mean (left hemisphere) |
+| `cortdesikan_mean.rh` | mean (right hemisphere) |
+| `cortdesikan_mean` | mean (bilateral) |
+| `cortdesikan_total.lh` | total (left hemisphere - area and volume) |
+| `cortdesikan_total.rh` | total (right hemisphere - area and volume) |
+| `cortdesikan_total` | total (bilateral - area and volume) |
+
+## Destrieux
+
+Cortical regions defined by anatomical parcellation (*aparc2*) of the Destrieux atlas included in sMRI, dMRI, and fMRI analyses [@destrieux2010].
+
+| ROI Name | Description |
+|:-----------------------------------|:-----------------------------------|
+| `cort.destrieux_g.and.s.frontomargin.lh` | fronto-marginal gyrus and sulcus (left hemisphere) |
+| `cort.destrieux_g.and.s.occipital.inf.lh` | inferior occipital gyrus and sulcus (left hemisphere) |
+| `cort.destrieux_g.and.s.paracentral.lh` | paracentral lobule and sulcus (left hemisphere) |
+| `cort.destrieux_g.and.s.subcentral.lh` | subcentral gyrus and sulci (left hemisphere) |
+| `cort.destrieux_g.and.s.transv.frontopol.lh` | transverse frontopolar gyri and sulci (left hemisphere) |
+| `cort.destrieux_g.and.s.cingul.ant.lh` | anterior part of the cingulate gyrus and sulcus (left hemisphere) |
+| `cort.destrieux_g.and.s.cingul.mid.ant.lh` | middle-anterior part of the cingulate gyrus and sulcus (left hemisphere) |
+| `cort.destrieux_g.and.s.cingul.mid.post.lh` | middle-posterior part of the cingulate gyrus and sulcus (left hemisphere) |
+| `cort.destrieux_g.cingul.post.dorsal.lh` | posterior-dorsal part of the cingulate gyrus (left hemisphere) |
+| `cort.destrieux_g.cingul.post.ventral.lh` | posterior-ventral part of the cingulate gyrus (left hemisphere) |
+| `cort.destrieux_g.cuneus.lh` | cuneus (left hemisphere) |
+| `cort.destrieux_g.front.inf.opercular.lh` | opercular part of the inferior frontal gyrus (left hemisphere) |
+| `cort.destrieux_g.front.inf.orbital.lh` | orbital part of the inferior frontal gyrus (left hemisphere) |
+| `cort.destrieux_g.front.inf.triangul.lh` | triangular part of the inferior frontal gyrus (left hemisphere) |
+| `cort.destrieux_g.front.middle.lh` | middle frontal gyrus (left hemisphere) |
+| `cort.destrieux_g.front.sup.lh` | superior frontal gyrus (left hemisphere) |
+| `cort.destrieux_g.ins.lg.and.s.cent.ins.lh` | long insular gyrus and central sulcus of the insula (left hemisphere) |
+| `cort.destrieux_g.insular.short.lh` | short insular gyri (left hemisphere) |
+| `cort.destrieux_g.occipital.middle.lh` | middle occipital gyrus (left hemisphere) |
+| `cort.destrieux_g.occipital.sup.lh` | superior occipital gyrus (left hemisphere) |
+| `cort.destrieux_g.oc.temp.lat.fusifor.lh` | lateral occipito-temporal gyrus (left hemisphere) |
+| `cort.destrieux_g.oc.temp.med.lingual.lh` | lingual gyrus (left hemisphere) |
+| `cort.destrieux_g.oc.temp.med.parahip.lh` | parahippocampal gyrus (left hemisphere) |
+| `cort.destrieux_g.orbital.lh` | orbital gyri (left hemisphere) |
+| `cort.destrieux_g.pariet.inf.angular.lh` | angular gyrus (left hemisphere) |
+| `cort.destrieux_g.pariet.inf.supramar.lh` | supramarginal gyrus (left hemisphere) |
+| `cort.destrieux_g.parietal.sup.lh` | superior parietal lobule (left hemisphere) |
+| `cort.destrieux_g.postcentral.lh` | postcentral gyrus (left hemisphere) |
+| `cort.destrieux_g.precentral.lh` | precentral gyrus (left hemisphere) |
+| `cort.destrieux_g.precuneus.lh` | precuneus (left hemisphere) |
+| `cort.destrieux_g.rectus.lh` | gyrus rectus (left hemisphere) |
+| `cort.destrieux_g.subcallosal.lh` | subcallosal gyrus (left hemisphere) |
+| `cort.destrieux_g.temp.sup.g.t.transv.lh` | anterior transverse temporal gyrus (left hemisphere) |
+| `cort.destrieux_g.temp.sup.lateral.lh` | lateral aspect of the superior temporal gyrus (left hemisphere) |
+| `cort.destrieux_g.temp.sup.plan.polar.lh` | planum polare of the superior temporal gyrus (left hemisphere) |
+| `cort.destrieux_g.temp.sup.plan.tempo.lh` | planum temporale (left hemisphere) |
+| `cort.destrieux_g.temporal.inf.lh` | inferior temporal gyrus (left hemisphere) |
+| `cort.destrieux_g.temporal.middle.lh` | middle temporal gyrus (left hemisphere) |
+| `cort.destrieux_lat.fis.ant.horizont.lh` | horizontal ramus of the anterior segment of the lateral sulcus (left hemisphere) |
+| `cort.destrieux_lat.fis.ant.vertical.lh` | vertical ramus of the anterior segment of the lateral sulcus (left hemisphere) |
+| `cort.destrieux_lat.fis.post.lh` | posterior ramus of the lateral sulcus (left hemisphere) |
+| `cort.destrieux_pole.occipital.lh` | occipital pole (left hemisphere) |
+| `cort.destrieux_pole.temporal.lh` | temporal pole (left hemisphere) |
+| `cort.destrieux_s.calcarine.lh` | calcarine sulcus (left hemisphere) |
+| `cort.destrieux_s.central.lh` | central sulcus (left hemisphere) |
+| `cort.destrieux_s.cingul.marginalis.lh` | marginal branch of the cingulate sulcus (left hemisphere) |
+| `cort.destrieux_s.circular.insula.ant.lh` | anterior segment of the circular sulcus of the insula (left hemisphere) |
+| `cort.destrieux_s.circular.insula.inf.lh` | inferior segment of the circular sulcus of the insula (left hemisphere) |
+| `cort.destrieux_s.circular.insula.sup.lh` | superior segment of the circular sulcus of the insula (left hemisphere) |
+| `cort.destrieux_s.collat.transv.ant.lh` | anterior transverse collateral sulcus (left hemisphere) |
+| `cort.destrieux_s.collat.transv.post.lh` | posterior transverse collateral sulcus (left hemisphere) |
+| `cort.destrieux_s.front.inf.lh` | inferior frontal sulcus (left hemisphere) |
+| `cort.destrieux_s.front.middle.lh` | middle frontal sulcus (left hemisphere) |
+| `cort.destrieux_s.front.sup.lh` | superior frontal sulcus (left hemisphere) |
+| `cort.destrieux_s.interm.prim.jensen.lh` | sulcus intermedius primus (left hemisphere) |
+| `cort.destrieux_s.intrapariet.and.p.trans.lh` | intraparietal sulcus and transverse parietal sulci (left hemisphere) |
+| `cort.destrieux_s.oc.middle.and.lunatus.lh` | middle occipital sulcus and lunatus sulcus (left hemisphere) |
+| `cort.destrieux_s.oc.sup.and.transversal.lh` | superior occipital sulcus and transverse occipital sulcus (left hemisphere) |
+| `cort.destrieux_s.occipital.ant.lh` | anterior occipital sulcus and preoccipital notch (left hemisphere) |
+| `cort.destrieux_s.oc.temp.lat.lh` | lateral occipito-temporal sulcus (left hemisphere) |
+| `cort.destrieux_s.oc.temp.med.and.lingual.lh` | medial occipito-temporal sulcus and lingual sulcus (left hemisphere) |
+| `cort.destrieux_s.orbital.lateral.lh` | lateral orbital sulcus (left hemisphere) |
+| `cort.destrieux_s.orbital.med.olfact.lh` | medial orbital sulcus (left hemisphere) |
+| `cort.destrieux_s.orbital.h.shaped.lh` | orbital sulci (left hemisphere) |
+| `cort.destrieux_s.parieto.occipital.lh` | parieto-occipital sulcus (left hemisphere) |
+| `cort.destrieux_s.pericallosal.lh` | s.pericallosal (left hemisphere) |
+| `cort.destrieux_s.postcentral.lh` | postcentral sulcus (left hemisphere) |
+| `cort.destrieux_s.precentral.inf.part.lh` | inferior part of the precentral sulcus (left hemisphere) |
+| `cort.destrieux_s.precentral.sup.part.lh` | superior part of the precentral sulcus (left hemisphere) |
+| `cort.destrieux_s.suborbital.lh` | suborbital sulcus (left hemisphere) |
+| `cort.destrieux_s.subparietal.lh` | subparietal sulcus (left hemisphere) |
+| `cort.destrieux_s.temporal.inf.lh` | inferior temporal sulcus (left hemisphere) |
+| `cort.destrieux_s.temporal.sup.lh` | superior temporal sulcus (left hemisphere) |
+| `cort.destrieux_s.temporal.transverse.lh` | transverse temporal sulcus (left hemisphere) |
+| `cort.destrieux_g.and.s.frontomargin.rh` | fronto-marginal gyrus and sulcus (right hemisphere) |
+| `cort.destrieux_g.and.s.occipital.inf.rh` | inferior occipital gyrus and sulcus (right hemisphere) |
+| `cort.destrieux_g.and.s.paracentral.rh` | paracentral lobule and sulcus (right hemisphere) |
+| `cort.destrieux_g.and.s.subcentral.rh` | subcentral gyrus and sulci (right hemisphere) |
+| `cort.destrieux_g.and.s.transv.frontopol.rh` | transverse frontopolar gyri and sulci (right hemisphere) |
+| `cort.destrieux_g.and.s.cingul.ant.rh` | anterior part of the cingulate gyrus and sulcus (right hemisphere) |
+| `cort.destrieux_g.and.s.cingul.mid.ant.rh` | middle-anterior part of the cingulate gyrus and sulcus (right hemisphere) |
+| `cort.destrieux_g.and.s.cingul.mid.post.rh` | middle-posterior part of the cingulate gyrus and sulcus (right hemisphere) |
+| `cort.destrieux_g.cingul.post.dorsal.rh` | posterior-dorsal part of the cingulate gyrus (right hemisphere) |
+| `cort.destrieux_g.cingul.post.ventral.rh` | posterior-ventral part of the cingulate gyrus (right hemisphere) |
+| `cort.destrieux_g.cuneus.rh` | cuneus (right hemisphere) |
+| `cort.destrieux_g.front.inf.opercular.rh` | opercular part of the inferior frontal gyrus (right hemisphere) |
+| `cort.destrieux_g.front.inf.orbital.rh` | orbital part of the inferior frontal gyrus (right hemisphere) |
+| `cort.destrieux_g.front.inf.triangul.rh` | triangular part of the inferior frontal gyrus (right hemisphere) |
+| `cort.destrieux_g.front.middle.rh` | middle frontal gyrus (right hemisphere) |
+| `cort.destrieux_g.front.sup.rh` | superior frontal gyrus (right hemisphere) |
+| `cort.destrieux_g.ins.lg.and.s.cent.ins.rh` | long insular gyrus and central sulcus of the insula (right hemisphere) |
+| `cort.destrieux_g.insular.short.rh` | short insular gyri (right hemisphere) |
+| `cort.destrieux_g.occipital.middle.rh` | middle occipital gyrus (right hemisphere) |
+| `cort.destrieux_g.occipital.sup.rh` | superior occipital gyrus (right hemisphere) |
+| `cort.destrieux_g.oc.temp.lat.fusifor.rh` | lateral occipito-temporal gyrus (right hemisphere) |
+| `cort.destrieux_g.oc.temp.med.lingual.rh` | lingual gyrus (right hemisphere) |
+| `cort.destrieux_g.oc.temp.med.parahip.rh` | parahippocampal gyrus (right hemisphere) |
+| `cort.destrieux_g.orbital.rh` | orbital gyri (right hemisphere) |
+| `cort.destrieux_g.pariet.inf.angular.rh` | angular gyrus (right hemisphere) |
+| `cort.destrieux_g.pariet.inf.supramar.rh` | supramarginal gyrus (right hemisphere) |
+| `cort.destrieux_g.parietal.sup.rh` | superior parietal lobule (right hemisphere) |
+| `cort.destrieux_g.postcentral.rh` | postcentral gyrus (right hemisphere) |
+| `cort.destrieux_g.precentral.rh` | precentral gyrus (right hemisphere) |
+| `cort.destrieux_g.precuneus.rh` | precuneus (right hemisphere) |
+| `cort.destrieux_g.rectus.rh` | gyrus rectus (right hemisphere) |
+| `cort.destrieux_g.subcallosal.rh` | subcallosal gyrus (right hemisphere) |
+| `cort.destrieux_g.temp.sup.g.t.transv.rh` | anterior transverse temporal gyrus (right hemisphere) |
+| `cort.destrieux_g.temp.sup.lateral.rh` | lateral aspect of the superior temporal gyrus (right hemisphere) |
+| `cort.destrieux_g.temp.sup.plan.polar.rh` | planum polare of the superior temporal gyrus (right hemisphere) |
+| `cort.destrieux_g.temp.sup.plan.tempo.rh` | planum temporale (right hemisphere) |
+| `cort.destrieux_g.temporal.inf.rh` | inferior temporal gyrus (right hemisphere) |
+| `cort.destrieux_g.temporal.middle.rh` | middle temporal gyrus (right hemisphere) |
+| `cort.destrieux_lat.fis.ant.horizont.rh` | horizontal ramus of the anterior segment of the lateral sulcus (right hemisphere) |
+| `cort.destrieux_lat.fis.ant.vertical.rh` | vertical ramus of the anterior segment of the lateral sulcus (right hemisphere) |
+| `cort.destrieux_lat.fis.post.rh` | posterior ramus of the lateral sulcus (right hemisphere) |
+| `cort.destrieux_pole.occipital.rh` | occipital pole (right hemisphere) |
+| `cort.destrieux_pole.temporal.rh` | temporal pole (right hemisphere) |
+| `cort.destrieux_s.calcarine.rh` | calcarine sulcus (right hemisphere) |
+| `cort.destrieux_s.central.rh` | central sulcus (right hemisphere) |
+| `cort.destrieux_s.cingul.marginalis.rh` | marginal branch of the cingulate sulcus (right hemisphere) |
+| `cort.destrieux_s.circular.insula.ant.rh` | anterior segment of the circular sulcus of the insula (right hemisphere) |
+| `cort.destrieux_s.circular.insula.inf.rh` | inferior segment of the circular sulcus of the insula (right hemisphere) |
+| `cort.destrieux_s.circular.insula.sup.rh` | superior segment of the circular sulcus of the insula (right hemisphere) |
+| `cort.destrieux_s.collat.transv.ant.rh` | anterior transverse collateral sulcus (right hemisphere) |
+| `cort.destrieux_s.collat.transv.post.rh` | posterior transverse collateral sulcus (right hemisphere) |
+| `cort.destrieux_s.front.inf.rh` | inferior frontal sulcus (right hemisphere) |
+| `cort.destrieux_s.front.middle.rh` | middle frontal sulcus (right hemisphere) |
+| `cort.destrieux_s.front.sup.rh` | superior frontal sulcus (right hemisphere) |
+| `cort.destrieux_s.interm.prim.jensen.rh` | sulcus intermedius primus (right hemisphere) |
+| `cort.destrieux_s.intrapariet.and.p.trans.rh` | intraparietal sulcus and transverse parietal sulci (right hemisphere) |
+| `cort.destrieux_s.oc.middle.and.lunatus.rh` | middle occipital sulcus and lunatus sulcus (right hemisphere) |
+| `cort.destrieux_s.oc.sup.and.transversal.rh` | superior occipital sulcus and transverse occipital sulcus (right hemisphere) |
+| `cort.destrieux_s.occipital.ant.rh` | anterior occipital sulcus and preoccipital notch (right hemisphere) |
+| `cort.destrieux_s.oc.temp.lat.rh` | lateral occipito-temporal sulcus (right hemisphere) |
+| `cort.destrieux_s.oc.temp.med.and.lingual.rh` | medial occipito-temporal sulcus and lingual sulcus (right hemisphere) |
+| `cort.destrieux_s.orbital.lateral.rh` | lateral orbital sulcus (right hemisphere) |
+| `cort.destrieux_s.orbital.med.olfact.rh` | medial orbital sulcus (right hemisphere) |
+| `cort.destrieux_s.orbital.h.shaped.rh` | orbital sulci (right hemisphere) |
+| `cort.destrieux_s.parieto.occipital.rh` | parieto-occipital sulcus (right hemisphere) |
+| `cort.destrieux_s.pericallosal.rh` | s.pericallosal (right hemisphere) |
+| `cort.destrieux_s.postcentral.rh` | postcentral sulcus (right hemisphere) |
+| `cort.destrieux_s.precentral.inf.part.rh` | inferior part of the precentral sulcus (right hemisphere) |
+| `cort.destrieux_s.precentral.sup.part.rh` | superior part of the precentral sulcus (right hemisphere) |
+| `cort.destrieux_s.suborbital.rh` | suborbital sulcus (right hemisphere) |
+| `cort.destrieux_s.subparietal.rh` | subparietal sulcus (right hemisphere) |
+| `cort.destrieux_s.temporal.inf.rh` | inferior temporal sulcus (right hemisphere) |
+| `cort.destrieux_s.temporal.sup.rh` | superior temporal sulcus (right hemisphere) |
+| `cort.destrieux_s.temporal.transverse.rh` | transverse temporal sulcus (right hemisphere) |
+| `cort.destrieux_mean.lh` | mean (left hemisphere) |
+| `cort.destrieux_mean.rh` | mean (right hemisphere) |
+| `cort.destrieux_mean` | mean (bilateral) |
+| `cort.destrieux_total.lh` | total (left hemisphere - area and volume) |
+| `cort.destrieux_total.rh` | total (right hemisphere - area and volume) |
+| `cort.destrieux_total` | total (bilateral - area and volume) |
+
+## Subcortical 
+
+Subcortical regions labeled by automated segmentation (*aseg*) included in sMRI, dMRI, and fMRI analyses [@fischl2002].
+
+| ROI name | Description |
+|:-----------------------------------|:-----------------------------------|
+| `subcortaseg_cerebralwhitematterlh` | cerebral white matter (left hemisphere) |
+| `subcortaseg_cerebralcortexlh` | cerebral cortex (left hemisphere) |
+| `subcortaseg_lateralventriclelh` | lateral ventricle (left hemisphere) |
+| `subcortaseg_inflatventlh` | inferior lateral ventricle (left hemisphere) |
+| `subcortaseg_cerebellumwhitematterlh` | cerebellum white matter (left hemisphere) |
+| `subcortaseg_cerebellumcortexlh` | cerebellum cortex (left hemisphere) |
+| `subcortaseg_thalamusproperlh` | thalamus proper (left hemisphere) |
+| `subcortaseg_caudatelh` | caudate (left hemisphere) |
+| `subcortaseg_putamenlh` | putamen (left hemisphere) |
+| `subcortaseg_pallidumlh` | pallidum (left hemisphere) |
+| `subcortaseg_hippocampuslh` | hippocampus (left hemisphere) |
+| `subcortaseg_amygdalalh` | amygdala (left hemisphere) |
+| `subcortaseg_lesionlh` | lesions (left hemisphere) |
+| `subcortaseg_accumbensarealh` | accumbens area (left hemisphere) |
+| `subcortaseg_ventraldclh` | ventral DC (left hemisphere) |
+| `subcortaseg_cerebralwhitematterrh` | cerebral white matter (right hemisphere) |
+| `subcortaseg_cerebralcortexrh` | cerebral cortex (right hemisphere) |
+| `subcortaseg_lateralventriclerh` | lateral ventricle (right hemisphere) |
+| `subcortaseg_inflatventrh` | inferior lateral ventricle (right hemisphere) |
+| `subcortaseg_cerebellumwhitematterrh` | cerebellum white matter (right hemisphere) |
+| `subcortaseg_cerebellumcortexrh` | cerebellum cortex (right hemisphere) |
+| `subcortaseg_thalamusproperrh` | thalamus proper (right hemisphere) |
+| `subcortaseg_caudaterh` | caudate (right hemisphere) |
+| `subcortaseg_putamenrh` | putamen (right hemisphere) |
+| `subcortaseg_pallidumrh` | pallidum (right hemisphere) |
+| `subcortaseg_hippocampusrh` | hippocampus (right hemisphere) |
+| `subcortaseg_amygdalarh` | amygdala (right hemisphere) |
+| `subcortaseg_lesionrh` | lesions (right hemisphere) |
+| `subcortaseg_accumbensarearh` | accumbens area (right hemisphere) |
+| `subcortaseg_ventraldcrh` | ventral DC (right hemisphere) |
+| `subcortaseg_wmhypointensities` | wm hypointensities |
+| `subcortaseg_wmhypointensitieslh` | wm hypointensities (right hemisphere) |
+| `subcortaseg_wmhypointensitiesrh` | wm hypointensities (right hemisphere) |
+| `subcortaseg_ccposterior` | CC Posterior |
+| `subcortaseg_ccmidposterior` | CC Mid_Posterior |
+| `subcortaseg_cccentral` | CC Central |
+| `subcortaseg_ccmidanterior` | CC Mid_Anterior |
+| `subcortaseg_ccanterior` | CC Anterior |
+| `subcortaseg_latventricles` | lateral ventricles |
+| `subcortaseg_3rdventricle` | 3rd ventricle |
+| `subcortaseg_4thventricle` | 4th ventricle |
+| `subcortaseg_allventricles` | all ventricles |
+| `subcortaseg_csf` | csf |
+| `subcortaseg_brainstem` | brain stem |
+| `subcortaseg_wholebrain` | whole brain |
+| `subcortaseg_brainmaskvolume` | brain mask volume |
+| `subcortaseg_brainsegmentationvolume` | brain segmentation volume \* |
+| `subcortaseg_intracranialvolume` | intracranial volume |
+|  | (i.e. estimated total intracranial volume) \* |
+| `subcortaseg_supratentorialvolume` | supratentorial volume \* |
+| `subcortaseg_subcorticalgrayvolume` | subcortical gray volume \* |
+
+## Fuzzy Clustering 
+
+Cortical regions defined by genetically derived parcellation (*fuzzy*) in sMRI, dMRI, and fMRI analyses [@chen2012].
+
+| ROI name | Description |
+|:-----------------------------------|:-----------------------------------|
+| `cortfuzzy2_frontallh` | Weighted average for genetically derived parcellation with 2 clusters - frontal cortex (left hemisphere) |
+| `cortfuzzy2_posteriorlh` | Weighted average for genetically derived parcellation with 2 clusters - posterior cortex (left hemisphere) |
+| `cortfuzzy4_frontallh` | Weighted average for genetically derived parcellation with 4 clusters - frontal cortex (left hemisphere) |
+| `cortfuzzy4_occipitallh` | Weighted average for genetically derived parcellation with 4 clusters - occipital cortex (left hemisphere) |
+| `cortfuzzy4_temporallh` | Weighted average for genetically derived parcellation with 4 clusters - temporal cortex (left hemisphere) |
+| `cortfuzzy4_parietallh` | Weighted average for genetically derived parcellation with 4 clusters - parietal cortex (left hemisphere) |
+| `cortfuzzy12_centrallh` | Weighted average for genetically derived parcellation with 12 clusters - central cortex (left hemisphere) |
+| `cortfuzzy12_occipitallh` | Weighted average for genetically derived parcellation with 12 clusters - occipital cortex (left hemisphere) |
+| `cortfuzzy12_posterolateraltemporallh` | Weighted average for genetically derived parcellation with 12 clusters - posterolateraltemporal cortex (left hemisphere) |
+| `cortfuzzy12_superiorparietallh` | Weighted average for genetically derived parcellation with 12 clusters - superiorparietal cortex (left hemisphere) |
+| `cortfuzzy12_orbitofrontallh` | Weighted average for genetically derived parcellation with 12 clusters - orbitofrontal cortex (left hemisphere) |
+| `cortfuzzy12_superiortemporallh` | Weighted average for genetically derived parcellation with 12 clusters - superiortemporal cortex (left hemisphere) |
+| `cortfuzzy12_inferiorparietallh` | Weighted average for genetically derived parcellation with 12 clusters - inferiorparietal cortex (left hemisphere) |
+| `cortfuzzy12_dorsomedialfrontallh` | Weighted average for genetically derived parcellation with 12 clusters - dorsomedialfrontal cortex (left hemisphere) |
+| `cortfuzzy12_anteromedialtemporallh` | Weighted average for genetically derived parcellation with 12 clusters - anteromedialtemporal cortex (left hemisphere) |
+| `cortfuzzy12_precuneuslh` | Weighted average for genetically derived parcellation with 12 clusters - precuneus cortex (left hemisphere) |
+| `cortfuzzy12_dorsolateralprefrontallh` | Weighted average for genetically derived parcellation with 12 clusters - dorsolateralprefrontal cortex (left hemisphere) |
+| `cortfuzzy12_parsopercularislh` | Weighted average for genetically derived parcellation with 12 clusters - parsopercularis cortex (left hemisphere) |
+| `cortfuzzy2_frontalrh` | Weighted average for genetically derived parcellation with 2 clusters - frontal cortex (right hemisphere) |
+| `cortfuzzy2_posteriorrh` | Weighted average for genetically derived parcellation with 2 clusters - posterior cortex (right hemisphere) |
+| `cortfuzzy4_frontalrh` | Weighted average for genetically derived parcellation with 4 clusters - frontal cortex (right hemisphere) |
+| `cortfuzzy4_occipitalrh` | Weighted average for genetically derived parcellation with 4 clusters - occipital cortex (right hemisphere) |
+| `cortfuzzy4_temporalrh` | Weighted average for genetically derived parcellation with 4 clusters - temporal cortex (right hemisphere) |
+| `cortfuzzy4_parietalrh` | Weighted average for genetically derived parcellation with 4 clusters - parietal cortex (right hemisphere) |
+| `cortfuzzy12_centralrh` | Weighted average for genetically derived parcellation with 12 clusters - central cortex (right hemisphere) |
+| `cortfuzzy12_occipitalrh` | Weighted average for genetically derived parcellation with 12 clusters - occipital cortex (right hemisphere) |
+| `cortfuzzy12_posterolateraltemporalrh` | Weighted average for genetically derived parcellation with 12 clusters - posterolateraltemporal cortex (right hemisphere) |
+| `cortfuzzy12_superiorparietalrh` | Weighted average for genetically derived parcellation with 12 clusters - superiorparietal cortex (right hemisphere) |
+| `cortfuzzy12_orbitofrontalrh` | Weighted average for genetically derived parcellation with 12 clusters - orbitofrontal cortex (right hemisphere) |
+| `cortfuzzy12_superiortemporalrh` | Weighted average for genetically derived parcellation with 12 clusters - superiortemporal cortex (right hemisphere) |
+| `cortfuzzy12_inferiorparietalrh` | Weighted average for genetically derived parcellation with 12 clusters - inferiorparietal cortex (right hemisphere) |
+| `cortfuzzy12_dorsomedialfrontalrh` | Weighted average for genetically derived parcellation with 12 clusters - dorsomedialfrontal cortex (right hemisphere) |
+| `cortfuzzy12_anteromedialtemporalrh` | Weighted average for genetically derived parcellation with 12 clusters - anteromedialtemporal cortex (right hemisphere) |
+| `cortfuzzy12_precuneusrh` | Weighted average for genetically derived parcellation with 12 clusters - precuneus cortex (right hemisphere) |
+| `cortfuzzy12_dorsolateralprefrontalrh` | Weighted average for genetically derived parcellation with 12 clusters - dorsolateralprefrontal cortex (right hemisphere) |
+| `cortfuzzy12_parsopercularisrh` | Weighted average for genetically derived parcellation with 12 clusters - parsopercularis cortex (right hemisphere) |
+
+## AtlasTrack 
+
+Fiber tracts automatically labeled by AtlasTrack [@hagler2009].
+
+Note: Except for Fmaj, Fmin, and CC, all tracts are separately labeled for left and right hemispheres.
+
+| Abbrev | Fiber Name | Connected Brain Regions |
+|:-----------------------|:-----------------------|:-----------------------|
+| `Fx` | fornix | hippocampus & mammillary nuclei of hypothalamus |
+| `CgC` | cingulate cingulum | cingulate gyrus & entorhinal cortex (cingulate portion) |
+| `CgH` | parahippocampal cingulum | cingulate gyrus & entorhinal cortex (parahippocampal portion) |
+| `CST` | corticospinal tract (pyramidal tract) | motor cortex & spinal cord |
+| `ATR` | anterior thalamic radiations | thalamus & frontal lobe |
+| `UNC` | uncinate | inferior frontal lobe & anterior temporal lobe |
+| `ILF` | inferior longitudinal fasciculus | occipital lobe & temporal lobe |
+| `IFO` | inferior frontal occipital fasciculus | occipital lobe & frontal lobe |
+| `Fmaj` | forceps major | left occipital cortex & right occipital cortex |
+| `Fmin` | forceps minor | left prefrontal cortex & right prefrontal cortex |
+| `CC` | corpus callosum | left cortex & right cortex |
+| `SLF` | superior longitudinal fasciculus | temporal and parietal lobes & frontal lobe |
+| `tSLF` | temporal superior longitudinal fasciculus (arcuate fasciculus) | temporal lobe & frontal lobe |
+| `pSLF` | parietal superior longitudinal fasciculus | parietal lobe & frontal lobe |
+| `SCS` | superior corticostriate | superior cortex & striatum |
+| `fSCS` | frontal superior corticostriate | superior frontal cortex & striatum |
+| `pSCS` | parietal superior corticostriate | superior parietal cortex & striatum |
+| `SIFC` | striatal inferior frontal cortex tract | inferior frontal cortex & striatum |
+| `IFSFC` | inferior frontal to superior frontal cortical tract | inferior frontal cortex & superior frontal cortex |
+
+## Gordon parcels 
+
+ROI labels and network membership of cortical parcels defined based on resting-state functional connectivity [@gordon2016].
+
+| ROI label | Community | Surface area (mm2) | Centroid (MNI) | Nearest Destrieux Parcel |
+|:--------------|:--------------|:--------------|:--------------|:--------------|
+| `ctx-lh-gp1` | Default | 1412 | -11.2 -52.4 36.5 | S_subparietal |
+| `ctx-lh-gp2` | SMhand | 377 | -18.8 -48.7 65 | G_parietal_sup |
+| `ctx-lh-gp3` | SMmouth | 437 | -51.8 -7.8 38.5 | G_precentral |
+| `ctx-lh-gp4` | Default | 369 | -11.7 26.7 57 | G_front_sup |
+| `ctx-lh-gp5` | Visual | 871 | -18.4 -85.5 21.6 | S_oc_sup_and_transversal |
+| `ctx-lh-gp6` | Default | 1084 | -47.2 -58 30.8 | S_temporal_sup |
+| `ctx-lh-gp7` | FrontoParietal | 91 | -38.1 48.8 10.5 | G_front_middle |
+| `ctx-lh-gp8` | Visual | 487 | -16.8 -60.1 -5.4 | G_oc-temp_med-Lingual |
+| `ctx-lh-gp9` | FrontoParietal | 95 | -55.9 -47.7 -9.3 | S_temporal_inf |
+| `ctx-lh-gp10` | Auditory | 180 | -32 -29.3 15.6 | Lat_Fis-post |
+| `ctx-lh-gp11` | None | 125 | -29.3 5.3 -27.4 | G_temp_sup-Plan_polar |
+| `ctx-lh-gp12` | CinguloParietal | 134 | -6.1 -26 28.5 | S_pericallosal |
+| `ctx-lh-gp13` | RetrosplenialTemporal | 267 | -14.4 -57.8 18.4 | S_parieto_occipital |
+| `ctx-lh-gp14` | RetrosplenialTemporal | 247 | -8.8 -49.8 4.2 | S_calcarine |
+| `ctx-lh-gp15` | Visual | 1660 | -11.3 -83.2 3.9 | S_calcarine |
+| `ctx-lh-gp16` | Visual | 89 | -22 -58.1 1.5 | S_calcarine |
+| `ctx-lh-gp17` | Visual | 44 | -9.6 -58 3 | G_oc-temp_med-Lingual |
+| `ctx-lh-gp18` | None | 128 | -29 -35.9 -8.3 | Unknown |
+| `ctx-lh-gp19` | None | 60 | -18.5 -39.2 -1.1 | Unknown |
+| `ctx-lh-gp20` | Visual | 142 | -16.7 -46 -3.7 | S_calcarine |
+| `ctx-lh-gp21` | CinguloOperc | 551 | -16.6 -36.1 42.7 | S_cingul-Marginalis |
+| `ctx-lh-gp22` | CinguloOperc | 508 | -9.4 -0.1 42.9 | G_and_S_cingul-Mid-Post |
+| `ctx-lh-gp23` | VentralAttn | 272 | -3.8 12.1 64.6 | G_front_sup |
+| `ctx-lh-gp24` | FrontoParietal | 282 | -5.5 29.3 44 | G_front_sup |
+| `ctx-lh-gp25` | Default | 201 | -5.6 42.2 35.1 | G_front_sup |
+| `ctx-lh-gp26` | Default | 121 | -1.7 -17.7 39.1 | G_and_S_cingul-Mid-Post |
+| `ctx-lh-gp27` | CinguloOperc | 293 | -8.4 14.6 33.8 | G_and_S_cingul-Mid-Ant |
+| `ctx-lh-gp28` | CinguloOperc | 68 | -9 25.3 27.7 | G_and_S_cingul-Mid-Ant |
+| `ctx-lh-gp29` | Salience | 105 | -10 33.9 21.5 | G_and_S_cingul-Ant |
+| `ctx-lh-gp30` | SMhand | 49 | -10.7 -47.5 60.3 | G_precuneus |
+| `ctx-lh-gp31` | SMhand | 344 | -15.6 -33.1 66.1 | S_central |
+| `ctx-lh-gp32` | SMhand | 116 | -10.9 -29.3 69.5 | S_central |
+| `ctx-lh-gp33` | SMhand | 60 | -6.6 -20.4 74.2 | G_and_S_paracentral |
+| `ctx-lh-gp34` | CinguloOperc | 268 | -8 -8.7 62.9 | G_front_sup |
+| `ctx-lh-gp35` | SMhand | 241 | -10.8 -41.1 64.9 | G_and_S_paracentral |
+| `ctx-lh-gp36` | SMhand | 349 | -5 -28.2 60.4 | G_and_S_paracentral |
+| `ctx-lh-gp37` | SMhand | 150 | -5.4 -15.9 48.8 | G_front_sup |
+| `ctx-lh-gp38` | SMhand | 517 | -35.8 -29.7 54.5 | S_central |
+| `ctx-lh-gp39` | SMmouth | 142 | -41.5 -12.5 50.4 | S_central |
+| `ctx-lh-gp40` | CinguloOperc | 98 | -42.1 -4.5 47.3 | S_precentral-sup-part |
+| `ctx-lh-gp41` | DorsalAttn | 346 | -27.3 -6.8 46.3 | S_precentral-sup-part |
+| `ctx-lh-gp42` | DorsalAttn | 95 | -27.3 1.9 52.9 | S_front_sup |
+| `ctx-lh-gp43` | DorsalAttn | 114 | -19.8 6.4 55.7 | S_front_sup |
+| `ctx-lh-gp44` | Default | 519 | -19.5 30.1 45.5 | S_front_sup |
+| `ctx-lh-gp45` | SMhand | 388 | -36.8 -22.8 61.9 | G_precentral |
+| `ctx-lh-gp46` | SMhand | 111 | -20.5 -24.9 64.5 | S_central |
+| `ctx-lh-gp47` | SMhand | 320 | -23.4 -13.8 64.2 | S_precentral-sup-part |
+| `ctx-lh-gp48` | SMhand | 125 | -17.2 -8.6 67.9 | G_front_sup |
+| `ctx-lh-gp49` | DorsalAttn | 137 | -21.3 -0.2 62.7 | S_front_sup |
+| `ctx-lh-gp50` | SMhand | 177 | -28.6 -44.7 61.7 | S_postcentral |
+| `ctx-lh-gp51` | DorsalAttn | 317 | -31.1 -48.9 47.1 | S_intrapariet_and_P_trans |
+| `ctx-lh-gp52` | DorsalAttn | 181 | -42.9 -45 43 | S_intrapariet_and_P_trans |
+| `ctx-lh-gp53` | SMmouth | 855 | -51.5 -11.9 29.7 | S_central |
+| `ctx-lh-gp54` | SMhand | 94 | -54.1 -21.3 40.8 | S_postcentral |
+| `ctx-lh-gp55` | DorsalAttn | 189 | -51.7 -30.9 39.9 | S_postcentral |
+| `ctx-lh-gp56` | SMhand | 319 | -35.2 -35.3 42 | S_postcentral |
+| `ctx-lh-gp57` | SMhand | 206 | -27.5 -37.2 61.4 | S_postcentral |
+| `ctx-lh-gp58` | SMhand | 228 | -47.2 -31.4 54.8 | G_postcentral |
+| `ctx-lh-gp59` | SMmouth | 108 | -46.1 -17.8 52.7 | G_postcentral |
+| `ctx-lh-gp60` | VentralAttn | 51 | -44.8 -54 14.6 | S_temporal_sup |
+| `ctx-lh-gp61` | VentralAttn | 72 | -51.6 -55.9 11.4 | S_temporal_sup |
+| `ctx-lh-gp62` | VentralAttn | 1211 | -48.1 -40 2.4 | S_temporal_sup |
+| `ctx-lh-gp63` | CinguloOperc | 401 | -57.7 -40.6 35.8 | G_pariet_inf-Supramar |
+| `ctx-lh-gp64` | Auditory | 70 | -46.3 -41.4 25.9 | Lat_Fis-post |
+| `ctx-lh-gp65` | Auditory | 58 | -35.8 -33.5 19.9 | Lat_Fis-post |
+| `ctx-lh-gp66` | Auditory | 318 | -52.7 -20.6 5.4 | S_temporal_transverse |
+| `ctx-lh-gp67` | Auditory | 134 | -59.6 -38.5 16.5 | G_temp_sup-Plan_tempo |
+| `ctx-lh-gp68` | Auditory | 185 | -58.7 -29.9 11.1 | G_temp_sup-Plan_tempo |
+| `ctx-lh-gp69` | Auditory | 88 | -40.6 -38.3 14.5 | Lat_Fis-post |
+| `ctx-lh-gp70` | Auditory | 78 | -33.7 -21.8 9.9 | S_circular_insula_inf |
+| `ctx-lh-gp71` | CinguloOperc | 258 | -38.7 -16 -5.3 | S_circular_insula_inf |
+| `ctx-lh-gp72` | CinguloOperc | 314 | -39.1 -1.6 -12.2 | S_circular_insula_inf |
+| `ctx-lh-gp73` | None | 435 | -33.6 17.2 -31.5 | Pole_temporal |
+| `ctx-lh-gp74` | DorsalAttn | 213 | -43.6 36.3 8.5 | S_front_inf |
+| `ctx-lh-gp75` | VentralAttn | 231 | -50 20.8 10.6 | Lat_Fis-ant-Vertical |
+| `ctx-lh-gp76` | CinguloOperc | 406 | -37.7 2.9 11.7 | S_circular_insula_sup |
+| `ctx-lh-gp77` | Auditory | 178 | -37.2 -14 19.4 | S_circular_insula_sup |
+| `ctx-lh-gp78` | FrontoParietal | 388 | -40.3 50.4 -4.8 | G_orbital |
+| `ctx-lh-gp79` | VentralAttn | 139 | -47.2 39 -9.1 | G_front_inf-Triangul |
+| `ctx-lh-gp80` | VentralAttn | 558 | -29.1 20.5 -14 | G_orbital |
+| `ctx-lh-gp81` | CinguloOperc | 114 | -36.6 1.4 6.4 | S_circular_insula_sup |
+| `ctx-lh-gp82` | CinguloOperc | 97 | -37.3 8.9 -0.9 | G_insular_short |
+| `ctx-lh-gp83` | Salience | 78 | -32.5 17.2 -7.8 | S_circular_insula_ant |
+| `ctx-lh-gp84` | CinguloOperc | 421 | -28.8 23.7 8.4 | S_circular_insula_sup |
+| `ctx-lh-gp85` | VentralAttn | 119 | -44.3 33.2 -7.2 | Lat_Fis-ant-Horizont |
+| `ctx-lh-gp86` | VentralAttn | 111 | -45.4 28.8 0.8 | G_front_inf-Triangul |
+| `ctx-lh-gp87` | DorsalAttn | 429 | -20.4 -64.6 51.4 | G_parietal_sup |
+| `ctx-lh-gp88` | DorsalAttn | 260 | -25.8 -65 32.2 | S_intrapariet_and_P_trans |
+| `ctx-lh-gp89` | CinguloParietal | 118 | -12.7 -64.9 31.8 | S_parieto_occipital |
+| `ctx-lh-gp90` | Visual | 187 | -13.7 -77.4 26.6 | S_parieto_occipital |
+| `ctx-lh-gp91` | DorsalAttn | 259 | -9.9 -56.9 59.8 | G_precuneus |
+| `ctx-lh-gp92` | DorsalAttn | 81 | -7.1 -63.7 54.9 | G_precuneus |
+| `ctx-lh-gp93` | CinguloParietal | 215 | -10.9 -73.4 42.9 | G_parietal_sup |
+| `ctx-lh-gp94` | Default | 486 | -39.3 -73.9 38.3 | G_pariet_inf-Angular |
+| `ctx-lh-gp95` | DorsalAttn | 112 | -30 -74.1 36.1 | G_pariet_inf-Angular |
+| `ctx-lh-gp96` | FrontoParietal | 195 | -34.1 -61 42.4 | S_intrapariet_and_P_trans |
+| `ctx-lh-gp97` | Visual | 619 | -31.3 -84.2 9 | S_oc_middle_and_Lunatus |
+| `ctx-lh-gp98` | Visual | 200 | -34.2 -86.6 -0.5 | G_occipital_middle |
+| `ctx-lh-gp99` | Visual | 344 | -43.4 -67.6 9.7 | S_occipital_ant |
+| `ctx-lh-gp100` | DorsalAttn | 1019 | -46.2 -57.7 -7.9 | G_temporal_inf |
+| `ctx-lh-gp101` | CinguloOperc | 130 | -59.8 -4.1 8.8 | G_and_S_subcentral |
+| `ctx-lh-gp102` | Auditory | 84 | -52.2 -14.1 15.2 | G_and_S_subcentral |
+| `ctx-lh-gp103` | CinguloOperc | 219 | -55.1 -32.3 23 | G_pariet_inf-Supramar |
+| `ctx-lh-gp104` | Auditory | 235 | -50.6 -22.4 19.2 | G_and_S_subcentral |
+| `ctx-lh-gp105` | CinguloOperc | 317 | -58.8 -23.9 31 | G_pariet_inf-Supramar |
+| `ctx-lh-gp106` | DorsalAttn | 494 | -45.2 2.7 32.4 | S_precentral-inf-part |
+| `ctx-lh-gp107` | DorsalAttn | 76 | -34.7 5.6 34 | S_precentral-inf-part |
+| `ctx-lh-gp108` | FrontoParietal | 87 | -43 19.4 33.5 | G_front_middle |
+| `ctx-lh-gp109` | FrontoParietal | 275 | -40.2 23.6 23.3 | S_front_inf |
+| `ctx-lh-gp110` | DorsalAttn | 179 | -37.6 38.4 17.2 | S_front_inf |
+| `ctx-lh-gp111` | CinguloOperc | 190 | -51.8 -0.6 5 | G_front_inf-Opercular |
+| `ctx-lh-gp112` | CinguloOperc | 375 | -48.6 7.5 11.1 | S_precentral-inf-part |
+| `ctx-lh-gp113` | DorsalAttn | 80 | -41.6 8.7 22.2 | S_precentral-inf-part |
+| `ctx-lh-gp114` | Default | 86 | -27.5 53.6 0 | G_and_S_frontomargin |
+| `ctx-lh-gp115` | None | 110 | -23.4 61 -6.8 | G_and_S_frontomargin |
+| `ctx-lh-gp116` | Default | 539 | -5.9 54.8 -11.3 | G_rectus |
+| `ctx-lh-gp117` | Default | 308 | -6.8 38.2 -9.4 | G_and_S_cingul-Ant |
+| `ctx-lh-gp118` | None | 45 | -31.8 2.6 -16.8 | G_insular_short |
+| `ctx-lh-gp119` | None | 111 | -34.7 35.6 -9.6 | S_orbital-H_Shaped |
+| `ctx-lh-gp120` | None | 348 | -22.5 32.1 -13.6 | S_orbital-H_Shaped |
+| `ctx-lh-gp121` | None | 122 | -23.8 52.2 -12.8 | S_orbital-H_Shaped |
+| `ctx-lh-gp122` | None | 236 | -17.3 46.6 -17.9 | G_orbital |
+| `ctx-lh-gp123` | None | 212 | -13.3 24 -16.4 | S_orbital_med-olfact |
+| `ctx-lh-gp124` | None | 111 | -8.9 45.5 -20.8 | S_orbital_med-olfact |
+| `ctx-lh-gp125` | None | 87 | -2.5 33.8 -26.2 | G_rectus |
+| `ctx-lh-gp126` | Default | 142 | -63.2 -28.7 -7.2 | G_temporal_middle |
+| `ctx-lh-gp127` | Default | 776 | -53.1 -11.4 -16 | S_temporal_sup |
+| `ctx-lh-gp128` | None | 500 | -53.2 -13 -29.2 | G_temporal_inf |
+| `ctx-lh-gp129` | None | 538 | -44.6 9 -37 | Pole_temporal |
+| `ctx-lh-gp130` | RetrosplenialTemporal | 376 | -33.8 -33.2 -15.4 | S_oc- temp_med_and_Lingual |
+| `ctx-lh-gp131` | Visual | 297 | -28.8 -58.8 -9.1 | S_oc- temp_med_and_Lingual |
+| `ctx-lh-gp132` | Visual | 201 | -34.4 -63.9 -15.7 | G_oc-temp_lat-fusifor |
+| `ctx-lh-gp133` | None | 155 | -55.1 -39.6 -16.2 | G_temporal_inf |
+| `ctx-lh-gp134` | None | 142 | -32 -3.9 -45.2 | Pole_temporal |
+| `ctx-lh-gp135` | None | 176 | -38.6 -13 -26.9 | S_collat_transv_ant |
+| `ctx-lh-gp136` | Visual | 314 | -34.3 -43.8 -21.6 | G_oc-temp_lat-fusifor |
+| `ctx-lh-gp137` | Visual | 483 | -5.4 -88 18.6 | G_cuneus |
+| `ctx-lh-gp138` | Visual | 142 | -8.6 -77.5 -3.5 | G_oc-temp_med-Lingual |
+| `ctx-lh-gp139` | Visual | 230 | -41.2 -72.1 -5.9 | G_and_S_occipital_inf |
+| `ctx-lh-gp140` | Visual | 353 | -25.2 -97.2 -7.9 | Pole_occipital |
+| `ctx-lh-gp141` | Visual | 541 | -22.6 -81.7 -11.7 | G_and_S_occipital_inf |
+| `ctx-lh-gp142` | None | 221 | -20.5 -12.6 -23.7 | Unknown |
+| `ctx-lh-gp143` | RetrosplenialTemporal | 156 | -22.5 -37.1 -15 | G_oc-temp_med-Parahip |
+| `ctx-lh-gp144` | None | 205 | -22 -21.9 -17.4 | Unknown |
+| `ctx-lh-gp145` | Default | 178 | -15.9 48.6 37.2 | G_front_sup |
+| `ctx-lh-gp146` | Default | 273 | -19.5 56.3 27.5 | G_front_middle |
+| `ctx-lh-gp147` | CinguloOperc | 55 | -26.6 46.8 20.9 | S_front_middle |
+| `ctx-lh-gp148` | FrontoParietal | 194 | -21.3 63.1 1.9 | G_and_S_transv_frontopol |
+| `ctx-lh-gp149` | FrontoParietal | 106 | -28.6 50.9 10.1 | S_front_middle |
+| `ctx-lh-gp150` | Default | 685 | -6.5 54.7 18.1 | G_front_sup |
+| `ctx-lh-gp151` | Default | 151 | -15.7 64.7 13.7 | G_front_sup |
+| `ctx-lh-gp152` | Default | 177 | -6 44.9 6.3 | G_and_S_cingul-Ant |
+| `ctx-lh-gp153` | CinguloOperc | 162 | -28.8 38.3 28.2 | S_front_middle |
+| `ctx-lh-gp154` | Default | 105 | -26.2 26.6 38.8 | S_front_sup |
+| `ctx-lh-gp155` | DorsalAttn | 151 | -35.7 33.1 32 | G_front_middle |
+| `ctx-lh-gp156` | Default | 139 | -29.3 16.8 50.7 | G_front_middle |
+| `ctx-lh-gp157` | Default | 352 | -41.7 16.1 47.5 | G_front_middle |
+| `ctx-lh-gp158` | VentralAttn | 113 | -38.7 4.8 48.4 | S_precentral-inf-part |
+| `ctx-lh-gp159` | None | 242 | -50.8 6.9 -20.1 | G_temp_sup-Lateral |
+| `ctx-lh-gp160` | Auditory | 388 | -54.4 -1.4 -0.7 | G_temp_sup-Lateral |
+| `ctx-lh-gp161` | VentralAttn | 95 | -59 -18 -3 | S_temporal_sup |
+| `ctx-rh-gp162` | Default | 1286 | 12.3 -51.6 34.5 | S_subparietal |
+| `ctx-rh-gp163` | SMhand | 422 | 20.8 -48.2 66.1 | G_parietal_sup |
+| `ctx-rh-gp164` | SMmouth | 303 | 49.6 -7.4 36.1 | S_central |
+| `ctx-rh-gp165` | Default | 445 | 11.9 21.9 59.9 | G_front_sup |
+| `ctx-rh-gp166` | Visual | 594 | 22 -84.6 23.7 | S_oc_sup_and_transversal |
+| `ctx-rh-gp167` | FrontoParietal | 154 | 47.9 -42.5 41.5 | G_pariet_inf-Supramar |
+| `ctx-rh-gp168` | FrontoParietal | 157 | 38.1 45.9 7.7 | S_front_inf |
+| `ctx-rh-gp169` | Visual | 102 | 22.3 -46.5 -9.9 | S_oc- temp_med_and_Lingual |
+| `ctx-rh-gp170` | FrontoParietal | 259 | 59.7 -41 -10.9 | S_temporal_inf |
+| `ctx-rh-gp171` | Auditory | 169 | 33.6 -22.3 13 | Lat_Fis-post |
+| `ctx-rh-gp172` | None | 253 | 32.5 13.6 -30.5 | G_temp_sup-Plan_polar |
+| `ctx-rh-gp173` | CinguloParietal | 138 | 7.6 -27 28.4 | S_pericallosal |
+| `ctx-rh-gp174` | RetrosplenialTemporal | 514 | 13.8 -54.1 10.9 | S_parieto_occipital |
+| `ctx-rh-gp175` | Visual | 1935 | 15.5 -74.1 9.4 | S_calcarine |
+| `ctx-rh-gp176` | Visual | 272 | 19.6 -45.3 -4.4 | S_calcarine |
+| `ctx-rh-gp177` | Visual | 249 | 15.6 -59.6 -5 | G_oc-temp_med-Lingual |
+| `ctx-rh-gp178` | None | 95 | 24.9 -35.9 -4.8 | Unknown |
+| `ctx-rh-gp179` | None | 93 | 19.4 -29.9 -9.7 | Unknown |
+| `ctx-rh-gp180` | CinguloOperc | 698 | 16.2 -33.1 43.2 | S_cingul-Marginalis |
+| `ctx-rh-gp181` | CinguloOperc | 87 | 6.7 5 55.9 | G_front_sup |
+| `ctx-rh-gp182` | FrontoParietal | 260 | 7 25.7 47.3 | G_front_sup |
+| `ctx-rh-gp183` | Salience | 104 | 8.4 34.7 22.6 | G_and_S_cingul-Ant |
+| `ctx-rh-gp184` | Default | 375 | 7.7 44.1 5.5 | G_and_S_cingul-Ant |
+| `ctx-rh-gp185` | CinguloOperc | 495 | 8.6 4.2 40.1 | G_and_S_cingul-Mid-Ant |
+| `ctx-rh-gp186` | Default | 86 | 3 -19.6 37.9 | G_and_S_cingul-Mid-Post |
+| `ctx-rh-gp187` | CinguloOperc | 81 | 8.8 10.8 45.9 | G_and_S_cingul-Mid-Ant |
+| `ctx-rh-gp188` | CinguloOperc | 176 | 6 21.8 32.4 | G_and_S_cingul-Mid-Ant |
+| `ctx-rh-gp189` | DorsalAttn | 381 | 10.3 -57.3 58.3 | G_precuneus |
+| `ctx-rh-gp190` | SMhand | 373 | 16.5 -32.8 67.7 | S_central |
+| `ctx-rh-gp191` | SMhand | 479 | 4.8 -27.1 64.8 | G_and_S_paracentral |
+| `ctx-rh-gp192` | CinguloOperc | 118 | 16.2 0.8 67.5 | G_front_sup |
+| `ctx-rh-gp193` | SMhand | 183 | 11.9 -40.7 67 | G_and_S_paracentral |
+| `ctx-rh-gp194` | SMhand | 64 | 5.1 -17.1 51.6 | G_front_sup |
+| `ctx-rh-gp195` | SMhand | 124 | 6.8 -8.1 50.9 | G_and_S_cingul-Mid-Post |
+| `ctx-rh-gp196` | CinguloOperc | 213 | 8 -6.2 63.7 | G_front_sup |
+| `ctx-rh-gp197` | SMmouth | 225 | 42.3 -11 47.3 | S_central |
+| `ctx-rh-gp198` | CinguloOperc | 154 | 42.5 -2.3 47.2 | S_precentral-sup-part |
+| `ctx-rh-gp199` | DorsalAttn | 125 | 29.2 1.9 52.4 | S_front_sup |
+| `ctx-rh-gp200` | Default | 368 | 21.9 21 46.2 | S_front_sup |
+| `ctx-rh-gp201` | SMhand | 359 | 38.1 -22.4 60.3 | G_precentral |
+| `ctx-rh-gp202` | SMhand | 141 | 19.7 -25 65.2 | S_central |
+| `ctx-rh-gp203` | DorsalAttn | 252 | 29.9 -7.8 47.4 | S_precentral-sup-part |
+| `ctx-rh-gp204` | SMhand | 70 | 12.4 -28.3 69.6 | G_precentral |
+| `ctx-rh-gp205` | SMhand | 193 | 29.2 -13.5 64.2 | S_precentral-sup-part |
+| `ctx-rh-gp206` | SMhand | 82 | 17 -16.9 70.9 | G_precentral |
+| `ctx-rh-gp207` | SMhand | 144 | 20.9 -6.4 65 | G_front_sup |
+| `ctx-rh-gp208` | DorsalAttn | 162 | 22.6 5.6 57.6 | S_front_sup |
+| `ctx-rh-gp209` | SMhand | 118 | 29.5 -42.5 60.4 | G_parietal_sup |
+| `ctx-rh-gp210` | SMhand | 43 | 34.2 -40.6 51.6 | S_intrapariet_and_P_trans |
+| `ctx-rh-gp211` | DorsalAttn | 140 | 38.8 -42.6 40.4 | S_intrapariet_and_P_trans |
+| `ctx-rh-gp212` | SMmouth | 814 | 53.9 -8.3 26.1 | S_central |
+| `ctx-rh-gp213` | SMhand | 326 | 39.6 -31.5 39.7 | S_postcentral |
+| `ctx-rh-gp214` | SMhand | 222 | 28 -34.8 63.1 | S_postcentral |
+| `ctx-rh-gp215` | SMhand | 95 | 39.2 -34.6 57.5 | G_postcentral |
+| `ctx-rh-gp216` | SMhand | 550 | 37.3 -25.9 50.9 | S_central |
+| `ctx-rh-gp217` | SMhand | 209 | 48.7 -26.1 52.2 | G_postcentral |
+| `ctx-rh-gp218` | SMmouth | 134 | 47.8 -15.1 49.3 | G_postcentral |
+| `ctx-rh-gp219` | CinguloOperc | 301 | 57.5 -40.3 34.7 | G_pariet_inf-Supramar |
+| `ctx-rh-gp220` | Default | 659 | 48.9 -53 28.6 | S_temporal_sup |
+| `ctx-rh-gp221` | VentralAttn | 127 | 57.5 -45.3 9 | S_temporal_sup |
+| `ctx-rh-gp222` | VentralAttn | 147 | 60.9 -38.7 1.7 | G_temporal_middle |
+| `ctx-rh-gp223` | CinguloOperc | 1237 | 54.9 -27 29.6 | G_pariet_inf-Supramar |
+| `ctx-rh-gp224` | Auditory | 179 | 36.4 -30.7 19.4 | Lat_Fis-post |
+| `ctx-rh-gp225` | Default | 259 | 62.5 -25.6 -5.5 | G_temporal_middle |
+| `ctx-rh-gp226` | VentralAttn | 135 | 57.1 -17 -2.6 | S_temporal_sup |
+| `ctx-rh-gp227` | Auditory | 350 | 53.8 -15.8 5.2 | S_temporal_transverse |
+| `ctx-rh-gp228` | VentralAttn | 83 | 47.4 -39.6 13.2 | S_temporal_sup |
+| `ctx-rh-gp229` | VentralAttn | 171 | 45.5 -37.3 3.4 | S_temporal_sup |
+| `ctx-rh-gp230` | Auditory | 117 | 59.2 -38.6 14.6 | S_temporal_sup |
+| `ctx-rh-gp231` | VentralAttn | 187 | 48.5 -26.5 -0.1 | S_temporal_sup |
+| `ctx-rh-gp232` | Auditory | 98 | 61.7 -24 1.3 | G_temp_sup-Lateral |
+| `ctx-rh-gp233` | Auditory | 238 | 60 -25.2 10.2 | G_temp_sup-Plan_tempo |
+| `ctx-rh-gp234` | CinguloOperc | 297 | 38.8 -14.4 -5 | S_circular_insula_inf |
+| `ctx-rh-gp235` | CinguloOperc | 277 | 39.7 1.2 -13.1 | S_circular_insula_inf |
+| `ctx-rh-gp236` | DorsalAttn | 243 | 36.8 37.8 13.1 | S_front_inf |
+| `ctx-rh-gp237` | VentralAttn | 121 | 52.5 23.7 10.3 | G_front_inf-Triangul |
+| `ctx-rh-gp238` | CinguloOperc | 206 | 36.7 5.2 12.7 | S_circular_insula_sup |
+| `ctx-rh-gp239` | Auditory | 113 | 38.4 -12.2 20 | Lat_Fis-post |
+| `ctx-rh-gp240` | FrontoParietal | 307 | 42.8 48.3 -5.1 | G_orbital |
+| `ctx-rh-gp241` | VentralAttn | 93 | 48.1 38.3 -9.2 | G_orbital |
+| `ctx-rh-gp242` | VentralAttn | 269 | 45.2 30.7 -5.6 | G_orbital |
+| `ctx-rh-gp243` | VentralAttn | 272 | 27.4 19.7 -14.9 | S_circular_insula_ant |
+| `ctx-rh-gp244` | Auditory | 61 | 36.6 -10 12.4 | S_circular_insula_sup |
+| `ctx-rh-gp245` | CinguloOperc | 160 | 39.6 10.4 -1.6 | G_insular_short |
+| `ctx-rh-gp246` | CinguloOperc | 134 | 36.5 5.7 6 | S_circular_insula_sup |
+| `ctx-rh-gp247` | Salience | 109 | 30.6 22.8 -4.7 | S_circular_insula_ant |
+| `ctx-rh-gp248` | CinguloOperc | 88 | 33.7 22.6 3.7 | G_insular_short |
+| `ctx-rh-gp249` | CinguloOperc | 317 | 34 24.4 10 | S_circular_insula_sup |
+| `ctx-rh-gp250` | DorsalAttn | 94 | 48.1 38.4 2.4 | G_front_inf-Triangul |
+| `ctx-rh-gp251` | Visual | 225 | 26.8 -55 54.2 | S_intrapariet_and_P_trans |
+| `ctx-rh-gp252` | DorsalAttn | 362 | 23 -66.4 51.8 | G_parietal_sup |
+| `ctx-rh-gp253` | DorsalAttn | 266 | 32.3 -63.6 33.8 | S_intrapariet_and_P_trans |
+| `ctx-rh-gp254` | CinguloParietal | 288 | 15.6 -69.5 39.6 | S_parieto_occipital |
+| `ctx-rh-gp255` | Visual | 161 | 17.6 -78.3 34 | S_parieto_occipital |
+| `ctx-rh-gp256` | Visual | 100 | 7.7 -85.6 31.6 | G_cuneus |
+| `ctx-rh-gp257` | Default | 53 | 7.4 -69.3 49.9 | G_precuneus |
+| `ctx-rh-gp258` | Visual | 197 | 35.4 -77.1 21.1 | S_oc_sup_and_transversal |
+| `ctx-rh-gp259` | Default | 710 | 46.5 -67.3 36.2 | G_pariet_inf-Angular |
+| `ctx-rh-gp260` | FrontoParietal | 60 | 41.5 -53.5 44 | S_intrapariet_and_P_trans |
+| `ctx-rh-gp261` | FrontoParietal | 40 | 35.7 -56.7 45.2 | S_intrapariet_and_P_trans |
+| `ctx-rh-gp262` | DorsalAttn | 157 | 33.5 -48.2 49.4 | S_intrapariet_and_P_trans |
+| `ctx-rh-gp263` | Visual | 1230 | 31.7 -85.7 2.4 | S_oc_middle_and_Lunatus |
+| `ctx-rh-gp264` | Visual | 434 | 43.8 -67.2 2 | S_occipital_ant |
+| `ctx-rh-gp265` | Visual | 732 | 47.3 -52.4 -11.7 | S_oc-temp_lat |
+| `ctx-rh-gp266` | DorsalAttn | 80 | 57 -53.8 -1.1 | G_temporal_middle |
+| `ctx-rh-gp267` | Visual | 156 | 49 -54.5 8.8 | S_temporal_sup |
+| `ctx-rh-gp268` | Auditory | 131 | 60.9 -2.2 10.7 | G_and_S_subcentral |
+| `ctx-rh-gp269` | Auditory | 159 | 54.2 -13.6 16.9 | G_and_S_subcentral |
+| `ctx-rh-gp270` | SMhand | 163 | 53 -22.7 39.1 | S_postcentral |
+| `ctx-rh-gp271` | DorsalAttn | 232 | 47.3 2 37.6 | S_precentral-inf-part |
+| `ctx-rh-gp272` | FrontoParietal | 169 | 37.8 28.7 35.6 | G_front_middle |
+| `ctx-rh-gp273` | FrontoParietal | 357 | 41.8 29.1 21.6 | S_front_inf |
+| `ctx-rh-gp274` | CinguloOperc | 289 | 50.1 3 3.9 | G_front_inf-Opercular |
+| `ctx-rh-gp275` | DorsalAttn | 847 | 46.6 7.8 19.3 | S_precentral-inf-part |
+| `ctx-rh-gp276` | FrontoParietal | 59 | 38.6 18.8 25.5 | S_front_inf |
+| `ctx-rh-gp277` | FrontoParietal | 328 | 28.4 57 -5.1 | G_and_S_frontomargin |
+| `ctx-rh-gp278` | Default | 280 | 4.8 65.1 -7.1 | G_front_sup |
+| `ctx-rh-gp279` | Default | 423 | 7.2 48.4 -10.1 | G_and_S_cingul-Ant |
+| `ctx-rh-gp280` | None | 237 | 2.9 18.7 -23.2 | G_rectus |
+| `ctx-rh-gp281` | None | 219 | 35.1 37.3 -8.4 | S_orbital-H_Shaped |
+| `ctx-rh-gp282` | None | 76 | 25.4 8.9 -15.7 | G_oc-temp_med-Parahip |
+| `ctx-rh-gp283` | None | 297 | 21.2 30.3 -15.2 | S_orbital-H_Shaped |
+| `ctx-rh-gp284` | None | 288 | 21.6 51.1 -14.1 | S_orbital-H_Shaped |
+| `ctx-rh-gp285` | None | 39 | 11.9 25.7 -24.8 | G_orbital |
+| `ctx-rh-gp286` | None | 94 | 13.5 20.3 -15.2 | S_orbital_med-olfact |
+| `ctx-rh-gp287` | None | 288 | 10.9 39.1 -19.7 | S_orbital_med-olfact |
+| `ctx-rh-gp288` | None | 109 | 2.2 39 -25.6 | G_rectus |
+| `ctx-rh-gp289` | None | 77 | 62.3 -26.4 -16 | G_temporal_middle |
+| `ctx-rh-gp290` | Default | 711 | 57.5 -7.4 -16.4 | S_temporal_sup |
+| `ctx-rh-gp291` | None | 160 | 54.7 -7.8 -26.9 | G_temporal_middle |
+| `ctx-rh-gp292` | None | 800 | 45.2 13.6 -30.1 | Pole_temporal |
+| `ctx-rh-gp293` | Visual | 72 | 31.2 -45.6 -5.8 | S_oc- temp_med_and_Lingual |
+| `ctx-rh-gp294` | RetrosplenialTemporal | 86 | 34.6 -35.6 -12.3 | S_oc- temp_med_and_Lingual |
+| `ctx-rh-gp295` | RetrosplenialTemporal | 197 | 34.6 -23.9 -20.4 | S_oc- temp_med_and_Lingual |
+| `ctx-rh-gp296` | None | 182 | 20.1 -21.4 -21.5 | G_oc-temp_med-Parahip |
+| `ctx-rh-gp297` | None | 97 | 28 -0.4 -37.3 | G_oc-temp_med-Parahip |
+| `ctx-rh-gp298` | Visual | 938 | 26.9 -69.1 -6.6 | S_oc- temp_med_and_Lingual |
+| `ctx-rh-gp299` | Visual | 569 | 34.9 -44 -20 | G_oc-temp_lat-fusifor |
+| `ctx-rh-gp300` | None | 162 | 36.8 7.7 -37.9 | Pole_temporal |
+| `ctx-rh-gp301` | None | 283 | 54.5 -9.6 -37 | G_temporal_inf |
+| `ctx-rh-gp302` | None | 71 | 56.4 -27 -19.4 | S_temporal_inf |
+| `ctx-rh-gp303` | None | 183 | 31.1 2.2 -46.1 | Pole_temporal |
+| `ctx-rh-gp304` | None | 162 | 39.5 -11.9 -29.7 | S_collat_transv_ant |
+| `ctx-rh-gp305` | None | 73 | 31.6 -9.4 -35.5 | G_oc-temp_med-Parahip |
+| `ctx-rh-gp306` | None | 106 | 43.4 -24.1 -20.8 | S_collat_transv_ant |
+| `ctx-rh-gp307` | Visual | 188 | 13.8 -92.3 14.7 | G_cuneus |
+| `ctx-rh-gp308` | Visual | 210 | 10.5 -73.8 -1.5 | G_oc-temp_med-Lingual |
+| `ctx-rh-gp309` | Visual | 142 | 20.4 -87.3 -6.6 | Pole_occipital |
+| `ctx-rh-gp310` | Visual | 161 | 5.1 -80.2 23.1 | G_cuneus |
+| `ctx-rh-gp311` | Visual | 132 | 14.6 -70.3 23.3 | S_parieto_occipital |
+| `ctx-rh-gp312` | None | 218 | 19.5 -10.8 -24.9 | Unknown |
+| `ctx-rh-gp313` | RetrosplenialTemporal | 110 | 24.5 -36.2 -13.2 | S_oc- temp_med_and_Lingual |
+| `ctx-rh-gp314` | None | 66 | 30.4 -18.8 -19.4 | Unknown |
+| `ctx-rh-gp315` | Default | 200 | 21 32.8 42.1 | S_front_sup |
+| `ctx-rh-gp316` | Default | 111 | 21.4 42.8 35.1 | S_front_sup |
+| `ctx-rh-gp317` | CinguloOperc | 119 | 24.4 50.8 24.3 | S_front_middle |
+| `ctx-rh-gp318` | CinguloOperc | 300 | 31.3 39.7 25.6 | S_front_middle |
+| `ctx-rh-gp319` | FrontoParietal | 255 | 23.5 59.1 4.9 | S_front_middle |
+| `ctx-rh-gp320` | FrontoParietal | 96 | 30.9 52.2 9.9 | S_front_middle |
+| `ctx-rh-gp321` | Default | 285 | 16 61 19.8 | G_front_sup |
+| `ctx-rh-gp322` | Default | 494 | 8.2 53.8 14 | G_front_sup |
+| `ctx-rh-gp323` | Default | 118 | 5.9 54.9 29.4 | G_front_sup |
+| `ctx-rh-gp324` | Default | 202 | 13.8 46.7 42.1 | G_front_sup |
+| `ctx-rh-gp325` | Default | 252 | 6.8 44.5 34.8 | G_front_sup |
+| `ctx-rh-gp326` | Default | 84 | 30.6 18.9 48.7 | S_front_sup |
+| `ctx-rh-gp327` | FrontoParietal | 384 | 42.4 19.5 48.2 | G_front_middle |
+| `ctx-rh-gp328` | FrontoParietal | 142 | 38.9 9.6 42.7 | S_precentral-inf-part |
+| `ctx-rh-gp329` | Auditory | 16 | 39.7 -22.5 2.6 | S_circular_insula_inf |
+| `ctx-rh-gp330` | Auditory | 415 | 55.8 2 -2 | G_temp_sup-Lateral |
+| `ctx-rh-gp331` | Default | 101 | 54.4 1.1 -12.9 | G_temp_sup-Lateral |
+| `ctx-rh-gp332` | VentralAttn | 130 | 57.1 -6.3 -7.7 | S_temporal_sup |
+| `ctx-rh-gp333` | VentralAttn | 67 | 46.6 -21.5 -8.5 | S_temporal_sup |
+
+# Task fMRI contrasts {#contrasts}
+
+## Conditions and contrasts for MID
+
+|                                |                                           |
+|-------------------------------|-----------------------------------------|
+| **Condition or contrast name** | **Description**                           |
+| lra                            | large reward anticipation                 |
+| lrpf                           | large reward positive feedback            |
+| lrnf                           | large reward negative feedback            |
+| sra                            | small reward anticipation                 |
+| srpf                           | small reward positive feedback            |
+| srnf                           | small reward negative feedback            |
+| lla                            | large loss anticipation                   |
+| llpf                           | large loss positive feedback              |
+| llnf                           | large loss negative feedback              |
+| sla                            | small loss anticipation                   |
+| slpf                           | small loss positive feedback              |
+| slnf                           | small loss negative feedback              |
+| na                             | neutral anticipation                      |
+| npf                            | neutral positive feedback                 |
+| nnf                            | neutral negative feedback                 |
+| arvn                           | anticipation reward versus neutral       |
+| alvn                           | anticipation loss versus neutral          |
+| rpvnf                          | reward positive versus negative feedback  |
+| lpvnf                          | loss positive versus negative feedback    |
+| alrvn                          | anticipation large reward versus neutral  |
+| asrvn                          | anticipation small reward versus neutral  |
+| alvsr                          | anticipation of large versus small reward |
+| allvn                          | anticipation of large loss versus neutral |
+| aslvn                          | anticipation of small loss versus neutral |
+| alvsl                          | anticipation of large versus small loss   |
+
+Note: Concatenated data files containing beta estimates and standard errors derived from AFNI’s 3dDeconvolve were created for each of the conditions and contrasts (shaded region) listed above.
+
+**Contrast definitions for MID**
+
+|  |  |  |  |  |  |
+|------------|------------|------------|------------|------------|------------|
+| **contrast** |   | **condition A** |   | **condition B** |   |
+| arvn | antic reward vs neutral | lra | large reward antic |   |   |
+|   |   | sra | small reward antic | na | neutral antic |
+| alvn | antic loss vs neutral | lla | large loss antic |   |   |
+|   |   | sla | small loss antic | na | neutral antic |
+| rpvnf | reward pos vs neg feedback | lrpf | large reward pos feedback | lrnf | large reward neg feedback |
+|   |   | srpf | small reward pos feedback | srnf | small reward neg feedback |
+| lpvnf | loss pos vs neg feedback | llpf | large loss pos feedback | llnf | large loss neg feedback |
+|   |   | slpf | small loss pos feedback | slnf | small loss neg feedback |
+| alrvn | antic large reward vs neutral | lra | large reward antic | na | neutral antic |
+| asrvn | antic small reward vs neutral | sra | small reward antic | na | neutral antic |
+| alvsr | antic large vs small reward | lra | large reward antic | sra | small reward antic |
+| allvn | antic large loss vs neutral | lla | large loss antic | na | neutral antic |
+| aslvn | antic small loss vs neutral | sla | small loss antic | na | neutral antic |
+| alvsl | antic large vs small loss | lla | large loss antic | sla | small loss antic |
+
+Note: Contrasts defined above were implemented as general linear tests with AFNI’s 3dDeconvolve. Condition A and B above refer to the task conditions used to define a contrast and can each include zero, one, or more conditions, depending on the contrast definition.
+
+## Conditions and contrasts for EN-Back
+
+|                                |                                   |
+|--------------------------------|-----------------------------------|
+| **Condition or contrast name** | **Description**                   |
+| 2bpsf                          | 2-back positive face              |
+| 2bntf                          | 2-back neutral face               |
+| 2bngf                          | 2-back negative face              |
+| 2bplc                          | 2-back place                      |
+| 0bpsf                          | 0-back positive face              |
+| 0bntf                          | 0-back neutral face               |
+| 0bngf                          | 0-back negative face              |
+| 0bplc                          | 0-back place                      |
+| c                              | cue                               |
+| 0b                             | 0-back                            |
+| 2b                             | 2-back                            |
+| plc                            | place                             |
+| emo                            | emotion                           |
+| 2bv0b                          | 2-back versus 0-back              |
+| fvplc                          | face versus place                 |
+| emovntf                        | emotional versus neutral face     |
+| ngfvntf                        | negative face versus neutral face |
+| psfvntf                        | positive face versus neutral face |
+
+Note: Concatenated data files containing beta estimates and standard errors derived from AFNI’s 3dDeconvolve were created for each of the conditions and contrasts (shaded region) listed above.
+
+**Contrast definitions for EN-Back**
+
+|  |  |  |  |  |  |
+|------------|------------|------------|------------|------------|------------|
+| **contrast** |  | **condition A** |  | **condition B** |  |
+| 0b | 0 back | 0bplc | 0 back place |   |   |
+|   |   | 0bngf | 0 back negative face |   |   |
+|   |   | 0bntf | 0 back neutral face |   |   |
+|   |   | 0bpsf | 0 back positive face |   |   |
+| 2b | 2 back | 2bplc | 2 back place |   |   |
+|   |   | 2bngf | 2 back negative face |   |   |
+|   |   | 2bntf | 2 back neutral face |   |   |
+|   |   | 2bpsf | 2 back positive face |   |   |
+| plc | place | 0bplc | 0 back place |   |   |
+|   |   | 2bplc | 2 back place |   |   |
+| emo | emotion | 0bngf | 0 back negative face |   |   |
+|   |   | 2bngf | 2 back negative face |   |   |
+|   |   | 0bpsf | 0 back positive face |   |   |
+|   |   | 2bpsf | 2 back positive face |   |   |
+| 2bv0b | 2 back vs 0 back | 2bplc | 2 back place | 0bplc | 0 back place |
+|   |   | 2bngf | 2 back negative face | 0bngf | 0 back negative face |
+|   |   | 2bntf | 2 back neutral face | 0bntf | 0 back neutral face |
+|   |   | 2bpsf | 2 back positive face | 0bpsf | 0 back positive face |
+| fvplc | face vs place | 0bngf | 0 back negative face |   |   |
+|   |   | 2bngf | 2 back negative face |   |   |
+|   |   | 0bntf | 0 back neutral face |   |   |
+|   |   | 2bntf | 2 back neutral face |   |   |
+|   |   | 0bpsf | 0 back positive face | 0bplc | 0 back place |
+|   |   | 2bpsf | 2 back positive face | 2bplc | 2 back place |
+| emovntf | emotion vs neutral face | 0bngf | 0 back negative face |   |   |
+|   |   | 2bngf | 2 back negative face |   |   |
+|   |   | 0bpsf | 0 back positive face | 0bntf | 0 back neutral face |
+|   |   | 2bpsf | 2 back positive face | 2bntf | 2 back neutral face |
+| ngfvntf | negative face vs neutral face | 0bngf | 0 back negative face | 0bntf | 0 back neutral face |
+|   |   | 2bngf | 2 back negative face | 2bntf | 2 back neutral face |
+| psfvntf | positive face vs neutral face | 0bpsf | 0 back positive face | 0bntf | 0 back neutral face |
+|   |   | 2bpsf | 2 back positive face | 2bntf | 2 back neutral face |
+
+Note: Contrasts defined above were implemented as general linear tests with AFNI’s 3dDeconvolve. Condition A and B above refer to the task conditions used to define a contrast and can each include zero, one, or more conditions, depending on the contrast definition.
+
+## Conditions and contrasts for SST
+
+|                                |                                    |
+|--------------------------------|------------------------------------|
+| **Condition or contrast name** | **Description**                    |
+| cg                             | correct go                         |
+| ig                             | incorrect go                       |
+| clg                            | correct late go                    |
+| nrg                            | no response go                     |
+| ilg                            | incorrect late go                  |
+| cs                             | correct stop                       |
+| is                             | incorrect stop                     |
+| ss                             | ssd stop                           |
+| cgvfx                          | correct go versus fixation         |
+| csvcg                          | correct stop versus correct go     |
+| isvcg                          | incorrect stop versus correct go   |
+| asvcg                          | any stop versus correct go         |
+| csvis                          | correct stop versus incorrect stop |
+| igvcg                          | incorrect go versus correct go    |
+| igvis                          | incorrect go versus incorrect stop |
+
+Note: Concatenated data files containing beta estimates and standard errors derived from AFNI’s 3dDeconvolve were created for each of the conditions and contrasts (shaded region) listed above.
+
+**Contrast definitions for SST**
+
+|  |  |  |  |  |  |
+|------------|------------|------------|------------|------------|------------|
+| **contrast** |  | **condition A** |  | **condition B** |  |
+| cgvfx | correct go vs fixation | cg | correct go |   |   |
+| csvcg | correct stop vs correct go | cs | correct stop | cg | correct go |
+| isvcg | incorrect stop vs correct go | is | incorrect stop | cg | correct go |
+| asvcg | any stop vs correct go | cs | correct stop |   |   |
+|   |   | is | incorrect stop | cg | correct go |
+| csvis | correct stop vs incorrect stop | cs | correct stop | is | incorrect stop |
+| igvcg | incorrect go vs correct go | ig | incorrect go | cg | correct go |
+| igvis | incorrect go vs incorrect stop | ig | incorrect go | is | incorrect stop |
+
+Note: Contrasts defined above were implemented as general linear tests with AFNI’s 3dDeconvolve. Condition A and B above refer to the task conditions used to define a contrast and can each include zero, one, or more conditions, depending on the contrast definition. Restriction Spectrum Imaging (RSI) measures. [@white2013a; @white2014]
+
+| Name | Alias | Description | Size scale | Notes |
+|:--------------|:--------------|:--------------|:--------------|:--------------|
+| RNI | N0 | 0th order FOD parameter divided by Euclidean norm of all parameters | restricted | isotropic |
+| RND | ND | norm of directional FOD components (2nd and 4th order) divided by norm of all parameters | restricted | directional |
+| RNT | NT | norm of all FOD parameters (0th, 2nd, and 4th order) divided by norm of all parameters | restricted | total |
+| HNI | N0_s2 | 0th order FOD parameter divided by norm of all parameters | hindered | isotropic |
+| HND | ND_s2 | norm of directional FOD components (2nd and 4th order) divided by norm of all parameters | hindered | directional |
+| HNT | NT_s2 | norm of all FOD parameters (0th, 2nd, and 4th order) divided by norm of all parameters | hindered | total |
+| FNI | NIf | isotropic freewater component divided by norm of all parameters | free | isotropic |

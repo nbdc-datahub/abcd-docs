@@ -1,0 +1,171 @@
+---
+title: "Genetics"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+
+```{r}
+render_table_info("domain_abbr == 'gn'")
+```
+<br>
+This document contains information on zygosity, genetic, and genetic derived data that are available for the ABCD sample for the 6.0 data release. We describe both tabulated data that is available in release tables listed below, in addition to bulk genetic data that contains the following:
+
+1.  Curated genotyping data from Smokescreen array - set of PLINK files containing 11,664 unique subjects at \~500k variants
+2.  Imputed data based on TOPMED reference panel - set of vcf files containing all imputed genotype data for 11,664 unique subjects at \~260 million variants
+3.  Genetic relatedness and $\hat{\pi}$ estimates across the full sample using methods correcting ancestry background
+4.  Genetic principal component weights to enable projection of other samples to ABCD genetic PC space
+
+For comprehensive details of quality control steps performed and a description of the genetic data within the ABCD sample please refer to and cite the following work:
+
+**Reference:** @fan2023
+
+::: {.callout-important collapse="true" title="Responsible use warning: Genetics" #use-genetics}
+**Balanced Research Practices**
+
+Researchers must adhere to ethical guidelines and ensure that genetic data are analyzed and interpreted responsibly. Research should aim to advance scientific understanding and avoid misinterpretation or misuse of genetic findings. Evidence of users engaging in stigmatizing research will result in termination of data access.
+
+**Consideration of Population Descriptors**
+
+The use of population descriptors in genetic research can often be varied and inconsistent. We encourage users to review the [NASEM report](https://nap.nationalacademies.org/catalog/26902/using-population-descriptors-in-genetics-and-genomics-research-a-new) for consideration of appropriate population descriptors for their analysis. Self-reported race and ethnicity may reflect social and environmental experiences that do not directly correspond to genetic variation. Genetic principal components are provided to more accurately represent genetic variation without reliance on self-reported categories. Principal components provide unlabelled variables capturing genetic variation, whereas ancestry labels capture similar variation but typically are labeled in terms of continental ancestry groups (European, African, etc.).
+
+To ensure genetic analyses are conducted with scientific rigor and precision, this data release provides genetic principal components rather than ancestry labels, following best practices in genomic research.
+
+**Reference:** @creapdgr2023
+:::
+
+::: {.callout-warning collapse="true" title="Data warning: Genetics principal components" #data-genetics}
+Outliers of the genetics principal components appear in the `gn_y_popstruct` table should be noted and analyzed as such.
+:::
+
+# Youth tables (tabulated data) 
+
+## Genetic relatedness {#gn_y_genrel}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("gn_y_genrel")`
+
+**Measure description:** Data in this instrument indicate genetic and related similarity. `gn_y_genrel_id__fam` contains a unique number for each set of individuals who appear genetically related (genetic relatedness\>0.35). We include `gn_y_genrel_id__birth` which, for individuals in the same (genetic) family, indicates those whose birthdays are within three months of each other (i.e., twins or triplets). These fields are cross listed in the "ABCD (general)" domain (**`ab_g_stc__design_id__fam__gen`** and **`ab_g_stc__design_id__birth__gen`**).
+
+`gn_y_genrel_id__fam` can be used as a random effect in mixed effects models to account for relatedness in the ABCD sample. Depending on the analysis, users may select either or a combination of these variables to account for familial/shared environmental effects within the sample.
+
+**Twin Analysis Variables:** To identify siblings or twins/triplets in the sample, researchers can use `gn_y_genrel_id__paired__{N}`, `gn_y_genrel_zyg__{N}` and `gn_y_genrel_pihat__{N}` columns. These columns are derived from pairs of related individuals where both individuals have been genotyped. These columns are aligned such that for a given subject, `gn_y_genrel_id__paired__01` indicates the other subject in the sample they are related to, and`gn_y_genrel_zyg__01` indicates whether this relationship is monozygotic (1), dizygotic (2) or singleton siblings (3). Monozygotic relationships have $\hat{\pi}$\>0.8, dizygotic relationships have 0.8\>$\hat{\pi}$\>0.35 and matching birth dates between pairs, and sibling relationships have 0.8\>$\hat{\pi}$\>0.35 and birth dates more than 3 months apart. Finally, `gn_y_genrel_pihat__01` represents the genetic relatedness of this relationship (as captured by $\hat{\pi}$ ). These columns are only defined for individuals for pihat \>0.35. Genetic relatedness across all pairs in the sample (thresholded) is available as part of the bulk genetic data (see section GENESIS below, which describes how genetic relatedness was calculated).
+
+**Modifications since initial administration:** From data release 5.0 onwards, genetic relatedness has been computed by PC-Relate (see GENESIS section below for details). Previous data releases used `PLINK --genome` for this calculation which is less suitable for the population structure of the ABCD study.
+
+**References:**
+
+- @gogarten2019
+- @conomos2015
+- @conomos2016
+
+## Population structure {#gn_y_popstruct}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("gn_y_popstruct")`
+
+**Measure description:** Genetic principal components (PC), computed using GENESIS (Gogarten et. al., Bioinformatics, 2019), are provided under fields `gn_y_popstruct_pc__{N}`. For details of this procedure, including details of where to find PC weights to enable projection of other samples onto this PC space, please see section GENESIS Derived Principal Component Weights and Relatedness Estimates below. 
+
+**Modifications since initial administration:** Genetic ancestry factors had been previously released with ABCD 4.0 data release and earlier releases. See "Non-tabuled Genetic Data" section of this document to find some resources for computing these measures if necessary. From the 5.0 data release forward, population structure is captured by genetic principal components described below in "GENESIS..." section.
+
+## Twin zygosity rating {#gn_e_zygrat data-link="Twin Zygosity Rating"}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("gn_e_zygrat")`
+
+**Measure description:** The Twin Zygosity Rating study characterized photos of twins on physical characteristics to estimate zygosity. Research assistants assessed similarities between twin pairs based on the photos. Please note, as described above, genetic-based zygosity is provided as part of the `gn_y_genrel` table.
+
+# File-based data {#file-based}
+
+For extraction of single genetic variants, users can use tools like [bed-reader](https://github.com/fastlmm/bed-reader) for python and [snpStats](https://rdrr.io/bioc/snpStats/man/read.plink.html) for R to parse plink bed files described below. Methods such as [PRS-csx](https://github.com/getian107/PRScsx) have been developed  to generate polygenic scores in samples with the high degree of genetic diversity found in ABCD. I[PRScs](https://github.com/getian107/PRScs) can show comparable performance with PRS-csx in ABCD data, whilst requiring fewer analysis steps (e.g. cross validation)(Ahern, J et. al., Behavior Genetics, 2023).  The performance of polygenic scores varies as genomic distance from the training sample increases (Ding et. al., 2023) . Due to this known issue, conducting stratified analysis of individuals that share similar continental ancestry is currently considered best practice, although this is an evolving field with new approaches constantly being developed. Tools such as [ADMIXTURE](https://dalexander.github.io/admixture/) can generate genetic factors to enable this type of analysis.
+
+**References:**
+
+- @ahern2023
+- @ding2023
+
+Plink files described do not contain family relatedness or sex information. For family relatedness please refer to "GENESIS Derived Genetic Principal Component Weights and Relatedness Estimates" section below or "Genetic Relatedness" above. For sex, refer to `ab_g_stc__cohort_sex` in `ab_g_stc`. 
+
+Non tabulated genetic data is split into three directories as follows:
+`../dairc/concat/genetics/genotype_microarray/..`
+
+- `/smokescreen/` smokescreen genotype array data (non-imputed)
+- `/imputed/` TOPMED imputed array data - derived from smokescreen
+- `/genesis/` GENESIS derived variables.
+
+The contents of each of these directories is described in sections below.
+
+## Smokescreen binarized PLINK files and batch info
+
+**Files:** ..`/smokescreen/`..
+
+- `merged_chroms.bed`
+- `merged_chroms.bim`
+- `merged_chroms.fam`
+- `batch.info`
+- `removed_individuals.txt`
+
+**Measure description:** After dish quality control and profile checks, genotypes were called using Axiom Analysis Suite (apt version 2.11) on raw intensities from the Affymetrix Smokescreen array. Based on the best practices analysis workflow by Thermo Fisher, classifications that passed the final SNP quality controls were recommended, resulting in ~515K recommended probe sets in each genotyping batch. Blood and Saliva DNA samples were genotyped separately. We include one genotype result for each subject, using whichever sample has the best QC metrics (call rates and missingness). There were nine genotyping batches in Data Release 6.0, spanning 147 plates (See `batch.info` in downloaded files). After obtaining the genotype batch, we mapped the probesets to SNPs using annotations derived from genome build hg19. After the mapping, we merged all nine batches into one study cohort and then performed additional study level QC to include missingness less than 10% in the SNP level, and less than 20% in the sample level. 515,279 variants and 11,664 people passed filters and QC. The subsequent imputation and relatedness inferences were based on the final curated genotype data. The batch information can be found in `batch.info`. Removed_individuals.txt indicates individuals that have been removed from 5.0 to 6.0 data release due to either withdrawn consent or indications of sample mixup (e.g. mismatching of genetic relatedness with known family members).
+
+**Genome Build:** hg19
+
+**Number of variants:** \~515k
+
+**Number of individuals:** 11,664
+
+**Modifications since initial release:** Genotyping of missing individuals from previous data releases due to sample mix up or failing quality control measures.
+
+**Reference:** @baurley2016
+
+## Imputed VCF files using TOPMED imputation panel
+
+**Files:** ..`/imputed/`..
+
+- `chr{c}_dose.vsf.gz`
+- `chr{c}_dose.vcf.gz.tbi`
+- ...
+- `qcreport.html`
+
+**Measure description:** The curated genotype data was used for the imputation, using the bioinformatic pipelines and recommendations of TOPMED Server, with TOPMED reference panel. Post processing of these files included adding RSID numbers from dbSNP build 156 and using reference=GRCh38.p14 found here <https://ftp.ncbi.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz>.
+
+The TOPMED imputation scores and post-imputation quality report can be found at cqcreport.html in this folder. In addition to estimated allele dosages, an R2 field in vcf files contains an estimated imputation accuracy which can be used to filter high quality imputed variants.
+
+**ABCD Classification:** Genetic
+
+**Genome Build:** GRCh38
+
+**Number of variants:** \~260 million
+
+**Number of individuals:** 11,664
+
+**References:**
+
+- @das2016
+- @loh2016
+
+## GENESIS derived genetic principal component weights and relatedness estimates
+
+**Files:** ..`/genesis/`..
+
+- `pcair_weights.tsv`
+- `pcrelate_relatedness.tsv`
+- `unrelateds_individuals.txt`
+
+**Measure description:** Accounting for genetic principal components (PCs) in genetic studies (both GWAS and Polygenic Score analysis) is considered best practice to account for effects of population stratification that can lead to spurious results. Traditional approaches for calculating PCs (e.g., [FlashPCA](https://urldefense.com/v3/__https://github.com/gabraham/flashpca__;!!Mih3wA!DAFS_uCCsIWrhd3A4uGdRJiQ4SrqyL14ZV_WBgqqzzjfu3LS0J9iFF96XtoQdR53IAnzpfFNMlqG1m8Ve29Z$)), although considered best practice for many genetic studies, may not be suited for samples with large known or cryptic relatedness, as is observed in ABCD. As such, we have replaced these genetic PCs with ones calculated using PC-AiR, a method developed and validated for samples with large family structure. PC-AiR captures ancestry information not confounded by relatedness by finding a set of unrelated individuals in the sample that have the highest divergent ancestry, and computing PCs in this set. The remaining related individuals are then projected into this space. This method is used by the Population Architecture through Genomics and Environment (PAGE) Consortium, which is principally concerned with genetic studies in diverse ancestry populations.
+
+PC-AiR was run using default suggested settings from the GENESIS package. We used non-imputed SNPs passing QCs from the 6.0 data release (\~500k variants and 11,664 individuals). PC-AiR takes in kinship estimates for defining its unrelated set of individuals with divergent ancestry; this was computed using `snpgdsIBDKING` as suggested by GENESIS authors. SNPs were LD pruned using snpgdsLDpruning with parameters: `method=“corr”`, `slide.max.bp=10e6` and `ld.threshold=sqrt(0.1)`. This resulted in 114,707 SNPs remaining after pruning. Using the computed kinship matrix PC-Air was then run on this pruned set of SNPs. This resulted in 8,177 unrelated individuals from which PCs were derived -- leaving 3,391 related individuals being projected onto this space. Subsequent analysis indicated a sample mix of 2 samples which were then removed from other genetic data.This is why the sum of unrelated and related individuals is more than the number of individuals in PLINK files (8,177+3,391\>1,668). The weights, which can be used to project other samples into the same PC space, can be found in `pcair_weights.tsv`, with the file /smokescreen/merged_chroms.bim indicating allele codings. The list of 8,177 unrelated individuals used for deriving PC's is available in unrelateds_individuals.txt.
+
+After Computing PCs from PC-AiR, we then computed a genetic relatedness matrix (GRM) using PC-Relate. PC-Relate aims to compute a GRM that is independent from ancestry effects as derived from PC-AiR. PC-Relate was run on the same pruned set of SNPs described above using the first two PCs computed from PC-Air. Identity by descent probabilities between individuals i and j were calculated as $\hat{\pi}_{ij}= \hat{k}_{ij}^{(2)}+0.5× \hat{k}_{ij}^{(1)}$, where $\hat{k}_{ij}^{(2)}$ and $\hat{k}_{ij}^{(1)}$ represent the probabilities that individuals i and j share 2 or 1 alleles at a locus -- calculated from PC-Relate. For all off-diagonal elements of the GRM we provide estimates of $\hat{k}_{ij}^{(0)}$, $\hat{k}_{ij}^{(1)}$, $\hat{k}_{ij}^{(2)}$, $\hat{\pi}_{ij}$ and genetic relatedness in pcrelate_relatedness.tsv. For a subset of related individuals ($\hat{\pi}$\>0.35) we include estimates in tabulated data in the gen_y_genrel instrument described above. Code used to perform the processes described in this section can be found here: [**https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness**](https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness).
+
+**Number of individuals:** 11,664
+
+**Modifications since initial release:** Genotyping of missing individuals from previous data releases due to sample mix up or failing quality control measures. Use of PC-Relate for relatedness computation, previous data releases used `PLINK --genome` for this calculation.
+
+**References:**
+
+- @gogarten2019
+- @conomos2015
+- @conomos2016

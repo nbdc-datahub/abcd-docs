@@ -1,0 +1,141 @@
+---
+title: "Data processing"
+order: 3
+---
+
+Below we summarize the procedures and parameters used to process the BIDS input data described [here](abcc_inputs.qmd) through ABCD-BIDS and QSIPrep pipelines to produce processed derivative. Please see @feczko2021 for details.
+
+## Processing & Analytic Standards
+
+Pipelines used for ABCC processing follow guidelines based on principles and utilities developed by [NMIND](https://www.nmind.org/about) aimed at promoting reproducibility and standardization in neuroimaging tools [@kiar2023]. Among these is the [NMIND Coding Standards Checklist](https://www.nmind.org/standards-checklist/), a comprehensive framework for evaluating the quality of a tool's documentation, infrastructure, and testing capabilities against open, community-developed, scientific software-development standards. Badge ratings for all tools that complete this review process can be viewed at [Evaluated Tools](https://www.nmind.org/proceedings/). Software utilized for the ABCC release must undergo NMIND peer review and be published with a DOI. At a minimum, tools must meet the standards equivalent to the Bronze badge in the rating system. Please see the NMIND ratings for ABCD-BIDS and QSIPrep pipelines as follows:
+
+- [QSIPrep](https://www.nmind.org/proceedings/qsiprep/) 
+- [ABCD-BIDS](https://www.nmind.org/proceedings/abcdhcppipeline/) 
+
+## ABCD-BIDS Pipeline
+
+The ABCD-BIDS pipeline is available on [GitHub](https://github.com/ABCD-STUDY/abcd-hcp-pipeline), [OSF](https://doi.org/10.17605/OSF.IO/89PYD), and [DockerHub](https://hub.docker.com/r/dcanlabs/abcd-hcp-pipeline) at the time of this release as the `abcd-hcp-pipeline`. It is a [BIDS App](https://bids-apps.neuroimaging.io/about/) which takes BIDS input data and uses the methods from both the Human Connectome Project's minimal preprocessing pipeline [@glasser2013] and the [DCAN Labs resting state fMRI analysis tools](https://github.com/DCAN-Labs/dcan_bold_processing) to output preprocessed MRI data in both volume and surface spaces. Please see the [ABCD-BIDS pipeline webpage](https://abcd-hcp-pipeline.readthedocs.io/en/latest/) for a full overview of this pipeline.
+
+ABCC data was processed through the ABCD-BIDS pipeline in two different ways with the following command and parameters.
+
+For the structural pipeline up to the post-Freesurfer stage:
+
+``` bash
+singularity run --cleanenv \
+  -B ${data_dir}/bids_dataset:/bids_dir \
+  -B ${data_dir}/derivatives/abcd-hcp-pipeline_v0.1.4:/output_dir \
+  -B ${run_dir}/license.txt:/opt/freesurfer/license.txt \
+  -B ${run_dir}/ABCD_BIDS_cleaning.json:/ABCD_BIDS_cleaning.json \
+  /ABCD-BIDS/abcd-hcp-pipeline_R2019a-test_07222024a.sif \
+  /bids_dir /output_dir \
+  --freesurfer-license /opt/freesurfer/license.txt \
+  --participant-label ${subject_id} \
+  --stages "PreFreeSurfer:PostFreeSurfer" \
+  --custom-clean /ABCD_BIDS_cleaning.json \
+  --ignore func \
+  --ncpus 8
+```
+
+For the full pipeline (including all stages):
+
+``` bash
+env -i ${singualrity} run \
+  -B ${data_dir}/bids_dataset:/bids_dir \
+  -B ${data_dir}/derivatives/abcd-hcp-pipeline_v0.1.4:/output_dir \
+  -B ${run_dir}/license.txt:/opt/freesurfer/license.txt \
+  -B ${run_dir}/ABCD_BIDS_cleaning.json:/ABCD_BIDS_cleaning.json \
+  /ABCD-BIDS/abcd-hcp-pipeline_R2019a-test_07222024a.sif \
+  /bids_dir /output_dir \
+  --freesurfer-license /opt/freesurfer/license.txt \
+  --participant-label ${subject_id} \
+  --stages "PreFreeSurfer:CustomClean" \
+  --bandstop 18.582 25.726 \
+  --custom-clean /ABCD_BIDS_cleaning.json \
+  --ncpus 8
+```
+
+### Additional Details
+
+**Distortion Correction**\
+A single optimal pair of positive (posterior to anterior) and negative (anterior to posterior) spin echo field maps are utilized to correct for distortions in the phase encoding direction of ALL anatomical and functional acquisitions using [FSL's topup](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup) (see section on [BIDS Conversion](abcc_inputs.qmd) for details on fmap pair selection)
+
+**Respiratory Motion Filter**\
+In working with ABCD data, we have found that a respiratory artifact is produced within multi-band data [@fair2020]. While this artifact occurs outside the brain, it can affect estimates of frame alignment, leading to inappropriate motion censoring. By filtering the frequencies (18.582 to 25.726 breaths per minute) of the respiratory signal from the motion realignment data (during the DCANBoldProc stage), our respiratory motion filter produces better estimates of FD.
+
+### Resolved ABCD-BIDS Pipeline Processing Issues
+
+The following issues occurred while processing the ABCD MRI data through the ABCD-BIDS pipeline. They have been resolved for the current release data, but are included here for additional guidance for those who may wish to process the data themselves:
+
+1. **Fieldmap Dimension Mismatch in `TopupPreprocessingAll.sh` (GE Only)**\
+   **Description:** The spin echo fieldmap has different dimensions than the scout image in a portion of GE sessions, causing a preprocessing error.\
+   **Solution:** Resize the fieldmaps (fmaps) using the bold file as the reference size.\
+   **Steps to Resolve:**\
+   Run the following command: `flirt -in "$fmap_file" -ref "$func_run" -out "$output_file" -applyisoxfm 2.4`
+
+1. **Incorrect Fieldmap Assignment in `FMRIVolume` Step**\
+   **Description:** The wrong fieldmap is being assigned, leading to processing errors during the `FMRIVolume` step.\
+   **Solution:** Update the fieldmap JSON files to include the correct runs that were missed during previous steps.
+
+1. **FNIRT Read Error - Insufficient Volumes**\
+   **Description:** FNIRT requires at least three volumes to process. This error occurs when functional data is incomplete or corrupted.\
+   **Solution:** Skip the functional pipeline and run only the anatomical pipeline for affected cases.
+
+1. **Issue: Index Error in `anat_only` Cases**\
+   **Description:** In `anat_only` cases, fmap JSON files interfere with the pipeline, causing index errors.\
+   **Solution:** Sync only the `anat` folder for such cases temporarily.
+
+### Software
+
+- [ABCD-BIDS Pipeline](https://abcd-hcp-pipeline.readthedocs.io/en/latest/)
+- [Advanced Normalization Tools (ANTs)](https://github.com/ANTsX/ANTs)
+- [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/)
+- [DCAN Labs resting state fMRI analysis tools](https://github.com/DCAN-Labs/dcan_bold_processing)
+- [BrainSprite](https://github.com/simexp/brainsprite.js)
+- [DCAN-Labs/cifti-connectivity tools](https://github.com/DCAN-Labs/cifti-connectivity)
+
+## QSIPrep
+
+QSIPrep configures pipelines for processing diffusion-weighted MRI (dMRI or DWI) data. For more information see the [QSIPrep documentation](https://qsiprep.readthedocs.io/en/latest/). This is the command used to run ABCC subjects through QSIPrep preprocessing:
+
+``` bash
+singularity run --cleanenv -B ${PWD} \
+  pennlinc-containers/.datalad/environments/qsiprep-0-16-1/image \
+  inputs/data \
+  prep \
+  participant \
+  -w ${PWD}/.git/wkdir \
+  --n_cpus 8 \
+  --stop-on-first-crash \
+  --fs-license-file code/license.txt \
+  --skip-bids-validation \
+  --participant-label "$subid" \
+  --unringing-method mrdegibbs \
+  --output-resolution 1.7 \
+  --eddy-config code/eddy_params.json \
+  --notrack
+```
+
+Contents of `code/eddy_params.json`
+
+``` json
+{
+  "flm": "linear",
+  "slm": "linear",
+  "fep": false,
+  "interp": "spline",
+  "nvoxhp": 1000,
+  "fudge_factor": 10,
+  "dont_sep_offs_move": false,
+  "dont_peas": false,
+  "niter": 5,
+  "method": "jac",
+  "repol": true,
+  "num_threads": 1,
+  "is_shelled": true,
+  "use_cuda": false,
+  "cnr_maps": true,
+  "residuals": false,
+  "output_type": "NIFTI_GZ",
+  "args": ""
+}
+```

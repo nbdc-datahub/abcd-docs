@@ -1,0 +1,32 @@
+---
+title: "Cite this website"
+order: 3
+---
+
+The ABCD data documentation is version-controlled. ABCD uses [Zenodo](https://zenodo.org/) to provide a simple way to view and cite previous versions of the codebase generating this website. Each version has a unique & permanent DOI. This allows users to track changes over time and cite or share specific versions as needed.
+
+::: {.callout-important}
+Because the documentation is regularly updated, we strongly recommend citing the exact version you used.
+:::
+
+To cite the current version (_{{< var version_current >}}_), visit the most recent release on [Zenodo](https://doi.org/10.5281/zenodo.15800725). The appropriate citation with the DOI for the latest version is listed in the citation box on the right side of the page—simply copy and paste it into your references.
+
+::: {.callout-note title="Why use versioning?"}
+Versioning is important because content and tools may change over time. This includes information about the study. Citing versions of this website allows for:
+
+- **Transparency** about where you got the information used in publications & presentations.
+- **Reproducibility** despite changes in the data or the tools available in ABCD.
+- **Historical record** to be able to go back to earlier versions of the website.
+:::
+
+## View prior website versions
+
+To view previous versions of the ABCD data documentation website, select a specific version from the version menu on the top-right corner of the page. 
+
+![](../assets/img/info/version_nav_bar)
+
+::: {.callout-note title="Version naming convention"}
+The version numbers for the website follow the following convention: The package major version number (first two digits) matches the ABCD data release version number. For example, the version 6.0.0 and other 6.0.* versions (e.g., 6.0.1, 6.0.2, etc.) relate to the ABCD data release 6.0, 7.0.* versions relate to the ABCD release 7.0, and so forth.
+:::
+
+The [changelog](changelog.qmd) provides a synthesized description of the changes of the documentation website between versions. 

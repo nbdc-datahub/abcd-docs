@@ -1,0 +1,9 @@
+﻿Modality,Series type,GE,Philips,Siemens
+sMRI,T1,1,1,1 (T1_NORM)
+,T2,1,1,1 (T2_NORM)
+dMRI,Field map,1,2,
+,DWI,1,2,1
+rs-fMRI,Field map,2,4,4
+,BOLD,4,4,4
+Task fMRI,Field map,1,2,2
+,BOLD,2,2,2

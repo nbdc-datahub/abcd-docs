@@ -1,0 +1,36 @@
+﻿category,substance,standard dose,day_min,day_max,est_min,est_max
+Alcohol,Alcohol,standard drinks,0.01,96,0.01,2016
+Tobacco/Nicotine,Tobacco Cigarette,cigarettes,0.01,96,0.01,2016
+Tobacco/Nicotine,Electronic Nicotine or Vaping Products,occasions,1,96,1,2016
+Tobacco/Nicotine,"Smokeless Tobacco, Chew, or Snus",pinches,0.01,96,0.01,2016
+Tobacco/Nicotine,"Cigars, Little Cigars, or Cigarillos",cigars,0.01,96,0.01,2016
+Tobacco/Nicotine,Hookah with Tobacco,occasions,1,96,1,2016
+Tobacco/Nicotine,Tobacco in a Pipe,occasions,1,96,1,2016
+Tobacco/Nicotine,Nicotine Replacements,occasions,1,96,1,2016
+Cannabis,Smoking Marijuana Flower,grams,0.01,96,0.01,2016
+Cannabis,Blunts or Combined Tobacco and Marijuana in Joints,grams,0.01,96,0.01,2016
+Cannabis,Vaped Marijuana Flower,grams,0.01,96,0.01,2016
+Cannabis,Marijuana Edibles,occasions,1,96,1,2016
+Cannabis,Vaped Marijuana Oils or Concentrates,occasions,1,96,1,2016
+Cannabis,Smoking Marijuana Oils or Concentrates,occasions,1,96,1,2016
+Cannabis,Marijuana Infused Alcohol Drinks,standard drinks,0.01,96,0.01,2016
+Cannabis,Concentrated Marijuana Tinctures,ml,0.01,96,0.01,2016
+Cannabis,CBD (Non-Medical Use),occasions,1,96,1,2016
+Cannabis,'Fake' Marijuana or Synthetics,grams,0.01,96,0.01,2016
+Stimulants,Cocaine or Crack Cocaine,occasions,1,24,1,504
+Stimulants,"Cathinones such as Bath Salts, Drone, or Meph",occasions,1,24,1,504
+Stimulants,"Methamphetamine, Meth, or Crystal Meth",occasions,1,24,1,504
+Stimulants,Prescription Stimulants,pills,0.25,24,0.25,504
+Opioids,"Heroin, Opium, Junk, Smack, or Dope",occasions,1,24,1,504
+Opioids,Prescription Pain Relievers or Opioids,pills,0.25,24,0.25,504
+Other,"Ecstasy, Molly, or MDMA",occasions,1,24,1,504
+Other,Ketamine or Special K,occasions,1,24,1,504
+Other,"GHB, Liquid G, or Georgia Homeboy",occasions,1,24,1,504
+Other,"Hallucinogen Drugs including LSD, PCP, Peyote, Mescaline, DMT, AMT, or Foxy",occasions,1,24,1,504
+Other,"Psilocybin, Magic Mushrooms, or Shrooms",occasions,1,24,1,504
+Other,Salvia,occasions,1,24,1,504
+Other,Anabolic Steroids,occasions,1,24,1,504
+Other,Inhalants,occasions,1,96,1,2016
+Other,"Prescription Anxiolytics, Tranquilizers, or Sedatives",pills,0.25,24,0.25,504
+Other,"OTC Cough or Cold Medicine, DXM, 'Lean', or 'Purple Drank'",occasions,1,24,1,504
+Other,Any Other Drug They Used to Get High,occasions,1,96,1,2016

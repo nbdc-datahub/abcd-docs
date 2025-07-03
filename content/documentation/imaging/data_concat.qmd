@@ -1,0 +1,1785 @@
+---
+title: "Concatenated"
+---
+
+# Atlas creation and registration 
+
+Images were registered according to the numerical method outlined by @holland2011, extended to include multimodal inputs. This consisted of rigid body, affine and nonlinear transformations. In total eleven multimodal channels were used to align scans and create the MINT ABCD atlas, however the input channels varied according to the registration step. Three structural MRI (sMRI) channels were included: T1w images, white matter segmentation, and grey matter segmentation; and eight diffusion MRI (dMRI) channels: the zeroth and second order spherical harmonics (SH) coefficients of the restricted orientation distribution function (ODF) and the zeroth order SH coefficients from the hindered and free water FODs from the restriction spectrum imaging (RSI) model. sMRI and dMRI channels were first aligned within-subject using rigid body registration transforms. Then inter-subject anatomical alignment was achieved using rigid body, affine and nonlinear transforms. 
+
+An iterative procedure was used to generate a registration target and the final ABCD atlas. The initial registration target was chosen as the atlas image used by @hagler2019 for the AtlasTrack method. A weighted group average was calculated for all eleven channels and the registration target was updated with the new multimodal average. The registration was repeated and the registration target updated again. This procedure was repeated three times, producing the iteratively refined multimodal ABCD atlas. 
+
+All available scans from all observations included in Data Release 6.0 were registered to the final group average, the ABCD atlas. The warps were applied to numerous imaging measures across dMRI, sMRI and tfMRI. This produced 3D volumes which were anatomically aligned across observations and modalities.
+
+# Concatenation and data storage
+
+To reduce the total data size and facilitate data sharing, a brain mask was applied to the 3D volumes for each imaging measure and only voxels within the mask were stored as a 2D vector. The masked vector data were concatenated across observations and according to each measure. For each imaging measure (FA, MD, RNI etc) .mat files of the concatenated data contain a variable volmat that is a matrix of size N x P, where N = number of observations and P=number of voxels within the mask. Please see the Concatenated Imaging Data Documentation for details. Imaging measures are located in modality specific directories along with a `vol_info.mat` file which contains participant and session IDs and high and low resolution 3D volumes of the ABCD atlas mask. The ABCD atlas masks can be used to convert the 2D vectors into 3D volumes. The following Matlab code provides an example of how to do this using the `fullvol.m` function provided by the Fast and Efficient Mixed-effects Algorithm (FEMA) available from <https://github.com/cmig-research-group/cmig_tools>. 
+
+Load the data for a given imaging measure, say FA (this may take a while) 
+```r
+load('/path/to/ABCD/data/6.0/imaging_concat/voxelwise/dti/fa.mat')
+```
+
+To transform a single observation from a 2D vector to a 3D volume, select the row number you want. If you want a specific participant and session you can select that data finding the corresponding row in the `vol_info.mat`. 
+
+```r
+load('/path/to/ABCD/data/6.0/imaging_concat/voxelwise/dti/vol_info.mat');                    
+idx = find(**contains**(**participant_id**, 'sub-0001') & contains(**session_id**, 'ses-00A')) 
+vec_subj = volmat(**idx**,:);                                                                  
+```
+
+Transform the 2D vector to a 3D volume using the fullvol function and vol_mask_sub
+```r
+vol_subj = fullvol(vec_subj, vol_mask_sub);
+showVol(vol_subj)
+```
+
+or saved as a nifti using the niftiwrite_amd function also part of FEMA. 
+```r
+fname_nii = 'vol_subj.nii.gz';
+niftiwrite_amd(vol_subj, fname_nii, M_atl);
+```
+
+The fullvol function can be applied to multiple row vectors, say if you wanted to look at all sessions for a given participant
+
+```r
+idx = find(**contains**(**participant_id**, 'sub-0001'))
+
+idx
+
+idx =
+
+     1     2     3     4
+
+vec_subj = volmat(**idx**,:); 
+
+vol_subj = fullvol(vec_subj, vol_mask_sub);
+```
+
+Where vol_subj would now be a 4D volume. It is not recommended that you convert the complete volmat variable into a 4D volume as that would be a 100x100x130x29173 matrix which would require an exceptionally large amount of computer memory. 
+
+
+# Data types
+
+## voxelwise voxel-based derived measures in ABCD atlas space
+
+**smri**: structural MRI derived measures; e.g., T1, T2, etc.
+
+**dti**: Diffusion Tensor Imaging derived; e.g., FA, MD, etc.
+
+**rsi:** Restriction Spectrum Imaging derived; e.g., RND, HNT, etc.
+
+**tfmri**: task fMRI derived beta coefficients
+
+## vertexwise cortical surface-based derived measures on FreeSurfer spherical average
+
+**surf**: cortical surface coordinates; i.e., white and pial surfaces
+
+**smri**: sMRI-derived measures; e.g., thickness (thk), area, sulc, T1, T2
+
+**dti**: Diffusion Tensor Imaging derived; e.g., FA, MD, etc.
+
+**rsi**: Restriction Spectrum Imaging derived; e.g., RND, HNT, etc.
+
+**tfmri**: task fMRI derived beta and SEM coefficients
+
+## corrrmat: ROI time series and correlation matrix data with Gordon, Desikan, Destrieux, and aseg ROIs
+
+**rsfmri**: resting-state fMRI
+
+**tfmri**: task fMRI
+
+# Vertex numbering and visualization for vertexwise concatenated imaging data
+
+The number of vertices is 10242. They form a 5th order icosahedral surface, and correspond to the first 10242 vertices of the 7th order icosahedral surface used for the FreeSurfer fsaverage subject and spherical average surface atlas. Cortical surface based measures on this ico 5 surface can be visualized using the [cmig_tools showSurf package](https://github.com/cmig-research-group/cmig_tools/tree/main/showSurf).
+
+# Volume information files
+
+Each concatenated imaging data type (e.g., voxelwise smri, vertexwise dti, corrmat tfmri, etc.) is accompanied by a volume information file (`vol_info.mat`) which contains participant and session IDs needed to link the rows of concatenated data matrices to the corresponding rows in the tabulated data.
+
+**Contents of `vol_info.mat`**
+
++---------------------------+-----------------------------------------------------+
+| **Variable name**         | **Description**                                     |
++---------------------------+-----------------------------------------------------+
+| `participant_id`          | cell array of participant IDs                       |
+|                           |                                                     |
+|                           |   with one entry per visit (participant-event)      |
+|                           |                                                     |
+|                           |       e.g., sub-XXXXXXXX                            |
++---------------------------+-----------------------------------------------------+
+| `session_id`              | cell array of session IDs                           |
+|                           |                                                     |
+|                           |   with one entry per visit                          |
+|                           |                                                     |
+|                           |     e.g., `ses-00A`, `ses-02A`, `ses-04A`, `ses-06A`|
++---------------------------+-----------------------------------------------------+
+| `visitidvec`              | cell array of visit IDs                             |
+|                           |                                                     |
+|                           |   with one entry per visit                          |
+|                           |                                                     |
+|                           |   e.g., S042_INVXXXXXXXX_baseline                   |
+|                           |                                                     |
+|                           |        {siteID}\_{subjID}\_{eventID}                |
++---------------------------+-----------------------------------------------------+
+| `dirlist`                 | cell array of input directory names; e.g.,          |
+|                           |                                                     |
+|                           | FSURF\_{siteID}\_{subjID}\_{eventID}\_{datetime}    |
+|                           |                                                     |
+|                           | DTIPROC\_{siteID}\_{subjID}\_{eventID}\_{datetime}  |
+|                           |                                                     |
+|                           | BOLDPROC\_{siteID}\_{subjID}\_{eventID}\_{datetime} |
+|                           |                                                     |
+|                           | DTIREG\_{siteID}\_{subjID}\_{eventID}\_{datetime}   |
++---------------------------+-----------------------------------------------------+
+| **voxelwise data types**  |                                                     |
++---------------------------+-----------------------------------------------------+
+| `vol_mask_aseg`           | high resolution 3D volume of ABCD atlas mask        |
++---------------------------+-----------------------------------------------------+
+| `vol_mask_sub`            | lower resolution 3D volume of ABCD atlas mask       |
++---------------------------+-----------------------------------------------------+
+| `M_atl`                   | 4x4 voxel to RAS transform of ABCD atlas            |
++---------------------------+-----------------------------------------------------+
+| **vertexwise data types** |                                                     |
++---------------------------+-----------------------------------------------------+
+| `vol_mask_lh`             | cortical mask vector for left hemisphere vertices   |
+|                           |                                                     |
+|                           |   excludes non-cortical midbrain region             |
++---------------------------+-----------------------------------------------------+
+| `vol_mask_rh`             | cortical mask vector for right hemisphere vertices  |
+|                           |                                                     |
+|                           |   excludes non-cortical midbrain region             |
++---------------------------+-----------------------------------------------------+
+| **corrmat data types**    |                                                     |
++---------------------------+-----------------------------------------------------+
+| `vol_mask`                | empty mask vector -- all ROIs are valid             |
++---------------------------+-----------------------------------------------------+
+
+\
+
+# Reading concatenated imaging data files
+
+Concatenated imaging data are stored as Version 7.3 MAT-files, which use an HDF5-based format and can be read into memory using the MATLAB load function. HDF5 is an open source format that can also be read in R (e.g., using the [hdf5r package](https://stackoverflow.com/a/75871385)) and python (e.g, using the [numpy library and h5py extension](https://stackoverflow.com/a/19340117)). The memory (RAM) required to read each file depends on the contents of the file and memory overhead requirements while running matlab. The time it takes to read each file into memory depends on the contents of the file as well factors such as CPU speed, disk read speed, and network bandwidth. Approximate values below should be taken as rough estimates of what to expect when using the MATLAB load function. \
+
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| **Category** | **Modality** | **File name pattern**                        | **Time (min)** | **Required RAM (GB)** |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| voxelwise    | dti          | `{measure}.mat`                              | 10             | 57                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| voxelwise    | rsi          | `{measure}.mat`                              | 9              | 57                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| voxelwise    | smri         | `{measure}.mat`                              | 10             | 66                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| voxelwise    | tfmri        | `{task}_{condition}_{stat}_{run}.mat`        | 10             | 57                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| voxelwise    | roi          | `{segmentation}.mat`                         | 1              | 48                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| vertexwise   | surf         | `{surface}-{hemi}.mat`                       | 1              | 10                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| vertexwise   | smri         | `{measure}_sm{smoothing}-{hemi}.mat`         | 6              | 7                     |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| vertexwise   | dti          | `{measure}_{layer}_sm{smoothing}_{hemi}.mat` | 7              | 7                     |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| vertexwise   | rsi          | `{measure}_{layer}_sm{smoothing}_{hemi}.mat` | 7              | 7                     |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| vertexwise   | tfmri        | `{task}_{condition}_{stat}_{run}_{hemi}.mat` | 8              | 9                     |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | rsfmri       | `tseries.mat`                                | 77             | 121                   |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | rsfmri       | `gp_tseries.mat`                             | 67             | 78                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | rsfmri       | `corr.mat`                                   | 4              | 28                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | rsfmri       | `gp_corr.mat`                                | 4              | 15                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | rsfmri       | `gpnet_corr.mat`                             | \<1            | 6                     |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | rsfmri       | `gpnet_aseg_corr.mat`                        | \<1            | 6                     |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | tfmri        | `{task}_tseries.mat`                         | 12             | 75                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | tfmri        | `{task}_gp_tseries.mat`                      | 8              | 52                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | tfmri        | `{task}_corr_{type}.mat`                     | 9              | 29                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | tfmri        | `{task}_gp_corr_{type}.mat`                  | 4              | 15                    |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | tfmri        | `{task}_gpnet_corr_{type}.mat`               | \<1            | 4                     |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+| corrmat      | tfmri        | `{task}_gpnet_aseg_corr_{type}.mat`          | \<1            | 4                     |
++--------------+--------------+----------------------------------------------+----------------+-----------------------+
+
+Note: File name patterns used above (e.g., `{surface}`, `{hemi}`, `{measure}`, `{smoothing}`, `{layer}`, `{task}`, `{condition}`, `{stat}`, `{run}`, `{type}`) represent groups of files for a given data type with varying values for the label in curly braces. The patterns for the respective data types are explained in the subsequent sections of this document.
+
+# dMRI-DTI Voxelwise Data
+
+**Location of data files**: `release/concat/imaging/voxelwise/dti`
+
+**List of files**
+
++----------------+---------------------------------------------------------------------------------------+
+| **File name**  | **Description of contents**                                                           |
++----------------+---------------------------------------------------------------------------------------+
+| `vol_info.mat` | participant and session IDs used to link to tabulated data and ABCD atlas brain masks |
++----------------+---------------------------------------------------------------------------------------+
+| `fa.mat`       | measure: DTI fractional anisotropy                                                    |
++----------------+---------------------------------------------------------------------------------------+
+| `md.mat`       | measure: DTI mean diffusivity                                                         |
++----------------+---------------------------------------------------------------------------------------+
+
+**Contents of `{measure}.mat`**
+
++-------------------+------------------------------------------------------------------------------+
+| **Variable name** | **Description**                                                              |
++-------------------+------------------------------------------------------------------------------+
+| `volmat`          | matrix of size N x P where N = number of observations and P=number of voxels |
++-------------------+------------------------------------------------------------------------------+
+
+# dMRI-RSI Voxelwise Data
+
+**Location of data files**: `release/concat/imaging/voxelwise/rsi`
+
+**List of files**
+
++----------------+---------------------------------------------------------------------------------------+
+| **File name**  | **Description of contents**                                                           |
++----------------+---------------------------------------------------------------------------------------+
+| `vol_info.mat` | participant and session IDs used to link to tabulated data and ABCD atlas brain masks |
++----------------+---------------------------------------------------------------------------------------+
+| `ri.mat`       | measure: RSI restricted isotropic                                                     |
++----------------+---------------------------------------------------------------------------------------+
+| `rif.mat`      | measure: RSI restricted isotropic fraction of total restricted signal                 |
++----------------+---------------------------------------------------------------------------------------+
+| `rni.mat`      | measure: RSI restricted normalized isotropic                                          |
++----------------+---------------------------------------------------------------------------------------+
+| `rd.mat`       | measure: RSI restricted directional                                                   |
++----------------+---------------------------------------------------------------------------------------+
+| `rdf.mat`      | measure: RSI restricted directional fraction of total restricted signal               |
++----------------+---------------------------------------------------------------------------------------+
+| `rnd.mat`      | measure: RSI restricted normalized directional                                        |
++----------------+---------------------------------------------------------------------------------------+
+| `rt.mat`       | measure: RSI restricted total                                                         |
++----------------+---------------------------------------------------------------------------------------+
+| `rnt.mat`      | measure: RSI restricted normalized total                                              |
++----------------+---------------------------------------------------------------------------------------+
+| `hi.mat`       | measure: RSI hindered isotropic                                                       |
++----------------+---------------------------------------------------------------------------------------+
+| `hif.mat`      | Measure: RSI hindered isotropic fraction of total hindered signal                     |
++----------------+---------------------------------------------------------------------------------------+
+| `hni.mat`      | measure: RSI hindered normalized isotropic                                            |
++----------------+---------------------------------------------------------------------------------------+
+| `hd.mat`       | measure: RSI hindered directional                                                     |
++----------------+---------------------------------------------------------------------------------------+
+| `hdf.mat`      | measure: RSI hindered directional fraction of total hindered signal                   |
++----------------+---------------------------------------------------------------------------------------+
+| `hnd.mat`      | measure: RSI hindered normalized directional                                          |
++----------------+---------------------------------------------------------------------------------------+
+| `ht.mat`       | measure: RSI hindered total                                                           |
++----------------+---------------------------------------------------------------------------------------+
+| `hnt.mat`      | measure: RSI hindered normalized total                                                |
++----------------+---------------------------------------------------------------------------------------+
+| `fi.mat`       | measure: RSI free isotropic                                                           |
++----------------+---------------------------------------------------------------------------------------+
+| `fni.mat`      | measure: RSI free normalized isotropic                                                |
++----------------+---------------------------------------------------------------------------------------+
+
+**Contents of `{measure}.mat`**
+
++-------------------+-----------------------------------------------------------------------------+
+| **Variable name** | **Description**                                                             |
++-------------------+-----------------------------------------------------------------------------+
+| `volmat`          | matrix of size N x P where N= number of observations and P=number of voxels |
++-------------------+-----------------------------------------------------------------------------+
+
+# sMRI Voxelwise Data
+
+**Location of data files**: `release/concat/imaging/voxelwise/smri`
+
+**List of files**
+
++----------------+---------------------------------------------------------------------------------------+
+| **File name**  | **Description of contents**                                                           |
++----------------+---------------------------------------------------------------------------------------+
+| `vol_info.mat` | participant and session IDs used to link to tabulated data and ABCD atlas brain masks |
++----------------+---------------------------------------------------------------------------------------+
+| `nu.mat`       | measure: T1-weighted signal intensity                                                 |
++----------------+---------------------------------------------------------------------------------------+
+| `t2.mat`       | measure: T2-weighted signal intensity                                                 |
++----------------+---------------------------------------------------------------------------------------+
+| `ja.mat`       | measure: the determinant of the Jacobian matrix of the nonlinear warp to atlas space  |
++----------------+---------------------------------------------------------------------------------------+
+| `gm_new.mat`   | measure: grey matter segmentation                                                     |
++----------------+---------------------------------------------------------------------------------------+
+| `wm.mat`       | measure: white matter segmentation                                                    |
++----------------+---------------------------------------------------------------------------------------+
+| `bm.mat`       | measure: brain mask                                                                   |
++----------------+---------------------------------------------------------------------------------------+
+| `b0.mat`       | measure: b=0 signal intensity                                                         |
++----------------+---------------------------------------------------------------------------------------+
+| `di1vol1.mat`  | measure: nonlinear deformation field for y-direction                                  |
++----------------+---------------------------------------------------------------------------------------+
+| `di2vol1.mat`  | measure: nonlinear deformation field for x-direction                                  |
++----------------+---------------------------------------------------------------------------------------+
+| `di3vol1.mat`  | measure: nonlinear deformation field for z-direction                                  |
++----------------+---------------------------------------------------------------------------------------+
+
+**Contents of `{measure}.mat`**
+
++-------------------+-----------------------------------------------------------------------------+
+| **Variable name** | **Description**                                                             |
++-------------------+-----------------------------------------------------------------------------+
+| `volmat`          | matrix of size N x P where N= number of observations and P=number of voxels |
++-------------------+-----------------------------------------------------------------------------+
+
+# Task-based fMRI Voxelwise Data
+
+**Location of data files**: `release/concat/imaging/voxelwise/tfmri`
+
+**List of files**
+
++--------------------------------------+---------------------------------------------------------------------------------------+
+| **File name**                        | **Description of contents**                                                           |
++--------------------------------------+---------------------------------------------------------------------------------------+
+| `vol_info.mat`                       | participant and session IDs used to link to tabulated data and ABCD atlas brain masks |
++--------------------------------------+---------------------------------------------------------------------------------------+
+| `mid_{condition}_{stat}_{run}.mat`   | task: mid (Monetary Incentive Delay)\                                                 |
+|                                      | conditions: see below                                                                 |
+| e.g., `mid_sra_beta_r01.mat`         |                                                                                       |
+|                                      | stats: beta                                                                           |
+| `mid_sra_beta_r02.mat`               |                                                                                       |
+|                                      | runs: r01, r02                                                                        |
++--------------------------------------+---------------------------------------------------------------------------------------+
+| `nback_{condition}_{stat}_{run}.mat` | task: nback (Emotional n-Back)                                                        |
+|                                      |                                                                                       |
+| e.g., `nback_2b_beta_r01.mat`        | conditions: see below                                                                 |
+|                                      |                                                                                       |
+| `nback_2b_beta_r02.mat`              | stats: beta                                                                           |
+|                                      |                                                                                       |
+|                                      | runs: r01, r02                                                                        |
++--------------------------------------+---------------------------------------------------------------------------------------+
+| `sst_{condition}_{stat}_{run}.mat`   | task: sst (Stop Signal Task)                                                          |
+|                                      |                                                                                       |
+| e.g., `sst_cg_beta_r01.mat`          | conditions: see below                                                                 |
+|                                      |                                                                                       |
+| `sst_cg_beta_r02.mat`                | stats: beta                                                                           |
+|                                      |                                                                                       |
+|                                      | runs: r01, r02                                                                        |
++--------------------------------------+---------------------------------------------------------------------------------------+
+
+Notes:
+
+- File name patterns above with `{condition}`, `{stat}` and `{run}` represent a group of files for a given task (i.e.,”mid” = Monetary Incentive Delay, “nback” = Emotional N-Back, and “sst” = Stop Signal Task) with varying conditions (see tables below), GLM statistic beta = time series model coefficient, two separate runs (“r01” = run 1, and “r02” = run 2) represented.
+- Outlier beta values (i.e., outside the mean ± 3 x standard deviation) are present for some particular voxels, runs, conditions, and/or paticipant-events. See “Task fMRI Outliers” in [Task-Based fMRI Data Documentation](type_tfmri.qmd) for more information and guidance.
+
+**Conditions and contrasts**
+
+Concatenated data files containing beta estimates derived from AFNI’s 3dDeconvolve were created for each of the conditions and contrasts defined in supplementary tables for each task. Contrasts were implemented as general linear tests with AFNI’s 3dDeconvolve, defined as a subtraction between two groups of conditions that can each include zero, one, or more conditions, depending on the contrast definition. See [Supplementary Tables](data_suppl.qmd) for more info.
+
+**Contents of `{task}\_{condition}\_{stat}\_{run}.mat`**
+
++-------------------+-----------------------------------------------------------------------------+
+| **Variable name** | **Description**                                                             |
++-------------------+-----------------------------------------------------------------------------+
+| `volmat`          | matrix of size N x P where N= number of observations and P=number of voxels |
++-------------------+-----------------------------------------------------------------------------+
+
+# ROI Voxelwise Data
+
+**Location of data files**: `release/concat/imaging/voxelwise/smri`
+
+**List of files**
+
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **File name**                         | **Description of contents**                                                                                                                                                |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `aparcaseg.mat`                       | probabilistic ROIs of the Freesurfer automatic cortical parcellation (aparc) and the automatic subcortical segmentation (aseg)                                             |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `aseg.mat`                            | probabilistic ROIs of the Freesurfer automatic subcortical segmentation (ages)                                                                                             |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `fiber.mat`                           | probabilistic ROIs of white matter tracts labelled using AtlasTrack                                                                                                        |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `pauli_subcortnuclei_abcd3_cor10.mat` | subcortical ROIs from @pauli2018 |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `thalamus_abcd3_cor10.mat`            | thalamic nuclei ROIs from @najdenovska2018 |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+**Contents of `{segmentation}.mat`**
+
++----------------------+------------------------------------------------------------------------------------------+-----------+
+| **Variable name**    | **Description**                                                                          |           |
++----------------------+------------------------------------------------------------------------------------------+-----------+
+| `volmat_prob`        | matrix of size X x Y x Z x R where X,Y,Z voxels dimension and R is number of ROIs        |           |
++----------------------+------------------------------------------------------------------------------------------+-----------+
+| `volmat_prob_rgb`    | 5D matrix of size X x Y x Z x R x 3 where X,Y,Z voxels dimension and R is number of ROIs |           |
++----------------------+------------------------------------------------------------------------------------------+-----------+
+| `volmat_prob_rgbsum` | 4D matrix of size X x Y x Z x 3 where X,Y,Z voxels dimensions.                           |           |
++----------------------+------------------------------------------------------------------------------------------+-----------+
+| `roicodes`           | array of ROI numeric identifiers                                                         |           |
++----------------------+------------------------------------------------------------------------------------------+-----------+
+| `roinames`           | ROI names                                                                                |           |
++----------------------+------------------------------------------------------------------------------------------+-----------+
+| `roirgb`             | ROI RGB color codes                                                                      |           |
++----------------------+------------------------------------------------------------------------------------------+-----------+
+| `subjlist`           | list of subjects included in cohort average                                              |           |
++----------------------+------------------------------------------------------------------------------------------+-----------+
+
+**Contents of `pauli_subcortnuclei_abcd3_cor10.mat`**
+
++-------------------------+--------------------------------------------------------------------------------+
+| **Variable name**       | **Description**                                                                |
++-------------------------+--------------------------------------------------------------------------------+
+| `D_fwd`                 | combined 3D nonlinear warp from subcortical nuclei atlas to ABCD atlas         |
++-------------------------+--------------------------------------------------------------------------------+
+| `M_atl`                 | M transform of ABCD atlas                                                      |
++-------------------------+--------------------------------------------------------------------------------+
+| `M_reg_af`              | reslice matrix from ABCD atlas to subcortical nuclei atlas                     |
++-------------------------+--------------------------------------------------------------------------------+
+| `di1vol1`               | nonlinear deformation field for y-direction                                    |
++-------------------------+--------------------------------------------------------------------------------+
+| `di2vol1`               | nonlinear deformation field for x-direction                                    |
++-------------------------+--------------------------------------------------------------------------------+
+| `di3vol1`               | nonlinear deformation field for z-direction                                    |
++-------------------------+--------------------------------------------------------------------------------+
+| `muvols_T1_ctx`         | ABCD atlas T1 volume                                                           |
++-------------------------+--------------------------------------------------------------------------------+
+| `pauli_lut`             | look up table for ROI code, name and RGB color code                            |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_T1`                | subcortical nuclei atlas T1 volume in original space                           |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_T1_af`             | subcortical nuclei atlas T1 volume affine transformed to ABCD atlas space      |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_T1_rb`             | subcortical nuclei atlas T1 volume rigid body transformed to ABCD atlas space  |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_T1_reg`            | subcortical nuclei atlas T1 volume nonlinearly transformed to ABCD atlas space |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_T2`                | subcortical nuclei atlas T2 volume in original space                           |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_T2_af`             | subcortical nuclei atlas T2 volume affine transformed to ABCD atlas space      |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_T2_rb`             | subcortical nuclei atlas T2 volume rigid body transformed to ABCD atlas space  |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_T2_reg`            | subcortical nuclei atlas T2 volume nonlinearly transformed to ABCD atlas space |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_labels_T1_reg_rgb` | color coded segmentation volume nonlinearly transformed to ABCD atlas space    |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_labels_af`         | segmentation volume affine transformed to ABCD atlas space                     |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_labels_reg`        | segmentation volume rigid body transformed to ABCD atlas space                 |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_labels_reg_rgb`    | segmentation volume nonlinearly transformed to ABCD atlas space                |
++-------------------------+--------------------------------------------------------------------------------+
+| `vol_labels_res_T1`     | segmentation volume in original space, T1 resolution                           |
++-------------------------+--------------------------------------------------------------------------------+
+| `volresfun_reg`         | function handle to transform subcortical nuclei atlas to ABCD atlas space      |
++-------------------------+--------------------------------------------------------------------------------+
+
+**Contents of `thalamus_abcd3_cor10.mat`**
+
++-------------------------+-----------------------------------------------------------------------------+
+| **Variable name**       | **Description**                                                             |
++-------------------------+-----------------------------------------------------------------------------+
+| `D_fwd`                 | combined 3D nonlinear warp from thalamic nuclei atlas to ABCD atlas         |
++-------------------------+-----------------------------------------------------------------------------+
+| `M_atl`                 | M transform of ABCD atlas                                                   |
++-------------------------+-----------------------------------------------------------------------------+
+| `M_reg_af`              | reslice matrix from ABCD atlas to thalamic nuclei atlas                     |
++-------------------------+-----------------------------------------------------------------------------+
+| `di1vol1`               | nonlinear deformation field for y-direction                                 |
++-------------------------+-----------------------------------------------------------------------------+
+| `di2vol1`               | nonlinear deformation field for x-direction                                 |
++-------------------------+-----------------------------------------------------------------------------+
+| `di3vol1`               | nonlinear deformation field for z-direction                                 |
++-------------------------+-----------------------------------------------------------------------------+
+| `muvols_T1_ctx`         | ABCD atlas T1 volume                                                        |
++-------------------------+-----------------------------------------------------------------------------+
+| `thalamus_lut`          | look up table for ROI code, name and RGB color code                         |
++-------------------------+-----------------------------------------------------------------------------+
+| `vol_T1`                | thalamic nuclei atlas T1 volume in original space                           |
++-------------------------+-----------------------------------------------------------------------------+
+| `vol_T1_af`             | thalamic nuclei atlas T1 volume affine transformed to ABCD atlas space      |
++-------------------------+-----------------------------------------------------------------------------+
+| `vol_T1_rb`             | thalamic nuclei atlas T1 volume rigid body transformed to ABCD atlas space  |
++-------------------------+-----------------------------------------------------------------------------+
+| `vol_T1_reg`            | thalamic nuclei atlas T1 volume nonlinearly transformed to ABCD atlas space |
++-------------------------+-----------------------------------------------------------------------------+
+| `vol_labels_T1_reg_rgb` | color coded T1 volume nonlinearly transformed to ABCD atlas space           |
++-------------------------+-----------------------------------------------------------------------------+
+| `vol_labels_af`         | segmentation volume affine transformed to ABCD atlas space                  |
++-------------------------+-----------------------------------------------------------------------------+
+| `vol_labels_reg`        | segmentation volume nonlinearly transformed to ABCD atlas space             |
++-------------------------+-----------------------------------------------------------------------------+
+| `vol_labels_reg_rgb`    | color coded segmentation volume nonlinearly transformed to ABCD atlas space |
++-------------------------+-----------------------------------------------------------------------------+
+| `vol_labels_res_T1`     | segmentation volume in original space, T1 resolution                        |
++-------------------------+-----------------------------------------------------------------------------+
+| `volresfun_reg`         | function handle to transform thalamic atlas to ABCD atlas space             |
++-------------------------+-----------------------------------------------------------------------------+
+
+# Surfaces Vertexwise Data
+
+**Location of data files**: `release/concat/imaging/vertexwise/surfs`
+
+**List of files**
+
++----------------------+-------------------------------------+
+| **File name**        | **Description of contents**         |
++----------------------+-------------------------------------+
+| `vol_info.mat`       | participant IDs and event names     |
+|                      |                                     |
+|                      |   used to link to tabulated data    |
++----------------------+-------------------------------------+
+| `pial-{hemi}.mat`\   | measure: cortical pial surface\     |
+| i.e., `pial-lh.mat`  |                 vertex coordinates\ |
+|                      | hemispheres: lh, rh                 |
+|        `pial-rh.mat` |                                     |
++----------------------+-------------------------------------+
+
+*Note: File names above with {hemi} represent a group of files for a given measure (i.e., white or pial surfaces) with both hemispheres (lh and rh) represented*
+
+**Contents of `vol_info`**
+
++-------------------+------------------------------------------------+
+| **Variable name** | **Description**                                |
++-------------------+------------------------------------------------+
+| `subjidvec`       | cell array of subject IDs                      |
+|                   |                                                |
+|                   |   with one entry per visit (participant-event) |
+|                   |                                                |
+|                   |       e.g., “XXXXXXXX”                         |
+|                   |                                                |
+|                   | compare with old style\*:                      |
+|                   |                                                |
+|                   |       “NDAR_INVXXXXXXXX”                       |
++-------------------+------------------------------------------------+
+| `eventvec`        | cell array of event names                      |
+|                   |                                                |
+|                   |   with one entry per visit (participant-event) |
+|                   |                                                |
+|                   |         e.g., 00A, 02A, 04A, 06A               |
+|                   |                                                |
+|                   |   compare with old style:                      |
+|                   |                                                |
+|                   |         baseline_year_1_arm_1                  |
+|                   |                                                |
+|                   |         2_year_follow_up_y_arm_1               |
+|                   |                                                |
+|                   |         4_year_follow_up_y_arm_1               |
+|                   |                                                |
+|                   |         6_year_follow_up_y_arm_1               |
++-------------------+------------------------------------------------+
+| `visitidvec`      | cell array of visit IDs                        |
+|                   |                                                |
+|                   |   with one entry per visit (participant-event) |
+|                   |                                                |
+|                   |   e.g., S042_INVXXXXXXXX_baseline              |
++-------------------+------------------------------------------------+
+| `vol_mask_lh`     | cortical mask vector for left hemisphere       |
+|                   |                                                |
+|                   |   e.g., excludes non-cortical midbrain region  |
++-------------------+------------------------------------------------+
+| `vol_mask_rh`     | cortical mask vector for right hemisphere      |
+|                   |                                                |
+|                   |   e.g., excludes non-cortical midbrain region  |
++-------------------+------------------------------------------------+
+
+*Note: examples shown for subject IDs and event names reflect new convention for Release 6.0, which removes the “NDAR_INV” from the subject ID and changes the event names to be “00A”, “02A”, “04A”, and “06A”.*
+
+**Contents of `{surface}-{hemi}.mat`**
+
++-------------------+--------------------------------------------------------------------+
+| **Variable name** | **Description**                                                    |
++-------------------+--------------------------------------------------------------------+
+| `measmat`         | cortical surface coordinates                                       |
+|                   |                                                                    |
+|                   |   matrix with size = \[ndirs,nverts,3\]                            |
+|                   |                                                                    |
+|                   |   with ndirs = number of directories (visits)                      |
+|                   |                                                                    |
+|                   |   with nverts = number of vertices = 10242                         |
+|                   |                                                                    |
+|                   |   and 3 coordinate axes (x, y, z)                                  |
++-------------------+--------------------------------------------------------------------+
+| `mask`            | binary mask                                                        |
+|                   |                                                                    |
+|                   |   (e.g., exclude non-cortical midbrain region)                     |
+|                   |                                                                    |
+|                   |   vector with size = \[nverts,1\]                                  |
+|                   |                                                                    |
+|                   |   nverts: number of vertices                                       |
++-------------------+--------------------------------------------------------------------+
+| `vctx`            | vertex numbers of fsaverage vertices in mask                       |
+|                   |                                                                    |
+|                   |   vector with size = \[nmask,1\]                                   |
+|                   |                                                                    |
+|                   |   nmask: number of vertices with mask = 1                          |
++-------------------+--------------------------------------------------------------------+
+| `dirlist`         | cell array of directory names with length ndirs                    |
+|                   |                                                                    |
+|                   |   with ndirs = number of directories (visits)                      |
+|                   |                                                                    |
+|                   |   e.g., FSURF\_ S042_INVXXXXXXXX_baseline_20181001.095833.791000_1 |
++-------------------+--------------------------------------------------------------------+
+
+*Note: Loading the file `{measure}\_sm{smoothing}-{hemi}.mat` file takes \~1 minute (depending on CPU speed) and requires \~10 GB*
+
+*Note: The number of vertices is 10242. They form a 5th order icosahedral surface, and correspond to the first 10242 vertices of the 7th order icosahedral surface used for the FreeSurfer fsaverage subject and spherical average surface atlas. Cortical surface based measures on this ico 5 surface can be visualized using the [cmig_tools showSurf package](https://github.com/cmig-research-group/cmig_tools/tree/main/showSurf).
+
+# sMRI Vertexwise Data
+
+**Location of data files**: `release/concat/imaging/vertexwise/smri`
+
+**List of files**
+
++-----------------------------------+---------------------------------------------+
+| **File name**                     | **Description of contents**                 |
++-----------------------------------+---------------------------------------------+
+| `vol_info.mat`                    | participant and session IDs                 |
+|                                   |                                             |
+|                                   |   used to link to tabulated data            |
++-----------------------------------+---------------------------------------------+
+| `thk_sm{smoothing}_{hemi}.mat`    | measure: cortical thickness\                |
+|                                   | smoothing: 0, 16, 256, 1000 iterations      |
+| e.g., `thk_sm0_lh.mat`            |                                             |
+|                                   |                    0, 5,   20,   40 mm FWHM |
+|         `thk_sm0_rh.mat`          |                                             |
+|                                   | hemispheres: lh, rh                         |
+|         `thk_sm16_lh.mat`         |                                             |
+|                                   |                                             |
+|         `thk_sm16_rh.mat`         |                                             |
+|                                   |                                             |
+|         `thk_sm256_lh.mat`        |                                             |
+|                                   |                                             |
+|         `thk_sm256_rh.mat`        |                                             |
+|                                   |                                             |
+|         `thk_sm1000_lh.mat`       |                                             |
+|                                   |                                             |
+|         `thk_sm1000_rh.mat`       |                                             |
++-----------------------------------+---------------------------------------------+
+| `area_sm{smoothing}_{hemi}.mat`\  | measure: cortical surface area              |
+| e.g., `area_sm0_lh.mat`           |                                             |
+|                                   | smoothing: 0, 16, 256, 1000 iterations      |
+|                                   |                                             |
+|                                   |                    0, 5,   20,   40 mm FWHM |
+|                                   |                                             |
+|                                   | hemispheres: lh, rh                         |
++-----------------------------------+---------------------------------------------+
+| `sulc_sm{smoothing}_{hemi}.mat`   | measure: cortical sulcal depth              |
+|                                   |                                             |
+| e.g., `sulc_sm0_lh.mat`           | smoothing: 0, 16, 256, 1000 iterations      |
+|                                   |                                             |
+|                                   |                    0, 5,   20,   40 mm FWHM |
+|                                   |                                             |
+|                                   | hemispheres: lh, rh                         |
++-----------------------------------+---------------------------------------------+
+| `t1_gwc_sm{smoothing}_{hemi}.mat` | measure: cortical T1w contrast              |
+|                                   |                                             |
+| e.g., `t1_gwc_sm0_lh.mat`         | smoothing: 0, 16, 256, 1000 iterations      |
+|                                   |                                             |
+|                                   |                    0, 5,   20,   40 mm FWHM |
+|                                   |                                             |
+|                                   | hemispheres: lh, rh                         |
++-----------------------------------+---------------------------------------------+
+| `t2_gwc_sm{smoothing}_{hemi}.mat` | measure: cortical T2w contrast              |
+|                                   |                                             |
+| e.g., `t2_gwc_sm0_lh.mat`         | smoothing: 0, 16, 256, 1000 iterations      |
+|                                   |                                             |
+|                                   |                    0, 5,   20,   40 mm FWHM |
+|                                   |                                             |
+|                                   | hemispheres: lh, rh                         |
++-----------------------------------+---------------------------------------------+
+
+Note: File names above with `{smoothing}` and `{hemi}` represent a group of files for a given measure (i.e., thk = thickness, area  = surface area, sulc = sulcal depth, t1_gwc = T1w gray-white contrast, t2_gwc = T2w  gray-white contrast) with varying smoothing levels (0, 16, 256, 1000 iterations) and two hemispheres (lh and rh) represented.
+
+**Contents of `{measure}\_sm{smoothing}\_{hemi}.mat`**
+
++-------------------+-----------------------------------------------+
+| **Variable name** | **Description**                               |
++-------------------+-----------------------------------------------+
+| `measmat`         | cortical surface measure                      |
+|                   |                                               |
+|                   |   matrix with size = \[ndirs,nverts\]         |
+|                   |                                               |
+|                   |   with ndirs = number of directories (visits) |
+|                   |                                               |
+|                   |   with nverts = number of vertices = 10242    |
++-------------------+-----------------------------------------------+
+
+# dMRI-DTI Vertexwise Data
+
+**Location of data files**: `release/concat/imaging/vertexwise/dti`
+
+**List of files**
+
++---------------------------------------+-----------------------------------------------+
+| **File name**                         | **Description of contents**                   |
++---------------------------------------+-----------------------------------------------+
+| `vol_info.mat`                        | participant and session IDs                   |
+|                                       |                                               |
+|                                       |   used to link to tabulated data              |
++---------------------------------------+-----------------------------------------------+
+| `fa_{layer}_sm{smoothing}_{hemi}.mat` | measure: DTI fractional anisotropy            |
+|                                       |                                               |
+| e.g., `fa_gm_sm0_lh.mat`              | layers: gm, wm\                               |
+|                                       | smoothing: 0, 16, 256, 1000 iterations        |
+|         `fa_gm_sm0_rh.mat`            |                                               |
+|                                       |                    0, 5,   20,   40 mm FWHM   |
+|         `fa_wm_sm0_lh.mat`            |                                               |
+|                                       | hemispheres: lh, rh                           |
+|         `fa_wm_sm0_rh.mat`            |                                               |
+|                                       |                                               |
+|         `fa_gm_sm1000_lh.mat`         |                                               |
+|                                       |                                               |
+|         `fa_gm_sm1000_rh.mat`         |                                               |
+|                                       |                                               |
+|         `fa_wm_sm1000_lh.mat`         |                                               |
+|                                       |                                               |
+|         `fa_wm_sm1000_rh.mat`         |                                               |
++---------------------------------------+-----------------------------------------------+
+| `md_{layer}_sm{smoothing}_{hemi}.mat` | measure: DTI mean diffusivity                 |
+|                                       |                                               |
+| e.g., `md_gm_sm0_lh.mat`              | layers: gm, wm\                               |
+|                                       | smoothing: 0, 16, 256, 1000 iterations        |
+|         `md_gm_sm0_rh.mat`            |                                               |
+|                                       |                    0, 5,   20,   40 mm FWHM   |
+|         `md_wm_sm0_lh.mat`            |                                               |
+|                                       | hemispheres: lh, rh                           |
+|         `md_wm_sm0_rh.mat`            |                                               |
++---------------------------------------+-----------------------------------------------+
+| `ld_{layer}_sm{smoothing}_{hemi}.mat` | measure: DTI longitudinal (axial) diffusivity |
+|                                       |                                               |
+| e.g., `ld_gm_sm0_lh.mat`              | layers: gm, wm\                               |
+|                                       | smoothing: 0, 16, 256, 1000 iterations        |
+|         `ld_gm_sm0_rh.mat`            |                                               |
+|                                       |                    0, 5,   20,   40 mm FWHM   |
+|         `ld_wm_sm0_lh.mat`            |                                               |
+|                                       | hemispheres: lh, rh                           |
+|         `ld_wm_sm0_rh.mat`            |                                               |
++---------------------------------------+-----------------------------------------------+
+| `td_{layer}_sm{smoothing}_{hemi}.mat` | measure: DTI transverse (radial) diffusivity  |
+|                                       |                                               |
+| e.g., `td_gm_sm0_lh.mat`              | layers: gm, wm\                               |
+|                                       | smoothing: 0, 16, 256, 1000 iterations        |
+|         `td_gm_sm0_rh.mat`            |                                               |
+|                                       |                    0, 5,   20,   40 mm FWHM   |
+|                                       |                                               |
+|                                       | hemispheres: lh, rh                           |
++---------------------------------------+-----------------------------------------------+
+
+Note: File names above with `{layer}`, `{smoothing}`, and `{hemi}` represent a group of files for a given measure (i.e., DTI measures: FA, MD, LD, TD) with varying layers (gm = gray matter, wm = white matter), smoothing levels (0, 16, 256, 1000 iterations), and hemispheres (lh = left hemisphere and rh = right hemisphere) represented
+
+**Contents of `{measure}\_{layer}\_sm{smoothing}\_{hemi}.mat`**
+
++-------------------+-----------------------------------------------+
+| **Variable name** | **Description**                               |
++-------------------+-----------------------------------------------+
+| `measmat`         | cortical surface measure                      |
+|                   |                                               |
+|                   |   matrix with size = \[ndirs,nverts\]         |
+|                   |                                               |
+|                   |   with ndirs = number of directories (visits) |
+|                   |                                               |
+|                   |   with nverts = number of vertices = 10242    |
++-------------------+-----------------------------------------------+
+
+# dMRI-RSI Vertexwise Data
+
+**Location of data files**: `release/concat/imaging/vertexwise/rsi`
+
+**List of files**
+
++----------------------------------------+------------------------------------------------+
+| **File name**                          | **Description of contents**                    |
++----------------------------------------+------------------------------------------------+
+| `vol_info.mat`                         | participant and session IDs                    |
+|                                        |                                                |
+|                                        |   used to link to tabulated data               |
++----------------------------------------+------------------------------------------------+
+| `rni_{layer}_sm{smoothing}_{hemi}.mat` | measure: RSI restricted normalized isotropic   |
+|                                        |                                                |
+| e.g., `rni_gm_sm0_lh.mat`              | layers: gm, wm\                                |
+|                                        | smoothing: 0, 16, 256, 1000 iterations         |
+|         `rni_gm_sm0_rh.mat`            |                                                |
+|                                        |                    0, 5,   20,   40 mm FWHM    |
+|                                        |                                                |
+|                                        | hemispheres: lh, rh                            |
++----------------------------------------+------------------------------------------------+
+| `rnd_{layer}_sm{smoothing}_{hemi}.mat` | measure: RSI restricted normalized directional |
+|                                        |                                                |
+| e.g., `rnd_gm_sm0_lh.mat`              | layers: gm, wm\                                |
+|                                        | smoothing: 0, 16, 256, 1000 iterations         |
+|         `rnd_gm_sm0_rh.mat`            |                                                |
+|                                        |                    0, 5,   20,   40 mm FWHM    |
+|                                        |                                                |
+|                                        | hemispheres: lh, rh                            |
++----------------------------------------+------------------------------------------------+
+| `rnt_{layer}_sm{smoothing}_{hemi}.mat` | measure: RSI restricted normalized total       |
+|                                        |                                                |
+| e.g., `rnt_gm_sm0_lh.mat`              | layers: gm, wm\                                |
+|                                        | smoothing: 0, 16, 256, 1000 iterations         |
+|         `rnt_gm_sm0_rh.mat`            |                                                |
+|                                        |                    0, 5,   20,   40 mm FWHM    |
+|                                        |                                                |
+|                                        | hemispheres: lh, rh                            |
++----------------------------------------+------------------------------------------------+
+| `hnt_{layer}_sm{smoothing}_{hemi}.mat` | measure: RSI hindered normalized total         |
+|                                        |                                                |
+| e.g., `hnt_gm_sm0_lh.mat`              | layers: gm, wm\                                |
+|                                        | smoothing: 0, 16, 256, 1000 iterations         |
+|         `hnt_gm_sm0_rh.mat`            |                                                |
+|                                        |                    0, 5,   20,   40 mm FWHM    |
+|                                        |                                                |
+|                                        | hemispheres: lh, rh                            |
++----------------------------------------+------------------------------------------------+
+| `fni_{layer}_sm{smoothing}_{hemi}.mat` | measure: RSI free normalized isotropic         |
+|                                        |                                                |
+| e.g., `fni_gm_sm0_lh.mat`              | layers: gm, wm\                                |
+|                                        | smoothing: 0, 16, 256, 1000 iterations         |
+|         `fni_gm_sm0_rh.mat`            |                                                |
+|                                        |                    0, 5,   20,   40 mm FWHM    |
+|                                        |                                                |
+|                                        | hemispheres: lh, rh                            |
++----------------------------------------+------------------------------------------------+
+
+Note: File names above with `{layer}`, `{smoothing}`, and `{hemi}` represent a group of files for a given measure (i.e., RSI measures: RNI, RND, RNT, HNT, FNI) with varying layers (gm = gray matter, wm = white matter), smoothing levels (0, 16, 256, 1000 iterations), and hemispheres (lh = left hemisphere and rh = right hemisphere) represented.
+
+**Contents of `{measure}\_{layer}\_sm{smoothing}\_{hemi}.mat`**
+
++-------------------+-----------------------------------------------+
+| **Variable name** | **Description**                               |
++-------------------+-----------------------------------------------+
+| `measmat`         | cortical surface measure                      |
+|                   |                                               |
+|                   |   matrix with size = \[ndirs,nverts\]         |
+|                   |                                               |
+|                   |   with ndirs = number of directories (visits) |
+|                   |                                               |
+|                   |   with nverts = number of vertices = 10242    |
++-------------------+-----------------------------------------------+
+
+# Task-based fMRI Vertexwise Data
+
+**Location of data files**: `release/concat/imaging/vertexwise/tfmri`
+
+**List of files**
+
++---------------------------------------------+---------------------------------------+
+| **File name**                               | **Description of contents**           |
++---------------------------------------------+---------------------------------------+
+| `vol_info.mat`                              | participant and session IDs           |
+|                                             |                                       |
+|                                             |   used to link to tabulated data      |
++---------------------------------------------+---------------------------------------+
+| `mid_{condition}_{stat}_{run}_{hemi}.mat`   | task: mid (Monetary Incentive Delay)\ |
+|                                             | conditions: see below                 |
+| e.g., `mid_sra_beta_r01_lh.mat`             |                                       |
+|                                             | stats: beta, sem                      |
+|         `mid_sra_sem_r01_lh.mat`            |                                       |
+|                                             | runs: r01, r02                        |
+|         `mid_sra_beta_r02_lh.mat`           |                                       |
+|                                             | hemispheres: lh, rh                   |
+|         `mid_sra_sem_r02_lh.mat`            |                                       |
++---------------------------------------------+---------------------------------------+
+| `nback_{condition}_{stat}_{run}_{hemi}.mat` | task: nback (Emotional n-Back)        |
+|                                             |                                       |
+| e.g., `nback_2b_beta_r01_lh.mat`            | conditions: see below                 |
+|                                             |                                       |
+|         `nback_2b_sem_r01_lh.mat`           | stats: beta, sem                      |
+|                                             |                                       |
+|                                             | runs: r01, r02                        |
+|                                             |                                       |
+|                                             | hemispheres: lh, rh                   |
++---------------------------------------------+---------------------------------------+
+| `sst_{condition}_{stat}_{run}_{hemi}.mat`   | task: sst (Stop Signal Task)          |
+|                                             |                                       |
+| e.g., `sst_cg_beta_r01_lh.mat`              | conditions: see below                 |
+|                                             |                                       |
+|         `sst_cg_sem_r01_lh.mat`             | stats: beta, sem                      |
+|                                             |                                       |
+|                                             | runs: r01, r02                        |
+|                                             |                                       |
+|                                             | hemispheres: lh, rh                   |
++---------------------------------------------+---------------------------------------+
+
+Notes:
+
+- File name patterns above with `{condition}`, `{stat}`, `{run}`, and `{hemi}` represent a group of files for a given task (i.e.,”mid” = Monetary Incentive Delay, “nback” = Emotional N-Back, and “sst” = Stop Signal Task) with varying conditions (see tables below), two GLM statistics (beta = time series model coefficient, sem = standard error of the mean), two separate runs (“r01” = run 1, and “r02” = run 2), and two hemispheres (lh = left and rh = right) represented.
+- Outlier beta values (i.e., outside the mean ± 3 x standard deviation) are present for some particular vertices, runs, conditions, and/or paticipant-events. See “Task fMRI Outliers” in [Task-Based fMRI Data Documentation](type_tfmri.qmd) for more information and guidance.\
+
+**Conditions and contrasts**
+
+Concatenated data files containing beta estimates and standard errors derived from AFNI’s 3dDeconvolve were created for each of the conditions and contrasts defined in supplementary tables for each task. Contrasts were implemented as general linear tests with AFNI’s 3dDeconvolve, defined as a subtraction between two groups of conditions that can each include zero, one, or more conditions, depending on the contrast definition. See [Supplementary Tables](data_suppl.qmd) for more info.
+
+**Contents of `{task}\_{condition}\_{stat}\_{run}\_hemi}.mat`**
+
++-------------------+-----------------------------------------------+
+| **Variable name** | **Description**                               |
++-------------------+-----------------------------------------------+
+| `measmat`         | beta or sem on cortical surface               |
+|                   |                                               |
+|                   |   matrix with size = \[ndirs,nverts\]         |
+|                   |                                               |
+|                   |   with ndirs = number of directories (visits) |
+|                   |                                               |
+|                   |   with nverts = number of vertices = 10242    |
++-------------------+-----------------------------------------------+
+
+# Conditions and contrasts
+
+Concatenated data files containing beta estimates and standard errors derived from AFNI’s 3dDeconvolve were created for each of the conditions and contrasts defined in supplementary tables for each task. Contrasts were implemented as general linear tests with AFNI’s 3dDeconvolve, defined as a subtraction between two groups of conditions that can each include zero, one, or more conditions, depending on the contrast definition.
+
+**Contents of `{task}\_{condition}\_{stat}\_{run}\_hemi}.mat`**
+
++-------------------+-----------------------------------------------+
+| **Variable name** | **Description**                               |
++-------------------+-----------------------------------------------+
+| `measmat`         | beta or sem on cortical surface               |
+|                   |                                               |
+|                   |   matrix with size = \[ndirs,nverts\]         |
+|                   |                                               |
+|                   |   with ndirs = number of directories (visits) |
+|                   |                                               |
+|                   |   with nverts = number of vertices = 10242    |
++-------------------+-----------------------------------------------+
+
+# Resting-state fMRI ROI Correlation and Time Series Data
+
+**Location of data files**: `release/concat/imaging/corrmat/rsfmri`
+
+**List of files**
+
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| **File name**          | **Description of contents**                                                                                                      |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `vol_info.mat`         | participant and session IDs                                                                                                      |
+|                        |                                                                                                                                  |
+|                        |   used to link to tabulated data                                                                                                 |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `corr.mat`             | ROI correlation matrices for all ROIs (includes Desikan, Destrieux, and Gordon parcels plus subcortical volumetric ROIs)         |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `dsk_aseg_corr.mat`    | ROI correlation matrices for Desikan parcels plus subcortical volumetric ROIs                                                    |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `dst_aseg_corr.mat`    | ROI correlation matrices for Destrieux parcels plus subcortical volumetric ROIs                                                  |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `gp_aseg_corr.mat`     | ROI correlation matrices for Gordon parcels plus subcortical volumetric ROIs                                                     |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `gpnet_corr.mat`       | Within and between network correlation matrices derived from ROI correlations for Gordon parcels                                 |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `gpnet_aseg_corr.mat`  | Network to subcortical ROI correlation matrices derived from ROI correlations for Gordon parcels and subcortical volumetric ROIs |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `tseries.mat`          | ROI time series data (includes Desikan, Destrieux, and Gordon parcels plus subcortical volumetric ROIs)                          |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `dsk_aseg_tseries.mat` | ROI time series data for Desikan parcels plus subcortical volumetric ROIs                                                        |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `dst_aseg_tseries.mat` | ROI time series data for Destrieux parcels plus subcortical volumetric ROIs                                                      |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `gp_aseg_tseries.mat`  | ROI time series data for Gordon parcels plus subcortical volumetric ROIs                                                         |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+Notes:
+
+- File names above with `dsk`, `dst`, or `gp`, and `aseg` indicate ROI data for one specific cortical surface atlas (i.e., dsk = Desikan, dst = Destrieux, and gp = Gordon) plus a selection of subcortical volumetric ROIs (aseg = FreeSurfer automated segmentation).
+- File names with `gpnet` indicate correlations within or between networks defined by the Gordon parcel “communities”.
+- File names with `trim5` or `trim10` indicate correlations derived from time series data “trimmed” to either 5 or 10 minutes of low-motion (FD \< 0.2 mm) time points. Time points were randomly selected from available time points. Excess time points were discarded. Correlations for visits with fewer available time points were set to NaN (see [Responsible Use Warning: Head motion](type_rsfmri.qmd#use-rsfmri) in Resting-State fMRI Data Documentation).\
+    
+**Contents of `corr.mat` and `{atlas}\_aseg_corr.mat`**
+
++-------------------+--------------------------------------------------------------------------------------------+
+| **Variable name** | **Description**                                                                            |
++-------------------+--------------------------------------------------------------------------------------------+
+| `corrmat`         | ROI-ROI correlations                                                                       |
+|                   |                                                                                            |
+|                   |   matrix with size = \[ndirs,nnodes\]                                                      |
+|                   |                                                                                            |
+|                   | notes:                                                                                     |
+|                   |                                                                                            |
+|                   |   correlation values range from -1 to 1                                                    |
+|                   |                                                                                            |
+|                   |   no R to Z transform applied                                                              |
+|                   |                                                                                            |
+|                   |   for reduced memoy usage, corrmat contains                                                |
+|                   |                                                                                            |
+|                   |     only the “upper triangle” of the matrrix                                               |
+|                   |                                                                                            |
+|                   |     not the full matrix                                                                    |
++-------------------+--------------------------------------------------------------------------------------------+
+| `varmat`          | ROI temporal variance                                                                      |
+|                   |                                                                                            |
+|                   |   matrix with size = \[ndirs,nroi\]                                                        |
++-------------------+--------------------------------------------------------------------------------------------+
+| `meanfdvec`       | mean framewise displacement                                                                |
+|                   |                                                                                            |
+|                   |   vector with size = \[ndirs,1\]                                                           |
++-------------------+--------------------------------------------------------------------------------------------+
+| `ntpointvec`      | number of time points                                                                      |
+|                   |                                                                                            |
+|                   |   after censoring frames with excessive motion                                             |
+|                   |                                                                                            |
+|                   |   vector with size = \[ndirs,1\]                                                           |
++-------------------+--------------------------------------------------------------------------------------------+
+| `ndirs`           | number of input directories                                                                |
+|                   |                                                                                            |
+|                   | matches lengths of participant_id and session_id in vol_info                               |
++-------------------+--------------------------------------------------------------------------------------------+
+| `nroi`            | number of ROIs                                                                             |
++-------------------+--------------------------------------------------------------------------------------------+
+| `roinames`        | cell array of ROI names with length nroi                                                   |
+|                   |                                                                                            |
+|                   | e.g., ctx-lh-bankssts                                                                      |
+|                   |                                                                                            |
+|                   |         ctx-lh-caudalanteriorcingulate                                                     |
+|                   |                                                                                            |
+|                   |         ctx-lh-caudalmiddlefrontal                                                         |
+|                   |                                                                                            |
+|                   |         …                                                                                  |
+|                   |                                                                                            |
+|                   |         ctx_lh_G_and_S_frontomargin'                                                       |
+|                   |                                                                                            |
+|                   |         ctx_lh_G_and_S_occipital_inf'                                                      |
+|                   |                                                                                            |
+|                   |         ctx_lh_G_and_S_paracentral'                                                        |
+|                   |                                                                                            |
+|                   |        …                                                                                   |
+|                   |                                                                                            |
+|                   |         ctx-lh-gp1                                                                         |
+|                   |                                                                                            |
+|                   |         ctx-lh-gp2                                                                         |
+|                   |                                                                                            |
+|                   |         ctx-lh-gp3                                                                         |
+|                   |                                                                                            |
+|                   |        …                                                                                   |
+|                   |                                                                                            |
+|                   |         Left-Cerebral-White-Matter                                                         |
+|                   |                                                                                            |
+|                   |         Left-Cerebral-Cortex                                                               |
+|                   |                                                                                            |
+|                   |         Left-Lateral-Ventricle                                                             |
+|                   |                                                                                            |
+|                   |        …                                                                                   |
++-------------------+--------------------------------------------------------------------------------------------+
+| `nnodes`          | number of nodes (ROI-ROI pairs)                                                            |
+|                   |                                                                                            |
+|                   |   equal to (nroi x (nroi + 1))/2                                                           |
+|                   |                                                                                            |
+|                   |   includes upper triangle of ROI-ROI matrix                                                |
++-------------------+--------------------------------------------------------------------------------------------+
+| `roi1vec`         | specifies ROI number (index to roinames) for first ROI of each node of correlation matrix  |
++-------------------+--------------------------------------------------------------------------------------------+
+| `roi2vec`         | specifies ROI number (index to roinames) for second ROI of each node of correlation matrix |
++-------------------+--------------------------------------------------------------------------------------------+
+
+**Example: extract correlation matrix for one visit**
+```r
+x = find(strcmp(visitidvec,’ S042_INVXXXXXXXX_baseline’))
+
+rvec = reshape(corrmat(x,:),\[nroi,nroi\])
+
+idx_triu = find(triu(ones(nroi,nroi)));
+
+idx_tril = find(tril(ones(nroi,nroi)));
+
+R_upper = nan(nroi,nroi);
+
+R_upper(idx_triu) = rvec;
+
+R_lower = R_upper';
+
+R = R_upper;
+
+R(idx_tril) = R_lower(idx_tril);
+```
+
+**Contents of `gpnet_corr.mat`**
+
++-------------------+--------------------------------------------------------------------------------------------------------+
+| **Variable name** | **Description**                                                                                        |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `corrmat`         | ROI-ROI correlations                                                                                   |
+|                   |                                                                                                        |
+|                   |   matrix with size = \[ndirs,nnodes\]                                                                  |
+|                   |                                                                                                        |
+|                   | notes:                                                                                                 |
+|                   |                                                                                                        |
+|                   |   correlation values range from -1 to 1                                                                |
+|                   |                                                                                                        |
+|                   |   no R to Z transform applied                                                                          |
+|                   |                                                                                                        |
+|                   |   for reduced memoy usage, corrmat contains                                                            |
+|                   |                                                                                                        |
+|                   |     only the “upper triangle” of the matrrix                                                           |
+|                   |                                                                                                        |
+|                   |     not the full matrix                                                                                |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `meanfdvec`       | mean framewise displacement                                                                            |
+|                   |                                                                                                        |
+|                   |   vector with size = \[ndirs,1\]                                                                       |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `ntpointvec`      | number of time points                                                                                  |
+|                   |                                                                                                        |
+|                   |   after censoring frames with excessive motion                                                         |
+|                   |                                                                                                        |
+|                   |   vector with size = \[ndirs,1\]                                                                       |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `ndirs`           | number of input directories                                                                            |
+|                   |                                                                                                        |
+|                   | matches lengths of participant_id and session_id in vol_info                                           |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `nnet`            | number of networks                                                                                     |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `network_names`   | cell array of network names with length nnet                                                           |
+|                   |                                                                                                        |
+|                   | i.e., Auditory                                                                                         |
+|                   |                                                                                                        |
+|                   |        CinguloOperc                                                                                    |
+|                   |                                                                                                        |
+|                   |        CinguloParietal                                                                                 |
+|                   |                                                                                                        |
+|                   |        Default                                                                                         |
+|                   |                                                                                                        |
+|                   |        DorsalAttn                                                                                      |
+|                   |                                                                                                        |
+|                   |        FrontoParietal                                                                                  |
+|                   |                                                                                                        |
+|                   |        None                                                                                            |
+|                   |                                                                                                        |
+|                   |        RetrosplenialTemporal                                                                           |
+|                   |                                                                                                        |
+|                   |        SMhand                                                                                          |
+|                   |                                                                                                        |
+|                   |        SMmouth                                                                                         |
+|                   |                                                                                                        |
+|                   |        Salience                                                                                        |
+|                   |                                                                                                        |
+|                   |        VentralAttn                                                                                     |
+|                   |                                                                                                        |
+|                   |        Visual                                                                                          |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `nnodes`          | number of nodes (network-network pairs)                                                                |
+|                   |                                                                                                        |
+|                   |   equal to (nnet x (nnet + 1))/2                                                                       |
+|                   |                                                                                                        |
+|                   |   includes upper triangle of ROI-ROI matrix                                                            |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `net1vec`         | specifies network number (index to network_names) for first network of each node of correlation matrix |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `net2vec`         | specifies network number (index to roinames) for second network of each node of correlation matrix     |
++-------------------+--------------------------------------------------------------------------------------------------------+
+
+**Contents of `gpnet_aseg_corr.mat`**
+
++-------------------+--------------------------------------------------------------------------------------------------------+
+| **Variable name** | **Description**                                                                                        |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `corrmat`         | network-ROI correlations                                                                               |
+|                   |                                                                                                        |
+|                   |   matrix with size = \[ndirs,nnodes\]                                                                  |
+|                   |                                                                                                        |
+|                   | notes:                                                                                                 |
+|                   |                                                                                                        |
+|                   |   correlation values range from -1 to 1                                                                |
+|                   |                                                                                                        |
+|                   |   no R to Z transform applied                                                                          |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `meanfdvec`       | mean framewise displacement                                                                            |
+|                   |                                                                                                        |
+|                   |   vector with size = \[ndirs,1\]                                                                       |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `ntpointvec`      | number of time points                                                                                  |
+|                   |                                                                                                        |
+|                   |   after censoring frames with excessive motion                                                         |
+|                   |                                                                                                        |
+|                   |   vector with size = \[ndirs,1\]                                                                       |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `ndirs`           | number of input directories                                                                            |
+|                   |                                                                                                        |
+|                   | matches lengths of participant_id and session_id in vol_info                                           |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `nnet`            | number of networks                                                                                     |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `network_names`   | cell array of network names with length nnet                                                           |
+|                   |                                                                                                        |
+|                   | i.e., Auditory                                                                                         |
+|                   |                                                                                                        |
+|                   |        CinguloOperc                                                                                    |
+|                   |                                                                                                        |
+|                   |        CinguloParietal                                                                                 |
+|                   |                                                                                                        |
+|                   |        Default                                                                                         |
+|                   |                                                                                                        |
+|                   |        DorsalAttn                                                                                      |
+|                   |                                                                                                        |
+|                   |        FrontoParietal                                                                                  |
+|                   |                                                                                                        |
+|                   |        None                                                                                            |
+|                   |                                                                                                        |
+|                   |        RetrosplenialTemporal                                                                           |
+|                   |                                                                                                        |
+|                   |        SMhand                                                                                          |
+|                   |                                                                                                        |
+|                   |        SMmouth                                                                                         |
+|                   |                                                                                                        |
+|                   |        Salience                                                                                        |
+|                   |                                                                                                        |
+|                   |        VentralAttn                                                                                     |
+|                   |                                                                                                        |
+|                   |        Visual                                                                                          |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `nroi`            | number of subcortical ROIs                                                                             |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `roinames`        | cell array of ROI names with length nroi                                                               |
+|                   |                                                                                                        |
+|                   | i.e., Left-Cerebellum-Cortex                                                                           |
+|                   |                                                                                                        |
+|                   |        Left-Thalamus-Proper                                                                            |
+|                   |                                                                                                        |
+|                   |        Left-Caudate                                                                                    |
+|                   |                                                                                                        |
+|                   |        Left-Putamen                                                                                    |
+|                   |                                                                                                        |
+|                   |        Left-Pallidum                                                                                   |
+|                   |                                                                                                        |
+|                   |        Brain-Stem                                                                                      |
+|                   |                                                                                                        |
+|                   |        Left-Hippocampus                                                                                |
+|                   |                                                                                                        |
+|                   |        Left-Amygdala                                                                                   |
+|                   |                                                                                                        |
+|                   |        Left-Accumbens-area                                                                             |
+|                   |                                                                                                        |
+|                   |        Left-VentralDC                                                                                  |
+|                   |                                                                                                        |
+|                   |        Right-Cerebellum-Cortex                                                                         |
+|                   |                                                                                                        |
+|                   |        Right-Thalamus-Proper                                                                           |
+|                   |                                                                                                        |
+|                   |        Right-Caudate                                                                                   |
+|                   |                                                                                                        |
+|                   |        Right-Putamen                                                                                   |
+|                   |                                                                                                        |
+|                   |        Right-Pallidum                                                                                  |
+|                   |                                                                                                        |
+|                   |        Right-Hippocampus                                                                               |
+|                   |                                                                                                        |
+|                   |        Right-Amygdala                                                                                  |
+|                   |                                                                                                        |
+|                   |        Right-Accumbens-area                                                                            |
+|                   |                                                                                                        |
+|                   |        Right-VentralDC                                                                                 |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `nnodes`          | number of nodes (network-ROI pairs)                                                                    |
+|                   |                                                                                                        |
+|                   |   equal to nnet x nroi                                                                                 |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `net1vec`         | specifies network number (index to network_names) for first network of each node of correlation matrix |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `roi2vec`         | specifies ROI number (index to roinames) for second ROI of each node of correlation matrix             |
++-------------------+--------------------------------------------------------------------------------------------------------+
+
+**Contents of `tseries.mat` and `{atlas}\_aseg_tseries.mat`**
+
++-------------------+--------------------------------------------------------------+
+| **Variable name** | **Description**                                              |
++-------------------+--------------------------------------------------------------+
+| `datamat_tsdata`  | ROI time series data                                         |
+|                   |                                                              |
+|                   |   with size = \[ndirs,nruns,ntpoints,nroi\]                  |
++-------------------+--------------------------------------------------------------+
+| `datamat_motion`  | motion time series data                                      |
+|                   |                                                              |
+|                   |   with size = \[ndirs,nruns,ntpoints,6\]                     |
+|                   |                                                              |
+|                   | 6 motion parameters: dx, dy, dz, rx, ry, rz                  |
+|                   |                                                              |
+|                   | notch-filtered to remove respiratory signals                 |
++-------------------+--------------------------------------------------------------+
+| `censvec`         | censor vector                                                |
+|                   |                                                              |
+|                   |   with size = \[ndirs,nruns,ntpoints\]                       |
+|                   |                                                              |
+|                   | value of 1 indicates time point was censored                 |
+|                   |                                                              |
+|                   |   due to excessive motion                                    |
++-------------------+--------------------------------------------------------------+
+| `ndirs`           | number of input directories                                  |
+|                   |                                                              |
+|                   | matches lengths of participant_id and session_id in vol_info |
++-------------------+--------------------------------------------------------------+
+| `nroi`            | number of ROIs                                               |
++-------------------+--------------------------------------------------------------+
+| `roinames`        | cell array of ROI names with length nroi                     |
+|                   |                                                              |
+|                   | e.g., ctx-lh-bankssts                                        |
+|                   |                                                              |
+|                   |         ctx-lh-caudalanteriorcingulate                       |
+|                   |                                                              |
+|                   |         ctx-lh-caudalmiddlefrontal                           |
+|                   |                                                              |
+|                   |         …                                                    |
+|                   |                                                              |
+|                   |         ctx_lh_G_and_S_frontomargin'                         |
+|                   |                                                              |
+|                   |         ctx_lh_G_and_S_occipital_inf'                        |
+|                   |                                                              |
+|                   |         ctx_lh_G_and_S_paracentral'                          |
+|                   |                                                              |
+|                   |        …                                                     |
+|                   |                                                              |
+|                   |         ctx-lh-gp1                                           |
+|                   |                                                              |
+|                   |         ctx-lh-gp2                                           |
+|                   |                                                              |
+|                   |         ctx-lh-gp3                                           |
+|                   |                                                              |
+|                   |        …                                                     |
+|                   |                                                              |
+|                   |         Left-Cerebral-White-Matter                           |
+|                   |                                                              |
+|                   |         Left-Cerebral-Cortex                                 |
+|                   |                                                              |
+|                   |         Left-Lateral-Ventricle                               |
+|                   |                                                              |
+|                   |        …                                                     |
++-------------------+--------------------------------------------------------------+
+| `nruns`           | number of imaging runs (scans)                               |
++-------------------+--------------------------------------------------------------+
+| `ntpoints`        | number of time points per run                                |
++-------------------+--------------------------------------------------------------+
+
+**Example: extract time series data for one run of one visit**
+```r
+x = find(strcmp(visitidvec,’ S042_INVXXXXXXXX_baseline’))
+
+r = 2
+
+tmp_censvec = censvec(x,r,:);
+
+tmp_tsdata =  datamat_tsdata(x,r,:,:);
+```
+
+# Task-based fMRI ROI Correlation and Time Series Data
+
+**Location of data files**: `release/concat/imaging/corrmat/tfmri`
+
+**List of files and file name patterns**
+
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| **File name**                         | **Description of contents**                                                                                                      |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `vol_info.mat`                        | participant and session IDs                                                                                                      |
+|                                       |                                                                                                                                  |
+|                                       |   used to link to tabulated data                                                                                                 |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `{task}_corr_{type}.mat`\             | ROI correlation matrices for all ROIs (includes Desikan, Destrieux, and Gordon parcels plus subcortical volumetric ROIs)\        |
+| e.g., `mid_corr_data.mat`             | \                                                                                                                                |
+|                                       |                                                                                                                                  |
+|         `nback_corr_data.mat`         | task: mid, nback, sst                                                                                                            |
+|                                       |                                                                                                                                  |
+|         `sst_corr_data.mat`           | types: data, task, residual                                                                                                      |
+|                                       |                                                                                                                                  |
+|         `mid_corr_task.mat`           |                                                                                                                                  |
+|                                       |                                                                                                                                  |
+|         `mid_corr_residual.mat`       |                                                                                                                                  |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `{task}_{atlas}_aseg_corr_{type}.mat` | ROI correlation matrices for {atlas} parcels plus subcortical volumetric ROIs                                                    |
+|                                       |                                                                                                                                  |
+| e.g., `mid_dsk_aseg_corr_data.mat`    | \                                                                                                                                |
+|                                       |                                                                                                                                  |
+|         `mid_dst_aseg_corr_data.mat`  | atlases: dsk, dst, gp                                                                                                            |
+|                                       |                                                                                                                                  |
+|         `mid_gp_aseg_corr_data.mat`   | task: mid, nback, sst                                                                                                            |
+|                                       |                                                                                                                                  |
+|                                       | types: data, task, residual                                                                                                      |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `{task}_gpnet_corr_{type}.mat`        | Within and between network correlation matrices derived from ROI correlations for Gordon parcels                                 |
+|                                       |                                                                                                                                  |
+|                                       | \                                                                                                                                |
+|                                       |                                                                                                                                  |
+|                                       | atlas: gpnet                                                                                                                     |
+|                                       |                                                                                                                                  |
+|                                       | task: mid, nback, sst                                                                                                            |
+|                                       |                                                                                                                                  |
+|                                       | types: data, task, residual                                                                                                      |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `{task}_gpnet_aseg_corr_{type}.mat`   | Network to subcortical ROI correlation matrices derived from ROI correlations for Gordon parcels and subcortical volumetric ROIs |
+|                                       |                                                                                                                                  |
+|                                       | \                                                                                                                                |
+|                                       |                                                                                                                                  |
+|                                       | atlas: gpnet                                                                                                                     |
+|                                       |                                                                                                                                  |
+|                                       | task: mid, nback, sst                                                                                                            |
+|                                       |                                                                                                                                  |
+|                                       | types: data, task, residual                                                                                                      |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `{task}_tseries.mat`                  | ROI time series data (includes Desikan, Destrieux, and Gordon parcels plus subcortical volumetric ROIs)                          |
+|                                       |                                                                                                                                  |
+| e.g., `mid_tseries.mat`               | \                                                                                                                                |
+|                                       |                                                                                                                                  |
+|                                       | task: mid, nback, sst                                                                                                            |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| `{task}_{atlas}_aseg_tseries.mat`     | ROI time series data for {atlas} parcels plus subcortical volumetric ROIs                                                        |
+|                                       |                                                                                                                                  |
+| e.g., `mid_dsk_aseg_tseries.mat`      | \                                                                                                                                |
+|                                       |                                                                                                                                  |
+|         `mid_dst_aseg_tseries.mat`    | atlases: dsk, dst, gp                                                                                                            |
+|                                       |                                                                                                                                  |
+|         `mid_gp_aseg_tseries.mat`     | task: mid, nback, sst                                                                                                            |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+Notes:
+
+- File names above with {task} represent a group of files for each task (i.e.,”mid” = Monetary Incentive Delay, “nback” = Emotional N-Back, and “sst” = Stop Signal Task).
+- File names above with {type} represent a group of files derived from time series data (i.e., data = preprocessed time series, residual = task residualized time series, task = estimated task-related time series).
+- File names above with {atlas} represent a group of files that include ROI data for one specific cortical surface atlas (i.e., dsk = Desikan, dst = Destrieux, and gp = Gordon) plus a selection of subcortical volumetric ROIs (aseg = FreeSurfer automated segmentation).
+- File names with “gpnet” indicate correlations within or between networks defined by the Gordon parcel “communities”.
+- File names with “trim5” indicate correlations derived from time series data “trimmed” to 5 minutes of low-motion (FD \< 0.2 mm) time points. Time points were randomly selected from available time points. Excess time points were discarded. Correlations for visits with fewer available time points were set to NaN (see [Responsible Use Warning: Head Motion](type_rsfmri.qmd) in Resting-State fMRI Data Documentation).
+
+**Contents of `{task}\_corr\_{type}.mat` and `{task}\_{atlas}\_aseg_corr\_{type}.mat`**
+
++-------------------+--------------------------------------------------------------------------------------------+
+| **Variable name** | **Description**                                                                            |
++-------------------+--------------------------------------------------------------------------------------------+
+| `corrmat`         | ROI-ROI correlations                                                                       |
+|                   |                                                                                            |
+|                   |   matrix with size = \[ndirs,nnodes\]                                                      |
+|                   |                                                                                            |
+|                   | notes:                                                                                     |
+|                   |                                                                                            |
+|                   |   correlation values range from -1 to 1                                                    |
+|                   |                                                                                            |
+|                   |   no R to Z transform applied                                                              |
+|                   |                                                                                            |
+|                   |   for reduced memoy usage, corrmat contains                                                |
+|                   |                                                                                            |
+|                   |     only the “upper triangle” of the matrrix                                               |
+|                   |                                                                                            |
+|                   |     not the full matrix                                                                    |
++-------------------+--------------------------------------------------------------------------------------------+
+| `varmat`          | ROI temporal variance                                                                      |
+|                   |                                                                                            |
+|                   |   matrix with size = \[ndirs,nroi\]                                                        |
++-------------------+--------------------------------------------------------------------------------------------+
+| `meanfdvec`       | mean framewise displacement                                                                |
+|                   |                                                                                            |
+|                   |   vector with size = \[ndirs,1\]                                                           |
++-------------------+--------------------------------------------------------------------------------------------+
+| `ntpointvec`      | number of time points                                                                      |
+|                   |                                                                                            |
+|                   |   after censoring frames with excessive motion                                             |
+|                   |                                                                                            |
+|                   |   vector with size = \[ndirs,1\]                                                           |
++-------------------+--------------------------------------------------------------------------------------------+
+| `ndirs`           | number of input directories                                                                |
+|                   |                                                                                            |
+|                   | matches lengths of participant_id and session_id in vol_info                               |
++-------------------+--------------------------------------------------------------------------------------------+
+| `nroi`            | number of ROIs                                                                             |
++-------------------+--------------------------------------------------------------------------------------------+
+| `roinames`        | cell array of ROI names with length nroi                                                   |
+|                   |                                                                                            |
+|                   | e.g., ctx-lh-bankssts                                                                      |
+|                   |                                                                                            |
+|                   |         ctx-lh-caudalanteriorcingulate                                                     |
+|                   |                                                                                            |
+|                   |         ctx-lh-caudalmiddlefrontal                                                         |
+|                   |                                                                                            |
+|                   |         …                                                                                  |
+|                   |                                                                                            |
+|                   |         ctx_lh_G_and_S_frontomargin'                                                       |
+|                   |                                                                                            |
+|                   |         ctx_lh_G_and_S_occipital_inf'                                                      |
+|                   |                                                                                            |
+|                   |         ctx_lh_G_and_S_paracentral'                                                        |
+|                   |                                                                                            |
+|                   |        …                                                                                   |
+|                   |                                                                                            |
+|                   |         ctx-lh-gp1                                                                         |
+|                   |                                                                                            |
+|                   |         ctx-lh-gp2                                                                         |
+|                   |                                                                                            |
+|                   |         ctx-lh-gp3                                                                         |
+|                   |                                                                                            |
+|                   |        …                                                                                   |
+|                   |                                                                                            |
+|                   |         Left-Cerebral-White-Matter                                                         |
+|                   |                                                                                            |
+|                   |         Left-Cerebral-Cortex                                                               |
+|                   |                                                                                            |
+|                   |         Left-Lateral-Ventricle                                                             |
+|                   |                                                                                            |
+|                   |        …                                                                                   |
++-------------------+--------------------------------------------------------------------------------------------+
+| `nnodes`          | number of nodes (ROI-ROI pairs)                                                            |
+|                   |                                                                                            |
+|                   |   equal to (nroi x (nroi + 1))/2                                                           |
+|                   |                                                                                            |
+|                   |   includes upper triangle of ROI-ROI matrix                                                |
++-------------------+--------------------------------------------------------------------------------------------+
+| `roi1vec`         | specifies ROI number (index to roinames) for first ROI of each node of correlation matrix  |
++-------------------+--------------------------------------------------------------------------------------------+
+| `roi2vec`         | specifies ROI number (index to roinames) for second ROI of each node of correlation matrix |
++-------------------+--------------------------------------------------------------------------------------------+
+
+Notes:
+
+- Concatenated ROI-ROI correlation data is derived from the concatenated ROI time series data, which is provided in a relatively raw state, without pre-residualization or filtering.
+- Additional processing steps applied before calculation of ROI-ROI correlations match those used in the standard analysis pipeline (see [Resting-State fMRI Data Documentation](type_rsfmri.qmd)).
+- Additional processing steps:
+  - Normalization and demean time series for each ROI
+  - Residualization of motion, squared motion, derivatives, and squared derivatives
+  - Residualization of global signals (white matter, brain, CSF)
+  - Band pass filtering (between 0.009 and 0.08 Hz)
+  - Motion censoring of bad frames
+    - FD \> 0.2 mm
+    - \< 5 contiguous uncensored frames
+    - Outliers in standard deviation across ROIs
+
+**Example: extract correlation matrix for one visit**
+```r
+x = find(strcmp(visitidvec,’ S042_INVXXXXXXXX_baseline’))
+
+rvec = reshape(corrmat(x,:),\[nroi,nroi\])
+
+idx_triu = find(triu(ones(nroi,nroi)));
+
+idx_tril = find(tril(ones(nroi,nroi)));
+
+R_upper = nan(nroi,nroi);
+
+R_upper(idx_triu) = rvec;
+
+R_lower = R_upper';
+
+R = R_upper;
+
+R(idx_tril) = R_lower(idx_tril);
+```
+
+**Contents of `{task}\_gpnet_corr\_{type}.mat`**
+
++-------------------+--------------------------------------------------------------------------------------------------------+
+| **Variable name** | **Description**                                                                                        |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `corrmat`         | ROI-ROI correlations                                                                                   |
+|                   |                                                                                                        |
+|                   |   matrix with size = \[ndirs,nnodes\]                                                                  |
+|                   |                                                                                                        |
+|                   | notes:                                                                                                 |
+|                   |                                                                                                        |
+|                   |   correlation values range from -1 to 1                                                                |
+|                   |                                                                                                        |
+|                   |   no R to Z transform applied                                                                          |
+|                   |                                                                                                        |
+|                   |   for reduced memoy usage, corrmat contains                                                            |
+|                   |                                                                                                        |
+|                   |     only the “upper triangle” of the matrrix                                                           |
+|                   |                                                                                                        |
+|                   |     not the full matrix                                                                                |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `meanfdvec`       | mean framewise displacement                                                                            |
+|                   |                                                                                                        |
+|                   |   vector with size = \[ndirs,1\]                                                                       |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `ntpointvec`      | number of time points                                                                                  |
+|                   |                                                                                                        |
+|                   |   after censoring frames with excessive motion                                                         |
+|                   |                                                                                                        |
+|                   |   vector with size = \[ndirs,1\]                                                                       |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `ndirs`           | number of input directories                                                                            |
+|                   |                                                                                                        |
+|                   | matches lengths of participant_id and session_id in vol_info                                           |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `nnet`            | number of networks                                                                                     |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `network_names`   | cell array of network names with length nnet                                                           |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `nnodes`          | number of nodes (network-network pairs)                                                                |
+|                   |                                                                                                        |
+|                   |   equal to (nnet x (nnet + 1))/2                                                                       |
+|                   |                                                                                                        |
+|                   |   includes upper triangle of ROI-ROI matrix                                                            |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `net1vec`         | specifies network number (index to network_names) for first network of each node of correlation matrix |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `net2vec`         | specifies network number (index to roinames) for second network of each node of correlation matrix     |
++-------------------+--------------------------------------------------------------------------------------------------------+
+
+Notes:
+
+- Concatenated network-network correlation data is derived from the concatenated ROI-ROI correlation data.
+- Differences between the concatenated and tabulated network correlation data are attributable to differences in the order of pre-processing steps.
+- For the concatenated data, average ROI time series are first calculated from relatively unprocessed time series data, and residualization, filtering, and censoring are performed on the average ROI times series data.
+- For the tabulated data, residualization and filtering is performed on the voxelwise time series data, and then average ROI time series are calculated from the pre-processed voxelwise data.
+
+**Contents of `{task}\_gpnet_aseg_corr\_{type}.mat`**
+
++-------------------+--------------------------------------------------------------------------------------------------------+
+| **Variable name** | **Description**                                                                                        |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `corrmat`         | network-ROI correlations                                                                               |
+|                   |                                                                                                        |
+|                   |   matrix with size = \[ndirs,nnodes\]                                                                  |
+|                   |                                                                                                        |
+|                   | notes:                                                                                                 |
+|                   |                                                                                                        |
+|                   |   correlation values range from -1 to 1                                                                |
+|                   |                                                                                                        |
+|                   |   no R to Z transform applied                                                                          |
+|                   |                                                                                                        |
+|                   |   for reduced memoy usage, corrmat contains                                                            |
+|                   |                                                                                                        |
+|                   |     only the “upper triangle” of the matrrix                                                           |
+|                   |                                                                                                        |
+|                   |     not the full matrix                                                                                |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `meanfdvec`       | mean framewise displacement                                                                            |
+|                   |                                                                                                        |
+|                   |   vector with size = \[ndirs,1\]                                                                       |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `ntpointvec`      | number of time points                                                                                  |
+|                   |                                                                                                        |
+|                   |   after censoring frames with excessive motion                                                         |
+|                   |                                                                                                        |
+|                   |   vector with size = \[ndirs,1\]                                                                       |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `ndirs`           | number of input directories                                                                            |
+|                   |                                                                                                        |
+|                   | matches lengths of participant_id and session_id in vol_info                                           |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `nnet`            | number of networks                                                                                     |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `network_names`   | cell array of network names with length nnet                                                           |
+|                   |                                                                                                        |
+|                   | i.e., Auditory                                                                                         |
+|                   |                                                                                                        |
+|                   |        CinguloOperc                                                                                    |
+|                   |                                                                                                        |
+|                   |        CinguloParietal                                                                                 |
+|                   |                                                                                                        |
+|                   |        Default                                                                                         |
+|                   |                                                                                                        |
+|                   |        DorsalAttn                                                                                      |
+|                   |                                                                                                        |
+|                   |        FrontoParietal                                                                                  |
+|                   |                                                                                                        |
+|                   |        None                                                                                            |
+|                   |                                                                                                        |
+|                   |        RetrosplenialTemporal                                                                           |
+|                   |                                                                                                        |
+|                   |        SMhand                                                                                          |
+|                   |                                                                                                        |
+|                   |        SMmouth                                                                                         |
+|                   |                                                                                                        |
+|                   |        Salience                                                                                        |
+|                   |                                                                                                        |
+|                   |        VentralAttn                                                                                     |
+|                   |                                                                                                        |
+|                   |        Visual                                                                                          |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `nroi`            | number of subcortical ROIs                                                                             |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `roinames`        | cell array of ROI names with length nroi                                                               |
+|                   |                                                                                                        |
+|                   | e.g., Left-Cerebral-White-Matter                                                                       |
+|                   |                                                                                                        |
+|                   |         Left-Cerebral-Cortex                                                                           |
+|                   |                                                                                                        |
+|                   |         Left-Lateral-Ventricle                                                                         |
+|                   |                                                                                                        |
+|                   |        …                                                                                               |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `nnodes`          | number of nodes (network-ROI pairs)                                                                    |
+|                   |                                                                                                        |
+|                   |   equal to nnet x nroi                                                                                 |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `net1vec`         | specifies network number (index to network_names) for first network of each node of correlation matrix |
++-------------------+--------------------------------------------------------------------------------------------------------+
+| `roi2vec`         | specifies ROI number (index to roinames) for second ROI of each node of correlation matrix             |
++-------------------+--------------------------------------------------------------------------------------------------------+
+
+**Contents of `{task}\_tseries` and `{task}\_{atlas}\_aseg_tseries.mat`**
+
++-------------------+--------------------------------------------------------------+
+| **Variable name** | **Description**                                              |
++-------------------+--------------------------------------------------------------+
+| `datamat_tsdata`  | ROI time series data                                         |
+|                   |                                                              |
+|                   |   with size = \[ndirs,nruns,ntpoints,nroi\]                  |
++-------------------+--------------------------------------------------------------+
+| `datamat_motion`  | motion time series data                                      |
+|                   |                                                              |
+|                   |   with size = \[ndirs,nruns,ntpoints,6\]                     |
+|                   |                                                              |
+|                   | 6 motion parameters: dx, dy, dz, rx, ry, rz                  |
+|                   |                                                              |
+|                   | notch-filtered to remove respiratory signals                 |
++-------------------+--------------------------------------------------------------+
+| `censvec`         | censor vector                                                |
+|                   |                                                              |
+|                   |   with size = \[ndirs,nruns,ntpoints\]                       |
+|                   |                                                              |
+|                   | value of 1 indicates time point was censored                 |
+|                   |                                                              |
+|                   |   due to excessive motion                                    |
++-------------------+--------------------------------------------------------------+
+| `ndirs`           | number of input directories                                  |
+|                   |                                                              |
+|                   | matches lengths of participant_id and session_id in vol_info |
++-------------------+--------------------------------------------------------------+
+| `nroi`            | number of ROIs                                               |
++-------------------+--------------------------------------------------------------+
+| `roinames`        | cell array of ROI names with length nroi                     |
+|                   |                                                              |
+|                   | e.g., ctx-lh-bankssts                                        |
+|                   |                                                              |
+|                   |         ctx-lh-caudalanteriorcingulate                       |
+|                   |                                                              |
+|                   |         ctx-lh-caudalmiddlefrontal                           |
+|                   |                                                              |
+|                   |         …                                                    |
+|                   |                                                              |
+|                   |         ctx_lh_G_and_S_frontomargin                          |
+|                   |                                                              |
+|                   |         ctx_lh_G_and_S_occipital_inf                         |
+|                   |                                                              |
+|                   |         ctx_lh_G_and_S_paracentral                           |
+|                   |                                                              |
+|                   |        …                                                     |
+|                   |                                                              |
+|                   |         ctx-lh-gp1                                           |
+|                   |                                                              |
+|                   |         ctx-lh-gp2                                           |
+|                   |                                                              |
+|                   |         ctx-lh-gp3                                           |
+|                   |                                                              |
+|                   |        …                                                     |
+|                   |                                                              |
+|                   |         Left-Cerebral-White-Matter                           |
+|                   |                                                              |
+|                   |         Left-Cerebral-Cortex                                 |
+|                   |                                                              |
+|                   |         Left-Lateral-Ventricle                               |
+|                   |                                                              |
+|                   |        …                                                     |
++-------------------+--------------------------------------------------------------+
+| `nruns`           | number of imaging runs (scans)                               |
++-------------------+--------------------------------------------------------------+
+| `ntpoints`        | number of time points per run                                |
++-------------------+--------------------------------------------------------------+
+
+Notes:
+
+- Concatenated ROI time series data is provided in a relatively raw state, without pre-residualization or filtering.
+- ROI time series data is derived from the minimally processed data with these steps:
+  - Removal of initial “dummy” volumes
+  - Sampling of time series data to cortical surface
+  - Calculation of average ROI times series for cortical and subcortical ROIs
+
+**Example: extract time series data for one run of one visit**
+```r
+x = find(strcmp(visitidvec,’ S042_INVXXXXXXXX_baseline’))
+
+r = 2
+
+tmp_censvec = censvec(x,r,:);
+
+tmp_tsdata =  datamat_tsdata(x,r,:,:);
+```

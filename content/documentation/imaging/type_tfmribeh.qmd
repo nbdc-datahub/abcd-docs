@@ -1,0 +1,128 @@
+---
+title: "Task-based fMRI (Behavioral performance)"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+```{r}
+render_table_info("atlas == 'Behavior'")
+```
+
+The above table lists instruments with summary scores for participants' behavioral performance in the different task-based fMRI paradigms. Besides these curated tabulated data, users can also download the raw (trial-level) behavioral data that the summary scores are computed from (see [Trial Level Behavioral Performance Data Documentation](type_trial.qmd)). The tasks and stimuli listed in this document are also available at <https://abcdstudy.org/scientists/abcd-fmri-tasks-and-tools>. The behavioral performance review is part of the ABCD Study QC procedures and imaging inclusion criteria. For additional information please refer to the [MRI Quality Control & Recommended Image Inclusion Criteria](type_qc.qmd) release note.
+
+::: {#use-taskfMRI .callout-important title="Responsible Use Warning: Performance" collapse="true"}
+
+Using open-access datasets like ABCD requires responsible conceptualization and use of the data, including being mindful of variations in experience that impact performance. Below are specific considerations:
+
+- Cognitive task performance has been shown to correlate strongly with a variety of socio-economic factors. Attention and other performance factors can also be confounded by transient factors influenced by low SES, such as fatigue, poor nutrition, or environmental stressors.
+- Although the ABCD protocol captures several SES-related variables (e.g. for use as potential covariates), it is unlikely that the ABCD dataset captures all of them.
+:::
+
+# Monetary Incentive Delay (MID) Task {#mr_y_tfmri__mid__beh}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_tfmri__mid__beh")`
+
+**Measure description:** The fMRI Monetary Incentive Delay (MID) task measures domains of reward processing, including anticipation and receipt of reward and losses, and trial-by-trial motivation in speeded responses to win or avoid loss. Each trial of the MID task begins with an incentive cue of five possible trial types (Win \$20, Win \$5, Lose \$20, Lose \$5, \$0-no money at stake), a delay, a target during which the participant responds to either win money or avoid losing money and feedback.
+
+Task performance is individualized to maintain a 60% accuracy rate. When possible, participants who were unable to complete the task in the scanner, completed the task outside the scanner. Variables are provided to identify participants with incomplete data for anticipation analyses, unresponsiveness suggesting inattention to the task, or suboptimal data for feedback analyses. However, these recommended thresholds are subjective, so investigators should choose inclusion/exclusion performance criteria that are appropriate for their analyses.
+
+- *Anticipation:* If data capture is incomplete for either run 1 or run 2, this will affect the number of anticipation trials modeled. The recommended inclusion criteria (see [MRI Quality Control & Recommended Image Inclusion Criteria](type_qc.qmd)) for MID task fMRI require that 100 total trials were acquired: `mr_y_tfmri__mid__beh__trial_count = 100`. In addition, the recommended inclusion criteria require that the participant make at least 20 responses (i.e., button presses) per run: `mr_y_tfmri__mid__beh__qc_indicator = 1`. Both of these variables are included in the recommended inclusion criteria for MID task fMRI: `mr_y_qc__incl__tfmri__mid_indicator = 1`.
+- *Feedback:* If any trial type across both runs yields fewer than 4 events in either the positive or negative feedback, this will reduce the reliability of analyses of feedback trials. It is suggested that analyses of feedback trials be limited to participants with at least 4 events in each feedback trial type: `mr_y_tfmri__mid__beh__feedback_indicator = 1`. Note that this feedback flag is not included in the default, recommended inclusion criteria for MID task fMRI, but can be used in combination with `mr_y_qc__incl__tfmri__mid_indicator` to further limit the sample.
+
+In the initial version of the MID task used for ABCD, only reaction time (RT) for positive feedback trials were calculated. For the current version of the MID task, which was implemented in late 2017, RT was calculated for all valid trials (i.e., including late responses but excluding early responses). In past releases, variables for negative feedback trials and all trials combined had empty values. In the current release, scan sessions with the current task version now have values for all of these RT variables.
+
+## Monetary Incentive Delay Post Scan Questionnaire {#mr_y_tfmri__mid__qtn}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_tfmri__mid__qtn")`
+
+**Measure description:** After completion of the in-scanner task, participants are asked to rate how they felt when viewing the different cues and receiving the different outcomes during the MID task to determine the effectiveness and value of wins and losses.
+
+# Stop Signal Task (SST) {#mr_y_tfmri__sst__beh}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_tfmri__sst__beh")`
+
+**Measure description:** The fMRI Stop Signal Task (SST) measures impulse control and impulsivity. The task requires participants to withhold or interrupt a motor response to a "Go" stimulus when it is followed unpredictably by a signal to stop. To ensure approximately 50% successful and 50% unsuccessful Stop trials, a tracking algorithm varies the interval between the onset of the Go stimulus and the onset of the Stop Signal (the Stop Signal Delay) based on individual performance. When possible, participants who were unable to complete the task in the scanner completed the task outside the scanner.
+
+Poor performance in the SST task (`mr_y_tfmri__sst__beh__qc_indicator = 0`) is indicated if:
+
+**Go trials**
+
+- \<300 GO trials
+- Correct GO trial percentage \<60%
+- Incorrect GO trial percentage \>30%
+- Late GO trial percentage (summing correct and incorrect trials) \>30%
+- No Response GO trial percentage \>30%
+- Correct GO response time \< Incorrect Stop response time
+
+**STOP trials**
+
+- STOP trial accuracy (i.e., successful inhibitions) \<20% or \>80%
+
+However, in many cases, the threshold for suboptimal performance is subjective so investigators should choose performance criteria that are appropriate for their analyses.
+
+## Concerns regarding ABCD SST task
+
+A number of concerns regarding the ABCD STOP task have been raised (see [@bissett2020]). One is a coding error wherein a fast response (\< 50 msec) made when the Stop Signal Delay (SSD) was 50 msec results in all subsequent Stop trials recording this same fast response. This error disrupts the functioning of the SSD tracking algorithm. Although useful data (before the occurrence of the coding error) may be retrievable for many of these participants, we identify for possible exclusion all participants with this coding error (variable `mr_y_tfmri__sst__beh__coderr_indicator`).
+
+A second concern relates to the Go stimuli not being presented on trials in which the SSD was 0 msec. On these trials, participants saw only the Stop signal (up arrow) which may have created confusion for participants. Across the full sample of participants, the impact of these occasional trials appears to be minimal for both the Stop Signal Reaction Time calculation and brain activation. However, we now provide a count of 0ms SSD trials per participant (variable `mr_y_tfmri__sst__beh__stop__0ssd_count`) which investigators can use to set a threshold for excluding participants, if desired.
+
+Finally, in accordance with race model assumptions and best practices [@verbruggen2019], the Stop Signal Reaction Time should not be estimated for participants whose Stop Fail RT \> Go RT. These participants are identified by the variable `mr_y_tfmri__sst__beh__violat_indicator`. However, there is no compelling reason to exclude these participants from brain activation analyses unless researchers believe that doing so is warranted given the neuroimaging measurements they are investigating or given their specific research question.
+
+More details on these matters are provided in the [Trial Level Behavioral Data Documentation](type_trial.qmd). The ABCD team has conducted analyses addressing these matters [@garavan2020] and concludes that while the concerns have legitimacy, there is little evidence that they have an actual impact on the task reaction time and fMRI data. While we await further empirical data addressing these matters we believe researchers can use these data with confidence. However, we do encourage researchers to carefully evaluate any impact that these concerns may have on their specific analyses.
+
+*Variable names for the indicator flags*
+
+- `mr_y_tfmri__sst__beh__violat_indicator`: Race model violators where Stop Fail RT \> Go RT
+- `mr_y_tfmri__sst__beh__coderr_indicator`: Task coding error
+- `mr_y_tfmri__sst__beh__stop__0ssd_count`: Number of Stop trials with 0ms SSD
+
+## Estimates of Stop Signal Reaction Time
+
+We provide two estimates of the Stop Signal Reaction Time [@logan1984], a derived measure of the response inhibition process. The mean method (`mr_y_tfmri__sst__beh__ssrt_mean`) subtracts each participant's mean SSD from their mean Go RT. The second estimate uses the integration method (`mr_y_tfmri__sst__beh__ssrt_intgr`) in which the mean SSD is subtracted from the nth Go RT with n being the participant's overall successful inhibition rate. For the integration method calculation, any Go RT omissions were replaced with the longest Go RT for that participant. In addition, premature responses on Stop trials (i.e., choice responses made before the Stop signal was presented) were included when calculating the participant's probability of successful stopping and the SSD's on these trials were included in calculating the average SSD.
+
+*Variable names for SSRT*
+
+- `mr_y_tfmri__sst__beh__ssrt_mean`: Stop Signal Reaction Time, mean estimation
+- `mr_y_tfmri__sst__beh__ssrt_intgr`: Stop Signal Reaction Time, integration estimation
+
+## Mislabeled trials
+
+A small number of trial outcomes are mislabeled in the Stop task's E-Prime output (these are listed as Issue 6 in [@bissett2020]). Users should be aware that all of these errors were identified and corrected prior to behavioral or functional data analysis in all data releases including this one. The label corrections are detailed in the script `abcd_extract_eprime_sst` available on the ABCD Study's [GitHub page](https://github.com/ABCD-STUDY/).
+
+# Emotional nBack Working Memory Task {#mr_y_tfmri__nback__beh}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_tfmri__nback__beh")`
+
+**Measure description:** The fMRI Emotional nBack task assesses memory, emotion and face and place perceptual processes. The task is a block design working memory task using four categories of stimuli (places, positive faces, negative faces and neutral faces) and two memory load conditions (0 and 2 back). The task includes 80 trials for each of the two memory load conditions, 20 trials for each stimulus type in each of the two memory load conditions and 40 trials of each stimulus type.
+
+Accuracy and reaction time (RT) are provided for all conditions. When possible, participants who were unable to complete the task in the scanner, completed the task outside the scanner.
+
+Poor performance in the nBack task is indicated if the overall response accuracy for the 0-back or 2-back blocks is less than 60% (`mr_y_tfmri__nback__beh__qc_indicator = 0`).
+
+## nBack Recognition Memory (RECMEM) Task {#mr_y_tfmri__nback__rec}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_tfmri__nback__rec")`
+
+**Measure description:** The Emotional nBack Recognition Memory task engages short-term memory for items presented during the fMRI Emotional nBack task. This task was performed outside the scanner after the completion of the fMRI nBack task. Both HitRate (HR) and False Alarms (FA) are provided for each condition along with key dependent variables of response bias, corrected accuracy, and d-prime.
+
+*Key dependent variables*
+
+- `acc`: hit rate
+- `flsalrm`: false alarms
+- `bias`: response bias `[(mean(FA)/(1-mean(HR)-mean(FA))) - 0.5]`
+- `corr_acc`: corrected recognition `[mean(HR)-mean(FA)]`
+- `dprime`: discriminability index `[z(HR) - z(FA)]`
+
+# Behavioral tasks performed outside of the scanner
+
+Some participants were unable to complete one or more of the fMRI behavioral tasks in the scanner (MID, SST, or nBack), instead performed the missing task or tasks outside the scanner on a laptop computer. Whether a participant performed the MID, SST, or nBack task in the scanner or on a laptop is indicated respectively, by the following variables: `mr_y_adm__nts__tfmri__mid_indicator`, `mr_y_adm__nts__tfmri__nback_indicator`, `mr_y_adm__nts__tfmri__sst_indicator`. For more details, see the [ABCD RA Scanning Checklist and Notes](admin.qmd).
+
+# Methods
+
+Image processing and analysis methods corresponding to ABCD Release 2.0.1, including the calculation of task fMRI-related behavioral performance metrics, are described in @hagler2019. No significant changes were made for Release 5.0 or 6.0. Matlab code for extracting event times and behavioral performance from the event timing and behavioral performance files exported from the E-prime stimulus presentation program for ABCD (<https://github.com/ABCD-STUDY/abcd_extract_eprime>).

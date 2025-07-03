@@ -1,0 +1,31 @@
+---
+title: "Overview"
+lightbox: true
+---
+
+The Adolescent Brain Cognitive Development℠ (ABCD) Study® is the largest long-term study of brain development and child health in the United States. The National Institutes of Health (NIH) funded leading researchers in the fields of adolescent development and neuroscience to conduct this ambitious project. The ABCD Research Consortium consists of a Coordinating Center, a Data Analysis, Informatics & Resource Center, and 21 research sites across the country (see map below), which have invited 11,880 children ages 9-10 to join the study. Researchers will track their biological and behavioral development through adolescence into young adulthood.
+
+![](../assets/img/study/site_map)
+
+# Open science model
+
+One goal of the multi-site longitudinal ABCD Study® is to create a unique data resource for the entire scientific community by embracing an open science model. The ABCD Study will release curated, anonymized data annually, beginning in 2018, to the research community. Information on how to access ABCD data is on the [NBDC Data Hub](https://www.nbdc-datahub.org/data-access-process).
+
+{{< video https://www.youtube.com/watch?v=xhdd92dpOiw&t=1s >}}
+
+*ABCD data will be made available to scientists around the world* &mdash; Sandra Brown, Ph.D.
+
+>Unless otherwise specified, ABCD Study® YouTube videos are available for your use and may be reproduced in their entirety without permission from the ABCD Study®. Citation of the source should use the following language: <br>
+- Source: Adolescent Brain Cognitive Development^SM^ Study.
+
+# Study design
+
+The ABCD Consortium is made up of a Coordinating Center (CC), Data Analysis, Informatics & Resource Center (DAIRC), and 21 research sites across the country. The ABCD CC, DAIRC, and Consortium Workgroups have established standardized and harmonized assessments of neurocognition, physical and mental health, social and emotional functions, and culture and environment. They also have established multimodal structural and functional brain imaging and bioassays. Brain imaging and biospecimen collection for genetic and epigenetic analyses will be done every other year, and the remaining assessments will be conducted semi-annually or annually. 
+
+![Annual visits schema](../assets/img/study/timeline)
+
+![Annual visit timeline & particpant ages](../assets/img/study/annual_timeline)
+
+![High level overview of domains in the ABCD Study](../assets/img/study/domains)
+
+The ABCD protocol is a comprehensive set of physical, cognitive, social, emotional, environmental, behavioral, and academic assessments, as well as multimodal neuroimaging and biospecimen collection for hormonal, genetic, epigenetic, environmental exposure, and substance use analysis. These assessments are anticipated to be done annually (non-imaging) or biannually (imaging and bioassays) for 10 years. Participants also undergo a brief, mid-year phone interview. For more information on data releases & resources, visit the [study data sharing page](https://abcdstudy.org/scientists/data-sharing/).

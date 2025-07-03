@@ -1,0 +1,90 @@
+---
+title: "Diffusion MRI"
+---
+
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+```{r}
+library(dplyr)
+library(stringr)
+render_table_info("str_detect(table_name, 'mr_y_dti')")
+```
+
+The Diffusion MRI (DTI) data contains imaging field maps, non-diffusion weighted images with opposite phase encode polarity, and multi-b-value, multi-direction diffusion weighted images.
+    
+## Image processing
+- Eddy current distortion correction with a nonlinear estimation using diffusion gradient orientations and amplitudes to predict the pattern of distortions [@zhuang2006]
+- Head motion corrected by registering to images synthesized from tensor fit [@hagler2019]
+- Diffusion gradients adjusted for head rotation [@hagler2009; @leemans2009]
+- Robust diffusion tensor estimation [@chang2005] used to identify and replace dark slices caused by abrupt head motion
+- B0 distortions were corrected using the reversing gradient method with FMRIB Software Library's `topup` [@andersson2003; @smith2004]
+- Gradient nonlinearity distortion correction [@jovicich2006]
+- T~2~-weighted b=0 images to T~1~w structural images using mutual information [@wells1996]
+- Resampled into a standard orientation with 1.7 mm isotropic resolution
+    
+## Diffusion tensor imaging (DTI) analysis
+- Conventional DTI methods [@basser1994; @lebihan2001; @pierpaoli1996]
+- Two modeling approaches
+  - DTI inner shell (DTI~IS~): b values \> 1000 excluded from tensor fitting. DTI inner shell may be useful when comparing results to other, single-shell diffusion studies, particularly for MD, LD, or TD.
+  - DTI full shell (DTIFS): all b values used in the tensor fitting DTI full shell is recommended for most applications.
+- Measures of microstructural tissue properties
+  - Fractional anisotropy (FA)
+  - Mean diffusivity (MD)
+  - Longitudinal (or axial) diffusivity (LD)
+  - Transverse (or radial) diffusivity (TD)
+        
+## Restriction Spectrum Imaging (RSI)
+- Linear estimation approach allowing for mixtures of “restricted”, “hindered”, and “free” diffusion pools within individual voxels [@white2013; @white2014]
+- Takes advantage of multiple b-value acquisition
+- Two signal fractions modeled as fiber orientation density (FOD) functions
+  - Longitudinal diffusivity constant for both fractions, with a value of 1.0 x 10^-3^ mm^2^/s
+  - Restricted fraction (e.g. intracellular): transverse diffusivity modelled as 0
+  - Hindered fraction (e.g. extracellular): transverse diffusivity modelled as 0.9 x 10^-3^ mm^2^/s
+- One signal fractions modeled as isotropic free water diffusion
+  - Free fraction (e.g., CSF): isotropic diffusivity modeled as 3.0 x10^-3^ mm^2^/s
+- Measures derived from the RSI model fit (see Supplementary Tables)
+  - Restricted normalized isotropic (RNI, previously N0)
+    - The 0th order spherical harmonic coefficient of the restricted fraction divided by the Euclidean norm (square root of the sum of squares) of all model coefficients
+  - Restricted normalized directional or "neurite density" (RND, previously ND)
+    - Norm of the 2nd and 4th order spherical harmonic coefficients of the restricted fraction divided by the norm of all model coefficients
+  - Restricted normalized total (RNT, previously NT)
+    - Norm of the 0th, 2nd, and 4th order spherical harmonic coefficients of the restricted fraction divided by the norm of all model coefficients
+  - Hindered normalized isotropic (HNI, previously N0_s2)
+    - The 0th order spherical harmonic coefficient of the hindered fraction divided by the norm of all model coefficients
+  - Hindered normalized directional (HND, previously ND_s2)
+    - Norm of the 2nd and 4th order spherical harmonic coefficients of the hindered fraction divided by the norm of all model coefficients
+  - Hindered normalized total (HNT, aka NT_s2)
+    - Norm of the 0th, 2nd, and 4th order spherical harmonic coefficients of the hindered fraction divided by the norm of all model coefficients
+  - Free normalized isotropic (FNI)
+    - The 0th order spherical harmonic coefficient of the free water fraction divided by the norm of all model coefficients
+
+## Regions of interest (ROIs)
+- Subcortical structures labeled with atlas-based segmentation [@fischl2002]
+- Cortical regions labeled with the Desikan atlas-based classification [@desikan2006]
+- Cortical regions labeled with the Destrieux atlas-based classification [@destrieux2010]
+- White and gray matter values sampled near gray/white boundary [@elman2017]
+- Major white matter tracts labelled using AtlasTrack [@hagler2009]
+  - Voxels containing primarily gray matter or cerebral spinal fluid excluded from analysis
+- Atlas files and additional AtlasTrack documentation available [here](https://www.nitrc.org/projects/atlastrack).
+
+# Notes
+
+
+## Effects of scanner instance and software version
+
+Multisite longitudinal MRI imaging data are potentially susceptible to influences of scanning parameters, scanner manufacturer, scanner model, and software version, which vary across sites, and sometimes across time. For diffusion imaging, parameters obtained from different scanner manufacturers/models have been found to vary substantially. For more information, please refer to the [“Effects of scanner instance and software version”](/documentation/imaging/index.qmd#scan-software-effect) in Imaging Overview data documentation.
+
+**Additional references:**
+
+- @dick2021
+- @dudley2023
+- @fortin2017
+- @holland2010
+- @palmer2022

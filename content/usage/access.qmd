@@ -1,0 +1,56 @@
+---
+title: "Access & download data"
+order: 1
+lightbox: true
+---
+
+::: {.callout}
+Please note this is just a general overview of the dataset access process. More complete details can be found on the NBDC website: [https://www.nbdc-datahub.org/data-access-process](https://www.nbdc-datahub.org/data-access-process)
+:::
+
+# Data access
+
+Access to ABCD Study data is managed through the [NIH Brain Development Cohorts](https://www.nbdc-datahub.org/) Data Use Certification (DUC) process. To qualify for access, the following requirements must be met:
+
+- You must have a legitimate research purpose for using the data.
+- You must be affiliated with an NIH-recognized research institution and obtain approval from an institutional signing official. 
+- Your institution must hold an active [Federal Wide Assurance (FWA)](https://www.hhs.gov/ohrp/register-irbs-and-obtain-fwas/fwas/fwa-protection-of-human-subjecct/index.html) for the Protection of Human Subjects.
+
+For complete details on the dataset access process, visit the [NBDC website](https://www.nbdc-datahub.org/data-access-process). Frequently asked questions about data access are covered [here](https://nbdc-splash-beta.lassoinformatics.com/faqs).
+
+{{< video https://www.youtube.com/embed/SCCBfeB7vgE?autoplay=1&loop=1&mute=1&playlist=SCCBfeB7vgE&vq=hd720 >}}
+
+---
+
+## What to do prior to your DUC approval? 
+
+Both data access applications, [Data Exploration & Analysis Portal (DEAP)](https://abcd.deapscience.com) and [Lasso](https://nbdc-datashare.lassoinformatics.com), offer the ability to explore the ABCD data dictionary without a DUC. Once you get your DUC you will be able to start compiling & creating datasets for use. 
+
+- [DEAP Data Dictionary & Ontology Explorer](https://abcd.deapscience.com/#/my-datasets/create-dataset)
+- [Lasso Query Tool](https://nbdc-datashare.lassoinformatics.com/)
+
+Understanding the ABCD variable naming structure is extremely helpful in navigating our large data set and using applications like DEAP & Lasso. You can learn more about ABCD's data assets at the below resources: 
+
+- [Data structure](../documentation/curation/structure.qmd)
+- [Naming conventions](../documentation/curation/naming.qmd)
+- [Non-imaging protocol documentation](../documentation/non_imaging/ab.qmd)
+- [Imaging protocol documentation](../documentation/imaging/index.qmd)
+
+---
+
+# Data download
+
+NBDC offers two applications to explore, query, and download data; [Data Exploration & Analysis Portal (DEAP)](https://abcd.deapscience.com) and [Lasso](https://nbdc-datashare.lassoinformatics.com). 
+
+::: {layout-ncol=2 .text-center}
+
+[![](../assets/img/tools/deap_logo){width="200"}](https://abcd.deapscience.com)
+
+[![](../assets/img/tools/lasso_logo){width="200"}](https://nbdc-datashare.lassoinformatics.com)
+
+[nbdc.deapscience.com]{style="display: block; text-align: center; margin-top: 4px; color: #A9A9A9;"}
+
+[nbdc-datashare.lassoinformatics.com]{style="display: block; text-align: center; margin-top: 4px; color: #A9A9A9;"}
+:::
+
+---

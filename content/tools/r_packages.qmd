@@ -1,0 +1,34 @@
+---
+title: "R Packages"
+order: 2
+---
+
+The ABCD Data Analysis, Informatics, & Resource Center (DAIRC) develops and releases software to enhance the transparency and reproducibility of the ABCD data resource and to support users working with ABCD datasets with tools to enhance their analysis workflows. This page provides a short overview of software packages that are available to be installed from the [`nbdc-datahub` GitHub organization](https://github.com/nbdc-datahub). We encourage interested users to explore the documentation websites of the respective packages for more details.
+
+## ABCDscores {#ABCDscores}
+
+<span style="font-size: 0.85em; color: gray;">
+**Documentation website:** [https://software.nbdc-datahub.org/ABCDscores](https://software.nbdc-datahub.org/ABCDscores)<br>
+**GitHub repository:** [https://github.com/nbdc-datahub/ABCDscores](https://github.com/nbdc-datahub/ABCDscores)
+</span>
+
+The `ABCDscores` R package provides functions to compute all non-proprietary summary scores included in the ABCD tabulated data resource, starting with the 6.0 data release. The package is accompanied by a documentation website that provides extensive details on how to use the package to compute any of the hundreds of summary scores across the different research domains.
+
+One of the goals of the package is to support transparency and reproducibility of ABCD release data by making available the exact algorithms and code that were used to compute the released summary scores, with the ability to tie a given data release version to a specific version of the codebase. The versioning also allows users to fix errors in the codebase and/or add new code to compute additional scores _independent of the release timelines_, i.e.,  updated versions of the package can be released at any time to fix errors and/or compute new scores based on the raw/item-level data.
+
+Furthermore, while clearly specifying how the official ABCD summary scores were computed, all functions in the package allow users some level of flexibility to change the computation and retrieve alternative scores. For example, while most functions specify a certain level of missingness that is allowed to still compute a given summary score (typically >=80% completion is required), users can change a function parameter to apply a stricter or more lenient criterion. For some types of scores, the package even provides a set of basic functions that can be used flexibly to compute a variety of different scores (see, e.g., the functions to compute [Timeline Followback summary scores](https://software.nbdc-datahub.org/ABCDscores/articles/tlfb.html)).
+
+## NBDCtools (coming soon!) {#NBDCtools}
+
+<!--
+<span style="font-size: 0.85em; color: gray;">
+**Documentation website:** [https://software.nbdc-datahub.org/NBDCtools](https://software.nbdc-datahub.org/NBDCtools)<br>
+**GitHub repository:** [https://github.com/nbdc-datahub/NBDCtools](https://github.com/nbdc-datahub/NBDCtools)
+</span>
+-->
+
+In preparation for the launch of the [NBDC Data Hub](https://nbdc-datahub.org), the DAIRC team developed the `NBDCtools` R package which is specifically targeted towards people working with datasets released through this platform (in the inaugural release, the NBDC Data Hub will include data from the [ABCD](https://abcdstudy.org) and [HBCD](https://hbcdstudy.org) studies^[For more details about the data released by the HBCD study, see [here](https://docs.hbcdstudy.org)]). The package makes use of the regular structure of NBDC datasets, especially standardized metadata (data dictionary and levels table; see [here](/documentation/curation/metadata.qmd)) and the organization of tabulated data as one file per table in the BIDS `phenotype/` directory (see [here](/documentation/curation/structure.qmd)).
+
+The `NBDCtools` R package assumes that users downloaded the complete tabulated dataset as file-based data and saved the files in a local directory. Using functions from the package, users can then create custom datasets by specifying the study name and any set of variable names and/or table names in its data dictionary. By making use of the study's metadata, the functions automatically retrieve the needed columns from different files on disk, and join them to a data frame in memory. This provides a fast, storage- and memory-efficient, and highly reproducible way to work with NBDC data that can be used as an alternative to creating and downloading different datasets (and creating on-disk representations for each of them) through the DEAP or Lasso platforms (see [here](/tools/tools.qmd)).
+
+Furthermore, the package provides several additional functions that assist users with the creation of analysis-ready datasets from NBDC studies. This includes a) different transformation functions, e.g., to convert categorical columns to (ordered or unordered) factors based on the information in the data dictionary and levels table or to assign variable and value labels to a dataset; b) filter/subsetting functions, e.g., to filter by a set of participant/events, filter ABCD events with shorthands, or exclude rows or columns with only missing data; as well as c) a set of utility functions with different use cases. Lastly, the `NBDCtools` package provides functions to retrieve and use the studies' metadata.

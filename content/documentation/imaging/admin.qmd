@@ -1,0 +1,48 @@
+---
+title: "Administrative imaging tables"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+```{r}
+library(dplyr)
+library(stringr)
+render_table_info("str_detect(table_name, 'mr_y_adm')")
+```
+<br>
+
+# Youth tables 
+
+## MRI Info {#mr_y_adm__info}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_adm__info")`
+
+**Measure Description:** The MRI Info instrument provides information on the MRI scanner used at each visit such as scanner manufacturer, model, magnetic field strength, device software version and date of acquisition. It also provides the visit ID for a given participant/event.
+
+**Notes and special considerations:** All scanners use 32 channel head coils with the exception of the Siemens scanners with the following device serial numbers (see variable `mr_y_adm__info__dev_serial`) that use 64 channel head coils:
+
+- HASH7911780b
+- HASH03db707f
+- HASH65b39280
+- HASHe4f6957a
+- HASH31ce566d
+
+## Scanning Checklist and Notes {#mr_y_adm__nts}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_adm__nts")`
+
+**Measure Description:** The Scanning Checklist and Notes instrument is used by research assistants during the MRI session to record relevant information about the session. For example, it records the original randomized order of fMRI tasks and if there were deviations from that order. It also records whether task fMRI paradigms were completed in or outside of the scanner.
+
+## Pre/Post Scan Questionnaires {#mr_y_adm__qtn}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_adm__qtn")`
+
+**Measure Description:** Participants are asked to fill in a pre-scan questionnaire immediately prior to scanning. The questionnaire asks about their current state of arousal (sleepy, happy, scared, awake, upset, angry, excited, tired, sleepy and sad) using a five-point Likert scale: Very slightly or not at all = `1`; A little = `2`; Moderately = `3`; Quite a bit = `4`; and Extremely = `5`. This questionnaire is administered again at the end of the scan.
+
+**Notes and special considerations:** If the scan protocol is administered over multiple days or sessions, then the participant is administered the questionnaire again before and after the scan. Please check the `Scanning Checklist and Notes` to see if a re-scan was performed.

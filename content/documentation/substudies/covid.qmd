@@ -1,0 +1,439 @@
+---
+title: "COVID-19 rapid response research"
+---
+
+# Domain overview
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+```{r}
+render_table_info("domain_abbr == 'covid'")
+```
+
+
+For the COVID Rapid Response Research (RRR) Survey there were seven roundes of surveys (denoted `waves 1-7`). At each wave, the youth and parents completed separate surveys.
+
+We sent `wave 1`, `2`, and `3` on May 16-22, 2020, June 24-27, 2020, and August 4-5, 2020, respectively. `Wave 4`, `5`, and `6` were sent October 8, 2020, December 13, 2020, and March 2, 2021. `Wave 7` was sent in May 2021. 
+
+**COVID Fitbit participation:** When site and school closures began in March 2020, ABCD participants who had their ABCD-assigned activity tracker agreed to extend protocol wear of the device, contributing valuable objective physical activity, resting heart rate, and sleep data (N=160). Tabular data from this subset of participants is available in the table `covid_y_fitbqtn`. 
+
+For additional information about the COVID Rapid Response Research (RRR) Survey, please see [@pelham2023]. 
+
+## Core-protocol matching
+
+Some variables were carried over from the COVID RRR studies into the main protocol after the COVID surveys ended. There are a small handful of cases where the variables that were in the main protocol and were utilized in the COVID RRR surveys too.
+
+In the following, the covid variables are matched to the core-protocol variables. Users can use this information on the continuity of those variables if they are interested in tracking past the RRR surveys.
+
+```{r covid}
+library(reactable)
+tbl_covid <- read.csv("../../assets/tbl/documentation/substudies/covid_core_duplicates.csv")
+reactable(tbl_covid)
+```
+
+---
+
+# Youth tables {#covid_y}
+
+## COVID Rapid Response Research (RRR) Survey (Youth){#covid_y_qtn}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_y_qtn")`  
+
+Information about the dates of survey completion in the COVID Substudy is recorded in  `covid_y_qtn_dt`. 
+
+During data collection, a timestamp was recorded only when the respondent completed the final question on the survey. Some participants completed part of the survey but did not reach the end. In this case, the participant's record will include data for whatever parts of the survey they completed, but the corresponding variable indicating the date of survey completion will have a missing value.
+
+The below sections do not delineate specific variable tables but rather thematically similar variables. They generally will have consistent keywords across sections but may not contain all the same keywords. To learn more about keywords see our documentation on [variable naming conventions](../curation/naming.qmd#sec-item).
+
+### Pet ownership
+
+Youth were asked if they have a pet (`covid_y_qtn__pet_001`), and if so, what kind (`covid_y_qtn__pet_001__`...). 
+
+### Schooling
+
+Youth were first asked to respond whether their schooling was like it was before COVID-19 Pandemic: whether they went to school, got school-at-home, or a mix of both. If youth responded that they had any school activities, they were asked to respond to four questions about the average time per day spent on different kinds of school material.
+
+Two further survey items were administered only at youth survey `wave 07`. Each item asked about the number of days in the past week the youth attended school in-person (`covid_y_qtn__school_002__01__v1`) or from home (`covid_y_qtn__school_002__02__v1`).
+
+Youth were asked how many days per week they were helped or supervised by a parent or guardian for schoolwork. If they responded one day or more, they were asked to specify how many days per week they were assisted by an adult for various activities.
+
+Three questions were constructed to ask how they find their schoolwork, whether they are worried about missing school, and whether they are enjoying school.
+
+**Notes and special considerations**: Some outlying responses were observed for a very small number (<0.1%) of participants for the following items: 
+
+- `covid_y_qtn__school_004` 
+- `covid_y_qtn__school_005` 
+- `covid_y_qtn__school_006` 
+- `covid_y_qtn__school_007`
+
+Some children reported taking online classes for more than 24 hours a day, if one combines all mutually exclusive responses, which is not possible and may be due to confusion by respondent between "how many hours a day" and "how many hours a week". Please note that we corrected these items in the next version of the questionnaire to avoid this problem for `wave 4` onward. There are some longitudinal discrepancies between `wave 1` and `wave 2` / `wave 3` due to the summer period; for instance the correlation between `wave 1` and `wave 2` is moderate for the following items (`covid_y_qtn__school_004`; `covid_y_qtn__school_005`; `covid_y_qtn__school_006`), due to substantial changes in school activities due to the summer period. Correlation between `wave 2` and `wave 3` is high, suggesting that the pattern was consistent within the summer period.
+
+### Routines
+
+**Daily routines:** Six questions ask about daily routines with options on a 5-point Likert scale, from 'never' to 'very frequently'. Some items are derived from The Questionnaire of Unpredictability in Childhood (@glynn2019), and ask about typical morning and bedtime routines, participation in family activities, and worrying about family not having enough money to pay for necessities.
+
+**Sleep:** Questions about typical sleep behavior in the past week were derived from the Munich Chronotype Questionnaire (@roenneberg2003). Variables included are:
+
+-   Time of going to bed ( hours; night-time hours only)
+-   Time of actually starting to fall asleep (hours; night-time hour options only)
+-   Minutes needed to fall asleep
+-   Number of awakenings during the night (up to 10)
+-   Total time awake during the night
+-   Time of waking up (hours; daytime hour options only)
+-   Time of starting schoolwork (hours; daytime hour options only)
+
+**Physical activity:** Questions about physical activity in the past week (no distinction is made for school days and school-free days) are modified from the International Physical Activity Questionnaire (IPAQ) short form (@lee2011). Questions ask about walking and moderate/vigorous activity, first establishing the number of days that these activities were performed, followed by the amount of time spent doing the activity on a day. A question is included about daily sedentary (sitting) activity.
+
+**References:**
+
+- @glynn2019
+- @roenneberg2003
+- @lee2011
+
+### Screen media use
+
+Screen time was measured using self-report of the amount of time on a typical day youth used recreational screen media categories and total time spent. The following instructions were given for this section:
+
+>Please do NOT include time spent on school related work, but DO include watching TV, shows or videos, texting or chatting, playing games, or visiting social networking sites.
+
+Due to the likelihood that many youth would likely be at home throughout most of these assessments, screen time was not captured for both a typical weekday and a typical weekend day independently, as is done in the ABCD annual data collections. There are school variables to account for whether the youth was attending school in person.
+
+For the first three waves the response answers were 0 minutes, 15 minutes, 30 minutes, 45 mins, 1 hour, 1.5 hours, 2 hours, 2.5 hours, and then each whole hour through 24 hours. It should be noted that depending on the type of device the youth used to complete the survey, there may be errors, particularly at the higher end, due to the way the answer options appeared; for example, if a child chose 1 hour, they may have accidentally spun the wheel to the end and clicked to try to get out of the answer option, rather than to mean to select 24 hours. This can be seen in instances where a child reports 24 hours of "Play multiplayer video games ..." but only 5 hours of total screen time on a typical day.
+
+### COVID-19 attitudes and practices
+
+These items assessed youth attitudes, practices, knowledge, and knowledge sources about COVID-19. Responses on youth attitudes toward COVID-19 policies (e.g., mask-wearing, school closures) may have been influenced by external social and familial factors. Researchers should consider potential confounding variables when interpreting results. 
+
+  Measures beginning with the prefix `covid_y_qtn__safety` have responses on a Likert scale from 1 to 4. For example, for `covid_y_qtn__safety_003` ("I wear a mask over my face or protective gear (e.g., gloves, things to cover my clothes)", response options were:
+
+-   `1` I have not done this in the last week
+-   `2` I did this some of the time last week
+-   `3` I did this most of the time last week
+-   `4` I did this all the time last week
+
+Responses across these 13 measures were available for `Wave 1` and `Wave 3`. The measures showed reasonable distributions across the Likert scale. Some measures of daily responses showed substantial change across these first two timepoints (e.g., `covid_y_qtn__safety_010`), indicating potential sensitivity to changes in local pandemic rules or behaviors in early months of the pandemic. Other measures of attitudes showed similar score distributions across the two time points (e.g., `covid_y_qtn__emotion_001`), indicating potentially more stable traits resilient to changes in local pandemic rules or behaviors.
+
+These responses were reasonably distributed, except for `covid_y_qtn__media_004`, which was skewed toward "0, Once per day or less", indicating most youth were not reporting checking for news updates.
+
+Similarly, youth overwhelmingly endorsed "None" for the question:
+
+`covid_y_qtn__media_005` - Which platform did you use the most when checking for news related to coronavirus?
+
+- `1` Twitter
+- `2` Instagram
+- `3` TikTok
+- `4` Snapchat
+- `5` YouTube
+- `6` Reddit
+- `7` Facebook
+- `8` Other
+- `9` None
+
+
+### Protests
+
+In May and June 2020, ABCD youth (ages 11-13) experienced  public demonstrations and protests across the U.S., and during this period, youth were navigating public health restrictions related to COVID-19. These events were associated with various social and policy issues and were widely covered by media outlets. The following questions were added to the COVID survey (`waves 4` and `5`) to assess youth's experience and perceptions about protests for or against Black Lives Matters, police, mask mandates, and school and business closures.
+
+Questions about Black Lives Matter protests have the designation `blm`. Questions about protests supporting police have the designation `pol`. Questions about protests against wearing masks have the designation *anti_mask* or *against_mask*. Questions about protests in favor of reopening businesses have the designation `reopbus`.
+
+For each of the four protest types, youth were first asked if they: watched TV stories, looked on the internet, or listened to news on the radio about public demonstrations (public marches, rallies). 
+
+- `covid_y_qtn__blm`...
+- `covid_y_qtn__pol`...
+- `covid_y_qtn__antimask`...
+- `covid_y_qtn__reopbus`...
+
+If youth endorsed this item, they were asked follow-up questions about the amount of time (0= none, 1= \<30 minutes per day 2= 30 minutes-1 hour per day, 3= 1-5 hours per day, 4= \>5 hours per day) they spent engaging with media...
+
+- `covid_y_qtn__blm_001__01`
+- `covid_y_qtn__pol_001__01`
+- `covid_y_qtn__antimask_001__01`
+- `covid_y_qtn__reopbus_001__01`
+
+...and how they felt (angry, afraid, inspired, hopeful) when engaging (1=not at all, 2= a little, 3=somewhat, 4=very much).
+
+- `covid_y_qtn__blm_001__02` to `__05`
+- `covid_y_qtn__pol_001__02` to `__05`
+- `covid_y_qtn__antimask_001__02` to `__05`
+- `covid_y_qtn__reopbus_001__02` to `__05`
+
+Youth were then asked if they scrolled, wrote, or posted to social media about the demonstrations (public marches, rallies)
+
+- `covid_y_qtn__blm_002`
+- `covid_y_qtn__pol_002`
+- `covid_y_qtn__antimask_002`
+- `covid_y_qtn__reopbus_002`
+
+If youth endorsed this item, they were asked follow-up questions about how often they scrolled/posted (0= none, 1= 1-10 times, 2= 11-30 times, 3= 31-50 times, 4= over 50 times)...
+
+- `covid_y_qtn__blm_002__01`
+- `covid_y_qtn__pol_002__01`
+- `covid_y_qtn__antimask_002__01`
+- `covid_y_qtn__reopbus_002__01`
+
+...and how they felt (angry, afraid, inspired, hopeful) when scrolling/posting (1=not at all, 2= a little, 3=somewhat, 4=very much) 
+- `covid_y_qtn__blm_002__02` to `__05`
+- `covid_y_qtn__pol_002__02` to `__05`
+- `covid_y_qtn__antimask_002__02` to `__05`
+- `covid_y_qtn__reopbus_002__02` to `__05`
+
+Youth were then asked if they knew people who attended a public demonstration (public marches, rallies) without them.
+
+- `covid_y_qtn__blm_003`
+- `covid_y_qtn__pol_003`
+- `covid_y_qtn__antimask_003`
+- `covid_y_qtn__reopbus_003`
+
+If youth endorsed this item, they were asked follow-up questions about who attended (parents, siblings, friends or neighbors). 
+
+- `covid_y_qtn__blm_003__01` and `__02`
+- `covid_y_qtn__pol_003__01` and `__02`
+- `covid_y_qtn__antimask_003__01` and `__02`
+- `covid_y_qtn__reopbus_003__01` and `__02`
+
+If youth endorsed having a parent or sibling attend a demonstration without them, they were asked how they felt (afraid, proud) if parents or siblings attended (1=not at all, 2= a little, 3=somewhat, 4=very much).
+
+- `covid_y_qtn__blm_003__01__01` and `__02`
+- `covid_y_qtn__pol_003__01__01` and `__02`
+- `covid_y_qtn__antimask_003__01__01` and `__02`
+- `covid_y_qtn__reopbus_003__01__01` and `__02`
+
+Finally, youth were asked how many demonstrations (public marches, rallies) they attended (0= 0, 1= 1, 2= 2, 3= 3 or more).
+
+- `covid_y_qtn__blm_004`
+- `covid_y_qtn__pol_004`
+- `covid_y_qtn__antimask_004`
+- `covid_y_qtn__reopbus_004`
+
+If youth endorsed a non-zero value, they were asked follow-up questions about how they felt when attending (angry, afraid, inspired, hopeful)... 
+- `covid_y_qtn__blm_004__01` to `__04`
+- `covid_y_qtn__pol_004__01` to `__04`
+- `covid_y_qtn__antimask_004__01` to `__04`
+- `covid_y_qtn__reopbus_004__01` to `__04`
+
+...and what they saw when attending (police helping or protecting a demonstrator, demonstrator helping or protecting a demonstrator, force by police (pushing, shoving or use of tear gas), violence by demonstrators (throwing rocks, bottles at police, destroying property).
+
+- `covid_y_qtn__blm_005`
+- `covid_y_qtn__pol_005`
+- `covid_y_qtn__antimask_005`
+- `covid_y_qtn__reopbus_005`
+
+### Coping behaviors
+
+A new question (`covid_y_qtn__cope`...) asked about activities in the past week such as learning a new hobby. Participants could check all activities that applied.
+
+### Mental health and stress
+
+**NIH Toolbox Emotion Measures:** Youth-reported measures of sadness (8 items), fear (8 items), and positive affect (9 items) were measured using instruments from the NIH Emotion Battery (@gershon2013). Youth were asked on a scale from "Never" to "Almost Always" how often they had felt a particular emotional experience. One additional item was added, "I felt angry or frustrated", to measure anger emotion, with identical response options to the NIH Toolbox emotion measures.
+
+**COVID-Related Worry:** Five questions were constructed to measure worry and their thinking about the coronavirus. These included asking youth how worried they have been about the coronavirus; how worried others have been; how much life has changed as a result of coronavirus; how hopeful youth are that the coronavirus crisis will end soon; and how stressful the uncertainty of COVID-19 has been on their lives. Response options ranged from "Not at all" to "Extremely." 
+
+**Perceived Stress:** Perceived stress was measured using the 4-item version of the Perceived Stress Scale (PSS) (@cohen1983). Youth were asked to indicate how often they experienced stress in the past month. Response options ranged from "Never" to "Very Often".
+
+A second item was constructed to measure how much a youth's perceived mental well-being has changed in the past week, ranging from "much worse" to "much better."
+
+**References:** 
+
+- @gershon2013
+- @cohen1983
+
+### Friends and family relationships
+
+**Parental Knowledge/Monitoring** - In `wave 1-7`, youth completed four items measuring parental knowledge / monitoring:
+
+-   `covid_y_qtn__famrel_001`
+-   `covid_y_qtn__famrel_002`
+-   `covid_y_qtn__famrel_003`
+-   `covid_y_qtn__famrel_004`
+
+These are four of the five items included on the ABCD study's measure of parental monitoring at the main study visits. See @zucker2018 for a description of the measure.
+
+At `wave 7` only, youth completed three additional items:
+
+-   covid_y_qtn__su_001
+-   covid_y_qtn__su_001__01
+-   covid_y_qtn__su_002
+
+The items were written for ABCD to measure parents' knowledge and monitoring of youths' substance use. Within the survey, these items were placed immediately after the survey section asking the youth about his or her alcohol or drug use. The items assess (1) whether parents knew about any youth substance use that occurred, (2) if the parents knew, whether they made any change to their monitoring or tracking of the youth, and (3) whether the youth could think of an instance in which they would have used substances if not for parent interference.
+
+These survey items were written by William Pelham, PhD at UC San Diego. Contact [wpelham\@ucsd.edu](mailto:wpelham@ucsd.edu){.email} with further questions.
+
+**Reference:** @zucker2018
+
+### Family and friend communication quality
+
+Youth were asked how the frequency and tone of their communications with their parents, siblings, and friends had changed during the pandemic.
+
+**Reference:** @zucker2018
+
+### Substance use
+
+Youth were asked how many days in the last 30 days they had used alcohol, nicotine products, inhalants, marijuana in various forms, and other substances. Youth were also asked about their parents' knowledge and monitoring of their substance use.
+
+### Media and news exposure
+
+Youth were asked about their exposure to news about COVID-19, whether they sought out news about COVID-19, and what their news sources were.
+
+## Fitbit
+
+### Fitbit - Post-Assessment Survey {#covid_y_fitbqtn}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_y_fitbqtn")`
+
+Following their Fitbit use period, youth were asked questions about their use of the Fitbit, including whether they wore it consistently, when they wore it, had technical issues, whether it changed their sleep/activity behavior, and how the pandemic changed their sleep/activity patterns.
+
+### Fitbit raw data
+
+To download COVID Fitbit Raw Data raw data, follow the instructions at the [NBDC page](https://www.nbdc-datahub.org/).
+
+---
+
+# Parent tables {#covid_p}
+
+## COVID Rapid Response Research (RRR) Survey (Parent) {#covid_p_qtn}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_p_qtn")`  
+
+Information about the dates of survey completion in the COVID Substudy is recorded in  `covid_p_qtn_dt`. 
+
+During data collection, a timestamp was recorded only when the respondent completed the final question on the survey. Some parents completed part of the survey but did not reach the end. In this case, the parent's record will include data for whatever parts of the survey they completed, but the corresponding variable indicating the date of survey completion will have a missing value.
+
+The below sections do not delineate specific variable tables but rather thematically similar variables. They generally will have consistent keywords across sections but may not contain all the same keywords. To learn more about keywords see our documentation on [variable naming conventions](../curation/naming.qmd#sec-item).
+
+### Family situation
+
+Caregivers were asked about home composition, family members' jobs and related COVID risk, economic impacts of the pandemic, including food insecurity, other family impacts (e.g., family conflict, access to medical/mental healthcare), and family COVID illness.
+
+### Schooling
+
+Parents were asked about school closure and school attendance of their children, how much time their child spent on school/schoolwork, whether they have access to needed materials for school, how they engaged with their school's curriculum, and whether they received school-related services (e.g., meals).
+
+The parents who reported being the primary (or co-primary) person responsible for child's care during the day were asked questions about how much those activities interfered with their professional and household duties. Further questions addressed how much time they spent in helping the children in their school activities along with other questions regarding the continuity of schooling.
+
+`Waves 2 and 3` covered at least partially schools' summer break for a large number of participants.
+
+### Youth's routine
+
+**Daily routines:** Parents were asked whether family routines had changed due to the pandemic.
+
+**Sleep:** Seven questions about sleep are from the Sleep Disturbance Scale for Children (SDSC) (@bruni1996), specifically from the Disorders of initiating and maintaining sleep subscale. The period has been modified to the past week. Two questions that quantify sleep duration and sleep onset latency are asked at each time point whereas the remaining 5 questions about difficulties initiating and maintaining sleep (responses range from Never to Always on a 5-point Likert scale) are asked on  `wave 2`. The 7 items (each scored between 1 and 5) can be added to obtain a total score for difficulty initiating and maintaining sleep, with higher scores reflecting greater difficulty.
+
+The Sleep Disturbance Scale is included in the main ABCD Study assessment protocol (`ph_p_sds`) allowing users to compare pre- and post-COVID patterns.
+
+**Physical activity** - Questions about moderate-vigorous physical activity in the past week are modified from the International Physical Activity Questionnaire (IPAQ) short form (@lee2011).
+
+**References:** 
+
+- @bruni1996
+- @lee2011
+
+### COVID attitudes and practices
+
+Caregivers were asked whether the virus has elicited strong emotions or gotten in the way of the youth's enjoyment of life on a four-point Likert scale. Caregivers were asked about parental involvement , 'Talked About X, in the past week at each `wave` using five-point Likert scale items (1, Never; 2, Rarely; 3, Occasionally; 4, Frequently; 5, Very Frequently).
+
+Missing data were minimal as a percentage of responses and distributions were reasonable. Remaining measures assessing parent involvement, using 5-point "Strongly Disagree-Strongly Agree" Likert were asked at two timepoints (`Wave 1 and 3`) and showed reasonable distributions.
+
+A question was constructed asking about activities the family engaged in or avoided in the past week by choice, rather than because of closures. In Surveys 1 and 2, participants had the option of checking up to 13 boxes with different COVID related activities. A checkbox corresponding to "None of the above" added (`covid_p_qtn_006___333`). On  `wave 3`, an additional checkbox was added (`covid_p_qtn_006___14`) corresponding to the item "Wore Masks".
+
+Data for `covid_p_qtn_006`... should be disregarded for `wave 1` and `2` as only a few participants who took the survey later on had `covid_p_qtn_006___333` as an available option.
+
+### Coping behaviors
+
+A question was constructed asking about activities the parent engaged in the past week to cope (`covid_p_qtn_007`...). Participants had the option of selecting up to 8 checkboxes. `covid_p_qtn_007___333` corresponds to the checkbox "None of the above".
+
+### Media and news exposure
+
+Parents were asked about youth exposure to news about COVID-19 and whether the virus has elicited strong emotions or gotten in the way of the youth's enjoyment of life.
+
+For youth news exposure at the first time point, for 16 participants there was a potential branching logic glitch, resulting in 16 missing data points for:
+
+-   `covid_p_qtn__media_001`
+-   `covid_p_qtn__media_002`
+
+### Parent substance use
+
+Parents were asked about how often and where they used alcohol, marijuana, nicotine products, and other substances.
+
+In Surveys 2, 4, and 6, certain substance use questions (`covid_p_qtn__su__nic__vape_001`, `covid_p_qtn__su__mj__vape_001`, `covid_p_qtn__su__mj__smoke_001`, and `covid_p_qtn__su__nic__cig_001`) were administered conditionally based on prior responses, following a structured branching logic design. If a question was not asked due to branching logic is is coded under the suffix `___888`. 
+
+### Youth's COVID-19 infection
+
+Parents were asked about the youth's COVID symptoms, diagnosis and testing, or any exacerbation of asthma symptoms.
+
+---
+
+# Geocoded data
+
+## Administrative information {#covid_l_geoadm}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geoadm")`  
+
+This table includes the reported percent of time spent at each of five addresses and an error variable if participants had additional addresses that could not be used for data linkage.
+
+In the previous releases of COVID-19 Geocoded Metrics, geocoded data were linked to participants' baseline addresses. The latest data were re-linked to addresses that coincided with each survey time point. Address collection during the survey period no longer includes primary, secondary or tertiary designations. As a result of the linkage by date and previous address collection processes, participants may have several addresses with date ranges that coincide with each survey timepoint. The reported percent of time spent at each address is provided in place of primary, secondary and tertiary designations for the user's consideration. Users should note that for a given survey timepoint, the percent of time may not sum up to 100%.
+
+Additionally, residential history included incomplete address information leading to errors in geocoding. The `covid_l_geoadm_compl` field indicates if participants had additional addresses which could not be used for data linkage. These variables are in table `cvd_l_geo_adm`.
+
+These issues are being actively addressed to improve the temporal and geographic accuracy of participants' reported addresses.
+
+## US Bureau of Labor Statistics (BLS) {#covid_l_geobls}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geobls")`  
+
+Unemployment rates are provided at the county level at monthly rate by the [U.S. Bureau of Labor Statistics](https://www.bls.gov/lau/). The rates are not seasonally adjusted. These county-level unemployment data are also available for 2019 (i.e., pre-pandemic) for comparison to 2020/2021.
+
+BLS fields have the following prefix: `covid_l_geobls`
+
+## US Census 2019 Population Data {#covid_l_geocen}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geocen")`  
+
+## Johns Hopkins University COVID-19 Prevalence {#covid_l_geocount}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geocount")`  
+
+COVID-19 prevalence (i.e., case and death counts) were obtained from a publicly available Github repository maintained by the Center of Systems Science and Engineering at Johns Hopkins University. Data sources are cited in the [README.md here](https://github.com/CSSEGISandData/COVID-19). These data have county-level resolution.
+
+Raw case and death counts (cumulative) were used to calculate new case/death counts as well as aggregated rolling 7-day averages. Metrics were population adjusted by [US Census measures per county](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-counties-total.html). 
+
+Case/death counts used were not adjusted to confirmed counts. Therefore, some negative values in new case/death count fields exist. For prevalence data, along with the other geocoded metrics, these data were geocoded with respect to the date that the survey was disseminated to the participants, not the date that the participants returned their surveys. This may be changed in future releases.
+
+For additional notes, see [Geocoded Data - Administrative information](#covid_l_geoadm). 
+
+## SafeGraph Social Distancing Metrics (SafeGraph) {#covid_l_geosg}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geosg")`  
+
+Daily metrics for mobile device behaviors were made publicly available by [SafeGraph](https://docs.safegraph.com/docs/welcome) at the census block level from 2019 through Dec 2020. Their [website](https://docs.safegraph.com/docs/social-distancing-metrics) provides the following description:
+
+> This product is delivered daily (3 days delayed from actual). Daily data is available going back to January 1, 2019. We used v2.1 to create the historical data from Jan 1, 2019 - Dec 31, 2019 (the backfill) as well as the data from May 10, 2020 forwards. However, the Jan 1-May 9, 2020 data is on v2.0. Apologies for any inconvenience, please see Release Notes below for more information.*
+
+> The data was generated using a panel of GPS pings from anonymous mobile devices. We determined the common nighttime location of each mobile device over a 6-week period to a Geohash-7 granularity (\~153m x \~153m). For ease of reference, we call this common nighttime location, the device's "home". We then aggregate the devices by home census block group and provide the metrics set out below for each census block group.*
+
+Across devices, variable suffixes `disttravel` refer to median distance traveled from home (with "home" defined as described above), and `homedwell` refers to the average amount of time (in minutes) at home. `devathome` refers to the proportion of devices completely at home. `ftwork` and `ptwork` refer to the proportion of devices exhibiting full-time and part-time, respectively, work behavior. Full-time work is defined as the ratio of devices polled that spent greater than 6 hours at a location other than their geohash-7 home during the period of 8am - 6pm in local time. Part-time work is defined as the ratio of devices polled that spent one period of between 3 and 6 hours at one location other than their geohash- 7 home during the period of 8am - 6pm in local time. This does not include any device that spent 6 or more hours at a location other than home.
+
+For additional notes, see [Geocoded Data - Administrative information](#covid_l_geoadm). 
+
+## CDC Policy Surveillance Data {#covid_l_geopolicy}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geopolicy")`  
+
+Policy data related to COVID-19 restrictions were compiled from the [Centers for Disease Control and Prevention](https://data.cdc.gov/) using the following datasets:
+
+-   [U.S. State and Territorial Stay-At-Home Orders: March 15, 2020 -- August 15, 2021 by County by Day](https://data.cdc.gov/Policy-Surveillance/U-S-State-and-Territorial-Stay-At-Home-Orders-Marc/y2iy-8irm)
+-   [U.S. State and Territorial Orders Closing and Reopening Restaurants Issued from March 11, 2020 through August 15, 2021 by County by Day](https://data.cdc.gov/Policy-Surveillance/U-S-State-and-Territorial-Orders-Closing-and-Reope/azmd-939x)
+-   [U.S. State and Territorial Orders Closing and Reopening Bars Issued from March 11, 2020 through August 15, 2021 by County by Day](https://data.cdc.gov/Policy-Surveillance/U-S-State-and-Territorial-Orders-Closing-and-Reope/9kjw-3miq)
+-   [U.S. State and Territorial Public Mask Mandates From April 10, 2020 through August 15, 2021 by County by Day](https://data.cdc.gov/Policy-Surveillance/U-S-State-and-Territorial-Public-Mask-Mandates-Fro/62d6-pm5i)
+-   [U.S. State and Territorial Gathering Bans: March 11, 2020-August 15, 2021 by County by Day](https://data.cdc.gov/Policy-Surveillance/U-S-State-and-Territorial-Gathering-Bans-March-11-/7xvh-y5vh)
+
+Data sources for geocoded COVID-19 policy and prevalence information were last compiled from publicly available databases in 2022. Researchers should verify whether updated datasets or additional policy sources are available for future analyses.
+
+The CDC Policy Surveillance datasets were compiled at a county level with daily resolution. For each county, dates were collected for any change in policy with a corresponding column of the policy changes.The county data were then joined to the counties associated with each participants' address(es) at the survey timepoint. The resulting columns for each address show all date and policy changes for each dataset for the participants' county for the duration of the dataset date range.
+
+For additional notes, see [Geocoded Data - Administrative information](#covid_l_geoadm).
+
+---

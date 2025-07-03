@@ -1,0 +1,53 @@
+---
+title: MR Spectroscopy
+subtitle: "MRS Substudy: Brain MRS GABA Measures, Impulsivity and the Adolescent Brain"
+---
+
+# Domain overview
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+```{r}
+render_table_info("domain_abbr == 'mrs'")
+```
+
+The ABCD Magnetic Resonance Spectroscopy (MRS) Substudy was conducted in a subsample of youth enrolled in the ABCD study at the University of Utah and University of Maryland (Baltimore) sites. The aim of this study was to acquire neurometabolite/neurochemical data to determine the associations between neurometabolite/neurochemical concentrations and clinical factors such as substance use exposure and potential risk and resilience factors for substance use. Study participants were recruited from the main ABCD study cohort during their 3-Year follow-up visit.
+
+The MRS scans were completed on a separate day than the 3-Year follow-up visit. Generally, the visits were completed +/- 30 days of each other. However, there are certain instances where the data collection was not within that time frame, and thus must be taken into consideration when analyzing measures from this substudy with ABCD core protocol measures. For the single-voxel proton spectroscopy scans (2DJ-resolved \[1\] and HERMES \[2\] ), the voxel was positioned in the anterior cingulate cortex (ACC), measuring 30 x 25 x 25mm 3 (LR, AP, FH axis).
+
+---
+
+# Youth tables {#mrs_y}
+
+## 2DJ- resolved {#mrs_y_2dj}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mrs_y_2dj")`  
+
+This table provide neurometabolite data acquired using the 2DJ-resolved spectroscopy sequence (@prescot2013). Data was processed using ProFit and includes information on 20 metabolites (@schulte2006).
+
+The 2DJ output metabolite is generally referred to as a “scaled metabolite amplitude” whereby the basis spectrum is scaled to match the measured spectrum.
+
+**References:**
+
+- @prescot2013
+- @schulte2006
+
+## HERMES {#mrs_y_hermes}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mrs_y_hermes")`  
+
+This table provides neurometabolite data acquired using the HERMES sequence (@saleh2016). This data was processed using Gannet (@edden2014) (version 3.2.1) and includes neurometabolite information for gamma-aminobutyric acid (GABA), glutamate-glutamine (Glx), and glutathione (GSH) along with measures of data quality (fit error, signal-to-noise ratio, full-width half maximum) and voxel tissue fractions (gray matter fraction, white matter fraction, and cerebrospinal fluid fraction) for the anterior cingulate cortex (ACC).
+
+For additional information about Gannet and the output variables, please refer to: <https://markmikkelsen.github.io/Gannet-docs/index.html>
+
+**References:**
+
+- @saleh2016
+- @edden2014
+
+---

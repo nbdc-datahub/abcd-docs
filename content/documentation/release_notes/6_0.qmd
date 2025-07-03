@@ -1,0 +1,511 @@
+---
+title: "6.0 data release"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+
+levels_recode <- readr::read_csv(
+  "../../assets/tbl/documentation/release_notes/levels_recode.csv"
+)
+```
+
+
+# Sample
+
+The 6.0 data release includes data from *11,868 participants*, representing the full ABCD cohort (N = 11,880) except for 12 participants who withdrew consent to share their data, and *13 events*. Data is considered complete through the 4-year follow-up and nearly complete for the 5-year follow-up, with varying numbers of missed visits per event. The 5.5-year and 6-year follow-up events were still ongoing when the data were frozen (cutoff date: January 15, 2025), so these events include only participants who had assented by the cutoff date. No data are included from events after the 6-year follow-up to ensure sufficient event completion.
+
+The following table shows the number of participants per *core study* event^[Please note that the event identifier has been changed to be compatible with the BIDS standard; read more [here](../curation/standards.qmd#identifier-columns).]:
+
+| **Session/event ID** | **Session/event label** | **n** |
+|----------------------|-------------------------|-------|
+| ses-00S              | Screener                | 11868 |
+| ses-00A              | Baseline                | 11868 |
+| ses-00M              | 0.5 Year                | 11389 |
+| ses-01A              | 1 Year                  | 11219 |
+| ses-01M              | 1.5 Year                | 11084 |
+| ses-02A              | 2 Year                  | 10973 |
+| ses-02M              | 2.5 Year                | 10256 |
+| ses-03A              | 3 Year                  | 10450 |
+| ses-03M              | 3.5 Year                | 9574  |
+| ses-04A              | 4 Year                  | 9739  |
+| ses-04M              | 4.5 Year                | 7164  |
+| ses-05A              | 5 Year                  | 8885  |
+| ses-05M              | 5.5 Year                | 6323  |
+| ses-06A              | 6 Year                  | 5056  |
+
+The ABCD 6.0 Data Release also includes data from associated substudies—Social Development, Endocannabinoids, Hurricane Irma, COVID-19, and MR Spectroscopy. Some of these substudy assessments are done during the same visits as the main study, others have their own, independent event structure.
+
+The following table shows the number of participants with data per *substudy* event:
+
+| **Substudy**       | **Session/event ID** | **Session/event label**    | **n** |
+|--------------------|----------------------|----------------------------|-------|
+| COVID-19           | ses-C01              | COVID Wave 1               | 11187 |
+| COVID-19           | ses-C02              | COVID Wave 2               | 11208 |
+| COVID-19           | ses-C03              | COVID Wave 3               | 11153 |
+| COVID-19           | ses-C04              | COVID Wave 4               | 11107 |
+| COVID-19           | ses-C05              | COVID Wave 5               | 11051 |
+| COVID-19           | ses-C06              | COVID Wave 6               | 10842 |
+| COVID-19           | ses-C07              | COVID Wave 7               | 10854 |
+| Social Development | ses-S01              | SDev Wave 1                | 2426  |
+| Social Development | ses-S02              | SDev Wave 2                | 2129  |
+| Social Development | ses-S03              | SDev Wave 3                | 1942  |
+| Social Development | ses-S04              | SDev Wave 4                | 1842  |
+| Social Development | ses-S05              | SDev Wave 5                | 1384  |
+
+# Curation & structure
+
+In preparation for the 6.0 data release, the ABCD Study implemented new curation standards to improve the consistency, transparency, and usability of the release dataset. The curation standards and their implementation are described in more detail in the [Curation & structure](../curation/structure.qmd) pages of the documentation. A high-level overview of the changes is provided below.
+
+## BIDS file structure and identifier columns
+
+The ABCD 6.0 data release includes a variety of data types and file formats, including [tabulated data](../curation/structure.qmd#tabulated) and [file-based data](../curation/structure.qmd#file-based). Where possible, the data are organized in accordance with the [Brain Imaging Data Structure (BIDS)](https://bids-specification.readthedocs.io/en/stable/) standard, with some modifications to meet the specific needs of the ABCD Study®. BIDS is a widely adopted standard for organizing and formatting neuroimaging data, facilitating data sharing, processing, and analysis across various platforms and tools. We hope that this standardization will enhance the usability of the data and make it easier for researchers to work with the dataset.
+
+As part of the BIDS standardization, we implemented the following changes to the names and values of the identifier columns used across the ABCD data resource:
+
+- **Identifier Column Names:**
+  - `participant_id` (replacing `src_subject_id` from previous releases)
+  - `session_id` (replacing `eventname` from previous releases)
+- **Identifier Column Values:**
+  - Use BIDS-specific prefixes (`sub-` for participant and `ses-` for session/event identifiers).
+  - `participant_id` values no longer include the `NDAR_INV` prefix (e.g., `sub-ABCD1234` instead of `NDAR_INVABCD1234`).
+  - `session_id` values are BIDS-compliant (e.g., without underscores) and standardized (see [here](../curation/standards.qmd#identifier-columns) for more details).
+
+## Naming convention
+
+For the 6.0 data release, the complete ABCD tabulated data resource has been re-curated using a *standardized naming convention*. This convention implements a keyword system that maps variables to summary scores, indicates branching logic and versioning, and links concepts across domains.
+
+-  A description of the new **variable naming convention** can be found [here](/documentation/curation/naming.qmd).
+-  A **keyword glossary** can be found [here](/documentation/curation/naming.qmd#glossary).
+
+::: {.callout-note collapse="true" title="General design of the naming convention"}
+<code>[dm_s_tab_item]{style="color: #BF0000; font-size: 24px"}</code>
+
+Variable names consist of four main components, each separated by a *single underscore*:
+
+1. Domain
+2. Source/Recipient
+3. Table
+4. Item
+
+The table and item components may include additional subcomponents, which are separated by *multiple underscores* to indicate nesting within the four main components.
+
+For detailed information about each component of the naming convention, please refer to the documentation [here](/documentation/curation/naming.qmd#components).
+:::
+
+As a result, all variables in the tabulated dataset have been renamed according to this new convention. To facilitate the transition of existing workflows, we have retained the mapping to previously used variable and table names in the [data dictionary](/documentation/curation/metadata.qmd#dd_levels_tables) (see [here](/documentation/curation/metadata.qmd#add-info) for more details).
+
+We recognize that this change will necessitate adjustments to current analysis pipelines and may introduce some initial friction. However, we believe that this recuration effort will ultimately benefit all users of the ABCD tabulated data resource. The new curation standard resolves many inconsistencies from previous releases and offers a clearer structure that is easier to search and process across the entire dataset. 
+
+## Curation standards
+
+As part of the recuration effort, we further standardized and improved the accompanying metadata.
+
+- A general overview of the **curation standards** can be found [here](/documentation/curation/standards.qmd).
+- **Table-level standards**, including participant and session/event IDs as well as collection timestamps and ages are described [here](/documentation/curation/standards.qmd#table-level-standards).
+- **Variable-level standards**, including the systematic encoding of variable and data types, measurement levels, units, variable labels, and coding standards are described [here](/documentation/curation/standards.qmd#variable-level-standards).
+- **Label standards** that were implemented to de-duplicate existing labels and ensure that the label for each variable can be understood on its own are described [here](/documentation/curation/standards.qmd#labels). Additionally, the Spanish versions of labels were broken out into a separate column in the [data dictionary](/documentation/curation/metadata.qmd#dd_levels_tables) for improved readability.
+
+## Additional metadata
+
+The data documentation website has been redesigned to better support responsible and informed data use. Notably, warnings that provide critical context for interpreting the data—such as potential quality concerns and guidance on appropriate usage—have been added throughout the website (see the [Responsible Use](../../usage/responsible_use.qmd) page for more details).
+
+To integrate the [data dictionary](/documentation/curation/metadata.qmd#dd_levels_tables) more closely with the information provided in the documentation, it now includes additional metadata. This metadata offers hyperlinks to responsible data use and data quality warnings, as well as links to the documentation pages for each table and any applicable summary score documentation for a given variable (see [here](/documentation/curation/metadata.qmd#add-info) for more details).
+
+## Re-coding of categorical variables {#re-coding}
+
+As part of the recuration process, we implemented consistent coding standards for all categorical variables in the tabulated data resource. This included standardizing the coded values for binary responses (e.g., *"Yes"/"No"* or *"True"/"False"*) and non-responses (e.g., *"Don’t know"* or *"Decline to answer"*). Additionally, we made changes to the coded values of some ordinal and semantic categories—such as grade levels, Likert scales, frequency responses, and income brackets—to create a more logical and intuitive order.
+
+These updates ensure that researchers can more reliably interpret coded values for categorical variables across instruments and domains. Full details on the coding standards for binary and non-responses are provided [here](/documentation/curation/standards.qmd#coding-standards). The table below lists all previously released variables that have been affected by these changes to help researchers adjust any existing analysis scripts accordingly.
+
+::: {.callout-note collapse="true" title="Re-coded categorical variables"}
+```{r}
+levels_recode |>
+  reactable(
+    filterable = TRUE,
+    searchable = TRUE,
+    defaultPageSize = 25,
+    resizable = TRUE
+  )
+```
+:::
+
+## Administration timestamps and ages
+
+In previous ABCD releases through the NIMH Data Archive (NDA), each table included an `interview_date` column. While the column name suggested that the data was collected on that date, it actually represented the start date of a visit and was duplicated across all tables. This approach did not account for multiday visits or other out-of-sync administrations.
+
+For the 6.0 release, we introduced table-specific administration timepoint variables `{table_name}_dtt`, which reflect the actual date and time when the forms were administered, when available. This change allows for more precise temporal alignment. Additionally, based on these variables, we provide table-specific age variables `{table_name}_age` to enhance age-related analyses (see [here](/documentation/curation/standards.qmd#dtt-age) for more details).
+
+## Summary scores
+
+In an effort to correct errors, improve algorithms based on advancements in the relevant fields, increase consistency across measures and domains, and enhance transparency for users, all summary scores computed by the DAIRC^[The dataset includes other summary scores, such as proprietary scores or summary scores imported from external sources.] were re-developed for the 6.0 release. This includes both previously released summary scores and new scores developed since the last release.
+
+The code to compute the various scores has been published as an R package called `ABCDscores` on [GitHub](https://github.com/nbdc-datahub/ABCDscores) and is accompanied by a [documentation website](https://software.nbdc-datahub.org/ABCDscores). The goal of making the package public is to support transparency and reproducibility of ABCD release data by providing the exact algorithms and code used to compute the released summary scores. This allows users to tie a specific data release version to the corresponding version of the codebase (see also [here](../../tools/r_packages.qmd#ABCDscores) for the rationale behind creating this R package).
+
+The re-development aimed to implement consistent standards across domains. For example, a maximum of 20% missing ingoing items was established, and wherever possible, (prorated) sums were replaced with means. Additionally, variables reporting the total number of items in a score were removed, as they represent redundant information that does not vary between participants.
+
+Due to the significant changes made to many summary scores included in previous releases, we did not maintain the mapping between current and legacy variable names (see [here](/documentation/curation/metadata.qmd#add-info)). This decision was made to indicate to users who may have used those variables in previous analyses that the contents may differ significantly in the 6.0 dataset. Direct comparisons should only be made after consulting `ABCDscores` and the accompanying documentation to understand the new algorithms.
+
+## Other general data changes
+
+During the recuration process, we made several general changes to the data structure and content to improve usability and consistency across the dataset. These changes include:
+
+- In previous releases, variables that captured the same concept were sometimes named differently across different events. To reduce redundancy and confusion, these variables have been collapsed into a single variable.
+- Previously, all variables were associated with a longitudinal event. Static variables (such as race, ethnicity, genetic PCs, etc.) were typically linked to the baseline event. In the 6.0 release, static variables are now provided in static data tables—tables that do not include the session/event column `session_id` (see [here](/documentation/curation/standards.qmd#identifier-columns) for more details on the identifier columns). This change facilitates easier linking of static variables to the longitudinal data tables.
+
+# Core domains
+
+## ABCD (General)
+
+### Standard variables tables
+
+The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain. Examples of these variables include visit-level information, design/nesting variables, and variables useful for describing the cohort.
+
+### School and district IDs
+
+For the 6.0 release, school and district IDs were amended due to the following changes. Please note that these changes are specific to the pseudo school ID `ab_g_dyn__design_id__district` and `ab_g_dyn__design_id__school` and do not impact the linked SEDA data:
+
+- Additional data were recovered from earlier data collection interfaces. These data were used to recalculate available data as prior data releases had applied a filter restricting inclusion to cases with >= 10 pseudo IDs.
+- Private schools without an NCES ID were inaccurately assigned an anonymized district ID. These district IDs were removed for the 6.0 release.
+- In prior releases, when an informant reported that a participant was homeschooled, `school_id` was recoded to '0.' However, in the 6.0 release, participants who were homeschooled were not given a `ab_g_dyn__design_id__school`/`ab_g_dyn__design_id__district` unless their homeschooling was associated with an NCES school/district identification number.
+
+### Family and birth IDs
+
+In the 6.0 release, we corrected a small number of errors in the `ab_g_stc__design_id__fam` and `ab_g_stc__design_id__birth` variables to more accurately reflect sibling relationships between participants. Please disregard data from the `rel_family_id` and `rel_birth_id` variables in prior releases in favor of the 6.0 release data.
+
+### Site ID
+
+In the 6.0 release, we corrected a small number of errors in the site ID variable, `ab_g_dyn__design_site`. Please disregard information about sites in prior releases in favor of the 6.0 release data. The site ID is now provided as a categorical variable that lists the site names (e.g., `"1"`='*Children's Hospital Los Angeles*') instead of a coded variable (e.g., `"site01"`).
+
+### Ethno-racial identity
+
+Several new ethno-racial identity summary score variables are available in the data release, capturing ethnicity and race based on baseline and longitudinal responses from youth and parents:
+
+- `ab_g_stc__cohort_ethn`: Hispanic vs. non-Hispanic classification  
+- `ab_g_stc__cohort_ethnrace__leg`: 6-level legacy classification prioritizing Hispanic ethnicity  
+- `ab_g_stc__cohort_ethnrace__mblack`: 8-level classification highlighting Black identity in multiracial endorsements  
+- `ab_g_stc__cohort_ethnrace__mhisp`: 8-level classification highlighting Hispanic identity in multiracial endorsements  
+- `ab_g_stc__cohort_ethnrace__meim`: 15-level classification based on MEIM responses  
+- `ab_g_stc__cohort_race__nih`: 7-level classification based on NIH standards  
+
+Some of these variables are newly introduced in Release 6.0.
+More detail on how they are computed is available in the [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#abcd-static-variables-general-) package.
+
+### Household income
+
+A new household income variable (`ab_g_dyn__cohort_income__hhold__3lvl`) was created with three distinct levels (as well as `"999"`=*'Do not know'* and `"777"`=*'Decline to answer'*):
+
+- <$50,000
+- $50,000 to <$100,000
+- \>=$100,000
+
+This variable was developed to offer a convenient categorization of household income, reflecting a common practice among researchers using ABCD data. The selection of cut-offs for each income level was informed by an analysis of alternative categorization methods and a careful examination of cell sizes across all study time points. The goal was to ensure sufficient representation within each level while maintaining the meaningfulness of the income brackets.
+
+This new variable is intended to facilitate ease of use in analysis, particularly for studies where more granular detail is not required. However, more detailed versions of the household income variable also remain available in the dataset (e.g. a variable with 5 levels, `ab_g_dyn__cohort_income__hhold__5lvl`).
+
+### Anonymized Date of Birth
+
+We changed the algorithm for how anonymized birthdates are computed in the 6.0 release. In previous releases, the algorithm always used the 15th day of the month in which a participant was born (for example, if a participant was born on April 18th, 2010, their anonymized birthdate was set to April 15th, 2010).
+
+In the new algorithm, we first determine whether a participant’s birthday falls in the first half (1st–15th) or second half (16th–end) of the month. Then, for each birthday, we randomly select a new day within the same half of the month.
+
+## Friends, Family, & Community
+
+This domain was previously referred to as "Culture and Environment". Detailed information about the instruments, the constructs they are intended to measure, and relevant citations for each measure are provided in the [Data Documentation](../non_imaging/fc.qmd).
+
+### Peer Behavior Profile (PBP) summary scores
+
+The workgroup decided that Peer Behavior Profile (PBP) summary scores would not be included in this release, as the available items do not map clearly onto validated subscales. Researchers interested in using these data are encouraged to create their own summary scores using the individual `pbp` items that best suit their specific analyses.
+
+### Values Scale summary scores
+
+The Values Scale currently lacks a summary score for the *familism subscale*, which will be included in a future data release. The familism construct is computed as follows:
+
+- **Baseline through 5-Year event**: mean of the 17 items from the three scales:
+  - "Family Support"
+  - "Family Referent"
+  - "Family Obligation"
+- **Starting 6-Year event**: mean of the 11 items from the two scales:
+  - "Family Support"
+  - "Family Referent"
+
+The summary score computation will be included soon in the [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores/) package and can be used in analyses of 6.0 data.
+
+## Genetics
+
+Consistent with the rest of the 6.0 data release, the `NDAR_INV` prefix has been removed from all subject identifiers in files. Four individuals were also removed from files due to withdrawal of consent or familial genetic relatedness inconsistency. These individuals can be found in the file `/dairc/concat/genetics/genotype_microarray/smokescreen/removed_individuals.txt` available in the file-based data.
+
+### Genetically derived family and birth IDs
+
+In the 6.0 data release, 200 individuals have still not been genotyped from the full enrolled sample and so `gn_y_genrel_id__fam` and `gn_y_genrel_id__birth` are not defined for these individuals.
+
+In previous data releases, family relatedness was captured by `rel_family_id`, this variable is now named `gn_y_genrel_id__fam` in the genetics table and crosslisted as `ab_g_stc__design_id__fam__gen` in the `ab_g_stc` table.
+
+### TOPMED imputed data shared as VCFs
+
+TOPMED imputed data is now shared as VCFs (Variant Call File) instead of as PLINK files; this facilitates the inclusion of imputation INFO scores which indicate the quality of imputation and enables the inclusion of multiallelic variants.
+
+To generate PLINK Files from VCFs, please download [PLINK2](https://www.cog-genomics.org/plink/2.0/) and run the following commands (in `bash` shell):
+
+```bash
+for CHR in {1..23}; do
+  plink2 --vcf chr${CHR}_dose.vcf.gz --double-id --import-dosage-certainty 0.9 --make-bed --out chr${CHR}_best_guess
+done
+
+ls chr*_best_guess.bed | sed 's/.[^.]*$//' > merge_list.txt
+
+plink2 --pmerge-list merge_list.txt bfile ---make-bed ---out merged_chroms
+```
+
+## Linked External Data
+
+### School Information
+
+In the 6.0 data release, we have subdivided the SEDA tables into logical subdivisions. Please note the table name changes in [Data Documentation](../non_imaging/le.qmd).
+
+### Data collection process
+
+The original address data collection processes in ABCD relied on a point-in-time capture of residential addresses rather than recording longitudinal residential history. As such addresses reflect participants' addresses at **baseline** (e.g., `addr1` is primary address at baseline, `addr2` secondary address at baseline, `addr3` tertiary address at baseline).
+
+We recognize this limitation and the LED Environment and Policy Workgroup has improved the collection of residential history data for more temporal and geographic accuracy of participants' reported addresses. Future releases will incorporate more comprehensive and accurate address data, but until then, users should be mindful of the limitations of currently available data.
+
+::: {.callout-warning collapse="true" title="Responsible use warning: Linked External Data" #use-le}
+
+When state-level linkage variables were created, data were inadvertantly linked based on the state of the study site, rather than particiants' primary residential address.
+
+Users should refer to the private data documentation [here](LINK) for a list of `participant_id`s that should be excluded from analysis, because their residential address and study site do not coincide, leading to misclassification.
+:::
+
+## Mental Health
+
+### KSADS
+
+As part of the 6.0 curation efforts, ABCD merged data from KSADS 1.0 and 2.0 in order to combine all equivalent symptoms and diagnoses across the two assessment versions into singular variables. However, we were unable to complete this process for the item-level KSADS data. As a result, the 6.0 release does not include individual items, but these will be included in a future release.
+
+Additionally, the symptoms and diagnoses have been moved from a 'summary scores' table into their respective module's table.
+
+#### KSADS eating disorders
+
+The Mental Health Workgroup did an extensive review of the criteria used for all previously released eating disorder diagnoses in KSADS. The group agreed that the criterion were more restrictive than necessary, and thus underestimated the rates of eating disorder diagnoses. Thus, they determined these diagnoses should be removed from the 6.0 release and recommend users should create their own diagnoses summary scores using the symptom data.
+
+In the meantime, the Mental Health Workgroup is working with KSADS to create more accurate diagnoses, which we hope to include in the 7.0 data release.
+
+#### KSADS-COMP Updates to 2.0
+
+There was a diagnostic algorithm error detected in 2023 (update pending 7.0):
+
+|                               |                                                                                                                                                                                     |
+|---------------------|---------------------------------------------------|
+| Diagnoses                     | Modifications Required                                                                                                                                                              |
+| Oppositional Defiant Disorder | Current disorder had allowed for presence of current or past symptoms -- current diagnosis will be updated such that only current symptoms can be counted toward current diagnosis. |
+
+### Life Events (PhenX)
+
+In order to account for changes over time to the Life Events (PhenX) measures it was necessary to develop muliple versions of summary scores. This allows for the summary scores to be computed based on the specific questions asked at each event.
+
+Documentation on youth scores can be found here: [Life Events (Youth)](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#life-events-youth-)
+Documentation for parent scores can be found here: [Life Events (Parent)](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#life-events-parent-). 
+
+## Neurocognition
+
+In the 6.0 data release we removed the neurocognition administration table and added all relevant variables specific to a task's administration to the tables themselves. All such variables related to administration (e.g., visit type, device information, etc.) are indicated by their variable names, in accordance with our new variable [naming convention](/documentation/curation/naming.qmd) (e.g. <code>[dm_s_tab]{style="color: black"}[_adm]{style="color: #BF0000"}</code>, <code>[dm_s_tab]{style="color: black"}[_dev]{style="color: #BF0000"}</code>, etc.)
+
+## Novel Technologies
+
+### Screen time questionnaire
+
+The following variables contain non-integer `value` codes for categorical levels:
+
+- `nt_y_stq__screen__wkdy_001`  
+- `nt_y_stq__screen__wkdy_002`  
+- `nt_y_stq__screen__wkdy_003`  
+- `nt_y_stq__screen__wkdy_004`  
+- `nt_y_stq__screen__wkdy_005`  
+- `nt_y_stq__screen__wkdy_006`  
+- `nt_y_stq__screen__wknd_001`  
+- `nt_y_stq__screen__wknd_002`  
+- `nt_y_stq__screen__wknd_003`  
+- `nt_y_stq__screen__wknd_004`  
+- `nt_y_stq__screen__wknd_005`  
+- `nt_y_stq__screen__wknd_006`  
+
+These non-integer `value` prevents these variables to be exported to Stata files when exporting data from [DEAP](https://abcd.deapscience.com). As a result, they will be excluded from Stata datasets in the current release. This issue will be corrected in the 7.0 data release.
+
+### EARS
+
+For ABCD Release 6.0, Ksana Health reprocessed all participant features using improved algorithms. This also led to recomputed summary scores for everyone. The overall scores remain very similar to prior data releases.
+
+### Fitbit summary scores
+
+Fitbit summary scores will not be released with the 6.0 data due to calculation errors. The Novel Technologies workgroup is working with the DAIRC to resolve the issues with these scores and they will be made available in a future release.
+
+### Fitbit raw data files
+
+Please note that the raw Fitbit data files being released as individual-level `csv` files in the file-based data contain some known issues:
+
+1. **Device data for some participants was assigned to the wrong `session_id`**. This misassignment may affect analyses that rely on session-level analyses or analyses that depend on temporal accuracy. Authorized users should see the private data documentation for a list of specific `participant_id`s and `session_id`s requiring correction. Users can consult this list and apply the necessary adjustments using tools we provide in the [NBDCtools](https://github.com/nbdc-datahub/NBDCtools) package.
+1. **sleep-30 second data** (files with suffix: `_fitbSlp30s_beh.tsv`):
+   - All variables with levels: `awake`, `restless`, `asleep` should be removed.
+1. **METs data** (files with suffix: `_fitbMETs1m_beh.tsv`):
+   - Values are multiplied by 10. Please divide values by 10 to get accurate METs values
+1. **sleep-60 second data** (files with suffix: `_fitbSlp1m_beh.tsv`):
+   - There are inconsistencies in the values and labelling, and the following mapping should be applied:
+     - `deep` –> `asleep`
+     - `light` –> `asleep`
+     - `rem` –> `asleep`
+     - `restless` –> `awake`
+     - `wake` –> `awake`
+
+## Physical Health
+
+### Sexual behavior, orientation, and communication
+
+In the 6.0 data release, variables related to sexual behavior, orientation and communication are available in the "Physical Health" domain, under the *Sex subdomain*. Relevant variables from other ABCD domains have also been cross-listed in the `ph_p_sex` and `ph_y_sex` tables (duplicated from their original tables). Cross-listed variables retain keyword prefixes from their original tables (e.g. `kbi` for items from the "KSADS Background Items" measure and `eut` for items from the "Experiences with Unfair Treatment" measure).
+
+### Sleep Disturbance Scale for Children (SDS) summary scores
+
+All summary scores were re-calculated for the 6.0 data release. However, SDS summary scores were not included in the development plan and were therefore not ready in time for this release.
+
+The [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores) R package will soon be updated to include these scores. Once the updated package has been published, users will be able to compute the scores using the SDS item-level data released in 6.0. The SDS scores will also be included in the 7.0 release.
+
+## Substance Use
+
+### TLFB corrections
+
+**The following corrections have been made ahead of the 6.0 release:**
+
+- There was an error discovered (12/2022) where repeated substance use events on the TLFB were only recorded once in the individual day-level data files utilized for the calendar scoring; this was corrected in the day-level and calculated data for all waves.
+- Reports of edibles and MJ concentrates measured in `mg` have been converted to `occasions` for consistency across data waves.
+- In the original TLFB application (prior to 9/2023), errors were noted counting some estimated periods as detailed periods; this was fixed in the current release and any data collected >12 months from SU interview were coded as estimated period.
+- Maximum daily standard unit dose limits were instituted on the TLFB across all waves to date to reduce outlier events.
+
+**6.0 data release known issues:**
+
+- There is missing TLFB data for some youth participants; some is due to COVID-19 related administration in the home and privacy concerns; others are missing due to research assistant (RA) error (i.e., youth reported using a drug, but RA did not launch TLFB to measure detailed dose/patterns). See `su_y_tlfb_adm` for SU interview completion details, and variables starting with `su_y_tlfb_adm__rmt` for details on remote visits.
+- Some youth have 0's in their individual TLFB summary data, this occurred rarely if an RA launched the TLFB, put in an initial date of use but did not record any standard units (denoted as N/A in day-level data; this occurred rarely when a youth initially reported using, but then denied use). This issue issue is corrected with the new TLFB app.
+- We discovered an error in the formula used to calculate all **"3-month use days"** variables (suffix `_3mo_ud`). The formula incorrectly used `60` days instead of `90`, meaning these variables reflect the **last 60 days** of use rather than the intended **last 90 days**. This can be easily corrected using the [ABCDscores](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#substance-use-sui-tlfb-) R Package. To apply the correction:
+
+  ```r
+  # Install ABCDscores package
+  if (!requireNamespace("remotes", quietly = TRUE)) {
+    install.packages("remotes")
+  }
+  remotes::install_github("nbdc-datahub/ABCDscores")
+  
+  # Load package
+  library(ABCDscores)
+  
+  # Correct TLFB configuration
+  tlfb_config_3mo <- tlfb_config |>
+    dplyr::filter(
+      stringr::str_detect(name, "_3mo_")
+    ) |>
+    dplyr::mutate(
+      days = 90
+    )
+  
+  # Compute all _3mo summary scores in the ABCD data resource
+  data_tlfb_3mo_ss <- purrr::map(
+    tlfb_config_3mo$call,
+    ~ eval(parse(text = .x))
+  ) |>
+    purrr::reduce(
+      full_join,
+      by = join_by(
+        participant_id,
+        session_id
+      )
+    )
+  ```
+  
+  The R package will be updated to fix this error. The corrected variables will be included in the 7.0 release, but users can apply the above correction to the 6.0 data release to obtain the correct values.
+
+## Imaging Data
+
+### New data types
+
+The 6.0 release contains new imaging data types:
+
+- Concatenated imaging files (see [here](../imaging/data_concat.qmd)).
+- Raw data files in BIDS format (see [here](../imaging/data_source_raw.qmd)).
+- Freesurfer derivatives files (see [here](../imaging/data_derivatives.qmd)).
+
+### ABCD-BIDS Community Collection (ABCC) 
+
+The ABCD-BIDS Community Collection (ABCC) is now included as part of the ABCD releases. To learn more, see the [ABCC documentation](../imaging/abcc_start_page.qmd).
+
+### Task-based fMRI
+
+#### Event timing offset for GE scanners
+
+There was previously a discrepancy in how stimulus times were modeled relative to the end of the calibration/dummy volumes in the image acquisition that affects GE scanners. The issue is related to how the E-prime tasks were programmed for GE scanners that resulted in an unexpected timing offset of 800 msec or less.
+
+We modified our code for extracting event timing information from ABCD E-prime files (https://github.com/ABCD-STUDY/abcd_extract_eprime.git). Rather than rely on the first fixation event (e.g., CueFix.OnsetTime) the modified code now uses the timing data from the initial and or final trigger events (e.g., GetReady.RTTime) to determine the reference time that represents the start of the first non-dummy image volume. We also modified the number of initial volumes discarded prior to task fMRI time series analysis for GE scanners, with 4 volumes removed for GE DV26 and 15 volumes removed for GE DV26 and later.
+
+#### E-Prime timing errors for GE scanners
+
+In a relatively small, though substantial, subset of task fMRI acquisitions collected on GE scanners (~9% of runs), the time between the 1st and 16th trigger pulse sent from the scanner does not match the expected 12 seconds.
+
+We modified our task fMRI analysis pipeline to calculate trigger pulse timing discrepancies to identify E-prime runs for which the delay between the first trigger pulse and last recorded trigger pulse does not match the expectation (12 seconds for GE scanners). In cases where the discrepancy was either 0.8, 1.6, or 2.4 seconds (or within 0.01 seconds of those values), indicating missed (undetected) trigger pulses (~3% of runs), we adjusted the start time (used as the reference for subsequent events) by subtracting the discrepancy. We further modified the task fMRI analysis pipeline to exclude from processing any other runs that had a start time discrepancy (absolute difference from expectation relative to initial trigger pulse) larger than 0.5 seconds (~6% of runs), as such cases reflect irregular trigger timing and make it difficult or impossible to be sure when the stimulus run started relative to the imaging scan. For imaging visits with no valid task fMRI runs due to timing discrepancies, no derived results will be produced, and the imaging inclusion flags for the corresponding task will be set to 0. See [Data Documentation](../imaging/type_tfmri.qmd).
+
+We also sought to identify runs for which the delay between the start of the run and the onset of the first fixation does not match the expectation (500 msec for 1st nBack run on GE scanners, 0 msec otherwise). Runs with an onset time delay greater than 5 seconds were excluded from processing. Smaller discrepancies (i.e., up to 5 seconds) were allowed for this type of delay, because they do not introduce an error in the time series analysis, like an unknown delay between the start of the scan and the start of the run would. Instead, there is merely a shift in the timing of events relative to the start of the run, which can be correctly modeled.
+
+### Column misnaming in rsfMRI network to subcortical ROI correlation tabulated data
+
+The column names in the table [`mr_y_rsfmri__corr__gpnet__aseg`](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Youth%22%2C%22MRS+%28HERMES%29+%5BYouth%5D%22%5D%2C%5B%22Correlation%22%2C%22Resting+State+fMRI+-+Correlations+%28Gordon+network+to+Subcortical%29+%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset), which contains the tabulated imaging data for rsfMRI correlations between networks and subcortical ROIs, were corrected in the current release. In previous releases, columns were systematically misnamed. That is, the ordering of the column names did not match the ordering of the values of the columns. This problem was caused by swapping the inner and outer loops when iterating over networks and subcortical ROIs while constructing the column names. For example, to correctly match the data, instead of all ROIs for the first network having been listed first, all networks for the first ROI should have been listed first.
+
+::: {.callout-note collapse="true" title="Table providing mapping between wrong and corrected names"}
+The table below provides the mapping between column names included in the 6.0 release with the incorrect column names that were included in the 5.1 and prior releases, along with the correct column names that should have been used previously.
+
+```{r}
+# TODO (Janosch): improve table, e.g., use icons for incorrect/correct
+readr::read_csv(
+  "../../assets/tbl/documentation/release_notes/rsfmri_gpnet_aseg_correction.csv",
+  col_types = readr::cols(
+    .default = readr::col_character()
+  )
+) |> 
+  reactable(
+    columns = list(
+      name = colDef(
+        style = list(
+          fontFamily = "monospace"
+        )
+      )
+    ),
+    filterable = TRUE
+  )
+```
+
+{{< downloadthis ../../assets/tbl/documentation/release_notes/rsfmri_gpnet_aseg_correction.csv dname="rsfmri_gpnet_aseg_correction" label="rsfmri_gpnet_aseg_correction.csv" type="light" >}}
+:::
+
+# Substudies
+
+## Social Development 
+
+A data integrity issue was identified in the `r link_table("sdev_p_vict", dest = "docs", name = "label")` measure, affecting 273 item instances in which questions were presented out of order and improperly labeled, making item data for these instances therefore unreliable in the dataset.
+
+The error occurred only in select instances after the first assessment wave (`ses-S01`) and was corrected in December 2023, so data collected after that date are correct. The "gating" questions (with response options 'Yes' or 'No') are correct, although the order of presentation may have varied. Data were erroneous during this period in instances when the parent endorsed more than one "gating" question. Since multiple follow up questions are displayed for each "gating" question, the follow up questions being presented out of order resulted in response variables being out of order in the dataset and potentially making it unclear to parents which events they were answering follow up questions about.
+
+We therefore excluded any of these follow up items from the release data, creating some missingness in the dataset where an individual may have responded "yes" to the gating question, but have no follow up responses. The specific follow up variables affected and excluded are listed below:
+
+- `sdev_p_vict_018__l`
+- `sdev_p_vict_019__l`
+- `sdev_p_vict_020__l`
+- `sdev_p_vict_021__l`
+- `sdev_p_vict_022__l`
+- `sdev_p_vict_023__l`
+- `sdev_p_vict_024__l`
+- `sdev_p_vict_025__l`
+- `sdev_p_vict_026__l`
+- `sdev_p_vict_027__l`
+
+Please contact ABCD-SD with any questions about this issue or other data analysis suggestions: PI Lia Ahonen [ahonenl@upmc.edu](mailto:ahonenl@upmc.edu)
+
+## Magnetic Resonance Spectroscopy (MRS)
+
+Data from the ABCD Magnetic Resonance Spectroscopy (MRS) Substudy data is now available in the 6.0 Release. Tabulated data is provided in the `r link_table("mrs_y_2dj")` and `r link_table("mrs_y_hermes")` tables. File-based data for participants of the MRS Substudy are available in the imaging `sourcedata/` directory. See [here](../substudies/mrs.qmd) for more information about the MRS substudy.

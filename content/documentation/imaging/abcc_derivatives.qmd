@@ -1,0 +1,157 @@
+---
+title: "Derivatives"
+order: 4
+toc: false
+---
+
+<style>
+body main {
+    max-width: 100%;
+}
+</style>
+
+## ABCD-BIDS Pipeline
+
+Derivatives generated from the DCAN Labs ABCD-BIDS MRI (version 0.1.4) processing pipeline [@sturgeon2023] are provided, including Human Connectome Project (HCP) Minimal Preprocessing Pipelines-style data in both volume and surface spaces as well as freesurfer-5.3.0-HCP segmentation statistics and surface morphometrics [@glasser2013].
+
+The BIDS structure of the output derivatives will look like the following (see below for descriptions of `anat/` and `func/` file contents). Note that the `.html` file is the executive summary output used to perform quality control, with the associated images included in the file stored under `img/` (file contents not listed below for readability). The file contents of each folder is detailed below - see full details in the [ABCD-BIDS Pipeline documentation](https://abcd-hcp-pipeline.readthedocs.io/en/latest/) 
+
+```default
+|__ abcc/
+    |__derivatives/ 
+        |__ abcd-hcp-pipeline_v0.1.4/
+            |__ sub-<label>/
+                |__ ses-<label>/
+                    |__ anat/
+                    |__ func/
+                    |__ img/*
+                    |__ SUBSES.html
+```
+
+### Details: `anat/`
+
+The derivative files included under the `anat/` directory are displayed below (BIDS entities `sub-<label>_ses-<label>` replaced with `SUBSES` for readability). Please reference the table below for further information on each file type based on the number to the right of the file as listed in the file tree visual:
+
+```default
+|_ anat/
+    |__ SUBSES_<T1w|T2w>_space-MNI_brain.nii.gz [1]
+    |__ SUBSES_T1w_space-MNI_desc-wmparc_dseg.nii.gz [2]
+    |__ SUBSES_atlas-MNI_space-fsLR32k_desc-smoothed_myelinmap.dscalar.nii [3A]
+    |__ SUBSES_atlas-MNI_space-fsLR32k_myelinmap.dscalar.nii [3B]       _
+    |__ SUBSES_hemi-<L|R>_space-MNI_mesh-fsLR164k_midthickness.surf.gii  |   
+    |__ SUBSES_hemi-<L|R>_space-MNI_mesh-fsLR32k_midthickness.surf.gii   |
+    |__ SUBSES_hemi-<L|R>_space-MNI_mesh-native_midthickness.surf.gii    | [4]
+    |__ SUBSES_hemi-<L|R>_space-T1w_mesh-fsLR32k_midthickness.surf.gii   |
+    |__ SUBSES_hemi-<L|R>_space-T1w_mesh-native_midthickness.surf.gii   _|
+    |__ SUBSES_space-ACPC_dseg.nii.gz [5]          _
+    |__ SUBSES_space-fsLR32k_curv.dscalar.nii       |
+    |__ SUBSES_space-fsLR32k_sulc.dscalar.nii       | [6]
+    |__ SUBSES_space-fsLR32k_thickness.dscalar.nii _|
+    |__ SUBSES_space-fsLR32k_sulc.pscalar.nii [7]
+```
+
+| **Key**   | **File Information**                                                   |
+|-------|----------------------------------------------------------------------------|
+|     1 | T1w & T2w brain & head images in MNI space                                 |
+|     2 | White matter segmentation in MNI space                                     |
+| 3A/3B | Smoothed & unsmoothed myelin map                                           |
+|     4 | L/R midthickness in MNI & native space, each with 32k, 146k, & native mesh |
+|     5 | Discrete segmentation (native volume space)                                |
+|     6 | Dense curvature, sulcal depth, & cortical thickness                        |
+|     7 | Parcellated dense subject sulcal depth                                     |
+
+
+### Details: `func/`
+
+The derivative files included under the `func/` directory are displayed below (BIDS entities `sub-<label>_ses-<label>` replaced with `SUBSES` for readability). Please reference the table below for further information on each file type based on the number to the right of the file as listed in the file tree visual:
+
+```default
+|__ func/
+    |__ SUBSES_task-<TASK>_bold_desc-filtered_timeseries.dtseries.nii
+    |__ SUBSES_task-<TASK>_bold_atlas-<ATLAS>_desc-filtered_timeseries.ptseries.nii
+    |__ SUBSES_task-<TASK>_desc-filtered_motion_mask.mat
+    |__ SUBSES_task-<TASK>_desc-filteredwithoutliers_motion_mask.mat
+    |__ SUBSES_task-<TASK>_run-<label>_bold_timeseries.dtseries.nii
+    |__ SUBSES_task-<TASK>_run-<label>_desc-filtered_motion.tsv
+    |__ SUBSES_task-<TASK>_run-<label>_desc-filteredincludingFD_motion.tsv
+    |__ SUBSES_task-<TASK>_run-<label>_desc-includingFD_motion.tsv
+    |__ SUBSES_task-<TASK>_run-<label>_motion.tsv
+    |__ SUBSES_task-<TASK>_run-<label>_space-MNI_bold.nii.gz
+    |__ SUBSES_task-rest_bold_atlas-<ATLAS>_desc-filtered_timeseries_thresh-<THRESH>_censor.txt
+    |__ SUBSES_task-rest_bold_atlas-<ATLAS>_desc-filtered_timeseries_thresh-<THRESH>_connectivity.pconn.nii
+```
+The `dtseries.nii` files represent dense time series data in CIFTI format, either for individual runs (`*_run-#_bold_timeseries.dtseries.nii`) or concatenated across runs for a given task (`*_bold_desc-filtered_timeseries.dtseries.nii`). These files contain the preprocessed BOLD signal after regression and filtering steps performed by DANBOLDProc. Each `dtseries.nii` is accompanied by corresponding motion censoring files (`motion.mat`), which provide framewise displacement (FD) information and temporal masks used to identify and exclude high-motion frames during analysis [@power2014].The motion files contain a 1x51 MATLAB cell of MATLAB structs where each struct is the censoring info at a given FD threshold (0 to 0.5 millimeters in steps of 0.01 millimeters). Dense time series are available for each task:
+
+ - **Values for `<TASK>` include:** 
+    - `MID`
+    - `SST`
+    - `nback`
+    - `rest`
+
+
+In addition to these surface-based files, volumetric data prior to surface registration is also provided in the file `SUBSES_task-<TASK>_run-<label>_space-MNI_bold.nii.gz`.
+
+The `ptseries.nii` files are parcellated timeseries extracted based on atlas templates listed below - all parcellations additionally include 19 individualized subcortical parcellations with ROIs taken from the standard HCP 91k-grayordinate CIFTI template. 
+
+ - **Values for `<ATLAS>` BIDS entity and the atlas template it corresponds to are as follows:** 
+    - `Gordon2014FreeSurferSubcortical` - Gordon's 333 ROI template, parcellated using boundary detection on rs-fMRI data from 120 young adults with 14 minutes of data collected on average [@gordon2016]
+    - `HCP2016FreeSurferSubcortical` - HCP's 360 ROI template, parcellated from mutli-modal task, rest, and diffusion MRI data on 210 young adults [@glasser2016]
+    - `Markov2012FreeSurferSubcortical` - Markov’s cortical parcellation comprising 91 areas using retrograde tracer injections in rhesus macaques
+    - `Power2011FreeSurferSubcortical` - Power’s 264 ROI template, parcellated from meta-analysis of task and resting-fMRI data across multiple datasets [@power2011]
+    - `Yeo2011FreeSurferSubcortical` - Yeo’s 118 ROI template, parcellated from rs-fMRI data collected on 1000 subjects [@yeo2011]
+
+Finally, the parcellated connectivity matrices, or 'pconns' (`*.pconn.nii`), generated post-processing using the [DCAN-Labs/cifti-connectivity tools](https://github.com/DCAN-Labs/cifti-connectivity). Pconns were generated by calculating the lag-zero pearson’s correlation coefficient between each ROI pair as defined by each of the parcellation schemes listed above, resulting in ROIxROI matrices of scalar values reporting the pairwise correlation between ROIs. Pconns generated from both 5 and 10 minutes of low-motion (FD<0.2 mm) data (as available) are provided. Note that the inverse hyperbolic tangent (a variance stabilization procedure) was applied to the correlations: z = arctanh(r). The maximum value displayed is 7.254329. Applying the hyperbolic tangent will recover the pearson's correlation: r = tanh(z).
+
+ - **Values for `<THRESH>` include:** 
+    - `fd0p2mm_censor-10min_conndata-network`
+    - `fd0p2mm_censor-5min_conndata-network`
+    - `fd0p2mm_censor-belowthresh_conndata-network`
+
+### Details: `SUBSES.html`
+
+Quality control (QC) procedures for structural and functional derivatives involve manual visual inspection to detect image artifacts. The ExecutiveSummary stage of the [ABCD-BIDS pipeline](https://abcd-hcp-pipeline.readthedocs.io/en/latest/) produces an HTML visual quality control page that displays a [BrainSprite](https://github.com/simexp/brainsprite.js) viewer of the T1w and T2w segmentation, an overlay of the atlas registration on each single band reference created by FSL's slicer, and a visualization of the movement and grayordinate time series for each fMRI run pre- and post-regression. The Executive Summary is intended for use in performing quality control on each subject. 
+
+For instruction on how to judge the quality of images contained in the Executive Summary, please see the [BrainSwipes Tutorials](https://www.brainswipes.us/tutorial-select) (note: you must create a free account first). Please also see the section on [BrainSwipes](abcc_qualitycontrol.qmd#brainswipes) under **Quality control procedures** to learn about how this utility is being used to provide QC ratings based on Executive Summaries for all participant data.
+
+## QSIPrep {#qsi_prep}
+
+The QSIPrep pipeline is used for preprocessing the HBCD diffusion-weighted MRI (dMRI) data. Preprocessing includes head motion correction, susceptibility distortion correction, MP-PCA denoising, coregistration to T1w images, ANTS spatial normalization, and tissue segmentation. To see an explanation of the QSIPrep pipeline derivatives, please visit the section on [Outputs of QSIPrep](https://qsiprep.readthedocs.io/en/latest/preprocessing.html#outputs-of-qsiprep) in the QSIPrep documentation.
+
+```default
+|__ abcc/
+    |__derivatives/ 
+        |__ qsiprep/
+            |__ sub-<label>/
+                |__ ses-<label>/
+                    |__ anat/
+                    |   |__ SUBSES_from-T1wACPC_to-T1wNative_mode-image_xfm.mat       
+                    |   |__ SUBSES_from-T1wNative_to-T1wACPC_mode-image_xfm.mat
+                    |   |__ SUBSES_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5
+                    |   |__ SUBSES_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+                    |   |__ SUBSES_from-orig_to-T1w_mode-image_xfm.txt
+                    |   |__ SUBSES_rec-normalized_from-orig_to-T1w_mode-image_xfm.txt
+                    |   |__ SUBSES_rec-normalized_from-orig_to-T1w_mode-image_xfm.mat
+                    |   |__ SUBSES_rec-normalized_run-<label>_from-orig_to-T1w_mode-image_xfm.mat
+                    |   |__ SUBSES_run-<label>_from-orig_to-T1w_mode-image_xfm.mat
+                    |   |__ SUBSES_dseg.nii.gz
+                    |   |__ SUBSES_desc-brain_mask.nii.gz
+                    |   |__ SUBSES_desc-preproc_T1w.nii.gz
+                    |   |__ SUBSES_desc-aseg_dseg.nii.gz
+                    |
+                    |__ dwi/
+                    |   |__ SUBSES_confounds.tsv
+                    |   |__ SUBSES_desc-ImageQC_dwi.csv
+                    |   |__ SUBSES_desc-SliceQC_dwi.json
+                    |   |__ SUBSES_dwiqc.json
+                    |   |__ SUBSES_space-T1w_desc-brain_mask.nii.gz
+                    |   |__ SUBSES_space-T1w_desc-eddy_cnr.nii.gz
+                    |   |__ SUBSES_space-T1w_desc-preproc_dwi.b
+                    |   |__ SUBSES_space-T1w_desc-preproc_dwi.bval
+                    |   |__ SUBSES_space-T1w_desc-preproc_dwi.bvec
+                    |   |__ SUBSES_space-T1w_desc-preproc_dwi.nii.gz
+                    |   |__ SUBSES_space-T1w_desc-preproc_dwi.txt
+                    |   |__ SUBSES_space-T1w_dwiref.nii.gz
+                    |
+                    |__ figures/
+                    |__ SUBSES.html
+```

@@ -1,0 +1,169 @@
+---
+title: "Naming convention"
+order: 3
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+source("../../../R/setup.R")
+source("../../../R/table.R")
+
+glossary <- readr::read_csv(
+  "../../assets/tbl/documentation/curation/glossary.csv"
+)
+```
+
+::: {.callout-caution title="Release 6.0 changes"}
+For the 6.0 release, the complete ABCD tabulated data resource has been recurated using a *standardized naming convention*. That means that all variables in the tabulated dataset have been renamed using the new convention. We acknowledge that this change will require some adjustments of existing analysis pipelines and might generally introduce some friction. We nevertheless hope that the recuration effort will benefit all users of the ABCD tabulated data resource going forward as the new data curation standard resolves a lot of inconsistencies that existed in previous releases and implements a clear structure that is easier to search and process across the whole dataset.
+:::
+
+## General design
+
+<code><span style="color: #BF0000; font-size: 24px">dm_s_tab_item</span></code>
+
+Variable names are comprised of four main components that are separated by a *single underscore*:
+
+1.  Domain
+2.  Source/recipient
+3.  Table
+4.  Item
+
+The [table](#sec-table) and [item](#sec-item) components can have additional subcomponents that are separated using *multiple underscores* to indicate nesting within the four main components.
+
+## Components
+
+### Domain {#sec-domain}
+
+<code><span style="font-size: 24px">[dm]{style="color: #BF0000"}[_s_tab_item]{style="color: black"}</span></code>
+
+[*Domain:*]{.underline} Keyword for the domain that the given variable belongs to. Domains in the core ABCD study have keywords with *two letters* while domains within the substudies (where “domain” refers to the substudy name) use *more than two letters*.
+
+::: {.callout-note collapse="false" title="Domain glossary"}
+```{r}
+render_glossary(
+  glossary,
+  filter = "component == 'domain'",
+  rename_definition = "domain"
+)
+```
+:::
+
+### Source {#sec-source}
+
+<code><span style="font-size: 24px">[dm]{style="color: black"}[_s]{style="color: #BF0000"}[_tab_item]{style="color: black"}</span></code>
+
+[*Source/recipient:*]{.underline} Keyword (*one letter*) for the source / recipient type that provided the data for the given variable.
+
+::: {.callout-note collapse="false" title="Source/recipient glossary"}
+```{r}
+render_glossary(
+  glossary,
+  filter = "component == 'source'",
+  rename_definition = "source"
+)
+```
+:::
+
+### Table {#sec-table}
+
+<code><span style="font-size: 24px">[dm_s]{style="color: black"}[_tab]{style="color: #BF0000"}[_item]{style="color: black"}</span></code>
+
+[*Table:*]{.underline} Name of the table/form the given variable is a part of.
+
+<code><span style="font-size: 24px">[dm_s]{style="color: black"}[_tab]{style="color: #FF8080"}[__kw]{style="color: #BF0000"}[_item]{style="color: black"}</span></code>
+
+[*Keyword:*]{.underline} Keyword for a subsection / group of questions within the table the given variable is a part of (e.g. `ph_y_meds__otc_001` for questions related to over the counter medications represented by the keyword `otc`).
+
+<code><span style="font-size: 24px">[dm_s]{style="color: black"}[_tab__kw]{style="color: #FF8080"}[__kw]{style="color: #BF0000"}[_item]{style="color: black"}</span></code>
+
+[*Additional keywords*]{.underline}: Whenever a table has more levels of nesting/grouping, one or more additional keywords are added (e.g. **`ph_y_bp__dia__r01_001`** uses a second keyword, `r01`, to differentiate the first round of diastolic blood pressure readings, represented by the keyword `dia`, from later rounds of readings).
+
+::: {.callout-note collapse="false" title="Table Keyword Glossary"}
+*A filterable keyword glossary for the 'table' component of all variables*
+
+```{r}
+render_glossary(
+  glossary,
+  cols = c("domain", "keyword", "definition", "primary"),
+  filter = "component == 'tab'",
+  showPageSizeOptions = TRUE,
+  filterable          = TRUE
+)
+```
+:::
+
+### Item {#sec-item}
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_item]{style="color: #BF0000"}</span></code>
+
+[*Item:*]{.underline} A *three-digit, zero-padded number*, e.g. `001`, is used for all variables with the *variable type* “item”, i.e., typically individual questions in a questionnaire/table distinct from “administrative” variables or “summary scores” (see below).
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_admin]{style="color: #BF0000"}</span></code>
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_score]{style="color: #BF0000"}</span></code>
+
+[*Administrative variables & summary scores*]{.underline}: Administrative variables (e.g., language or date of administration) and summary scores (e.g., sums or means of individual items in a table) are marked by *letters* (e.g. `dtt`, `lang`, `mean`,`pc` (principle component) etc.) instead of the three-digit number used for variables of *variable type* "item" (see above).
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_item]{style="color: #FF8080"}[__subitem]{style="color: #BF0000"}</span></code>
+
+
+[*Subitem:*]{.underline} A *two-digit, zero-padded number*, e.g., `01`, is used to indicate a subitem's relationship to the main item. This is used to indicate items that are dependent on previous questions through branching logic or to indicate another direct relationship between two questions (e.g. `ab_p_demo__empl__prtnr_001`, *"Does your partner work?"*, has the follow up question `ab_p_demo__empl__prtnr_001__01`, *"Full or part-time?"*; `001__01` is only presented if `001` is endorsed). Sometimes, variables have more than two levels of dependencies, in which case more than one level of subitems are used, e.g., `001__01__01`.
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_item]{style="color: #FF8080"}[a]{style="color: #BF0000"}</span></code>
+
+[*Component*]{.underline}: Indicator used to mark questions that have multiple components or to indicate two questions are the inverse of each other (e.g. *When did the effects **begin**?*, `001a`, and *When did the effects **end**?*, `001b`).
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_item]{style="color: #FF8080"}[__v01]{style="color: #BF0000"}</span></code>
+
+[*Version*]{.underline}: Indicator used to mark a new version of the same question/variable. Generally, questions with the same label are collapsed under one variable, even if they were collected under different variable names. The version indicator is only used in cases where a question has been replaced with a question that is very similar but has a somewhat distinct quality which necessitates to differentiate it from the original question (e.g., another version of the education variable was added to include additional response options after baseline).
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_item__subitem]{style="color: #FF8080"}[__v1]{style="color: #BF0000"}</span></code>
+
+[*Subitem version*]{.underline}: Indicator for a new, substantially different, version of a *subitem* question/variable.
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_item]{style="color: #FF8080"}[__l]{style="color: #BF0000"}</span></code>
+
+[*Longitudinal marker*]{.underline}: Indicator used for questions that are an exact replica of a question but have been slightly altered to account for the fact that the the question is being asked at a follow-up visit. Typically, this indicator is used in cases where the first time a question was asked, it referred to the lifetime up to that point, e.g., *“Have you **ever** done X?”*, while the version of the question asked at later visits refers to the time since the last time the question was asked, e.g., *“**Since we last saw you**, have you done X?”*.
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_item]{style="color: #FF8080"}[__tag]{style="color: #BF0000"}</span></code>
+
+[*Tags*]{.underline}: Tags are additional keywords appended to variable names to provide additional context or categorization. Variables may include one or more tags, separated by double underscores (e.g. tag `__dk` indicate a "don't know" response, `__rmt` indicates a remote visit question in variable `mh_y_cb_dev__rmt`) 
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_item]{style="color: #FF8080"}[___1]{style="color: #BF0000"}</span></code>
+
+[*Multi-select response options*]{.underline}: Some variable names include triple underscores followed by a number (e.g.,in a question like *“Which animals do you like? (check all that apply)”*, variable names might include `___1` for “cats”, `___2` for “dogs”, and `___3` for “fish”. If a participant selects multiple options, each corresponding variable (e.g., `dm_s_tab_item___1`, `dm_s_tab_item___3`) will be marked to indicate the selected responses.
+
+::: {.callout-note collapse="false" title="Item keyword glossary"}
+*A filterable keyword glossary for the 'item' component of all variables*
+
+```{r}
+render_glossary(
+  glossary,
+  cols = c("domain", "keyword", "definition", "primary", "type_var"),
+  filter = "component == 'item'",
+  showPageSizeOptions = TRUE,
+  filterable          = TRUE
+)
+```
+:::
+
+# Glossary {#sec-glossary}
+
+Below you can find a searchable/filterable table with the complete glossary containing all keywords used in the ABCD naming convention or download it as a `.csv` file.
+
+::: {.callout-note collapse="true" title="Complete ABCD glossary"}
+*A searchable and filterable keyword glossary for the complete ABCD glossary*
+```{r}
+render_glossary(
+  glossary,
+  cols = c("component", "domain", "keyword", "definition"),
+  showPageSizeOptions = TRUE,
+  filterable          = TRUE,
+  searchable          = TRUE
+)
+```
+:::
+
+{{< downloadthis "../../assets/tbl/documentation/curation/glossary.csv" dname="abcd_glossary" label="Download glossary" >}}

@@ -1,0 +1,209 @@
+---
+title: "Curation standards"
+order: 2
+---
+
+# Overview
+
+ABCD's curation standards are designed to ensure that the [tabulated data](structure.qmd#tabulated) resource is well-organized, consistent, and user-friendly. These standards encompass a variable naming convention, table- and variable-level standards, as well as general improvements to the accompanying metadata that enhance the usability and accessibility of the data. This page highlights the key elements of ABCD’s curation standards to facilitate effective use of the data and the data dictionary.
+
+::: {.callout-note collapse="true" title="Why are curation standards important?"}
+Well-developed and systematically maintained "curation standards" are essential for organizing published datasets and making them more accessible to the user community. Large multi-modal longitudinal studies, such as the ABCD Study®, often face challenges in managing and organizing data over time, a phenomenon known as "data curation debt," which refers to the accumulation of deficiencies in data management [@butters2020].
+
+To proactively address these issues, the ABCD consortium undertook a comprehensive recuration effort before the 6.0 data release and developed curation standards that were applied consistently across the entire tabulated data resource. This initiative aimed to enhance transparency and functionality for users, while also supporting ABCD’s open science model.
+:::
+
+The variable naming convention is the cornerstone of ABCD's data curation standards. Variable names constructed using this convention provide structured information about the assessment domain, data source, and the measure a variable belongs to. The standard incorporates a keyword system that links variables to their respective summary scores, indicates branching logic and versioning, and connects concepts across domains. For more details on the *variable naming convention*, see [here](naming.qmd).
+
+The ABCD data dictionary implements standards for variable and data types, units, variable labels, and the coding of non-responses/missingness. It also includes administrative information and hyperlinks to relevant domain-, table-, and variable-specific documentation, as well as responsible data use and data quality warnings. Additionally, the data dictionary provides historic variable and table names to relate the new names to previously used ones. For more details on *ABCD's metadata*, see [here](metadata.qmd).
+
+# Table-level standards
+
+## Identifier columns {#identifier-columns}
+
+All tables in the tabulated data resource utilize the following columns to uniquely identify participants and events, as well as to link data between tables:
+
+| Name             | Description                            | Example         |
+|------------------|----------------------------------------|-----------------|
+| `participant_id` | Unique identifier for a participant    | `sub-ABCD1234`  |
+| `session_id`     | Unique identifier for a session/event  | `ses-00A`       |
+
+Tables with longitudinal data use both `participant_id` and `session_id` to uniquely identify an assessment, while tables with static data use only the `participant_id` column. The column(s) used for each variable or table are listed in the `identifier_columns` column in the [data dictionary](metadata.qmd#dd_levels_tables)).
+
+The identifier columns adhere to the [BIDS (Brain Imaging Data Structure)](https://bids-specification.readthedocs.io/en/stable/) naming convention to ensure consistency and compatibility across all released data types. In ABCD, the `participant_id` values consist of an 8-letter random alphanumeric code prefixed by `sub-`, while the `session_id` values use a 3-letter code prefixed by `ses-`, following the standard outlined below:
+
+- *Core study* events:
+  - Two numbers to indicate the year of assessment (e.g., `01` for the 1-year follow-up)
+  - A letter to indicate the type of event (`A` for annual assessments; `M` for mid-years; `S` for screening)
+- *Substudy* events^[Some substudies are conducted as part of visits for core events; they use the same `session_id` as the core event.]**:**
+  - A letter indicating the substudy (e.g., `C` for the COVID substudy)
+  - Two digits to indicate the assessment wave
+
+::: {.callout-note collapse="true" title="List of session/event identifiers"}
+The table below shows the session identifiers and their corresponding labels for data included in the ABCD 6.0 data release.
+
+| Study     | Session/event ID | Session/event label        |
+|-----------|------------------|----------------------------|
+| Core      | ses-00S          | Screener                   |
+| Core      | ses-00A          | Baseline                   |
+| Core      | ses-00M          | 0.5 Year                   |
+| Core      | ses-01A          | 1 Year                     |
+| Core      | ses-01M          | 1.5 Year                   |
+| Core      | ses-02A          | 2 Year                     |
+| Core      | ses-02M          | 2.5 Year                   |
+| Core      | ses-03A          | 3 Year                     |
+| Core      | ses-03M          | 3.5 Year                   |
+| Core      | ses-04A          | 4 Year                     |
+| Core      | ses-04M          | 4.5 Year                   |
+| Core      | ses-05A          | 5 Year                     |
+| Core      | ses-05M          | 5.5 Year                   |
+| Core      | ses-06A          | 6 Year                     |
+| Substudy  | ses-C01          | COVID Wave 1               |
+| Substudy  | ses-C02          | COVID Wave 2               |
+| Substudy  | ses-C03          | COVID Wave 3               |
+| Substudy  | ses-C04          | COVID Wave 4               |
+| Substudy  | ses-C05          | COVID Wave 5               |
+| Substudy  | ses-C06          | COVID Wave 6               |
+| Substudy  | ses-C07          | COVID Wave 7               |
+| Substudy  | ses-S01          | SDev Wave 1                |
+| Substudy  | ses-S02          | SDev Wave 2                |
+| Substudy  | ses-S03          | SDev Wave 3                |
+| Substudy  | ses-S04          | SDev Wave 4                |
+| Substudy  | ses-S05          | SDev Wave 5                |
+:::
+
+## Date timestamps and participant age at administration {#dtt-age}
+
+All tables with assessment data include a timestamp indicating when data collection began, as well as the age of the youth participant^[The youth's age is also computed for tables with data provided by the parent/caregiver or other sources, as all ABCD instruments inquire about or are interpreted in relation to the youth participant] at that timepoint (reported in years with day-level precision, calculated as the difference between the participant’s anonymized date of birth and the timestamp). These are standardized using the following naming conventions:
+
+| Variable Suffix        | Description                                                                                                                                               |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `{table_name}_dtt`     | Indicates the timestamp when data collection for this table started.                                                                                     |
+| `{table_name}_age`     | Indicates the youth participant's age (in years, with decimals) at the time data collection for this table started; it is calculated based on the youth's anonymized date of birth and `{table_name}_dtt`. |
+
+The `{table_name}_dtt` and `{table_name}_age` variables are based on the actual date and time when the data was collected, when available. These variables allow for more precise temporal alignment and age-related analyses.
+
+::: {.callout-important collapse="false" title="Issue with timestamps and ages"}
+Please be aware of the following issues with the timestamps and ages reported for each table:
+
+1. Timestamps were not always collected for all measures and tables, especially in earlier events. In those cases, `{table_name}_dtt` has a missing value and `{table_name}_age` is computed using the timestamp indicating the start of the event, `ab_g_dyn__visit_dtt`.
+2. Timestamps, especially those collected in earlier events, are sometimes not precise. We corrected or removed extreme outliers and are working on a more thorough QC process for these values but please use these values with caution.
+:::
+
+## Anonymized birthdays
+
+To anonymize birthdays, we applied the following procedure:
+
+1. Determine whether a birthday falls in the first (1st–15th day) or second (16th–last day) half of the month.
+1. Randomly draw another day from the respective half of the month and use this day as the anonymized birthday.
+
+We randomly assigned anonymized birthdays for *each unique birthday* rather than *each participant*, meaning that participants who share the same real birthday also share the same anonymized birthday. The anonymized birthday is provided in the variable `ab_g_stc__cohort_dob`.
+
+# Variable-level standards
+
+## Variable types
+
+To differentiate between variables in the dataset that serve different purposes, each variable is assigned one of the following four types (indicated in the `type_var` column of the [data dictionary](metadata.qmd#dd_levels_tables)):
+
+- **administrative:** Variables that provide supplementary information about the assessment (e.g., collection dates/timestamps, language of administration, quality control (QC) information, etc.).
+- **item:** Variables that capture original data provided by the participant (e.g., responses to questions in a questionnaire, anthropometric measurements, etc.).
+- **derived item:** Variables computed from one or more original items, often representing recoded or reformatted information (e.g., a height value derived from separate original entries for feet and inches).
+- **summary score:** Variables that summarize a set of items or raw data based on specified algorithms (e.g., scores for validated psychometric scales, biospecimen results, derived imaging scores, etc.).
+
+### Summary score standards
+
+The code for all summary scores computed by the DAIRC^[Other summary scores, such as proprietary scores or summary scores imported from external sources, are not included in the `ABCDscores` R package.] is available in the `ABCDscores` R package on [GitHub](https://github.com/nbdc-datahub/ABCDscores), along with accompanying online [documentation](https://software.nbdc-datahub.org/ABCDscores). The R package aims to support transparency and reproducibility of ABCD release data by providing the exact algorithms and code used to compute the released summary scores, allowing users to tie a specific data release version to a corresponding version of the codebase (see also [here](../../tools/r_packages.qmd#ABCDscores) for the rationale behind creating this R package).
+
+For standardized or normed scales, the computation follows the published algorithms. For internal scores, unless otherwise specified by domain experts, the following standards are applied:
+
+- Allowed missingness is set to a maximum of 20%, meaning that at least 80% of the input items must have a value for a summary score to be computed.
+- Means are preferred over (prorated) sums whenever possible.
+
+## Data types {#data-types}
+
+To provide clarity about the format of the underlying values and their use in exploratory and inferential analysis, each variable is assigned one of the following data types (indicated in the `type_data` column of the [data dictionary](metadata.qmd#dd_levels_tables)):
+
+- **character**: Used exclusively for categorical variables, i.e., variables with defined levels. These variables store numeric values formatted as character strings (e.g., `"0"`, `"1"`, `"777"`, which differentiates them from variables with `type_data`: `'integer'`) to represent categorical labels (e.g., `"No"`, `"Yes"`, `"Decline to answer"`). The value-to-label correspondence is defined in the [levels table](metadata.qmd#dd_levels_tables) in the metadata (see [below](#coding-standards) for more information on categorical coding standards).
+- **double**: Numeric values with decimals (e.g., `2.5`, `17.325`).
+- **integer**: Whole numbers without decimals (e.g., `0`, `1`, `2`).
+- **date**: Calendar dates in `YYYY-MM-DD` format; often denoted by a variable name ending in `_dt`.
+- **time**: Time of day formatted as a character string `"HH:MM:SS"`, representing a time without a date component; often denoted by a variable name ending in `_t`.^[For help converting times to `HMS` format, we provide a function in the [`NBDCtools` R package](https://software.nbdc-datahub.org/NBDCtools/reference/transf_time_to_hms.html).]
+- **timestamp**: Combined date and time values (e.g., `2019-09-16 10:49:00`); often denoted by a variable name ending in `_dtt`.
+- **text**: Used for arbitrary-length string values, such as administrative information like IDs, scanner details, medication names, or RxNorm codes.
+
+<!-- TODO: add note about different file types and their representation of data types (e.g., CSV vs. Parquet) and point to structure.qmd for more information. -->
+
+## Measurement levels
+
+To help researchers further understand the data and determine which types of analyses are appropriate, each variable is assigned one of the following levels of measurement (indicated in the `type_level` column of the [data dictionary](metadata.qmd#dd_levels_tables)):
+
+- **nominal**: For categorical variables (`type_data`: `'character'` or `'text'`) that represent categories with no inherent order (e.g., race/ethnicity, type of visit, language).
+- **ordinal**: For categorical variables (`type_data`: `'character'`) that represent categories with a meaningful order (e.g., Likert scales, education levels, frequency ratings like "never" to "often").
+- **interval**: For quantitative variables (`type_data`: `'date'`, `'timestamp'`, `'time'`, `'double'`, or `'integer'`) with meaningful intervals between values but no true zero point (e.g., temperature in Celsius, or dates).
+- **ratio**: For quantitative variables (`type_data`: `'double'` or `'integer'`) with equal intervals and a true zero point, allowing both differences and ratios to be interpreted meaningfully (e.g., age, reaction time, income).
+
+## Units
+
+Wherever appropriate, units are provided for numeric fields (`type_data`: `integer` or `double`) in the `unit` column of the [data dictionary](metadata.qmd#dd_levels_tables). They are also included as part of the variable label. Units are reported using both the full term and the standard abbreviation (e.g., `degrees Celsius (°C)`, `grams (g)`, `milliseconds (ms)`).
+
+## Labels {#labels}
+
+Variable labels are standardized and made unique throughout the data dictionary enabling researchers to understand the information provided by each variable without relying on descriptive fields or other variables within the table for additional context.^[Spanish translations of the labels for the parent/caregiver forms are provided in their own [data dictionary](metadata.qmd#dd_levels_tables) column, `label_en`, to indicate the version received by any Spanish-speaking parent or caregiver. The Spanish labels are not standardized in the way the English labels are.]
+
+## Label standards
+
+- Administrative variables that exist in more than one table are prepended with the full table name, including source/respondent, of the measure to which they belong.
+- Administrative variables that can be collected more than once, such as toxicology or MRI screeners, additionally include the visit day number and run number (when applicable) within round brackets `()` after the table name in the label.
+- Variables where the youth and parent/caregiver are asked the exact same question, include the respondent information in square brackets `[]` at the end of the label.
+- Variables that are duplicated across forms, such as items from pilot versions of forms, pre/post surveys, or substudy measures that are also used in the core protocol, include those details in square brackets `[]` at the end of the label.
+- Cross-listed variables, i.e., variables that are duplicated from their original table to another table, include the tag `Cross listed:` followed by the original variable name in square brackets `[]` at the end of the label.
+- Multi-select variable labels include the root question at the beginning of the label, followed by `[Multi-select]:` and the specific multi-select response option.
+- Non-response variables that indicate that the participant did not want to or could not respond to a question, have the same label as the corresponding question, followed by `[Non-response]` at the end of the label.
+- Variables that have changed over time, creating longitudinal or multiple versions, include `Longitudinal` or `Version #` in square brackets `[]` at the end of the label.
+
+**Examples**
+
+- `We put a lot of energy into what we do at home. [Parent]`
+- `Breathalyzer (Day 4; Test 2): Result`
+- `What is the biological father's current height?: [Non-response]`
+- `Detentions or suspensions: For what? [Multi-select]: Talking Back to a Teacher`
+
+## Other improvements
+
+- When the original label of an item presented during data collection is not sufficiently descriptive—such as when a core part of the question is included in a header or descriptive field preceding the item—that information is incorporated into the variable label in the format `Context of question: original item label/question` to ensure that items can be understood individually.
+
+## Categorical coding standards {#coding-standards}
+
+### Non-response/missingness codes
+
+Categorical variables often include levels that indicate non-response or missing data (e.g., *"Don't know"*, *"Decline to answer"*, etc.). To ensure consistency and clarity, ABCD has established standardized codes for handling missing/non-response options across all categorical variables in the dataset. This standardization ensures that non-responses can be reliably excluded and/or assessed for their relevance to a given analysis.
+
+The full set of standardized non-response/missingness codes is as follows:
+
+| Value | Label                                               |
+|-------|-----------------------------------------------------|
+| 222   | Don’t understand / I don't understand this question |
+| 444   | Not Applicable                                      |
+| 555   | Not administered                                    |
+| 666   | Quantity not sufficient                             |
+| 777   | Decline to answer                                   |
+| 888   | Not asked due to branching logic                    |
+| 999   | Don’t know / I don't know                           |
+
+### Binary standardized codes
+
+Coding of categorical variables with binary response options (e.g., *"Yes"*/*"No"* or *"True"*/*"False"*) follows a standardized pattern: The negative response option is coded as `0`, while the positive response is coded as `1`. This standardization allows researchers to interpret and analyze these responses more consistently across the dataset.
+
+The standardized coding for binary responses is as follows:
+
+| Label             | Value |
+|-------------------|-------|
+| No / None / Never | 0     |
+| FALSE / False     | 0     |
+| Yes               | 1     |
+| TRUE / True       | 1     |
+
+
+::: {.callout-caution title="Variables re-coded for the 6.0 data release"}
+To comply with the coding standards described above, some previously released items were recoded for the 6.0 data release. For a list of affected variables, please see the release note on re-coding [here](/documentation/release_notes/6_0.qmd#re-coding).
+:::

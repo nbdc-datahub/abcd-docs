@@ -1,0 +1,704 @@
+---
+title: "Neurocognition"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+
+```{r}
+render_table_info("domain_abbr == 'nc'")
+```
+<br>
+
+The neurocognition domain encompasses approximately 30 different neurocognitive task variables derived from 17 separate tasks and 1 parent-reported questionnaire-based probe of daily-life executive functioning. These tasks, and their software platforms of delivery and variable descriptions, are systematically described below.
+
+**References:**
+
+- @luciana2018
+- @anokhin2022
+
+::: {.callout-note collapse="false" title="Changes due to Covid-19"}
+Some adjustments in testing procedures were required for remote testing.
+
+- The NIH Toolbox Pattern Comparison Processing Speed task cannot be administered remotely.
+
+- Picture Vocabulary Test and Picture Sequence Memory tests were administered remotely, but when done remotely, composite scores cannot be computed.
+
+- ABCD employed remote administrations on participant devices using the *Inquisit* system from [*Millisecond*](https://www.millisecond.com) for the following tasks:
+
+   * [Flanker Task](#nc_y_flnkr) (substitute for NIH Toolbox Flanker task)
+   * [Little Man Task](#nc_y_lmt)
+
+- The [*Inquisit* Millisecond system](https://www.millisecond.com) is used for the following tasks (remote \[participant device\] or in-person \[ABCD iPad\]):
+
+   * [Game of Dice Task](#nc_y_gdt)
+   * [Social Influence Task](#nc_y_sit)
+   * [Emotional Stroop Task](#nc_y_est)
+   * [Delayed Discounting Task](#nc_y_ddis)
+   * [Stanford Mental Arithmetic Response Time Evaluation (SMARTE)](#nc_y_smarte)
+   * [Behavioral Indicator of Resiliency to Distress Task (BIRD)](#nc_y_bird)
+:::
+
+::: {.callout-important collapse="true" title="Responsible use warning: Neurocognition domain general" #use-nc}
+
+The ABCD study has released all neurocognition data at each testing wave without exclusion. Potential quality control issues are summarized in the release notes that accompany each task description. End-users should apply their own preferred performance cutoff criteria.
+
+Using ABCD data requires responsible conceptualization and use of the data, including being mindful of variations in experience that impact performance.Cognitive task performance has been shown to correlate with a variety of socio-demographic factors. Attention and other performance factors can be confounded by transient factors such as fatigue, poor sleep, poor nutrition, or stressors. The ABCD protocol captures several SES-related variables for use as potential covariates, but not all environmental influences on cognition are measured. Normative samples for tasks used were generally smaller than the ABCD cohort, so norming may not represent American youth as well (see papers below). Measurement invariance concerns may affect interpretation; @cardenas-iniguez2024
+
+American Academy of Clinical Neuropsychology (AACN) Position Statement on Use of Race as a Factor in Neuropsychological Test Norming and Performance Prediction: <https://theaacn.org/wp-content/uploads/2021/11/AACN-Position-Statement-on-Race-Norms.pdf>
+:::
+
+# Youth tables (Tasks)
+
+## NIH Toolbox (Cognition) {#nc_y_nihtb}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_nihtb")`
+`r r_link_table("nc_y_nihtb")`
+
+**Measure description:** The NIH Cognition Toolbox comprises seven tasks administered via iPad ([Scoring & Interpretation Guide](https://nihtoolbox.my.salesforce.com/sfc/p/2E000001H4ee/a/2E0000004yR3/Ckb_AKw1oFUC56tgf6tdxcGDYaYbu8rsmBSFOX2Ec4g); [Composite Score Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Cognition_Battery_Composite_Scores_Technical_Manual.pdf)). For each task, raw scores, and uncorrected and age corrected scores are available. At Baseline (all 7 tasks administered); subset of 5 tasks administered in 2-year follow-up; 4-year follow-up; 6 tasks administered in 4-year follow-up. The following tasks are included in the battery:
+
+- *Picture Vocabulary*: Language vocabulary knowledge. A component of the *Crystallized Composite Score*. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Picture_Vocabulary_Test_Technical_Manual.pdf)
+- *Flanker Inhibitory Control & Attention*: Attention, cognitive control, executive function, inhibition of automatic response. A component of the *Fluid Composite Score.* [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Flanker_Inhibitory_Control_and_Attention_Test_Technical_Manual.pdf) Note, remote assessments used a replicated Flanker task administered using the Inquisit platform, because the NIH Toolbox version could not be administered remotely.
+- *Picture Sequence Memory*: Episodic memory; sequencing. A component of the *Fluid Composite Score*. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Picture_Sequence_Memory_Test_Technical_Manual.pdf)
+- *Dimensional Change Card Sort*: Executive function: set shifting, flexible thinking, concept formation. A component of the *Fluid Composite Score*. Administered in Baseline assessment only. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Auditory_Verbal_Learning_Test_Rey_Technical_Manual.pdf)
+- *Pattern Comparison Processing Speed*: Information processing, processing speed. A component of the *Fluid Composite Score*. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Pattern_Comparison_Processing_Speed_Test_Technical_Manual.pdf)
+- *Oral Reading Recognition*: Language, oral reading (decoding) skills, academic achievement. A component of the *Crystallized Composite Score*. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Oral_Reading_Recognition_Test_Technical_Manual.pdf)
+- *List Sorting Working Memory*: Working memory, information processing. A component of the *Fluid Composite Score*. Administered in Baseline assessment and 4-year follow-up. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_List_Sorting_Working_Memory_Test_Technical_Manual.pdf)
+
+**Modifications since initial administration**: Remote assessments in the 2-year and 4-year follow-up protocols used a Flanker task using the *Inquisit* system from [Millisecond](https://www.millisecond.com/). This task was designed to mimic the NIH Toolbox Flanker task as closely as possible. We encourage users to consider this change in their analyses.
+
+**Notes and special considerations:** In the 2-year follow-up, five of the seven NIH Toolbox tasks were administered. The Dimensional Change Card Sort was administered in the baseline and 6-year follow-up only, and List Sorting Working Memory was administered in the baseline and 4-year follow-up assessments. Because of this, the NIH Toolbox Fluid and Total Composite Scores could not be calculated for follow-up assessments.
+
+For longitudinal analyses, we recommend using either *uncorrected Scaled Scores* or raw scores.
+
+In cases with remote administration of Picture Vocabulary, the Crystallized Cognition Composite Score cannot be calculated.
+
+**Reference:** @mcdonald2014
+
+## Cash Choice Task {#nc_y_cct}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_cct")`
+`r r_link_table("nc_y_cct")`
+
+**Measure description:** The Cash Choice is a single-item proxy for the delay discounting task that asked the youth "*Let's pretend a kind person wanted to give you some money. Would you rather have \$75 in three days or \$115 in 3 months?"*. The youth indicated one of these two options or a third *can't decide* option.
+
+**References:**
+
+- @wulfert2002
+- @anokhin2011
+
+## Little Man Task {#nc_y_lmt}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_lmt")`
+`r r_link_table("nc_y_lmt")`
+
+**Measure description:** The Little Man Task evaluates visuospatial processing flexibility and attention. Participants view pictures of a figure (little man) presented in different orientations and holding a suitcase and must use mental rotation skills to assess which hand (left or right) is holding the suitcase. Accuracy and latency scores are provided for each trial.
+
+**Modifications since initial administration**: The Little Man Task used in the baseline assessment was administered using a customized program designed by ABCD, whereas the 2-year and 4-year follow-up assessments used a task presented in the *Inquisit* system from [*Millisecond*](https://www.millisecond.com). We recommend users consider this difference in analyses.
+
+**Reference:** @acker1982
+
+## The Pearson Rey Auditory Verbal Learning Test {#nc_y_ravlt}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_ravlt")`
+`r r_link_table("nc_y_ravlt")`
+
+**Measure description:** The Pearson Rey Auditory Verbal Learning Test (RAVLT)
+
+The Rey Auditory Verbal Learning Test (RAVLT) assesses verbal learning and memory. The task is administered according to standard instructions using a 15-item word list; there are five learning trials (Trials I-V), a distractor trial (List B), measures of immediate recall (Trial VI) and 30-minute delayed recall (Trial VII); for all trials, the total correct is recorded together with the number of perseverations and intrusions. ABCD uses the Q-Interactive version of this task.
+
+**Modifications since initial administration**: An alternate form of the RAVLT was used in the 2-year follow-up, using words designed to be similar to those in the original list in difficulty, complexity, and length.
+
+**References:**
+
+- @strauss2006
+- @lezak2012
+
+## Wechsler Intelligence Scale for Children - Matrix Reasoning {#nc_y_wisc}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_wisc")`
+`r r_link_table("nc_y_wisc")`
+
+**Measure description:** WISC-V Matrix Reasoning Test was administered using the [Pearson Q-Interactive](https://www.pearsonassessments.com/professional-assessments/digital-solutions/q-interactive/test-components.html) platform.
+
+Measures fluid intelligence and visuospatial reasoning. The task is from the Wechsler Intelligence Scale for Children-V (WISC-V). Total raw scores, scaled scores (mean = 10, SD = 3), and scores for each item are available.
+
+**Reference:** @wechsler2014
+
+## Delay Discounting {#nc_y_ddis}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_ddis")`
+`r r_link_table("nc_y_ddis")`
+
+**Measure description:** The participant makes several choices between a hypothetical small-immediate reward or a standard hypothetical \$100 future reward at different time points (6h, 1 day, 1 week, 1 month, 3 months, 1 year, and 5 years). Each block of choices features the same delay to the larger reward and the immediate reward is titrated after each choice until both the smaller-sooner reward and the delayed-\$100 reward have equal subjective value to the participant. The summary results file indicates the "indifference point" (the small-immediate amount deemed to have the same subjective value as the \$100 delayed reward) at each of the seven delay intervals. When plotted, the area under the curve formed by these indifference points is frequently used to quantify severity of discounting of delayed rewards.
+
+Orderly delay-discounting task behavior is evidenced by a revealed preference pattern wherein subjective value (SV) indifference points progressively decline with each increasing delay to the hypothetical reward payout. Per the quality control metrics suggested by @johnson2008.
+
+`JBPass1` "yes" (pass) refers to whether the valuation of the standard reward with delay follows an orderly decline, such that neither of the two following criterion were met: (1) if any indifference point (starting with the second delay) was greater than the preceding indifference point by a magnitude greater than 20% of the larger later reward (here, by \$20 or more); or (2) the last (5 year) indifference point was not less than the first (6 hour) indifference point by at least a magnitude equal to 10% of the larger later reward (here, by \$10 or more).
+
+`values.JBPass1_NumberViolations` is the tally of delay intervals (blocks) wherein the participant's revealed subjective value indifference point was \$20 or more greater than the indifference point of the next-sooner delay. This value will be "0" for a session wherein the participant showed an orderly decrease (or at least not an increase) in subjective value from each delay to the next-longer delay. The titrating format of the ABCD delay discounting task may increase the likelihood of one or more delay blocks showing an inconsistent pattern, even from an engaged participant. A result that revealed 1 or 2 violations, especially at the later/longer delay blocks (e.g. 5 years) might not substantially affect the overall area-under-curve of subjective value with delay, such that data may still be useable and reflect the participant's general preferences about waiting to get larger rewards. Therefore, the ABCD Consortium Neurocognition Workgroup recommends not excluding most cases where `JBPass` 1 is "no". Several violations of `JBpass` Criterion 1 (`cfvalues.JBPass1_NumberViolations` variable), however, suggests that the participant was responding somewhat randomly and inconsistently. The ABCD consortium Neurocognition Workgroup recommends caution in using data from cases wherein "values.JBPass1_NumberViolations" is greater than 1 or 2.
+
+Per @johnson2008, `values.Consistent_per_JBcriterion2` (yes,no) essentially indicates whether or not the participant discounted delayed rewards at all. `JBPass` 2 "yes" means that the youth discounted the standard reward (here \$100) by at least 10% at the maximum delay interval presented in the task (here 5 years). Assuming a participant was attentive and engaged, a "no" value would suggest that delay had no effect on how the participant valued future rewards. Alternatively, the participant may have adopted a facile, unreflective strategy to respond for the larger reward amount in every trial. Many investigators simply exclude data from participants who do not discount at all. The Neurocognition Workgroup recommends caution using data from cases wherein `values.Consistent_per_JBcriterion2` is not "yes."
+
+**Notes and special considerations:**
+
+Users should consider restricting data analysis to participants for whom `values.Consistent per_JBcriterion1` and `values.Consistent per_JBcriterion2` are both "yes."
+
+**Reference:** @johnson2008
+
+## Emotional Stroop Task {#nc_y_est}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_est")`
+`r r_link_table("nc_y_est")`
+
+**Measure description:** The emotional Stroop task [@stroop1935] measures cognitive control under conditions of emotional salience [@banich2019; @basgoze2015]. The task-relevant dimension is an emotional word that participants categorized as either a "good" feeling (happy, joyful) or a "bad" feeling (angry, upset). The task-irrelevant dimension is an image, which is of a teenager's face with either a happy or an angry facial expression. Trials are of two types. On congruent trials, the word and facial emotion are of the same valence (e.g. a happy face paired with word "joyful"). The location of the word varies from trial-to-trial, presented either on the top of the image or at the bottom. On incongruent trials, the word and facial expression are of different valence (e.g., a happy face paired with word "angry"). Participants work through 2 test blocks: one block consists of 50% congruent and 50% incongruent trials; the other consists of 25% incongruent trials and 75% congruent trials. The composition of the former type of block helps individuals keep the task set in mind more so than the latter [@kane2003]. The 25% incongruent/75% congruent block is always administered first, followed by the 50% incongruent/50% congruent block. Accuracy and response times for congruent versus incongruent trials for the total task and within each emotion subtype (happy/joyful; angry/upset) are calculated. Relative difficulties with cognitive control are indexed by lower accuracy rates and longer reaction times for incongruent relative to congruent trials.
+
+::: {#data-est .callout-warning collapse="false" title="Reaction Time"}
+There may be aberrant data in the task with reaction times (RTs). We recommend that researchers should use cut-offs to omit RTs \< 200 ms and \> 2000 ms. The task's upper limit for issuing a response was 2000ms. End-users might consider downloading trial-wise data and selectively omitting certain outlier trials and recalculating mean RT values.
+:::
+
+**References:**
+
+- @banich2019
+- @basgoze2015
+- @kane2003
+- @stroop1935
+
+## Game of Dice Task {#nc_y_gdt}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_gdt")`
+`r r_link_table("nc_y_gdt")`
+
+**Measure description:** The Game of Dice Task (GDT) [@brand2005] assesses decision-making under conditions of specified risk and has been successfully used with adolescent samples [@duperrouzel2019; @drechsler2008; @ross2016]. Risk taking is assessed by having participants attempt to predict the outcome of a dice roll by choosing among different options that vary on their outcome probability and pay-off across 18 trials. Specific rules and probabilities for monetary gains and losses are evident throughout the task [@brand2005]. On each trial, participants predict the outcome of a die roll by choosing from four different options (e.g., one number vs. multiple numbers). Options with more numbers (i.e. higher probability of winning) are associated with a lesser reward compared to those with one or two possible numbers (i.e. lower probability of winning). The two options with the lowest probability of winning are considered 'risky choices.' The total number of risky choices is often used to quantify performance.
+
+**References:**
+
+- @brand2005
+- @drechsler2008
+- @duperrouzel2019
+- @ross2016
+
+## Social Influence Task {#nc_y_sit}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_sit")`
+`r r_link_table("nc_y_sit")`
+
+**Measure description:** The Social Influence Task (SIT) assesses risk perception and propensity for risk taking, as well as susceptibility to perceived peer influence. Over the course of 40 trials, participants are presented with a variety of risky scenarios. Participants are asked to rate an activity's risk by moving a slider bar between "very LOW risk" (left) and "very HIGH risk" (right). After submitting an initial rating, participants are shown a risk rating of the same activity that is seemingly provided by a group of peers. This peer rating condition is either 4 points lower ('-4' condition), 2 points lower ('-2' condition), 2 points higher ('+2' condition) or 4 points higher ('+4' condition) than the participant's initial rating. Participants are asked to rate the riskiness of the scenario again. For both the initial and final rating trials, participants have a time limit of 4500 ms to provide their rating.
+
+The task is designed to try to ensure \~25% of trials (\~10 trials) are in each of the peer rating conditions. To do this, the task script restricts random sampling to only those conditions that can be run given the participant's initial ratings (e.g., if a participant selected a rating of 1.8, condition -4 and condition -2 cannot be run as both of those conditions would result in a peer rating \< 0). If none of the unselected peer conditions can be run due to rating constraints, yet 10 trials have already been run in all the realistic peer conditions, the script uses the 'switch sign' method; it (randomly) selects from the unselected peer conditions and then switches the sign (e.g., selected peer condition -4 will be run as peer condition +4 and vice versa). The script tracks how many such switches had to be made.
+
+This task was administered at year 4 but discontinued 9/14/2021 based on participant burden and task data showing lack of peer “pull” during the 4-year follow-up (n=~3000).
+
+**Reference:** @knoll2017
+
+## Stanford Mental Arithmetic Response Time Evaluation {#nc_y_smarte}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_smarte")`
+`r r_link_table("nc_y_smarte")`
+
+**Measure description:** The Stanford Mental Arithmetic Response Time Evaluation (SMARTE) is a youth measure that assesses dot enumeration, math fluency, and single- and double-digit arithmetic operations via an iPad or smartphone app. Multiple accuracy and reaction time summary scores are calculated (@starkey2014).
+
+**Reference:** @starkey2014
+
+## Behavioral Indicator of Resilience to Distress Task {#nc_y_bird}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_bird")`
+`r r_link_table("nc_y_bird")`
+
+**Measure description:** The Behavioral Indicator of Resilience to Distress (BIRD) task measures a participant's ability to persist despite distress. The paradigm shows a bird in a cage with 10 number boxes arranged in a circle around it; a green dot moves at random from box to box. The participant must reach the green dot before it moves or else an unpleasant sound is delivered. In level 1 (2 minutes), the participant completes an adaptive training level to estimate RTs; in level 2 (3 minutes) the dot moves faster than the participant's RT at random (distress component); in level 3 (5 minutes) the participant is allowed to quit at any time (with longer level 3 durations indicating higher tolerance for distress; a binary quit \[1: high distress\] and no quit \[0: low distress\] variable is also computed); affective scales are given prior to the task and after level 2.
+
+**References:**
+
+- @lejuez2003
+- @feldner2006
+
+## Millisecond Flanker Task {#nc_y_flnkr}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_flnkr")`
+`r r_link_table("nc_y_flnkr")`
+
+**Measure description:** This task measures attention, cognitive control, executive function, and inhibition of automatic response similarly to the NIH Toolbox Flanker task of the [NIH Toolbox (Cognition)](#nc_y_nihtb) battery. Because the NIH Toolbox version of the Flanker could not be administered remotely, this task was designed to mimic the NIH Toolbox Flanker task as closely as possible.
+
+**Notes and special considerations:** We recommend that users carefully consider the administration differences between the NIH Toolbox Flanker task and the Millisecond Flanker task in their analyses.
+
+# Youth tables (Administrative)
+
+## Administrative variables 
+
+Information regarding neurocognition administration type: in-person, remote, and hybrid. Details about device task was administered on. Administrative variables are included in each tasks own table. 
+
+## Snellen Visual Screener {#nc_y_svs}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_svs")`
+`r r_link_table("nc_y_svs")`
+
+**Measure description:** This is a vision screening measure. The vision score is the last line correctly read on the Snellen chart without errors, with both eyes together, and using corrective lenses if needed.
+
+**Notes and special considerations:** We suggest that users of neurocognitive data first examine the participants' vision using the `nc_y_svs_002` variable. It is possible that poor vision could influence task performance.
+
+**Reference:** @snellen1862
+
+## Edinburgh Handedness Inventory {#nc_y_ehis}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_ehis")`
+`r r_link_table("nc_y_ehis")`
+
+**Measure description:** A measure of handedness. In this short form, participants complete four self-report items to yield an estimate of handedness (right, mixed, left). The short form was validated by confirmatory factor analysis. See @veale2014.
+
+**References:**
+
+- @oldfield1971
+- @veale2014
+
+# Youth tables (Raw Data)
+
+## Little Man Task {#nc_y_lmt-raw}
+
+The description of the Little Man Task (LMT) is here ([Little Man Task](#nc_y_lmt)). To download these raw data, follow the instructions on our ['Access & Download' page](../../usage/access.qmd).
+
+For a description of the data details for this tasks raw data see the table below.
+
+| COLUMN NAME | DESCRIPTION |
+|-----------------------|-------------------------------------------------|
+| `task` | Behavioral task completed |
+| `subject` | Subject ID how it's defined in ABCD |
+| `eventname` | The event name for which the data was collected |
+| `site` | Data collection site ID |
+| `build` | The specific Inquisit version used |
+| `computer_platform` | Operating system |
+| `date` | The date the script was run |
+| `time` | The time the script was run |
+| `lmt_blocknum` | 3 blocks of LMT task: 1 = instructions; 2 = practice; 3 = test trials |
+| `lmt_blockcode` | Similar to lmt_trialcode, those designated "test" are the test trials. Can also cross reference with `lmt_values_stim` to determine type of test trial |
+| `lmt_trialcode` | Designates what type of trial was presented (see `lmt_trialnum`). "littleManPresentation" designates the test trials, otherwise they are practice/instructional trials |
+| `lmt_trialnum` | "Trial" number for each step/stimulus presentation in the task |
+| `lmt_values_stim` | Numerical values for which image was displayed (practice trials are ex1.png, ex2.png, etc.; test trials are 1.png, 2.png, etc.) |
+| `lmt_values_correctans` | This is the "correct answer" for each test trial. For test trials 0 = leftButton; 1 = rightButton." |
+| `lmt_response` | In response to the stimulus: rightButton = right button was pressed; leftButton = left button was pressed; missing/0 = no response; HomeButton = home base/button was pressed |
+| `lmt_correct` | 0 = FALSE (not correct); 1 = TRUE (correct) |
+| `lmt_latency` | Latency in milliseconds -- for test trials this is time from presentation of stimulus to response |
+
+
+**NOTE:** LMT 2-year follow-up assessments were administered using a different vendor than at Baseline. When applicable and available, LMT Baseline raw data were therefore reformatted and coded to match the LMT 2-year follow-up data format. Any wholly missing variables for LMT Baseline were not produced at that event and are left blank.
+
+## Delay Discounting Task {#nc_y_ddis-raw}
+
+The description of the Delayed Discounting Task is [here](#nc_y_ddis). 
+
+For a description of the data details for this tasks raw data see the table below.
+
+| COLUMN NAME | DESCRIPTION |
+|:----------------------|:------------------------------------------------|
+| `task` | Behavioral task completed |
+| `subject` | Subject ID how it's defined in ABCD |
+| `eventname` | The event name for which the data was collected |
+| `site` | Data collection site ID |
+| `build` | The specific Inquisit version used |
+| `computer_platform` | Operating system |
+| `date` | The date the script was run |
+| `time` | The time the script was run |
+| `trial` | Trial number |
+| `ddis_trialtype` | Trial type (i.e., "practice" trials are incorporated to introduce participants to the task, all remaining trials are "test" trials) |
+| `ddis_countdelays` | Block number ("Practice" trials are block 0, "Test" trials are blocks 1-7) |
+| `ddis_delays_ordinalrank` | Ordinal ranking of the delays to the larger reward ("6 hours from now" = 1, "1 day" = 2, "1 week" = 3, "1 month" = 4, "3 months" = 5, "1 year" = 6, "5 years" = 7) |
+| `ddis_delay` | Delay to the larger reward, as presented to participants |
+| `ddis_delay_indays` | Delay to the larger reward, converted to total number of days to the larger reward |
+| `ddis_delayedreward_amount` | Amount of the delayed reward (\$) for that choice |
+| `ddis_delayedreward_location` | Location on the computer screen of the delayed reward relative to the immediate reward (i.e., "left" side or "right" side) |
+| `ddis_choicelatency_ms` | Latency to make each choice (trials in which latency equaled 0 were home-base trials) |
+| `ddis_choice` | Choice of the immediate reward (0) or delayed reward (1). On home-base trials, the choice is automatically set to 0. |
+| `ddis_indifferencepoint` | Indifference point for each trial. The indifference point on Trial 13 of each block represents the final indifference point for that block. |
+
+## Emotional Stroop Task {#nc_y_est-raw}
+
+The description of the Emotional Stroop Task is [here](#nc_y_est).
+
+For a description of the data details for this tasks raw data see the table below.
+
+| COLUMN NAME | DESCRIPTION |
+|:----------------------|:------------------------------------------------|
+| `task` | Behavioral task completed |
+| `subject` | Subject ID how it's defined in ABCD |
+| `eventname` | The event name for which the data was collected |
+| `site` | Data collection site ID |
+| `build` | The specific Inquisit version used |
+| `computer_platform` | Operating system |
+| `date` | The date the script was run |
+| `time` | The time the script was run |
+| `values.keyAssignment` | Emotional valence mapped to left key (positive or negative) |
+| `blockcode` | Practice1 = first block of practice; repeatPractice=instruction screen for additional practice block; practice 2= second block of practice; testMC -- test block with mostly congruent trials (75/25); test equal -- test block with half congruent and half incongruent trials (50/50) |
+| `blocknum` | The number of the present block (not consecutive in some cases as as instructions (not included) are coded as blocks as well).trialnum |
+| `values.word_y` | Vertical coordinate of current word (in % of frame) |
+| `values.congruence` | 1= congruent 2= incongruent (emotion of word and face) |
+| `values.faceemotion` | "happy" or "angry" |
+| `values.selectStim` | Item number of selected stimulus |
+| `stimulusitem2` | The presented face stimulus (file number) |
+| `stimulusitem3` | The presented word stimulus |
+| `values.correctButton` | The correct response to the trial (i.e., emotional valence of the word) |
+| `response` | Actual participant response (0=missing) |
+| `correct` | 0=incorrect 1= correct |
+| `latency` | Reaction time |
+| `List.accuracymean` | Cumulative accuracy for the block through that trial (i.e., proportion correct for a given block) |
+
+
+## Game of Dice Task {#nc_y_gdt-raw}
+
+The description of the Game of Dice Task is [here](#nc_y_gdt).
+
+For a description of the data details for this tasks raw data see the table below.
+
+| COLUMN NAME | DESCRIPTION |
+|:----------------------|:-----------------------------------------------|
+| `task` | Behavioral task completed |
+| `subject` | Subject ID how it's defined in lab/project |
+| `eventname` | The event name for which the data was collected |
+| `site` | Data collection site ID |
+| `build` | The specific Inquisit version used |
+| `date` | Date script was run |
+| `time` | Time script was run |
+| `gdt_parameters_version` | 1 = original version with feedback (default) |
+| `gdt_blocknum` | The number of the current block (Inquisit variable) |
+| `gdt_blockcode` | The name of the current block (Inquisit variable) |
+| `gdt_values_phase` | Practice = practice trials; test = trials with responses that contribute to outcome `scoresgdt_values_currentround` |
+| `gdt_trialcode` | The name of the currently recorded trial (Inquisit variable) |
+| `gdt_latency` | Response latency in ms |
+| `gdt_values_chosen` | The selected dice faces participant is betting on (ex: "1", "12", "123", "1234") |
+| `gdt_values_throw` | The dice face thrown |
+| `gdt_values_row` | Participant's betting choice: For "singles" ("1", "2", etc.) |
+|  | 1 = singles; 2 = doubles; 3 = triples; 4 = quadruples |
+| `gdt_values_currentbet` | The amount of money currently bet based on betting choice |
+| `gdt_values_gain` | Amount of money won or lost in the current round |
+| `gdt_values_account_balance` | Amount participant owns |
+| `gdt_values_single` | Counts how many times participant has bet on 1 specific dice face |
+| `gdt_values_double` | Counts how many times participant has bet on 2 possible dice faces |
+| `gdt_values_triple` | Counts how many times participant has bet on 3 possible dice faces |
+| `gdt_values_quadruple` | Counts how many times participant has bet on 4 possible dice faces |
+| `gdt_values_safe` | Counts how many times participants selected a safe bet (bets on 3 or 4 dice faces) |
+| `gdt_values_risky` | Counts how many times participants selected a risky bet (bets on 1 or 2 dice faces) |
+| `gdt_expressions_net_score` | Number of safe bets minus number of risky bets |
+| `gdt_values_wins` | Adds the number of winning bets |
+| `gdt_values_losses` | Adds the number of losing bets |
+
+## Social Influence Task {#nc_y_sit-raw}
+
+The description of the Social Influence Task is [here](#nc_y_sit). 
+
+For a description of the data details for this tasks raw data see the table below.
+
+| COLUMN NAME | DESCRIPTION |
+|:----------------------|:-----------------------------------------------|
+| `task` | Behavioral task completed |
+| `subject` | Subject ID how it's defined in ABCD |
+| `eventname` | The event name for which the data was collected |
+| `site` | Data collection site ID |
+| `build` | The specific Inquisit version used |
+| `computer_platform` | Operating system |
+| `date` | The date the script was run |
+| `time` | The time the script was run |
+| `sit_values_practice` | Whether the trial was practice (1) or test (0) |
+| `sit_values_trialcount` | Counts the number of trials |
+| `sit_values_scenarionr` | Numeric key for the risk scenario presented |
+| `sit_values_scenario` | Risk scenario presented |
+| `sit_values_initialrating` | Participant's initial `ratingsit_values_rt_initialrating` |
+| `sit_values_condition` | Peer rating condition (1 = '-4' condition; 2 = '-2' condition; 3 = '+2' condition; 4 = '+4' condition) |
+| `sit_values_peerrating` | Peer rating |
+| `sit_values_finalrating` | Participant's final rating |
+| `sit_values_rt_finalrating` | Participant's reaction time (in ms) for submitting their final rating after onset of the rating scale |
+| `sit_values_ratingdiff` | Difference between the participant's initial and final rating |
+| `sit_values_flip` | Whether or not the direction of the peer influence was flipped due to participants initial rating (0 = not flipped; 1 = flipped) |
+| `sit_values_countflips` | Number of flipped trials (cumulative) for the duration of the task |
+| `sit_values_count1` | Counts the number of time peer rating condition '-4' was presented |
+| `sit_values_count2` | Counts the number of time peer rating condition '-2' was presented |
+| `sit_values_count3` | Counts the number of time peer rating condition '+2' was presented |
+| `sit_values_count4` | Counts the number of time peer rating condition '+4' was presented |
+| `sit_values_countnr_initial` | Counts the number of 'no response' for initial rating trials |
+| `sit_values_countnr_final` | Counts the number of 'no response' for final rating trials |
+
+## NIH Toolbox® Cognition Measures {#nc_y_nihtb-raw}
+
+The NIH Toolbox Cognition measures raw data are comprised of a series of .csv (comma separated values) files. There is a single format used for all measures. Definitions for the columns of these spreadsheets can be found [here](../../assets/files/nih_tb_dd_of_dd.xlsx).
+
+### Scoring processes
+
+Please refer to the NIH Toolbox Technical Manuals [here](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Cognition_Battery_Composite_Scores_Technical_Manual.pdf). Detailed scoring processes can also be found in the *Toolbox_Scoring_and_Interpretation_Guide_for_iPad_v1.7* [here](https://nihtoolbox.my.salesforce.com/sfc/p/#2E000001H4ee/a/2E0000004yR3/Ckb_AKw1oFUC56tgf6tdxcGDYaYbu8rsmBSFOX2Ec4g).
+
+**NIH Toolbox Picture Vocabulary Test (Language)**
+
+<u>Scoring Process</u>: Item Response Theory (IRT) is used to score the Picture Vocabulary Test. A score known as a theta score is calculated for each participant; it represents the relative overall ability or performance of the participant. A theta score is very similar to a z-score, which is a statistic with a mean of zero and a standard deviation of one.
+
+**NIH Toolbox Oral Reading Recognition Test (Language)**
+
+<u>Scoring Process</u>: IRT is used to score the Oral Reading Recognition Test. A theta score is calculated for each participant, representing the overall reading ability or performance of the participant. A theta score is similar to a z-score, which is a statistic with a mean of zero and a standard deviation of one.
+
+**NIH Toolbox Flanker Inhibitory Control and Attention Test (Executive Function & Attention)**
+
+<u>Scoring Process</u>: A 2-vector scoring method is employed that uses accuracy and reaction time, where each of these "vectors" ranges in value between 0 and 5, and the computed score, combining each vector score, ranges in value from 0-10. For any given individual, accuracy is considered first. If accuracy levels for the participant are less than or equal to 80%, the final "total" computed score is equal to the accuracy score. If accuracy levels for the participant reach more than 80%, the reaction time score and accuracy score are combined.
+
+**NIH Toolbox Dimensional Change Card Sort Test (DCCS) (Executive Function)**
+
+<u>Scoring Process</u>: A 2-vector scoring method is employed that uses accuracy and reaction time, where each of these "vectors" ranges in value between 0 and 5, and the computed score, combining each vector score, ranges in value from 0-10. For any given individual, accuracy is considered first. If accuracy levels for the participant are less than or equal to 80%, the final "total" computed score is equal to the accuracy score. If accuracy levels for the participant reach more than 80%, the reaction time score and accuracy score are combined.
+
+**NIH Toolbox Picture Sequence Memory Test (Episodic Memory)**
+
+<u>Scoring Process</u>: The Picture Sequence Memory Test is scored using IRT methodology. The number of adjacent pairs placed correctly for each of trials 1 and 2 is converted to a theta score, which provides a representation of the given participant's estimated ability in this episodic memory task. All normative standard scores are provided.
+
+**NIH Toolbox List Sorting Working Memory Test (Working Memory)**
+
+<u>Scoring process</u>: List Sorting is scored by summing the total number of items correctly recalled and sequenced on 1-List and 2-List, which can range from 0-26. This score is then converted to the nationally normed standard scores.
+
+**NIH Toolbox Pattern Comparison Processing Speed Test (Processing Speed)**
+
+<u>Scoring process</u>: List Sorting is scored by summing the total number of items correctly recalled and sequenced on 1-List and 2-List, which can range from 0-26. This score is then converted to the nationally normed standard scores. This task is included in the calculation of the Fluid Composite Score: the participant's raw score is the number of items answered correctly in 85 seconds of response time, with a range of 0-130. This score is then converted to the NIH Toolbox normative standard scores.
+
+## Stanford Mental Arithmetic Response Time Evaluation {#nc_y_smarte-raw}
+
+The description of the Stanford Mental Arithmetic Response Time Evaluation (SMARTE) is [here](#nc_y_smarte). Each participant has three files for each event corresponding to the Enumeration, Fluency, and Recall tasks.
+
+### Enumeration variable descriptions
+
+| Variable name | Description |
+|--------------------------|----------------------------------------------|
+| `task` | Experiment name |
+| `enumer_scriptlastupdate` | Script update date |
+| `computer.os` | Computer/Mobile OS name |
+| `computer.osmajorversion` | Computer/Mobile major software version |
+| `computer.osminorversion` | Computer/Mobile minor software version |
+| `screenWidth_inmm` | Screen width in mm |
+| `screenHeight_inmm` | Screen height in mm |
+| `test_setting` | Remote/In-person |
+| `subject` | Participant ID |
+| `eventname` | ABCD testing event (wave) name |
+| `site` | Site ID |
+| `enumer_build` | Script version |
+| `enumer_date` | Date of testing |
+| `enumer_time` | Time of testing |
+| `enumer_blockcode` | Test block ID |
+| `enumer_blocknum` | Test block number |
+| `enumer_trialnum` | Test trial number |
+| `enumer_trialcode` | Test trial description |
+| `enumer_practiceBlockCount` | Practice or test trial (0 = Neither, 1 = Practice, 2 = Test) |
+| `enumer_countPracticeTrials` | Trial code (0 = Introduction, 1 = Practice, 2 = Test) |
+| `enumer_countTrials` | Test trial number |
+| `enumer_TotalTestTrialCount` | Running trial counter |
+| `enumer_RandomOrderBlock` | Randomization code (0 = Practice, 1 & 2 = Test trials) |
+| `enumer_condition` | Stimulus item description |
+| `enumer_SetSize` | Trial dot number |
+| `enumer_Structure` | Structure of dot pattern |
+| `enumer_NumberOfSubgroups` | Number of dot subgroups |
+| `enumer_SubgroupMax` | Maximum size of dot group set |
+| `enumer_CounterbalanceBlock` | Counterbalance code (0 = No, 1 = Yes) |
+| `enumer_Item` | Item code |
+| `enumer_ExpDuration` | Exposure duration (multiply by 100) |
+| `enumer_DotSize` | Size of dots |
+| `enumer_TotalArea` | Total area of display |
+| `enumer_DotArea` | Total area occupied by dots |
+| `enumer_ConvexHull` | Numerical summary of the minimum convex set enclosing all dots |
+| `enumer_Occupancy` | Numerical description of topological properties of dots |
+| `enumer_Filename` | Description of trial |
+| `enumer_trialDeadline` | Time allowed for response |
+| `enumer_currentProblemIndex` | Numeric description of trial |
+| `enumer_Problem` | Description of trial |
+| `enumer_correctSolution` | Value of correct decision |
+| `enumer_proposedSolution` | Solution presented during trial |
+| `enumer_correct` | Correct response code (0 = Incorrect, 1 = Correct) |
+| `enumer_problemRT` | Reaction time for trial |
+| `enumer_homeButtonRT` | Reaction time to return to home button |
+| `enumer_response` | Response description |
+| `enumer_latency` | Latency to leave home button |
+| `enumer_remainingTrialDuration` | Time remaining relative to maximum allowed |
+| `enumer_elapsedtime` | Running time clock of task (ms) |
+| `enumer_countTimeOut` | Trial completed within time allowed (0 = Yes, 1 = No) |
+
+### Fluency variable descriptions
+
+| Variable name | Description |
+|--------------------------|----------------------------------------------|
+| `task` | Experiment name |
+| `fluency_scriptlastupdate` | Script update date |
+| `computer.os` | Computer/Mobile OS name |
+| `computer.osmajorversion` | Computer/Mobile major software version |
+| `computer.osminorversion` | Computer/Mobile minor software version |
+| `screenWidth_inmm` | Screen width in mm |
+| `screenHeight_inmm` | Screen height in mm |
+| `test_setting` | Remote/In-person |
+| `subject` | Participant ID |
+| `eventname` | ABCD testing event (wave) name |
+| `site` | Site ID |
+| `fluency_build` | Script version |
+| `fluency_date` | Date of testing |
+| `fluency_time` | Time of testing |
+| `fluency_blockcode` | Test block ID |
+| `fluency_blocknum` | Test block number |
+| `fluency_trialnum` | Test trial number |
+| `fluency_trialcode` | Test trial description |
+| `fluency_phase` | Test phase description |
+| `fluency_practiceBlockCount` | Practice or test trial (0 = Neither, 1 = Practice, 2 = Test) |
+| `fluency_countPracticeTrials` | Trial code (0 = Introduction, 1 = Practice, 2 = Test) |
+| `fluency_countTrials` | Test trial number |
+| `fluency_TotalTestTrialCount` | Running trial counter |
+| `fluency_counterBalanceBlock` | Counterbalance code |
+| `fluency_RandomOrderBlock` | Random order code |
+| `fluency_item` | Stimulus item number code |
+| `fluency_condition` | Description of experimental manipulation condition |
+| `fluency_difficulty` | Stimulus difficulty code (0 = low; 1 = medium; 2 = difficult) |
+| `fluency_presentedAnswer` | Blank in the fluency task |
+| `fluency_firstOperand` | First operand in stimulus |
+| `fluency_secondOperand` | Second operand in stimulus |
+| `fluency_operation` | Arithmetic operation to perform on stimuli |
+| `fluency_decadeAns` | Blank in fluency task |
+| `fluency_singleAns` | Correct answer |
+| `fluency_descriptor` | Description of size of the trial operands |
+| `fluency_trialDeadline` | Time limit for trial |
+| `fluency_currentProblemIndex` | Index number of current problem/trial |
+| `fluency_spatialPresentation` | Spatial distribution code |
+| `fluency_mathProblem` | Description of trial math problem |
+| `fluency_correctSolution` | Description of correct answer |
+| `fluency_proposedSolution` | Description of proposed solution |
+| `fluency_correct` | Code for accuracy of proposed solution (0 = False, 1 = True) |
+| `fluency_problemRT` | Reaction time for trial |
+| `fluency_homeButtonRT` | Reaction time to return to home button |
+| `fluency_response` | Description of participant response |
+| `fluency_latency` | Response latency |
+| `fluency_elapsedtime` | Elapsed time since beginning of experiment |
+| `fluency_countTimeOut` | Item time out (0 = No, 1 = Yes) |
+
+### Recall variable descriptions
+
+| Variable name | Description |
+|--------------------------|----------------------------------------------|
+| `task` | Experiment name |
+| `recall_scriptlastupdate` | Script update date |
+| `computer.os` | Computer/Mobile OS name |
+| `computer.osmajorversion` | Computer/Mobile major software version |
+| `computer.osminorversion` | Computer/Mobile minor software version |
+| `screenWidth_inmm` | Screen width in mm |
+| `screenHeight_inmm` | Screen height in mm |
+| `test_setting` | Remote/In-person |
+| `subject` | Participant ID |
+| `eventname` | ABCD testing event (wave) name |
+| `site` | Site ID |
+| `recall_build` | Script version |
+| `recall_date` | Date of testing |
+| `recall_time` | Time of testing |
+| `recall_blockcode` | Test block ID |
+| `recall_blocknum` | Test block number |
+| `recall_trialnum` | Test trial number |
+| `recall_trialcode` | Test trial description |
+| `recall_phase` | Test phase description |
+| `recall_countTrials` | Test trial number |
+| `recall_TotalTestTrialCount` | Running trial counter |
+| `recall_counterBalanceBlock` | Counterbalance code |
+| `recall_RandomOrderBlock` | Random order code |
+| `recall_item` | Stimulus item number code |
+| `recall_condition` | Description of experimental manipulation condition |
+| `recall_difficulty` | Stimulus difficulty code (0 = low; 1 = medium; 2 = difficult) |
+| `recall_presentedAnswer` | Blank in the fluency task |
+| `recall_firstOperand` | First operand in stimulus |
+| `recall_secondOperand` | Second operand in stimulus |
+| `recall_operation` | Arithmetic operation to perform on stimuli |
+| `recall_decadeAns` | Ten's place value for the correct answer |
+| `recall_singleAns` | One's place value for the correct answer |
+| `recall_descriptor` | A description of the size of the operands |
+| `recall_trialDeadline` | Time limit for trial |
+| `recall_currentProblemIndex` | Index number of current problem/trial |
+| `recall_spatialPresentation` | Spatial distribution code |
+| `recall_mathProblem` | Description of trial math problem |
+| `recall_correctSolution` | Description of correct answer |
+| `recall_proposedSolution` | Description of proposed solution |
+| `recall_correct` | Code for accuracy of proposed solution (0 = False, 1 = True) |
+| `recall_problemRT` | Reaction time for trial |
+| `recall_homeButtonRT` | Reaction time to return to home button |
+| `recall_response` | Description of participant response |
+| `recall_latency` | Response latency |
+| `recall_elapsedtime` | Elapsed time since beginning of experiment |
+| `recall_countTimeOuts` | Item time out (0 = No, 1 = Yes) |
+| `recall_anxiety` | Self-reported anxiety |
+
+## Behavioral Indicator of Resiliency to Distress Task {#nc_y_bird-raw}
+
+The description of the Behavioral Indicator of Resiliency to Distress Task (BIRD) is [here](#nc_y_bird).
+
+For a description of the data details for this tasks raw data see the table below.
+
+| Variable Name | Description |
+|--------------------------|----------------------------------------------|
+| `scriptlastupdate` | Date script last updated |
+| `build` | Build version |
+| `computer.platform` | Mobile device description |
+| `computer.os` | Device software |
+| `computer.osmajorversion` | Device software version |
+| `computer.osminorversion` | Device software minor version |
+| `screenWidth_inmm` | Width of screen (mm) |
+| `screenHeight_inmm` | Height of screen (mm) |
+| `test_setting` | Remote/In-person |
+| `date` | Test date |
+| `time` | Test time |
+| `subject` | Randomized participant ID & event description |
+| `group` | Group ID |
+| `session` | Session number |
+| `blockcode` | Description of trial level |
+| `blocknum` | Code corresponding to `blockcode` |
+| `trialcode` | Description of trail |
+| `trialnum` | Trial number |
+| `counttrials` | Running total of trials |
+| `dotposition` | Description of trial dot location |
+| `stimulusitem1` | Description of trial instructions |
+| `response` | Participant response |
+| `correct` | Accuracy of participant response (0 = Incorrect, 1 = Correct) |
+| `latency` | Latency of response (ms) |
+| `trialdotlatency` | Trial duration |
+| `score` | Running tally of correct responses |
+
+## Millisecond Flanker Task {#nc_y_flnkr-raw}
+
+The description of the Millisecond Flanker Task is [here](#nc_y_flnkr).
+
+For a description of the data details for this tasks raw data see the table below.
+
+| Variable Name | Description |
+|-------------------------|-----------------------------------------------|
+| `build` | Version of task |
+| `computer.platform` | Device used |
+| `date` | Date of testing |
+| `time` | Time of testing |
+| `subject` | Randomized participant ID and ABCD event (wave) |
+| `group` | Group assignment |
+| `sessionid` | Session number |
+| `blockcode` | Description of trial block |
+| `blocknum` | Code number for `blockcode` |
+| `trialcode` | Description of trial |
+| `trialnum` | Trial number (see `trailcount` for more interpretable trial number) |
+| `practice` | Practice trial? (0 = No, 1 = Yes) |
+| `blockcount` | Non-practice block counted in summary scores (0 = No, 1 = Yes) |
+| `countPracticeBlocks` | Definition of all task blocks (0 = No, 1 = Yes) |
+| `trialcount` | Running trial number count |
+| `fixationDuration` | Duration of fixation (ms) |
+| `congruence` | Trial congruence (0 = non-trial, 1 = congruent, 2 = non-congruent) |
+| `selecttarget` | Location of target (1 = Right, 2 = Left) |
+| `selectflanker` | Direction of flanker (1 = Right, 2 = Left) |
+| `response` | Button response |
+| `correct` | Response accuracy (0 = Incorrect/Non-trial, 1 = Correct) |
+| `latency` | Response latency (ms) |
+| `homeButton_RT` | Latency leaving home button |
+| `list.ACC_practice.mean` | Trials included in accuracy mean, including practice (0 = No, 1 = Yes) |
+| `practicePass` | Task trials included in accuracy mean (0 = No, 1 = Yes) |
+
+# Parent tables
+
+## Barkley Deficits in Executive Functioning Scale {#nc_p_bdefs}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_p_bdefs")`
+`r r_link_table("nc_p_bdefs")`
+
+**Measure description:** This measure is the short form of the Barkley Deficits in Executive Functioning Scale for Children and Adolescents. A parent reports on several different dimensions of their child or adolescent's day-to-day executive functioning (EF), such as organization, acting without thinking, clarity of expression, and procrastination that are predictive of future impairments in psychosocial functioning. See @barkley2012. Both an EF summary score (sum of all 20 item responses) and an EF Symptom Count (tally of responses of 3 or 4 across all items) are calculated for cases with either no missing item responses or only one missing item response (i.e. Decline to answer code `777`).
+
+**References:**
+
+- @barkley2012
+- @obrien2021

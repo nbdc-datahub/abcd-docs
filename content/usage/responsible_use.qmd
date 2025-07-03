@@ -1,0 +1,52 @@
+---
+title: "Responsible use"
+order: 3
+---
+
+# Rationale
+
+The Adolescent Brain Cognitive Development (ABCD) study dataset is a large, rich, and complex resource that can drive scientific discovery, translate research to the public domain, and inform development of public policy. As such, it is crucial for researchers to responsibly develop models that accurately reflect the complexity of cognitive and health disparities, accounting for the social and environmental contexts in which people live. Inaccurate representation and interpretation of research findings can undermine scientific rigor and reproducibility. Therefore, the use of ABCD data carries an ethical responsibility, and it is important for researchers to ensure that data analysis and interpretations are conducted with careful attention to responsible data practices.
+
+--- 
+
+# Warnings in data documentation
+
+To facilitate responsible data use, warnings have been added to variables in the data dictionary and are linked to sections of the data documentation website to provide additional information for data users (e.g. information about data quality issues and guidance on appropriate use of data). These warnings, which may apply at the variable or table level, are included directly in the data dictionary as hyperlinks to the documentation website. 
+
+In [DEAP](https://abcd.deapscience.com) and [Lasso](https://nbdc-datashare.lassoinformatics.com) these warnings are indicated by icons: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 5.99 19.53 19H4.47zM2.74 18c-.77 1.33.19 3 1.73 3h15.06c1.54 0 2.5-1.67 1.73-3L13.73 4.99c-.77-1.33-2.69-1.33-3.46 0zM11 11v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1m0 5h2v2h-2z" fill="rgb(255, 191, 0)"></path></svg> (Data) and  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 7c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1s-1-.45-1-1V8c0-.55.45-1 1-1m-.01-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8m1-3h-2v-2h2z" fill="rgb(249, 56, 49)"></path></svg> (Responsible use). In DEAP/Lasso the warning icons are hyperlinked back to the warning on this data documentation website. 
+
+Data users would be served to:
+
+1.  Review the data warnings for any variable that you will be downloading and/or using by clicking the link and reviewing the warning associated with that variable
+2.  Review any resources included with the warning and consider guidelines
+
+There are two types of warnings, data & responsible use. Warnings will be displayed in callout boxes like shown below:
+
+::: {.callout-warning title="Data warning" #ex-data-warn}
+The purpose of this warning is to aid in transparency and refers to technical data issues (e.g., data quality issues, information about how variables are constructed, instructions on how to calculate or analyze specific variables, code if necessary).
+:::
+
+::: {.callout-important title="Responsible use warning" #ex-resp-use-warn}
+The purpose of this warning is to provide guidance for responsible data use, interpretation, and communication to enhance rigor and reproducibility. This also includes conceptual warnings (e.g., bias due to attrition or non-response).
+:::
+
+---
+
+# General considerations
+
+The ABCD Study provides the following guidance for researchers planning to use the data:
+
+- Consider issues related to social and environmental contexts prior to hypothesis testing and throughout the research process.
+- Consider the broader social context of development and the potential for adaptation to the environment and developmental change
+  - Researchers should assess whether they have the necessary information to effectively address how social context influences developmental outcomes. It's essential to recognize the range of youths' experiences and environments, acknowledging that development is a dynamic process influenced by the potential for adaptation and change [@simmons2021].
+- Avoid using social constructs as proxies for environmental factors. Instead, directly measure relevant social, cultural, and environmental variables.
+- Follow best practices for selecting and using population descriptors like race, ethnicity, and geographic origin in genetics and genomics research.
+- Researchers must be mindful of the limitations when using constructs such as socioeconomic status, and avoid relying on them in isolation [@hoffman2022]. Use inclusive language in scientific communications.
+- Person-first language promotes inclusivity by emphasizing individuals' inherent value and respecting them as people before describing any conditions or diseases they may have [@bares2023]. Avoid using "addict" and instead use "person with a substance use disorder" or "person recovering from substance use disorder".
+  - Considerations for using language regarding people with disabilities: <https://www.cdc.gov/ncbddd/disabilityandhealth/materials/factsheets/fs-communicating-with-people.html>
+  - Considerations for using language regarding people with substance use disorders: <https://nida.nih.gov/nidamed-medical-health-professionals/health-professions-education/words-matter-terms-to-use-avoid-when-talking-about-addiction?msclkid=2afe5d9dab9911ec9739d569a06fa382> [@saragosa-harris2022]
+- Use practices for reproducible research, analytical procedures, and reporting of results.
+  - Recently, members of the ABCD consortium reviewed 549 articles using ABCD data and examined the reporting practices and how data from the ABCD Study has been used. There were 31+ items (created after a review of the neuroimaging best practices literature) extracted from each research article. The items covered a wide range of issues related to transparency and reproducibility such as sharing code used for analysis (e.g., on Github, OSF, Zenodo). We found that analytic scripts were shared in 30% of full-length articles. The number of participants excluded due to missing data was reported in 60% of articles, and information on missing data for individual variables (e.g., household income) was provided in 38% of articles. Based on the findings, a set of practical suggestions when using ABCD Study data were provided that may also be applied more broadly to the field of developmental neuroscience [@lopez2024].ABCD data users can review the [checklist of recommendations](https://osf.io/26kyt) to improve transparency and reproducibility.
+  - It is important to consider features of the data available in ABCD and the strengths and limitations therein and follow guidance. @saragosa-harris2022 have developed a practical guide for researchers and reviewers including relevant analytical and methodological considerations.
+
+---

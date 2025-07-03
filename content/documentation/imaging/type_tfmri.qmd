@@ -1,0 +1,187 @@
+---
+title: "Task-based fMRI"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+```{r}
+render_table_info("sub_domain == 'Task fMRI'")
+```
+
+The Task based Functional MRI (TfMRI) data conatins field maps, spin echo images with opposite phase encode polarity, and multi-frame, gradient echo, echo-planar imaging images.
+
+## Image processing (common to all fMRI)
+- Head motion corrected by registering each frame to the first using AFNI's `3dvolreg` [@cox1996]
+- B~0~ distortions were corrected using the reversing gradient method with FSL's `topup` [@andersson2003, @smith2004]
+- Displacement field estimated from spin-echo field map scans
+- Applied to gradient-echo images after adjustment for between-scan head motion
+- Corrected for gradient nonlinearity distortions [@jovicich2006]
+- Between scan motion correction across all fMRI scans in imaging event
+- Registration between T~2~-weighted, spin-echo B~0~ calibration scans and T~1~-weighted structural images performed using mutual information [@wells1996]
+    
+## Task-fMRI specific pre-processing
+Note: not included in "minimal processing" (minproc)
+- Removal of initial volumes
+  - Siemens: 8 TRs
+  - Philips: 8 TRs
+  - GE DV25: 4 TRs
+  - GE DV26 and later (RX28, DV29, etc.): 15 TRs
+- Normalization and demean
+  - Divide by the mean of each voxel, subtract 1, multiply by 100
+
+## Estimation of task-related activation strength
+- General linear model (GLM) using AFNI's 3dDeconvolve [@cox1996]
+- Nuisance regressors to model baseline, quadratic trend, and motion [@power2014]
+  - Motion estimates, derivatives, and squared estimates and derivatives included
+- Time points with framewise displacement (FD) \> 0.9 mm censored [@siegel2014]
+- Hemodynamic response function
+  - Modelled as gamma functions with temporal derivatives, using AFNI's SPMG model
+  - For MID and SST models, events modeled as instantaneous
+  - For n-back, duration of cues (\~3 s) and trial blocks (\~24 s) modeled as square waves convolved with SPMG
+- GLM coefficients and t-statistics sampled onto cortical surface
+  - Projected 1mm into cortical gray matter along surface normal vector
+
+- **Monetary Incentive Delay** (MID)
+  - Predictors for anticipation of large, small, and no rewards and feedback for large, small, and no rewards for wins and losses
+  - Linear contrasts computed for anticipation of large and small reward vs. no reward, anticipation of large and small loss vs. no reward, feedback of win vs. no reward, and feedback of loss vs. no reward
+
+- **Stop Signal Task** (SST)
+  - Predictors for successful go trial, failed go trial, successful stop trial, and failed stop trial
+  - Contrasts computed for successful vs. failed stop trials and successful vs. failed go trials
+
+- **Emotional N-back** (EN-back)
+  - Predictors for each type of stimulus (i.e. place and emotional face) in each of the n-back conditions (i.e., 0-back and 2-back) plus fixation
+  - Linear contrasts computed for 2-back vs. 0-back across stimulus types, emotional faces vs. places across memory loads, 2-back vs. 0-back for each stimulus type, and each memory load and each stimulus type vs. fixation
+
+## Regions of interest (ROIs)
+- Subcortical structures labeled with atlas-based segmentation [@fischl2002]
+- Cortical regions labeled with the Desikan atlas-based classification [@desikan2006]
+- Cortical regions labeled with the Destrieux atlas-based classification [@destrieux2010]
+- ROI average coefficients and t-statistics for each run were averaged across two runs, weighted by degrees of freedom
+
+# fMRI task packages
+
+The task-based fMRI scans require special stimulus presentation and response collection equipment and software. All ABCD fMRI tasks are currently programmed in E-Prime Professional 2.0 versions 2.0.10.356 or later and work reliably for PC Windows 8.1 or earlier.
+
+The tasks and stimuli are available for download here and are free to be used by others for their own research projects. When referencing these tasks be sure to use the provided citations. **By downloading these tools you agree to using them for educational and research purposes only.**
+
+The full fMRI tasks are available for download on GE scanners, Siemens and Philips (SP) scanners, and as a Goggles version. Download `GE\_\*` versions for GE scanners, `SP\_\*` versions for Siemens and Philips scanners and `Goggles\_\*` versions if you are using Goggles. To download the following, please right click and select “open link in new tab.”
+
+- [GE_13_2023](https://abcdstudy.org/newsletter/fMRI_files/GE_13_20210427.zip)
+- [GE_2023](https://abcdstudy.org/newsletter/fMRI_files/GE_2023.zip)
+- [Goggles_13_20181029](https://abcdstudy.org/newsletter/fMRI_files/Goggles_13_20181029.zip)
+- [Goggles_20181029](https://abcdstudy.org/newsletter/fMRI_files/Goggles_20181029.zip)
+- [SP_13_2023](https://abcdstudy.org/newsletter/fMRI_files/SP_13_20210427.zip)
+- [SP_2023](https://abcdstudy.org/newsletter/fMRI_files/SP_2023.zip)
+
+**Reference:** @casey2018
+
+## Monetary Incentive Delay Task {#mr_y_tfmri__mid}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_tfmri__mid](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Broad+Psychopathology%22%2C%22Youth%22%5D%2C%5B%22Temperament%2FPersonality%22%2C%22Youth%22%5D%2C%5B%22Youth%22%2C%22Monetary+Incentive+Delay%22%5D%5D#/my-datasets/create-dataset)
+
+When referring to the ABCD monetary incentive task in publications or talks, please cite: Knutson B, Westdorp A, Kaiser E, Hommer D (2000) FMRI visualization of brain activity during a monetary incentive delay task. NeuroImage 12: 20–27. To download the following, please right click and select “open link in new tab.”
+
+- [MID_Practice.zip](https://abcdstudy.org/newsletter/fMRI_files/MID_Practice.zip)
+- [MID_Behavioral.zip](https://abcdstudy.org/newsletter/fMRI_files/MID_Behavioral.zip)
+
+## Stop Signal Task {#mr_y_tfmri__sst}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_tfmri__sst](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Broad+Psychopathology%22%2C%22Youth%22%5D%2C%5B%22Temperament%2FPersonality%22%2C%22Youth%22%5D%2C%5B%22Youth%22%2C%22Stop+Signal+Task%22%5D%5D#/my-datasets/create-dataset)
+
+When referring to the ABCD stop signal task in publications or talks, please cite @logan1984.
+
+This updated version of the STOP task program addresses the issues arising from the Bissett critique [@bissett2020]. The changes to the task include: 1) fixing glitches that arise from fast responses, 2) not letting the SSD fall below 50msec, 3) ensuring that the Stop signal duration is always 300 msec and 4) fixing the trial coding errors. Please refer to the [response to the Bissett critique](https://www.biorxiv.org/content/10.1101/2020.07.27.223057v2) for more details. Due to limitations piloting the scanner version of the task (sites being closed during the pandemic), users are encouraged to report to ABCD’s helpdesk any bugs or issues related to task length, equipment or different Windows and e-prime versions. To download the following GE or Siemens and Philips (SP) versions, please right click and select “open link in new tab.”
+
+- [SP_SST](https://abcdstudy.org/newsletter/fMRI_files/SP_SST.zip)
+- [GE_SST](https://abcdstudy.org/newsletter/fMRI_files/GE_SST.zip)
+
+## Emotional N-Back Task {#mr_y_tfmri__nback}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_tfmri__nback](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Broad+Psychopathology%22%2C%22Youth%22%5D%2C%5B%22Temperament%2FPersonality%22%2C%22Youth%22%5D%2C%5B%22Youth%22%2C%22Emotional+N-Back%22%5D%5D#/my-datasets/create-dataset)
+
+When referring to the ABCD emotional n-back task in publications or talks, please cite: [@cohen2016]. The impact of emotional cues on short-term and long-term memory during adolescence. Society for Neuroscience, San Diego, CA. (Please check for the updated publication). To download the following, please right click and select "open link in new tab".
+
+- [EmoNBack_Practice.zip](https://abcdstudy.org/newsletter/fMRI_files/EmoNBack_Practice_0.zip)
+- [EmoNBack_Behavioral.zip](https://abcdstudy.org/newsletter/fMRI_files/EmoNBack_Behavioral_0.zip)
+- [RecMem.zip](https://abcdstudy.org/newsletter/fMRI_files/RecMem.zip)
+
+**RADIATE Emotional Face Stimulus Set: **
+
+When referring to these stimuli in publications or talks, please cite @conley2018 and @tottenham2009.
+
+- [RADIATE JPEGS-1](https://abcdstudy.org/newsletter/fMRI_files/RADIATE_JPEGS1.zip)
+- [RADIATE JPEGS-2](https://abcdstudy.org/newsletter/fMRI_files/RADIATE_JPEGS2.zip)
+- [RADIATE BMPS](https://abcdstudy.org/newsletter/fMRI_files/RADIATE_BMP.zip)
+
+::: {.callout-caution title="Using RADIATE Emotional Face Stimulus Set"}
+By downloading these stimuli, you agree to use them solely for approved institutional research or educational purposes and to not use them in any way to deliberately or inadvertently identify the individuals in the pictures.
+:::
+
+# Methods
+
+Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in [@hagler2019]. Image processing and analysis methods for the Adolescent Brain Cognitive Development Study (doi: [10.1016/j.neuroimage.2019.116091](https://doi.org/10.1016/j.neuroimage.2019.116091)). Changes to image processing and analysis methods in Release 3.0 and Release 4.0 are documented in Task-based fMRI Release Notes. No significant changes were made to the processing pipeline for Release 5.0. Changes to time series analysis methods in Release 6.0 are documented in Task-based fMRI Release Notes.
+
+# Notes
+
+## Effects of scanner instance and software version
+
+Multisite longitudinal MRI imaging data are potentially susceptible to influences of scanning parameters, scanner manufacturer, scanner model, and software version, which vary across sites, and sometimes across time. For more information, please refer to “Effects of scanner instance and software version” in Imaging Overview Data Documentation.
+
+## MID task design and time series modeling
+
+The Monetary Incentive Delay (MID) task used in ABCD was designed to optimize detection of incentive-anticipatory related activation. To minimize scan duration for research participants, a brief version of the MID task with no variable interval between trials was employed. A consequence of this design is that activation associated with the presentation of the trial feedback may contain some signal stemming from anticipation-related processes. This results in certain feedback contrasts (e.g., large win hit minus neutral hit) being potentially unreliable. Users are encouraged to use contrasts that might provide a closer match on anticipation (e.g., large win hit minus large win miss), and this is what is included in data releases. A second issue is that the task has been analyzed using an approach that is common in the literature, in which only anticipatory cues and feedback notifications are modeled, leaving some trial components (post-cue fixation and probe) unmodeled and thus serving as an implicit baseline. We therefore also caution that some component of anticipatory or feedback-related activation may contain non-specific motor-behavior related signal. Similarly, response times to each target have not been modeled (as suggested by @mumford2023). As response times differ between hit and miss trials, recent analyses suggest that nonspecific, behaviorally-driven effects may bias estimates of feedback-related activity. More details on the task design and best practices for its analysis will be described in a forthcoming manuscript. Pending additional analyses in partnership with external data end-users, ABCD may in future releases offer MID task data wherein all trial components as well as target response times are modeled.
+
+## E-prime timing errors for GE scanners
+
+In a relatively small, though substantial, subset of task fMRI acquisitions collected on GE scanners (\~9% of runs), the time between the 1st and 16th trigger pulse sent from the scanner does not match the expected 12 seconds (see 5.0 Known Issues: Task fMRI stimulus timing, Issue 2). In cases where the discrepancy was either 0.8, 1.6, or 2.4 seconds (or within 0.01 seconds of those values), indicating missed (undetected) trigger pulses (\~3% of runs), the start time (used as the reference for subsequent events) can be adjusted by simply subtracting the discrepancy. Any other runs that had a start time discrepancy larger than 0.5 seconds (\~6% of runs) are excluded from the current task fMRI analysis pipeline, as such cases reflect irregular trigger timing and can make it difficult or impossible to be sure when the stimulus run started relative to the imaging scan. In cases matching specific trigger timing patterns, it may be possible to infer the correct timing offset, so some of these cases may be salvaged in future releases.
+
+## Mismatched E-Prime output files and imaging data
+
+The task fMRI behavioral and stimulus timing files, which are exported from the E-Prime stimulus presentation program, have a date and time stamp recording when the stimulus program was started for a particular task run. E-Prime timing is compared to date and time derived from imaging DICOM metadata to identify events with potentially mismatched E-Prime file and imaging data. In some cases, these mismatches are due to clock offsets on stimulus computers relative to the MRI console computer; e.g., on days of transition to and from Daylight Saving Time (DST), or small, fixed differences in clock time. In other cases, imaging sites uploaded E-Prime files for one participant but assigned them to a different pGUID, which can result in very large timing differences. Participant-events with timing mismatches less than 12.5 minutes are identified by these variables:
+
+- `mr_y_qc__raw__tfmri__mid__eprime__match_indicator`: MID E-Prime timing match
+  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__mid")`
+- `mr_y_qc__raw__tfmri__nback__eprime__match_indicator`: N-Back E-Prime timing match
+  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__nback")`
+- `mr_y_qc__raw__tfmri__sst__eprime__match_indicator`: SST E-Prime timing match
+  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__sst")`
+
+Participant-events for which timing mismatches can be ignored, e.g., DST transitions or persistent clock offsets, are identified by these variables:
+
+- `mr_y_qc__raw__tfmri__mid__eprime__tdiff__ign_indicator`: MID ignore E-Prime mismatch
+  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__mid")`
+- `mr_y_qc__raw__tfmri__nback__eprime__tdiff__ign_indicator`: N-back ignore E-Prime mismatch
+  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__nback")`
+- `mr_y_qc__raw__tfmri__sst__eprime__tdiff__ign_indicator`: SST ignore E-Prime mismatch
+  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__sst")`
+
+These variables have been included in the recommended imaging inclusion criteria and the imaging inclusion flags. Refer to the [Imaging Overview](index.qmd) release note for more details.
+
+Task fMRI results have not been generated for participants with timing mismatches (e.g., `mr_y_qc__raw__tfmri__mid__eprime__match_indicator = 0`) unless they can be ignored (i.e., `mr_y_qc__raw__tfmri__mid__eprime__tdiff__ign_indicator = 1`). The ABCD DAIRC continues to work with ABCD imaging sites to recover missing or mismatched E-Prime files to enable the inclusion of these participants' results in future releases.
+
+## Irregular acquisitions
+
+In a small percentage of participant-events (\< 2%), the number of scans acquired and the number of task runs documented in E-Prime output files differed, leading to potential ambiguity in the assignment of stimulus runs to imaging scan. To prevent matching a stimulus run to the wrong scan and using an incorrect stimulus event time series in the GLM analysis of the imaging data, the task fMRI GLM analysis is currently skipped for participant-events with an irregular acquisition, resulting in missing derived values in the task fMRI tabulated data and missing minimally processed data. Examples of irregular acquisitions creating potential ambiguity include the collection of 3 scans but only 2 stimulus runs, or 1 scan but 2 stimulus runs. This sometimes occurs because a scan was aborted at the participant's request. The correct mapping between scan and run can sometimes be ascertained with information about all scans collected and which of those were aborted. However, variation and special cases can make it difficult to fashion general rules that work correctly for all.
+
+In a very small number of participant-events (\< 0.1%), the research assistant or scan operator used the wrong scan protocol for the first of two runs; e.g., using the MID scan protocol while using the SST stimulus. Because the length of the scans differs for the different tasks, mismatched scans and tasks are not analyzed. The second scan of the mismatched pair can be correctly analyzed if assigned to the second stimulus run. These situations were identified as having only one scan of a given task that was immediately preceded by a scan of a different task instead of a field map scan.
+
+For approximately 2.0-2.4% of participant-events, only a single imaging scan was available for analysis for one or more tasks, either because only one scan was acquired for that task, one of two scans was aborted during acquisition, or one of two scans failed raw QC. For the SST, if only the second scan was analyzed, these tfMRI data are currently assigned to run1 variables in the tabulated data releases. For the MID and EN-back, if there were errors with run1 scans, neither scan1 or scan2 task fMRI data were analyzed. If there were no issues with the first scan, these data were analyzed.
+
+## Task fMRI outliers {#outliers}
+
+Some participants exhibit frequent periods of motion, and depending on when supra-threshold head movements (FD\>0.9 mm) occur relative to instances of a given event type, some conditions may be under-represented. In rare cases, this results in extreme values for the beta and SEM estimates, as much as several orders of magnitude different from typical values for a given contrast. The presence of extreme outliers violates standard parametric assumptions, so group-level statistical analyses would produce invalid and nonsensical results. To prevent this, we censor the beta and SEM values if they are identified as having extremely high SEM values and therefore low reliability beta estimates (see Hagler et al., 2019). We censor the beta and SEM values for all ROIs for those contrasts that have RMS of SEM values across the cortical surface greater than 5% signal change. This represents less than 0.5% of all participant-task- contrast-run combinations. The censored values are replaced with empty cells in the tabulated data as well as the concatenated vertexwise data; however, censoring of outlier contrast-runs was not applied to the concatenated voxelwise data (see [Concatenated Imaging Data Documentation](data_concat.qmd)). Despite this censoring, some outlier beta values (defined as being outside the mean ± 3 x standard deviation) remain. These cases are more likely to have outliers in a limited number of ROIs, and are possibly related to image quality issues not detected in raw or post-processing manual QC.
+
+Users of the task fMRI tabulated or concatenated data are advised to examine outliers in the data and choose inclusion criteria that are appropriate for their analyses. We have provided a set of recommended inclusion criteria for each modality that take into account factors such as imaging QC, task performance, etc. (see [MRI Quality Control & Recommended Image Inclusion Criteria](type_qc.qmd) release note), and for convenience, we provide a data structure with modality-specific imaging inclusion flags based on those criteria `r link_table("mr_y_qc__incl")`. However, these recommended inclusion criteria do not account for outliers. It is recommended that users apply methods for handling outliers prior to statistical analysis. For example, inverse rank normalization or winsorizing.
+
+**Additional references:**
+
+- @chang1992
+- @morgan2004
+

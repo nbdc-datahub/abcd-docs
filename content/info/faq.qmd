@@ -1,0 +1,184 @@
+---
+title: "FAQs"
+order: 1
+---
+
+# Data access
+
+::: {.callout-tip collapse="true" title="How do I access the data?"}
+Our data are publicly shared with eligible researchers with a valid research use of the data at a research institution. Please visit [How to Access Data](../usage/access.qmd) or the [NBDC datahub](https://www.nbdc-datahub.org/data-access-process) for more information on how to access and download the data.
+:::
+
+::: {.callout-tip collapse="true" title="I'm from a non-US institution - can I access the data?"}
+Our data are publicly shared with eligible researchers with a valid research use of the data, and who are at an institution with an active Federal Wide Assurance, which many international institutions have ([https://ohrp.cit.nih.gov/search/fwasearch.aspx?styp=bsc](https://urldefense.proofpoint.com/v2/url?u=https-3A__ohrp.cit.nih.gov_search_fwasearch.aspx-3Fstyp-3Dbsc&d=DwMFaQ&c=-35OiAkTchMrZOngvJPOeA&r=Aq7PRgo4I5mb5VgvN_NsdCo9quXBmL4O9guyY6EH5J0&m=9imhIbTes5wspECxqGcszIV3jPBDfYAvrrHHSHhi5FY1jQ04NphD32yzpiy2qTo1&s=ZjxheRIJ8ijJcTjB8IKnyk9U2bi5mRkKCxxbfOy4tpo&e=)). Users from many other countries have successfully accessed and published with the ABCD Study data.
+:::
+
+::: {.callout-tip collapse="true" title="Is there a cost to access the data?"}
+There is no cost to access the data.
+:::
+
+::: {.callout-tip collapse="true" title="Can I have a student or trainee on my DUC? I'm a student, can I have my own DUC?"}
+Lead investigators may obtain their own DUC, but trainees and students must be part of an investigator-led group DUC. A lead investigator (PI) may submit a single DUC that includes trainees, lab members, and other collaborators at their institution (adding or removing users is managed via user dashboard). The lead investigator is responsible for ensuring that individuals added as part of a group-level DUC are in compliance with its terms and conditions. Note that it is essential for the primary DUC holder to renew annually, as expiration will result in access being revoked for all listed collaborators.
+
+Learn more on the [NBDC Datahub](https://www.nbdc-datahub.org/data-access-process).
+:::
+
+::: {.callout-tip collapse="true" title="Do I need IRB approval to use these data?"}
+Institutions vary on whether they consider use of the de-identified dataset to be human subjects research, with some requiring expedited-style or even exempt IRB reviews by their institution's IRB. Other institutions do not consider it to be human subjects research given the de-identified nature of the data. That is a question to ask your IRB.
+
+To get in contact please [submit a ticket](issues.qmd) or [reach out](https://abcdstudy.org/study-sites/).
+:::
+
+::: {.callout-tip collapse="true" title="I am writing a proposal to use ABCD data, can you write a letter of support?"}
+As a practice the ABCD Coordinating Center (CC) and Data Analysis, Informatics, and Resource Center (DAIRC) do not provide letters that could be seen to endorse specific applications or projects that propose secondary analyses of the ABCD Study data.
+
+While we do not offer specific endorsements, we do offer our commitment to maintaining open lines of communication with the larger scientific community and to do whatever we can to ensure that they are able to acquire the information about the ABCD Data Resource that they may need to address their specific aims.
+:::
+
+# Protocol
+
+::: {.callout-tip collapse="true" title="Where can I find the protocol for the ABCD study?"}
+Information about ABCD study design & protocols are available in the [Scientist section](https://abcdstudy.org/scientists/) of the ABCD Study website or on this website [here](../study/index.qmd). 
+
+Please note that we are generally unable to share the specific measures used, as many are proprietary. 
+
+Additional details/resources are available on this site in documentation provided for each [study instrument](../documentation/non_imaging/ab.qmd). 
+
+You can read more about the ABCD protocol development in a special issue of Developmental Cognitive Neuroscience here: [https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32](https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32).
+
+General information about the studies data dictionary & release variables can explored via DEAP and Lasso [(see details)](../tools/tools.qmd). 
+:::
+
+::: {.callout-tip collapse="true" title="Can I propose a new assay for collected biospecimens?"}
+At this time, all analyzed specimens are part of the data release. NIDA has developed a mechanism for requestion biosamples for use. Pleae read more about the NBDC biospecimen access program [here](https://nbdc.nida.nih.gov/about).
+:::
+
+::: {.callout-tip collapse="true" title="Autism in ABCD Study sample"}
+Exclusion criteria for participation in the ABCD Study included "a current diagnosis of schizophrenia, autism spectrum disorder (moderate, severe), intellectual disability, or alcohol/substance use disorder. (A past diagnosis that has remitted is not exclusionary)." ABCD does not maintain assessments or records related to diagnosed Autism Spectrum Disorder. Though, the KSADS consists of diagnostic categories, including autism spectrum disorder (parent report only). 
+:::
+
+# Data download & use
+
+::: {.callout-tip collapse="true" title="Can I use ChatGPT or another AI tool to examine data, create figures, or otherwise understand ABCD data?"}
+No, this is not permitted. Inputting ABCD data to generative AI tools, such as ChatGPT, is a violation of the terms of use outlined in the data use agreement.
+:::
+
+# Imaging Data
+
+::: {.callout-tip collapse="true" title="Why is the cerebellum sometimes cutoff in fMRI and dMRI?"}
+Series that pass raw QC may have some minor issues but are considered acceptable for processing. Because of relatively tight brain coverage for dMRI and fMRI acquisitions, the superior or inferior edge of the brain is sometimes outside of the stack of slices. We call this “field of view (FOV) cutoff”. Except in extreme cases, we do not exclude dMRI and fMRI series for mild to moderate FOV cutoff as part of our initial raw QC. Such cases are also not recommended for exclusion by default. In the tabulated imaging data, brain regions outside the FOV have missing values, but other regions remain usable.
+
+The automated post-processing QC metrics include measures of superior and inferior FOV cutoff that can be used to exclude participants with FOV cutoff from analyses. See [MRI post-processing QC Data Documentation](../documentation/imaging/type_qc.qmd).
+:::
+
+::: {.callout-tip collapse="true" title="Where are the dMRI gradient tables?"}
+Raw dMRI gradient tables can be found in the `raw/` folder containing raw data standardized to the [Brain Imaging Data Structure (BIDS)](../documentation/imaging/abcc_start_page.qmd). See here for an overview the [raw dMRI data](../documentation/imaging/type_dmri.qmd). Processed gradient tables, adjusted for head rotation, are additionally provided in the [QSIPrep derivatives](../documentation/imaging/abcc_derivatives.qmd#qsi_prep).
+:::
+
+::: {.callout-tip collapse="true" title="When should I use field maps?"}
+The "minimally processed" (mproc) images have been corrected for B0 distortion using the field maps. As a result, field maps are not shared in the mproc data releases.
+
+If you are obtaining fast track data (i.e., unprocessed), you would want to correct using the field maps provided in Fast Track.
+
+To know which field map goes with a particular scan, here are some pointers:
+
+-   The study date and series time are included in the fast track file names.
+-   The protocol calls for two scans per task-fMRI session (i.e., two for MID, two for SST, and two for nBack).
+-   Each pair scans is typically preceded by a field map scan (or pair of field map scans).
+-   On GE scanners, the field map is an integrated sequence of forward and reverse phase-encode polarity scans (i.e., one field map scan for GE). On Philips and Siemens scanners, the forward and reverse scans are separate series (i.e., two field map scans for Philips and Siemens).
+
+Here are some extra things to know:
+
+-   Sometimes field map scans have image quality issues and may fail raw QC. Those will be excluded from Fast Track downloads if you access the "recommended" Fast Track query.
+-   If there is no usable field map scan directly preceding a scan or pair of scans, we use the next closest field map in the imaging session.
+-   Regardless of whether the field map is collected immediately before the pair of tasks scans, or earlier, or later, it is advisable to correct for motion between the field map and the main scan.
+-   If you use [FSL's TOPUP](https://web.mit.edu/fsl_v5.0.10/fsl/doc/wiki/topup.html), it corrects for motion between the forward and reverse phase-encode polarity volumes, which occurs in many subjects as well.
+:::
+
+::: {.callout-tip collapse="true" title="Are FreeSurfer processing outputs included in the data sharing?"}
+Yes. As of Release 6.0, FreeSurfer processing outputs are now included in the bids/derivatives/freesurfer output when downloading data.
+:::
+
+::: {.callout-tip collapse="true" title="Where can I find more information about the imaging protocol?"}
+The ABCD imaging protocol is described in @casey2018 and in our [imaging documentation](../documentation/imaging/index.qmd)
+:::
+
+::: {.callout-tip collapse="true" title="Why do some imaging sessions, particularly from Philips scanners, have two or more dMRI series?"}
+For imaging data from Philips scanners, the dMRI acquisition is split into two series because of a limitation of the Philips platform. Both scans have the same phase-encode polarity. They are meant to be concatenated together. In other rare cases, multiple dMRI scans may have been acquired, due to acquisition problems in early scans. For the minimally processed data, one scan is selected for each session based on QC ratings, except for Philips scanners, in which case two are selected for packaging and sharing. All scans are available as raw DICOM files via fasttrack data sharing.
+:::
+
+::: {.callout-tip collapse="true" title="What is the 'minimally processed' imaging data?"}
+Minimally processed neuroimaging data include:
+
+-   High-resolution structural data (3D T1w and T2w scans)
+-   Advanced diffusion MRI (multiple b-values and directions)
+-   Resting-State fMRI
+-   Task fMRI (Monetary Incentive Delay, Stop-Signal, and Emotional N-Back), with event files for each fMRI run.
+
+These series have been run through standard modality-specific pre-processing stages including conversion from raw to compressed files, distortion correction, movement correction, alignment to standard space, and initial quality control (refer to [*MRI Quality Control (QC)* documentation](../documentation/imaging/type_qc.qmd)). This is to enable researchers to use the ABCD neuroimaging data in their own processing pipelines more quickly and efficiently than starting with raw data. Note that minimal processing is identical for rs-fMRI and task-fMRI and does not include analysis-specific pre-processing steps (e.g. removal of initial TRs, normalization by mean, etc.). The available minimally processed files are detailed in the [*Other Imaging Instruments* Data Documentation](../documentation/imaging/data_derivatives.qmd)).
+
+Pre-processed imaging data for each image series are shared in BIDS formatted directory trees as NIfTI format data files (software to share preprocessed data: <https://scicrunch.org/resolver/SCR_016016>; consistent with BIDS specifications version 1.1.1: <https://bids.neuroimaging.io/standards/bids_specification/index.html>). Imaging metadata derived from the original DICOM files are packaged along with each preprocessed data series as JSON files. The minimally processed T2w data are resampled into voxel-wise alignment with the T1w, which is rigid-body resampled into alignment with an atlas.
+
+dMRI-specific information included diffusion gradients adjusted for head rotation (bvecs.txt), diffusion gradient strengths (bvals.txt), and a rigid-body transformation matrix specifying the registration between the dMRI image and the corresponding processed sMRI T1w image (stored in the JSON file). The dMRI minimally processed data are also kept in their original resolution, but reoriented into a standard alignment, based on registration to T1w, but not voxel-wise aligned with the T1w. A registration matrix supplied with the minimally processed dMRI data.
+
+fMRI-specific information includes estimated motion time courses and a rigid-body transformation matrix specifying the registration between the fMRI image and the T1w image (stored in the JSON file). The fMRI minimally processed data are kept in their original space and resolution, but a registration matrix is supplied with the minimally processed fMRI data. For task-fMRI series, event timing information is included as tab-separated value (tsv) files. The results of additional processing and ROI analysis are shared as part of the tabulated data released through the NBDC Data Hub.
+
+Information about this is included in the release notes, which also describe the processing steps included in the “minimally processed” data.
+
+There is currently no script available to run the ABCD minimal processing. There is a Docker container and Singularity image that runs the complete processing and analysis pipeline that will be made available in the near future. Another useful software package is available here: <https://github.com/ABCD-STUDY/abcd-hcp-pipeline>.
+:::
+
+::: {.callout-tip collapse="true" title="Which imaging data are recommended for use in analyses?"}
+Please refer to the Imaging release notes. There are modality-specific image inclusion flags, like `mr_y_qc__incl__smri__t1_indicator` or `mr_y_qc__incl__rsfmri_indicator`, that are either 0 or 1. The `mr_y_qc__post__man__fsurf_score` variable is used in the inclusion criteria to set the inclusion flags (criteria are listed in the release notes).
+:::
+
+::: {.callout-tip collapse="true" title="Why are post-processing QC scores available for only a subset of imaging data?"}
+As described in the [documentation](../documentation/imaging/type_qc.qmd), not all visits had manual post-processing QC; instead a sampling approach was used.
+:::
+
+::: {.callout-tip collapse="true" title="What methods were used for processing the imaging data to produce the minimally processed and tabulated imaging data?"}
+Please refer to the [Data Documentation](../documentation/imaging/data_derivatives.qmd)
+:::
+
+---
+
+# Other Resources
+
+```{r}
+library(reactable)
+resources <- suppressWarnings(
+  read.csv("../assets/tbl/info/resources.csv", stringsAsFactors = FALSE)
+)
+
+reactable::reactable(
+  resources,
+  searchable = TRUE,
+  pagination = FALSE,
+  resizable = TRUE,
+  defaultColDef = colDef(minWidth = 120),
+  bordered = TRUE,
+  highlight = TRUE,
+  striped = TRUE,
+  defaultSortOrder = "asc",
+  columns = list(
+    Order = colDef(show = FALSE),
+    URL = colDef(                 
+      name = "URL",
+      html = TRUE,
+      cell = function(value) {
+        if (grepl("\\.qmd$", value)) {
+          clean_path <- gsub("^\\.\\./?", "", value)
+          clean_path <- gsub("\\.qmd$", "", clean_path)
+          full_url <- paste0("https://docs.abcdstudy.org/", clean_path)
+          html_link <- gsub("\\.qmd$", ".html", value)
+          htmltools::tags$a(href = html_link, target = "_blank", full_url)
+        } else {
+          htmltools::tags$a(href = value, target = "_blank", value)
+        }
+      }
+    )
+  )
+)
+```
+
+---

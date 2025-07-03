@@ -1,0 +1,39 @@
+name_covid,name_core,label
+covid_p_qtn__covid_001,ph_p_covid_004,Has your healthcare provider ever told you that your child has or might have COVID-19 (coronavirus)?
+covid_p_qtn__covid_001__01,ph_p_covid_004__01,How was s/he diagnosed?
+covid_p_qtn__exp_007,ph_p_covid__job_003,"If you lost all your current source(s) of household income (your paycheck, public assistance, or other forms of income), how long could you continue to live at your current address and standard of living?"
+covid_p_qtn__famdiag_001,ph_p_covid_005,Number of immediate family members (same household) diagnosed with coronavirus
+covid_p_qtn__famdiag_005,ph_p_covid_006,Did the biological mother require hospitalization?
+covid_p_qtn__famdiag_006,ph_p_covid_007,Did the biological father require hospitalization?
+covid_p_qtn__prep_001,ph_p_covid__school_016,How prepared do you think your child will be for next school year?
+covid_p_qtn__reassure_004,ph_p_covid__behav_005,My child seems worried about becoming ill or that others they know will become ill with coronavirus
+covid_p_qtn__reassure_009,ph_p_covid__behav_001,I have avoided talking to my child about coronavirus
+covid_p_qtn__reassure_010,ph_p_covid__behav_002,My child is frustrated with changes or rules we have made in relation to coronavirus
+covid_p_qtn__reassure_011,ph_p_covid__behav_003,My child is breaking rules we have made in relation to coronavirus
+covid_p_qtn__reassure_012,ph_p_covid__behav_004,"My child seems to be taking coronavirus and ""social distancing"" seriously"
+covid_p_qtn__safety_001,ph_p_covid__safety_001,The importance of hand washing for preventing the spread of germs
+covid_p_qtn__school_002__01__02,ph_p_covid__school_002,Last date of in-person class
+covid_p_qtn__sleep_001,ph_p_sds__dims_001,How many hours of sleep does your child get on most nights?
+covid_p_qtn__sleep_002,ph_p_sds__dims_002,How long after going to bed does your child usually fall asleep?
+covid_p_qtn__sympt_001___3,ph_p_covid__sympt_001___1,Which of the following symptoms has your child had at any point in time since March 2020? (check all that apply) [Shortness of breath]
+covid_p_qtn__sympt_001___333,ph_p_covid__sympt_001___11,Which of the following symptoms has your child had at any point in time since March 2020? (check all that apply) [None of the above]
+covid_p_qtn__sympt_003___1,ph_p_covid__sympt_002___1,Which of the following ever occurred as a result of your child's symptoms? (check all that apply) [My child was kept overnight in a hospital because a healthcare provider thought the child had COVID-19]
+covid_p_qtn__sympt_003___2,ph_p_covid__sympt_002___2,"Which of the following ever occurred as a result of your child's symptoms? (check all that apply) [My child saw a healthcare provider in person, such as in a clinic, doctor's office, urgent care, ER]"
+covid_p_qtn__sympt_003___3,ph_p_covid__sympt_002___3,"Which of the following ever occurred as a result of your child's symptoms? (check all that apply) [My child or I spoke to a healthcare provider over the phone, email, or online]"
+covid_p_qtn__sympt_003___333,ph_p_covid__sympt_002___5,Which of the following ever occurred as a result of your child's symptoms? (check all that apply) [None of the above]
+covid_p_qtn__vaxchild_001,ph_p_covid__vax_007,"If a vaccine to prevent coronavirus/COVID-19 with FDA approval for children was available right now at no cost, would you have your child vaccinated?"
+covid_p_qtn__vaxchild_002,ph_p_covid__vax_008,Has your child had a vaccine to prevent coronavirus/COVID-19?
+covid_p_qtn__vaxchild_002__02,ph_p_covid__vax_008__01,When did your child receive their first vaccination?
+covid_p_qtn__vaxchild_002__03,ph_p_covid__vax_008__03,Has your child received their second vaccination?
+covid_p_qtn__vaxchild_002__04,ph_p_covid__vax_008__03__01,When did your child receive their second vaccination?
+covid_p_qtn__worry_001,ph_p_covid__worry_001,I am worried that our family will experience racism or discrimination in relation to coronavirus
+covid_p_qtn__worry_002,ph_p_covid__worry_002,I have noticed increased conflict in our family since our area started worrying about coronavirus
+covid_p_qtn__worry_003,ph_p_covid__worry_003,I think all of this worry about coronavirus is blown out of proportion
+covid_y_qtn__famrel_001,ce_y_pm_001,How often do your parents/guardians know where you are?
+covid_y_qtn__famrel_002,ce_y_pm_003,"If you are at home when your parents or guardians are not, how often do you know how to get in touch with them?"
+covid_y_qtn__feelings_001,mh_p_pss_002,"In the last month, how often have you felt that you were unable to control the important things in your life?"
+covid_y_qtn__feelings_002,mh_p_pss_004,"In the last month, how often have you felt confident about your ability to handle your personal problems?"
+covid_y_qtn__feelings_003,mh_p_pss_005,"In the last month, how often have you felt that things were going your way?"
+covid_y_qtn__feelings_004,mh_p_pss_010,"In the last month, how often have you felt difficulties were piling up so high that you could not overcome them?"
+covid_y_qtn__school_010,ph_y_covid__school_008,How much did you enjoy school?
+covid_y_qtn__stress_001,ph_y_covid__stress_001,"In the past 7 days, including today, how stressful have you found this (COVID-19 related) uncertainty to be?"

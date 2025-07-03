@@ -1,0 +1,13 @@
+---
+title: "Changelog"
+order: 3
+---
+
+
+# 6.0.0
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2025-07-03<br>
+**URL:** [https://docs.abcdstudy.org/v/6_0_0](https://docs.abcdstudy.org/v/6_0_0)
+</span>
+
+Initial version of the data documentation website for ABCD release 6.0.0

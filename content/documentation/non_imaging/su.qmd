@@ -1,0 +1,904 @@
+---
+title: "Substance Use"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+```{r}
+render_table_info("domain_abbr == 'su'")
+```
+<br>
+
+For additional information about 1-year to 3-year follow-up substance use methods and Baseline to 3-year follow-up substance use base rates, see @sullivan2022
+
+::: {.callout-important collapse="true" title="Responsible use warning: Word choice- drug use and addiction" #use-su}
+[NIDA guidelines](https://nida.nih.gov/research-topics/addiction-science/words-matter-preferred-language-talking-about-addiction) are recommended when referring to individuals who use substances. Rather than terms such as "drug user" or "addict" we recommend saying "person with a substance use disorder" or "person who uses drugs" [@alinsky2022; @saitz2021] to minimize harm and prevent conflating problems related to substance use behaviors with the individuals themselves [@yang2017].
+
+For more information: 
+<https://nida.nih.gov/research-topics/addiction-science/words-matter-preferred-language-talking-about-addiction>
+:::
+
+# Youth tables
+
+## Toxicology 
+
+### Alcohol Toxicology {#su_y_alctox}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alctox")`
+`r r_link_table("su_y_alctox")`
+
+**Measure description:** Toxicology assessment of past day use of alcohol measured by breathalyzer.
+
+**Notes and special considerations:** If testing was conducted over several days, the breathalyzer was administered at the beginning of each day.
+
+### Hair Drug Toxicology {#su_y_hairtox}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_hairtox")`
+`r r_link_table("su_y_hairtox")`
+
+**Measure description:** Hair toxicology results for drugs and metabolites indicating substance use in the past month or longer (up to 3-months; beginning at \~8 days after consumption when hair with drug grows from the scalp) and information collected at the time of collection such as hair length, color, and collection date.
+
+Hair is collected annually since Baseline. A subsample of hair samples is sent to a lab for analysis twice per year (not all hair is tested due to budgetary constraints). Initially 5% of a site's population were requested annually for analysis based on a "high risk for substance use" algorithm. The algorithm is found [here](https://osf.io/mtp4k). Participants with a prior positive hair toxicology finding were included in the requested samples. Currently, samples from approximately 20% of participants at each site are analyzed . The pool of samples analyzed includes a proportion of randomly selected "low risk for substance use" participants. An additional 2% of ABCD participants' samples are analyzed annually, including those who reported and did not report substance use. Additional analyses were made possible in Summer 2024, facilitating broad-based testing of hair samples collected during the 2-year, 4-year, 6-year, and 7-year follow-up visits, with all samples from those visits collected by July 1, 2024 tested. If a data user wants to include relative risk as a factor, as was calculated for samples prior to summer 2024, calculating a relative risk score may be more beneficial rather than relying on reason for selection.
+
+**Modifications since initial administration:** ABCD has contracted with two hair testing labs: Psychemedics (2017-2023) and USDTL (2024-present). Procedures and processing steps are consistent between labs, except where specified below.
+
+For completion of a full drug panel with screening and confirmation analysis, 100mg of the closest 3.9cm of hair to the scalp are needed. However, some collected samples do not have sufficient quantity to meet this threshold (quantity not sufficient, or QNS). In these instances, a testing order priority list, consistent with the aims of the ABCD Study, is implemented to the best ability of vendors. Cannabinoids are screened and tested first, followed by other drugs of interest (e.g., alcohol), with prescribed drugs (e.g., amphetamines) or drugs which are more commonly reported (e.g., nicotine) ranked as a lower priority for testing. Thus, all hair is used from every sample to meet the goals of the study. Drugs are first screened by immunoassay, with presumptive positives tested by LC-MS-MS or GC-MS-MS.
+
+For hair tested by Psychemedics (2017-2023), there are two exceptions: THCCOOH and alcohol (EtG) analyses are directly tested by GS-MS-MS. For a brief period in fall 2022, approximately 600 EtG samples were directly tested by LC-MS-MS and, if positive, tested by GC-MS-MS, as this is the standard legal protocol. However, as there is often insufficient hair to run both analyses, only LC-MS-MS testing was done. The protocol was revised back to its original protocol of only testing EtG by GC-MS-MS. Because of this brief variation, separate variables are provided for EtG based on gas chromatography or liquid chromatography results.
+
+For hair tested by USDTL (2024-present), several analytes have no immunoassay screen. For this reason, ETG is tested directly by LC-MS-MS, consistent with USDTL's validated methods for assessing ETG. Parent cannabinoids (THC, CBD, delta-8-THC, and delta-10-THC) are only tested if the immunoassay screen for THCCOOH is positive.
+
+Hair color, length, and cosmetical treatment (e.g., flat iron; perm) is documented starting at the 2-year follow-up of ABCD data collection. USDTL also provides exact weight and length of samples they tested, which is provided within the data release.
+
+**Notes and special considerations:** Hair samples were not collected for remote visits. This affected participants in the latter part of the 2-year follow-up, the middle of the 3-year follow-up, and a small proportion of early 4-year follow-up assessments. All hair testing was conducted by Psychemedics Corporation until 2024; beginning in 2024, USDTL was contracted to test all samples.
+
+Hair testing methods were selected with the help of the toxicology vendors to optimally meet the goals of the ABCD Study. Importantly, given the young age of participants and their nascent substance use, all hair samples are tested in the maximally sensitive method offered by each vendor.
+
+For Psychemedics, samples were tested at the level of detection/quantification (LOD/LOQ) to maximize sensitivity in identifying youth substance use. Following screening, Psychemedics used an extensive hair wash protocol to mitigate against external contamination. Each positive sample was reviewed by an expert at Psychemedics to compare quantified results to a sample-based standard, through an algorithm determined by the wash contents, which indicates that a positive determination is above what could be expected from external contamination. Thus, while an LOD/LOQ is set as a threshold, a sample may be labeled as "Negative" if the expert determined the quantified value is not substantially different enough from wash contents, indicating potential for external contamination (Morris-Kukoski, Montgomery, & Hammer, 2014; Hill et al., 2005). Psychemedics tests the following drug classes: cocaine, opioids, phencyclidine, amphetamines, cannabinoids, alcohol, nicotine, fentanyl, and benzodiazepines. Metabolites are tested, as possible, to confirm personal consumption of the drug. These combined processes maximize sensitivity through low LOD/LOQ with extended wash using a wash criterion and considering specific drug analytes to mitigate against general hair testing concerns (e.g., potential external contamination; potential melanin-based binding for some drugs).
+
+For USDTL, hair samples first were screened using an ELISA immunoassay screen. The limit of detection (LOD) for ELISA screening was set using negative controls and was established in each batch of tested samples. This established a highly sensitive threshold to rule out negative hair samples, with any potential positive samples sent for gas chromatography tandem mass spectrometry or liquid chromatography tandem mass spectrometry confirmation testing. Prior to confirmation testing, samples underwent a wash protocol to remove potential environmental contamination. USDTL tests for markers of the following drug classes: cocaine, opiates, phencyclidine, amphetamines, cannabinoids, ethyl glucuronide (long term ethanol biomarker), nicotine, and fentanyl. 
+
+Cut-offs for USDTL testing can be seen in the table below. Analytes are marked as positive if they are above the limit of quantification (LOQ); however, values at or above the limit of detection (LOD) may be reported. As noted on the Confirmation MS Cutoff Table, use of LOQ is below the routine cutoff employed in many forensic cases in order to maximize sensitivity due to the relatively young age of our population.
+
+Finally, to optimally use hair samples, a testing priority list was given to each vendor. For instance, for USDTL, if there was \<20mg of hair, USDTL skipped the immunoassay screen and tested directly for cannabinoids and EtG.
+
+**Immunoassay Screening Cutoff Table:**
+
+|                                    |                    |
+|------------------------------------|--------------------|
+| **Drug Class (ELISA Immunoassay)** | **Cutoff (pg/mg)** |
+| Amphetamine/MDA initial test       | LOD                |
+| Methamphetamine/MDMA initial test  | LOD                |
+| Cocaine initial test               | LOD                |
+| Opiate initial test                | LOD                |
+| Cannabinoids initial test          | LOD                |
+| Phencyclidine initial test         | LOD                |
+| Oxycodone initial test             | LOD                |
+| Fentanyl initial test              | LOD                |
+| Cotinine initial test              | LOD                |
+
+**Confirmation MS Cutoff Table:**
+
+|  |  |  |  |  |
+|---------------|---------------|---------------|---------------|---------------|
+| **Drug Analyte** | **Run if positive on:** | **Routine Cutoff (pg/mg)** | **LOQ (pg/mg)** | **LOD (pg/mg)** |
+| Amphetamine | amp/mamp dual screen | 100 | 40 | 20 |
+| Methamphetamine | amp/mamp dual screen | 100 | 40 | 20 |
+| MDMA | amp/mamp dual screen | 100 | 40 | 20 |
+| MDA | amp/mamp dual screen | 100 | 40 | 20 |
+| MDEA | amp/mamp dual screen | 100 | 40 | 20 |
+|  |  |  |  |  |
+| Cocaine | cocaine initial test | 100 | 40 | 20 |
+| Cocaethylene | cocaine initial test | 50 | 20 | 10 |
+| Benzoylecgonine | cocaine initial test | 50 | 20 | 10 |
+| Norcocaine | cocaine initial test | 50 | 20 | 10 |
+| ortho-hydroxycocaine | cocaine initial test | 2 | 0.8 | 0.4 |
+| para-hydroxycocaine | cocaine initial test | 2 | 0.8 | 0.4 |
+|  |  |  |  |  |
+| Codeine | opiate initial test | 100 | 40 | 20 |
+| Morphine | opiate initial test | 100 | 40 | 20 |
+| MAM | opiate initial test | 100 | 40 | 20 |
+| Hydrocodone | opiate initial test | 100 | 40 | 20 |
+| Norhydrocodone | opiate initial test | 40 | 16 | 8 |
+| Hydromorphone | opiate initial test | 100 | 40 | 20 |
+| Oxycodone | oxycodone initial test | 100 | 40 | 20 |
+| Noroxycodone | oxycodone initial test | 40 | 16 | 8 |
+| Oxymorphone | oxycodone initial test | 100 | 40 | 20 |
+|  |  |  |  |  |
+| Fentanyl | fentanyl initial test | 10 | 4 | 2 |
+| Norfentanyl | fentanyl initial test | 10 | 4 | 2 |
+| Acetylfentanyl | fentanyl initial test | 10 | 4 | 2 |
+| ActlNorfentanyl | fentanyl initial test | 10 | 4 | 2 |
+|  |  |  |  |  |
+| Phencyclidine | PCP initial test | 100 | 40 | 20 |
+|  |  |  |  |  |
+| Nicotine | cot initial test | 100 | 40 | 20 |
+| Cotinine | cot initial test | 100 | 40 | 20 |
+|  |  |  |  |  |
+| EthylGlucuronid | ethyl glucuronide; directed confirmation without screening | 20 | 8 | 4 |
+|  |  |  |  |  |
+| THCA (THCCOOH) | thc initial test | 0.05 | 0.02 | 0.01 |
+|  |  |  |  |  |
+| Delta 8 THC | thc initial test | 40 | 16 | 8 |
+| Delta 9 THC | thc initial test | 40 | 16 | 8 |
+| Delta 10 THC | thc initial test | 40 | 16 | 8 |
+| CBD | thc initial test | 40 | 16 | 8 |
+
+**References:**
+
+- @wade2022
+- @wade2023
+- @haist2021
+
+### Nicotine Toxicology {#su_y_nictox}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nictox")`
+`r r_link_table("su_y_nictox")`
+
+**Measure description:** Urine toxicology assessment of recent use of nicotine.
+
+**Modifications since initial administration:** A proportion of participants (10%) were randomly tested from Baseline to 3-year follow-up. These tests used the NicAlert urine test ([Jant Pharmacal Corp.](https://www.jantdx.com/product/accutest-urine-cotinine-test/)). NicAlert has since been discontinued. Beginning in the 4-year follow-up assessment, all participants were tested using the Alere iScreen ([Abbott](https://www.toxicology.abbott/us/en/products/icup-drug-screening-device.html)).
+
+### Oral Fluid Toxicology {#su_y_oftox}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_oftox")`
+`r r_link_table("su_y_oftox")`
+
+**Measure description:** Saliva measure of recent drug use.
+
+**Modifications since initial administration:** From baseline to the 3-year follow-up, a randomly selected proportion of participants (10%) were tested using the Dräger oral fluid system ([Dräger](https://www.draeger.com/en-us_us/Products/DrugTest-5000)). Beginning at the 4-year follow-up, the Dräger oral fluid was administered after a positive Urine Drug Toxicology test (see below).
+
+### Urine Drug Toxicology {#su_y_udstox}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_udstox")`
+`r r_link_table("su_y_udstox")`
+
+**Measure description:** Urine test for recent drug use.
+
+**Notes and special considerations:** The urine toxicology test was introduced starting in the 4-year follow-up. This test uses the Alere iCup testing system ([Abbott](https://www.toxicology.abbott/us/en/products/icup-drug-screening-device.htmll)). A positive test result is followed up with the saliva measure of recent drug use described above.
+
+## Surveys 
+
+### Alcohol Expectancies - Brief Adolescent {#su_y_alcexp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcexp")`
+`r r_link_table("su_y_alcexp")`
+
+**Measure description:** Measures thoughts, feelings and beliefs about effects of alcohol use. Asked if participant endorses "heard of" alcohol questions. The AEQ-AB was designed as a brief version of Alcohol Expectancy Questionnaire-Adolescent (@brown1987; @greenbaum1995). This 7-item instrument is intended for use among clinicians to assess and test alcohol expectancy effects (@stein2007).
+
+**Modifications since initial administration:** Starting with the 3-year follow-up, participants were no longer asked the "heard of" questions.
+
+**References:**
+
+- @brown1987
+- @greenbaum1995
+- @stein2007
+
+### Alcohol Motives {#su_y_alcmot}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcmot")`
+`r r_link_table("su_y_alcmot")`
+
+**Measure description:** The coping and enhancement subscales from the Drinking Motives Questionnaire Revised (DMQ-R) consists of 20 questions about the respondent's coping and enhancement motives (reasons) for drinking alcohol. The respondent is asked to respond to each question via a five-item scale ranging from 1 for "almost never/never" to 5 for "almost always/always." This is a PhenX measure. [Find here](https://www.phenxtoolkit.org/protocols/view/520501)
+
+**References:**
+
+- @cooper1994
+- @grant2007
+- @kuntsche2009
+
+### Cigarette Expectancies {#su_y_cigexp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_cigexp")`
+`r r_link_table("su_y_cigexp")`
+
+**Measure description:** Measure of thoughts, feelings, and beliefs about effects of smoking nicotine.
+
+**Notes and special considerations:** The 7th question of the ASCQ, "During the day, smoking can help kill time if there is nothing to do.", was added in 2019, part way through 2-year follow up visits. Thus, a proportion of participants in this assessment wave were not administered this question.
+
+**Reference:** @lewisesquerre2005
+
+### ENDS Expectancies {#su_y_nicvapeexp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicvapeexp")`
+`r r_link_table("su_y_nicvapeexp")`
+
+**Measure description:** Measure of thoughts, feelings and beliefs about effects of using electronic nicotine delivery systems (ENDS).
+
+**Reference:** @pokhrel2018
+
+### Marijuana Expectancies {#su_y_mjexp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjexp")`
+`r r_link_table("su_y_mjexp")`
+
+**Measure description:** Measures thoughts, feelings, and beliefs about effects of marijuana. Asked if "heard of" marijuana question was answered positively.
+
+**Modifications since initial administration:** Starting with the 3-year follow-up, participants were no longer asked the "heard of" questions. Starting on 11/16/2023, 9 marijuana-specific vaping expectancy items added to the end of the measure at the 7-year follow up and beyond.
+
+**Reference:** @torrealday2008
+
+::: {.callout-important collapse="true" title="Responsible use warning: Marijuana expectancies (MEEQ-B)" #use-su_y_can_exp}
+The Substance Use Interview and Timeline FollowBack use the word "marijuana" due to familiarity for adolescents and vernacular connected to THC products in particular, however, cannabis is considered more scientific. Data users should consider historical context and contemporary terminology preferences when publishing findings. When using cannabis measures in analyses, specifying the cannabinoid content and product types improves specificity of findings.
+
+- @nccih2025
+- @solomon2020
+:::
+
+### Marijuana Motives {#su_y_mjmot}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjmot")`
+`r r_link_table("su_y_mjmot")`
+
+**Measure description:** This is a modified version of the PhenX Marijuana Motives Questionnaire. It consists of 25 questions about the respondent's coping and enhancement motives (reasons) for using marijuana. The respondent is asked to respond to each question via a five-item scale ranging from 1 for "almost never/never" to 5 for "almost always/always."
+
+**References:**
+
+- @lee2009
+- @simons1998
+
+### Caffeine Use Questionnaire {#su_y_caff}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_caff")`
+`r r_link_table("su_y_caff")`
+
+**Measure description:** Measures youth's use of caffeine
+
+### Low Level Use Questionnaire {#su_y_lowuse}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_lowuse")`
+`r r_link_table("su_y_lowuse")`
+
+**Measure description:** Measures youth's low level use of substances
+
+### PATH Intention to Use {#su_y_itu}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_itu")`
+`r r_link_table("su_y_itu")`
+
+**Measure description:** Measures youth's intention to use alcohol, nicotine and cannabis.
+
+**Modifications since initial administration:** Beginning at the 3-year follow-up, some items in the Youth PATH Intention to Use Tobacco Survey (ITU) were changed to differentiate between cigarettes and electronic nicotine delivery systems (ENDS), detailed below:
+
+`su_y_itu__nic_001`
+
+The original question:
+> *Have you ever been curious about using a tobacco product such as cigarettes, e-cigarettes, hookah, or cigars?*
+
+was split into:
+
+- *Have you ever been curious about using a cigarette?* → `su_y_itu__nic__cig_001`
+- *Have you ever been curious about using an electronic nicotine or vaping product, such as e-cigarettes, vape pens, or Juuls?* → `su_y_itu__nic__vape_001`
+
+**Re-coding logic:**
+
+- Response options:\
+ `1` = Very curious\
+ `2` = Somewhat curious\
+ `3` = A little curious\
+ `4` = Not at all curious\
+ `999` = Don't know\
+ `777` = Decline to answer
+
+- If either new response is \<5 → populate `su_y_itu__nic_001` with the **lowest** value
+
+  If both responses are 5 → populate with 5
+
+  If one is 5 and one is 6 → populate with 5
+
+  If both are 6 → populate with 6
+
+`su_y_itu__nic_002` -> *Do you think you will try a tobacco product soon?*
+
+was split into:
+
+- *Do you think you will try a cigarette soon?* → `su_y_itu__nic__cig_002`
+- *Do you think you will try an electronic nicotine or vaping product, such as e-cigarettes, vape pens, or Juuls, soon?* → `su_y_itu__nic__vape_002`
+
+**Recoding logic:**
+
+- Response options:\
+ `1` = Definitely yes\
+ `2` = Probably yes\
+ `3` = Probably not\
+ `4` = Definitely not\
+ `999` = Don't know\
+ `777` = Decline to answer
+
+- If either new response is \<5 → populate `su_y_itu__nic_002` with the **lowest** value
+
+  If both responses are 5 → populate with 5
+
+  If one is 5 and one is 6 → populate with 5
+
+  If the response for EITHER new question is **\<5** populate `su_y_itu__nic_003` with the LOWEST of the two numbers (i.e., the greatest likelihood of trying if friend offered)
+
+  If response to BOTH new questions are **5** populate `su_y_itu__nic_003` with 5.
+
+  If **one response is 5 and one is 6** for the two new questions, populate `su_y_itu__nic_003` with 5
+
+  If response to BOTH new questions are **6** populate `su_y_itu__nic_003` with 6.
+
+  If both are 6 → populate with 6
+
+
+`su_y_itu__nic_003` -> *If one of your best friends were to offer you a tobacco product, would you try it?*
+
+was split into:
+
+- *If one of your best friends were to offer you a cigarette, would you try it?* → `su_y_itu__nic__cig_003`
+- *If one of your best friends were to offer you an electronic nicotine or vaping product, such as e-cigarettes, vape pens, or Juuls, would you try it?* → `su_y_itu__nic__vape_003`
+
+**Recoding logic:**
+
+- Response options:\
+ `1` = Definitely yes\
+ `2` = Probably yes\
+ `3` = Probably not\
+ `4` = Definitely not\
+ `999` = Don't know\
+ `777` = Decline to answer
+
+
+- If either new response is \<5 → populate `su_y_itu__nic_003` with the **lowest** value
+
+  If both responses are 5 → populate with 5
+
+  If one is 5 and one is 6 → populate with 5
+
+  If both are 6 → populate with 6
+
+**References:** 
+
+- @pierce1996
+- @strong2015
+
+### Peer Deviance {#su_y_pgd}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_pgd")`
+`r r_link_table("su_y_pgd")`
+
+**Measure description:** Measures friends' use of alcohol, nicotine, marijuana, inhalants, and "other" drugs.
+
+**Reference:** @freedman1988
+
+::: {.callout-important collapse="true" title="Responsible use warning: Peer deviant behavior" #use-su_y_peerdevia}
+Although historically referred to as 'Peer Deviant Behavior,' 'peer substance use' or 'peer involvement in illegal activities' is more precise terminology without unintended negative implications (@torrente2012; @freedman1988).
+:::
+
+### Peer Tolerance {#su_y_ptu}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_ptu")`
+`r r_link_table("su_y_ptu")`
+
+**Measure description:** Measure of how youth believes their close friends would feel about them engaging in substance use behaviors, including drinking, smoking, using e-cigarettes, cannabis use, nonmedical use of prescription drugs, and "other drug" use. Modified from *Monitoring the Future* PhenX form ([Find here](https://www.phenxtoolkit.org/protocols/view/540402?origin=search)).
+
+**References:** 
+
+- @johnson2003
+- @johnston2016
+
+### Perceived Harm {#su_y_perc}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_perc")`
+`r r_link_table("su_y_perc")`
+
+**Measure description:** Measure of youth's opinion regarding how much people risk harming themselves (physically or in other ways) if they engage in various substance use behaviors, including drinking, smoking, using e-cigarettes, marijuana use, nonmedical use of prescription drugs, and "other drug" use. Modified from *Monitoring the Future* PhenX form ([Find here](https://www.phenxtoolkit.org/protocols/view/550401?origin=search)).
+
+**References:** 
+
+- @johnson2003
+- @johnston2016
+
+### Reasons for ENDS Use {#su_y_nicvapereas data-link="Reasons for ENDS Use"}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicvapereas")`
+`r r_link_table("su_y_nicvapereas")`
+
+**Measure description:** Reasons for using electronic nicotine delivery systems (ENDS).
+
+**References:**
+
+- @wills2002
+- @piper2004
+
+### Tobacco Motives {#su_y_cigmot data-link="Tobacco Motives"}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_cigmot")`
+`r r_link_table("su_y_cigmot")`
+
+**Measure description:** Motives for using tobacco products.
+
+**Reference:** @smith2010
+
+### Vaping Expectancies {#su_y_vapeexp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_vapeexp")`
+`r r_link_table("su_y_vapeexp")`
+
+**Measure description:** Measures thoughts, feelings and beliefs about effects of vaping. This was adapted from the Marijuana Expectancies measure described above [here](#Marijuana%20Expectancies%20(MEEQ-B)).
+
+**Notes and special considerations:** Because this measure was introduced midway through the 3-year follow-up assessment, a proportion of participants did not receive the measure and appear as missing data.
+
+**Reference:** @torrealday2008
+
+### Vaping & ENDS Motives {#su_y_vapemot}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_vapemot")`
+`r r_link_table("su_y_vapemot")`
+
+**Measure description:** Reasons for vaping. This inventory was created by a subgroup on the ABCD Substance Use workgroup, including Drs. Krista Lisdahl, Mary Heitzeg, Marsha Lopez, Susan Tapert, and Gaya Dowling. The instructions were modified from the Monitoring the Future Study 2020 interview and Tobacco Motive Inventory and items were modified from the Reasons for ENDS Use, PATH Study, Tobacco Motive Inventory with additional items created by the subgroup.
+
+**Notes and special considerations:** The Vaping Motives questionnaire was administered midway through the 2-year follow-up. Thus, a proportion of participants in this assessment wave were not administered the questionnaire and will appear as missing.
+
+**References:** 
+
+- @diez2019
+- @piper2004
+
+### Alcohol Hangover Symptoms {#su_y_alchss}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alchss")`
+`r r_link_table("su_y_alchss")`
+
+**Measure description:** Measures frequency of hangover symptoms over the last 6 months. The HSS queries 13 hangover symptoms that are manifestations of toxic neurologic effects, measured on a scale ranging from 0% (never) to 100% of drinking occasions (Slutske, Piasecki, & Hunt-Carter, 2003).
+
+**References:**
+
+@slutske2003
+
+
+### Alcohol Problems {#su_y_alcprob}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcprob")`
+`r r_link_table("su_y_alcprob")`
+
+**Measure description:** Symptom frequency checklist of alcohol-related problems over the past 6 months. The RAPI queries how many times in the last year the participant has felt a certain consequence for drinking alcohol (@white1989).
+
+**Reference:** @white1989
+
+### Alcohol Subjective Effects {#su_y_alcsre}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcsre")`
+`r r_link_table("su_y_alcsre")`
+
+**Measure description:** Sensitivity to alcohol effects. This is a modification of the PhenX instrument found [here](https://www.phenxtoolkit.org/protocols/view/520202).
+
+**Reference:** @schuckit1997
+
+### Drug Problems {#su_y_drgprob}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_drgprob")`
+`r r_link_table("su_y_drgprob")`
+
+**Measure description:** Symptom frequency checklist of "other" drug-related problems over past 6 months
+
+
+**References:**
+
+- @johnson1989
+- @caldwell2002
+- @kingston2011
+
+### KSADS---Alcohol Use Disorder (Youth) {#su_y_ksads__aud}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_ksads__aud")`
+`r r_link_table("su_y_ksads__aud")`
+
+**Measure description:** DSM-5 based symptoms and diagnoses (although not clinician administered; therefore, not official psychiatric diagnoses) of alcohol use disorder based on the responses to individual questions using the computer administered version of the Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children (KSADS-COMP). Learn more in our [mental health documentation](mh.qmd#ksads).
+
+**Reference:** @kaufman2021
+
+### KSADS---Drug Use Disorder (Youth) {#su_y_ksads__dud}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_ksads__dud")`
+`r r_link_table("su_y_ksads__dud")`
+
+**Measure description:** DSM-5 based symptoms and diagnoses (although not clinician administered; therefore, not official psychiatric diagnoses) of drug use disorder based on the responses to individual questions using the computer administered version of the Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children ([KSADS-COMP](https://www.ksadslogin.net/ksads-comp/aboutKC.aspx)).
+
+**Reference:** @kaufman2021
+
+### Marijuana Problems {#su_y_mjprob}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjprob")`
+`r r_link_table("su_y_mjprob")`
+
+**Measure description:** Symptom frequency checklist of cannabis-related problems over the past 6 months. MAPI (adapted from the RAPI; see above) queries the frequency of physiological and psychological consequences of marijuana use.
+
+
+**References:**
+
+- @johnson1989
+- @zvolensky2007
+
+### Marijuana Subjective Effects {#su_y_mjsre data-link="Marijuana Subjective Effects"}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjsre")`
+`r r_link_table("su_y_mjsre")`
+
+**Measure description:** Sensitivity to cannabis effects in early use experiences.
+
+**References:**
+
+- @agrawal2014
+- @agrawal2013
+
+### Marijuana Withdrawal {#su_y_mjws}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjws")`
+`r r_link_table("su_y_mjws")`
+
+**Measure description:** Past 24-hr experience of cannabis withdrawal symptoms.
+
+**Reference:** @allsop2011
+
+### Nicotine Subjective Response {#su_y_nicsre}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicsre")`
+`r r_link_table("su_y_nicsre")`
+
+**Measure description:** Assesses early response to using a nicotine product, including pleasant and unpleasant experiences and asks respondents if they encountered various effects while using a nicotine product for the first time (@pomerleau1998).
+
+**Notes and special considerations:** Nicotine Subjective Responses were unintentionally not given between years 4-6. They have resumed starting Year 7 and capture individuals that were missed between years 4-6.
+
+**References:**
+
+- @pomerleau1998
+- @rodriguez2004
+
+### PATH Nicotine Dependence {#su_y_nicdpnd}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicdpnd")`
+`r r_link_table("su_y_nicdpnd")`
+
+**Measure description:** Symptom frequency checklist of nicotine-related problems over the past 6 months.
+
+**References:**
+
+- @pomerleau1998
+- @prokhorov1996
+
+### Community Risk and Protective Factors (Youth) {#su_y_crpf}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_crpf")`
+`r r_link_table("su_y_crpf")`
+
+**Measure description:** Perceived access to substances of abuse.
+
+**Modifications since initial administration:** A definition of neighborhood (\~1m mile, 20 min walk) was added to the original instrument on September 7, 2022.
+
+**References:**
+
+- @arthur2007
+- @trentacosta2011
+
+### Opportunity to Use {#su_y_otu}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_otu")`
+`r r_link_table("su_y_otu")`
+
+**Measure description:** Measures youth's opportunity to use substances
+
+### Sibling Use {#su_y_sibu}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_sibu")`
+`r r_link_table("su_y_sibu")`
+
+**Measure description:** Sibling use of alcohol, cannabis, tobacco, and other substances.
+
+**Modifications since initial administration:** More automated branching of questions was added to reduce RA confusion about sibling ages (based on family structure)
+
+**Reference:** @samek2018
+
+### Participant Last Use Survey (Youth; Day 1/2/3/4) {#su_y_plus}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_plus")`
+`r r_link_table("su_y_plus")`
+
+**Measure description:** Measures recent over-the-counter (OTC) or prescription medications, nicotine, and caffeine use prior to neurocognitive tasks or MRI. May be used to control for withdrawal or acute effects of nicotine, caffeine, OTC or prescription medications.
+
+**Reference:** @lisdahl2018
+
+## Interview & Timeline Followback 
+
+### Substance Use Interview {#su_y_sui}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_sui")`
+`r r_link_table("su_y_sui")`
+
+**Measure description:** Data from this module will provide information in the following domains:
+
+**Baseline:**
+
+  - Lifetime patterns of substance use (including total dose in standard units, maximum dose, first use, first regular use) of all major drug categories (alcohol, nicotine \[cigarettes, ENDS, smokeless tobacco, cigars, hookah, pipe, nicotine replacement\], marijuana \[smoked flower, blunts, vaped flower, edibles, vaped concentrates, smoked concentrates, THC-infused alcohol, tinctures, synthetic THC\], CBD, other vaped products, cocaine, cathinones, methamphetamine, ecstasy/MDMA, ketamine, GHB, heroin, hallucinogens \[others\], salvia, psilocybin, steroids, inhalants, prescription depressants/sedatives, prescription opioids, OTC, others & a drop-down menu capturing rare substances of abuse \[e.g., kava, kratom\]).
+  - Low-level use of alcohol, nicotine, cannabis
+  - Caffeine use in past 6-months
+  - Timeline Followback (TLFB) in past 6-months was collected to measure patterns of use in youth who reported use.
+
+**Follow-up (Longitudinal) Sessions:**
+
+  - Yes/no information about whether they used and whether this was their first use (first use yes/no, age of first use) for each drug category since their last yearly session was collected (i.e., not including mid-year interview).
+  - Low-level use (alcohol, nicotine, cannabis) questionnaires were administered in those who reported use.
+  - Caffeine use in the past month.
+  - For youth who reported using a substance, the Timeline Followback (TLFB) interview measured detailed patterns of use for each substance category since last session. Starting in year 2 follow-up the TLFB covered "detailed" (past 12 months) and "estimated" (\>12 months). Detailed period includes detailed interview covering standard units per occasion across each week of the year; therefore, total dose, maximum dose, average doses on use days, weekday vs. weekend use summary variables are available. Estimated periods collect average use for the month; therefore, only "total dose in standard units" is available for summary outcomes.
+  
+  - Note: Substance use (see `su_y_sui`) and patterns are measured in SU Patterns and on the TLFB Calendar (`su_y_tlfb`); in addition, many youth complete the brief mid-year interview (see `su_y_mypi`). This data could be combined with SU Patterns (yes/no use data) and quantity/frequency TLFB patterns data if scientists want to include all possible SU measurement modes over time.
+
+**Lifetime Patterns & Follow-up Questions (Baseline**): Assessment of when a participant first used a drug, first regular (weekly) use, lifetime quantity (in standard doses), maximum dose (standard), last date of use. Follow-up questions about cigarettes, ENDS, cannabis, heroin, methamphetamine, and cocaine are also given to assess for issues related to mode of use, route of administration, and flavoring.
+
+**SU Interview (Recent Use Patterns & Follow-up Questions)**: At follow-up sessions, measures of when a participant used each drug and whether this was their first use (yes/no, and date of first use). Follow-up questions about cigarettes, ENDS, cannabis, heroin, methamphetamine, and cocaine are also given to assess for issues related to mode of use, typical dosage, route of administration, and flavoring.
+
+**Alcohol Low Level Use (iSip):** If youth reported alcohol sipping, nine questions assess participants' earliest sipping experience (including when, context, what type of alcohol) and whether or not a full drink was consumed (items adapted from a survey developed by @jackson2015). Youth only fill out the follow-up questions (beyond number of sips) for their first sipping occasion.
+
+**Nicotine Low Level Use:**  If youth reported using cigarette, ENDS, or smokeless tobacco product, ten questions assess first low-level experiences with nicotine products including type of nicotine product, first puff of a combustible cigarette or ENDS, first use of smokeless tobacco,  where and when this occurred, and whether it led to further use (adapted from alcohol sipping measure). Youth only fill out the follow-up questions (beyond number of puffs) for their first use occasion.
+
+**Cannabis Low Level Use:** If youth reported using cannabis product, eight questions were given to assess first low-level experiences with cannabis products including initial experiences with cannabis (first puff or taste of marijuana), where they obtained the substance, when these experiences occurred, whether it led to further use and subjective experience of feeling "high" (adapted from alcohol sipping measure). Youth only fill out the follow-up questions (beyond number of puffs/tastes) for their first use occasion.
+
+**Caffeine Intake:** All youth receive this measure to quantify frequency and quantity of various caffeine beverage use (time period: past 6 months at the baseline administration or past month in follow-up sessions).
+
+Participants were asked how much of a standard unit of caffeine (coffee (8oz); espresso drinks (1 shot espresso); caffeinated tea (8 oz); soda with caffeine (12oz), and energy drinks (8oz) consumed in an average week. Trained RAs  recorded average caffeine consumption across modalities and calculated consumption according to the above units.
+
+**Modifications since initial administration:**
+
+**Vaping changes:** Due to the significant rise in vaping behaviors in youth, we made changes to separately measure vaping versus smoking marijuana (MJ) flower and concentrate at all follow-up points administered after *6/24/20*.
+
+**Changes to the SU Interview & Timeline Follow Back (TLFB):**
+
+ - At the time of the vaping changes, all baseline assessments were completed. Thus, a variable indicating vaped MJ flower `su_y_sui__use__mj__vape_001__l` was added, but coded as zero if the youth reported no MJ puffing/tasting (`su_y_sui__use__mj__puff_001 = 0`), if they did report puffing/trying MJ flower, then `su_tlfb_vape_mj_fl_use` is reported as missing at baseline. Similarly, a variable reflecting vaped MJ concentrate `su_y_sui__use__mj__conc__vape_001__l` was added, although no youth reported using concentrate at baseline.
+- At time-points after 6/24/20: We separately measured vaping versus smoking marijuana (MJ) flower and concentrate (`su_y_sui__use__mj__smoke_001__l` measures smoking MJ flower while `su_y_sui__use__mj__vape_001__l` measures vaping MJ flower; `su_y_sui__use__mj__conc__smoke_001__l` measures smoking MJ concentrate while `su_y_sui__use__mj__conc__vape_001__l` measures vaping MJ concentrate).
+- Similar changes were made to measure whether this was the youth's first use of these products:
+  - `su_y_sui__mj__smoke__onset_001`
+  - `su_y_sui__mj__vape__onset_001`
+  - `su_y_sui__mj__conc__vape__onset_001`
+  - `su_y_sui__mj__conc__smoke__onset_001`
+- Vaping/smoking MJ flower and concentrate were noted on the TLFB gating variable (`su_y_sui__branch__use_001__l___1`) and measured on TLFB calendar (see [Timeline Followback below)](#su_y_tlfb). In some cases, data on route of administration for MJ flower (`su_y_sui__mj__fwup_001`) was missing, when that occurred smoked MJ flower data remained the same and vaped MJ flower was coded missing. We *dropped* vaping from route of administration question for smoking MJ concentrate and re-coded into `su_y_sui__mj__conc__fwup_002__l`.
+- For participants who completed the SU interview *prior to 6/24/20*, their answers were re-coded based on their response to original follow-up questions measuring route of administration indicating they typically smoked or vaped their flower or concentrate, and mapped onto the new variables outlined above. Options for cannabinoid content of MJ edibles were also re-coded to exclude the CBD-only option (`su_y_sui__mj__edbl__fwup_001`). We also added a gating question about whether they vaped anything (gating to new vaping expectancies or motives questionnaires; `su_y_sui__branch__ud__vape_001__l`).
+
+**Changes to Low Level MJ Use Questionnaire:**
+- The low-level MJ use variable denoting product type (`su_y_lowuse__mj_006`) was re-coded onto the same scale used for follow-up, which included vaped/smoked MJ flower and oil; however, route of administration was not known for MJ flower at that time point, so those responses were kept as smoked flower (coded items 1-2).
+
+- We added vaping wording to instructions and separated out vaping versus smoking MJ flower and concentrate as options for their first experience (`su_y_lowuse__mj_006__v01`); this was re-coded based on route of administration responses, in the cases where route of administration was not available, smoked MJ flower remained coded the same (options 1-2). Additional options for who the MJ belonged to were also added (`su_y_lowuse__mj_002`; options 13-18).
+
+**Additional changes to the Substance Use Interview:**
+
+- Starting *9/1/2023*, extensive gating was added to the substance use interview and TLFB to address discordant data between the two instruments; participants that endorsed substance use on the substance use interview were required to respond to the TLFB to help match data between the two instruments.
+- Starting *9/1/2023*, low level use was changed from a free text box to a dropdown to prevent erroneous typing errors. This meant that a maximum limit of 1,000 uses was placed on low-level variables. While this encompasses almost all participant cases up to this time point, RAs were encouraged to enter new cases that exceed 1,000 at the 1,000 sip/puff limit.
+- Starting *9/1/2023*, an additional gating question to age of first use was removed as participants were endorsing new use, but saying no to this particular question that affirmed they had started new use. Now, gating has been modified so that all participants that endorse new use will be automatically asked the age of first use question.
+- To improve administration time and accuracy, a caffeine calculator was added for each modality beginning in *September 2023* where participants could record the size of drink, the number of servings, and the frequency with which they had each drink (daily, weekly, or monthly). The new calculator allowed for multiple entries within each modality (e.g., three separate coffee entries, two separate energy entries) to allow for the various consumption of caffeinated drinks across the past month. After entering in caffeine consumption, overall caffeine totals for each modality were converted to the original standard units to facilitate longitudinal consistency.
+- Starting *3/15/2024*, a new response option was added to the smokeless tobacco follow up questions to include Zyn's as a potential response option.
+
+**References:**
+
+- @lisdahl2018
+- @jackson2015
+
+### Substance Use Phone Interview (Mid Year) - Introduction {#su_y_mypi}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mypi")`
+`r r_link_table("su_y_mypi")`
+
+**Measure description:** At mid-year interviews (e.g., 6-month, 18-month follow-ups), youth are asked a series of Yes/No questions over the phone about their substance use over the past 6 months.
+
+**References:**
+
+- @lisdahl2018
+
+For additional information about 1-year to 3-year follow-up substance use methods and baseline to 3-year follow-up substance use base rates, see @sullivan2022.
+
+### Substance Use Phone Interview (Mid Year) {#su_y_mysu}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mysu")`
+`r r_link_table("su_y_mysu")`
+
+**Measure description:** At mid-year interviews (e.g., 6-month, 18-month follow-ups), youth are asked a series of Yes/No questions over the phone about their substance use over the past 6 months.
+
+**References:**
+
+- @lisdahl2018
+
+For additional information about 1-year to 3-year follow-up substance use methods and baseline to 3-year follow-up substance use base rates, see @sullivan2022.
+
+### Timeline Followback Interview {#su_y_tlfb}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_tlfb")`
+`r r_link_table("su_y_tlfb")`
+
+**Measure description:**
+
+**Baseline:**
+
+- The web-based Timeline Followback (TLFB) interview method is used to obtain specific quantitative estimates of drug use over a period of time using memory cues and a calendar format (Sobell & Sobell, 1996). Detailed patterns over the past 6 months were measured for youth who reported using a substance.
+
+**Follow-up (Longitudinal) sessions:**
+
+- The web-based TLFB calendar interview was used to measure *"detailed"* patterns of use (*past 12 months* *from their most recent annual visit*) and *"estimated"* (`est`) patterns of use for remaining months since the youth's last session for each substance category (in standard units; see above for list). Due to variability in length between sessions, each youth will have a different period the TLFB covers.
+- **Detailed TLFB** interview methods go through the 12 month calendar week by week and yield summary variables that include total standard dose, total days substance used, max dose (in standard units in a single day), average standard doses on use days, total standard doses on weekend, total standard doses on weekdays, and last date of use. It is recommended that scientists primarily utilize the detailed TLFB data when examining dose-dependent relationships, as reliability and validity data for the TLFB generally does not go beyond a 12-month period. For 6.0 data release, 3-month and 1-month data is also available; this may be most closely linked in time with other endophenotype data.
+- The **estimated TLFB** period is based on their average monthly pattern and summary variables for each substance include total standard doses.
+- **Cumulative TLFB** variables (`cum`) for total dose are calculated across the detailed and estimated (`est`) variables for total standard dose for each drug category.
+- Use of estimated and cumulative data is to account for cumulative effects and to ensure proper grouping of use (i.e., full cumulative use between sessions, and lifetime use); due to time constraints and reliability concerns, detailed dose per occasion, co-use days, max dose, and average dose per occasion were not measured so this remote substance use pattern data is more limited.
+- There is a grand summary variable, `su_y_tlfb_ud` that denotes the number of events per day across all substances pooled together. Users are not encouraged to use this, unless a very raw summary variable reflecting any substance use is needed as a covariate. 
+- The raw data includes only participants/events for whom a TLFB interview was conducted. The summary score variables are included with 0's added to replace blank responses for non-use.
+- **Combined cannabis** and **nicotine** use day variables across all modes of use are calculated for the detailed period, summing any modes of cannabis or nicotine use days together into singular variables ( see nicotine combined use days `tlfb_cal_scr_nic_comb_ud` and cannabis combined use days `tlfb_cal_scr_mj_mj_comb_ud`). These are suggested variables to be used for primary analyses examining dose-dependent impact of combined nicotine or cannabis products (due to the difficulty of converting standard doses across modes of use).
+- Alternative variables are available that utilize an estimated converted total standard dose across nicotine and cannabis products for the detailed period (`tlfb_cal_scr_nic_comb_td`, `tlfb_cal_scr_mj_comb_td`), estimated period (`tlfb_cal_scr_nic_comb_td_est`, `tlfb_cal_scr_mj_comb_td_est`), and cumulative (detailed+estimated) periods (`tlfb_cal_scr_nic_comb_td_cum`, `tlfb_cal_scr_mj_comb_td_cum`).
+- These variables utilize the "Standard dose conversions: Nicotine & cannabis products" outlined below. Users should be aware of the converted standard doses utilized and may choose to develop their own conversion, or to examine each nicotine or cannabis use product separately in analyses.
+- **Co-use days** (marijuana+alcohol, marijuana+nicotine, nicotine+alcohol) were calculated (days where the participant reported use of both substances) for the detailed period. NOTE: this does not measure simultaneous use, but rather if the substances were used on the same day.
+
+- **Note: 2023 TLFB Program Update:** A new version of the web-based TLFB application was developed and has been used for all assessments starting 9/2023. The new version which was developed using the R Shiny framework more effectively and automatically links the substance use reporting between the REDCap-based Substance Use Interview and the TLFB interview. This allows for better consistency of substance use reports and fixed "bugs" related to repeated events and miscategorization of estimated period (see notes below). The overall TLFB interview methods, substances covered, and standard units remained the same. This new version of the TLFB application also adjusted estimated measurement options (times greater than 12 months since the participants last annual visit) so that estimated use is now entered as "estimated daily," "estimated weekly," and "estimated monthly" use; this allows for an approximated number of total standard doses to be created per a substance for each estimated month and is harmonized with the older TLFB version in the summary scores for all estimated periods. 
+
+**Standard dose conversions: Nicotine & Cannabis products:** NDA 6.0 data release
+
+**Nicotine products:**
+
+
+| **Description**       | **Original standard dose**  | **Converted standard unit algorithm** | **See rationale below** |
+|-----------------------|-----------------------------|---------------------------------------|------------------|
+| Cigarette             | 1 cigarette                 | `tlfb_cal_scr_cig_td`                 | 1 |
+| ENDS                  | 1 occasion                  | `tlfb_cal_scr_ecig_td`                | 3 |
+| Cigar                 | 1 cigar                     | `tlfb_cal_scr_cg_td` \* (14)          | 1 |
+| Hookah                | 1 occasion                  | `tlfb_cal_scr_hooka_td`               | 3 |
+| Pipe tobacco use      | 1 occasion                  | `tlfb_cal_scr_pipe_td`                | 3 |
+| Nicotine replacement  | 1 occasion                  | `tlfb_cal_scr_nicrx_td`               | 3 |
+| Smokeless tobacco     | 1 pinch/pouch               | `tlfb_cal_scr_chew_td` \* (4)         | 2 |
+
+**Rationale:** Actual nicotine and THC/cannabinoid content may vary across modes of use; scientists are advised to use their best judgment as to whether they want to utilize this combined converted standard dose data (across modes).  All users are warned that exact nicotine or THC content is not known and actual content may vary greatly, even within specific product types or modes of use. Attempts were made to standardize across modes of use to approximate "occasions" of use (distinct periods where the youth had a full use of the substance and then took a break that lasted at least 15 minutes).
+
+1. Cigars converted to estimated equivalent cigarette tobacco content (approx. 1 gram in cigarette, 14 grams in cigars; note, cigarillos already converted 5=1 cigar). Thus, 1 cigar standard unit was converted to 4 "converted standard units" to align with cigarettes. @cdc2025a and @nci2005.
+  - 1 cigar contains ½ oz of tobacco (\~14 grams)
+  - Cigarettes contain \<1 gram tobacco
+  - Cigarillos (3-4 inches) have approx 3 grams tobacco
+  - Cigarillos contain 3 grams of nicotine 
+1. Smokeless tobacco approximate conversion of nicotine content, 1 pinch/pouch for 30 minutes = 4 cigarettes (several smokeless tobacco fact sheets), thus 1 pinch/pouch was converted to 4 "standard units" to align with cigarettes.
+1. 1 cigarette, and estimated equivalent cigars/smokeless tobacco, was considered equivalent to 1 "occasion" of ENDS, hookah, pipe tobacco, nicotine replacement. Based on youth self-report of "occasion" as a period they used the drug, then took a break (at least 15 minutes).
+
+**Cannabis products:**
+
+| **Description**           | **Original standard dose**  | **Converted standard unit algorithm** | **See rationale below** |
+|---------------------------|-----------------------------|---------------------------------------|-------------------------|
+| Smoked MJ flower          | grams                       | tlfb_cal_scr_smj_td \* (0.5)          | 1 |
+| Vaped MJ flower           | grams                       | tlfb_cal_scr_vmjf_td \* (0.5)         | 1 |
+| MJ Blunts                 | grams                       | tlfb_cal_scr_blunts_td \* (0.5)       | 1 |
+| MJ Edibles                | occasions                   | tlfb_cal_scr_emj_td                   | 2 |
+| Smoked MJ Oil/Concentrate | occasions                   | tlfb_cal_scr_dab_td                   | 2 |
+| Vaped MJ Oil/Concentrate  | occasions                   | tlfb_cal_scr_vmjo_td                  | 2 |
+| MJ-infused alcohol        | standard drinks             | tlfb_cal_scr_mjalc_td                 | 2 |
+| MJ tinctures              | 1 ml                        | tlfb_cal_scr_mjt_td                   | 2 |
+| Synthetic MJ              | grams                       | tlfb_cal_scr_k2_td \* (0.5)           | 1 |
+
+**Rationale:** Actual THC/cannabinoid content may vary across modes of use; scientists are advised to use their best judgment as to whether they want to utilize this combined converted standard dose data (across modes). All users are warned that exact THC or other cannabinoid content is not known and actual content may vary greatly, even within specific product types or modes of use. Attempts were made to standardize across modes of use to approximate "occasions" of use for some modes (distinct periods where the youth had a full use of the substance and then took a break).
+
+1. Smoked/vaped cannabis flower, blunts and synthetic marijuana/cannabis were measured in grams; average size of 1 joint set at 0.5 grams; RA-assisted TLFB converted bowls, pipes, to grams with "average" joint set at 0.5 grams. This (0.5 grams) is taken as an estimated equivalent converted standard unit to compare with "occasions" for other modes of use.
+2. Other modes of use are measured in "occasions"; "occasion" as a period they used the drug until desired effect, then took a break (at least 15 minutes).
+
+**Notes and special considerations:**
+
+- As noted above, due to a significant rise in vaping behaviors in youth in 2020, we made changes to separately measure vaping versus smoking marijuana (MJ) flower and concentrate/oil at all follow-up points administered after 6/24/20. We added vaped MJ flower (`su_y_tlfb__mj__vape__flwr_totdose`) and vaped MJ oil (`su_y_tlfb__mj__vape__oil_totdose`) variables. 
+- If the SU interview and TLFB calendar were  administered prior to these changes, responses were re-coded whenever possible to separately reflect vaping vs. smoking MJ flower or oil based on route of administration responses at that time-point (`su_y_sui__mj__fwup_001`, `su_y_sui__mj__conc__fwup_002__l`); if this information was missing, then their answers remained coded as smoked flower or smoked concentrate.
+
+**Prior releases of TLFB data ought to be replaced with this release, as errors in prior releases were fixed in the 5.0 and 6.0 releases.** 
+
+**Note: 2023 TLFB Program Update:** A new version of the web-based TLFB application was developed and has been used for all assessments starting 9/2023. This new version fixes the below "bugs" and improves continuity between the REDCap SU Interview and TLFB modules.
+
+- 6.0 data release correction: Some youth's report of cannabis was not scored on the TLFB in prior releases due to variable labeling error between the individual raw data files and calculated score algorithm that was discovered and fixed for the 5.0 and 6.0 data release
+- 6.0 data release corrected an error discovered (12/22) where repeated substance use events on the TLFB were only recorded once in the individual day-level data files utilized for the calendar scoring; this was corrected in the day-level and calculated data for all waves.
+- 6.0 data release: Prior sessions that were measured in mg for edibles or MJ concentrates were converted to occasions for consistency across data waves.
+- 6.0 data release: There is missing TLFB data for some youth participants; some is due to COVID-19 related administration in the home and privacy concerns (see "Xskipout_session" for SU interview completion details if they underwent a virtual or hybrid research session); others are missing due to research assistant (RA) error (i.e., youth reported using a drug, but RA did not launch TLFB to measure detailed dose/patterns).
+- 6.0 data release: some youth have 0's in their individual TLFB summary data, this occurred rarely if an RA launched the TLFB, put in an initial date of use but did not record any standard units (denoted as N/A in day-level data; this occurred rarely when a youth initially reported using, but then denied use).
+- 6.0 data release: In the original TLFB application (prior to Sept 1, 2023), errors were noted counting some estimated periods as detailed periods; this was fixed in the current release and any data collected \>12 months from SU interview were coded as estimated period.
+- 6.0 data release: Maximum daily standard unit dose limits were instituted on the TLFB across all waves to date to reduce outlier events:
+- Max limit=96: alcohol (`alc`), cigarette (`cig`), ENDS (`nic__vape`), smokeless tobacco (`chew`), cigar (`nic__cigar`), hookah (`nic__hookah`), pipes (`pipe`), nicotine rx replacements (`nic__rplc`), cigars, MJ smoked flower (`mj__smoke`), MJ vaped flower (`mj__vape`), blunts (`blunt`), MJ edibles (`mj__edbl`), smoked MJ oil (`mj__conc`), vaped MJ oil (`mj__conc__vape`), MJ alcohol drink (`mj__drink`), MJ tincture (`mj__tinc`), CBD (`cbd`), synthetic MJ (`mj__synth`), inhalants, other (`othdrg`).
+- Max limit=24: cocaine (`coc`), cathinones (`cath`), methamphetamine (`meth`), MDMA (`mdma`), ketamine (`ket`), GHB (`ghb`), opiates/heroin (`opi`), hallucinogens (`hall`), psilocybin (`shroom`), salvia (`salvia`), steroids (`roid`), stimulant rx (`rxsed`), sedative rx (`rxsed`), opiate rx (`rxopi`), OTC (`dxm`) .
+- Note: Inhalants were initially capped at 24, but extended to a max of 96 on 7/16/24.
+
+**References:**
+
+- @cdc2025a 
+- @nci2005
+- @lisdahl2018
+- @sobell1996
+
+For additional information about 1-year to 3-year follow-up substance use methods and Baseline to 3-year follow-up substance use base rates, see @sullivan2022.
+
+#### Timeline Followback (TLFB) raw day-level data {#tlfb-raw-data}
+
+This data includes the raw day-level data collected from the TLFB. The description of the Timeline Followback Interview is [here](#su_y_tlfb). This data is primarily to be used for calculating novel summary variables. Do not treat this data as true "day-level" data (e.g., daily diary or EMA data), as RAs administering the TLFB often summarized across a week or a month. This is particularly true during the estimated period.
+
+For a description of the data details for this tasks raw data see the table below.
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| `participant_id` | Participant ID |
+| `session_id` | ABCD event (wave) name |
+| `sex` | Participant's sex assigned at birth (M = male; F = female) |
+| `dt_tlfb` | Date of the TLFB interview |
+| `dt_use` | Date of substance use |
+| `dt_use_day` | Day of the week of the date of substance use ("Mon" through "Sun") |
+| `dt_use_wknd` | Whether the date of substance use was on a weekend (TRUE/FALSE) |
+| `substance` | Substance used |
+| `quantity` | Quantity of the used substance (in standard unit) |
+| `period` | Period of substance use interview (detailed/estimated) |
+
+
+**tlfb_substance_doses** {{< downloadthis ../../assets/tbl/documentation/non_imaging/tlfb_substance_doses.csv dname="tlfb_substance_doses" label="tlfb_substance_doses.csv" type="light" >}}
+
+```{r tlfb_substance_doses}
+library(reactable)
+tlfb_substance_doses <- read.csv("../../assets/tbl/documentation/non_imaging/tlfb_substance_doses.csv")
+reactable(tlfb_substance_doses)
+```
+
+# Parent tables
+
+### KSADS---Alcohol Use Disorder (Parent) {#su_p_ksads__aud}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_ksads__aud")`
+`r r_link_table("su_p_ksads__aud")`
+
+
+**Measure description:** Parent reported on youth DSM-5 based symptoms and diagnoses (although not clinician administered; therefore, not official psychiatric diagnoses) of alcohol use disorder based on the responses to individual questions using the computer administered version of the Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children ([KSADS-COMP](https://www.ksadslogin.net/ksads-comp/aboutKC.aspx)).
+
+**Reference:** @kaufman2021
+
+### KSADS---Drug Use Disorder (Parent) {#su_p_ksads__dud}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_ksads__dud")`
+`r r_link_table("su_p_ksads__dud")`
+
+**Measure description:** Parent reported on youth DSM-5 based symptoms and diagnoses (although not clinician administered; therefore, not official psychiatric diagnoses) of drug use disorder based on the responses to individual questions using the computer administered version of the Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children ([KSADS-COMP](https://www.ksadslogin.net/ksads-comp/aboutKC.aspx)).
+
+
+**Reference:** @kaufman2021
+
+### Community Risk and Protective Factors (Parent) {#su_p_crpf}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_crpf")`
+`r r_link_table("su_p_crpf")`
+
+**Measure description:** Parent reported perceived access to substances of abuse.
+
+**References:**
+
+- @arthur2007
+- @trentacosta2011
+
+### Parental Rules on Substance Use {#su_p_rule data-link="Parental Rules on Substance Use"}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_rule")`
+`r r_link_table("su_p_rule")`
+
+**Measure description:** Parental substance use approval and rules for youth.
+
+**Modifications since initial administration:** Rules about ENDS use were added at the 3-year follow-up.
+
+**References:**
+
+- @dishion2003
+- @dishion2003a
+- @jackson2015
+- @jackson2014
+
+### Substance Use Density, Storage, and Exposure {#su_p_des}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_des")`
+`r r_link_table("su_p_des")`
+
+**Measure description:** Parent reported inventory that measures three household substance use issues: household density, second-hand exposure, and storage. Household density was developed by the ABCD Substance Use workgroup. The survey is based on semi-structured household substance use interviews. It measures household substance use density (i.e., number of adults or youth who use each substance) in up to three households where the youth spends regular time. Second-hand cigarette, electronic nicotine delivery systems (ENDS) or smoked cannabis exposure in these households is also measured (modified from PhenX [*Current Environmental Tobacco Exposure*](https://www.phenxtoolkit.org/protocols/view/60701) assessing total days and hours per day in a typical week for each substance. It also asks parents how each household stores alcohol and drugs (visible/unlocked, hidden/unlocked, or locked) (Bartels et al, 2016; Friese, Grube & Moore, 2012).
+
+**References:**
+
+- @bartels2016
+- @friese2012
+
+### Participant Last Use Survey (Parent; Day 1/2/3/4) {#su_p_plus}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_plus")`
+`r r_link_table("su_p_plus")`
+
+**Measure description:** Parent reported measures of recent over--the-counter (OTC) and prescription medications, nicotine, and caffeine use prior to neurocognitive tasks or MRI. May be used to control for withdrawal or acute effects of nicotine, caffeine, OTC or prescription medications.
+
+**Reference:** @lisdahl2018

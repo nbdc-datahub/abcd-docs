@@ -1,0 +1,37 @@
+substance,max_limit
+alcohol(<code><code>alc</code></code>),96
+cigarette(<code><code>cig</code></code>),96
+ENDS(<code><code>nic__vape</code></code>),96
+smokeless tobacco(<code><code>chew</code></code>),96
+cigar(<code><code>nic__cigar</code></code>),96
+hookah(<code><code>nic__hookah</code></code>),96
+pipes(<code><code>pipe</code></code>),96
+nicotine rx replacements(<code><code>nic__rplc</code></code>),96
+cigars(<code><code>cigars</code></code>),96
+MJ smoked flower(<code><code>mj__smoke</code></code>),96
+MJ vaped flower(<code><code>mj__vape</code></code>),96
+blunts(<code><code>blunt</code></code>),96
+MJ edibles(<code><code>mj__edbl</code></code>),96
+smoked MJ oil(<code><code>mj__conc</code></code>),96
+vaped MJ oil(<code><code>mj__conc__vape</code></code>),96
+MJ alcohol drink(<code><code>mj__drink</code></code>),96
+MJ tincture(<code><code>mj__tinc</code></code>),96
+CBD(<code><code>cbd</code></code>),96
+synthetic MJ(<code><code>mj__synth</code></code>),96
+inhalants(<code><code>inhalants</code></code>),96
+other(<code><code>othdrg</code></code>),96
+cocaine(<code><code>coc</code></code>),24
+cathinones(<code><code>cath</code></code>),24
+methamphetamine(<code><code>meth</code></code>),24
+MDMA(<code><code>mdma</code></code>),24
+ketamine(<code><code>ket</code></code>),24
+GHB(<code><code>ghb</code></code>),24
+opiates/heroin(<code><code>opi</code></code>),24
+hallucinogens(<code><code>hall</code></code>),24
+psilocybin(<code><code>shroom</code></code>),24
+salvia(<code><code>salvia</code></code>),24
+steroids(<code><code>roid</code></code>),24
+stimulant rx(<code><code>rxstim</code></code>),24
+sedative rx(<code><code>rxsed</code></code>),24
+opiate rx(<code><code>rxopi</code></code>),24
+OTC(<code><code>dxm</code></code>),24

@@ -1,0 +1,37 @@
+---
+title: "Source data / raw data"
+---
+
+# Source data DICOM file sharing {#sourcedata}
+
+Unprocessed imaging data are made publicly available in DICOM format in a "source data" BIDS directory structure. DICOM files are packaged in individual archive files (.dicom, .tgz) for each series and arranged in BIDS-compliant directory trees. Metadata are provided in JSON-format text files. For task-fMRI series, also included are the files containing stimulus and behavioral response timing information exported from the stimulus program (E-Prime). Source DICOM data may be shared prior to quality control or curation.
+
+The following DICOM fields are anonymized to de-identify sensitive patient information: SourceApplicationEntityTitle, InstitutionName, OperatorsName, InstitutionAddress, AccessionNumber, ReferringPhysicianName, ReferringPhysicianAddress, ReferringPhysicianTelephoneNumber, ReferringPhysicianIDSequence, ReferencedSOPInstanceUID, StationName, InstitutionalDepartmentName, PhysicianOfRecord, PhysicianOfRecordIDSequence, PerformingPhysiciansName, PerformingPhysiciansIDSequence, NameOfPhysicianReadingStudy, PhysicianReadingStudyIDSequence, ServiceID, MobileLocationNumber, SuiteID, IssuerOfPatientID, PregnancyStatus, PatientBirthDate, OtherPatientIDs, OtherPatientNames, PatientsAge, PatientsSize, PatientsWeight, MedicalRecordLocator, CountryOfResidence, RegionOfResidence, PatientsTelephoneNumbers, EthnicGroup, Occupation, AdditionalPatientsHistory, PatientAddress, PatientsSex, PatientComments, ImageComments, StudyID, PrimaryReceiverSuiteAndHost, RequestingPhysician, CurrentPatientLocation, PatientsInstitutionResidence, SchedulePerformingPhysiciansName}, , PerformedStationAETitle}, , PerformedStationName, PerformedLocation, PerformedProcedureStepStartDate, PerformedProcedureStepStartTime, PerformedProcedureStepID, PerformedProcedureStepDescripton, IssueDateofImagingServiceRequest, DateTime, Date, Time and PersonName.
+
+# Siemens normalized sMRI DICOMs
+
+Siemens scanners provide an intensity normalization procedure to correct for bias fields. As a result, Siemens scanners have two sets of DICOMs for each sMRI data series (i.e. T1, T2, T1_NORM, and T2_NORM). The non-normalized images with large intensity ranges (e.g. with a 64 channel head coil) may be clipped at 4095, impairing cortical reconstruction. The ABCD pipeline uses only the normalized sMRI (T1_NORM and T2_NORM), but both versions are included in the source data DICOMs and raw data NIfTI files.
+
+# dMRI gradient tables for dMRI DICOMs
+
+Raw diffusion gradient tables (b values and vectors) per scanner manufacturer can be downloaded here:
+
+{{< downloadthis ../../assets/files/ABCD_Diffusion_Tables.zip dname="ABCD_Diffusion_Tables" label="ABCD_Diffusion_Tables" type="light" >}}
+
+These gradient tables are provided for convenience and reference. Diffusion directions are also included as bvecs/bvals files in the source and raw data BIDS structures.
+
+Additional notes related to diffusion gradient tables:
+
+- Prior to software version DV29, GE scanners did not encode the correct multishell gradient table into the DICOM header; a generic single-shell gradient table was encoded instead.
+- These gradient tables are only for use with unprocessed dMRI data. For minimally processed data, new vector tables are generated following motion correction and provided with the minimally processed data.
+- For GE, there are two different versions of the bvecs/bvals files, labeled "DV25" and "DV26". The "DV25" version is specific to scans acquired with SoftwareVersion DV25. For all other software versions (DV26, DV28, DV29), the "DV26" files will work.
+- For GE, prior to DV29, the diffusion values are not correct in the DICOM header and need to come from an external file (such as a bvec/bval file). As of DV29, the correct diffusion directions can be found in the DICOM header, so no external bvec/bval file is needed if you have the dcm files.
+- For Siemens and Philips, the correct diffusion values can be found in the DICOM header.
+
+# Siemens slice timing error
+
+Some Siemens fMRI data have been reported to have negative values for the Siemens CSA slice timing parameter which can prevent the conversion of DICOMs files in some software. This issue has been overcome in some software (e.g. current version of dcm2niix available for download at <https://github.com/rordenlab/dcm2niix>).
+
+# Raw data NIfTI file sharing {#rawdata}
+
+Unprocessed imaging data are also made publicly available in NIfTI format in a "raw data" BIDS directory structure. Metadata are included in JSON-format text files. For task-fMRI series, also included are BIDS-compliant events.tsv files containing stimulus and behavioral response timing information extracted from the source data event timing files (i.e., exported from E-prime). For dMRI series, also included are bvecs and bvals files for use in diffusion modeling.

@@ -1,0 +1,12 @@
+﻿Order,Resource,URL,Uses
+1,ABCD Study Website,https://abcdstudy.org/ ,"General study information, news, updates, and high-level overview questions about the ABCD Study"
+2,NBDC Data Hub,https://www.nbdc-datahub.org/ ,"Understand the data use certification process, resources for data access, and explore NBDC studies (ABCD and HBCD)"
+3,NBDC Biorepository Portal,https://nbdc.nida.nih.gov/,"Issues related to  specimen access, and view aggregate bio-repository data"
+4,NBDC Ticketing,https://nbdc-datashare.lassoinformatics.com/,"Technical support, data access requests, and general help desk inquiries"
+5,ABCD Scores,https://software.nbdc-datahub.org/ABCDscores/index.html,Compute non-proprietary summary scores included in the tabulated data
+6,Data Exploration & Analysis Portal (DEAP),https://abcd.deapscience.com/,"Interactive data exploration, visualization, and preliminary analysis of  tabulated ABCD data"
+7,DEAP Documentation,https://docs.deapscience.com/,"Guidance on using DEAP features, tutorials, and troubleshooting dataset workflows"
+8,Lasso,https://nbdc-datashare.lassoinformatics.com/,"Access for DUC applications, ticketing, and dataset creation (tabulated & file based) "
+9,Lasso Documentation,https://nbdc.lassoinformatics.com/,"Guidance on using Lasso features  including dataset creation, ticketing, and DUC applications. "
+10,ABCD Repronim,https://www.abcd-repronim.org/,Background on ABCD study data and digital lessons on using ABCD data in reproducible ways. 
+11,Now I Know My ABCD,https://now-i-know-my-abcd.github.io/docs/intro.html,Community driven educational resources and  discussion board on how to use ABCD data

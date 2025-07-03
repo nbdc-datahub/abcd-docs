@@ -1,0 +1,59 @@
+---
+title: "Metadata"
+subtitle: "NBDC data dictionary & levels table"
+order: 4
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+source("../../../R/setup.R")
+source("../../../R/table.R")
+
+dd_dd <- readr::read_csv(
+  "../../assets/tbl/documentation/curation/nbdc_dd_dd.csv"
+)
+dd_levels <- readr::read_csv(
+  "../../assets/tbl/documentation/curation/nbdc_dd_levels.csv"
+)
+```
+
+# Background
+
+ABCD's [tabulated data](structure.qmd#tabulated) resource is organized into tables, each of which contains a set of related variables (e.g., all items as well as summary scores and administrative variables for a given assessment instrument; scores for a given imaging measure for all regions of interest for a given brain atlas; etc.). The tables are accompanied with metadata that describe the variables and provide essential information for understanding the data and how to use them in analyses.
+
+# Data dictionary and levels table {#dd_levels_tables}
+
+The metadata for studies released on the NBDC datahub consists of two elements—the data dictionary and an accompanying levels table—which serve the following purpose.
+
+- **Data dictionary:** Provides detailed information about the variables in the tabulated data resource, with one row per variable (`name` being the unique identifier) and one column per characteristic of the variable (e.g., variable label, data type, unit, etc.).
+- **Levels table:** Provides information about the levels of categorical variables in the tabulated data resource, with one row per level within a given variable (`name` and `value` being the unique identifiers) and one column per characteristic (e.g., label, order, etc.).
+
+The tables below provide information about the columns of the data dictionary and levels table^[To see the table for the levels table, click on the "Levels table" tab to the right of "Data dictionary"], with one row per column of the respective metadata table.
+
+::: {.panel-tabset}
+## **Data dictionary**
+
+```{r}
+render_dd_dd(dd_dd)
+```
+
+## **Levels table**
+
+```{r}
+render_dd_levels(dd_levels)
+```
+:::
+
+## Additional information {#add-info}
+
+::: {.callout-note collapse="false"}
+**Metadata exploration:** Both [DEAP](https://abcd.deapscience.com/#/my-datasets/create-dataset) and [Lasso](https://nbdc-datashare.lassoinformatics.com) (for an overview of the data tools available in the NBDC datahub, see [here](../../tools/tools.qmd)) can be used to download the metainformation or explore it directly in the respective platform. The <i class="fa fa-info-circle" style="vertical-align: middle; color: #a7a7a7;"></i> tooltipsfwarni in the tables above point out some differences between the two platforms with regard to how this information is presented.
+
+**BIDS JSON sidecar files:** In addition to the complete data dictionary and levels tables that contain information for all tables of the tabulated data resource in tabular format, the metadata is also provided as BIDS JSON sidecar files in the `rawdata/phenotype/` directory as part of the [file-based data](structure.qmd#file-based), with one JSON file per table. The <i class="bi bi-filetype-json" style="vertical-align: middle;"></i> tooltips in the tables above point out which [BIDS JSON element](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files.html#phenotypic-and-assessment-data) corresponds to (or is derived from) which data dictionary column.
+
+**Mapping to previous releases:** For the 6.0 data release, the complete ABCD tabulated data resource was renamed using a standardized naming scheme (for details, see [here](naming.qmd)). To relate the new variable and table names to previously used names, e.g., to update existing analysis code, historic variable and table names for a given variable are provided as metadata in the data dictionary. *The data dictionary columns providing this information are marked in <code><b><span style="color: #BF0000;">red</span></b></code> above.*
+
+**Data/responsible use warnings & documentation:** This data documentation website includes warnings that provide critical context for interpreting the data, e.g., information about data quality issues and guidance on appropriate use of data (for details, see [here](../../usage/responsible_use.qmd)). These warnings, which may apply at the variable or table level, are included directly in the data dictionary as hyperlinks to the documentation website^[In [DEAP](https://abcd.deapscience.com) and [Lasso](https://nbdc-datashare.lassoinformatics.com), variables and tables with warnings are indicated with symbols in the data dictionary tables]. Furthermore, the data dictionary provides hyperlinks to the documentation of data tables and, where applicable, to the documentation of summary score algorithms. *The data dictionary columns providing this information are marked in <code><b><span style="color: #2B45CB;">blue</span></b></code> above.*
+:::

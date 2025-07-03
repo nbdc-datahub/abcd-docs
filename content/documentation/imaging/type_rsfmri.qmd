@@ -1,0 +1,99 @@
+---
+title: "Resting-state fMRI"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+```{r}
+render_table_info("sub_domain == 'Resting State fMRI'")
+```
+
+The Resting State fMRI (rsfMRI) data contains field maps, spin echo images with opposite phase encode polarity, and multi-frame, gradient echo, echo-planar imaging.
+
+::: {.callout-important collapse="true" title="Responsible Use Warning: Head motion" #use-rsfmri}
+
+Head motion is a serious issue for neuroimaging, and especially for resting state fMRI. It creates brain-wide artifactual effects including elevated short-distance connectivity and attenuated long-distance connectivity [@power2012]. In order to guard against artifactual effects due to head motion, researchers typically implement a variety of strategies that operate at multiple points of the data collection and processing pipeline, with guidance regularly evolving over time [@power2014; @power2015; @satterthwaite2013; @siegel2017; @gratton2020]. Some of these strategies include discarding entire runs of data that exceed certain motion thresholds and discarding individual functional imaging frames that are proximal to motion events (i.e., "motion censoring"). These strategies in particular typically lead to the exclusion of some participants from further analysis for lack of sufficient data. Levels of head motion differ according to demographic factors such as sex, race/ethnicity, and SES [@cosgrove2022]. Therefore, strategies to deal with head motion may lead to differential exclusions across demographic groups. In addition, data quality procedures cause sessions to vary by the amount of data remaining. Such variability may continue to inflate findings especially in the presence of conditions that may correlate with the motion artifact like autism or ADHD [@eggebrecht2017]. One strategy that avoids this confound is to strictly control the degrees of freedom, where functional connectivity measures are calculated with the exact same amount of data. To aid researchers in exploring this impact further, the ABCD study has released 5 minute- and 10 minute-trimmed and untrimmed functional connectivity datasets. Researchers interested in examining brain-behavior associations or multivariate predictions should follow strategies such as those in @eggebrecht2017: 
+
+1. Assess how missing data impacts dependent, independent variables and covariates. 
+2. Examine the association between the degrees of freedom and non-FC variables. 
+3. Use trimmed FC measures when needed to mitigate artifacts due to data quality.
+
+:::
+
+
+## Image processing (common to all fMRI)
+- Head motion corrected by registering each frame to the first using AFNI's `3dvolreg` [@cox1996]
+- B~0~ distortions were corrected using the reversing gradient method with FSL's `topup` [@andersson2003; @smith2004]
+- Displacement field estimated from spin-echo field map scans
+- Applied to gradient-echo images after adjustment for between-scan head motion
+- Corrected for gradient nonlinearity distortions [@jovicich2006]
+- Between scan motion correction across all fMRI scans in imaging event
+- Registration between T~2~-weighted, spin-echo B~0~ calibration scans and T~1~-weighted structural images performed using mutual information [@wells1996]
+    
+### rs-fMRI specific pre-processing
+Note: not included in "minimal processing"
+
+- Removal of initial volumes
+  - Siemens: 8 TRs
+  - Philips: 8 TRs
+  - GE DV25: 5 TRs
+  - GE DV26 and later (e.g., RX28, DV29, etc.): 16 TRs
+- Normalization and demean
+  - Divide by the mean of each voxel, subtract 1, multiply by 100
+- Regression
+  - Linear regression to remove quadratic trends and signals correlated with motion and mean time courses of cerebral white matter, ventricles, and whole brain, plus first derivatives [@power2014; @satterthwaite2012]
+  - Motion regression included 6 parameters plus derivatives and squares
+  - Frames with displacement \> 0.3 mm were excluded from the regression [@power2014]
+  - Values for censored frames were replaced using linear interpolation
+- Temporal filtering
+  - Band-pass filtered between 0.009 and 0.08 Hz [@hallquist2013]
+- Pre-processed time courses were sampled onto the cortical surface
+  - Projecting 1mm into cortical gray matter along surface normal vector
+- Motion censoring to reduce residual effects of head motion [@power2012; @power2014]
+  - Motion estimates filtered to attenuate signals (0.31 - 0.43 Hz) associated with respiration (18.6 - 25.7 respirations / minute)
+  - Time points with FD \> 0.2 mm excluded from variance and correlation calculations
+  - Time periods with \< 5 contiguous, sub-threshold time points also excluded
+  - Time points that were outliers in standard deviation across ROIs also excluded
+
+## Regions of interest (ROI)
+- Subcortical structures labeled with atlas-based segmentation [@fischl2002]
+- Cortical regions labeled with the Desikan atlas-based classification [@desikan2006]
+- Cortical regions labeled with the Destrieux atlas-based classification [@destrieux2010]
+- Functionally-defined parcels derived resting-state functional connectivity patterns [@gordon2016]
+
+## Functional connectivity analysis
+- Seed-based, correlational approach [@vandijk2010]
+  - Adapted for cortical surface based analysis [@seibert2011]
+  - Networks defined as pre-defined groups of cortical parcels [@gordon2016] (e.g., default, fronto-parietal, dorsal attention, etc.)
+  - Calculation of average within- and between-network mean correlation [@vandijk2010]
+    - Correlation between each pair of ROIs
+    - Fisher transformed to z-statistics
+    - Averaged to provide measure of network correlation strength
+  - Calculation of correlation between each network and each subcortical ROI
+- Variance across time calculated for each ROI
+  - Magnitude of low frequency oscillations
+
+# Methods
+
+Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in @hagler2019. Changes to image processing and analysis methods in Release 3.0 and Release 4.0 are documented in [Resting-State fMRI Data Documentation](type_rsfmri.qmd). No significant changes were made to the processing pipeline for Release 5.0 or Release 6.0.
+
+# Notes
+
+## Effects of scanner instance and software version
+
+Multisite longitudinal MRI imaging data are potentially susceptible to influences of scanning parameters, scanner manufacturer, scanner model, and software version, which vary across sites, and sometimes across time. For more information, please refer to "Effects of scanner instance and software version" in [Imaging Overview Data Documentation](index.qmd).
+
+**Additional references:**
+
+- @fair2007
+- @holland2010
+- @pruim2015
+- @pruim2015a
+- @ramduny2024
+- @wells1996

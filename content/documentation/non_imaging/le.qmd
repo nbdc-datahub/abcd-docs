@@ -1,0 +1,916 @@
+---
+title: "Linked External Data"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+
+```{r}
+render_table_info("domain_abbr == 'le'")
+```
+<br>
+
+ABCD residential histories cannot be shared with data users, as addresses are personally identifiable information (PII). Instead, external data are linked within ABCD's secure environment to provide geocoded measures while safeguarding participant privacy. The Linked External Data (LED) workgroup can consider requests for new linked data. Visit [ABCD Study External Data Link Request](https://docs.google.com/forms/d/e/1FAIpQLSfFOfO6edWk7SghtdTEMAgPAhZFCLAd_aFQG-ZlChsqOnPObw/viewform) to suggest additional geocoded measures for future release.
+
+The initial inception of ABCD's use of linked external data (LED) is described in @fan2021. @cardenas-iniguez2024 contains suggestions on the appropriate use of the linked data. 
+
+::: {.callout-important collapse="true" title="Responsible use warning: Linked External Data domain general" #use-le}
+When creating state-level variables based on participant's site at baseline, refer to the non-public release notes for a list of pguids to be excluded from analysis, as some participants reported an address outside of the site's state or did not report an address. Linkages to site state could lead to misclassification.
+:::
+
+**References:**
+
+- @fan2021
+- @cardenas-iniguez2024
+
+# Stanford Education Data Archive (SEDA) {#SEDA}
+
+NCES school IDs corresponding to the school the participant reported attending at baseline, linked to the SEDA 4.0 dataset [(Find here)](https://purl.stanford.edu/vb140hd2862) for school, district, county, metro, and commuting zone level data. To protect participant privacy, we do not release NCES school IDs or the name or address of the school.
+
+Since the 5.0 Release, we have subdivided the SEDA tables into logical subdivisions as compared to the 4.0 Release. Please note the table name changes.
+
+::: {.callout-warning collapse="true" title="Data warning: Stanford Education Data Archive (SEDA)" #data-seda}
+
+Data disaggregated by race or ethnicity were intentionally not released. While some variable names appear to include racial or  ethnic disaggregation, these variables do not contain any data.
+
+The following disaggregation categories are included for each geographic unit:
+
+- `_all`: all
+- `_fem`: female
+- `_mal`: male
+- `_mfg`: male minus female opportunity gap
+- `_ecd`: economically disadvantaged
+- `_nec`: not economically disadvantaged
+- `_neg`: gap between not economically disadvantaged and economically disadvantaged
+
+ABCD has linked to the **cohort standardized (CS) scale scores**. The "CS" SEDA 4.0 files were used as recommended for research in SEDA documentation and include **Ordinary Least Squares** and **Empirical Bayes** estimation methods.
+
+> The CS scale is standardized within subject and grade, relative to the average of the four cohorts in our data who were in 4th grade in 2009, 2011, 2013, and 2015. We use the average of four cohorts as our reference group because they provide a stable baseline for comparison.  
+> This metric is interpretable as an effect size, relative to the grade-specific standard deviation of student-level scores in this common, average cohort.  
+> For example, a district mean of 0.5 on the CS scale indicates that the average student scored approximately one half of a standard deviation higher than the average national reference cohort scored in that same grade.  
+> Means reported on the CS scale have an overall average near 0 as expected.
+
+For all archived version of SEDA visit [here](http://purl.stanford.edu/db586ns4974), @fahle2021. 
+:::
+### School (Demographics) {#le_l_demo}
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_demo__cnty")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_demo__distr")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_demo__metro")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_demo__schl")`
+
+**Measure description:** Measure includes SEDA 4.0 dataset demographic covariates. Sources of the SEDA covariate data are listed in the SEDA [technical documentation](https://edopportunity.org/get-the-data/seda-archive-downloads/#documentation-4).
+
+**Notes and special considerations:** The following categorical variable values were coded to numerical responses as follows.
+
+**Variable Key:**
+
+| Variable | Value |
+|------------------------------------|------------------------------------|
+| `le_l_demo__schl_type` | Regular School = 1; Other/Alt School = 2 |
+| `le_l_demo__schl_level` | High = 3; Elementary = 1; Middle = 2; Town = 4 |
+| `le_l_demo__schl__urbanicity_locale` | City = 1; Rural = 3; Suburb = 2 |
+| `le_l_demo__distr__grade_min` in | Kindergarten = 0; Pre-Kindergarten = -1 |
+
+### School (Math) {#le_l_math}
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_math__cnty")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_math__comz")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_math__distr")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_math__metro")`
+
+**Measure description:** - Measure includes SEDA 4.0 dataset average test scores (math). The average test scores (math) are included as a measure of math educational opportunities at each school at the following spatial resolutions: Geographic School District, County, Commuting Zone, and Metropolitan Statistical Area.
+
+**Notes and special considerations:** Additional data were recovered from earlier data collection interfaces. These data were used to recalculate available data as prior data releases had applied a filter restricting inclusion to cases with >= 10 pseudo IDs. In the 6.0 release, pseudo IDs are provided regardless of how many participants are included at each school/district.
+
+### School (Reading) {#le_l_read}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_read__cnty")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_read__comz")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_read__distr")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_read__metro")`
+
+**Measure description:** Measure includes SEDA 4.0 dataset average test scores (reading/language arts). The average test scores (reading/language arts) are included as a measure of the reading/language arts educational opportunities at each school at the following spatial resolutions: Geographic School District, County, Commuting Zone, and Metropolitan Statistical Area.
+
+**Notes and special considerations:** Additional data were recovered from earlier data collection interfaces. These data were used to recalculate available data as prior data releases had applied a filter restricting inclusion to cases with >= 10 pseudo IDs. In the 6.0 release, pseudo IDs are provided regardless of how many participants are included at each school/district.
+
+### School (Math & Reading) {#le_l_pool}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_pool__cnty")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_pool__distr")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_pool__metro")`
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_pool__schl")`
+
+**Measure description:** Measure includes SEDA 4.0 dataset average test scores (math + reading/language arts). The average test scores (math + reading/language arts) are included as a broad and cumulative measure of the educational opportunities at each school. For the following spatial resolutions: Geographic School District, County, Commuting Zone, and Metropolitan Statistical Area, we linked to two types of "pool" methods:
+
+- "pooled overall" (or pool) files contain estimates that are averaged across grades, years, and subjects
+- "pooled by subject" (or poolsub) files contain estimates that are averaged across grades and years within subjects
+
+The linked "pool" variables have the following disaggregation: average test score mean (averaged across grades, years, and subjects), average "learning rate" across grades, average "trend" in the test scores across cohorts, and average difference between math and reading/ language arts (RLA) test scores, along with their standard errors. Estimates are reported for all students and by demographic subgroups.
+
+The linked "poolsub" variables have the following disaggregation: average test score mean in math and in RLA (averaged across grades and years), average "learning rate" across grades in math and in RLA, and average "trend" in the test scores across cohorts in math and in RLA, along with their standard errors.
+
+**Notes and special considerations:** Additional data were recovered from earlier data collection interfaces. These data were used to recalculate available data as prior data releases had applied a filter restricting inclusion to cases with >= 10 pseudo IDs. In the 6.0 release, pseudo IDs are provided regardless of how many participants are included at each school/district.
+
+# Residential history-derived environmental measures {#residential}
+
+## Administrative
+
+### Residential Address Description Variables {#le_l_admin}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_admin")`
+
+**Measure description:** Included in this table are variables indicating the percentage of time spent at either the primary, secondary,or tertiary residential address, in addition to variables indicating the number of years of residence at a given address.
+
+**Notes and special considerations:** The original address data collection processes in ABCD relied on a point-in-time capture of residential addresses rather than recording longitudinal residential history. As such the assumption has been made that addresses reflected participants' baseline addresses in all versions of the residential history releases to date (2.1, 3.0, 4.0, 5.0, and 6.0). Users should note that for a given survey timepoint, the percent of time may not sum up to 100%.
+
+To address this limitation, the LED Environment and Policy WG has been actively working to improve the collection of residential history data to improve the temporal and geographic accuracy of participants' reported addresses. These updates aim to improve the collection of retrospective and prospective data in order to provide more comprehensive and accurate residential histories that correspond to both the age of the child as well as each study visit. These data are expected to be available in future releases. Until then, users should be mindful of both the assumption and limitations of the currently available data.
+
+## Air Pollution
+
+### Satellite-based NO2 Measures (Air Quality Data for Health-Related Applications) {#le_l_no2}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_no2")`
+
+**Measure description:** Measures of nitrous dioxide (NO2) were computed for all participants' primary, secondary, and tertiary addresses, when available. Air pollution estimates used a hybrid spatio-temporal model that provides daily estimates of air pollution levels at 1km x 1km resolution (@di2016; @di2019). Measures in the current release include mean, minimum, and maximum NO2 from 2016.
+
+
+### Satellite-based O3 Measures (Air Quality Data for Health-Related Applications) {#le_l_o3}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_o3")`
+
+**Measure description:** Measures of ozone (O3) were computed for all participants' primary, secondary, and tertiary addresses, when available. Air pollution estimates used a hybrid spatio-temporal model that provides daily estimates of air pollution levels at 1km x 1km resolution (@di2016; @di2019). Measures in the current release include mean, minimum, and maximum O3 from 2016.
+
+### Satellite-based Particulate Measures {#le_l_particulat}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_particulat")`
+
+**Measure description:** Annual estimates for 15 components were linked to baseline addresses for ABCD participants. Spatiotemporal models were used to create annual estimates for baseline years 2016-2018 at a resolution of 50m. Since the models are based on the calendar year, the number of days spent in each calendar year was calculated to determine an annual estimate for the year leading to the baseline date. For each calendar year (prior and visit year), the number of days spent in each year was divided by 365 with adjustments for leap year. These percentages were applied to each year's estimates and summed to represent each participant's estimated annual exposure.
+
+Estimate = (ParticulatePrior Year \* Percent timePrior Year) + (ParticulateVisit Year \* Percent timeVisit Year)
+
+Estimate = (ParticulatePrior Year \* (DaysPrior Year 365 + ParticulateVisit Year) / (DaysVisit Year365)
+
+**References:** 
+
+- @jin2022
+- @amini2022
+
+### Satellite-based PM2.5 Measures (Air Quality Data for Health-Related Applications) {#le_l_pm25}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_pm25")`
+
+**Measure description:** Measures of fine particulate air pollution (PM2.5) were computed for all participants' primary, secondary, and tertiary addresses, when available. Air pollution estimates used a hybrid spatio-temporal model that provides daily estimates of air pollution levels at 1km x 1km resolution (@di2020 and @di2016). Measures in the current release include mean, minimum, and maximum PM2.5 from 2016, and number of days in 2016 that PM2.5 levels exceeded the National Ambient Air Quality Standards for safe levels of exposure.
+
+**References:** 
+
+- @di2016
+- @di2020
+
+### Satellite-based Pollution Measures for Prenatal Addresses {#le_l_prenatal}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_prenatal")`
+
+**Measure description:** A prenatal period of air pollution exposure was estimated from previous lifetime addresses for the child obtained at the 1-year follow-up, beginning with an approximate date of conception (calculated by subtracting 279 days from the reported birthdate) and continuing through the reported date of birth. Hybrid spatiotemporal models were used to create daily estimates for PM2.5, ozone (O3), and nitrogen dioxide (NO2) for the birth years \[2004-2009\] at a resolution of 1 km2 \[1-3\]. The daily estimates of these air pollution exposures during the prenatal period of each participant were assigned to the corresponding reported birth year address(es), and daily estimates were averaged across the entire prenatal period to represent the prenatal exposure. For study participants with multiple self-reported addresses for the same calendar year, a weighted average of air pollution exposure was calculated in order to provide a single estimated exposure value for every participant. This was calculated by weighting the prenatal average exposure values for each residence by the reported percent of time spent at that residence; the sum of these weighted exposure averages was then divided by the sum of all reported percentages (regardless of total sum of time between addresses) (Eq 1).
+
+Weighted Average = (*Air PollutionAddress_1* \* Percent timeAddress_1) + (*Air PollutionAddress_2* \* *Percent timeAddress_2*) / (*Percent timeAddress_1* + *Percent time Address_2*)
+
+The majority of participants (7,837 \[91%\]) had reported an address(es) corresponding to the calendar year congruent with the child's birth year as well as the reported percentages of time spent at each address summed to 100%. For a subset of participants (806 \[9%\]), errors occurred in the reporting of addresses or percentages of time spent at each address, including 386 \[4%\] participants who reported percentages of time at multiple addresses that did not sum to 100% and 420 \[5%\] participants who reported addresses with no corresponding percent of time spent living at that address. Given these reporting errors, it is unclear exactly how much time was spent at various addresses during the exposure period, thus introducing uncertainty in exposure classification.
+
+In order to convey this uncertainty, a quality control (qc) variable was created in order to rank prenatal data according to how accurate we expect the air pollution exposure weighted average to be. This qc variable, `le_l_prenatal_qc` is defined as follows:
+
+| `le_l_prenatal_qc` | Meaning | Number of Participants (Percent) |
+|------------------------|------------------------|------------------------|
+| 1 | Reported percentages at all addresses sum to 100% | 7837 (90.67%) |
+| 2 | Reported percentages at all addresses sum to totals ranging from 90 to 110% | 70 (0.81%) |
+| 3 | Reported percentages at all addresses sum to totals less than 90% or greater than 110% | 316 (3.66%) |
+| 4 | Reported percentages at addresses were missing | 420 (4.86%) |
+
+For more information on how residential histories were obtained see as reported in @fan2021.
+
+**Notes and Special Considerations:** A number of assumptions and limitations of these data should be noted and highlighted in research and publications that use these derived ABCD data.
+
+- First, ABCD did not specifically ask caregivers where they resided when pregnant or if addresses changed during pregnancy, but rather addresses reported during a given calendar year and coinciding with the participant's birth year were considered representative for the pregnancy period.
+- Second, caregivers were only asked to provide move-in and move-out information in terms of calendar year, without month information provided. Thus, chronological sequence of addresses that overlap within a given year can not be deciphered and this error may factor into the weight sum scores computed above.
+- The weighted sum equation was applied to all individuals regardless if their provided sum living in a location did or did not add to 100%. The error inherent to this approach can be reduced by only including individuals with a `le_l_prenatal_qc` variable equal to 1 in analyses using these data.
+- The approach used above assigns a prenatal exposure based on daily exposures over the 9-months prior to a child's birthdate. This approach assumes all children were delivered full-term, which is not necessarily true. It may be best to limit the sample of participants in analyses using these data that can be confirmed to have been in utero for full-term using caregiver report information provided about the child's medical history in other portions of the ABCD dataset (`ph_p_dhx`). 
+
+**References:**
+
+- @di2019
+- @di2020
+- @requia2020
+- @fan2021
+
+## Amenities & Services
+
+Access to parks, social services and amenities, and additional neighborhood demographics from the The National Neighborhood Data Archive (NaNDA) have been linked to participants' primary, secondary, and tertiary addresses. [NaNDA](https://www.openicpsr.org/openicpsr/nanda) is a publicly available data archive containing contextual measures for locations across the United States. 
+
+Code and source files used to derive these measures can be found in @abad2023
+
+
+### Performing Arts and Sports Recreation Orgs (NaNDA) {#le_l_artsports}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_artsports")`
+
+**Measure description:** Performing arts and sports organizations (per census tract and per county).
+
+- Number of all performing arts organizations per 1000 people
+- Total count of spectator sports organizations
+- Number of all spectator sports organizations per 1000 people
+
+**Reference:** @finlay2020a
+
+### Neighborhood Socioeconomic Status and Demographics (NaNDa) {#le_l_nbhsoc}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_nbhsoc")`
+
+**Measure description:** - The following were derived from the ACS 2013-2017 5-year estimates at the census tract level: 
+
+- Proportion of people who are foreign born
+- Proportion of families with income greater than 75K
+- Proportion of families with income greater than $100K
+- Proportion 16+ civilian labor force unemployed
+
+In addition, three factors associated with neighborhood sociodemographics and structural characteristics are included (based on @morenoff2007): 
+
+- Neighborhood disadvantage score is characterized by high levels of poverty, unemployment, female-headed families, households receiving public assistance income, and a high proportion of African Americans in a census tract.
+- Neighborhood affluence score represents a mix of characteristics associated with neighborhood affluence (concentrations of adults with a college education; with incomes\>75K; and employed in managerial and professional occupations). 
+- Neighborhood ethnic/immigrant score represents ethnic and immigrant concentration. Higher values indicate more Hispanic and foreign born in the census tract.
+
+
+::: {.callout-warning collapse="true" title="Data warning: NaNDA" #data-nanda}
+Population density was set to -1 for tracts with zero population in a given year. Population and area densities are missing in certain years for a few census tracts whose FIPS codes changed at some point between 2003 and 2017.
+:::
+
+**References:**
+
+- @melendez2020
+- @morenoff2007 [Appendix A: Supplemental Material]
+
+### Parks (NaNDa) {#le_l_parks}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_parks")`
+
+**Measure description:** Parks (per census tract and per county):
+
+- Total number of parks per census tract (top coded at 10)
+- Total number of open parks per county
+- Proportion of open park land within census tract
+
+**Reference:** @clarke2020
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_artsports")`
+
+**Measure description:** Performing arts and sports organizations (per census tract and per county):
+
+- Number of all performing arts organizations per 1000 people
+- Total count of spectator sports organizations
+- Number of all spectator sports organizations per 1000 people
+
+**Reference:** @finlay2020 
+
+### Religious/Civic Organizations (NaNDa) {#le_l_relciv}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_relciv")`
+
+**Measure description:** - Religious/Civic Organizations (per census tract and per county):
+
+- Total count of religious organizations
+- Number of all religious organizations per 1000 people
+- Total count of civic/social organizations Number of all civic/social organizations per 1000 people
+
+**Reference:** @finlay2020a
+
+### Social Services (NaNDa) {#le_l_socsrv}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_socsrv")`
+
+**Measure description:** - Measure includes senior centers, youth centers, food banks, job training programs, and day care centers(per census tract and per county):
+
+- Total count of social services 
+- Number of all social services per 1000 people 
+
+**Reference:** @finlay2020
+
+## Built Environment
+
+### Crime (ICPSR) {#le_l_crime}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_crime")`
+
+**Measure description:** The description for this database can be found [here](http://www.icpsr.umich.edu/icpsrweb/NACJD/studies/33523). To maintain a stability on the crime estimates, we used three-year averages, 2010 to 2012. The resolution of this database is at the county level.
+
+**Reference:** @usdj2014
+
+::: {.callout-important collapse="true" title="Responsible use warning: Crime" #use-crime}
+Crime variable is a count variable at the county level, however counties are not homogeneous, which may impact interpretation of findings..
+:::
+
+### Building Density (EPA) {#le_l_densbld}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_densbld")`
+
+**Measure description:** The description for the smart location database can be found [here](https://www.epa.gov/smartgrowth/smart-location-mapping#SLD). We used estimates based on 2010 census. The resulting variables include gross residential density (i.e., building density). The resolution of this database is at the census tract level.
+
+**Reference:** @epa2014
+
+### Population Density (EPA) {#le_l_denspop}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_denspop")`
+
+**Measure description:** The estimation is based on the 2010 census tract while adjusted based on potential under-reporting across the world (UN adjusted). Data are from NASA Socioeconomic Data and Applications Center / Earthdata Search ([SEDAC](https://www.earthdata.nasa.gov/centers/sedac-daac)).
+
+**Reference:** @nasa2025
+
+### Vehicle Density (ACS) {#le_l_densveh}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_densveh")`
+
+**Measure description:** Vehicle density was calculated using data from the 2014-2018 American Community Survey 5-year estimates for primary, secondary, and tertiary addresses at the census tract level. Vehicle density was calculated in two ways: 1) As an area estimate (aggregate number of variables in a census tract per square mile of land area), and 2) as a population density (aggregate number of vehicles available in a census tract per individual). Vehicle density may be associated with neighborhood residents' levels of exposure to noxious chemicals and their vulnerability to vehicle-related injuries or fatalities.
+
+Code and source files used to derive these measures can be [found here](https://doi.org/10.17605/OSF.IO/NMDTG).
+
+**Reference:** @abad2023
+
+### Lead Risk (Vox) {#le_l_leadrisk}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_leadrisk")`
+
+**Measure description:** All participants' primary, secondary, and tertiary addresses were, if valid, geocoded at the census tract level with respect to an estimated risk of lead (Pb) exposure. These data are from Vox.com (<https://www.vox.com/a/lead-exposure-risk-map>). These risk scores (deciles, 1-10, 10 being the most at risk) were calculated for each census tract and reflect a weighted sum between two summary measures of that census tract: the age of homes and the rate of poverty. The lead risk score generally reflects an estimated probability of lead exposure given the age of homes (i.e., older homes are more likely to contain lead hazards) and the proportion of individuals living in poverty (-125% of poverty level). The housing-age and poverty-rate scores for valid primary, second, and tertiary addresses are also included.
+
+**Reference:** @vox2016
+
+::: {.callout-important collapse="true" title="Responsible use warning: Lead risk" #use-lead}
+Lead risk variable is not validated with biological measurements, but is a proxy measure based on neighborhood SES (i.e. poverty) and age of housing.
+:::
+
+### Road Proximity (Kalibrate) {#le_l_roadprox}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_roadprox")`
+
+**Measure description:** Road proximity was derived for primary, secondary, and tertiary address at 1km x 1km resolution using data from Kalibrate, @lei2022. These measures capture the number of meters participants' addresses were from major roads.
+
+**References:** 
+
+- @lei2022
+- @esri2025
+
+### Traffic Density (Kalibrate) {#le_l_traffic}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_traffic")`
+
+**Measure description:** Traffic counts were derived for primary, secondary, and tertiary address at 1km x 1km resolution using data from Kalibrate. These measures indicate the total volume of cars passing through a given area across the entirety of 2016.
+
+**References:** 
+
+- @lei2022
+- @esri2025
+
+### Urban/Rural Area (Census) {#le_l_urban}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_urban")`
+
+**Measure description:** Urban area is a categorical variable indicating if participants' addresses were in census tracts considered to be urban , urban clusters , or rural. These measures were derived from publicly available [census data from 2010](https://www.census.gov/programs-surveys/geography/about/faq/2010-urban-area-faq.html).
+
+List of values: 
+1: Urbanized Areas (UAs) - 50,000 or more people; 
+2: Urban Clusters (UCs) - at least 2,500 and less than 50,000 people; 
+3: "Rural" - all population, housing, and territory not included within an urban area or cluster..
+
+**Reference:** @ucb2010
+
+### Walkability (EPA) {#le_l_walk}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_walk")`
+
+**Measure description:** The description for the smart location database can be found [here](https://www.epa.gov/smartgrowth/smart-location-mapping#walkability). Walkability index estimates were based on 2010 census  at the census tract level.
+
+**Reference:** @epa2014
+
+## Community Health Burden
+
+### Behavioral Health Measures (PLACES) {#le_l_places}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_places")`
+
+**Measure description:** Measures from the PLACES dataset are available for participants' primary, secondary, and tertiary addresses at the census tract level. The PLACES dataset is an expansion of the 500 Cities Project and is available from the Center for Disease and Control and Prevention (CDC), the Robert Wood Johnson Foundation (RWJF) and CDC Foundation. The data linked to ABCD are from the PLACES 2020 release, which reflect measures derived using the 2017/2018 Behavioral Risk Factor Surveillance System (BRFSS) data, and reflect years 2014-2018. Included are 27 measures for the entire United States: 
+* 5 chronic disease-related unhealthy behaviors, 
+* 13 health outcomes, and 
+* 9 on use of preventive services. 
+Additional technical information about PLACES (including information about downloading the data) can be found [here](https://www.cdc.gov/places/index.html).
+
+Code and source files used to derive these measures can be found here: @abad2023
+
+**References:** 
+
+- @cdc2025
+- @abad2023
+
+## Meteorology and Exposures
+
+### Elevation of Address (Google API) {#le_l_elevation}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_elevation")`
+
+**Measure description:** This is based on a direct query to the Google map, which contains elevations given where participants live. All variables are truncated to avoid potential identification while maintaining overall variations for analytical purposes.
+
+### Estimates of Environmental Noise (Harvard) {#le_l_noise}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_noise")`
+
+**Measure description:** The spatially varying noise data were obtained from a georeferenced noise model of expected environmental sound levels created by Dr. Peter James at Harvard. The model capitalized on acoustical data from 1.5 million hours of long-term measurements from 492 urban and rural sites located across the contiguous United States during 2000-2014. Geospatial sound models were developed based on these measurements to interpret and predict sound levels across the contiguous United States (@mennitt2013; @mennitt2016). This geospatial sound model formulated relationships between sparsely measured acoustical metrics and nonacoustic environmental factors such as topography, climate, hydrology, and anthropogenic activity. The method utilized random forest, a tree-based machine learning algorithm, to perform the regression. The resulting non-time-varying geospatial sound model enabled mapping of sound levels at 270m resolution.
+
+All noise metrics are A-weighted. A-weighting is an adjustment that reflects how the human ear perceives sound across the frequency spectrum.
+
+- The L10 is an exceedance metric that corresponds to the sound pressure level exceeded 10% of the time.
+- The L50 is an exceedance metric that corresponds to the sound pressure level exceeded 50% of the time.
+- The L90 is an exceedance metric that corresponds to the sound pressure level exceeded 90% of the time.
+- Leq is the average sound level in decibels equivalent to the total sound energy measured in a 24-hour period;
+- LeqNight isthe average sound level in from the hours of 10p-7a; and
+- Ldn, is the day-night average sound level, which is the average sound level over a 24-hour period where sound from 10pm-7am is upweighted by 10 dB.
+- Clarification: The noise level measurements between the hours of 10pm and 7am are artificially increased by [10 dB](https://en.wikipedia.org/wiki/Decibel) before averaging. This noise is weighted to take into account the decrease in community background noise of 10 dB during this period. For more information about similar metrics of  sound day-evening-night average sound level (DENL) commonly used in Europe or community noise exposure level (CNEL) used in California legislation; that is, the DNL with the addition of an evening period from 7 PM to 10 PM when noise level measurements are boosted 5 dB to account for the approximate decrease in background community noise by 5 dB during this period.
+- Variables ending in `_ant` ant is anthropogenic, and `_exi` is total noise (anthropogenic and natural) sources. Natural sources alone were not included given the limited variability seen within largely urban locations in which most participants reside.
+
+**Notes and Special Considerations:** A number of assumptions and limitations of these data should be noted and highlighted in research and publications that use these derived ABCD data.
+
+- Sources of the noise are not identifiable based on these models, since the source and sound level is assumed to be homogenous.
+- All levels were projected for the summer season.
+
+**References:**
+
+- @mennitt2013
+- @mennitt2016
+
+### National Air Toxics Assessment (NATA) Measures {#le_l_nata}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_nata")`
+
+**Measure description:** Three measures from the [National Air Toxics Assessment (NATA)](https://www.epa.gov/national-air-toxics-assessment) are available for participants' primary, secondary, and tertiary addresses at the census tract level. These data were released in 2018, based on 2014 emissions data. Three measures include: 1) Diesel particulate matter level in the air, in g/m3; 2) lifetime cancer risk from inhalation of air toxics; and 3) ratio of exposure concentration to health-based reference concentration. Code and source files used to derive these measures can be found here: @abad2023
+
+**References:** 
+
+- @abad2023
+- @epa2015
+
+### Temperature Estimates (PRISM) {#le_l_temp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_temp")`
+
+**Measure description:** Daily maximum modeled temperature ("Tmax") for each of seven days preceding and including each participant's baseline interview date was linked to the participants' primary, secondary, and tertiary residential addresses. Meteorologic data provided for linkage ranged from January 1, 2016 to December 31, 2018 and is modeled to 800m spatial resolution from the PRISM Climate Group at Oregon State University (@spangler2019). Tmax data is in degrees C. 
+
+**Notes and Special Considerations:** It is important to note that the days preceding and the day of baseline interview were linked based on 'interview_date', which depending on the individual may or may not include the same tasks/scans across all participants. Users should confirm interview_date matches the date of any assessment (i.e. scan session day 1 or 2, or behavioral tests) at an individual level in order to accurately use these data.
+
+It is important to note that not all participants currently have temperature data as part of 5.0 for baseline visit dates. Investigators should consider any possible bias in who does and does not have maximum temperature if using these data.
+
+Errors were identified in the 4.0 temperature linkages and should not be used given these issues. These errors were minimized for the provided data since the 5.0 release.
+
+**Reference:** @spangler2019
+
+### Vapor Pressure Deficit (VPD) Estimates (PRISM) {#le_l_vpd}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_vpd")`
+
+**Measure description:** Daily maximum vapor pressure deficit ("VPDmax") for each of seven days preceding and including each participant's baseline interview date was linked to the participants' residential address. Meteorologic data provided for linkage ranged from January 1, 2016 to December 31, 2018 and is modeled to 800m spatial resolution from the PRISM Climate Group at Oregon State University. VPDmax data is in hPA.VPDmax data can be used to calculate daily relative humidity and maximum heat index; @spangler2019. 
+
+::: {.callout-warning collapse="true" title="Data warning: Vapor pressure deficit" #data-vapor}
+It is important to note that the days preceding and the day of baseline interview were linked based on 'interview_date', which depending on the individual may or may not include the same tasks/scans across all participants. Users should confirm interview_date matches the date of any assessment (i.e. scan session day 1 or 2, or behavioral tests) at an individual level in order to accurately use these data.
+
+It is important to note that not all participants currently have vapor pressure deficit data as part of 6.0 for baseline visit dates. Investigators should consider any possible bias in who does and does not have maximum vapor pressure deficit values if using these data.
+
+Errors were identified in the 4.0 VPD linkages and should not be used given these issues. These errors were minimized for the provided data since the 5.0 release.
+:::
+
+**Reference:** @spangler2019
+
+## Natural Space and Satellite
+
+### Land-Use Measures (NLT) {#le_l_urbsat}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_urbsat")`
+
+**ABCD Subdomain:** Natural Space and Satellite
+
+**Measure description:** Here we include 11 variables comprising an "Urban-Satellite" dataset within ABCD which quantify the percentage or quantity of urbanicity measures such as nighttime lighting, population, vegetation, water, and others, at a 1km resolution. 
+
+**References:**
+
+- @xu2021
+- @goldblatt2024
+
+### Measure of Land Cover and Tree Canopy (NLCD) {#le_l_nlcd}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_nlcd")`
+
+**Measure description:** Measures of land cover (e.g., low-, medium-, or high-density development, forest, wetland) and tree canopy derived from the National Land Cover Database (NLCD) [Find here](https://www.mrlc.gov/data) are available for participants' primary, secondary, and tertiary addresses at the census tract and county levels of aggregation. Land cover is measured as a percentage of all land within the tract/county. Tracts/counties only include the mainland US (i.e., Alaska and Hawaii are not included).
+
+Measures provided here use the 2019 iteration of 2016 data. Shapefiles for census tracts were obtained from the US Census bureau TIGER/Line shapefiles for 2010 [Find here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php).
+
+Code used to derive county and census tract levels are [here](https://osf.io/hxmwj/).
+
+**References:**
+
+- @schertz2022
+- @mlrc2025
+- @ucb2010a
+
+## Neighborhood Composite Measures
+
+### Area Deprivation Index (ADI) {#le_l_adi}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_adi")`
+
+**Measure description:** The Area Deprivation Index (ADI) was calculated based on @kind2014. The database we queried is the 2011 - 2015 American Community Survey 5-year summary. Although the area deprivation index has 18 different sub-scores, the recommendation is to use the national percentiles. The resolution of this is at the census tract level.
+
+**Reference**: @kind2014
+
+::: {.callout-important collapse="true" title="Responsible use warning: Area deprivation index" #use-adi}
+Users should carefully consider the component variables and constructs of any composite measure, and choose the most appropriate measure(s) for their research questions. Composite measures may have overlapping variables, and researchers should consider issues of collinearity when using multiple composite measures. Additionally, certain indices—such as the ADI—may have documented issues with skewness and overrepresentation of particular component variables that may not be documented here. Additional responsible use considerations can be found [here](https://pubmed.ncbi.nlm.nih.gov/38195369/). 
+:::
+
+### Child Opportunity Index 2.0 (COI) {#le_l_coi}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_coi")`
+
+**Measure description:** The COI 2.0 is a composite index derived at the census tract level that measures neighborhood resources and conditions relevant to children's healthy development. In addition to the COI index, there are 3 domain composite scores available: education, health and environment, and social and economic. There are also scores available for the 29 indicators comprising the composite scores. Raw indicator scores and z-scores are provided. The COI 2.0 data is derived from U.S. census tracts for 2010 and 2015.
+
+See here for [COI 2.0 technical documentation](https://data.diversitydatakids.org/dataset/coi20-child-opportunity-index-2-0-database>). 
+
+**Reference:** @coi2023
+
+### Social Vulnerability Index (SVI) {#le_l_svi}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_svi")`
+
+**Measure description:** The Social Vulnerability Index (SVI) refers to a 15-variable composite metric that quantifies how vulnerable different communities are to external stresses on human health, such as natural disasters, human-caused disasters, and disease outbreaks, [made available from the Centers for Disease Control and Prevention](https://www.atsdr.cdc.gov/place-health/php/svi/index.html). Higher values reflect more vulnerable communities at the census-tract level. Both the composite and individual metrics (i.e., national percentiles and raw percentage scores) are available in the ABCD dataset. Data were derived from the [2014-2018 American Community Survey (ACS) 5-year summary](https://www.census.gov/programs-surveys/acs/technical-documentation/table-and-geography-changes/2018/5-year.html). 
+
+**Notes and Special Considerations:** Since the 5.0 release, SVI measures for ACS 2014-2018 have also been computed based on percentage scores for each census tract so as to increase compatibility with ADI and COI census-based measures.
+
+**References:**
+
+- @cdc2024
+- @ucb2021
+
+::: {.callout-important collapse="true" title="Responsible use warning: Social vulnerability index" #use-svi}
+Users should carefully consider the component variables and constructs of any composite measure, and choose the most appropriate measure(s) for their research questions. Composite measures may have overlapping variables, and researchers should consider issues of collinearity when using multiple composite measures. Additionally, certain indices—such as the ADI—may have documented issues with skewness and overrepresentation of particular component variables that may not be documented here. Additional responsible use considerations can be found [here](https://pubmed.ncbi.nlm.nih.gov/38195369/). 
+:::
+
+### Supplemental measures to the Social Vulnerability Index (SSVI) {#le_l_ssvi}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_ssvi")`
+
+**Measure description:** These measures expand on the original SVI measures, with additional measures of sociodemographic composition, health care infrastructure & access, and medical vulnerability, which have been linked to participants' primary, secondary, and tertiary addresses. 
+
+The following variables from the SVI, derived from the 2014-2018 ACS 5-year estimates, Health Resources & Services Area Health Resource Files, Homeland Infrastructure Foundation-Level Data, and Rx Open were included:
+
+- Percentage population estimates for white, American Indian and Alaska Native, Black or African American, Asian, Hispanic or Latino/a, Native Hawaiian/Pacific Islander (census tract level)
+- Percentage population estimates of Spanish/Chinese/Vietnamese/Korean/Russian speakers who "speak English less than 'very well'" (county level)
+- Hospitals per 100,000 people (county level)
+- Urgent care clinics per 100,000 people (county level)
+- Pharmacies per 100,000 (county level)
+- Primary care physicians per 100,000 (care, non-federal; county level)
+- Percentage population estimates for people without health insurance (census tract level)
+- Percentage population estimates for people with no internet access (census tract level)
+- Percentage population estimates for people without no computer access (census tract level)
+
+## Neighborhood Social Factors
+
+### Alcohol Outlet Density (Census 2016) {#le_l_densalc}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_densalc")`
+
+**Measure description:**A measure of alcohol outlet density was derived using Census 2016 data containing ZIP Code Business Patterns (ZIP-BP) for the number of establishments with potential to serve or sell alcohol by Industry and Employment Size of Establishment (e.g., drinking places & full service restaurants).This measure was linked to each participant's address at the resolution of ZIP codes.ZIP-BP has a High correlation with state/local data sources on alcohol outlet density; @matthews2011.
+
+The total number of establishments from the following North American Industry Classification System (NAICS) codes were summed:
+
+- 445110 (Supermarkets and grocery stores except convenience)
+- 445120 (Convenience stores)
+- 445310 (Beer, wine and liquor stores)
+- 447110 (Gasoline stations with convenience stores)
+- 722511 (Restaurants -- full-service)
+- 722410 (Drinking places -- alcoholic beverages)
+
+**Constructed Variables Contained in Analytic Files**
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| `le_l_densalc__addr1__alc_density__2016` | Estimate of alcohol outlet density (Number of Establishments where alcohol could be purchased and/or consumed based on North American Industry Classification System (NAICS) from ZIP Code Business Patterns from Census 2016) |
+
+**Reference:** @matthews2011
+
+### Census Return {#le_l_censusret}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_censusret")`
+
+**Measure description:** 2010 Decennial Census mail return rates and American Community Survey 2014-2018. 5-year self-response rates are available for participants' primary, secondary, and tertiary addresses at the census tract level. Census response/return rates have been previously associated with social capital and civic engagement, and anomie.
+
+Code and source files used to derive these measures can be found [here](https://doi.org/10.17605/OSF.IO/NMDTG) [@abad2023].
+
+**Reference:** @abad2023
+
+### Number of Jobs and Job Density (LODES) {#le_l_lodes}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_lodes")`
+
+**Measure description:** Number of jobs and job density (number of jobs per square mile of land area) are available at the census tract level for participants' primary, secondary and tertiary addresses. Employment statistics are also available, broken down by race and ethnicity. Employment information was derived from the LEHD Origin-Destination Employment Statistics (LODES) dataset for the year 2016, and are available for download [here](https://lehd.ces.census.gov/data/).
+
+Code and source files used to derive these measures can be found [here](https://doi.org/10.17605/OSF.IO/NMDTG) [@abad2023].
+
+**Reference:** @ucb2025
+
+### Opportunity Zones and Investment Scores {#le_l_oz}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_oz")`
+
+**Measure description:** Opportunity Zone (OZ) designations, compiled by the Urban Institute, are available for participants' primary, secondary, and tertiary addresses. The Tax Cuts and Jobs Act of 2017 included the designation of Opportunity Zones as a federal incentive to spur investment in low-income and undercapitalized communities. Census tracts were eligible for selection as an OZ if they were considered "low-income communities" as determined by the New Market Tax Credit program, although official designations of OZ status were determined by state governors (and mayor of District of Columbia). In addition, Investment Scores, also calculated by the Urban Institute, are available as deciles scores and represent investment flow to census tracts over the years 2011-2015 based on four components: commercial lending, multifamily lending, single-family lending, and small business lending. Additional documentation for these variables can be found from @theodos2018,  [here](https://www.urban.org/research/publication/did-states-maximize-their-opportunity-zone-selections).
+
+Code and source files used to derive these measures can be found [here](https://doi.org/10.17605/OSF.IO/NMDTG) [@abad2023].
+
+**Reference**: @theodos2018
+
+### Rent and Mortgage Statistics {#le_l_rentmort}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_rentmort")`
+
+**Measure description:** In order to approximate cost of living that may be associated with housing, the following variables from the 2014-2018 American Community Survey (ACS) 5-year estimates have been linked to participants' primary, secondary, and tertiary addresses at the census tract level:
+
+Percent home ownership, percent of households living with rent burden (rent is at least 30% of income), percent of households living with severe rent burden (rent is at least 50% of income), median monthly gross rent, and median monthly mortgage payments.
+
+Code and source files used to derive these measures can be found [here](https://doi.org/10.17605/OSF.IO/NMDTG) [@abad2023].
+
+### Social Mobility (Opportunity Atlas) {#le_l_socmob}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_socmob")`
+
+**Measure description:** The Opportunity Atlas uses anonymous data based on 20 million Americans followed from childhood to their mid-30s to provide outcomes for adults who grew up in each census tract. Percentile household incomes correspond to outcomes in adulthood of people who grew up in each census tract and were born between 1978 and 1983.
+
+The variable corresponding to the 25th percentile is typically the main index of upward social mobility for each census tract, as it captures the mean income rank in adulthood for children who grew up in low-income families in this census tract. See the US Census Bureau [website](https://www.opportunityatlas.org/) for more details. 
+
+**Reference:** @ucb2025a
+
+## Residential Segregation
+
+### Dissimilarity Index (ACS) {#le_l_dissim}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_dissim")`
+
+**Measure description:** The Dissimilarity Indexmeasures the fraction of one group that would have to move to another area, in order to equalize the population distribution. While this measure is computed comparing the ratio of two racial/ethnic groups to each other within a census tract (derived from 2014-2018 ACS estimates), these values are aggregated for a given Metropolitan Service Area (MSA). Thus, we have linked Dissimilarity Indices for the MSA in which a participant may live, and not the census tract. The following contrasts were computed: Black vs. non-Hispanic white, Asian vs. non-Hispanic white, Hispanic vs. non-Hispanic white, nonwhite vs. non-Hispanic white.
+
+Code and source files used to derive these measures can be found [here](https://doi.org/10.17605/OSF.IO/NMDTG) [@abad2023].
+
+### Exposure/Interaction Index {#le_l_expint}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_expint")`
+
+**Measure description:** Exposure is measured by the Indices of Isolation and Interaction. The Index of interaction measures the likelihood of population subgroups interacting with one another. The Index of Isolation measures how likely it is that one group is isolated, or only surrounded by other members of the same group. We have linked a version of the Interaction Index that indicates the probability that one member of a group may interact with a member of a contrast group. While the measure is computed at the census tract (derived from 2014-2018 ACS estimates), these values are aggregated for a given Metropolitan Service Area (MSA). Thus, we have linked Interaction Indices for the MSA in which a participant may live, and not the census tract. The following contrasts were computed: Black vs. non-Hispanic white, Asian vs. non-Hispanic white, Hispanic vs. non-Hispanic white, nonwhite vs. non-Hispanic white.
+
+Code and source files used to derive these measures can be found [here](https://doi.org/10.17605/OSF.IO/NMDTG) [@abad2023].
+
+### Getis-Ord Gi* Statistics (ICPSR) {#le_l_gi}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_gi")`
+
+**Measure description:** *From ICPSR Documentation*:
+
+Measures were calculated at the census tract level on the proportion of non-Hispanic white, non-Hispanic Black, non-Hispanic Asian and Pacific Islander for 1990 and 2000 census, and Hispanic persons per census tract. Gi\* statistics are Z-scores that compare the proportion of the population in the focal tract and its neighboring tracts, to the average proportion of a larger geographic unit. For the majority of tracts, the larger geographic unit was the Core-Based Statistical Area (CBSA) these tracts belonged to, and for the minority of tracts that fell outside the boundaries of a CBSA, the County was used as the larger unit.
+
+Data for the measures were obtained from the IPUMS National Historical Geographic Information System (NHGIS) data finder; @nhgis2025. Data were downloaded for the 1990 and 2000 census, and the 2006-2009, 2010-2014, and 2015-2019 5-year American Community Survey (ACS) estimates. Geographically standardized time series tables were used for 1990 and 2000 census data. All other ACS data were standardized to 2010 census tract boundaries.
+
+Gi\* statistics were calculated using both Rook and Queen conceptualization of spatial relationships. With Rook contiguity, neighbors are determined by those that share a common edge only, while Queen contiguity neighbors are those that share both an edge or a "corner" (common vertex). See detailed documentation for further details.
+
+Code and source files used to derive these measures can be found [here](https://doi.org/10.17605/OSF.IO/NMDTG) [@abad2023].
+
+### Index of Concentration at the Extremes (ACS) {#le_l_eci}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_eci")`
+
+**Measure description:** Index of Concentration at the Extremes (ICE) quantifies how persons in a specified area are concentrated into the top vs bottom of a specified societal distribution. We've linked two versions of the ICE: one in which we compare the top income quintile to lowest income quintile (income ICE) as a measure of economic segregation, and one in which we compare the top income quintile for non-Hispanic white to lowest income quintile of non-Hispanic Black individuals in a census tract (income + BW ICE) as a measure of racialized economic segregation.
+
+**ABCD Subdomain:** Residential Segregation
+
+Code and source files used to derive these measures can be found [here](https://doi.org/10.17605/OSF.IO/NMDTG) [@abad2023].
+
+**Reference:** @krieger2018
+
+### Multi-group Entropy Index {#le_l_entropy}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_entropy")`
+
+**Measure description:** Both the Index of Dissimilarity and Interaction Index can only measure the segregation of two groups compared to each other. The Multi-Group Entropy Index measures the spatial distribution of multiple groups simultaneously (see [here](https://www2.census.gov/programs-surveys/demo/about/housing-patterns/multigroup_entropy.pdf)). This measure is dependent on the number of categories included in the computation, and for the linked measures.
+
+Three measures are available as of this release: Multi-Group Entropy Scores at the census tract and metro-level, and a Multi-Group Entropy Index that standardizes the sum of the census-tract scores within a metro by the standard deviation of the metro-level distribution.
+
+Code and source files used to derive these measures can be found [here](https://doi.org/10.17605/OSF.IO/NMDTG) [@abad2023].
+
+**Reference:** @iceland2004
+
+## Policy
+
+### Affordable Care Act Medicaid Expansion Data (KFF) {#le_l_aca}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_aca")`
+
+**Measure description:** Information on state adoption of statewide Medicaid expansion covering the period 2010-2020 was obtained from two sources:
+
+- [Kaiser Family Foundation (2017)](https://www.kff.org/affordable-care-act/state-indicator/state-activity-around-expanding-medicaid-under-the-affordable-care-act/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D): This webpage was updated in May 29, 2020 to reflect state Medicaid expansions through February 19, 2020.
+
+- [Congressional Research Services (2014)](https://cdn.cnsnews.com/attachments/aca_medicaid_expansion-crs-12-30-14.pdf): The ACA Medicaid Expansion, December 30, 2014
+
+From these two sources we constructed the following variable which indicated whether a state passed a law to expand Medicaid statewide (not just for selected subgroups) or if a Section 1115 waiver was obtained to expand Medicaid statewide prior to the 2014 federal allowance under the ACA. These data were mapped into the ABCD data based on (1) the date/month/year (DMY) of the Medicaid expansion policy adoption and (2) the interview date and state of residence of the ABCD resident.
+
+**Constructed Variables Contained in Analytic Files**
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| ACAexpand | Residential history derived -dichotomous indicator = 1 if the resident lives in a state at the time of the interview where Medicaid was expanded as a result of the ACA; 0 otherwise |
+
+*ACA Policy last updated June 29, 2020*
+
+**References**: 
+
+- @kff2025
+- @mitchell2014
+
+### Immigration Bias Measures (Hatzenbuehler) {#le_l_attimm}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_attimm")`
+
+**Measure description:** State-level measures of implicit and explicit attitudes towards Latinx individuals based onstate-level policies on immigration, recognizing that many Latinx individuals are not immigrants but that such state-level policies likely influence the experience of all individuals in the community with that identity.
+
+**Reference:** @hatzenbuehler2022
+
+### Cannabis Legalizations Categories by State (NCSL and MPP) {#le_l_lawsmj}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_lawsmj")`
+
+**Measure description:** Cannabis legalization categories were assigned to participants addresses based on their state of residence. The four cannabis legalization categories are:
+
+1.  Recreational -- allows adults to use cannabis for recreational purposes
+2.  Medical -- allows adults to use cannabis for medical conditions
+3.  Low THC/CBD -- allows adults to use cannabis that is low in THC and high in CBD for medical conditions
+4.  No legal access to cannabis -- forbids access to cannabis.
+
+Information about states current cannabis laws were obtained from @mpp2025 and @ncsl2025. 
+
+**References:**
+
+- @mpp2025
+- @ncsl2025
+
+### CDC Opioid Prescription Dispensing Data per 100k Residents (CDC) {#le_l_rxopioid}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_rxopioid")`
+
+**Measure description:**The CDC makes downloadable data on the rate of opioid prescriptions dispensed in each US state using data from [IQVIA Xponent](https://www.iqvia.com/insights/the-iqvia-institute/available-iqvia-data). IQVIA Xponent is based on a sample of approximately 49,900 retail (non-hospital) pharmacies, which dispense nearly 92% of all retail prescriptions in the United States. For this database, a prescription is a new or refill prescription dispensed at a retail pharmacy in the sample and paid for by commercial insurance, Medicaid, Medicare, cash or its equivalent, orother third-party coverage. This database does not include mail order prescriptions. For the calculation of dispensing rates, numerators are the projected total number of opioid prescriptions dispensed annually at the county level. Annual resident population denominators are from the U.S. Census Bureau.
+
+Opioid prescriptions, including buprenorphine, codeine, fentanyl, hydrocodone, hydromorphone, methadone, morphine, oxycodone, oxymorphone, propoxyphene, tapentadol, and tramadol are included and identified using National Drug Codes. All prescriptions with days' supply between 1 and 365 days and a known strength description are included. Cough and cold formulations containing opioids and buprenorphine products typically used to treat opioid use disorder are not included. In addition, methadone dispensed through methadone treatment programs is not included in the IQVIA Xponent data.
+
+| Variable Names | Description |
+|------------------------------------|------------------------------------|
+| `opioid_Rxper100K_0` | Residential history derived measure of opioid prescriptions dispensed per 100K in the county in which the respondent resides in year of baseline visit |
+| `opioid_Rxper100K_1` | Residential history derived measure of opioid prescription dispensed per 100K in the county in which the respondent resides one year prior to baseline visit |
+| `opioid_Rxper100K_2` | Residential history derived measure of opioid prescription dispensed per 100K in the county in which the respondent resides two years prior to baseline visit |
+| `opioid_Rxper100K_3` | Residential history derived measure of opioid prescription dispensed per 100K in the county in which the respondent resides three years prior to baseline visit |
+| `opioid_Rxper100K_4` | Residential history derived measure of opioid prescription dispensed per 100K in the county in which the respondent resides four years prior to baseline visit |
+| `opioid_Rxper100K_5` | Residential history derived measure of opioid prescription dispensed per 100K in the county in which the respondent resides five years prior to baseline visit |
+
+**Notes and special considerations:** In January 2019, IQVIA changed the frame of measurement in their projected prescription services from reflecting prescription demand to be "number of prescriptions dispensed to bin" to reflect total prescriptions actually "sold to the patient." To do this, IQVIA eliminated the effects of voided and reversed prescriptions (prescriptions that were never received by the patient) beginning in 2017. This change in measurement frame resulted in a 1.9% downward shift in the measured opioid prescriptions dispensed. This enhancement was applied to data from 2017 and thereafter. Thus, caution should be exercised when examining trends during this time period. Furthermore, starting in 2019, prescriptions were based on the location of the prescriber, rather than the location of the pharmacy.
+
+**Reference**: @cdc2024a
+
+### OPTIC-Vetted Co-prescribing Naloxone Policy Data (Optic) {#le_l_rxnalox}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_rxnalox")`
+
+**Measure description:** Co-prescribing naloxone policies captured here represent state policies requiring physicians to co-prescribe naloxone with opioid and/or benzodiazepine prescriptions. Specific dimensions of Co-Prescribing Policy Data included in this public version of the data are based on a review of the legal statutes conducted by OPTIC investigators of laws in effect as of September 2019 and reported in Table 1 of @haffajee2020, as well as additional information contained in the original legal database. Data is from RAND-USC Schaeffer Opioid Policy Tools and Information Center; [OPTIC-Vetted PDMP Policy Data](https://www.rand.org/health-care/centers/optic/resources/datasets.html).
+
+**Constructed Variables Contained in Analytic Files**
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| `eff_nalcop` | Residential history derived -dichotomous indicator = 1 if any state co-prescribing naloxone policy was effective at date of baseline visit (even if policy restricted to a small subset of patients); 0 otherwise. |
+| `eff_al` | Residential history derived - dichotomous indicator = 1 if state co-prescribing naloxone policy was effective for all patients at date of baseline visit; 0 otherwise. |
+
+*Last Updated: September 28, 2020*
+
+**References:** 
+
+- @rand2025
+- @haffajee2020
+
+
+### OPTIC-Vetted Good Samaritan Policy Data (Optic) {#le_l_goodsam}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_goodsam")`
+
+**Measure description:** Good Samaritan laws are state laws that provide limited civil and/or criminal immunity to individuals who request assistance from authorities during an overdose. Specific dimensions of Good Samaritan policy data included in this public version of the data are based on a review of relevant protections granted through different variations of these laws as described in @davis2015 and @davis2017
+
+**Description**
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| `any_gsl` | Residential history derived - dichotomous indicator = 1 if any type of Good Samaritan law was effective at date of baseline interview; 0 otherwise. |
+| `gsl_arrest` | Residential history derived - dichotomous indicator = 1 if Good Samaritan law that provides protection from arrest for controlled substance possession was effective at date of baseline interview; 0 otherwise. |
+
+
+**Reference:** 
+
+- @davis2015
+- @davis2017
+
+### OPTIC-Vetted Medical Marijuana Policy Data (Optic) {#le_l_medmj}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_medmj")`
+
+**Measure description:** Specific dimensions of marijuana policy data included in this public version of the data are based on variables frequently considered in marijuana policy research. The primary data come from legal review of laws conducted at RAND with funding from NIDA (PI: Rosalie Pacula) by Anne Boustead (JD, PhD), in consultation with Rosalie Pacula and Rosanna Smart (@pacula2014). 
+
+Updates since December 2017 and March 2019 drew on data reported by @ncsl2025 in March 2019 with subsequent updates through December 2019 conducted by Jason Blanchard (JD, Boston University) as part of a Boston University-USC-RAND funded project by NIAAA. The early work is described in @powell2018 and @pacula2015.
+
+**Constructed Variables Contained in Analytic Files**
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| `effMML` | Residential history derived dichotomous indicator = 1 if the individual lives in a state with a medical marijuana law (MML) (i.e. patients have legal protection to possess MJ containing more than trace amounts of THC for medicinal purposes) that was effective on date of baseline visit; 0 otherwise. |
+| `effREC` | Residential history derived dichotomous indicator = 1 if the individual lives in aState with a recreational adult-use cannabis law in effect at date of baseline visit; 0 otherwise. |
+| `active_medlegdisp` | Residential history derived dichotomous indicator = 1 if the individual lives in a state where medical cannabis dispensaries were a legal source of supply as of the date of baseline visit; 0 otherwise. |
+| `active_dispREC` | Residential history derived dichotomous indicator = 1 if the individual lives in a state where a rec store was opened in the state at date of baseline visit; 0 otherwise. |
+| `decrimmmj_ind` | Residential history derived dichotomous indicator = 1 if the individual lives in a state that reduced the status offense for possessing up to one ounce of MJ to a non-criminal offense (civil offense / infraction / petty offense) as of the date of baseline visit; 0 otherwise. |
+
+*Last Updated: July 7, 2021*
+
+**References:**
+
+- @pacula2014
+- @ncsl2025
+- @pacula2015
+- @powell2018
+
+### OPTIC-Vetted Naloxone Policy Data (Optic) {#le_l_polnalox}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_polnalox")`
+
+**Measure description:**Dimensions of naloxone policy data included in this data release are based on a review of relevant protections granted through different variations of these laws as described in @davis2015 and @davis2017.
+
+Information was obtained from PDAPS (originally downloaded May 27, 2016, and redownloaded March 4, 2020), with a few modifications made in consultation with Corey Davis (who was also consulting with PDAPS to update their laws).
+
+Constructed Variables Contained in Analytic Files
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| `any_nal` | Residential history derived dichotomous indicator = 1 if any type of naloxone law was effective at date of baseline visit; 0 otherwise. |
+| `nal_protocol_standing` | Residential history derived dichotomous indicator = 1 if a naloxone law allowing distribution through a standing or protocol order was effective at date of baseline visit; 0 otherwise. |
+| `nal_Rx_prescriptive_auth` | Residential history derived dichotomous indicator = 1 if naloxone law allowing pharmacists prescriptive authority was effective at date of baseline visit; 0 otherwise |
+
+*Last Updated: July 29, 2020*
+
+**Notes and special considerations:**
+
+In Iowa, the legislature adopted two different bills (one House bill and one Senate bill) regarding this section, both with an effective date of May 27, 2016. However, one amended the section and made those amendments retroactive to April 6, 2016. However, given no action could be taken on the retroactive date, we assume the PDAPS effective date of May 27,2016; thus, it is coded as June 2016.
+
+In Jan 2008, California piloted naloxone programs in several counties (including the most populous LA and SF). However, this was not expanded statewide until January 2014. PDAPS uses the pilot date for the first law (2008), which is what we use here for "any NAL." However, one could make the argument that the 2014 date is preferable.
+
+**References:** 
+
+- @davis2015
+- @davis2017
+
+### OPTIC-Vetted Prescription Drug Monitoring Program (PDMP) Policy Data (Optic) {#le_l_rxmonit}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("le_l_rxmonit")`
+
+**Measure description:** Information for three variables included in the OPTIC Vetted prescription drug monitoring policy data set have been imported into the ABCD data. These data were based on the following information:
+
+- PDAPS (policy data last reported on June 1, 2017, but last downloaded by us and checked in September 19, 2019). These data were used primarily for the construction of (1) AnyPDMP_partial / date_AnyPDMP for new first-time PDMP laws passed after 1/1/1998; (2) electronic_partial / date_electronic; and (3) Must Access_partial / date_prescriber_mustaccess.
+- Use of [Brandeis University PDMP Training and Technical Assistance Center (TTAC)](http://www.pdmpassist.org/content/pdmp-legislation-operational-dates) to obtain dates on first PDMP policy (including paper-based systems) that were adopted prior to January 1, 1998, (for AnyPDMP_partial / date_AnyPDMP).
+- Use of @horwitz2018 for two variables: (1) `Any_PMP_Horowitz_Partial` / `date_Any_PMP_Horowitz` (source: Table 2, Column 1 of their table) and (2) `Op_PDMP_partial` / `date_Op_PDMP` (source: Table 2, Column 4 of their table).
+- Consultation with Corey Davis who was also consulting with PDAPS to update their data.
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| `mustaccess` | Residential history derived dichotomous indicator = 1 if legislation requiring prescribers to access PDMP before prescribing was effective at date of baseline visit; 0 otherwise. |
+| `AnyPDMP` | Residential history derived dichotomous indicator = 1 if PDMP enabling legislation for any type of PDMP is in effect (including paper-based systems) at the time of baseline visit; 0 otherwise. |
+| `Op_PDMP` | Residential history derived dichotomous indicator = 1 if a "modern PDMP system" is in effect at the time of baseline visit; 0 otherwise. |
+
+**Notes and special considerations:** Regarding "must access" provisions, various data sources use the term "mandatory use" to mean different things. Mandatory use, which differs from mandatory registration, may simply mean that prescribers must have an account on the system; that they must input their patient's information in the system, or that they must check the system before prescribing an opioid under different circumstances (see [here](https://www.pewtrusts.org/en/research-and-analysis/data-visualizations/2018/when-are-prescribers-required-to-use-prescription-drug-monitoring-programs)). These are ultimately different levels of specificity of the law, and in the spirit of @horwitz2018, which encourages greater specificity in how these laws are defined. It is appropriate to use the term "physician must access" only when prescribers are mandated to access the database (regardless of the circumstance, which could differ if it is new patient, existing patient, and so on).
+
+**References:** 
+
+- @horwitz2018
+- @pew2018
+- @bja2025

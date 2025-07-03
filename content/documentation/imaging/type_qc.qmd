@@ -1,0 +1,360 @@
+---
+title: "MRI Quality Control"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+```{r}
+render_table_info("sub_domain == 'Quality Control'")
+```
+
+::: {.callout-important collapse="true" title="Responsible Use Warning: Quality Control"#use-qc }
+
+Researchers analyzing neuroimaging data should ensure responsible and thoughtful use of demographic and participant-related variables. Analyses comparing groups based solely on demographic categories may lead to misinterpretations about neurobiological differences and unintended implications regarding participants' abilities or outcomes. To avoid potential misinterpretation or misuse of research findings, data users must carefully consider all variables included in their analyses, and ensure results are presented with appropriate scientific context.
+
+Any group comparisons should incorporate comprehensive, contextual factors beyond single demographic categories, such as environmental or behavioral variables, to enhance scientific rigor and interpretation accuracy. Researchers are encouraged to proactively mitigate the risk of results being misconstrued or used in ways that could negatively affect individuals or groups participating in or impacted by their research.
+
+**Missingness issues**
+
+Participants in the ABCD Study may not have usable data for a variety of reasons. They may have withdrawn from the study, or they may have missed assessments or sessions. In other cases, data may have been collected but it is inappropriate for inclusion in an analysis. For example, neuroimaging data may be inappropriate for analysis due to excessive head motion (see the discussion of head motion in [Resting-State MRI Data Documentation](type_rsfmri.qmd)). 
+
+Factors associated with missing or unusable data can correlate with participant characteristics or environmental variables. Researchers should carefully assess patterns of missing data to understand how these patterns may influence analytical outcomes and interpretations. Additionally, researchers are encouraged to implement appropriate statistical methods, such as imputation or population weighting [@gard2023], to reduce biases resulting from missing data, thus improving the representativeness and generalizability of their results.
+:::
+
+# Recommended imaging inclusion {#recommended-imaging-inclusion}
+
+Users of the imaging data are advised to choose inclusion criteria that are appropriate for their analyses. We provide a set of recommended inclusion criteria for each modality that take into account factors such as imaging QC, task performance, etc., and for convenience, we provide an instrument `r link_table("mr_y_qc__incl")` with modality-specific imaging inclusion flags based on those criteria. Each modality (T~1~w, T~2~w, DTI/RSI, rsfMRI, SST, nBack, and MID tfMRI) is scored as 1=include, 0=exclude.
+
+### T~1~w data recommended for inclusion
+
+T~1~w series meets all criteria for inclusion (`mr_y_qc__incl__smri__t1_indicator = 1`).
+
+| **T~1~w Criteria**         | **Instrument**                                                           | **Element value**                                  |
+|----------------------------|--------------------------------------------------------------------------|----------------------------------------------------|
+| *T~1~ series passed rawQC* | `r link_table("mr_y_qc__raw__smri__t1")`                                 | `mr_y_qc__raw__smri__t1__pass__qc__comp_count > 0` |
+| *FreeSurfer QC not failed* | `r link_table("mr_y_qc__post__man__fsurf")`                              | `mr_y_qc__post__man__fsurf_score != 0`             |
+| *Derived results exist*    | `r link_table("mr_y_smri__t1__aseg")`                                    | `mr_y_smri__t1__aseg__cwm__lh_mean != NA`          |
+
+### T~2~w data recommended for inclusion
+
+T~2~w series meets all criteria for inclusion (`mr_y_qc__incl__smri__t2_indicator = 1`).
+
+| **T~2~w Criteria**                           | **Instrument**                                                            | **Element value**                                  |
+|----------------------------------------------|---------------------------------------------------------------------------|----------------------------------------------------|
+| *T~2~ series passed rawQC*                   | `r link_table("mr_y_qc__raw__smri__t2")`                                  | `mr_y_qc__raw__smri__t2__pass__qc__comp_count > 0` |
+| *T~1~ series passed rawQC*                   | `r link_table("mr_y_qc__raw__smri__t1")`                                  | `mr_y_qc__raw__smri__t1__pass__qc__comp_count > 0` |
+| *FreeSurfer QC not failed*                   | `r link_table("mr_y_qc__post__man__fsurf")`                               | `mr_y_qc__post__man__fsurf_score != 0`             |
+| *T~2~w manual post-processing QC not failed* | `r link_table("mr_y_qc__post__man__t2")`                                  | `mr_y_qc__post__man__t2_score != 0`                |
+| *T~2~w registration to T~1~w*                | `r link_table("mr_y_qc__post__aut")`                                      | `mr_y_qc__post__aut__smri__t2__rigid_score < 10`   |
+| *Derived results exist*                      | `r link_table("mr_y_smri__t2__aseg")`                                     | `mr_y_smri__t2__aseg__cwm__lh_mean != NA`          |
+
+### dMRI (DTI/RSI) data recommended for inclusion
+
+dMRI (DTI/RSI) series meets all criteria for inclusion (`mr_y_qc__incl__dmri_indicator = 1`).
+
+| **dMRI Criteria**                           | **Instrument**                                                | **Element value**                                                                                                                                   |
+|---------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| *dMRI series passed rawQC*                  | `r link_table("mr_y_qc__raw__dmri")`                          | `mr_y_qc__raw__dmri__pass__qc__comp_count > 0`                                                                                                      |
+| *dMRI total number of repetitions*          | `r link_table("mr_y_qc__raw__dmri")`                          | `mr_y_qc__raw__dmri__rep__ok_mean >= 103` *or* `(mr_y_adm__info__dev_manufact = Philips` *and* `mr_y_qc__raw__dmri__pass__qc__comp_count >= 2` *and* `mr_y_qc__raw__dmri__rep__ok_mean = 51)` |
+| *T~1~ series passed rawQC*                  | `r link_table("mr_y_qc__raw__smri__t1")`                      | `mr_y_qc__raw__smri__t1__pass__qc__comp_count > 0`                                                                                                  |
+| *dMRI B0 unwarp available*                  | `r link_table("mr_y_qc__post__aut")`                          | `mr_y_qc__post__aut__dmri__b0__unwarp_indicator = 1`                                                                                                |
+| *FreeSurfer QC not failed*                  | `r link_table("mr_y_qc__post__man__fsurf")`                   | `mr_y_qc__post__man__fsurf_score != 0`                                                                                                              |
+| *dMRI manual post-processing QC not failed* | `r link_table("mr_y_qc__post__man__dmri")`                    | `mr_y_qc__post__man__dmri_score != 0`                                                                                                               |
+| *dMRI registration to T~1~w*                | `r link_table("mr_y_qc__post__aut")`                          | `mr_y_qc__post__aut__dmri__rigid_score < 17`                                                                                                        |
+| *dMRI dorsal cutoff score*                  | `r link_table("mr_y_qc__post__aut")`                          | `mr_y_qc__post__aut__dmri__fov__cutoff__dorsal_max < 47`                                                                                            |
+| *dMRI ventral cutoff score*                 | `r link_table("mr_y_qc__post__aut")`                          | `mr_y_qc__post__aut__dmri__fov__cutoff__ventral_max < 54`                                                                                           |
+| *Derived results exist*                     | `r link_table("mr_y_rsi__rnd__at")`                           | `mr_y_rsi__rnd__at__lh_wmean != NA`                                                                                                                 |
+
+
+### rs-fMRI data recommended for inclusion
+
+rsfMRI series meets all criteria for inclusion (`mr_y_qc__incl__rsfmri_indicator = 1`).
+
+|  **rsfMRI Criteria**                        |  **Instrument**                                |   **Element value**                                       |
+|---------------------------------------------|------------------------------------------------|-----------------------------------------------------------|
+| *rsfMRI tfMRI series passed rawQC*          | `r link_table("mr_y_qc__raw__rsfmri")`         | `mr_y_qc__raw__rsfmri__pass__qc__comp_count > 0`          |
+| *T~1~ series passed rawQC*                  | `r link_table("mr_y_qc__raw__smri__t1")`       | `mr_y_qc__raw__smri__t1__pass__qc__comp_count > 0`        |
+| *rsfMRI number of frames after censoring*   | `r link_table("mr_y_qc__mot")`                 | `mr_y_qc__mot__rsfmri__point_count > 375`                 |
+| *fMRI B0 unwarp available*                  | `r link_table("mr_y_qc__post__aut")`           | `mr_y_qc__post__aut__fmri__b0__unwarp_indicator = 1`      |
+| *FreeSurfer QC not failed*                  | `r link_table("mr_y_qc__post__man__fsurf")`    | `mr_y_qc__post__man__fsurf_score != 0`                    |
+| *fMRI manual post-processing QC not failed* | `r link_table("mr_y_qc__post__man__fmri")`     | `mr_y_qc__post__man__fmri_score != 0`                     |
+| *fMRI registration to T~1~w*                | `r link_table("mr_y_qc__post__aut")`           | `mr_y_qc__post__aut__fmri__rigid_score < 19`              |
+| *fMRI dorsal cutoff score*                  | `r link_table("mr_y_qc__post__aut")`           | `mr_y_qc__post__aut__fmri__fov__cutoff__dorsal_max < 65`  |
+| *fMRI ventral cutoff score*                 | `r link_table("mr_y_qc__post__aut")`           | `mr_y_qc__post__aut__fmri__fov__cutoff__ventral_max < 60` |
+| *Derived results exist*                     | `r link_table("mr_y_rsfmri__corr__gpnet")`     | `mr_y_rsfmri__corr__gpnet__def__sal_mean != NA`           |
+
+### MID task-fMRI data recommended for inclusion
+
+MID tfMRI series meets all criteria for inclusion (`mr_y_qc__incl__tfmri__mid_indicator = 1`).
+
+| **MID Criteria**                                       | **Instrument**                                   | **Element value**                                                                                                         |
+|--------------------------------------------------------|--------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| *MID tfMRI series passed rawQC*                        | `r link_table("mr_y_qc__raw__tfmri__mid")`       | `mr_y_qc__raw__tfmri__mid__pass__qc__comp_count > 0`                                                                      |
+| *T~1~ series passed rawQC*                             | `r link_table("mr_y_qc__raw__smri__t1")`         | `mr_y_qc__raw__smri__t1__pass__qc__comp_count > 0`                                                                        |
+| *MID behavior passed*                                  | `r link_table("mr_y_tfmri__mid__beh")`           | `mr_y_tfmri__mid__beh__qc_indicator = 1`                                                                                  |
+| *MID degrees of freedom \> 200*                        | `r link_table("mr_y_qc__mot")`                   | `mr_y_qc__mot__tfmri__mid_dof > 200`                                                                                      |
+| *MID E-prime timing match OR ignore E- prime mismatch* | `r link_table("mr_y_qc__raw__tfmri__mid")`       | `mr_y_qc__raw__tfmri__mid__eprime__match_indicator = 1` *OR* `mr_y_qc__raw__tfmri__mid__eprime__tdiff__ign_indicator = 1` |
+| *fMRI B0 unwarp available*                             | `r link_table("mr_y_qc__post__aut")`             | `mr_y_qc__post__aut__fmri__b0__unwarp_indicator = 1`                                                                      |
+| *FreeSurfer QC not failed*                             | `r link_table("mr_y_qc__post__man__fsurf")`      | `mr_y_qc__post__man__fsurf_score != 0`                                                                                    |
+| *fMRI manual post-processing QC not failed*            | `r link_table("mr_y_qc__post__man__fmri")`       | `mr_y_qc__post__man__fmri_score != 0`                                                                                     |
+| *fMRI registration to T~1~w*                           | `r link_table("mr_y_qc__post__aut")`             | `mr_y_qc__post__aut__fmri__rigid_score < 19`                                                                              |
+| *fMRI dorsal cutoff score*                             | `r link_table("mr_y_qc__post__aut")`             | `mr_y_qc__post__aut__fmri__fov__cutoff__dorsal_max < 65`                                                                  |
+| *fMRI ventral cutoff score*                            | `r link_table("mr_y_qc__post__aut")`             | `mr_y_qc__post__aut__fmri__fov__cutoff__ventral_max < 60`                                                                 |
+| *Derived results exist*                                | `r link_table("mr_y_tfmri__mid__arvn__aseg")`    | `mr_y_tfmri__mid__arvn__aseg__cwm__lh_beta != NA`                                                                         |
+
+### nBack task-fMRI data recommended for inclusion
+
+nBack tfMRI series meets all criteria for inclusion (`mr_y_qc__incl__tfmri__nback_indicator = 1`).
+
+| **nBack Criteria**                                       | **Instrument**                                  | **Element value**                                                                                                             |
+|----------------------------------------------------------|-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| *nBack tfMRI series passed rawQC*                        | `r link_table("mr_y_qc__raw__tfmri__nback")`    | `mr_y_qc__raw__tfmri__nback__pass__qc__comp_count > 0`                                                                        |
+| *T~1~ series passed rawQC*                               | `r link_table("mr_y_qc__raw__smri__t1")`        | `mr_y_qc__raw__smri__t1__pass__qc__comp_count > 0`                                                                            |
+| *nBack behavior passed*                                  | `r link_table("mr_y_tfmri__nback__beh")`        | `mr_y_tfmri__nback__beh__qc_indicator = 1`                                                                                    |
+| *nBack degrees of freedom \> 200*                        | `r link_table("mr_y_qc__mot")`                  | `mr_y_qc__mot__tfmri__nback_dof > 200`                                                                                        |
+| *nBack E-prime timing match OR ignore E- prime mismatch* | `r link_table("mr_y_qc__raw__tfmri__nback")`    | `mr_y_qc__raw__tfmri__nback__eprime__match_indicator = 1` *OR* `mr_y_qc__raw__tfmri__nback__eprime__tdiff__ign_indicator = 1` |
+| *fMRI B0 unwarp available*                               | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__b0__unwarp_indicator = 1`                                                                          |
+| *FreeSurfer QC not failed*                               | `r link_table("mr_y_qc__post__man__fsurf")`     | `mr_y_qc__post__man__fsurf_score != 0`                                                                                        |
+| *fMRI manual post-processing QC not failed*              | `r link_table("mr_y_qc__post__man__fmri")`      | `mr_y_qc__post__man__fmri_score != 0`                                                                                         |
+| *fMRI registration to T~1~w*                             | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__rigid_score < 19`                                                                                  |
+| *fMRI dorsal cutoff score*                               | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__fov__cutoff__dorsal_max < 65`                                                                      |
+| *fMRI ventral cutoff score*                              | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__fov__cutoff__ventral_max < 60`                                                                     |
+| *Derived results exist*                                  | `r link_table("mr_y_tfmri__nback__0b__aseg")`   | `mr_y_tfmri__nback__0b__aseg__cbwm__lh_beta != NA`                                                                            |
+
+### SST task-fMRI data recommended for inclusion
+
+SST tfMRI series meets all criteria for inclusion (`mr_y_qc__incl__tfmri__sst_indicator = 1`).
+
+| **SST Criteria**                                       | **Instrument**                                  | **Element value**                                                                                                         |
+|--------------------------------------------------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| *SST tfMRI series passed rawQC*                        | `r link_table("mr_y_qc__raw__tfmri__sst")`      | `mr_y_qc__raw__tfmri__sst__pass__qc__comp_count > 0`                                                                      |
+| *T~1~ series passed rawQC*                             | `r link_table("mr_y_qc__raw__smri__t1")`        | `mr_y_qc__raw__smri__t1__pass__qc__comp_count > 0`                                                                        |
+| *SST behavior passed*                                  | `r link_table("mr_y_tfmri__sst__beh")`          | `mr_y_tfmri__sst__beh__qc_indicator = 1`                                                                                  |
+| *SST task had no glitch*                               | `r link_table("mr_y_tfmri__sst__beh")`          | `mr_y_tfmri__sst__beh__coderr_indicator = 0`                                                                              |
+| *SST degrees of freedom \> 200*                        | `r link_table("mr_y_qc__mot")`                  | `mr_y_qc__mot__tfmri__sst_dof > 200`                                                                                      |
+| *SST E-prime timing match OR ignore E- prime mismatch* | `r link_table("mr_y_qc__raw__tfmri__sst")`      | `mr_y_qc__raw__tfmri__sst__eprime__match_indicator = 1` *OR* `mr_y_qc__raw__tfmri__sst__eprime__tdiff__ign_indicator = 1` |
+| *fMRI B0 unwarp available*                             | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__b0__unwarp_indicator = 1`                                                                      |
+| *FreeSurfer QC not failed*                             | `r link_table("mr_y_qc__post__man__fsurf")`     | `mr_y_qc__post__man__fsurf_score != 0`                                                                                    |
+| *fMRI manual post-processing QC not failed*            | `r link_table("mr_y_qc__post__man__fmri")`      | `mr_y_qc__post__man__fmri_score != 0`                                                                                     |
+| *fMRI registration to T~1~w*                           | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__rigid_score < 19`                                                                              |
+| *fMRI dorsal cutoff score*                             | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__fov__cutoff__dorsal_max < 65`                                                                  |
+| *fMRI ventral cutoff score*                            | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__fov__cutoff__ventral_max <= 60`                                                                |
+| *Derived results exist*                                | `r link_table("mr_y_tfmri__sst__cgvfx__aseg")`  | `mr_y_tfmri__sst__cgvfx__aseg__cwm__lh_beta != NA`                                                                        |
+
+Automated post-processing QC metrics were statistically characterized in association with manual QC variables from ABCD Release 3.0. The statistical association between manual and automated QC variables was used to guide the identification of automated QC variables that were predictive of manual QC scores. The pairwise analysis of manual-vs-auto QC scores lead to automated QC variable thresholds needed to identify anomalous scans with desired false alarm ratings. For the variables listed below, the thresholds are listed to achieve conservatively low false alarm ratings of 0.05%.
+
+- sMRI T~2~w registration to T~1~w: \< 10
+- dMRI registration to T~1~w: \< 17
+- dMRI Maximum dorsal cutoff score: \< 47
+- dMRI Maximum ventral cutoff score: \< 54
+- fMRI registration to T~1~w: \< 19
+- fMRI Maximum dorsal cutoff score: \< 65
+- fMRI Maximum ventral cutoff score: \< 60
+
+**Notes:**
+
+- Imaging series may have been manually reviewed after initial preprocessing stage and QC pipeline (see \[Automated selection for manual post-processing QC\]). Series that fail raw QC do not get processed (e.g., `mr_y_qc__raw__smri__t1__pass__qc__comp_count` is 0).
+- For task fMRI, the average degrees of freedom is set at an arbitrary 200; this can be increased for a more restrictive selection criteria. For single runs, the required degrees of freedom are halved (i.e., dof \> 100).
+
+# MRI clinical findings
+
+T~1~w and T~2~w-weighted images, if available, were screened for incidental findings by a Board Certified Neuroradiologist. Any findings requiring clinical investigation were relayed to appropriate site personnel via the ABCD Coordinating Center (CC).
+
+The most important measure is the Report Score (`mrif_score`):
+
+- `0` = Image artifacts prevent radiology read
+- `1` = No abnormal findings
+- `2` = Normal anatomical variant of no clinical significance
+- `3` = Consider clinical referral
+- `4` = Consider immediate clinical referral
+
+Although not included in the recommended inclusion criteria, users may, depending on their research question and analytical design, opt to exclude participants with `mrif_score != 3` *OR* `mrif_score !=4`.
+
+# MRI raw QC
+
+- Protocol compliance checking
+  - Performed by on-site FIONA workstations to provide feedback to scan operators
+  - Out-of-compliance series reviewed by DAIRC staff
+  - Criteria included whether key imaging parameters matched expected values for a given scanner, such as voxel size or repetition time
+  - Presence or absence of B0 distortion field map series was checked for diffusion MRI (dMRI) and functional MRI (fMRI) series
+  - Each imaging series checked for completeness (i.e., no missing files)
+- Automated quality control metrics
+  - Structural MRI (sMRI): mean and standard deviation of brain values and spatial SNR
+  - dMRI: mean motion (average framewise displacement), and the number of slices and frames affected by slice dropout caused by abrupt head motion
+  - fMRI: mean motion (average framewise displacement), the number of seconds with framewise displacements less than 0.2, 0.3, or 0.4 mm [@power2012], temporal SNR (tSNR) [@triantafyllou2005]
+- Manual review of data quality
+  - Reviewers assigned binary QC score
+    - `0` = reject
+      - Most severe artifacts or irregularities
+      - Rejected series excluded from subsequent processing and analysis
+    - `1` = accept
+  - Types of images reviewed
+    - T~1~w, T~2~w, dMRI, dMRI field map, fMRI, and fMRI field map
+    - Raw and some derived images were reviewed
+    - dMRI derived images included average b=0 image, FA, MD, tensor fit residual error, and direction encoded color image
+    - fMRI derived images included the average across time and the temporal standard deviation
+  - Inspected for signs of artifacts and poor image quality
+    - Presence of wrap-around field of view artifacts
+    - Brain cut-off due to participant movement outside prescribed slices
+    - Magnetic susceptibility artifacts due to dental implants
+    - T~1~w and T~2~w motion artifact (e.g., blurring and ghosting)
+  - Artifact type and severity for series with QC = `0` is indicated in reviewer notes made with internally standard abbreviations
+
+# Manual post processing QC
+
+## FreeSurfer QC
+
+- Manual review of FreeSurfer cortical surface reconstruction
+ - Reviewers assigned binary QC score
+   - `0` = reject
+    - Most severe artifacts or irregularities
+    - Results still included in shared tabulated data
+    - Recommended exclusion from group analyses involving cortical surface ROIs
+   - `1` = accept
+ - Reviewers gauged the severity of five types of artifact or processing problem
+   - QU_motion: motion artifact in T1w image
+   - QU_inhomo: intensity inhomogeneity
+   - QU_wmunder: white matter underestimation
+   - QU_pialover: pial overestimation
+   - QU_artifact: magnetic susceptibility artifact
+ - Numeric values assigned on a scale of `0-3`
+   - Absent, mild, moderate, or severe, respectively
+   - Overall QC score of `0` assigned if severity score of `3` for any artifact type
+
+Note: Imaging-derived results are included in shared tabulated data regardless of post-processing QC. QC variables (derived from procedures described above) are included in shared tabulated data. The overall, binary QC score described above indicates whether inclusion or exclusion is recommended based on this criterion alone (see above [Recommended Imaging Inclusion](#recommended-imaging-inclusion)). FreeSurfer QC was performed for \~7% of participant-events with T1w imaging data.
+
+## sMRI T~2~w post processing QC {#smri-t2w-post-processing-qc}
+
+- Manual review of DTI reconstruction
+  - Reviewers assigned binary QC score
+    - `0` = reject
+      - Most severe artifacts or irregularities
+      - Results still included in shared tabulated data
+      - Recommended exclusion from group analyses involving cortical, subcortical, and tract-based ROIs
+    - `1` = accept
+  - Reviewers gauged the severity of four types of artifact or processing problem
+    - QU_motion: motion
+    - QU_inhomo: intensity inhomogeneity
+    - QU_artifact: magnetic susceptibility artifact
+    - QU_regT1: registration with T~1~w image
+  - Numeric values assigned on a scale of `0-3`
+    - Absent, mild, moderate, or severe, respectively
+    - Overall QC score of `0` assigned if severity score of `3` for any artifact type
+
+Note: The T~2~w Post Processing QC was performed for \~7% of participant-events with T2w imaging data.
+
+## dMRI post processing QC {#dmri-post-processing-qc}
+
+- Manual review of processed dMRI data
+  - Reviewers assigned binary QC score
+    - `0` = reject
+      - Most severe artifacts or irregularities
+      - Results still included in shared tabulated data
+      - Recommended exclusion from group analyses involving cortical, subcortical, and tract-based ROIs
+    - `1` = accept
+  - Reviewers gauged the severity of five types of artifact or processing problem
+    - QU_B0warp: residual (uncorrected) B0 warping
+    - QU_ImagQual: image quality based on motion-related artifacts and magnetic susceptibility-induced drop-out artifact or other image quality issue
+    - QU_FOV: full head coverage
+    - QU_regT1: registration with T1w image
+    - QU_fseg: accuracy of fiber tract segmentation
+  - Numeric values assigned on a scale of `0-3`
+    - Absent, mild, moderate, or severe, respectively
+    - Overall QC score of `0` assigned if severity score of `3` for any artifact type
+
+Note: The dMRI Post Processing QC was performed for \~13% of participant-events with dMRI data.
+
+## fMRI post processing QC {#fmri-post-processing-qc}
+
+- Manual review of processed fMRI data
+  - Reviewers assigned binary QC score
+    - `0` = reject
+      - Most severe artifacts or irregularities
+      - Results still included in shared tabulated data
+      - Recommended exclusion from group analyses involving cortical, subcortical, and tract-based ROIs
+    - `1` = accept
+  - Reviewers gauged the severity of five types of artifact or processing problem
+    - QU_B0warp: residual (uncorected) B0 warping
+    - QU_ImagQual: image quality based primarily on magnetic susceptibility-induced drop-out or other image quality issues artifact
+    - QU_FOV: full head coverage
+    - QU_regT1: registration with T1w image
+  - Numeric values assigned on a scale of `0-3`
+    - Absent, mild, moderate, or severe, respectively
+    - Overall QC score of `0` assigned if severity score of `3` for any artifact type
+
+Note: The fMRI Post Processing QC was performed for \~18% of participant-events with fMRI data.
+
+# Automated post processing QC {#automated-post-processing-qc}
+
+Automated QC measures were defined and calculated based on processed imaging data.
+
+- FreeSurfer
+  - Number of topological defects
+    - Calculated from Euler number
+- dMRI
+  - Field of view (FOV) brain cutoff
+    - Quantified by % intersection of brain mask with frame borders
+  - Registration to T~1~w
+    - Window-based estimation of geometric registration discrepancy with respect to the T~1~ scan, decomposed into rigid and warp components for calculation of registration error
+- fMRI
+  - Field of view (FOV) brain cutoff
+    - Quantified by % intersection of brain mask with frame borders
+  - Registration to T~1~w
+    - Window-based estimation of geometric registration discrepancy with respect to the T~1~ scan, decomposed into rigid and warp components for calculation of registration error
+- sMRI T~2~w
+  - Registration to T~1~w
+    - Window-based estimation of geometric registration discrepancy with respect to the T~1~ scan, decomposed into rigid and warp components for calculation of registration error
+
+# Automated selection for manual post-processing QC
+
+Our manual quality control process involves manual examination of brain images from a subset of participant-events for each modality, with ratings for each dataset according to pre-defined quality criteria such as brain cutoff, residual distortion, or registration to T~1~. Such measures are described above (see [*FreeSurfer QC*](d#freesurfer-qc), [*sMRI T~2~w Post Processing QC*](#smri-t2w-post-processing-qc), [*dMRI Post Processing QC*](#dmri-post-processing-qc), and [*fMRI Post Processing QC)*](#fmri-post-processing-qc). Because an exhaustive manual review of every scan is not practical, we deploy statistical learning/AI guided sub-sampling methods where we generate automated metrics for an array of quality control issues (see [*Automated Post Processing QC*](#automated-post-processing-qc)) and sub-select participant-events to be sent for a given modality to manual review based on their quality measure scores. The automatic selection priority scores generally indicate how likely a dataset of a given type is to contain identifiable data quality issues such as a residual distortion or brain cutoff.
+
+## Overview of selection strategies
+
+Because there were no significant changes in the MRI processing pipeline between ABCD Release 4.0 and Release 6.0, it was not necessary to reprocess most of the previously collected imaging data, except in rare cases, such as due to recovery of missing data or revision of manual raw QC. Because of this, manual post-processing QC scores from Release 4.0 were mostly carried forward into Release 6.0. Changes to the processing were made between Release 3.0 and 4.0, so the old QC scores were not carried forward for Release 4.0. Instead, participant-events were selected for manual post-processig QC based on failed post-processing QC from Release 3.0, random selection of participant-events, and statistical outliers (see below for details). The manual scoring and automated QC metrics for those three sets were then used for classifier guided selection (see below for details), and those additional visits were reviewed as well. For more recently collected imaging data not included in Release 4.0, additional subsets of participant-events were selected for manual post-processing QC using classifier guided selection and Mahalanobis distance outliers (see below for details). In addition, we undertook a limited retrospective review of past QC failures to help ensure that usable data were not inappropriately or mistakenly marked for exclusion (see below for details).
+
+## Selection strategies used for Release 4.0
+
+### Failed post-processing QC from Release 3.0
+
+All participant-events that failed QC for a given modality in Release 3.0 were manually reviewed again after Release 4.0 processing, with the expectation that they would be likely candidates for failure, unless perhaps recovered due to improvements in the Release 4.0 processing pipeline. These made up about 25-50% of manually reviewed participant-events for Release 4.0.
+
+### Random selection
+
+Roughly 5% of the manually reviewed participant-events for Release 4.0 were chosen at random to avoid possible biases and insensitivities of the automated measures that guided the initial sub-sampling selection process.
+
+### Statistical outliers
+
+ROI summary vectors for all individual participant-events were used to deduce a statistical ensemble profile. Participant-events with the greatest "distance" to the ensemble were tagged as outliers and selected for manual review. The formal framework we used for defining the ensemble statistics and the "distance" measure between a scan and the ensemble is based on the Mahalanobis distance (see <https://en.wikipedia.org/wiki/Mahalanobis_distance>). Mahalanobis distance is a scalar measure of the distance between a point **P**, defined in a multi-dimensional vector space, and a distribution **D**. In our case, participant-events were sorted based on their Mahalanobis distances, and our manual review goal targeted the top 5% of that list. These made up \~20-25% of manually reviewed participant-events.
+
+### Classifier-guided selection
+
+Using the manual scoring of the above sets, namely the random samples, Release 3.0 QC failures, and Mahalanobis distance outliers, we collected a subset of manually labeled scan data. For each participant-event we generated a set of automated measures described in *Automated Post Processing QC*. Using binarized (pass/fail) manual quality control (QC) labels associated with these measures, we constructed a Bayesian classifier (see <https://en.wikipedia.org/wiki/Bayes_classifier>) that calculates the probability of QC failure associated with different types of QC issues (e.g., bad registration or brain FOV cutoff) for any given dataset. Each combination of automated QC metric and manual quality (QU) score was tested. Combinations of manual QC scores and automated QC metrics with low correlation (r \< 0.5) or low classification accuracy (ROC AUC \< 0.6) were excluded for use in selection. Selected manual QU scores were binarized such that "QC fail" was defined as QU score \> 2, and "QC pass" was defined as QU score \<= 2. Relative QC failure probabilities given a particular automated QC metric value were calculated for each combination of manual scores and automated metics. Participant-events were sorted based on their QC failure probabilities, and roughly the top 3-5% were selected for manual review for each modality, making up \~30-50% of manually reviewed participant-events in Release 4.0.
+
+## Selection strategies used for Release 5.0 and 6.0
+
+### Multivariate classifier-guided selection
+
+For imaging data collected more recently than that included in Release 4.0, the classifier-guided selection approach described above was extended to use a multivariate logistic regression that uses multiple auto QC metrics as well as the Mahalanobis distance metrics derived from ROI summary measures. The Mahalanobis distance value was calculated separately for each modality represented in the tabulated ROI summary measures (i.e., FreeSurfer, T1w, T2w, dMRI-DTI, dMRI-RSI, MID, nBack, SST, rsfMRI). These outlier distance metrics were included along with the other automated QC metrics used for prediction.
+
+For each manual post-processing QU score, automated metrics (including automated QC metrics and Mahalanobis distances) with low correlation (r \< 0.5) or low classification accuracy (ROC AUC \< 0.6) to the manual QU score were excluded for use in selection. The remaining set of automated metrics were transformed with singular value decomposition to remove redundant information. The resulting reduced matrix was entered into a logistic regression with the binarized QU score. The values predicted by the logistic regression were then passed to the Bayesian classifier described above to calculate the probability of QC failure. Additional methodological details and an analysis of selection performance will be presented in a forthcoming paper (Hagler et al., in preparation).
+
+### Retrospective QC review
+
+A retrospective review of prior, post-processing QC failures was undertaken to ensure that usable data were not inappropriately or mistakenly marked for exclusion. This was done on a limited basis for particular causes of QC failure when we found reason to doubt some of the reviews of a given type; e.g., white matter underestimation, T1 or T2 intensity inhomogeneity. In this re-review, scores were changed in some but not most cases selected for re-review.Methods
+
+Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in @hagler2019.
+
+**Additional references:**
+
+- @cardenas-iniguez2024
+- @laird2021
+- @power2012
+- @saragosa-harris2022
+- @simmons2021

@@ -1,0 +1,398 @@
+---
+title: "Novel Technologies"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+
+```{r}
+render_table_info("domain_abbr == 'nt'")
+```
+<br>
+
+::: {.callout-important collapse="true" title="Responsible use warning: Novel Technologies domain general" #use-nt}
+Wearable devices, including Fitbit, use optical technology to detect blood volume changes to indicate pulse rate, which is important for the heart rate, sleep, and some of the physical activity output measures derived from Fitbit. Some studies (e.g. @colvonen2020) suggest this is less accurate for darker skin tones and accuracy may be influenced by higher body mass index and tattoos in the location of sensor placement. ABCD collects height and weight, from which BMI can be derived. ABCD does not collect information about skin tone. These potential limitations should be considered.
+:::
+
+# Youth tables
+
+## Effortless Assessment Research System (EARS)
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_y_earsadm")`
+`r r_link_table("nt_y_earsadm")` 
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_y_earsapp")`
+`r r_link_table("nt_y_earsapp")` 
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_y_earskey")`
+`r r_link_table("nt_y_earskey")` 
+
+**Measure description:** Objective screen time and application use data from EARS (Effortless Assessment Research System) [(Ksana Health)](https://ksanahealth.com/ears/) for the passive assessment of mobile phone use. Data include measures of total time spent in various app categories as selected by app creators (e.g., social, gaming, productivity, communication), keystrokes (count, time from first to last keystroke, and number of sessions) by app. Data on iPhone users in this release only includes keystroke data and screen on/off data, whereas Android has both app use time and keystroke data. Harmonization methods for Android and iPhone data are discussed in @alexander2023. Summary scores (duration, daily average, and split by weekday and weekend totals and averages) from the 3-week  sensing period are included and divided by total over the duration, daily average, and split by weekday and weekend totals and averages.
+
+In some instances, users have less than 3 weeks (21 days) of data collected; the variable nt_y_earsapp__day_count represents the number of days of data collected. Data users can consider filtering by number of days of data collected. For all files, weekday denotes Monday - Friday and weekend denotes Saturday - Sunday. Three files are provided:
+
+* `nt_y_earsapp`: Duration of smartphone utilization overall and for each Google Play app category; pilot study data are not included
+
+* `nt_y_earsplt`: Duration of smartphone utilization overall and for each Google Play app category for pilot study only
+
+* `nt_y_earsadm`: Administrative table with information on operating system (OS), device type, device version, and data availability for each participant and event. Instances in which \>1 OS, device type, and/or device version was used for the same participant and event, a pipe symbol is used to denote each one. For example, if subject ABCD123 in follow-up year 4 used both an iPhone XR and iPhone 12 during the 21-day data collection, device version is denoted as: iPhone XR \| iPhone 12.
+
+Files ending in .parquet can be imported into R using the duckplyr package with the following sample code snippet: duckplyr::duckplyr_df_from_parquet( path = "path/to/file/ears_appusage_raw.parquet",
+
+For ABCD Release 6.0, Ksana Health reprocessed all participant features using improved algorithms. This led to recomputed summary scores for all cases. Scores are very similar to prior data releases.
+
+Ksana Health provided the following data lineage diagrams to detail their process for calculating summary scores:
+
+**Data Lineage for App Usage:**
+
+![](../../assets/img/documentation/non_imaging/app_usage.jpg)
+
+**Data Lineage for Key Input:**
+
+![](../../assets/img/documentation/non_imaging/key_input.jpg)
+
+**Modifications since initial administration:** iPhone keyboard data collection was collected through 10/19/22, with cessation of keystrokes data collection due to participant burden with the third-party keyboard on iPhones. Beginning 4/10/23, ABCD-EARS resumed collecting iPhone screen on/off data; keystroke data did not resume collection at this time. Future data releases will include iPhone app use information.
+
+**References:**
+
+- @lind2018
+- @alexander2023
+
+### EARS -- Device Usage Statistics (Pilot) {#nt_y_earsplt}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_y_earsplt")`
+`r r_link_table("nt_y_earsplt")`
+
+**Measure description:** Objective screen time and application use data from EARS [(Ksana Health)](https://ksanahealth.com/ears/) for the passive assessment of mobile phone use. These data were collected during a pilot study of methods and compatibility of different software platforms for Device Usage Statistics. Data measures of time spent in calls and total time spent in various app categories (e.g., Youtube, gaming, productivity, communication). These data are summary scores from the 3-week usage period.
+
+**Notes and special considerations:** As a pilot study, these data were collected at a subset of ABCD sites.
+
+**Reference:** @lind2018
+
+### EARS -- Post-Assessment Survey {#nt_y_earsq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_y_earsq")`
+`r r_link_table("nt_y_earsq")`
+
+**Measure description:** Questionnaire of weekday and weekend time on devices (e.g., "screen time") for non-school activities and household rules for device and app usage. These instruments were collected following participation in the EARS assessment of device and app usage. To reduce participant burden, administration was stopped mid 6-year-follow up.
+
+### EARS -- Pre/Post-Assessment Survey (Pilot) {#nt_y_earsp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_y_earsp")`
+`r r_link_table("nt_y_earsp")`
+
+**Measure description:** Pre- and post-questionnaires of weekday and weekend time on devices (e.g., "screen time") for non-school activities and household rules for device and app usage. Youth and parents completed independent questionnaires with parents reporting on their youth. These data were collected during a pilot study of methods and compatibility of different software platforms for Device Usage Statistics.
+
+**Notes and special considerations:** As a pilot study, these data were collected at a subset of ABCD sites.
+
+## Screen Time Questionnaire {#nt_y_stq data-link="Screen Time Questionnaire"}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_y_stq")`
+`r r_link_table("nt_y_stq")`
+
+**Measure description:** This measure includes customized questions about the overall amount of time that the youth spends using visual media on a typical weekday and weekend day. Media activities assessed include:
+
+- Watching TV shows or movies
+- Watching videos (such as YouTube)
+- Playing video games (single- or multiplayer) on a computer, console, phone or other device
+- Texting on a cell phone, tablet, or computer
+- Visiting social media apps like Snapchat, Instagram, TikTok
+- Video chat
+- Seven response options were: none, \< 30 minutes, 30 minutes, 1 hour, 2 hours, 3 hours, and 4+ hours.
+
+**Modifications since initial administration:** From the 2-year follow-up on, response options were changed to an open format of number of hours and minutes spent on each screen usage activity. We also included the 6-item social media addiction and video game addiction questionnaires adapted from the Bergen Facebook Addiction Scale [@andreassen2012]. These items are administered only if the youth endorses having at least one social media account or at least some use of video games, respectively. Additionally, we added customized questions about timing of screen usage around bedtime, mobile phone ownership and usage, social media accounts, and online dating. A summary of changes to the youth screen usage questionnaire is contained in the table below.
+
+**Youth Screen Usage Self-Report Questionnaire modifications made by year**
+
+|  |  |  |  |  |  |  |  |  |
+|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| **Youth Questions** | **Baseline** | **1** | **2** | **3** | **4** | **5** | **6** | **7** |
+| Watch "or stream" TV shows or movies? (such as Hulu, Netflix or Amazon, not including videos on YouTube) | X^a^ | X^a^ | X | X^\#^ | X^\#^ |  |  |  |
+| Watch or stream videos or livestream (such as YouTube, Twitch)? | X^b^ | X^b^ | X |  |  |  |  |  |
+| Watch or stream movies, videos or TV shows? (such as Hulu, Netflix or Amazon, YouTube, Twitch)? |  |  |  |  |  | X\* | X\* | X\* |
+| Play video games on a computer, console, phone or other device (Xbox, PlayStation, iPad)? | X | X |  |  |  |  |  |  |
+| Play single-player video games on a computer, console, phone or other digital/mobile technology (e.g. Xbox, PlayStation, iPad, AppleTV)? |  |  | X^e^ | X^e^ | X^e^ | X\* | X\* | X\* |
+| Play multiplayer video games on a computer, console, phone, or other digital/mobile technology (e.g. Xbox, PlayStation, iPad, AppleTV) where you can interact with others in the game? |  |  | X^f^ | X^f^ | X^f^ | X\* | X\* | X\* |
+| Text on a cell phone, tablet, computer, iPod, or other electronic device (e.g., GChat, WhatsApp, Kik etc.)? | X^c^ | X^c^ | X | X | X | X\* | X\* | X\* |
+| Visit social networking sites like Facebook, Twitter, Instagram, etc.? | X | X |  |  |  |  |  |  |
+| Visit social media apps (e.g., Snapchat, Facebook, Twitter, Instagram, TikTok, etc.)? (Do not include time spent editing photos or videos to post on social media.) |  |  | X | X | X | X\* | X\* | X\* |
+| Edit photos or videos to post on social media. |  |  | X |  |  |  |  |  |
+| Video chat (Skype, FaceTime, VRchat, etc.) that is NOT for school | X^d^ | X^d^ | X^g^ | X | X | X\* | X\* | X\* |
+| Searching or browsing the internet (e.g., using Google) that is NOT for school. |  |  | X | X |  |  |  |  |
+| Spend in TOTAL on a computer, phone, tablet, iPod, or other digital/mobile technology or video game? Please do NOT include time spent on school related work, but do include watching TV, shows or videos, texting or chatting, playing games, or visiting social networking sites (e.g. Facebook, Twitter, Instagram). |  |  | X^h^ | X | X | X | X | X |
+| Spend in TOTAL on school-related work on a phone, tablet, computer, or other digital/mobile technology? Please do not include time during school. |  |  | X^i^ |  |  | X | X | X |
+
+Note.
+
+^a^Earlier version read, "Watch TV shows or movies?";
+
+^b^Earlier version read, "Watch videos (such as YouTube)?";
+
+^c^Earlier version read, "Text on a cell phone, tablet, or computer (e.g. GChat, WhatsApp, etc.)?";
+
+^d^Earlier version read, "Video chat (Skype, Facetime, etc.)?";
+
+^e^Earlier version read, "Play single-player video games on a computer, console, phone or other device (Xbox, PlayStation, iPad, AppleTV)?";
+
+^f^Earlier version read, "Play multiplayer video games on a computer, console, phone, or other device (Xbox, PlayStation, iPad, AppleTV) where you can interact with others in the game?";
+
+^g^Earlier version read, "Video chat (Skype, FaceTime, VRchat, etc.)";
+
+^h^Earlier version read, "Spend in TOTAL on a computer, phone, tablet, iPod, or other device or video game? Please do NOT include time spent on school related work, but do include watching TV, shows or videos, texting or chatting, playing games, or visiting social networking sites (Facebook, Twitter, Instagram).";
+
+^i^Earlier version read, "Spend in TOTAL on school-related work on a phone, tablet, computer, or other computerized device? Please do not include time during school."
+
+Includes variables: `nt_y_stq__screen__wkdy__hr_001__01`, `nt_y_stq__screen__wkdy__min_001__01`, 
+`nt_y_stq__screen__wknd__hr_001__01`, `nt_y_stq__screen__wknd__min_001__01` (and `_v01` of those variables).
+
+\*Asked only for weekend days.
+
+**Reference:** @andreassen2012
+
+## Fitbit
+
+### Fitbit -- Pre/Post-Assessment Survey {#nt_y_fitbq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_y_fitbq")`
+`r r_link_table("nt_y_fitbq")`
+
+**Measure description:** A customized questionnaire given to youth before and after the youth had worn the Fitbit. This pre-assessment survey established a self-report for youth of "baseline" of activity, sedentary behaviors, and sleep for participants in relation to their peers. The post-assessment survey form allows for comparisons of change from the pre-assessment survey of self-reported youth sedentary behaviors and sleep f in relation to peers.
+
+**Notes and special considerations:** Note that the parent and youth items for this measure do not match.
+
+### Fitbit -- Pre/Post-Assessment Survey (Pilot) {#nt_y_fitbp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_y_fitbp")`
+`r r_link_table("nt_y_fitbp")`
+
+**Measure description:** A customized questionnaire given to youth before and after the youth had worn the Fitbit during the pilot testing of Fitbit. This pre-assessment survey established a self-report for youth of "baseline" of activity, sedentary behaviors, and sleep for participants in relation to their peers. The post-assessment survey form allows for comparisons of change from the pre-assessment survey of self-reportedyouth sedentary behaviors and sleep in relation to peers.
+
+**Notes and special considerations:** As a pilot study, these data were collected at a subset of ABCD sites.
+
+**Reference:** @starkey2014
+
+# Parent tables
+
+## Effortless Assessment Research System (EARS)
+
+### EARS --- Parent Post-Assessment Survey {#nt_p_earsq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_p_earsq")`
+`r r_link_table("nt_p_earsq")`
+
+**Measure description:** Parent-reported questionnaire of youth weekday and weekend time on devices (e.g., "screen time") for non-school activities and household rules for device and app usage. Youth and parents completed independent questionnaires with parents reporting on their youth (Youth Measure). These instruments were collected following participation in the EARS assessment of device and app usage.
+
+### EARS--- Parent Pre/Post-Assessment Survey (Pilot) {#nt_p_earsp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_p_earsp")`
+`r r_link_table("nt_p_earsp")`
+
+**Measure description:** Pre- and post-questionnaires of weekday and weekend time on devices (e.g., "screen time") for non-school activities and household rules for device and app usage. Youth and parents completed independent questionnaires with parents reporting on their youth. These data were collected during a pilot study of methods and compatibility of different software platforms for Device Usage Statistics.
+
+**Notes and special considerations:** As a pilot study, these data were collected at a subset of ABCD sites.
+
+## Parent Screen Time Questionnaire {#nt_p_stq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_p_stq")`
+`r r_link_table("nt_p_stq")`
+
+**Measure description:** This is a parent self-report of screentime behaviors and behavior modeling. The parent is asked about the amount of time that they themselves spend using various forms of visual media, on weekdays and weekends. Questions about screentime behavior modeling are from Tang et al. (2018).
+
+**Reference:** @tang2018
+
+## Screen Time Questionnaire on Youth {#nt_p_yst}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_p_yst")`
+`r r_link_table("nt_p_yst")`
+
+**Measure description:** This parent-reported measure evaluates the overall amount of time that the youth spends using visual media (e.g. cellphone, iPad, videos), on a typical weekday and weekend day, not including time spent on school-related work.
+
+**Modifications since initial administration:** From 2-year follow-up, parents also answered questions about their experiences with their child's media use. The question "Does your child have their own device" is discontinued in Year 4; use the item "Do you have your own mobile phone?" from the youth self-report Screen Time Questionnaire for years 4 onwards.
+
+**Reference:** @bagot2018
+
+## Fitbit
+
+### Fitbit --- Parent Pre/Post-Assessment Survey {#nt_p_fitbq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_p_fitbq")`
+`r r_link_table("nt_p_fitbq")`
+
+**Measure description:** A customized questionnaire given before and after the youth had worn the Fitbit. This pre-assessment survey established a parent-report for youth of "baseline" of activity, sedentary behaviors, and sleep for participants in relation to their peers. The post-assessment survey form allows for comparisons of change from the pre-assessment survey of parent-reported for youth, sedentary behaviors, and sleep for participants in relation to their peers.
+
+### Fitbit --- Parent Pre/Post-Assessment Survey (Pilot) {#nt_p_fitbp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_p_fitbp")`
+`r r_link_table("nt_p_fitbp")`
+
+**Measure description:** A customized questionnaire given toparents (Parent Measure) before and after the youth had worn the Fitbit during the pilot testing of Fitbit. This pre-assessment survey established a parent-report for youth of "baseline" of activity, sedentary behaviors, and sleep for participants in relation to their peers. The post-assessment survey form allows for comparisons of change from the pre-assessment survey of parent-reported for youth, sedentary behaviors, and sleep for participants in relation to their peers.
+
+**Notes and special considerations:** As a pilot study, these data were collected at a subset of ABCD sites.
+
+# File-based data
+
+## Fitbit raw data
+
+The description of Fitbit Physical Activity (Daily) are [here](#fitbit-physical-activity-daily) and Fitbit Sleep (Daily) data are [here](#fitbit-sleep-daily). To download these raw data, follow the instructions on our ['Access & Download' page](../../usage/access.qmd).
+
+### Details of data in Physical Activity raw data files
+
+#### Daily activity METs (metabolic equivalents) -- used to estimate exercise intensity.
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| `Wear_Time` |  |
+| `METs` | MET value (All MET values are multiplied by 10. Please divide by 10 to get accurate MET values). Value range is 1 to 88. |
+
+#### Daily intensity -- Time spent in one of four intensity categories
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| `Wear_Time` |  |
+| `Intensity` | Intensity value for the given minute (0 = Sedentary, 1 = Light, 2 = Moderate, 3 = Very Active) |
+
+#### Calories -- Calories burned
+
+| Variable Name | Description                               |
+|---------------|-------------------------------------------|
+| `Wear_Time`   |                                           |
+| `Calories`    | Total number of estimated calories burned |
+
+#### Steps -- Number of Steps
+
+| Variable Name | Description     |
+|---------------|-----------------|
+| `Wear_Time`   |                 |
+| `Steps`       | Number of steps |
+
+#### Heart rate
+
+| Variable Name | Description                                      |
+|---------------|--------------------------------------------------|
+| `Wear_Time`   | Date and time of measurement (minute resolution) |
+| `Value`       | Measured heart rate                              |
+
+### Details of data in sleep raw data files
+
+Starting from the 6 Year Follow-up, the ABCD team began receiving data directly utilizing the Fitbit API. This resulted in additional sleep data being acquired for sleep periods of less than 3 hours. These data are not staged into deep, REM, and light sleep categories. These data have been included in the raw data in the current release, but not in the daily (or weekly) level aggregated data.
+
+#### Sleep -- Sleep classification
+
+| Variable Name | Description                                           |
+|---------------|-------------------------------------------------------|
+| `Wear_Time`   | Date and time of measurement (minute resolution)      |
+| `value`       | Sleep state (1 = Asleep, 2 = Restless, 3 = Awake)     |
+| `logId`       | Unique log ID in Fitbit's system for the sleep record |
+
+#### Sleep Stage -- Sleep stages and wakefulness
+
+| Variable Name | Description |
+|------------------------------------|------------------------------------|
+| `LogId` | Unique log ID in Fitbit's system for the sleep record |
+| `pGUID` | Participant ID |
+| `Wear_Time` | Date and time of measurement (30-second resolution) |
+| `Level` | Sleep stage for the time interval (wake, light, deep, rem) |
+| `ShortWakes` | Reported as "wake" if part of a short wake is detected. Short wakes are awakenings that last less than 180 seconds. Commonly used for visual distinction, but "physiologically equivalent" to longer wakes. |
+| `SleepStage` | Combined `Level` and `ShortWakes` for true sleep stage time series. |
+
+## Screentime raw data
+
+### EARS -- Device usage statistics raw data {#ears-raw-data}
+
+#### Description of data
+
+The description of summary tabulated variables from EARS --- Device Usage Statistics are [here](nt.qmd#EARS%20---%20Device%20Usage%20Statistics). In addition, minimally cleaned "raw" EARS data are made available.
+
+Summary tabulated variables denote data that have been cleaned and underwent arithmetic calculations (e.g., summation). Raw EARS data have not undergone such procedures. Data users are advised to use the raw data files with caution and only with full understanding of the underlying data collected. Summary variables are recommended for most users.
+
+For users interested in examining the raw data or when summary tabulated variables do not serve their research needs, the following files are provided. Each measure (e.g., app usage) has its own file containing every participant's instance of smartphone use measured, across ABCD time points. Files are provided in .csv and parquet format, and include:
+
+- `ears_appusage_feat`: Gain insights into which applications are used and for how long per calendar date.
+- `ears_appusage_logs`: Dive deeper into application usage with detailed logs on app use and duration within short collection windows.
+- `ears_keyinput_feat`: Analyze keyboard usage patterns with data on duration per app and calendar date.
+- `ears_keyinput_sess`: Identify and understand sessions of continuous keyboard use within specific applications.
+- `ears_screenon_feat`: Access screen-on time metrics to gain a broader understanding of device usage patterns.
+
+:::{.callout-note title="Using .parquet files without reading them into memory"}
+The EARS raw data files are comparatively large and need sufficient resources to be loaded into memory in entirety. An efficient way to work with these files without loading them into memory is to use the R package [`duckplyr`](https://duckplyr.tidyverse.org/) which allows to query, filter, and summarize data directly from the parquet files without loading them into memory.
+:::
+
+In addition, there were a handful of participants with a unique edge case causing all their key input timestamps session timestamp variables to be midnight. It did not influence downstream feature values, but was still remediated before creating summary variables. As a result, participants in Years 4-6 have reprocessed key input timestamps data in the ears_feature_data tables (with corresponding INSERT and DELETE actions in the table history).
+
+### EARS --- Device Usage Applications Data Dictionary
+
+#### Description of data dictionary
+
+Included in the 6.0 data release are data dictionaries detailing individual applications used to calculate variables in the Summary Tabulated Device Usage Statistics. Six dictionaries are provided; brief descriptions of each are included below. Files include:
+
+- `tbl_dict_app_android`: Provides individual Android OS applications and the respective categories (e.g., entertainment apps) they were grouped under in the summary tabulated scores (see EARS Device Usage Statistics).
+- `tbl_dict_app_ios`: Provides individual iOS applications and the respective categories (e.g., entertainment apps) they were grouped under in the summary tabulated scores (see EARS Device Usage Statistics).
+- `tbl_dict_app_exclusion` & `tbl_dict_app_system`: Provides a list of applications excluded from summary score calculations (e.g., systems apps or background apps that run continuously).
+- `tbl_dict_categories_android`: Provides a summary list of the application categories for Android OS users.
+- `tbl_dict_categories_ios`: Provides a summary list of the application categories for iOS users.
+
+::: {.callout-note collapse=true title="Data dictionaries for EARS summary score computation"}
+**tbl_dict_app_android** {{< downloadthis ../../assets/tbl/documentation/release_notes/tbl_dict_app_android.csv dname="tbl_dict_app_android" label="tbl_dict_app_android.csv" type="light" >}}
+
+```{r tbl_dict_app_android}
+library(reactable)
+tbl_dict_app_android <- read.csv("../../assets/tbl/documentation/release_notes/tbl_dict_app_android.csv")
+reactable(tbl_dict_app_android)
+```
+
+**tbl_dict_app_ios** {{< downloadthis ../../assets/tbl/documentation/release_notes/tbl_dict_app_ios.csv dname="tbl_dict_app_ios" label="tbl_dict_app_ios.csv" type="light" >}}
+
+```{r tbl_dict_app_ios}
+library(reactable)
+tbl_dict_app_ios <- read.csv("../../assets/tbl/documentation/release_notes/tbl_dict_app_ios.csv")
+reactable(tbl_dict_app_ios)
+```
+
+**tbl_dict_app_exclusions** {{< downloadthis ../../assets/tbl/documentation/release_notes/tbl_dict_app_exclusions.csv dname="tbl_dict_app_exclusions" label="tbl_dict_app_exclusions.csv" type="light" >}}
+
+```{r tbl_dict_app_exclusions}
+library(reactable)
+tbl_dict_app_exclusions <- read.csv("../../assets/tbl/documentation/release_notes/tbl_dict_app_exclusions.csv")
+reactable(tbl_dict_app_exclusions)
+```
+
+**tbl_dict_app_system** {{< downloadthis ../../assets/tbl/documentation/release_notes/tbl_dict_app_system.csv dname="tbl_dict_app_system" label="tbl_dict_app_system.csv" type="light" >}}
+
+```{r tbl_dict_app_system}
+library(reactable)
+tbl_dict_app_system <- read.csv("../../assets/tbl/documentation/release_notes/tbl_dict_app_system.csv")
+reactable(tbl_dict_app_system)
+```
+
+**tbl_dict_categories_android** {{< downloadthis ../../assets/tbl/documentation/release_notes/tbl_dict_categories_android.csv dname="tbl_dict_categories_android" label="tbl_dict_categories_android.csv" type="light" >}}
+
+```{r tbl_dict_categories_android}
+library(reactable)
+tbl_dict_categories_android <- read.csv("../../assets/tbl/documentation/release_notes/tbl_dict_categories_android.csv")
+reactable(tbl_dict_categories_android)
+```
+
+**tbl_dict_categories_ios** {{< downloadthis ../../assets/tbl/documentation/release_notes/tbl_dict_categories_ios.csv dname="tbl_dict_categories_ios" label="tbl_dict_categories_ios.csv" type="light" >}}
+
+```{r tbl_dict_categories_ios}
+library(reactable)
+tbl_dict_categories_ios <- read.csv("../../assets/tbl/documentation/release_notes/tbl_dict_categories_ios.csv")
+reactable(tbl_dict_categories_ios)
+```
+:::
+
+### Pilot Study -- EARS raw data {#pilot-study-ears-screentime-raw-data}
+
+#### Description of data
+
+During planning for the rollout of a real-time screen time use app, ABCD performed pilot testingat 4 ABCD study sites using EARS from [Ksana Health](https://ksanahealth.com/ears/). The full EARS pilot protocol lasted for 4 weeks.
+
+The following describes the data available from the pilot study of the EARS app. Data are available in both summary tabulated form and in raw (i.e., logs of every instance of app use by participant) form. In tabulated form, the data are similar to the future iterations of the full ABCD passive sensing protocol. Namely, the Google Play Categories are provided with summary times over the length of the passive sensing protocol (in the pilot, 4 full weeks). In addition, Ksana Health created composite app categories based on a list created by the Novel Tech Workgroup. These composite categories are described as "ABCD composite categories" (e.g., Gaming, Communications). They do not take into consideration the Google Play Store category, but were labeled based on Ksana's judgment on how the app would best be categorized. Given the very large number of participants and apps used, this ABCD composite category process was not used beyond the initial pilot study, though ABCD Google Playstore Categories are provided in the full ABCD EARS protocol.
+
+Detailed pilot study information is published: @wade2021

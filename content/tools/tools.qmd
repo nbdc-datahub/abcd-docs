@@ -1,0 +1,19 @@
+---
+title: "Data tools"
+order: 1
+lightbox: true
+---
+
+The [NBDC Data Hub](https://nbdc-datahub.org) offers users two applications to explore, query, and download data for the [ABCD](https://abcdstudy.org) and [HBCD](https://hbcdstudy.org) studies.
+
+| | | |
+|:-|:-|:-|
+| | [![](../assets/img/tools/deap_logo){width="200"}](https://abcd.deapscience.com) | [![](../assets/img/tools/lasso_logo){width="200"}](https://nbdc-datashare.lassoinformatics.com) |
+| Application | [nbdc.deapscience.com]() | [nbdc-datashare.lassoinformatics.com](https://nbdc-datashare.lassoinformatics.com/) |
+| Learn more | [nbdc-datahub.org/data-tools-deap](https://www.nbdc-datahub.org/data-tools-deap) | [nbdc-datahub.org/data-tools-lasso](https://www.nbdc-datahub.org/data-tools-lasoo) |
+| Application documentation | [docs.deapscience.com](https://docs.deapscience.com/) | [nbdc.lassoinformatics.com](https://nbdc.lassoinformatics.com/)|
+
+
+::: {.callout-tip title="Data dictionary vs. data acccess"}
+Users can explore the ABCD Study data dictionary via [DEAP's data dictionary & ontology browser](https://abcd.deapscience.com/#/my-datasets/create-dataset) or [Lasso's query tool](https://nbdc-datashare.lassoinformatics.com) before obtaining a data use certification (DUC). To create custom datasets and download data, users need an active DUC (for more details, see [here](../usage/access.qmd)).
+:::

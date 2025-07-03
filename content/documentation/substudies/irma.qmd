@@ -1,0 +1,63 @@
+---
+title: "IRMA"
+---
+
+# Domain overview
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+```{r}
+render_table_info("domain_abbr == 'irma'")
+```
+
+The ABCD Hurricane Irma Substudy was supported by a grant from the National Science Foundation.
+
+> [National Science Foundation RAPID 1805645](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1805645&HistoricalAwards=false): Leveraging the ABCD study to examine the effects of Hurricane Irma exposure: The Disaster and Youth, Neural, and Affective Maturation in Context (DYNAMIC) Study. 
+
+> PIs: Anthony Dick, P and Jon Comer (FIU), with Co-Is Raul Gonzalez, Matthew Sutherland, Angela Laird (FIU site); Susan Tapert (UCSD site); Lindsay Squeglia, Kevin Gray (MUSC site) Sara Jo Nixon, Linda Cottler (UF site)
+
+This NSF award and ABCD substudy supports research on children and families affected by Hurricane Irma, which hit the Southeastern United States in September 2017. This project assesses how natural disasters affect neurobiology, cognition, and mood. Natural disasters are disruptive and affect millions of people worldwide each year, including children. Disaster experiences are associated with youth feeling vulnerable and experiencing problems at school, at home, and with peers, as well as problems with mental health and substance use. This research also examines how pre-disaster brain functioning and thinking may protect against some of the effects of disaster-related stress on youth.
+
+In the year before Hurricane Irma’s landfall, a large sample of children in Florida and South Carolina–who were later affected by the hurricane–began participating in a large, multisite longitudinal investigation of brain and cognitive development, the Adolescent Brain and Cognitive Development (ABCD) study. Also studied was a large sample of control children in California, who were not affected by the hurricane. The sub-study takes advantage of data collected prior to the hurricane in the ABCD study, which used a battery of neuropsychological, interview, genetic, and structural and functional neuroimaging tests. Because disasters are rarely predictable, most prior studies of the effects of disaster exposure do not have access to important information about research participants’ pre-disaster statuses or levels of functioning; the prospective design of the current research avoids this problem. By studying children’s Irma-related experiences, traumatic exposure, and evacuation-related stress, this study affords a unique opportunity to longitudinally examine the effects of disaster exposure and disaster-related stress on youth development.
+
+---
+
+# Youth table {#irma_y_qtn}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("irma_y_qtn")`
+
+**Hurricane exposure:** Youth participants completed the Hurricane Related Traumatic Experiences–II (HURTE-II), an updated iteration of the HURTE-R (@vernberg1996; @lagreca2010), which has been used extensively in hurricane research to assess hurricane exposure and postdisaster stressors. The HURTE-II assesses stressors before (e.g., evacuation experiences), during (e.g., perceived life threat, actual life threat, immediate loss/disruption), and ongoing stress, loss, and disruption after the storm. An Irma-related media exposure questionnaire was also developed. We also included items assessing parental regulation of children’s Irma-related media exposure, as well as patterns of household discussions surrounding the hurricane. The latter items were drawn from previous research on the differential effects of varied household discussions in the aftermath of disasters (@carpenter2017).
+
+**Perceived stress:**  Youth completed the Perceived Stress Scale (@cohen1983), the most widely used assessment of subjectively experienced stress. To assess child posttraumatic stress symptoms, children completed the well-validated UCLA Reaction Index for DSM-5; the UCLA RI is a child self-report measure (@bhi2025).
+
+**References**
+
+- @vernberg1996
+- @lagreca2010
+- @carpenter2017
+- @cohen1983
+- @bhi2025
+
+---
+
+# Parent table {#irma_p_qtn}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("irma_p_qtn")`
+
+**Hurricane exposure:** Parents completed the Hurricane Related Traumatic Experiences–II (HURTE-II), an updated iteration of the HURTE-R (@vernberg1996; @lagreca2010), which has been used extensively in hurricane research to assess hurricane exposure and postdisaster stressors. The HURTE-II assesses stressors before (e.g., evacuation experiences), during (e.g., perceived life threat, actual life threat, immediate loss/disruption), and ongoing stress, loss, and disruption after the storm. An Irma-related media exposure questionnaire was also developed. We also included items assessing parental regulation of children’s Irma-related media exposure, as well as patterns of household discussions surrounding the hurricane. The latter items were drawn from previous research on the differential effects of varied household discussions in the aftermath of disasters (@carpenter2017).
+
+**Perceived stress:**  Parents completed the Perceived Stress Scale (@cohen1983), the most widely used assessment of subjectively experienced stress. 
+
+**References**
+
+- @vernberg1996
+- @lagreca2010
+- @carpenter2017
+- @cohen1983
+
+---

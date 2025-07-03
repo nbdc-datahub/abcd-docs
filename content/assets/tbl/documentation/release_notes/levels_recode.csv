@@ -1,0 +1,2581 @@
+table_name,name,name_nda,value_old,value_new,label
+ab_p_demo,ab_p_demo__empl__prtnr_001__v01,demo_prtnr_empl_v2_l,12,777,Decline to answer
+ab_p_demo,ab_p_demo__empl__prtnr_001__v01,demo_prtnr_empl_v2_l,13,999,Don't know
+ab_p_demo,ab_p_demo__ethn_001,demo_ethn_v2,2,0,No
+ab_p_demo,ab_p_demo__ethn__slf_001,demo_prnt_ethn_v2,2,0,No
+ab_p_demo,ab_p_demo__ethn__slf_001__v01,demo_prnt_ethn_v2_l,2,0,No
+ab_p_demo,ab_p_demo__prtnr_001,demo_prnt_prtnr_v2 | demo_prnt_prtnr_v2_l,2,0,No
+ab_p_demo,ab_p_demo__prtnr_001,demo_prnt_prtnr_v2 | demo_prnt_prtnr_v2_l,2,0,No
+ab_p_demo,ab_p_demo__prtnr_001__01,demo_prnt_prtnr_bio | demo_prnt_prtnr_bio_l,2,0,No
+ab_p_demo,ab_p_demo__prtnr_001__01,demo_prnt_prtnr_bio | demo_prnt_prtnr_bio_l,2,0,No
+ab_p_demo,ab_p_demo__roster_001__dk,demo_roster_v2_refuse | demo_roster_v2_refuse_l,-1,444,"Not applicable (for example, lives in a shelter or homeless)"
+ab_p_ocp,ab_p_ocp__prtn_000,ocp_prtnr_p,2,0,No
+ab_p_screen,ab_p_screen__claustro_001,scrn_claustrophob,0,3,Unsure
+ab_p_screen,ab_p_screen__claustro_001,scrn_claustrophob,1,0,No
+ab_p_screen,ab_p_screen__claustro_001,scrn_claustrophob,2,1,Yes - go to end
+ab_p_screen,ab_p_screen__concern_001__02,scrn_concerns_excl,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__concern_001__02,scrn_concerns_excl,1,0,No
+ab_p_screen,ab_p_screen__med_002,scrn_cpalsy,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__med_002,scrn_cpalsy,1,0,No (Continue)
+ab_p_screen,ab_p_screen__med_003,scrn_tumor,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__med_003,scrn_tumor,1,0,No (Continue)
+ab_p_screen,ab_p_screen__med_004,scrn_stroke,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__med_004,scrn_stroke,1,0,No (Continue)
+ab_p_screen,ab_p_screen__med_005,scrn_aneurysm,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__med_005,scrn_aneurysm,1,0,No (Continue)
+ab_p_screen,ab_p_screen__med_006,scrn_hemorrhage,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__med_006,scrn_hemorrhage,1,0,No (Continue)
+ab_p_screen,ab_p_screen__med_007,scrn_hemotoma,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__med_007,scrn_hemotoma,1,0,No (Continue)
+ab_p_screen,ab_p_screen__med_009__02,scrn_con_excl,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__med_009__02,scrn_con_excl,1,0,No
+ab_p_screen,ab_p_screen__med_010,scrn_gestage,2,999,Don't know
+ab_p_screen,ab_p_screen__med_010__01,scrn_birthwt,2,999,Don't know
+ab_p_screen,ab_p_screen__med_010__02,scrn_birthcomp,2,999,Don't know
+ab_p_screen,ab_p_screen__med_010__04,scrn_birthcomp_excl,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__med_010__04,scrn_birthcomp_excl,1,0,No
+ab_p_screen,ab_p_screen__metal_004__04,scrn_met_excl,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__metal_004__04,scrn_met_excl,1,0,No
+ab_p_screen,ab_p_screen__scan_001__01,scrn_abn_scan,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__scan_001__01,scrn_abn_scan,1,0,No
+ab_p_screen,ab_p_screen__tbi__scan_001__01,scrn_tbi_scan_excl,0,1,Yes - go to end
+ab_p_screen,ab_p_screen__tbi__scan_001__01,scrn_tbi_scan_excl,1,0,No
+ab_p_screen,ab_p_screen__weight_001__01,scrn_weight_mri,0,1,Yes
+ab_p_screen,ab_p_screen__weight_001__01,scrn_weight_mri,1,0,No - go to end
+ab_p_screen,ab_p_screen__zyg_005,zygos_q6,3,0,No
+covid_p_qtn,covid_p_qtn_005,fam_expose_cv,1,0,No
+covid_p_qtn,covid_p_qtn_005,fam_expose_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn_005__01,fam_self_quarantine_cv,1,0,No
+covid_p_qtn,covid_p_qtn_005__01,fam_self_quarantine_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__asthma_001,child_diag_asthma_cv,1,0,No
+covid_p_qtn,covid_p_qtn__asthma_001,child_diag_asthma_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__asthma_003,child_asthma_medi_cv,1,0,No
+covid_p_qtn,covid_p_qtn__asthma_003,child_asthma_medi_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__asthma_003__01,asthma_medi_corti_cv,5,444,Not applicable
+covid_p_qtn,covid_p_qtn__asthma_003__01__v1,masthma_medi_corti_cv,5,444,Not applicable
+covid_p_qtn,covid_p_qtn__asthma_003__02,asthma_medi_inhaler_cv,5,444,Not applicable
+covid_p_qtn,covid_p_qtn__asthma_003__02__v1,masthma_medi_inhaler_cv,5,444,Not applicable
+covid_p_qtn,covid_p_qtn__asthma_003__03,asthma_medi_steriods_cv,5,444,Not applicable
+covid_p_qtn,covid_p_qtn__asthma_003__03__v1,masthma_medi_steriods_cv,5,444,Not applicable
+covid_p_qtn,covid_p_qtn__asthma_003__04,asthma_medi_injection_cv,5,444,Not applicable
+covid_p_qtn,covid_p_qtn__asthma_003__04__v1,masthma_medi_injection_cv,5,444,Not applicable
+covid_p_qtn,covid_p_qtn__asthma_003__05,asthma_medi_zpak_cv,5,444,Not applicable
+covid_p_qtn,covid_p_qtn__asthma_003__05__v1,masthma_medi_pak_cv,5,444,Not applicable
+covid_p_qtn,covid_p_qtn__asthma_003__v01,mchild_asthma_medi_cv,1,0,No
+covid_p_qtn,covid_p_qtn__asthma_003__v01,mchild_asthma_medi_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__care_001,child_care_cv,1,0,No
+covid_p_qtn,covid_p_qtn__care_001,child_care_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__covid_001,child_covid_cv,1,0,No
+covid_p_qtn,covid_p_qtn__covid_001,child_covid_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__exp_001,fam_exp1_cv,1,0,No
+covid_p_qtn,covid_p_qtn__exp_001,fam_exp1_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__exp_002,fam_exp2_cv,1,0,No
+covid_p_qtn,covid_p_qtn__exp_002,fam_exp2_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__exp_003,fam_exp3_cv,1,0,No
+covid_p_qtn,covid_p_qtn__exp_003,fam_exp3_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__exp_004,fam_exp4_cv,1,0,No
+covid_p_qtn,covid_p_qtn__exp_004,fam_exp4_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__exp_005,fam_exp5_cv,1,0,No
+covid_p_qtn,covid_p_qtn__exp_005,fam_exp5_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__exp_006,fam_exp6_cv,1,0,No
+covid_p_qtn,covid_p_qtn__exp_006,fam_exp6_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__famdiag_003,fam_covid_yn_cv,1,0,No
+covid_p_qtn,covid_p_qtn__famdiag_003,fam_covid_yn_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__famdiag_005,bio_mom_hos_cv,1,0,No
+covid_p_qtn,covid_p_qtn__famdiag_005,bio_mom_hos_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__famdiag_006,bio_dad_hos_cv,1,0,No
+covid_p_qtn,covid_p_qtn__famdiag_006,bio_dad_hos_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__interfere_001,caregiver_help_cv,1,0,No
+covid_p_qtn,covid_p_qtn__interfere_001,caregiver_help_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__interfere_001__l,mcaregiver_help_cv,1,0,No
+covid_p_qtn,covid_p_qtn__interfere_001__l,mcaregiver_help_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__interfere_002,child_separate_cv,1,0,No
+covid_p_qtn,covid_p_qtn__interfere_002,child_separate_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__interfere_002__l,mchild_separate_cv,1,0,No
+covid_p_qtn,covid_p_qtn__interfere_002__l,mchild_separate_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__job_001,fam_wage_loss_cv,1,0,No
+covid_p_qtn,covid_p_qtn__job_001,fam_wage_loss_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__respondent_003,custody_cv,1,0,No
+covid_p_qtn,covid_p_qtn__respondent_003,custody_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__respondent_004,caregiver_cv,1,0,No
+covid_p_qtn,covid_p_qtn__respondent_004,caregiver_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__school_001,school_at_home_cv,3,444,Not Applicable (Already homeschooled / Out for summer)
+covid_p_qtn,covid_p_qtn__school_002,school_close_cv,1,0,No
+covid_p_qtn,covid_p_qtn__school_002,school_close_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__school_002,school_close_cv,3,444,Not Applicable (Already homeschooled/Out for summer)
+covid_p_qtn,covid_p_qtn__school_002__01,went_to_school_cv,1,0,No
+covid_p_qtn,covid_p_qtn__school_002__01,went_to_school_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__school_002__01__dk,school_close_date_dk_cv,1,444,Not applicable
+covid_p_qtn,covid_p_qtn__school_006,material_access_cv,1,0,No
+covid_p_qtn,covid_p_qtn__school_006,material_access_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__school_006,material_access_cv,4,444,Not applicable
+covid_p_qtn,covid_p_qtn__school_007,internet_access_cv,1,0,No
+covid_p_qtn,covid_p_qtn__school_007,internet_access_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__school_008,tool_access_cv,1,0,No
+covid_p_qtn,covid_p_qtn__school_008,tool_access_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__school_009,school_difficulty,6,444,Not applicable
+covid_p_qtn,covid_p_qtn__school_010,graded_cv,1,0,No
+covid_p_qtn,covid_p_qtn__school_010,graded_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__school_010,graded_cv,4,444,Not applicable
+covid_p_qtn,covid_p_qtn__school_011,extra_material_cv,1,0,No
+covid_p_qtn,covid_p_qtn__school_011,extra_material_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__school_012,school_nutrition_cv,1,0,No
+covid_p_qtn,covid_p_qtn__school_012,school_nutrition_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__school_013,iep_cv,1,0,No
+covid_p_qtn,covid_p_qtn__school_013,iep_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__school_013__01,iep_provide_cv,1,0,No
+covid_p_qtn,covid_p_qtn__school_013__01,iep_provide_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__vax_001,p_vaccination_cv,1,0,No
+covid_p_qtn,covid_p_qtn__vax_001,p_vaccination_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__vax_002,p_vaccine_cv,1,0,No
+covid_p_qtn,covid_p_qtn__vax__child_001,p_vac_child_if_cv,1,0,No
+covid_p_qtn,covid_p_qtn__vax__child_001,p_vac_child_if_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__vax__child_002,p_vac_child_had_cv,1,0,No
+covid_p_qtn,covid_p_qtn__vax__child_002,p_vac_child_had_cv,2,1,Yes
+covid_p_qtn,covid_p_qtn__vax__child_002__03,p_vac_child_2_cv,1,0,No
+covid_p_qtn,covid_p_qtn__vax__child_002__03,p_vac_child_2_cv,2,1,Yes
+covid_y_qtn,covid_y_qtn__activs_001,physical_activities_hr_cv,8,999,Don't know
+covid_y_qtn,covid_y_qtn__comm__bef_001,demo_online_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__comm__bef_002,demo_friends_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__comm__bef_003,demo_parents_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__comm__bef_004,demo_siblings_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__comm__bef_005,demo_tone_friends_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__comm__bef_006,demo_tone_parents_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__comm__bef_007,demo_tone_siblings_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__comm__pastmo_001,mdemo_online_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__comm__pastmo_002,mdemo_friends_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__comm__pastmo_003,mdemo_parents_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__comm__pastmo_004,mdemo_siblings_cv,6,444,Not applicable
+covid_y_qtn,covid_y_qtn__famrel_006,ple_close_fam_cv,2,0,No
+covid_y_qtn,covid_y_qtn__famrel_009,ple_close_fam_fu3_y_cv,2,0,No
+covid_y_qtn,covid_y_qtn__mctq_008,mctq_schedule_time_cv,15,444,Not applicable
+fc_p_fes,fc_p_fes__expr_003,fes_22_p,0,1,False
+fc_p_fes,fc_p_fes__expr_003,fes_22_p,1,0,True
+fc_p_nce,fc_p_nce__cc_001,comc_phenx_close_knit_p,999,99,Don't Know
+fc_p_nce,fc_p_nce__cc_002,comc_phenx_help_p,999,99,Don't Know
+fc_p_nce,fc_p_nce__cc_003,comc_phenx_get_along_p,999,99,Don't Know
+fc_p_nce,fc_p_nce__cc_004,comc_phenx_share_values_p,999,99,Don't Know
+fc_p_nce,fc_p_nce__cc_005,comc_phenx_trusted_p,999,99,Don't Know
+fc_p_nce,fc_p_nce__isc_001,comc_phenx_skip_p,999,99,Don't Know
+fc_p_nce,fc_p_nce__isc_002,comc_phenx_graffiti_p,999,99,Don't Know
+fc_p_nce,fc_p_nce__isc_003,comc_phenx_disrespect_p,999,99,Don't Know
+fc_p_nce,fc_p_nce__isc_004,comc_phenx_fight_p,999,99,Don't Know
+fc_p_nce,fc_p_nce__isc_005,comc_phenx_budget_p,999,99,Don't Know
+fc_p_sag,fc_p_sag_001,sag_miss_school_excuse_p,-1,444,Not Applicable
+fc_p_sag,fc_p_sag_002,sag_miss_school_unexcuse_p,-1,444,Not Applicable
+fc_p_sag,fc_p_sag_003,sag_excused_absence_p,-1,444,Not Applicable
+fc_p_sag,fc_p_sag_004,sag_unexcuse_absence_p,-1,444,Not Applicable
+fc_p_sag,fc_p_sag_005,sag_grade_type,-1,444,Not Applicable
+fc_y_eut,fc_y_eut_001,dim_yesno_q1,777,999,Don't know
+fc_y_eut,fc_y_eut_001,dim_yesno_q1,999,777,Decline to answer
+fc_y_eut,fc_y_eut_002,dim_yesno_q2,777,999,Don't know
+fc_y_eut,fc_y_eut_002,dim_yesno_q2,999,777,Decline to answer
+fc_y_eut,fc_y_eut_004,dim_yesno_q4,777,999,Don't know
+fc_y_eut,fc_y_eut_004,dim_yesno_q4,999,777,Decline to answer
+fc_y_eut,fc_y_eut__ethn_001a,dim_matrix_q1,777,999,Don't know
+fc_y_eut,fc_y_eut__ethn_001a,dim_matrix_q1,999,777,Decline to answer
+fc_y_eut,fc_y_eut__ethn_001b,dim_matrix_q2,777,999,Don't know
+fc_y_eut,fc_y_eut__ethn_001b,dim_matrix_q2,999,777,Decline to answer
+fc_y_eut,fc_y_eut__ethn_001c,dim_matrix_q3,777,999,Don't know
+fc_y_eut,fc_y_eut__ethn_001c,dim_matrix_q3,999,777,Decline to answer
+fc_y_eut,fc_y_eut__ethn_002,dim_matrix_q4,777,999,Don't know
+fc_y_eut,fc_y_eut__ethn_002,dim_matrix_q4,999,777,Decline to answer
+fc_y_eut,fc_y_eut__ethn_003a,dim_matrix_q5,777,999,Don't know
+fc_y_eut,fc_y_eut__ethn_003a,dim_matrix_q5,999,777,Decline to answer
+fc_y_eut,fc_y_eut__ethn_003b,dim_matrix_q6,777,999,Don't know
+fc_y_eut,fc_y_eut__ethn_003b,dim_matrix_q6,999,777,Decline to answer
+fc_y_eut,fc_y_eut__ethn_003c,dim_matrix_q7,777,999,Don't know
+fc_y_eut,fc_y_eut__ethn_003c,dim_matrix_q7,999,777,Decline to answer
+fc_y_fes,fc_y_fes__cohes_002,fes_youth_q11,0,1,False
+fc_y_fes,fc_y_fes__cohes_002,fes_youth_q11,1,0,True
+fc_y_fes,fc_y_fes__cohes_005,fes_youth_q14,0,1,False
+fc_y_fes,fc_y_fes__cohes_005,fes_youth_q14,1,0,True
+fc_y_fes,fc_y_fes__cohes_007,fes_youth_q16,0,1,False
+fc_y_fes,fc_y_fes__cohes_007,fes_youth_q16,1,0,True
+fc_y_pnh,fc_y_pnh_001,pnh_substance,3,1,Yes
+fc_y_pnh,fc_y_pnh_002,pnh_help,2,1,Yes
+fc_y_pnh,fc_y_pnh_002,pnh_help,3,777,Decline to answer
+fc_y_pnh,fc_y_pnh_003,pnh_encourage,2,1,Yes
+fc_y_sag,fc_y_sag_002,sag_days_skip_school,-1,444,Not Applicable
+fc_y_sag,fc_y_sag_005,sag_grades_last_yr,-1,444,Not Applicable
+gn_y_genrel,gn_y_genrel_zyg__01,genetic_zygosity_status_1,-1,444,"Not available (twins/sibs, genetic_pi_hat not calculated)"
+gn_y_genrel,gn_y_genrel_zyg__02,genetic_zygosity_status_2,-1,444,"Not available (twins/sibs, genetic_pi_hat not calculated)"
+gn_y_genrel,gn_y_genrel_zyg__03,genetic_zygosity_status_3,-1,444,"Not available (twins/sibs, genetic_pi_hat not calculated)"
+gn_y_genrel,gn_y_genrel_zyg__04,genetic_zygosity_status_4,-1,444,"Not available (twins/sibs, genetic_pi_hat not calculated)"
+mh_p_abcl,mh_p_abcl_001,abcl_about_p,0,444,Not Applicable
+mh_p_asr,mh_p_asr__drg_001__dk,asr_q126_p_dk,1,999,Don't know
+mh_p_asr,mh_p_asr__drunk_001__dk,asr_q125_p_dk,1,999,Don't know
+mh_p_asr,mh_p_asr__nic_001__dk,asr_q124_p_dk,1,999,Don't know
+mh_p_famhx,mh_p_famhx_001,famhx_1 |  | ,2,0,No
+mh_p_famhx,mh_p_famhx__alc_001,famhx_4_p,7,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep_001,fam_history_6_yes_no,7,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__fath_001, | fam_history_q6a_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__full__old_001, | q6l_full_sib_old1_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__full__old_002, | q6l_full_sib_old2_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__full__old_003, | q6l_full_sib_old3_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__full__old_004, | q6l_full_sib_old4_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__full__old_005, | q6l_full_sib_old5_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__full__young_001, | q6k_full_sib_young1_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__full__young_002, | q6k_full_sib_young2_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__full__young_003, | q6k_full_sib_young3_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__full__young_004, | q6k_full_sib_young4_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__full__young_005, | q6k_full_sib_young5_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__half__old_001, | q6n_half_sib_old1_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__half__old_002, | q6n_half_sib_old2_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__half__old_003, | q6n_half_sib_old3_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__half__old_004, | q6n_half_sib_old4_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__half__old_005, | q6n_half_sib_old5_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__half__young_001, | q6m_half_sib_young1_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__half__young_002, | q6m_half_sib_young2_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__half__young_003, | q6m_half_sib_young3_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__half__young_004, | q6m_half_sib_young4_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__half__young_005, | q6m_half_sib_young5_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__moth_001, | fam_history_q6d_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__twin_001, | q6m_full_sib_same1_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__dep__twin_002, | q6m_full_sib_same2_depression,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc_001,fam_history_11_yes_no,7,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__fath_001, | fam_history_q11a_professional,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__full__old_001, | q11l_full_sib_old1_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__full__old_002, | q11l_full_sib_old2_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__full__old_003, | q11l_full_sib_old3_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__full__old_004, | q11l_full_sib_old4_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__full__old_005, | q11l_full_sib_old5_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__full__young_001, | q11k_full_sib_young1_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__full__young_002, | q11k_full_sib_young2_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__full__young_003, | q11k_full_sib_young3_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__full__young_004, | q11k_full_sib_young4_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__full__young_005, | q11k_full_sib_young5_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__half__old_001, | q11n_half_sib_old1_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__half__old_002, | q11n_half_sib_old2_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__half__old_003, | q11n_half_sib_old3_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__half__old_004, | q11n_half_sib_old4_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__half__old_005, | q11n_half_sib_old5_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__half__young_001, | q11m_half_sib_young1_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__half__young_002, | q11m_half_sib_young2_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__half__young_003, | q11m_half_sib_young3_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__half__young_004, | q11m_half_sib_young4_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__half__young_005, | q11m_half_sib_young5_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__moth_001, | fam_history_q11d_professional,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__twin_001, | q11m_full_sib_same1_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__doc__twin_002, | q11m_full_sib_same2_prof,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__drg_001,fam_history_5_yes_no,7,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc_001,fam_history_8_yes_no,7,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__fath_001, | fam_history_q8a_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__full__old_001, | q8l_full_sib_old1_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__full__old_002, | q8l_full_sib_old2_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__full__old_003, | q8l_full_sib_old3_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__full__old_004, | q8l_full_sib_old4_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__full__old_005, | q8l_full_sib_old5_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__full__young_001, | q8k_full_sib_young1_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__full__young_002, | q8k_full_sib_young2_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__full__young_003, | q8k_full_sib_young3_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__full__young_004, | q8k_full_sib_young4_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__full__young_005, | q8k_full_sib_young5_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__half__old_001, | q8n_half_sib_old1_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__half__old_002, | q8n_half_sib_old2_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__half__old_003, | q8n_half_sib_old3_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__half__old_004, | q8n_half_sib_old4_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__half__old_005, | q8n_half_sib_old5_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__half__young_001, | q8m_half_sib_young1_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__half__young_002, | q8m_half_sib_young2_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__half__young_003, | q8m_half_sib_young3_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__half__young_004, | q8m_half_sib_young4_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__half__young_005, | q8m_half_sib_young5_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__moth_001, | fam_history_q8d_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__twin_001, | q8m_full_sib_same1_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__halluc__twin_002, | q8m_full_sib_same2_visions,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp_001,fam_history_12_yes_no,7,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__fath_001, | fam_history_q12a_hospitalized,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__full__old_001, | q12l_full_sib_old1_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__full__old_002, | q12l_full_sib_old2_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__full__old_003, | q12l_full_sib_old3_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__full__old_004, | q12l_full_sib_old4_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__full__old_005, | q12l_full_sib_old5_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__full__young_001, | q12k_full_sib_young1_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__full__young_002, | q12k_full_sib_young2_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__full__young_003, | q12k_full_sib_young3_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__full__young_004, | q12k_full_sib_young4_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__full__young_005, | q12k_full_sib_young5_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__half__old_001, | q12n_half_sib_old1_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__half__old_002, | q12n_half_sib_old2_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__half__old_003, | q12n_half_sib_old3_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__half__old_004, | q12n_half_sib_old4_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__half__old_005, | q12n_half_sib_old5_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__half__young_001, | q12m_half_sib_young1_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__half__young_002, | q12m_half_sib_young2_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__half__young_003, | q12m_half_sib_young3_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__half__young_004, | q12m_half_sib_young4_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__half__young_005, | q12m_half_sib_young5_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__moth_001, | fam_history_q12d_hospitalized,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__twin_001, | q12m_full_sib_same1_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__hosp__twin_002, | q12m_full_sib_same2_hosp,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania_001,fam_history_7_yes_no,7,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__fath_001, | fam_history_q7a_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__full__old_001, | q7l_full_sib_old1_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__full__old_002, | q7l_full_sib_old2_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__full__old_003, | q7l_full_sib_old3_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__full__old_004, | q7l_full_sib_old4_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__full__old_005, | q7l_full_sib_old5_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__full__young_001, | q7k_full_sib_young1_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__full__young_002, | q7k_full_sib_young2_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__full__young_003, | q7k_full_sib_young3_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__full__young_004, | q7k_full_sib_young4_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__full__young_005, | q7k_full_sib_young5_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__half__old_001, | q7n_half_sib_old1_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__half__old_002, | q7n_half_sib_old2_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__half__old_003, | q7n_half_sib_old3_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__half__old_004, | q7n_half_sib_old4_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__half__old_005, | q7n_half_sib_old5_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__half__young_001, | q7m_half_sib_young1_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__half__young_002, | q7m_half_sib_young2_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__half__young_003, | q7m_half_sib_young3_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__half__young_004, | q7m_half_sib_young4_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__half__young_005, | q7m_half_sib_young5_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__moth_001, | fam_history_q7d_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__twin_001, | q7m_full_sib_same1_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__mania__twin_002, | q7m_full_sib_same2_mania,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve_001,fam_history_10_yes_no,7,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__fath_001, | fam_history_q10a_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__full__old_001, | q10l_full_sib_old1_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__full__old_002, | q10l_full_sib_old2_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__full__old_003, | q10l_full_sib_old3_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__full__old_004, | q10l_full_sib_old4_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__full__old_005, | q10l_full_sib_old5_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__full__young_001, | q10k_full_sib_young1_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__full__young_002, | q10k_full_sib_young2_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__full__young_003, | q10k_full_sib_young3_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__full__young_004, | q10k_full_sib_young4_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__full__young_005, | q10k_full_sib_young5_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__half__old_001, | q10n_half_sib_old1_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__half__old_002, | q10n_half_sib_old2_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__half__old_003, | q10n_half_sib_old3_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__half__old_004, | q10n_half_sib_old4_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__half__old_005, | q10n_half_sib_old5_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__half__young_001, | q10m_half_sib_young1_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__half__young_002, | q10m_half_sib_young2_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__half__young_003, | q10m_half_sib_young3_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__half__young_004, | q10m_half_sib_young4_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__half__young_005, | q10m_half_sib_young5_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__moth_001, | fam_history_q10d_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__twin_001, | q10m_full_sib_same1_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__nerve__twin_002, | q10m_full_sib_same2_nerves,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic_001,fam_history_13_yes_no,7,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__fath_001, | fam_history_q13a_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__full__old_001, | q13l_full_sib_old1_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__full__old_002, | q13l_full_sib_old2_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__full__old_003, | q13l_full_sib_old3_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__full__old_004, | q13l_full_sib_old4_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__full__old_005, | q13l_full_sib_old5_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__full__young_001, | q13k_full_sib_young1_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__full__young_002, | q13k_full_sib_young2_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__full__young_003, | q13k_full_sib_young3_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__full__young_004, | q13k_full_sib_young4_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__full__young_005, | q13k_full_sib_young5_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__half__old_001, | q13n_half_sib_old1_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__half__old_002, | q13n_half_sib_old2_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__half__old_003, | q13n_half_sib_old3_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__half__old_004, | q13n_half_sib_old4_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__half__old_005, | q13n_half_sib_old5_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__half__young_001, | q13m_half_sib_young1_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__half__young_002, | q13m_half_sib_young2_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__half__young_003, | q13m_half_sib_young3_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__half__young_004, | q13m_half_sib_young4_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__half__young_005, | q13m_half_sib_young5_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__moth_001, | fam_history_q13d_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__twin_001, | q13m_full_sib_same1_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__suic__twin_002, | q13m_full_sib_same2_suicide,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub_001,fam_history_9_yes_no,7,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__fath_001, | fam_history_q9a_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__full__old_001, | q9l_full_sib_old1_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__full__old_002, | q9l_full_sib_old2_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__full__old_003, | q9l_full_sib_old3_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__full__old_004, | q9l_full_sib_old4_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__full__old_005, | q9l_full_sib_old5_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__full__young_001, | q9k_full_sib_young1_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__full__young_002, | q9k_full_sib_young2_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__full__young_003, | q9k_full_sib_young3_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__full__young_004, | q9k_full_sib_young4_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__full__young_005, | q9k_full_sib_young5_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__half__old_001, | q9n_half_sib_old1_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__half__old_002, | q9n_half_sib_old2_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__half__old_003, | q9n_half_sib_old3_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__half__old_004, | q9n_half_sib_old4_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__half__old_005, | q9n_half_sib_old5_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__half__young_001, | q9m_half_sib_young1_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__half__young_002, | q9m_half_sib_young2_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__half__young_003, | q9m_half_sib_young3_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__half__young_004, | q9m_half_sib_young4_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__half__young_005, | q9m_half_sib_young5_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__moth_001, | fam_history_q9d_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__twin_001, | q9m_full_sib_same1_trouble,1000,777,Decline to answer
+mh_p_famhx,mh_p_famhx__troub__twin_002, | q9m_full_sib_same2_trouble,1000,777,Decline to answer
+mh_p_kbi,mh_p_kbi_001,kbi_p_c_live_full_time,-1,444,Not applicable
+mh_p_kbi,mh_p_kbi_001__l,kbi_p_c_live_full_time_l,-1,444,Not applicable
+mh_p_kbi,mh_p_kbi_002,kbi_p_conflict_l | kbi_p_conflict,-1,444,Not Applicable
+mh_p_kbi,mh_p_kbi_002,kbi_p_conflict_l | kbi_p_conflict,-1,444,Not Applicable
+mh_p_kbi,mh_p_kbi__bully_001,kbi_p_c_bully,2,0,No
+mh_p_kbi,mh_p_kbi__bully_001__l,kbi_p_c_bully_l,2,0,No
+mh_p_kbi,mh_p_kbi__frnd_001,kbi_p_c_best_friend_l | kbi_p_c_best_friend,2,0,No
+mh_p_kbi,mh_p_kbi__frnd_001,kbi_p_c_best_friend_l | kbi_p_c_best_friend,2,0,No
+mh_p_kbi,mh_p_kbi__frnd_002,kbi_p_c_reg_friend_group_l | kbi_p_c_reg_friend_group,2,0,No
+mh_p_kbi,mh_p_kbi__frnd_002,kbi_p_c_reg_friend_group_l | kbi_p_c_reg_friend_group,2,0,No
+mh_p_kbi,mh_p_kbi__frnd_003,kbipcregfriend_groupopin_l | kbi_p_c_reg_friend_group_opin,3,0,No
+mh_p_kbi,mh_p_kbi__frnd_003,kbipcregfriend_groupopin_l | kbi_p_c_reg_friend_group_opin,3,0,No
+mh_p_kbi,mh_p_kbi__mh_001,kbi_p_c_mh_sa,2,0,No
+mh_p_kbi,mh_p_kbi__mh_001__l,kbi_p_c_mh_sa_l,2,0,No
+mh_p_kbi,mh_p_kbi__school_002,kbi_p_c_drop_in_grades_l | kbi_p_c_drop_in_grades,-1,444,Not applicable
+mh_p_kbi,mh_p_kbi__school_002,kbi_p_c_drop_in_grades_l | kbi_p_c_drop_in_grades,-1,444,Not applicable
+mh_p_kbi,mh_p_kbi__school_002,kbi_p_c_drop_in_grades_l | kbi_p_c_drop_in_grades,2,0,No
+mh_p_kbi,mh_p_kbi__school_002,kbi_p_c_drop_in_grades_l | kbi_p_c_drop_in_grades,2,0,No
+mh_p_kbi,mh_p_kbi__school_003,kbi_p_c_det_susp_l | kbi_p_c_det_susp,2,0,No
+mh_p_kbi,mh_p_kbi__school_003,kbi_p_c_det_susp_l | kbi_p_c_det_susp,2,0,No
+mh_p_kbi,mh_p_kbi__school_005,kbi_p_how_well_c_school_l | kbi_p_how_well_c_school,-1,444,Not applicable
+mh_p_kbi,mh_p_kbi__school_005,kbi_p_how_well_c_school_l | kbi_p_how_well_c_school,-1,444,Not applicable
+mh_p_kbi,mh_p_kbi__school_006,kbi_p_grades_in_school_l | kbi_p_grades_in_school,-1,444,Not applicable
+mh_p_kbi,mh_p_kbi__school_006,kbi_p_grades_in_school_l | kbi_p_grades_in_school,-1,444,Not applicable
+mh_p_kbi,mh_p_kbi__so_001,kbi_p_c_gay_l | kbi_p_c_gay,3,0,No
+mh_p_kbi,mh_p_kbi__so_001,kbi_p_c_gay_l | kbi_p_c_gay,3,0,No
+mh_p_kbi,mh_p_kbi__so_001,kbi_p_c_gay_l | kbi_p_c_gay,4,777,Decline to answer
+mh_p_kbi,mh_p_kbi__so_001,kbi_p_c_gay_l | kbi_p_c_gay,4,777,Decline to answer
+mh_p_kbi,mh_p_kbi__so_001__01,kbi_p_c_gay_problems,4,777,Decline to answer
+mh_p_kbi,mh_p_kbi__so_001__01__l,kbi_p_c_gay_problems_l,4,777,Decline to answer
+mh_p_ple,mh_p_ple__exp_001,ple_died_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_001,ple_died_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_002,ple_injured_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_002,ple_injured_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_003,ple_crime_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_003,ple_crime_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_004,ple_friend_died_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_004,ple_friend_died_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_005,ple_friend_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_005,ple_friend_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_006,ple_friend_injur_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_006,ple_friend_injur_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_007,ple_financial_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_007,ple_financial_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_008,ple_sud_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_008,ple_sud_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_009,ple_ill_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_009,ple_ill_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_010,ple_injur_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_010,ple_injur_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_011,ple_argue_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_011,ple_argue_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_012,ple_job_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_012,ple_job_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_013,ple_away_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_013,ple_away_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_014,ple_arrest_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_014,ple_arrest_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_015,ple_mh_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_015,ple_mh_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_016,ple_sib_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_016,ple_sib_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_017,ple_victim_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_017,ple_victim_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_018,ple_separ_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_018,ple_separ_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_019,ple_law_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_019,ple_law_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_020,ple_school_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_020,ple_school_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_021,ple_move_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_021,ple_move_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_022,ple_jail_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_022,ple_jail_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_023,ple_step_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_023,ple_step_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_024,ple_new_job_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_024,ple_new_job_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_025,ple_new_sib_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_025,ple_new_sib_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_026,ple_deported_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_026,ple_deported_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_027,ple_hospitalized_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_027,ple_hospitalized_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_028,ple_foster_care_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_028,ple_foster_care_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_029,ple_hit_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_029,ple_hit_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_030,ple_shot_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_030,ple_shot_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_031,ple_lockdown_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_031,ple_lockdown_fu_p,7,999,Don't know
+mh_p_ple,mh_p_ple__exp_033,ple_homeless_fu_p,6,444,Not applicable
+mh_p_ple,mh_p_ple__exp_033,ple_homeless_fu_p,7,999,Don't know
+mh_y_kbi,mh_y_kbi__so_001,kbi_y_sex_orient,3,0,No
+mh_y_kbi,mh_y_kbi__so_001,kbi_y_sex_orient,4,222,I do not understand this question
+mh_y_ple,mh_y_ple__exp_001,ple_died_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_001,ple_died_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_002,ple_injured_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_002,ple_injured_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_003,ple_crime_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_003,ple_crime_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_004,ple_friend_died_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_004,ple_friend_died_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_005,ple_friend_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_005,ple_friend_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_006,ple_friend_injur_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_006,ple_friend_injur_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_007,ple_financial_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_007,ple_financial_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_008,ple_sud_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_008,ple_sud_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_009,ple_ill_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_009,ple_ill_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_010,ple_injur_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_010,ple_injur_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_011,ple_argue_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_011,ple_argue_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_012,ple_job_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_012,ple_job_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_013,ple_away_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_013,ple_away_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_014,ple_arrest_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_014,ple_arrest_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_015,ple_mh_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_015,ple_mh_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_016,ple_sib_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_016,ple_sib_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_017,ple_victim_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_017,ple_victim_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_018,ple_separ_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_018,ple_separ_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_019,ple_law_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_019,ple_law_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_020,ple_school_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_020,ple_school_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_021,ple_move_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_021,ple_move_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_022,ple_jail_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_022,ple_jail_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_023,ple_step_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_023,ple_step_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_024,ple_new_job_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_024,ple_new_job_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_025,ple_new_sib_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_025,ple_new_sib_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_026,ple_deported_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_026,ple_deported_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_027,ple_hospitalized_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_027,ple_hospitalized_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_028,ple_foster_care_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_028,ple_foster_care_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_029,ple_hit_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_029,ple_hit_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_030,ple_shot_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_030,ple_shot_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_031,ple_lockdown_fu_y,6,444,Not applicable
+mh_y_ple,mh_y_ple__exp_031,ple_lockdown_fu_y,7,999,Don't know
+mh_y_ple,mh_y_ple__exp_033,ple_homeless_fu_y,889,444,Not applicable
+mr_y_qc__clfind,mr_y_qc__clfind__prev_score,mrif_fu_diff,-1,444,Not applicable
+nc_y_cct,nc_y_cct_001,cash_choice_task,3,999,Don't Know
+nc_y_ddis,nc_y_ddis_jbcrit1,ddis_scr_val_cons_per_jbcrit1,no,1,Yes
+nc_y_ddis,nc_y_ddis_jbcrit1,ddis_scr_val_cons_per_jbcrit1,not evaluated yet,2,Not evaluated yet
+nc_y_ddis,nc_y_ddis_jbcrit1,ddis_scr_val_cons_per_jbcrit1,yes,0,No
+nc_y_ddis,nc_y_ddis_jbcrit2,ddis_scr_val_cons_per_jbcrit2,no,1,Yes
+nc_y_ddis,nc_y_ddis_jbcrit2,ddis_scr_val_cons_per_jbcrit2,not evaluated yet,2,Not evaluated yet
+nc_y_ddis,nc_y_ddis_jbcrit2,ddis_scr_val_cons_per_jbcrit2,yes,0,No
+nc_y_est,nc_y_est_keyassign,strp_scr_values_keyassign,leftnegative,1,leftnegative
+nc_y_est,nc_y_est_keyassign,strp_scr_values_keyassign,leftpositive,2,leftpositive
+nc_y_nihtb,nc_y_nihtb__comp__cryst_ver,nihtbx_cryst_v,v1.1,1,v1.1
+nc_y_nihtb,nc_y_nihtb__comp__fluid_ver,nihtbx_fluidcomp_v,v1.1,1,v1.1
+nc_y_nihtb,nc_y_nihtb__comp__tot_ver,nihtbx_totalcomp_v,v1.1,1,v1.1
+nc_y_nihtb,nc_y_nihtb__crdst_ver,nihtbx_cardsort_v,v2.0,2,v2.0
+nc_y_nihtb,nc_y_nihtb__crdst_ver,nihtbx_cardsort_v,v2.1,3,v2.1
+nc_y_nihtb,nc_y_nihtb__flnkr_ver,nihtbx_flanker_v,v2.0,2,v2.0
+nc_y_nihtb,nc_y_nihtb__flnkr_ver,nihtbx_flanker_v,v2.1,3,v2.1
+nc_y_nihtb,nc_y_nihtb__lswmt_ver,nihtbx_list_v,v2.0,2,v2.0
+nc_y_nihtb,nc_y_nihtb__lswmt_ver,nihtbx_list_v,v2.1,3,v2.1
+nc_y_nihtb,nc_y_nihtb__picsq_ver,nihtbx_picture_v,v2.0,2,v2.0
+nc_y_nihtb,nc_y_nihtb__picsq_ver,nihtbx_picture_v,v2.1,3,v2.1
+nc_y_nihtb,nc_y_nihtb__picvcb_ver,nihtbx_picvocab_v,v2.0,2,v2.0
+nc_y_nihtb,nc_y_nihtb__picvcb_ver,nihtbx_picvocab_v,v2.1,3,v2.1
+nc_y_nihtb,nc_y_nihtb__pttcp_ver,nihtbx_pattern_v,v2.0,2,v2.0
+nc_y_nihtb,nc_y_nihtb__pttcp_ver,nihtbx_pattern_v,v2.1,3,v2.1
+nc_y_nihtb,nc_y_nihtb__readr_ver,nihtbx_reading_v,v2.0,2,v2.0
+nc_y_nihtb,nc_y_nihtb__readr_ver,nihtbx_reading_v,v2.1,3,v2.1
+nc_y_sit,nc_y_sit__dev_os,sit_scr_computer_platform,and,1,Android
+nc_y_sit,nc_y_sit__dev_os,sit_scr_computer_platform,ios,2,iOS
+nt_p_yst,nt_p_yst_004,screentime_online_1_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst_005,screentime_online_2_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst_006,screentime_online_3_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst__pmum_001,screentime_pmum_short_1_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst__pmum_002,screentime_pmum_short_2_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst__pmum_003,screentime_pmum_short_3_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst__pmum_004,screentime_pmum_short_4_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst__pmum_005,screentime_pmum_short_5_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst__pmum_006,screentime_pmum_short_6_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst__pmum_007,screentime_pmum_short_7_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst__pmum_008,screentime_pmum_short_8_p,6,777,Decline to answer
+nt_p_yst,nt_p_yst__pmum_009,screentime_pmum_short_9_p,6,777,Decline to answer
+nt_y_stq,nt_y_stq__sleep_002,screentime_sq2,-1,444,Not applicable
+nt_y_stq,nt_y_stq__sleep_013,screentime_sq12,-1,444,Not applicable
+nt_y_stq,nt_y_stq__sleep_014,screentime_sq13,-1,444,Not applicable
+nt_y_stq,nt_y_stq__socmed_004,screentime_smq_account,-1,444,Not applicable
+nt_y_stq,nt_y_stq__socmed_005__dk,screentime_smq_followers_na | screentime_smq_followers_dk,1,444,Not applicable
+nt_y_stq,nt_y_stq__socmed_006__dk,screentime_smq_following_na | screentime_smq_following_dk,1,444,Not applicable
+ph_p_bkfs,ph_p_bkfs__milk_001__02,bkfs_milk_kind,7,999,Don't know
+ph_p_covid,ph_p_covid_004,child_covid_cv_p,1,0,No
+ph_p_covid,ph_p_covid_004,child_covid_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__job_001,fam_wage_loss2_cv_p,1,0,No
+ph_p_covid,ph_p_covid__job_001,fam_wage_loss2_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__job_002,fam_wage_loss_cv_p,1,0,No
+ph_p_covid,ph_p_covid__job_002,fam_wage_loss_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__school_002__dk,school_close_date_2_cv_p,1,444,Not applicable
+ph_p_covid,ph_p_covid__school_005,child_care_cv_p,1,0,No
+ph_p_covid,ph_p_covid__school_005,child_care_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__school_009,material_access_cv_p,1,0,No
+ph_p_covid,ph_p_covid__school_009,material_access_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__school_009,material_access_cv_p,4,444,Not applicable
+ph_p_covid,ph_p_covid__school_010,internet_access_cv_p,1,0,No
+ph_p_covid,ph_p_covid__school_010,internet_access_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__school_011,tool_access_cv_p,1,0,No
+ph_p_covid,ph_p_covid__school_011,tool_access_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__school_012,school_difficulty_p,6,444,Not applicable
+ph_p_covid,ph_p_covid__school_013,graded_cv_p,1,0,No
+ph_p_covid,ph_p_covid__school_013,graded_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__school_013,graded_cv_p,4,444,Not applicable
+ph_p_covid,ph_p_covid__school_014,extra_material_cv_p,1,0,No
+ph_p_covid,ph_p_covid__school_014,extra_material_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__school_015,school_nutrition_cv_p,1,0,No
+ph_p_covid,ph_p_covid__school_015,school_nutrition_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__vax_007,child_vaccination_cv_p,1,0,No
+ph_p_covid,ph_p_covid__vax_007,child_vaccination_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__vax_008,vac_child_cv_p,1,0,No
+ph_p_covid,ph_p_covid__vax_008,vac_child_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__vax_008__03,vac_child_2_cv_p,1,0,No
+ph_p_covid,ph_p_covid__vax_008__03,vac_child_2_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__vax_008__04,vac_child_3_cv_p,1,0,No
+ph_p_covid,ph_p_covid__vax_008__04,vac_child_3_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__vax_008__04,vac_child_3_cv_p,3,999,Don't Know
+ph_p_covid,ph_p_covid__vax_008__04,vac_child_3_cv_p,4,777,Decline to answer
+ph_p_covid,ph_p_covid__vax_008__05,vac_child_4_cv_p,1,0,No
+ph_p_covid,ph_p_covid__vax_008__05,vac_child_4_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__vax_008__05,vac_child_4_cv_p,3,999,Don't Know
+ph_p_covid,ph_p_covid__vax_008__05,vac_child_4_cv_p,4,777,Decline to answer
+ph_p_covid,ph_p_covid__vax_008__06,vac_child_5_cv_p,1,0,No
+ph_p_covid,ph_p_covid__vax_008__06,vac_child_5_cv_p,2,1,Yes
+ph_p_covid,ph_p_covid__vax_008__06,vac_child_5_cv_p,3,999,Don't Know
+ph_p_covid,ph_p_covid__vax_008__06,vac_child_5_cv_p,4,777,Decline to answer
+ph_p_dhx,ph_p_dhx__caff_001,devhx_caffeine_11,-1,444,Not applicable
+ph_p_dhx,ph_p_dhx__vit_001,devhx_10,-1,444,Not applicable
+ph_p_mhx,ph_p_mhx_040,medhx_8a,6,999,Don't know
+ph_p_mhx,ph_p_mhx_040__l,medhx_8a_l,6,999,Don't know
+ph_p_mhx,ph_p_mhx_041,medhx_9a,6,999,Don't know
+ph_p_mhx,ph_p_mhx_041__l,medhx_9a_l,6,999,Don't know
+ph_p_mhx,ph_p_mhx__doc_001,medhx_1a,6,999,Don't know
+ph_p_mhx,ph_p_mhx__doc_001__l,medhx_1a_l,6,999,Don't know
+ph_p_mhx,ph_p_mhx__doc__lt_001,medhx_1b,6,999,Don't know
+ph_p_mhx,ph_p_mhx__er_001,medhx_4a,6,999,Don't know
+ph_p_mhx,ph_p_mhx__er_001,medhx_4a,7,777,Decline to answer
+ph_p_mhx,ph_p_mhx__er_001__l,medhx_4a_l,6,999,Don't know
+ph_p_mhx,ph_p_mhx__er_001__l,medhx_4a_l,7,777,Decline to answer
+ph_p_mhx,ph_p_mhx__er__lt_001,medhx_5a,6,999,Don't know
+ph_p_mhx,ph_p_mhx__er__lt_001,medhx_5a,7,777,Decline to answer
+ph_p_pds,ph_p_pds__f_002,pds_f5b_p,1,0,No
+ph_p_pds,ph_p_pds__f_002,pds_f5b_p,4,1,Yes
+ph_p_saiq,ph_p_saiq__lax_004,sai_p_lax_school,11,1,Yes
+ph_p_saiq,ph_p_saiq__lax_004__l,sai_p_lax_school_l,11,1,Yes
+ph_p_sex,ph_p_sex__cnvs_001,p_gish2_abstinences,2,0,No
+ph_p_sex,ph_p_sex__cnvs_001,p_gish2_abstinences,3,777,Decline to answer
+ph_p_sex,ph_p_sex__cnvs_002,p_gish2_safe_practices,2,0,No
+ph_p_sex,ph_p_sex__cnvs_002,p_gish2_safe_practices,3,777,Decline to answer
+ph_p_sex,ph_p_sex__cnvs_003,p_gish2_convo,2,0,No
+ph_p_sex,ph_p_sex__cnvs_003,p_gish2_convo,3,777,Decline to answer
+ph_p_sex,ph_p_sex__so__kbi_001,kbi_p_c_gay_l | kbi_p_c_gay,3,0,No
+ph_p_sex,ph_p_sex__so__kbi_001,kbi_p_c_gay_l | kbi_p_c_gay,3,0,No
+ph_p_sex,ph_p_sex__so__kbi_001,kbi_p_c_gay_l | kbi_p_c_gay,4,777,Decline to answer
+ph_p_sex,ph_p_sex__so__kbi_001,kbi_p_c_gay_l | kbi_p_c_gay,4,777,Decline to answer
+ph_p_sex,ph_p_sex__so__kbi_001__01,kbi_p_c_gay_problems,4,777,Decline to answer
+ph_p_sex,ph_p_sex__so__kbi_001__01__l,kbi_p_c_gay_problems_l,4,777,Decline to answer
+ph_y_bkfs,ph_y_bkfs__milk_001__02,bkfs_milk_kind_y,777,999,Don't know
+ph_y_bld,ph_y_bld__rslt__burr_score,biospec_blood_burr_cells,1+,1,1+
+ph_y_bld,ph_y_bld__rslt__burr_score,biospec_blood_burr_cells,2+,2,2+
+ph_y_bld,ph_y_bld__rslt__burr_score,biospec_blood_burr_cells,3+,3,3+
+ph_y_bld,ph_y_bld__rslt__poik_score,biospec_blood_poikilocytosis,1+,1,1+
+ph_y_bld,ph_y_bld__rslt__poik_score,biospec_blood_poikilocytosis,2+,2,2+
+ph_y_bld,ph_y_bld__rslt__poik_score,biospec_blood_poikilocytosis,3+,3,3+
+ph_y_bld,ph_y_bld__rslt__rbc_morph,biospec_bl_red_blo_cell_morph,ABNORMAL,2,Abnormal
+ph_y_bld,ph_y_bld__rslt__rbc_morph,biospec_bl_red_blo_cell_morph,CONSISTENT WITH RBC INDICES,3,Consistent with RBC indices
+ph_y_bld,ph_y_bld__rslt__rbc_morph,biospec_bl_red_blo_cell_morph,NORMAL,1,Normal
+ph_y_covid,ph_y_covid__comm_001,demo_online_cv_y,6,444,Not applicable
+ph_y_covid,ph_y_covid__comm_002,demo_friends_cv_y,6,444,Not applicable
+ph_y_covid,ph_y_covid__comm_003,demo_parents_cv_y,6,444,Not applicable
+ph_y_covid,ph_y_covid__comm_004,demo_siblings_cv_y,6,444,Not applicable
+ph_y_covid,ph_y_covid__educsup_001,assist_sched_cv_y,8,999,Don't know
+ph_y_covid,ph_y_covid__educsup_002,check_hw_cv_y,8,999,Don't know
+ph_y_covid,ph_y_covid__educsup_003,teach_concept_cv_y,8,999,Don't know
+ph_y_covid,ph_y_covid__educsup_004,create_asgn_act_cv_y,8,999,Don't know
+ph_y_covid,ph_y_covid__school_003,school_in_person_cv_y,2,0,No
+ph_y_pds,ph_y_pds__f_002,pds_f5_y,1,0,No
+ph_y_pds,ph_y_pds__f_002,pds_f5_y,4,1,Yes
+ph_y_pds,ph_y_pds__f_002__04,menstrualcycle3_y,2,999,Don't know
+ph_y_pds,ph_y_pds__f_002__04,menstrualcycle3_y,3,777,Decline to answer
+ph_y_pds,ph_y_pds__f_002__05,menstrualcycle4_y,2,999,Don't know
+ph_y_pds,ph_y_pds__f_002__05,menstrualcycle4_y,3,777,Decline to answer
+ph_y_sex,ph_y_sex__cnvs_001,gish2_abstinences,2,0,No
+ph_y_sex,ph_y_sex__cnvs_001,gish2_abstinences,3,777,Decline to answer
+ph_y_sex,ph_y_sex__cnvs_002,gish2_safe_practices,2,0,No
+ph_y_sex,ph_y_sex__cnvs_002,gish2_safe_practices,3,777,Decline to answer
+ph_y_sex,ph_y_sex__cnvs_003,gish2_convo,2,0,No
+ph_y_sex,ph_y_sex__cnvs_003,gish2_convo,3,777,Decline to answer
+ph_y_sex,ph_y_sex__so__kbi_001,kbi_y_sex_orient_probs,3,0,No
+ph_y_sex,ph_y_sex__so__kbi_001,kbi_y_sex_orient_probs,4,222,I don't understand the question
+sdev_p_fa,sdev_p_fa_001,socialdev_pfire_1,98,999,I don't know
+sdev_p_fa,sdev_p_fa_001,socialdev_pfire_1,99,777,I'd rather not say
+sdev_p_fa,sdev_p_fa_001__l,socialdev_pfire_1_l,98,999,I don't know
+sdev_p_fa,sdev_p_fa_001__l,socialdev_pfire_1_l,99,777,I'd rather not say
+sdev_p_fa,sdev_p_fa_002,socialdev_pfire_2,98,999,I don't know
+sdev_p_fa,sdev_p_fa_002,socialdev_pfire_2,99,777,I'd rather not say
+sdev_p_fa,sdev_p_fa_002__l,socialdev_pfire_2_l,98,999,I don't know
+sdev_p_fa,sdev_p_fa_002__l,socialdev_pfire_2_l,99,777,I'd rather not say
+sdev_p_fa,sdev_p_fa_003,socialdev_pfire_3,98,999,I don't know
+sdev_p_fa,sdev_p_fa_003,socialdev_pfire_3,99,777,I'd rather not say
+sdev_p_fa,sdev_p_fa_003__l,socialdev_pfire_3_l,98,999,I don't know
+sdev_p_fa,sdev_p_fa_003__l,socialdev_pfire_3_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_001,socialdev_prd_01,98,999,I don't know
+sdev_p_rd,sdev_p_rd_001,socialdev_prd_01,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_001__l,socialdev_prd_01_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_001__l,socialdev_prd_01_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_002,socialdev_prd_02,98,999,I don't know
+sdev_p_rd,sdev_p_rd_002,socialdev_prd_02,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_002__l,socialdev_prd_02_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_002__l,socialdev_prd_02_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_003,socialdev_prd_03,98,999,I don't know
+sdev_p_rd,sdev_p_rd_003,socialdev_prd_03,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_003__l,socialdev_prd_03_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_003__l,socialdev_prd_03_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_004,socialdev_prd_04,98,999,I don't know
+sdev_p_rd,sdev_p_rd_004,socialdev_prd_04,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_004__l,socialdev_prd_04_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_004__l,socialdev_prd_04_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_005,socialdev_prd_05,98,999,I don't know
+sdev_p_rd,sdev_p_rd_005,socialdev_prd_05,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_005__l,socialdev_prd_05_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_005__l,socialdev_prd_05_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_006,socialdev_prd_06,98,999,I don't know
+sdev_p_rd,sdev_p_rd_006,socialdev_prd_06,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_006__l,socialdev_prd_06_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_006__l,socialdev_prd_06_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_007,socialdev_prd_07,98,999,I don't know
+sdev_p_rd,sdev_p_rd_007,socialdev_prd_07,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_007__l,socialdev_prd_07_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_007__l,socialdev_prd_07_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_008,socialdev_prd_08,98,999,I don't know
+sdev_p_rd,sdev_p_rd_008,socialdev_prd_08,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_008__l,socialdev_prd_08_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_008__l,socialdev_prd_08_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_009,socialdev_prd_09,98,999,I don't know
+sdev_p_rd,sdev_p_rd_009,socialdev_prd_09,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_009__l,socialdev_prd_09_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_009__l,socialdev_prd_09_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_010,socialdev_prd_10,98,999,I don't know
+sdev_p_rd,sdev_p_rd_010,socialdev_prd_10,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_010__l,socialdev_prd_10_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_010__l,socialdev_prd_10_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_011,socialdev_prd_11,98,999,I don't know
+sdev_p_rd,sdev_p_rd_011,socialdev_prd_11,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_011__l,socialdev_prd_11_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_011__l,socialdev_prd_11_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_012,socialdev_prd_12,98,999,I don't know
+sdev_p_rd,sdev_p_rd_012,socialdev_prd_12,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_012__l,socialdev_prd_12_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_012__l,socialdev_prd_12_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_013,socialdev_prd_13,98,999,I don't know
+sdev_p_rd,sdev_p_rd_013,socialdev_prd_13,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_013__l,socialdev_prd_13_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_013__l,socialdev_prd_13_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_014,socialdev_prd_14,98,999,I don't know
+sdev_p_rd,sdev_p_rd_014,socialdev_prd_14,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_014__l,socialdev_prd_14_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_014__l,socialdev_prd_14_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_015,socialdev_prd_15,98,999,I don't know
+sdev_p_rd,sdev_p_rd_015,socialdev_prd_15,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_015__l,socialdev_prd_15_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_015__l,socialdev_prd_15_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_016,socialdev_prd_16,98,999,I don't know
+sdev_p_rd,sdev_p_rd_016,socialdev_prd_16,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_016__l,socialdev_prd_16_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_016__l,socialdev_prd_16_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_017,socialdev_prd_17,98,999,I don't know
+sdev_p_rd,sdev_p_rd_017,socialdev_prd_17,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_017__l,socialdev_prd_17_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_017__l,socialdev_prd_17_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_018,socialdev_prd_18,98,999,I don't know
+sdev_p_rd,sdev_p_rd_018,socialdev_prd_18,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_018__l,socialdev_prd_18_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_018__l,socialdev_prd_18_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_019,socialdev_prd_19,98,999,I don't know
+sdev_p_rd,sdev_p_rd_019,socialdev_prd_19,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_019__l,socialdev_prd_19_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_019__l,socialdev_prd_19_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_020,socialdev_prd_20,98,999,I don't know
+sdev_p_rd,sdev_p_rd_020,socialdev_prd_20,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_020__l,socialdev_prd_20_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_020__l,socialdev_prd_20_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_021,socialdev_prd_21,98,999,I don't know
+sdev_p_rd,sdev_p_rd_021,socialdev_prd_21,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_021__l,socialdev_prd_21_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_021__l,socialdev_prd_21_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_022,socialdev_prd_22,98,999,I don't know
+sdev_p_rd,sdev_p_rd_022,socialdev_prd_22,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_022__l,socialdev_prd_22_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_022__l,socialdev_prd_22_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_023,socialdev_prd_23,98,999,I don't know
+sdev_p_rd,sdev_p_rd_023,socialdev_prd_23,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_023__l,socialdev_prd_23_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_023__l,socialdev_prd_23_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_024,socialdev_prd_24,98,999,I don't know
+sdev_p_rd,sdev_p_rd_024,socialdev_prd_24,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_024__l,socialdev_prd_24_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_024__l,socialdev_prd_24_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_025,socialdev_prd_25,98,999,I don't know
+sdev_p_rd,sdev_p_rd_025,socialdev_prd_25,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_025__l,socialdev_prd_25_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_025__l,socialdev_prd_25_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_026,socialdev_prd_26,98,999,I don't know
+sdev_p_rd,sdev_p_rd_026,socialdev_prd_26,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_026__l,socialdev_prd_26_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_026__l,socialdev_prd_26_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_027,socialdev_prd_27,98,999,I don't know
+sdev_p_rd,sdev_p_rd_027,socialdev_prd_27,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_027,socialdev_prd_27,999,444,My child is an only child
+sdev_p_rd,sdev_p_rd_027__l,socialdev_prd_27_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_027__l,socialdev_prd_27_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_027__l,socialdev_prd_27_l,999,444,My child is an only child
+sdev_p_rd,sdev_p_rd_028,socialdev_prd_28,98,999,I don't know
+sdev_p_rd,sdev_p_rd_028,socialdev_prd_28,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_028__l,socialdev_prd_28_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_028__l,socialdev_prd_28_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_029,socialdev_prd_29,98,999,I don't know
+sdev_p_rd,sdev_p_rd_029,socialdev_prd_29,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_029__l,socialdev_prd_29_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_029__l,socialdev_prd_29_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_030,socialdev_prd_30,98,999,I don't know
+sdev_p_rd,sdev_p_rd_030,socialdev_prd_30,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_030__l,socialdev_prd_30_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_030__l,socialdev_prd_30_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_031,socialdev_prd_31,98,999,I don't know
+sdev_p_rd,sdev_p_rd_031,socialdev_prd_31,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_031__l,socialdev_prd_31_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_031__l,socialdev_prd_31_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_032,socialdev_prd_32,98,999,I don't know
+sdev_p_rd,sdev_p_rd_032,socialdev_prd_32,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_032__l,socialdev_prd_32_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_032__l,socialdev_prd_32_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_033,socialdev_prd_33,98,999,I don't know
+sdev_p_rd,sdev_p_rd_033,socialdev_prd_33,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_033__l,socialdev_prd_33_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_033__l,socialdev_prd_33_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_034,socialdev_prd_34,98,999,I don't know
+sdev_p_rd,sdev_p_rd_034,socialdev_prd_34,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_034__l,socialdev_prd_34_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_034__l,socialdev_prd_34_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_035,socialdev_prd_35,98,999,I don't know
+sdev_p_rd,sdev_p_rd_035,socialdev_prd_35,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_035__l,socialdev_prd_35_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_035__l,socialdev_prd_35_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_036,socialdev_prd_36,98,999,I don't know
+sdev_p_rd,sdev_p_rd_036,socialdev_prd_36,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_036__l,socialdev_prd_36_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_036__l,socialdev_prd_36_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_037,socialdev_prd_37,98,999,I don't know
+sdev_p_rd,sdev_p_rd_037,socialdev_prd_37,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_037__l,socialdev_prd_37_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_037__l,socialdev_prd_37_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_038,socialdev_prd_38,98,999,I don't know
+sdev_p_rd,sdev_p_rd_038,socialdev_prd_38,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_038__l,socialdev_prd_38_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_038__l,socialdev_prd_38_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_039,socialdev_prd_39,98,999,I don't know
+sdev_p_rd,sdev_p_rd_039,socialdev_prd_39,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_039__l,socialdev_prd_39_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_039__l,socialdev_prd_39_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_040,socialdev_prd_40,98,999,I don't know
+sdev_p_rd,sdev_p_rd_040,socialdev_prd_40,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_040__l,socialdev_prd_40_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_040__l,socialdev_prd_40_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_041,socialdev_prd_41,98,999,I don't know
+sdev_p_rd,sdev_p_rd_041,socialdev_prd_41,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_041__l,socialdev_prd_41_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_041__l,socialdev_prd_41_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_042,socialdev_prd_42,98,999,I don't know
+sdev_p_rd,sdev_p_rd_042,socialdev_prd_42,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_042__l,socialdev_prd_42_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_042__l,socialdev_prd_42_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_043,socialdev_prd_43,98,999,I don't know
+sdev_p_rd,sdev_p_rd_043,socialdev_prd_43,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_043__l,socialdev_prd_43_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_043__l,socialdev_prd_43_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_044,socialdev_prd_44,98,999,I don't know
+sdev_p_rd,sdev_p_rd_044,socialdev_prd_44,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_044__l,socialdev_prd_44_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_044__l,socialdev_prd_44_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_045,socialdev_prd_45,98,999,I don't know
+sdev_p_rd,sdev_p_rd_045,socialdev_prd_45,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_045__l,socialdev_prd_45_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_045__l,socialdev_prd_45_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_046,socialdev_prd_46,98,999,I don't know
+sdev_p_rd,sdev_p_rd_046,socialdev_prd_46,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_046__l,socialdev_prd_46_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_046__l,socialdev_prd_46_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_047,socialdev_prd_47,98,999,I don't know
+sdev_p_rd,sdev_p_rd_047,socialdev_prd_47,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_047__l,socialdev_prd_47_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_047__l,socialdev_prd_47_l,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_048,socialdev_prd_48,98,999,I don't know
+sdev_p_rd,sdev_p_rd_048,socialdev_prd_48,99,777,I'd rather not say
+sdev_p_rd,sdev_p_rd_048__l,socialdev_prd_48_l,98,999,I don't know
+sdev_p_rd,sdev_p_rd_048__l,socialdev_prd_48_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001,socialdev_pvict_c1,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001,socialdev_pvict_c1,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__03,socialdev_pvict_c1_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__03,socialdev_pvict_c1_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__05,socialdev_pvict_c1_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__05,socialdev_pvict_c1_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__05__l,socialdev_pvict_c1_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__05__l,socialdev_pvict_c1_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__06,socialdev_pvict_c1_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__06,socialdev_pvict_c1_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__06__01,socialdev_pvict_c1_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__06__01,socialdev_pvict_c1_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__06__01__l,socialdev_pvict_c1_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__06__01__l,socialdev_pvict_c1_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__06__l,socialdev_pvict_c1_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__06__l,socialdev_pvict_c1_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__08,socialdev_pvict_c1_m,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__08,socialdev_pvict_c1_m,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__08__l,socialdev_pvict_c1_m_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__08__l,socialdev_pvict_c1_m_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__09,socialdev_pvict_c1_n,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__09,socialdev_pvict_c1_n,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__09__l,socialdev_pvict_c1_n_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__09__l,socialdev_pvict_c1_n_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_001__l,socialdev_pvict_c1_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_001__l,socialdev_pvict_c1_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002,socialdev_pvict_c2,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002,socialdev_pvict_c2,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__03,socialdev_pvict_c2_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__03,socialdev_pvict_c2_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__05,socialdev_pvict_c2_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__05,socialdev_pvict_c2_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__05__l,socialdev_pvict_c2_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__05__l,socialdev_pvict_c2_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__07,socialdev_pvict_c2_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__07,socialdev_pvict_c2_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__07__l,socialdev_pvict_c2_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__07__l,socialdev_pvict_c2_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__08,socialdev_pvict_c2_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__08,socialdev_pvict_c2_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__08__01,socialdev_pvict_c2_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__08__01,socialdev_pvict_c2_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__08__01__l,socialdev_pvict_c2_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__08__01__l,socialdev_pvict_c2_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__08__l,socialdev_pvict_c2_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__08__l,socialdev_pvict_c2_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__10,socialdev_pvict_c2_n,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__10,socialdev_pvict_c2_n,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__10__l,socialdev_pvict_c2_n_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__10__l,socialdev_pvict_c2_n_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_002__l,socialdev_pvict_c2_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_002__l,socialdev_pvict_c2_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003,socialdev_pvict_c3,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003,socialdev_pvict_c3,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003__03,socialdev_pvict_c3_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003__03,socialdev_pvict_c3_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003__05,socialdev_pvict_c3_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003__05,socialdev_pvict_c3_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003__05__l,socialdev_pvict_c3_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003__05__l,socialdev_pvict_c3_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003__08,socialdev_pvict_c3_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003__08,socialdev_pvict_c3_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003__08__l,socialdev_pvict_c3_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003__08__l,socialdev_pvict_c3_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003__09,socialdev_pvict_c3_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003__09,socialdev_pvict_c3_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003__09__01,socialdev_pvict_c3_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003__09__01,socialdev_pvict_c3_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003__09__01__l,socialdev_pvict_c3_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003__09__01__l,socialdev_pvict_c3_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003__09__l,socialdev_pvict_c3_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003__09__l,socialdev_pvict_c3_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_003__l,socialdev_pvict_c3_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_003__l,socialdev_pvict_c3_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004,socialdev_pvict_c4,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004,socialdev_pvict_c4,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004__03,socialdev_pvict_c4_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004__03,socialdev_pvict_c4_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004__05,socialdev_pvict_c4_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004__05,socialdev_pvict_c4_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004__05__l,socialdev_pvict_c4_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004__05__l,socialdev_pvict_c4_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004__09,socialdev_pvict_c4_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004__09,socialdev_pvict_c4_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004__09__l,socialdev_pvict_c4_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004__09__l,socialdev_pvict_c4_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004__10,socialdev_pvict_c4_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004__10,socialdev_pvict_c4_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004__10__01,socialdev_pvict_c4_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004__10__01,socialdev_pvict_c4_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004__10__01__l,socialdev_pvict_c4_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004__10__01__l,socialdev_pvict_c4_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004__10__l,socialdev_pvict_c4_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004__10__l,socialdev_pvict_c4_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_004__l,socialdev_pvict_c4_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_004__l,socialdev_pvict_c4_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005,socialdev_pvict_c5,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005,socialdev_pvict_c5,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005__03,socialdev_pvict_c5_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005__03,socialdev_pvict_c5_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005__05,socialdev_pvict_c5_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005__05,socialdev_pvict_c5_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005__05__l,socialdev_pvict_c5_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005__05__l,socialdev_pvict_c5_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005__10,socialdev_pvict_c5_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005__10,socialdev_pvict_c5_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005__10__l,socialdev_pvict_c5_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005__10__l,socialdev_pvict_c5_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005__11,socialdev_pvict_c5_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005__11,socialdev_pvict_c5_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005__11__01,socialdev_pvict_c5_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005__11__01,socialdev_pvict_c5_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005__11__01__l,socialdev_pvict_c5_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005__11__01__l,socialdev_pvict_c5_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005__11__l,socialdev_pvict_c5_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005__11__l,socialdev_pvict_c5_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_005__l,socialdev_pvict_c5_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_005__l,socialdev_pvict_c5_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006,socialdev_pvict_c6,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006,socialdev_pvict_c6,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__03,socialdev_pvict_c6_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__03,socialdev_pvict_c6_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__05,socialdev_pvict_c6_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__05,socialdev_pvict_c6_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__05__l,socialdev_pvict_c6_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__05__l,socialdev_pvict_c6_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__11,socialdev_pvict_c6_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__11,socialdev_pvict_c6_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__11__l,socialdev_pvict_c6_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__11__l,socialdev_pvict_c6_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__12,socialdev_pvict_c6_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__12,socialdev_pvict_c6_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__12__01,socialdev_pvict_c6_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__12__01,socialdev_pvict_c6_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__12__01__l,socialdev_pvict_c6_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__12__01__l,socialdev_pvict_c6_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__12__l,socialdev_pvict_c6_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__12__l,socialdev_pvict_c6_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__14,socialdev_pvict_c6_m,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__14,socialdev_pvict_c6_m,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__14__l,socialdev_pvict_c6_m_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__14__l,socialdev_pvict_c6_m_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_006__l,socialdev_pvict_c6_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_006__l,socialdev_pvict_c6_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007,socialdev_pvict_c7,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007,socialdev_pvict_c7,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007__03,socialdev_pvict_c7_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007__03,socialdev_pvict_c7_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007__05,socialdev_pvict_c7_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007__05,socialdev_pvict_c7_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007__05__l,socialdev_pvict_c7_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007__05__l,socialdev_pvict_c7_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007__12,socialdev_pvict_c7_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007__12,socialdev_pvict_c7_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007__12__l,socialdev_pvict_c7_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007__12__l,socialdev_pvict_c7_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007__13,socialdev_pvict_c7_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007__13,socialdev_pvict_c7_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007__13__01,socialdev_pvict_c7_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007__13__01,socialdev_pvict_c7_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007__13__01__l,socialdev_pvict_c7_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007__13__01__l,socialdev_pvict_c7_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007__13__l,socialdev_pvict_c7_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007__13__l,socialdev_pvict_c7_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_007__l,socialdev_pvict_c7_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_007__l,socialdev_pvict_c7_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008,socialdev_pvict_c8,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008,socialdev_pvict_c8,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__03,socialdev_pvict_c8_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__03,socialdev_pvict_c8_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__05,socialdev_pvict_c8_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__05,socialdev_pvict_c8_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__05__l,socialdev_pvict_c8_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__05__l,socialdev_pvict_c8_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__13,socialdev_pvict_c8_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__13,socialdev_pvict_c8_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__13__l,socialdev_pvict_c8_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__13__l,socialdev_pvict_c8_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__14,socialdev_pvict_c8_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__14,socialdev_pvict_c8_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__14__01,socialdev_pvict_c8_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__14__01,socialdev_pvict_c8_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__14__01__l,socialdev_pvict_c8_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__14__01__l,socialdev_pvict_c8_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__14__l,socialdev_pvict_c8_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__14__l,socialdev_pvict_c8_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__16,socialdev_pvict_c8_k,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__16,socialdev_pvict_c8_k,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__16__l,socialdev_pvict_c8_k_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__16__l,socialdev_pvict_c8_k_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__17,socialdev_pvict_c8_q,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__17,socialdev_pvict_c8_q,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__17__l,socialdev_pvict_c8_q_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__17__l,socialdev_pvict_c8_q_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__18,socialdev_pvict_c8_m,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__18,socialdev_pvict_c8_m,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__18__l,socialdev_pvict_c8_m_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__18__l,socialdev_pvict_c8_m_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_008__l,socialdev_pvict_c8_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_008__l,socialdev_pvict_c8_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009,socialdev_pvict_c9,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009,socialdev_pvict_c9,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__03,socialdev_pvict_c9_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__03,socialdev_pvict_c9_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__05,socialdev_pvict_c9_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__05,socialdev_pvict_c9_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__05__l,socialdev_pvict_c9_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__05__l,socialdev_pvict_c9_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__14,socialdev_pvict_c9_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__14,socialdev_pvict_c9_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__14__l,socialdev_pvict_c9_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__14__l,socialdev_pvict_c9_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__15,socialdev_pvict_c9_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__15,socialdev_pvict_c9_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__15__01,socialdev_pvict_c9_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__15__01,socialdev_pvict_c9_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__15__01__l,socialdev_pvict_c9_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__15__01__l,socialdev_pvict_c9_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__15__l,socialdev_pvict_c9_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__15__l,socialdev_pvict_c9_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__17,socialdev_pvict_c9_m,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__17,socialdev_pvict_c9_m,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__17__l,socialdev_pvict_c9_m_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__17__l,socialdev_pvict_c9_m_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__18,socialdev_pvict_c9_n,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__18,socialdev_pvict_c9_n,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__18__l,socialdev_pvict_c9_n_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__18__l,socialdev_pvict_c9_n_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_009__l,socialdev_pvict_c9_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_009__l,socialdev_pvict_c9_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010,socialdev_pvict_p1,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010,socialdev_pvict_p1,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__03,socialdev_pvict_p1_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__03,socialdev_pvict_p1_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__05,socialdev_pvict_p1_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__05,socialdev_pvict_p1_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__05__l,socialdev_pvict_p1_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__05__l,socialdev_pvict_p1_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__15,socialdev_pvict_p1_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__15,socialdev_pvict_p1_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__15__l,socialdev_pvict_p1_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__15__l,socialdev_pvict_p1_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__16,socialdev_pvict_p1_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__16,socialdev_pvict_p1_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__16__l,socialdev_pvict_p1_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__16__l,socialdev_pvict_p1_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__18,socialdev_pvict_p1_m,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__18,socialdev_pvict_p1_m,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__18__l,socialdev_pvict_p1_m_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__18__l,socialdev_pvict_p1_m_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__19,socialdev_pvict_p1_n,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__19,socialdev_pvict_p1_n,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__19__l,socialdev_pvict_p1_n_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__19__l,socialdev_pvict_p1_n_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_010__l,socialdev_pvict_p1_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_010__l,socialdev_pvict_p1_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011,socialdev_pvict_p2,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011,socialdev_pvict_p2,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__03,socialdev_pvict_p2_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__03,socialdev_pvict_p2_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__05,socialdev_pvict_p2_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__05,socialdev_pvict_p2_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__05__l,socialdev_pvict_p2_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__05__l,socialdev_pvict_p2_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__16,socialdev_pvict_p2_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__16,socialdev_pvict_p2_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__16__l,socialdev_pvict_p2_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__16__l,socialdev_pvict_p2_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__17,socialdev_pvict_p2_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__17,socialdev_pvict_p2_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__17__l,socialdev_pvict_p2_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__17__l,socialdev_pvict_p2_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__19,socialdev_pvict_p2_m,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__19,socialdev_pvict_p2_m,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__19__l,socialdev_pvict_p2_m_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__19__l,socialdev_pvict_p2_m_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__20,socialdev_pvict_p2_n,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__20,socialdev_pvict_p2_n,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__20__l,socialdev_pvict_p2_n_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__20__l,socialdev_pvict_p2_n_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_011__l,socialdev_pvict_p2_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_011__l,socialdev_pvict_p2_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012,socialdev_pvict_p3,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012,socialdev_pvict_p3,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__03,socialdev_pvict_p3_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__03,socialdev_pvict_p3_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__05,socialdev_pvict_p3_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__05,socialdev_pvict_p3_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__05__l,socialdev_pvict_p3_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__05__l,socialdev_pvict_p3_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__17,socialdev_pvict_p3_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__17,socialdev_pvict_p3_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__17__l,socialdev_pvict_p3_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__17__l,socialdev_pvict_p3_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__18,socialdev_pvict_p3_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__18,socialdev_pvict_p3_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__18__l,socialdev_pvict_p3_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__18__l,socialdev_pvict_p3_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__20,socialdev_pvict_p3_m,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__20,socialdev_pvict_p3_m,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__20__l,socialdev_pvict_p3_m_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__20__l,socialdev_pvict_p3_m_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__21,socialdev_pvict_p3_n,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__21,socialdev_pvict_p3_n,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__21__l,socialdev_pvict_p3_n_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__21__l,socialdev_pvict_p3_n_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_012__l,socialdev_pvict_p3_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_012__l,socialdev_pvict_p3_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013,socialdev_pvict_p4,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013,socialdev_pvict_p4,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__03,socialdev_pvict_p4_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__03,socialdev_pvict_p4_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__05,socialdev_pvict_p4_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__05,socialdev_pvict_p4_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__05__l,socialdev_pvict_p4_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__05__l,socialdev_pvict_p4_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__18,socialdev_pvict_p4_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__18,socialdev_pvict_p4_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__18__l,socialdev_pvict_p4_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__18__l,socialdev_pvict_p4_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__19,socialdev_pvict_p4_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__19,socialdev_pvict_p4_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__19__l,socialdev_pvict_p4_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__19__l,socialdev_pvict_p4_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__21,socialdev_pvict_p4_m,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__21,socialdev_pvict_p4_m,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__21__l,socialdev_pvict_p4_m_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__21__l,socialdev_pvict_p4_m_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__22,socialdev_pvict_p4_n,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__22,socialdev_pvict_p4_n,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__22__l,socialdev_pvict_p4_n_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__22__l,socialdev_pvict_p4_n_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_013__l,socialdev_pvict_p4_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_013__l,socialdev_pvict_p4_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014,socialdev_pvict_p5,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014,socialdev_pvict_p5,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014__03,socialdev_pvict_p5_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014__03,socialdev_pvict_p5_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014__05,socialdev_pvict_p5_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014__05,socialdev_pvict_p5_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014__05__l,socialdev_pvict_p5_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014__05__l,socialdev_pvict_p5_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014__19,socialdev_pvict_p5_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014__19,socialdev_pvict_p5_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014__19__l,socialdev_pvict_p5_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014__19__l,socialdev_pvict_p5_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014__20,socialdev_pvict_p5_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014__20,socialdev_pvict_p5_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014__20__l,socialdev_pvict_p5_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014__20__l,socialdev_pvict_p5_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014__21,socialdev_pvict_p5_n,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014__21,socialdev_pvict_p5_n,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014__21__l,socialdev_pvict_p5_n_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014__21__l,socialdev_pvict_p5_n_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_014__l,socialdev_pvict_p5_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_014__l,socialdev_pvict_p5_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_015,socialdev_pvict_p6,98,999,I don't know
+sdev_p_vict,sdev_p_vict_015,socialdev_pvict_p6,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_015,socialdev_pvict_p6,999,444,My child has never dated (not applicable)
+sdev_p_vict,sdev_p_vict_015__03,socialdev_pvict_p6_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_015__03,socialdev_pvict_p6_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_015__05,socialdev_pvict_p6_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_015__05,socialdev_pvict_p6_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_015__05__l,socialdev_pvict_p6_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_015__05__l,socialdev_pvict_p6_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_015__20,socialdev_pvict_p6_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_015__20,socialdev_pvict_p6_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_015__20__l,socialdev_pvict_p6_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_015__20__l,socialdev_pvict_p6_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_015__21,socialdev_pvict_p6_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_015__21,socialdev_pvict_p6_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_015__21__l,socialdev_pvict_p6_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_015__21__l,socialdev_pvict_p6_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_015__l,socialdev_pvict_p6_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_015__l,socialdev_pvict_p6_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_015__l,socialdev_pvict_p6_l,999,444,My child has never dated (not applicable)
+sdev_p_vict,sdev_p_vict_016,socialdev_pvict_p7,98,999,I don't know
+sdev_p_vict,sdev_p_vict_016,socialdev_pvict_p7,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_016__03,socialdev_pvict_p7_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_016__03,socialdev_pvict_p7_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_016__05,socialdev_pvict_p7_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_016__05,socialdev_pvict_p7_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_016__05__l,socialdev_pvict_p7_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_016__05__l,socialdev_pvict_p7_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_016__l,socialdev_pvict_p7_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_016__l,socialdev_pvict_p7_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_017,socialdev_pvict_p8,98,999,I don't know
+sdev_p_vict,sdev_p_vict_017,socialdev_pvict_p8,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_017__03,socialdev_pvict_p8_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_017__03,socialdev_pvict_p8_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_017__04,socialdev_pvict_p8_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_017__04,socialdev_pvict_p8_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_017__04__l,socialdev_pvict_p8_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_017__04__l,socialdev_pvict_p8_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_017__l,socialdev_pvict_p8_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_017__l,socialdev_pvict_p8_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_018,socialdev_pvict_w1,98,999,I don't know
+sdev_p_vict,sdev_p_vict_018,socialdev_pvict_w1,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_018__03,socialdev_pvict_w1_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_018__03,socialdev_pvict_w1_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_018__05,socialdev_pvict_w1_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_018__05,socialdev_pvict_w1_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_018__05__l,socialdev_pvict_w1_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_018__05__l,socialdev_pvict_w1_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_018__23,socialdev_pvict_w1_p,98,999,I don't know
+sdev_p_vict,sdev_p_vict_018__23,socialdev_pvict_w1_p,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_018__23__l,socialdev_pvict_w1_p_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_018__23__l,socialdev_pvict_w1_p_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_018__l,socialdev_pvict_w1_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_018__l,socialdev_pvict_w1_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_019,socialdev_pvict_w2,98,999,I don't know
+sdev_p_vict,sdev_p_vict_019,socialdev_pvict_w2,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_019,socialdev_pvict_w2,999,444,My child is an only child
+sdev_p_vict,sdev_p_vict_019__03,socialdev_pvict_w2_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_019__03,socialdev_pvict_w2_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_019__05,socialdev_pvict_w2_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_019__05,socialdev_pvict_w2_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_019__05__l,socialdev_pvict_w2_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_019__05__l,socialdev_pvict_w2_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_019__24,socialdev_pvict_w2_p,98,999,I don't know
+sdev_p_vict,sdev_p_vict_019__24,socialdev_pvict_w2_p,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_019__24__l,socialdev_pvict_w2_p_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_019__24__l,socialdev_pvict_w2_p_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_019__l,socialdev_pvict_w2_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_019__l,socialdev_pvict_w2_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_019__l,socialdev_pvict_w2_l,999,444,My child is an only child
+sdev_p_vict,sdev_p_vict_020,socialdev_pvict_w3,98,999,I don't know
+sdev_p_vict,sdev_p_vict_020,socialdev_pvict_w3,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_020__03,socialdev_pvict_w3_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_020__03,socialdev_pvict_w3_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_020__05,socialdev_pvict_w3_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_020__05,socialdev_pvict_w3_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_020__05__l,socialdev_pvict_w3_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_020__05__l,socialdev_pvict_w3_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_020__25,socialdev_pvict_w3_o,98,999,I don't know
+sdev_p_vict,sdev_p_vict_020__25,socialdev_pvict_w3_o,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_020__25__l,socialdev_pvict_w3_o_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_020__25__l,socialdev_pvict_w3_o_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_020__26,socialdev_pvict_w3_p,98,999,I don't know
+sdev_p_vict,sdev_p_vict_020__26,socialdev_pvict_w3_p,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_020__26__l,socialdev_pvict_w3_p_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_020__26__l,socialdev_pvict_w3_p_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_020__l,socialdev_pvict_w3_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_020__l,socialdev_pvict_w3_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_021,socialdev_pvict_w4,98,999,I don't know
+sdev_p_vict,sdev_p_vict_021,socialdev_pvict_w4,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_021__03,socialdev_pvict_w4_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_021__03,socialdev_pvict_w4_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_021__05,socialdev_pvict_w4_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_021__05,socialdev_pvict_w4_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_021__05__l,socialdev_pvict_w4_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_021__05__l,socialdev_pvict_w4_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_021__26,socialdev_pvict_w4_o,98,999,I don't know
+sdev_p_vict,sdev_p_vict_021__26,socialdev_pvict_w4_o,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_021__26__l,socialdev_pvict_w4_o_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_021__26__l,socialdev_pvict_w4_o_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_021__27,socialdev_pvict_w4_p,98,999,I don't know
+sdev_p_vict,sdev_p_vict_021__27,socialdev_pvict_w4_p,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_021__27__l,socialdev_pvict_w4_p_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_021__27__l,socialdev_pvict_w4_p_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_021__l,socialdev_pvict_w4_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_021__l,socialdev_pvict_w4_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_022,socialdev_pvict_w5,98,999,I don't know
+sdev_p_vict,sdev_p_vict_022,socialdev_pvict_w5,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_022__03,socialdev_pvict_w5_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_022__03,socialdev_pvict_w5_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_022__04,socialdev_pvict_w5_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_022__04,socialdev_pvict_w5_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_022__04__l,socialdev_pvict_w5_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_022__04__l,socialdev_pvict_w5_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_022__27,socialdev_pvict_w5_m,98,999,I don't know
+sdev_p_vict,sdev_p_vict_022__27,socialdev_pvict_w5_m,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_022__27__l,socialdev_pvict_w5_m_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_022__27__l,socialdev_pvict_w5_m_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_022__l,socialdev_pvict_w5_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_022__l,socialdev_pvict_w5_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_023,socialdev_pvict_w6,98,999,I don't know
+sdev_p_vict,sdev_p_vict_023,socialdev_pvict_w6,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_023__03,socialdev_pvict_w6_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_023__03,socialdev_pvict_w6_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_023__05,socialdev_pvict_w6_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_023__05,socialdev_pvict_w6_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_023__05__l,socialdev_pvict_w6_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_023__05__l,socialdev_pvict_w6_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_023__28,socialdev_pvict_w6_o,98,999,I don't know
+sdev_p_vict,sdev_p_vict_023__28,socialdev_pvict_w6_o,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_023__28__l,socialdev_pvict_w6_o_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_023__28__l,socialdev_pvict_w6_o_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_023__l,socialdev_pvict_w6_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_023__l,socialdev_pvict_w6_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_024,socialdev_pvict_w8,98,999,I don't know
+sdev_p_vict,sdev_p_vict_024,socialdev_pvict_w8,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_024__03,socialdev_pvict_w8_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_024__03,socialdev_pvict_w8_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_024__05,socialdev_pvict_w8_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_024__05,socialdev_pvict_w8_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_024__05__l,socialdev_pvict_w8_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_024__05__l,socialdev_pvict_w8_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_024__29,socialdev_pvict_w8_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_024__29,socialdev_pvict_w8_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_024__29__l,socialdev_pvict_w8_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_024__29__l,socialdev_pvict_w8_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_024__l,socialdev_pvict_w8_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_024__l,socialdev_pvict_w8_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_025,socialdev_pvict_w9,98,999,I don't know
+sdev_p_vict,sdev_p_vict_025,socialdev_pvict_w9,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_025__03,socialdev_pvict_w9_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_025__03,socialdev_pvict_w9_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_025__05,socialdev_pvict_w9_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_025__05,socialdev_pvict_w9_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_025__05__l,socialdev_pvict_w9_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_025__05__l,socialdev_pvict_w9_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_025__30,socialdev_pvict_w9_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_025__30,socialdev_pvict_w9_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_025__30__l,socialdev_pvict_w9_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_025__30__l,socialdev_pvict_w9_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_025__l,socialdev_pvict_w9_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_025__l,socialdev_pvict_w9_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026,socialdev_pvict_g1,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026,socialdev_pvict_g1,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026__03,socialdev_pvict_g1_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026__03,socialdev_pvict_g1_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026__05,socialdev_pvict_g1_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026__05,socialdev_pvict_g1_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026__05__l,socialdev_pvict_g1_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026__05__l,socialdev_pvict_g1_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026__31,socialdev_pvict_g1_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026__31,socialdev_pvict_g1_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026__31__l,socialdev_pvict_g1_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026__31__l,socialdev_pvict_g1_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026__32,socialdev_pvict_g1_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026__32,socialdev_pvict_g1_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026__32__l,socialdev_pvict_g1_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026__32__l,socialdev_pvict_g1_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026__33,socialdev_pvict_g1_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026__33,socialdev_pvict_g1_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026__33__l,socialdev_pvict_g1_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026__33__l,socialdev_pvict_g1_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_026__l,socialdev_pvict_g1_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_026__l,socialdev_pvict_g1_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027,socialdev_pvict_g2,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027,socialdev_pvict_g2,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__03,socialdev_pvict_g2_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__03,socialdev_pvict_g2_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__05,socialdev_pvict_g2_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__05,socialdev_pvict_g2_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__05__l,socialdev_pvict_g2_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__05__l,socialdev_pvict_g2_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__32,socialdev_pvict_g2_g,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__32,socialdev_pvict_g2_g,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__32__l,socialdev_pvict_g2_g_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__32__l,socialdev_pvict_g2_g_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__33,socialdev_pvict_g2_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__33,socialdev_pvict_g2_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__33__01,socialdev_pvict_g2_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__33__01,socialdev_pvict_g2_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__33__01__l,socialdev_pvict_g2_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__33__01__l,socialdev_pvict_g2_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__33__l,socialdev_pvict_g2_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__33__l,socialdev_pvict_g2_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__34,socialdev_pvict_g2_o,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__34,socialdev_pvict_g2_o,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__34__l,socialdev_pvict_g2_o_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__34__l,socialdev_pvict_g2_o_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_027__l,socialdev_pvict_g2_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_027__l,socialdev_pvict_g2_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_028,socialdev_pvict_sc1,98,999,I don't know
+sdev_p_vict,sdev_p_vict_028,socialdev_pvict_sc1,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_028__01,socialdev_pvict_sc1_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_028__01,socialdev_pvict_sc1_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_028__03,socialdev_pvict_sc1_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_028__03,socialdev_pvict_sc1_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_028__03__l,socialdev_pvict_sc1_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_028__03__l,socialdev_pvict_sc1_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_028__l,socialdev_pvict_sc1_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_028__l,socialdev_pvict_sc1_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_029,socialdev_pvict_sc2,98,999,I don't know
+sdev_p_vict,sdev_p_vict_029,socialdev_pvict_sc2,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_029__01,socialdev_pvict_sc2_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_029__01,socialdev_pvict_sc2_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_029__03,socialdev_pvict_sc2_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_029__03,socialdev_pvict_sc2_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_029__03__l,socialdev_pvict_sc2_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_029__03__l,socialdev_pvict_sc2_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_029__l,socialdev_pvict_sc2_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_029__l,socialdev_pvict_sc2_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030,socialdev_pvict_int1,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030,socialdev_pvict_int1,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__02,socialdev_pvict_int1_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__02,socialdev_pvict_int1_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__03,socialdev_pvict_int1_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__03,socialdev_pvict_int1_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__03__l,socialdev_pvict_int1_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__03__l,socialdev_pvict_int1_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__33,socialdev_pvict_int1_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__33,socialdev_pvict_int1_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__33__01,socialdev_pvict_int1_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__33__01,socialdev_pvict_int1_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__33__01__l,socialdev_pvict_int1_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__33__01__l,socialdev_pvict_int1_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__33__l,socialdev_pvict_int1_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__33__l,socialdev_pvict_int1_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__34,socialdev_pvict_int1_h_know,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__34,socialdev_pvict_int1_h_know,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__34__l,socialdev_pvict_int1_h_know_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__34__l,socialdev_pvict_int1_h_know_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__35,socialdev_pvict_int1_h_knew,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__35,socialdev_pvict_int1_h_knew,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__35__l,socialdev_pvict_int1_h_knew_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__35__l,socialdev_pvict_int1_h_knew_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__37,socialdev_pvict_int1_n,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__37,socialdev_pvict_int1_n,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__37__l,socialdev_pvict_int1_n_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__37__l,socialdev_pvict_int1_n_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_030__l,socialdev_pvict_int1_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_030__l,socialdev_pvict_int1_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031,socialdev_pvict_int2,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031,socialdev_pvict_int2,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__02,socialdev_pvict_int2_c,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__02,socialdev_pvict_int2_c,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__03,socialdev_pvict_int2_e,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__03,socialdev_pvict_int2_e,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__03__l,socialdev_pvict_int2_e_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__03__l,socialdev_pvict_int2_e_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__34,socialdev_pvict_int2_h,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__34,socialdev_pvict_int2_h,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__34__01,socialdev_pvict_int2_i,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__34__01,socialdev_pvict_int2_i,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__34__01__l,socialdev_pvict_int2_i_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__34__01__l,socialdev_pvict_int2_i_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__34__l,socialdev_pvict_int2_h_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__34__l,socialdev_pvict_int2_h_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__35,socialdev_pvict_int2_h_know,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__35,socialdev_pvict_int2_h_know,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__35__l,socialdev_pvict_int2_h_know_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__35__l,socialdev_pvict_int2_h_know_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__36,socialdev_pvict_int2_h_knew,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__36,socialdev_pvict_int2_h_knew,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__36__l,socialdev_pvict_int2_h_knew_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__36__l,socialdev_pvict_int2_h_knew_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__38,socialdev_pvict_int2_n,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__38,socialdev_pvict_int2_n,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__38__l,socialdev_pvict_int2_n_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__38__l,socialdev_pvict_int2_n_l,99,777,I'd rather not say
+sdev_p_vict,sdev_p_vict_031__l,socialdev_pvict_int2_l,98,999,I don't know
+sdev_p_vict,sdev_p_vict_031__l,socialdev_pvict_int2_l,99,777,I'd rather not say
+sdev_y_fa,sdev_y_fa_004,socialdev_cfire_4,98,999,I don't know
+sdev_y_fa,sdev_y_fa_004__l,socialdev_cfire_4_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_001,socialdev_crd_01,98,999,I don't know
+sdev_y_rd,sdev_y_rd_001,socialdev_crd_01,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_001__l,socialdev_crd_01_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_001__l,socialdev_crd_01_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_002,socialdev_crd_02,98,999,I don't know
+sdev_y_rd,sdev_y_rd_002,socialdev_crd_02,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_002__l,socialdev_crd_02_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_002__l,socialdev_crd_02_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_003,socialdev_crd_03,98,999,I don't know
+sdev_y_rd,sdev_y_rd_003,socialdev_crd_03,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_003__l,socialdev_crd_03_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_003__l,socialdev_crd_03_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_004,socialdev_crd_04,98,999,I don't know
+sdev_y_rd,sdev_y_rd_004,socialdev_crd_04,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_004__l,socialdev_crd_04_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_004__l,socialdev_crd_04_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_005,socialdev_crd_05,98,999,I don't know
+sdev_y_rd,sdev_y_rd_005,socialdev_crd_05,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_005__l,socialdev_crd_05_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_005__l,socialdev_crd_05_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_006,socialdev_crd_06,98,999,I don't know
+sdev_y_rd,sdev_y_rd_006,socialdev_crd_06,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_006__l,socialdev_crd_06_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_006__l,socialdev_crd_06_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_007,socialdev_crd_07,98,999,I don't know
+sdev_y_rd,sdev_y_rd_007,socialdev_crd_07,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_007__l,socialdev_crd_07_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_007__l,socialdev_crd_07_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_008,socialdev_crd_08,98,999,I don't know
+sdev_y_rd,sdev_y_rd_008,socialdev_crd_08,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_008__l,socialdev_crd_08_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_008__l,socialdev_crd_08_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_009,socialdev_crd_09,98,999,I don't know
+sdev_y_rd,sdev_y_rd_009,socialdev_crd_09,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_009__l,socialdev_crd_09_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_009__l,socialdev_crd_09_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_010,socialdev_crd_10,98,999,I don't know
+sdev_y_rd,sdev_y_rd_010,socialdev_crd_10,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_010__l,socialdev_crd_10_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_010__l,socialdev_crd_10_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_011,socialdev_crd_11,98,999,I don't know
+sdev_y_rd,sdev_y_rd_011,socialdev_crd_11,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_011__l,socialdev_crd_11_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_011__l,socialdev_crd_11_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_012,socialdev_crd_12,98,999,I don't know
+sdev_y_rd,sdev_y_rd_012,socialdev_crd_12,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_012__l,socialdev_crd_12_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_012__l,socialdev_crd_12_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_013,socialdev_crd_13,98,999,I don't know
+sdev_y_rd,sdev_y_rd_013,socialdev_crd_13,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_013__l,socialdev_crd_13_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_013__l,socialdev_crd_13_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_014,socialdev_crd_14,98,999,I don't know
+sdev_y_rd,sdev_y_rd_014,socialdev_crd_14,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_014__l,socialdev_crd_14_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_014__l,socialdev_crd_14_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_015,socialdev_crd_15,98,999,I don't know
+sdev_y_rd,sdev_y_rd_015,socialdev_crd_15,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_015__l,socialdev_crd_15_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_015__l,socialdev_crd_15_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_016,socialdev_crd_16,98,999,I don't know
+sdev_y_rd,sdev_y_rd_016,socialdev_crd_16,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_016__l,socialdev_crd_16_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_016__l,socialdev_crd_16_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_017,socialdev_crd_17,98,999,I don't know
+sdev_y_rd,sdev_y_rd_017,socialdev_crd_17,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_017__l,socialdev_crd_17_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_017__l,socialdev_crd_17_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_018,socialdev_crd_18,98,999,I don't know
+sdev_y_rd,sdev_y_rd_018,socialdev_crd_18,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_018__l,socialdev_crd_18_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_018__l,socialdev_crd_18_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_019,socialdev_crd_19,98,999,I don't know
+sdev_y_rd,sdev_y_rd_019,socialdev_crd_19,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_019__l,socialdev_crd_19_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_019__l,socialdev_crd_19_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_020,socialdev_crd_20,98,999,I don't know
+sdev_y_rd,sdev_y_rd_020,socialdev_crd_20,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_020__l,socialdev_crd_20_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_020__l,socialdev_crd_20_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_021,socialdev_crd_21,98,999,I don't know
+sdev_y_rd,sdev_y_rd_021,socialdev_crd_21,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_021__l,socialdev_crd_21_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_021__l,socialdev_crd_21_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_022,socialdev_crd_22,98,999,I don't know
+sdev_y_rd,sdev_y_rd_022,socialdev_crd_22,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_022__05,socialdev_crd_22e,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_022__05__l,socialdev_crd_22e_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_022__l,socialdev_crd_22_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_022__l,socialdev_crd_22_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_023,socialdev_crd_23,98,999,I don't know
+sdev_y_rd,sdev_y_rd_023,socialdev_crd_23,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_023__l,socialdev_crd_23_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_023__l,socialdev_crd_23_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_024,socialdev_crd_24,98,999,I don't know
+sdev_y_rd,sdev_y_rd_024,socialdev_crd_24,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_024__l,socialdev_crd_24_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_024__l,socialdev_crd_24_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_025,socialdev_crd_25,98,999,I don't know
+sdev_y_rd,sdev_y_rd_025,socialdev_crd_25,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_025__l,socialdev_crd_25_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_025__l,socialdev_crd_25_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_026,socialdev_crd_26,98,999,I don't know
+sdev_y_rd,sdev_y_rd_026,socialdev_crd_26,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_026__l,socialdev_crd_26_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_026__l,socialdev_crd_26_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_027,socialdev_crd_27,98,999,I don't know
+sdev_y_rd,sdev_y_rd_027,socialdev_crd_27,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_027,socialdev_crd_27,999,444,I don't have any brothers or sisters
+sdev_y_rd,sdev_y_rd_027__l,socialdev_crd_27_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_027__l,socialdev_crd_27_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_027__l,socialdev_crd_27_l,999,444,I don't have any siblings
+sdev_y_rd,sdev_y_rd_028,socialdev_crd_28,98,999,I don't know
+sdev_y_rd,sdev_y_rd_028,socialdev_crd_28,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_028__l,socialdev_crd_28_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_028__l,socialdev_crd_28_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_029,socialdev_crd_29,98,999,I don't know
+sdev_y_rd,sdev_y_rd_029,socialdev_crd_29,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_029__l,socialdev_crd_29_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_029__l,socialdev_crd_29_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_030,socialdev_crd_30,98,999,I don't know
+sdev_y_rd,sdev_y_rd_030,socialdev_crd_30,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_030__l,socialdev_crd_30_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_030__l,socialdev_crd_30_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_031,socialdev_crd_31,98,999,I don't know
+sdev_y_rd,sdev_y_rd_031,socialdev_crd_31,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_031__l,socialdev_crd_31_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_031__l,socialdev_crd_31_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_032,socialdev_crd_32,98,999,I don't know
+sdev_y_rd,sdev_y_rd_032,socialdev_crd_32,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_032__l,socialdev_crd_32_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_032__l,socialdev_crd_32_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_033,socialdev_crd_33,98,999,I don't know
+sdev_y_rd,sdev_y_rd_033,socialdev_crd_33,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_033__l,socialdev_crd_33_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_033__l,socialdev_crd_33_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_034,socialdev_crd_34,98,999,I don't know
+sdev_y_rd,sdev_y_rd_034,socialdev_crd_34,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_034__l,socialdev_crd_34_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_034__l,socialdev_crd_34_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_035,socialdev_crd_35,98,999,I don't know
+sdev_y_rd,sdev_y_rd_035,socialdev_crd_35,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_035__l,socialdev_crd_35_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_035__l,socialdev_crd_35_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_036,socialdev_crd_36,98,999,I don't know
+sdev_y_rd,sdev_y_rd_036,socialdev_crd_36,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_036__l,socialdev_crd_36_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_036__l,socialdev_crd_36_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_037,socialdev_crd_37,98,999,I don't know
+sdev_y_rd,sdev_y_rd_037,socialdev_crd_37,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_037__l,socialdev_crd_37_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_037__l,socialdev_crd_37_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_038,socialdev_crd_38,98,999,I don't know
+sdev_y_rd,sdev_y_rd_038,socialdev_crd_38,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_038__l,socialdev_crd_38_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_038__l,socialdev_crd_38_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_039,socialdev_crd_39,98,999,I don't know
+sdev_y_rd,sdev_y_rd_039,socialdev_crd_39,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_039__l,socialdev_crd_39_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_039__l,socialdev_crd_39_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_040,socialdev_crd_40,98,999,I don't know
+sdev_y_rd,sdev_y_rd_040,socialdev_crd_40,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_040__l,socialdev_crd_40_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_040__l,socialdev_crd_40_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_041,socialdev_crd_41,98,999,I don't know
+sdev_y_rd,sdev_y_rd_041,socialdev_crd_41,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_041__l,socialdev_crd_41_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_041__l,socialdev_crd_41_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_042,socialdev_crd_42,98,999,I don't know
+sdev_y_rd,sdev_y_rd_042,socialdev_crd_42,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_042__l,socialdev_crd_42_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_042__l,socialdev_crd_42_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_043,socialdev_crd_43,98,999,I don't know
+sdev_y_rd,sdev_y_rd_043,socialdev_crd_43,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_043__l,socialdev_crd_43_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_043__l,socialdev_crd_43_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_044,socialdev_crd_44,98,999,I don't know
+sdev_y_rd,sdev_y_rd_044,socialdev_crd_44,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_044__l,socialdev_crd_44_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_044__l,socialdev_crd_44_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_045,socialdev_crd_45,98,999,I don't know
+sdev_y_rd,sdev_y_rd_045,socialdev_crd_45,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_045__l,socialdev_crd_45_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_045__l,socialdev_crd_45_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_046,socialdev_crd_46,98,999,I don't know
+sdev_y_rd,sdev_y_rd_046,socialdev_crd_46,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_046__l,socialdev_crd_46_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_046__l,socialdev_crd_46_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_047,socialdev_crd_47,98,999,I don't know
+sdev_y_rd,sdev_y_rd_047,socialdev_crd_47,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_047__l,socialdev_crd_47_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_047__l,socialdev_crd_47_l,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_048,socialdev_crd_48,98,999,I don't know
+sdev_y_rd,sdev_y_rd_048,socialdev_crd_48,99,777,I'd rather not say
+sdev_y_rd,sdev_y_rd_048__l,socialdev_crd_48_l,98,999,I don't know
+sdev_y_rd,sdev_y_rd_048__l,socialdev_crd_48_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001,socialdev_cvict_c1,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001,socialdev_cvict_c1,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__03,socialdev_cvict_c1_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__03,socialdev_cvict_c1_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__05,socialdev_cvict_c1_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__05,socialdev_cvict_c1_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__05__l,socialdev_cvict_c1_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__05__l,socialdev_cvict_c1_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__06,socialdev_cvict_c1_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__06,socialdev_cvict_c1_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__06__01,socialdev_cvict_c1_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__06__01,socialdev_cvict_c1_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__06__01__l,socialdev_cvict_c1_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__06__01__l,socialdev_cvict_c1_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__06__l,socialdev_cvict_c1_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__06__l,socialdev_cvict_c1_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__08,socialdev_cvict_c1_m,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__08,socialdev_cvict_c1_m,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__08__l,socialdev_cvict_c1_m_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__08__l,socialdev_cvict_c1_m_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__09,socialdev_cvict_c1_n,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__09,socialdev_cvict_c1_n,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__09__l,socialdev_cvict_c1_n_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__09__l,socialdev_cvict_c1_n_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_001__l,socialdev_cvict_c1_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_001__l,socialdev_cvict_c1_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002,socialdev_cvict_c2,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002,socialdev_cvict_c2,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__03,socialdev_cvict_c2_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__03,socialdev_cvict_c2_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__05,socialdev_cvict_c2_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__05,socialdev_cvict_c2_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__05__l,socialdev_cvict_c2_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__05__l,socialdev_cvict_c2_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__07,socialdev_cvict_c2_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__07,socialdev_cvict_c2_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__07__l,socialdev_cvict_c2_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__07__l,socialdev_cvict_c2_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__08,socialdev_cvict_c2_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__08,socialdev_cvict_c2_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__08__01,socialdev_cvict_c2_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__08__01,socialdev_cvict_c2_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__08__01__l,socialdev_cvict_c2_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__08__01__l,socialdev_cvict_c2_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__08__l,socialdev_cvict_c2_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__08__l,socialdev_cvict_c2_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__10,socialdev_cvict_c2_n,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__10,socialdev_cvict_c2_n,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__10__l,socialdev_cvict_c2_n_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__10__l,socialdev_cvict_c2_n_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_002__l,socialdev_cvict_c2_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_002__l,socialdev_cvict_c2_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003,socialdev_cvict_c3,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003,socialdev_cvict_c3,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003__03,socialdev_cvict_c3_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003__03,socialdev_cvict_c3_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003__05,socialdev_cvict_c3_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003__05,socialdev_cvict_c3_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003__05__l,socialdev_cvict_c3_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003__05__l,socialdev_cvict_c3_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003__08,socialdev_cvict_c3_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003__08,socialdev_cvict_c3_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003__08__l,socialdev_cvict_c3_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003__08__l,socialdev_cvict_c3_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003__09,socialdev_cvict_c3_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003__09,socialdev_cvict_c3_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003__09__01,socialdev_cvict_c3_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003__09__01,socialdev_cvict_c3_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003__09__01__l,socialdev_cvict_c3_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003__09__01__l,socialdev_cvict_c3_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003__09__l,socialdev_cvict_c3_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003__09__l,socialdev_cvict_c3_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_003__l,socialdev_cvict_c3_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_003__l,socialdev_cvict_c3_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004,socialdev_cvict_c4,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004,socialdev_cvict_c4,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004__03,socialdev_cvict_c4_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004__03,socialdev_cvict_c4_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004__05,socialdev_cvict_c4_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004__05,socialdev_cvict_c4_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004__05__l,socialdev_cvict_c4_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004__05__l,socialdev_cvict_c4_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004__09,socialdev_cvict_c4_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004__09,socialdev_cvict_c4_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004__09__l,socialdev_cvict_c4_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004__09__l,socialdev_cvict_c4_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004__10,socialdev_cvict_c4_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004__10,socialdev_cvict_c4_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004__10__01,socialdev_cvict_c4_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004__10__01,socialdev_cvict_c4_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004__10__01__l,socialdev_cvict_c4_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004__10__01__l,socialdev_cvict_c4_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004__10__l,socialdev_cvict_c4_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004__10__l,socialdev_cvict_c4_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_004__l,socialdev_cvict_c4_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_004__l,socialdev_cvict_c4_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005,socialdev_cvict_c5,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005,socialdev_cvict_c5,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005__03,socialdev_cvict_c5_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005__03,socialdev_cvict_c5_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005__05,socialdev_cvict_c5_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005__05,socialdev_cvict_c5_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005__05__l,socialdev_cvict_c5_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005__05__l,socialdev_cvict_c5_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005__10,socialdev_cvict_c5_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005__10,socialdev_cvict_c5_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005__10__l,socialdev_cvict_c5_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005__10__l,socialdev_cvict_c5_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005__11,socialdev_cvict_c5_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005__11,socialdev_cvict_c5_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005__11__01,socialdev_cvict_c5_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005__11__01,socialdev_cvict_c5_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005__11__01__l,socialdev_cvict_c5_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005__11__01__l,socialdev_cvict_c5_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005__11__l,socialdev_cvict_c5_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005__11__l,socialdev_cvict_c5_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_005__l,socialdev_cvict_c5_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_005__l,socialdev_cvict_c5_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006,socialdev_cvict_c6,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006,socialdev_cvict_c6,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__03,socialdev_cvict_c6_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__03,socialdev_cvict_c6_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__05,socialdev_cvict_c6_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__05,socialdev_cvict_c6_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__05__l,socialdev_cvict_c6_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__05__l,socialdev_cvict_c6_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__11,socialdev_cvict_c6_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__11,socialdev_cvict_c6_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__11__l,socialdev_cvict_c6_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__11__l,socialdev_cvict_c6_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__12,socialdev_cvict_c6_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__12,socialdev_cvict_c6_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__12__01,socialdev_cvict_c6_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__12__01,socialdev_cvict_c6_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__12__01__l,socialdev_cvict_c6_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__12__01__l,socialdev_cvict_c6_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__12__l,socialdev_cvict_c6_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__12__l,socialdev_cvict_c6_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__14,socialdev_cvict_c6_m,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__14,socialdev_cvict_c6_m,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__14__l,socialdev_cvict_c6_m_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__14__l,socialdev_cvict_c6_m_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_006__l,socialdev_cvict_c6_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_006__l,socialdev_cvict_c6_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007,socialdev_cvict_c7,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007,socialdev_cvict_c7,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007__03,socialdev_cvict_c7_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007__03,socialdev_cvict_c7_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007__05,socialdev_cvict_c7_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007__05,socialdev_cvict_c7_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007__05__l,socialdev_cvict_c7_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007__05__l,socialdev_cvict_c7_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007__12,socialdev_cvict_c7_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007__12,socialdev_cvict_c7_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007__12__l,socialdev_cvict_c7_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007__12__l,socialdev_cvict_c7_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007__13,socialdev_cvict_c7_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007__13,socialdev_cvict_c7_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007__13__01,socialdev_cvict_c7_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007__13__01,socialdev_cvict_c7_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007__13__01__l,socialdev_cvict_c7_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007__13__01__l,socialdev_cvict_c7_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007__13__l,socialdev_cvict_c7_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007__13__l,socialdev_cvict_c7_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_007__l,socialdev_cvict_c7_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_007__l,socialdev_cvict_c7_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008,socialdev_cvict_c8,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008,socialdev_cvict_c8,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__03,socialdev_cvict_c8_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__03,socialdev_cvict_c8_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__05,socialdev_cvict_c8_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__05,socialdev_cvict_c8_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__05__l,socialdev_cvict_c8_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__05__l,socialdev_cvict_c8_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__13,socialdev_cvict_c8_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__13,socialdev_cvict_c8_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__13__l,socialdev_cvict_c8_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__13__l,socialdev_cvict_c8_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__14,socialdev_cvict_c8_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__14,socialdev_cvict_c8_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__14__01,socialdev_cvict_c8_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__14__01,socialdev_cvict_c8_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__14__01__l,socialdev_cvict_c8_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__14__01__l,socialdev_cvict_c8_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__14__l,socialdev_cvict_c8_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__14__l,socialdev_cvict_c8_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__16,socialdev_cvict_c8_k,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__16,socialdev_cvict_c8_k,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__16__l,socialdev_cvict_c8_k_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__16__l,socialdev_cvict_c8_k_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__17,socialdev_cvict_c8_q,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__17,socialdev_cvict_c8_q,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__17__l,socialdev_cvict_c8_q_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__17__l,socialdev_cvict_c8_q_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__18,socialdev_cvict_c8_m,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__18,socialdev_cvict_c8_m,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__18__l,socialdev_cvict_c8_m_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__18__l,socialdev_cvict_c8_m_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_008__l,socialdev_cvict_c8_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_008__l,socialdev_cvict_c8_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009,socialdev_cvict_c9,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009,socialdev_cvict_c9,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__03,socialdev_cvict_c9_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__03,socialdev_cvict_c9_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__05,socialdev_cvict_c9_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__05,socialdev_cvict_c9_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__05__l,socialdev_cvict_c9_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__05__l,socialdev_cvict_c9_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__14,socialdev_cvict_c9_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__14,socialdev_cvict_c9_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__14__l,socialdev_cvict_c9_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__14__l,socialdev_cvict_c9_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__15,socialdev_cvict_c9_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__15,socialdev_cvict_c9_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__15__01,socialdev_cvict_c9_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__15__01,socialdev_cvict_c9_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__15__01__l,socialdev_cvict_c9_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__15__01__l,socialdev_cvict_c9_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__15__l,socialdev_cvict_c9_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__15__l,socialdev_cvict_c9_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__17,socialdev_cvict_c9_m,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__17,socialdev_cvict_c9_m,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__17__l,socialdev_cvict_c9_m_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__17__l,socialdev_cvict_c9_m_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__18,socialdev_cvict_c9_n,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__18,socialdev_cvict_c9_n,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__18__l,socialdev_cvict_c9_n_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__18__l,socialdev_cvict_c9_n_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_009__l,socialdev_cvict_c9_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_009__l,socialdev_cvict_c9_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010,socialdev_cvict_p1,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010,socialdev_cvict_p1,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__03,socialdev_cvict_p1_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__03,socialdev_cvict_p1_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__05,socialdev_cvict_p1_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__05,socialdev_cvict_p1_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__05__l,socialdev_cvict_p1_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__05__l,socialdev_cvict_p1_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__15,socialdev_cvict_p1_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__15,socialdev_cvict_p1_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__15__l,socialdev_cvict_p1_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__15__l,socialdev_cvict_p1_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__16,socialdev_cvict_p1_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__16,socialdev_cvict_p1_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__16__l,socialdev_cvict_p1_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__16__l,socialdev_cvict_p1_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__18,socialdev_cvict_p1_m,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__18,socialdev_cvict_p1_m,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__18__l,socialdev_cvict_p1_m_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__18__l,socialdev_cvict_p1_m_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__19,socialdev_cvict_p1_n,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__19,socialdev_cvict_p1_n,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__19__l,socialdev_cvict_p1_n_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__19__l,socialdev_cvict_p1_n_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_010__l,socialdev_cvict_p1_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_010__l,socialdev_cvict_p1_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011,socialdev_cvict_p2,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011,socialdev_cvict_p2,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__03,socialdev_cvict_p2_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__03,socialdev_cvict_p2_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__05,socialdev_cvict_p2_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__05,socialdev_cvict_p2_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__05__l,socialdev_cvict_p2_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__05__l,socialdev_cvict_p2_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__16,socialdev_cvict_p2_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__16,socialdev_cvict_p2_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__16__l,socialdev_cvict_p2_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__16__l,socialdev_cvict_p2_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__17,socialdev_cvict_p2_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__17,socialdev_cvict_p2_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__17__l,socialdev_cvict_p2_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__17__l,socialdev_cvict_p2_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__19,socialdev_cvict_p2_m,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__19,socialdev_cvict_p2_m,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__19__l,socialdev_cvict_p2_m_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__19__l,socialdev_cvict_p2_m_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__20,socialdev_cvict_p2_n,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__20,socialdev_cvict_p2_n,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__20__l,socialdev_cvict_p2_n_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__20__l,socialdev_cvict_p2_n_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_011__l,socialdev_cvict_p2_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_011__l,socialdev_cvict_p2_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012,socialdev_cvict_p3,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012,socialdev_cvict_p3,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__03,socialdev_cvict_p3_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__03,socialdev_cvict_p3_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__05,socialdev_cvict_p3_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__05,socialdev_cvict_p3_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__05__l,socialdev_cvict_p3_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__05__l,socialdev_cvict_p3_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__17,socialdev_cvict_p3_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__17,socialdev_cvict_p3_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__17__l,socialdev_cvict_p3_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__17__l,socialdev_cvict_p3_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__18,socialdev_cvict_p3_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__18,socialdev_cvict_p3_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__18__l,socialdev_cvict_p3_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__18__l,socialdev_cvict_p3_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__20,socialdev_cvict_p3_m,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__20,socialdev_cvict_p3_m,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__20__l,socialdev_cvict_p3_m_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__20__l,socialdev_cvict_p3_m_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__21,socialdev_cvict_p3_n,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__21,socialdev_cvict_p3_n,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__21__l,socialdev_cvict_p3_n_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__21__l,socialdev_cvict_p3_n_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_012__l,socialdev_cvict_p3_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_012__l,socialdev_cvict_p3_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013,socialdev_cvict_p4,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013,socialdev_cvict_p4,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__03,socialdev_cvict_p4_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__03,socialdev_cvict_p4_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__05,socialdev_cvict_p4_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__05,socialdev_cvict_p4_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__05__l,socialdev_cvict_p4_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__05__l,socialdev_cvict_p4_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__18,socialdev_cvict_p4_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__18,socialdev_cvict_p4_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__18__l,socialdev_cvict_p4_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__18__l,socialdev_cvict_p4_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__19,socialdev_cvict_p4_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__19,socialdev_cvict_p4_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__19__l,socialdev_cvict_p4_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__19__l,socialdev_cvict_p4_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__21,socialdev_cvict_p4_m,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__21,socialdev_cvict_p4_m,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__21__l,socialdev_cvict_p4_m_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__21__l,socialdev_cvict_p4_m_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__22,socialdev_cvict_p4_n,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__22,socialdev_cvict_p4_n,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__22__l,socialdev_cvict_p4_n_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__22__l,socialdev_cvict_p4_n_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_013__l,socialdev_cvict_p4_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_013__l,socialdev_cvict_p4_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014,socialdev_cvict_p5,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014,socialdev_cvict_p5,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014__03,socialdev_cvict_p5_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014__03,socialdev_cvict_p5_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014__05,socialdev_cvict_p5_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014__05,socialdev_cvict_p5_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014__05__l,socialdev_cvict_p5_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014__05__l,socialdev_cvict_p5_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014__19,socialdev_cvict_p5_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014__19,socialdev_cvict_p5_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014__19__l,socialdev_cvict_p5_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014__19__l,socialdev_cvict_p5_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014__20,socialdev_cvict_p5_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014__20,socialdev_cvict_p5_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014__20__l,socialdev_cvict_p5_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014__20__l,socialdev_cvict_p5_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014__21,socialdev_cvict_p5_n,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014__21,socialdev_cvict_p5_n,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014__21__l,socialdev_cvict_p5_n_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014__21__l,socialdev_cvict_p5_n_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_014__l,socialdev_cvict_p5_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_014__l,socialdev_cvict_p5_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_015,socialdev_cvict_p6,98,999,I don't know
+sdev_y_vict,sdev_y_vict_015,socialdev_cvict_p6,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_015,socialdev_cvict_p6,999,444,I have never dated (not applicable)
+sdev_y_vict,sdev_y_vict_015__03,socialdev_cvict_p6_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_015__03,socialdev_cvict_p6_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_015__05,socialdev_cvict_p6_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_015__05,socialdev_cvict_p6_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_015__05__l,socialdev_cvict_p6_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_015__05__l,socialdev_cvict_p6_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_015__20,socialdev_cvict_p6_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_015__20,socialdev_cvict_p6_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_015__20__l,socialdev_cvict_p6_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_015__20__l,socialdev_cvict_p6_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_015__21,socialdev_cvict_p6_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_015__21,socialdev_cvict_p6_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_015__21__l,socialdev_cvict_p6_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_015__21__l,socialdev_cvict_p6_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_015__l,socialdev_cvict_p6_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_015__l,socialdev_cvict_p6_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_015__l,socialdev_cvict_p6_l,999,444,I have never dated (not applicable)
+sdev_y_vict,sdev_y_vict_016,socialdev_cvict_p7,98,999,I don't know
+sdev_y_vict,sdev_y_vict_016,socialdev_cvict_p7,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_016__03,socialdev_cvict_p7_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_016__03,socialdev_cvict_p7_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_016__05,socialdev_cvict_p7_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_016__05,socialdev_cvict_p7_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_016__05__l,socialdev_cvict_p7_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_016__05__l,socialdev_cvict_p7_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_016__l,socialdev_cvict_p7_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_016__l,socialdev_cvict_p7_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_017,socialdev_cvict_p8,98,999,I don't know
+sdev_y_vict,sdev_y_vict_017,socialdev_cvict_p8,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_017__03,socialdev_cvict_p8_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_017__03,socialdev_cvict_p8_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_017__05,socialdev_cvict_p8_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_017__05,socialdev_cvict_p8_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_017__05__l,socialdev_cvict_p8_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_017__05__l,socialdev_cvict_p8_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_017__l,socialdev_cvict_p8_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_017__l,socialdev_cvict_p8_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_018,socialdev_cvict_w1,98,999,I don't know
+sdev_y_vict,sdev_y_vict_018,socialdev_cvict_w1,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_018__03,socialdev_cvict_w1_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_018__03,socialdev_cvict_w1_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_018__05,socialdev_cvict_w1_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_018__05,socialdev_cvict_w1_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_018__05__l,socialdev_cvict_w1_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_018__05__l,socialdev_cvict_w1_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_018__23,socialdev_cvict_w1_p,98,999,I don't know
+sdev_y_vict,sdev_y_vict_018__23,socialdev_cvict_w1_p,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_018__23__l,socialdev_cvict_w1_p_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_018__23__l,socialdev_cvict_w1_p_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_018__l,socialdev_cvict_w1_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_018__l,socialdev_cvict_w1_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_019,socialdev_cvict_w2,98,999,I don't know
+sdev_y_vict,sdev_y_vict_019,socialdev_cvict_w2,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_019,socialdev_cvict_w2,999,444,I don't have any brothers or sisters
+sdev_y_vict,sdev_y_vict_019__03,socialdev_cvict_w2_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_019__03,socialdev_cvict_w2_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_019__05,socialdev_cvict_w2_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_019__05,socialdev_cvict_w2_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_019__05__l,socialdev_cvict_w2_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_019__05__l,socialdev_cvict_w2_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_019__24,socialdev_cvict_w2_p,98,999,I don't know
+sdev_y_vict,sdev_y_vict_019__24,socialdev_cvict_w2_p,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_019__24__l,socialdev_cvict_w2_p_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_019__24__l,socialdev_cvict_w2_p_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_019__l,socialdev_cvict_w2_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_019__l,socialdev_cvict_w2_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_019__l,socialdev_cvict_w2_l,999,444,I don't have any siblings
+sdev_y_vict,sdev_y_vict_020,socialdev_cvict_w3,98,999,I don't know
+sdev_y_vict,sdev_y_vict_020,socialdev_cvict_w3,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_020__03,socialdev_cvict_w3_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_020__03,socialdev_cvict_w3_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_020__05,socialdev_cvict_w3_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_020__05,socialdev_cvict_w3_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_020__05__l,socialdev_cvict_w3_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_020__05__l,socialdev_cvict_w3_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_020__25,socialdev_cvict_w3_o,98,999,I don't know
+sdev_y_vict,sdev_y_vict_020__25,socialdev_cvict_w3_o,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_020__25__l,socialdev_cvict_w3_o_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_020__25__l,socialdev_cvict_w3_o_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_020__26,socialdev_cvict_w3_p,98,999,I don't know
+sdev_y_vict,sdev_y_vict_020__26,socialdev_cvict_w3_p,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_020__26__l,socialdev_cvict_w3_p_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_020__26__l,socialdev_cvict_w3_p_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_020__l,socialdev_cvict_w3_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_020__l,socialdev_cvict_w3_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_021,socialdev_cvict_w4,98,999,I don't know
+sdev_y_vict,sdev_y_vict_021,socialdev_cvict_w4,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_021__03,socialdev_cvict_w4_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_021__03,socialdev_cvict_w4_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_021__05,socialdev_cvict_w4_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_021__05,socialdev_cvict_w4_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_021__05__l,socialdev_cvict_w4_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_021__05__l,socialdev_cvict_w4_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_021__26,socialdev_cvict_w4_o,98,999,I don't know
+sdev_y_vict,sdev_y_vict_021__26,socialdev_cvict_w4_o,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_021__26__l,socialdev_cvict_w4_o_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_021__26__l,socialdev_cvict_w4_o_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_021__27,socialdev_cvict_w4_p,98,999,I don't know
+sdev_y_vict,sdev_y_vict_021__27,socialdev_cvict_w4_p,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_021__27__l,socialdev_cvict_w4_p_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_021__27__l,socialdev_cvict_w4_p_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_021__l,socialdev_cvict_w4_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_021__l,socialdev_cvict_w4_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_022,socialdev_cvict_w5,98,999,I don't know
+sdev_y_vict,sdev_y_vict_022,socialdev_cvict_w5,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_022__03,socialdev_cvict_w5_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_022__03,socialdev_cvict_w5_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_022__05,socialdev_cvict_w5_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_022__05,socialdev_cvict_w5_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_022__05__l,socialdev_cvict_w5_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_022__05__l,socialdev_cvict_w5_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_022__27,socialdev_cvict_w5_m,98,999,I don't know
+sdev_y_vict,sdev_y_vict_022__27,socialdev_cvict_w5_m,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_022__27__l,socialdev_cvict_w5_m_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_022__27__l,socialdev_cvict_w5_m_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_022__l,socialdev_cvict_w5_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_022__l,socialdev_cvict_w5_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_023,socialdev_cvict_w6,98,999,I don't know
+sdev_y_vict,sdev_y_vict_023,socialdev_cvict_w6,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_023__03,socialdev_cvict_w6_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_023__03,socialdev_cvict_w6_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_023__05,socialdev_cvict_w6_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_023__05,socialdev_cvict_w6_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_023__05__l,socialdev_cvict_w6_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_023__05__l,socialdev_cvict_w6_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_023__28,socialdev_cvict_w6_o,98,999,I don't know
+sdev_y_vict,sdev_y_vict_023__28,socialdev_cvict_w6_o,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_023__28__l,socialdev_cvict_w6_o_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_023__28__l,socialdev_cvict_w6_o_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_023__l,socialdev_cvict_w6_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_023__l,socialdev_cvict_w6_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_024,socialdev_cvict_w8,98,999,I don't know
+sdev_y_vict,sdev_y_vict_024,socialdev_cvict_w8,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_024__03,socialdev_cvict_w8_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_024__03,socialdev_cvict_w8_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_024__05,socialdev_cvict_w8_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_024__05,socialdev_cvict_w8_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_024__05__l,socialdev_cvict_w8_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_024__05__l,socialdev_cvict_w8_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_024__29,socialdev_cvict_w8_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_024__29,socialdev_cvict_w8_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_024__29__l,socialdev_cvict_w8_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_024__29__l,socialdev_cvict_w8_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_024__l,socialdev_cvict_w8_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_024__l,socialdev_cvict_w8_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_025,socialdev_cvict_w9,98,999,I don't know
+sdev_y_vict,sdev_y_vict_025,socialdev_cvict_w9,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_025__03,socialdev_cvict_w9_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_025__03,socialdev_cvict_w9_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_025__05,socialdev_cvict_w9_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_025__05,socialdev_cvict_w9_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_025__05__l,socialdev_cvict_w9_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_025__05__l,socialdev_cvict_w9_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_025__30,socialdev_cvict_w9_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_025__30,socialdev_cvict_w9_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_025__30__l,socialdev_cvict_w9_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_025__30__l,socialdev_cvict_w9_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_025__l,socialdev_cvict_w9_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_025__l,socialdev_cvict_w9_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026,socialdev_cvict_g1,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026,socialdev_cvict_g1,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026__03,socialdev_cvict_g1_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026__03,socialdev_cvict_g1_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026__05,socialdev_cvict_g1_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026__05,socialdev_cvict_g1_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026__05__l,socialdev_cvict_g1_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026__05__l,socialdev_cvict_g1_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026__31,socialdev_cvict_g1_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026__31,socialdev_cvict_g1_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026__31__l,socialdev_cvict_g1_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026__31__l,socialdev_cvict_g1_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026__32,socialdev_cvict_g1_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026__32,socialdev_cvict_g1_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026__32__01,socialdev_cvict_g1_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026__32__01,socialdev_cvict_g1_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026__32__01__l,socialdev_cvict_g1_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026__32__01__l,socialdev_cvict_g1_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026__32__l,socialdev_cvict_g1_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026__32__l,socialdev_cvict_g1_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_026__l,socialdev_cvict_g1_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_026__l,socialdev_cvict_g1_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027,socialdev_cvict_g2,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027,socialdev_cvict_g2,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__03,socialdev_cvict_g2_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__03,socialdev_cvict_g2_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__05,socialdev_cvict_g2_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__05,socialdev_cvict_g2_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__05__l,socialdev_cvict_g2_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__05__l,socialdev_cvict_g2_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__32,socialdev_cvict_g2_g,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__32,socialdev_cvict_g2_g,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__32__l,socialdev_cvict_g2_g_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__32__l,socialdev_cvict_g2_g_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__33,socialdev_cvict_g2_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__33,socialdev_cvict_g2_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__33__01,socialdev_cvict_g2_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__33__01,socialdev_cvict_g2_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__33__01__l,socialdev_cvict_g2_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__33__01__l,socialdev_cvict_g2_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__33__l,socialdev_cvict_g2_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__33__l,socialdev_cvict_g2_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__34,socialdev_cvict_g2_o,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__34,socialdev_cvict_g2_o,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__34__l,socialdev_cvict_g2_o_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__34__l,socialdev_cvict_g2_o_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_027__l,socialdev_cvict_g2_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_027__l,socialdev_cvict_g2_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_028,socialdev_cvict_sc1,98,999,I don't know
+sdev_y_vict,sdev_y_vict_028,socialdev_cvict_sc1,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_028__01,socialdev_cvict_sc1_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_028__01,socialdev_cvict_sc1_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_028__03,socialdev_cvict_sc1_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_028__03,socialdev_cvict_sc1_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_028__03__l,socialdev_cvict_sc1_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_028__03__l,socialdev_cvict_sc1_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_028__l,socialdev_cvict_sc1_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_028__l,socialdev_cvict_sc1_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_029,socialdev_cvict_sc2,98,999,I don't know
+sdev_y_vict,sdev_y_vict_029,socialdev_cvict_sc2,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_029__01,socialdev_cvict_sc2_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_029__01,socialdev_cvict_sc2_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_029__03,socialdev_cvict_sc2_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_029__03,socialdev_cvict_sc2_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_029__03__l,socialdev_cvict_sc2_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_029__03__l,socialdev_cvict_sc2_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_029__l,socialdev_cvict_sc2_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_029__l,socialdev_cvict_sc2_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030,socialdev_cvict_int1,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030,socialdev_cvict_int1,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__02,socialdev_cvict_int1_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__02,socialdev_cvict_int1_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__03,socialdev_cvict_int1_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__03,socialdev_cvict_int1_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__03__l,socialdev_cvict_int1_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__03__l,socialdev_cvict_int1_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__33,socialdev_cvict_int1_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__33,socialdev_cvict_int1_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__33__01,socialdev_cvict_int1_i,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__33__01,socialdev_cvict_int1_i,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__33__01__l,socialdev_cvict_int1_i_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__33__01__l,socialdev_cvict_int1_i_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__33__l,socialdev_cvict_int1_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__33__l,socialdev_cvict_int1_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__34,socialdev_cvict_int1_inta,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__34,socialdev_cvict_int1_inta,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__34__l,socialdev_cvict_int1_inta_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__34__l,socialdev_cvict_int1_inta_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__35,socialdev_cvict_int1_intb,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__35,socialdev_cvict_int1_intb,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__35__l,socialdev_cvict_int1_intb_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__35__l,socialdev_cvict_int1_intb_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__37,socialdev_cvict_int1_inte,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__37,socialdev_cvict_int1_inte,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__37__l,socialdev_cvict_int1_inte_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__37__l,socialdev_cvict_int1_inte_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_030__l,socialdev_cvict_int1_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_030__l,socialdev_cvict_int1_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031,socialdev_cvict_int2,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031,socialdev_cvict_int2,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__02,socialdev_cvict_int2_c,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__02,socialdev_cvict_int2_c,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__03,socialdev_cvict_int2_e,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__03,socialdev_cvict_int2_e,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__03__l,socialdev_cvict_int2_e_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__03__l,socialdev_cvict_int2_e_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__33,socialdev_cvict_int2_h,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__33,socialdev_cvict_int2_h,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__33__l,socialdev_cvict_int2_h_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__33__l,socialdev_cvict_int2_h_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__34__01,socialdev_cvict_int2_h_know,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__34__01,socialdev_cvict_int2_h_know,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__34__01__l,socialdev_cvict_int2_h_know_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__34__01__l,socialdev_cvict_int2_h_know_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__35,socialdev_cvict_int2_h_knew,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__35,socialdev_cvict_int2_h_knew,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__35__l,socialdev_cvict_int2_h_knew_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__35__l,socialdev_cvict_int2_h_knew_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__37,socialdev_cvict_int2_inte,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__37,socialdev_cvict_int2_inte,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__37__l,socialdev_cvict_int2_inte_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__37__l,socialdev_cvict_int2_inte_l,99,777,I'd rather not say
+sdev_y_vict,sdev_y_vict_031__l,socialdev_cvict_int2_l,98,999,I don't know
+sdev_y_vict,sdev_y_vict_031__l,socialdev_cvict_int2_l,99,777,I'd rather not say
+su_p_des,su_p_des_000,su_des_same_household,-1,444,"Not applicable (for example, you lived in a shelter or were homeless most of the past year)"
+su_p_des,su_p_des__hh2__store__alc_001,su_des_h2_alc_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__hh2__store__inh_001,su_des_h2_inhalant_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__hh2__store__mj_001,su_des_h2_mj_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__hh2__store__mj__edbl_001,su_des_h2_edible_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__hh2__store__nic_001,su_des_h2_tob_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__hh2__store__rxopi_001,su_des_h2_pr_presc_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__hh2__store__rxsed_001,su_des_h2_tranq_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__hh2__store__rxstim_001,su_des_h2_stim_presc_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__hh2__store__stim_001,su_des_h2_other_ill_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__store__alc_001,su_des_alc_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__store__inh_001,su_des_inhalant_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__store__mj_001,su_des_mj_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__store__mj__edbl_001,su_des_edible_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__store__nic_001,su_des_tob_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__store__rxopi_001,su_des_pr_presc_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__store__rxsed_001,su_des_tranq_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__store__rxstim_001,su_des_stim_presc_stor_p,5,444,"Not applicable, not used in the household"
+su_p_des,su_p_des__store__stim_001,su_des_other_ill_stor_p,5,444,"Not applicable, not used in the household"
+su_p_plus,su_p_plus__otc__rx__r02_001__01,pls2_p_otc_rx_days_y,2,0,No
+su_p_plus,su_p_plus__otc__rx__r02_002__01,pls2_p_otc_rx_days_y_2,2,0,No
+su_p_plus,su_p_plus__otc__rx__r02_003__01,pls2_p_otc_rx_days_y_3,2,0,No
+su_p_plus,su_p_plus__otc__rx__r02_004__01,pls2_p_otc_rx_days_y_4,2,0,No
+su_p_plus,su_p_plus__otc__rx__r02_005__01,pls2_p_otc_rx_days_y_5,2,0,No
+su_p_plus,su_p_plus__otc__rx__r03_001__01,pls3_med1_days_p,2,0,No
+su_p_plus,su_p_plus__otc__rx__r03_002__01,pls3_med2_days_p,2,0,No
+su_p_plus,su_p_plus__otc__rx__r03_003__01,pls3_med3_days_p,2,0,No
+su_p_plus,su_p_plus__otc__rx__r03_004__01,pls3_med4_days_p,2,0,No
+su_p_plus,su_p_plus__otc__rx__r03_005__01,pls3_med5_days_p,2,0,No
+su_p_plus,su_p_plus__otc__rx__r04_001__01,pls4_med1_days_p,2,0,No
+su_p_plus,su_p_plus__otc__rx__r04_002__01,pls4_med2_days_p,2,0,No
+su_p_plus,su_p_plus__otc__rx__r04_003__01,pls4_med3_days_p,2,0,No
+su_p_plus,su_p_plus__otc__rx__r04_004__01,pls4_med4_days_p,2,0,No
+su_p_plus,su_p_plus__otc__rx__r04_005__01,pls4_med5_days_p,2,0,No
+su_y_caff,su_y_caff__max_001__01,caff_max_type,0,444,Not Applicable
+su_y_itu,su_y_itu__alc_001,path_alc_youth2 | path_alc_youth2_l,5,999,Don't know
+su_y_itu,su_y_itu__alc_001,path_alc_youth2 | path_alc_youth2_l,5,999,Don't know
+su_y_itu,su_y_itu__alc_001,path_alc_youth2 | path_alc_youth2_l,6,777,Decline to answer
+su_y_itu,su_y_itu__alc_001,path_alc_youth2 | path_alc_youth2_l,6,777,Decline to answer
+su_y_itu,su_y_itu__alc_002,path_alc_youth5 | path_alc_youth5_l,5,999,Don't know
+su_y_itu,su_y_itu__alc_002,path_alc_youth5 | path_alc_youth5_l,5,999,Don't know
+su_y_itu,su_y_itu__alc_002,path_alc_youth5 | path_alc_youth5_l,6,777,Decline to answer
+su_y_itu,su_y_itu__alc_002,path_alc_youth5 | path_alc_youth5_l,6,777,Decline to answer
+su_y_itu,su_y_itu__alc_003,path_alc_youth8 | path_alc_youth8_l,5,999,Don't know
+su_y_itu,su_y_itu__alc_003,path_alc_youth8 | path_alc_youth8_l,5,999,Don't know
+su_y_itu,su_y_itu__alc_003,path_alc_youth8 | path_alc_youth8_l,6,777,Decline to answer
+su_y_itu,su_y_itu__alc_003,path_alc_youth8 | path_alc_youth8_l,6,777,Decline to answer
+su_y_itu,su_y_itu__mj_001,path_alc_youth3 | path_alc_youth3_l,5,999,Don't know
+su_y_itu,su_y_itu__mj_001,path_alc_youth3 | path_alc_youth3_l,5,999,Don't know
+su_y_itu,su_y_itu__mj_001,path_alc_youth3 | path_alc_youth3_l,6,777,Decline to answer
+su_y_itu,su_y_itu__mj_001,path_alc_youth3 | path_alc_youth3_l,6,777,Decline to answer
+su_y_itu,su_y_itu__mj_002,path_alc_youth6 | path_alc_youth6_l,5,999,Don't know
+su_y_itu,su_y_itu__mj_002,path_alc_youth6 | path_alc_youth6_l,5,999,Don't know
+su_y_itu,su_y_itu__mj_002,path_alc_youth6 | path_alc_youth6_l,6,777,Decline to answer
+su_y_itu,su_y_itu__mj_002,path_alc_youth6 | path_alc_youth6_l,6,777,Decline to answer
+su_y_itu,su_y_itu__mj_003,path_alc_youth9 | path_alc_youth9_l,5,999,Don't know
+su_y_itu,su_y_itu__mj_003,path_alc_youth9 | path_alc_youth9_l,5,999,Don't know
+su_y_itu,su_y_itu__mj_003,path_alc_youth9 | path_alc_youth9_l,6,777,Decline to answer
+su_y_itu,su_y_itu__mj_003,path_alc_youth9 | path_alc_youth9_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic_001,path_alc_youth1 | path_alc_youth1_l,5,999,Don't know
+su_y_itu,su_y_itu__nic_001,path_alc_youth1 | path_alc_youth1_l,5,999,Don't know
+su_y_itu,su_y_itu__nic_001,path_alc_youth1 | path_alc_youth1_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic_001,path_alc_youth1 | path_alc_youth1_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic_002,path_alc_youth4 | path_alc_youth4_l,5,999,Don't know
+su_y_itu,su_y_itu__nic_002,path_alc_youth4 | path_alc_youth4_l,5,999,Don't know
+su_y_itu,su_y_itu__nic_002,path_alc_youth4 | path_alc_youth4_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic_002,path_alc_youth4 | path_alc_youth4_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic_003,path_alc_youth7 | path_alc_youth7_l,5,999,Don't know
+su_y_itu,su_y_itu__nic_003,path_alc_youth7 | path_alc_youth7_l,5,999,Don't know
+su_y_itu,su_y_itu__nic_003,path_alc_youth7 | path_alc_youth7_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic_003,path_alc_youth7 | path_alc_youth7_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic__cig_001,path_alc_youth1a_l,5,999,Don't know
+su_y_itu,su_y_itu__nic__cig_001,path_alc_youth1a_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic__cig_002,path_alc_youth4a_l,5,999,Don't know
+su_y_itu,su_y_itu__nic__cig_002,path_alc_youth4a_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic__cig_003,path_alc_youth7a_l,5,999,Don't know
+su_y_itu,su_y_itu__nic__cig_003,path_alc_youth7a_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic__vape_001,path_alc_youth1b_l,5,999,Don't know
+su_y_itu,su_y_itu__nic__vape_001,path_alc_youth1b_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic__vape_002,path_alc_youth4b_l,5,999,Don't know
+su_y_itu,su_y_itu__nic__vape_002,path_alc_youth4b_l,6,777,Decline to answer
+su_y_itu,su_y_itu__nic__vape_003,path_alc_youth7b_l,5,999,Don't know
+su_y_itu,su_y_itu__nic__vape_003,path_alc_youth7b_l,6,777,Decline to answer
+su_y_lowuse,su_y_lowuse__isip_004,isip_3_2,0,444,Not applicable
+su_y_lowuse,su_y_lowuse__isip_004,isip_3_2,10,999,I Don't know
+su_y_lowuse,su_y_lowuse__isip_004__v01,isip_3_l,10,999,I Don't know
+su_y_lowuse,su_y_lowuse__isip_005,isip_4_2,0,444,Not applicable
+su_y_lowuse,su_y_lowuse__isip_006,isip_5_2,0,444,Not applicable
+su_y_lowuse,su_y_lowuse__isip_007,isip_6_2,0,444,Not applicable
+su_y_nicsre,su_y_nicsre__chew_001,subj_resp_nic_q09 | res_tobacco_q24_l,2,0,No
+su_y_nicsre,su_y_nicsre__chew_001,subj_resp_nic_q09 | res_tobacco_q24_l,2,0,No
+su_y_nicsre,su_y_nicsre__cig_001,subj_resp_nic_q03 | res_tobacco_q08_l,2,0,No
+su_y_nicsre,su_y_nicsre__cig_001,subj_resp_nic_q03 | res_tobacco_q08_l,2,0,No
+su_y_nicsre,su_y_nicsre__vape_001,subj_resp_nic_q06,2,0,No
+su_y_nicsre,su_y_nicsre__vape_001__v01,res_tobacco_q16_l,2,0,No
+su_y_oftox,su_y_oftox__rslt__amp__r01_001,tox1_amp_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__amp__r02_001,tox2_amp_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__bzo__r01_001,tox1_bzo_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__bzo__r02_001,tox2_bzo_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__coc__r01_001,tox1_coc_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__coc__r02_001,tox2_coc_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__meth__r01_001,tox1_meth_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__meth__r02_001,tox2_meth_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__mj__r01_001,tox1_thc_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__mj__r02_001,tox2_thc_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__mtd__r01_001,tox1_mtd_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__mtd__r02_001,tox2_mtd_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__opi__r01_001,tox1_op_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__opi__r02_001,tox2_op_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__r01_001,tox1_results_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__r01_001,tox1_results_y,3,444,Not applicable (not randomized/not needed)
+su_y_oftox,su_y_oftox__rslt__r01_002,tox1_results_2_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__r01_002,tox1_results_2_y,3,444,Not applicable (not part of 10%)
+su_y_oftox,su_y_oftox__rslt__r02_001,tox2_results_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__r02_001,tox2_results_y,3,444,Not applicable (not randomized/not needed)
+su_y_oftox,su_y_oftox__rslt__r02_002,tox2_results_2_y,2,0,No
+su_y_oftox,su_y_oftox__rslt__r02_002,tox2_results_2_y,3,444,Not applicable (not part of 10% / 15%)
+su_y_sibu,su_y_sibu__alc_001,su_sry_2,5,999,Don't know
+su_y_sibu,su_y_sibu__illdrg_001,su_sry_9,5,999,Don't know
+su_y_sibu,su_y_sibu__inh_001,su_sry_4,5,999,Don't know
+su_y_sibu,su_y_sibu__mj_001,su_sry_3,5,999,Don't know
+su_y_sibu,su_y_sibu__nic__cig_001,su_sry_1,5,999,Don't know
+su_y_sibu,su_y_sibu__nic__vape_001,su_sry_5,5,999,Don't know
+su_y_sibu,su_y_sibu__rxopi_001,su_sry_8,5,999,Don't know
+su_y_sibu,su_y_sibu__rxsed_001,su_sry_7,5,999,Don't know
+su_y_sibu,su_y_sibu__rxstim_001,su_sry_6,5,999,Don't know
+su_y_sui,su_y_sui__coc__fwup_002,tlfb_6mo_15_coc,7,999,Don't know
+su_y_sui,su_y_sui__coc__fwup_002__l,tlfb_6mo_15_coc_l,7,999,Don't know
+su_y_sui,su_y_sui__coc__fwup_004,tlfb_6mo_17_coc,7,999,Don't know
+su_y_sui,su_y_sui__coc__fwup_004__l,tlfb_6mo_17_coc_l,7,999,Don't know
+su_y_sui,su_y_sui__meth__fwup_002,tlfb_6mo_19_meth,7,999,Don't know
+su_y_sui,su_y_sui__meth__fwup_002__l,tlfb_6mo_19_meth_l,7,999,Don't know
+su_y_sui,su_y_sui__mj__conc__fwup_003,tlfb_6mo_11_concmj,5,999,If you do not know.
+su_y_sui,su_y_sui__mj__conc__fwup_003__l,tlfb_6mo_11_concmj_l,5,999,Don't know
+su_y_sui,su_y_sui__mj__conc__fwup_004,tlfb_6mo_12_concmj,7,999,Don't know
+su_y_sui,su_y_sui__mj__conc__fwup_004__l,tlfb_6mo_12_concmj_l,7,999,Don't know
+su_y_sui,su_y_sui__mj__drink__fwup_001,tlfb_6mo_mj_drink_type,4,999,I Don't know
+su_y_sui,su_y_sui__mj__drink__fwup_001__l,tlfb_6mo_mj_drink_type_l,4,999,I Don't know
+su_y_sui,su_y_sui__mj__fwup_001,su_tlfb_past_yr_prim_3_mj_l,6,999,Don't know
+su_y_sui,su_y_sui__mj__smoke__fwup_002__l,tlfb_6mo_5_mj_l,5,999,Don't know
+su_y_sui,su_y_sui__mj__smoke__fwup_003__l,tlfb_6mo_6_mj_l,7,999,Don't know
+su_y_sui,su_y_sui__mj__smoke__fwup_005,tlfb_6mo_8_mj,7,999,Don't know
+su_y_sui,su_y_sui__mj__smoke__fwup_005__l,tlfb_6mo_8_mj_l,7,999,Don't know
+su_y_sui,su_y_sui__mj__tinc__fwup_001,tlfb_6mo_tincture_type,4,999,I Don't know
+su_y_sui,su_y_sui__mj__tinc__fwup_001__v01,tlfb_6mo_tincture_type_l,4,999,I Don't know
+su_y_sui,su_y_sui__nic__vape__fwup_004,su_tlfb_past_yr_ecig_6_l,7,999,Don't know
+su_y_sui,su_y_sui__nic__vape__fwup_007__l,tlfb_6mo_4_ecig_l,3,999,Don't know
+su_y_sui,su_y_sui__opi__fwup_002,tlfb_6mo_22_heroin,7,999,Don't know
+su_y_sui,su_y_sui__opi__fwup_002__l,tlfb_6mo_22_heroin_l,7,999,Don't know
+su_y_udstox,su_y_udstox__coll__icup__r01_complrsn,icup_reason,1,444,Not applicable (not randomized)
+su_y_udstox,su_y_udstox__coll__icup__r02_complrsn,icup_reason2,1,444,Not applicable (not randomized)
+su_y_udstox,su_y_udstox__coll__icup__r03_complrsn,icup_reason3,1,444,Not applicable (not randomized)
+su_y_udstox,su_y_udstox__coll__icup__r04_complrsn,icup_reason4,1,444,Not applicable (not randomized)
+su_y_udstox,su_y_udstox__coll__nic__r01_complrsn,icup_reditest_reason,1,444,Not applicable (not randomized)
+su_y_udstox,su_y_udstox__coll__nic__r02_complrsn,icup_reditest_reason2,1,444,Not applicable (not randomized)
+su_y_udstox,su_y_udstox__coll__nic__r03_complrsn,icup_reditest_reason3,1,444,Not applicable (not randomized)
+su_y_udstox,su_y_udstox__coll__nic__r04_complrsn,icup_reditest_reason4,1,444,Not applicable (not randomized)
+su_y_udstox,su_y_udstox__coll__r01_002,biospec_urine_toxscrn_sp | biospec_urine_toxscrn_sp_5,2,0,No
+su_y_udstox,su_y_udstox__coll__r01_002,biospec_urine_toxscrn_sp | biospec_urine_toxscrn_sp_5,2,0,No
+su_y_udstox,su_y_udstox__coll__r02_002,biospec_urine_toxscrn_sp_2,2,0,No
+su_y_udstox,su_y_udstox__coll__r02_complrsn,biospec_urine_toxscrn_reason_2,6,444,Not applicable (not randomized)
+su_y_udstox,su_y_udstox__coll__r03_002,biospec_urine_toxscrn_sp_3,2,0,No
+su_y_udstox,su_y_udstox__coll__r03_complrsn,biospec_urine_toxscrn_reason_3,6,444,Not applicable (not randomized)
+su_y_udstox,su_y_udstox__coll__r04_002,biospec_urine_toxscrn_sp_4,2,0,No
+su_y_udstox,su_y_udstox__coll__r04_complrsn,biospec_urine_toxscrn_reason_4,6,444,Not applicable (not randomized)

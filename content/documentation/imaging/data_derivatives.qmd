@@ -1,0 +1,33 @@
+---
+title: "MRI derivatives data documentation"
+---
+
+# MRI Processed Data {#mproc}
+
+The ABCD Data Release 6.0 contains minimally processed neuroimaging data for ABCD Study participants, including:
+  
+- High-resolution structural data (3D T1w and T2w scans)
+- Advanced diffusion MRI (multiple b-values and directions)
+- Resting State fMRI
+- Task fMRI (Monetary Incentive Delay, Stop-Signal, and Emotional N-Back) with event files for each fMRI run
+
+These series have been run through standard modality-specific pre-processing stages including conversion from raw to compressed files, distortion correction, movement correction, alignment to standard space, and initial quality control (refer to the [MRI Quality Control](type_qc.qmd) release notes). This is to enable researchers to use the ABCD neuroimaging data in their own processing pipelines more quickly and efficiently than starting with raw data. Note that minimal processing is identical for rs-fMRI and task-fMRI and does not include analysis-specific pre-processing steps (e.g. removal of initial TRs, normalization by mean, etc.).
+
+Preprocessed imaging data are packaged in a "derivatives" BIDS directory structure with NIfTI format data files (consistent with BIDS specifications version 1.9.0: https://bids-specification.readthedocs.io/en/stable/). Imaging metadata derived from the original DICOM files are packaged along with each preprocessed data series as JSON files. The minimally processed T2w data are resampled into voxel-wise alignment with the T1w, which is rigid-body resampled into alignment with a standardized anatomical atlas.
+
+dMRI-specific information included diffusion gradients adjusted for head rotation (`bvecs.txt`), diffusion gradient strengths (`bvals.txt`), and a rigid-body transformation matrix specifying the registration between the dMRI image and the corresponding processed sMRI T1w image (stored in the JSON file). The dMRI minimally processed data are also kept in their original resolution, but reoriented into a standard alignment, based on registration to T1w, but not voxel-wise aligned with the T1w. A registration matrix is supplied with the minimally processed dMRI data.
+
+fMRI-specific information includes estimated motion time courses and a rigid-body transformation matrix specifying the registration between the fMRI image and the T~1~w image (stored in the JSON file). The fMRI minimally processed data are kept in their original space and resolution, but a registration matrix is supplied with the minimally processed fMRI data. For task-fMRI series, event timing information is included as tab-separated value (`.tsv`) files. The results of additional processing and ROI analysis are shared in tabulated form (see [here](index.qmd)).
+
+Information about this is included in the modality-specific data documentation notes and in @hagler2019. They also describe what processing steps are included in the "minimally processed" data.
+
+A containerized version of the ABCD processing pipeline will become available as a Docker or singularity image (location of docker/singularity).
+
+# FreeSurfer {#freesurfer}
+
+The ABCD Data Release 6.0 contains the complete FreeSurfer output directories for ABCD Study participants. FreeSurfer segmentation and cortical surface reconstruction was performed using FreeSurfer version 7.1.1 (<https://surfer.nmr.mgh.harvard.edu>) using preprocessed T1-weighted volumes as input. To maintain compatibility with standard FreeSurfer tools, FreeSurfer outputs are provided without renaming files to meet BIDS standards and directories are arranged in a flat structure (with names like sub-XXXX_ses-XXXX), rather than the standard hierarchical BIDS directory structure (sub-XXXX/ses-XXXX).
+
+::: {.callout-note title="Additional notes"}
+The MRI Derivatives Data included with ABCD Data Release 6.0 is packaged in a BIDS-compliant derivatives structure. Note that derivatives were not generated directly from source and raw BIDS data (see [MRI Raw Data File Sharing Data Documentation](data_source_raw.qmd)). Instead, source and raw BIDS are a repackaging / conversion of the data that is supplied to the ABCD processing pipeline. The derivatives are a repackaging of the outputs of the processing pipeline. Future versions of the ABCD processing pipeline will work directly with the raw data BIDS to avoid potential inconsistencies and for better reproducibility.
+:::
+

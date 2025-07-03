@@ -1,0 +1,551 @@
+---
+title: "Physical Health"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain overview
+```{r}
+render_table_info("domain_abbr == 'ph'")
+```
+<br>
+
+
+Learn about the Physical Health domain by reviewing the below references: 
+
+- @uban2018
+- @herting2021
+- @palmer2021
+
+# Youth tables (Surveys)
+
+## Annual ABCD COVID Survey (Youth) {#ph_y_covid}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_covid")`
+`r r_link_table("ph_y_covid")`
+
+**Measure description:** Survey completed by youth about COVID pandemic impacts on school, peer communication, and stress.
+
+**Modifications since initial administration:**
+
+In June 2023, the Annual COVID survey was discontinued. Four items were retained (past year covid, total times had covid lifetime, past year covid vaccine, lifetime \# covid vaccines) in the Medication History Questionnaire.
+
+ABCD participated in the RECOVER study (<https://recovercovid.org/>);additional COVID-related survey items and antibody tests were completed by ABCD participants. These data are located within the [RECOVER dataset](https://recovercovid.org/data) and can be accessed when they release their data. Future releases of the ABCD data may include the RECOVER survey responses and COVID antibody data.
+
+## Block Kids Food Screener (Youth) {#ph_y_bkfs}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_bkfs")`
+`r r_link_table("ph_y_bkfs")`
+
+**Measure description:** This screener assesses children's intake by food group, with outcomes measured in number of servings.
+
+**Modifications since initial administration:** In the 2-year and 3-year follow-ups, the Block Kids Food Screener was given to the parent to report on the youth and the youth then confirmed responses. See `ph_p_bkfs` for details on that method of administration. Starting on 4/1/21, the youth completed the questionnaire themselves, across visit time points.
+
+**Notes and special considerations:** For participants whose 3-year follow-up visit occurred prior to 4/1/23, parents completed the questionnaire and youth confirmed the responses. For participants whose 3-year follow-up visit occurred after 4/1/23, youth completed the questionnaire. Starting with the 4-year follow-up visit, all youth completed the questionnaire themselves.
+
+## Medications Inventory (Youth) {#ph_y_meds}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_meds")`
+`r r_link_table("ph_y_meds")`
+
+**Measure description:** Medications youth participant has taken in the last two weeks
+
+## Munich Chronotype Questionnaire {#ph_y_mctq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_mctq")`
+`r r_link_table("ph_y_mctq")`
+
+**Measure description:** The MCTQ-C assesses chronotypes, which are diurnal preferences that manifest in personal sleep-wake rhythms, including sleep and wake schedules on school and free days.
+
+**Notes and special considerations:** Below are some of response anomalies in the MCTQ data and recommend solutions:
+
+- `ph_y_mctq__school_001`: Do you go to school on a regular basis?
+   - `1`: Yes
+   - `0`: No
+
+Since many MCTQ items reference "free days" and "school days," responses of participants who are not attending school regularly may be problematic, which may have been common during the pandemic. Therefore, for some analyses, excluding participants responding "No" to this item may be appropriate.
+
+- `ph_y_mctq__school_001__01`: I go to school on _\_\_ day(s) per week.
+   - Number of days
+
+For instances where the participant reports "7," interpretation of results could be problematic. Therefore, for some analyses, excluding participants responding "7" to this item may be appropriate.
+
+- `ph_y_mctq__sd_001`: I go to bed at:
+   - `1`: Morning (4:00 AM to 11:59 AM)\
+   - `2`: Afternoon (12:00 PM Noon to 4:59 PM)
+   - `3`: Evening (5:00 PM to 8:59 PM)
+   - `4`: Nighttime (9:00 PM to 3:59 AM)
+
+Participants responding "Morning" or "Afternoon" may be in error or highly unusual. Therefore, for some analyses, excluding participants responding "1" or "2" to this item may be appropriate.
+
+- `ph_y_mctq__sd_002`: I actually start trying to fall asleep at:
+   - `1`: Morning (4:00 AM to 11:59 AM)
+   - `2`: Afternoon (12:00 PM Noon to 4:59 PM)
+   - `3`: Evening (5:00 PM to 8:59 PM)
+   - `4`: Nighttime (9:00 PM to 3:59 AM)
+
+Participants responding "Morning" or "Afternoon" may be in error or highly unusual. Therefore, for some analyses, excluding participants responding "1" or "2" to this item may be appropriate.
+
+- `ph_y_mctq__sd_005`: I wake up at:
+   - `1`: Morning (4:00 AM to 11:59 AM)
+   - `2`: Afternoon (12:00 PM Noon to 4:59 PM)
+   - `3`: Evening (5:00 PM to 8:59 PM)
+   - `4`: Nighttime (9:00 PM to 3:59 AM)
+
+Participants responding "Evening" or "Nighttime" may be in error or highly unusual. Therefore, for some analyses, excluding participants responding "3" or "4" to this item may be appropriate.
+
+- `ph_y_mctq__fd_007`: On free days, I wake up by using an alarm clock or my parents wake me up:
+   - `1`: Yes
+   - `0`: No
+
+Participants responding "Yes" have constrained wake-up times and therefore such days are not "free" in terms of their wake-up time. Therefore, for some analyses, excluding participants responding "YES" to this item may be appropriate, particularly for Chronotype.
+
+- `ph_y_mctq__school_002`: My usual school schedule starts at:
+   - `1`: Morning (4:00 AM to 11:59 AM)
+   - `2`: Afternoon (12:00 PM Noon to 4:59 PM)
+   - `3`: Evening (5:00 PM to 8:59 PM)
+   - `4`: Nighttime (9:00 PM to 3:59 AM)
+
+Participants responding "Evening" or "Nighttime" may be in error or highly unusual. Therefore, for some analyses, excluding participants responding "3" or "4" to this item may be appropriate.
+
+- `ph_y_mctq__school_003`: I leave the house to go to school at:
+   - `1`: Morning (4:00 AM to 11:59 AM)
+   - `2`: Afternoon (12:00 PM Noon to 4:59 PM)
+   - `3`: Evening (5:00 PM to 8:59 PM)
+   - `4`: Nighttime (9:00 PM to 3:59 AM)
+   - `0`: I don't regularly travel to school/ I am homeschooled
+
+Participants responding "Evening" or "Nighttime" may be in error or highly unusual. Therefore, for some analyses, excluding participants responding `3` or `4` to this item may be appropriate. For participants responding `0`, the response to this item should be excluded from time-based "time to leave for school" analyses.
+
+**Reference:** @zavada2005
+
+## Pain Questionnaire {#ph_y_pq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_pq")`
+`r r_link_table("ph_y_pq")`
+
+**Measure description:** The CAPQ is based on the Seattle's Children's "Child and Adolescent Pain Questionnaire" and conforms to the NRS-11 standard for examining pain intensity over the past month, which is the recommended time-frame. The participant is first asked about pain and pain levels, and then asked to identify pain sites on a body map.
+
+**Reference:** @luntamo2012
+
+## Pubertal Development Scale & Menstrual Cycle Survey History (Youth) {#ph_y_pds}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_pds")`
+`r r_link_table("ph_y_pds")`
+
+**Measure description:** Pubertal stage and menstrual phase (for postmenarcheal girls).
+
+**Modifications since initial administration:** Five items on hormonal contraception and menstrual pain were added at 3-year follow-up for girls.
+
+**Notes and special considerations:**
+
+In 2023, as the year-6 follow-up of the study was underway, it was brought to our attention that many youth had completed pubertal maturation and were no longer recording changes in this scale. As such, if participants reported a maximum score on the PDS for two years in a row, then the PDS was discontinued.
+
+- Years 2-5 PDS collection was impacted by the pandemic, with the largest proportion of missingness in Year 3. Researchers will want to examine sample biases, particularly in Year 3, when using PDS scores. Occasionally, responses may indicate inconsistent developmental patterns, including apparent reversals in pubertal development stages based on parent or youth reports. Researchers should carefully examine these instances when interpreting data.. We have opted not to modify this data, but will leave it up to the user to make an informed decision on how to handle these variances in the parent or youth reports. Articles referenced below will provide additional details on how to handle these variables.
+
+- Researchers can find more details on pubertal development scale data, methods, meaningful covariates and decision-making for determining final analytical sample in @cheng2021 and @herting2021
+
+**References:** 
+
+- @petersen1988
+- @cheng2021
+- @herting2021
+
+## Respiratory Functioning {#ph_y_rq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_rq")`
+`r r_link_table("ph_y_rq")`
+
+**Measure description:** This survey assesses respiratory issues including coughing/wheezing, allergies, and respiratory illness.
+
+**Notes and special considerations:** Thanks to Sonia Arteaga, Ph.D., a program official at the Environmental influences on Child Health Outcomes Project (ECHO), for supplying the respiratory questions from the ECHO project.
+
+**References:**
+
+@gillman2018
+
+@asher1995
+
+## Sexual Behavior, Orientation, & Communication {#ph_y_sex}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_sex")`
+`r r_link_table("ph_y_sex")`
+
+**Measure description:** This table includes the youth Sexual Behavior Survey, consisting of items assessing early dating behaviors, relationships, and perceptions of peer attitudes and peer behaviors (see Potter et al., 2022); the survey changed over time as the cohort matured, and includes youth self-report of sexual orientation. 
+
+Modifications since initial administration: The 3-year follow-up expanded some constructs and added attraction and partner characteristics. See also sexuality items in the Youth KSADS Background Items Survey. KBI items are duplicated into this table, with keyword __kbi for easier reference. The two measures may be used together for longitudinal analysis, with careful consideration for how item context, phrasing, and response options have changed over time.
+
+Part way through the 3-year follow-up data collection, the Sexual Behavior Survey was updated such that "boyfriend or girlfriend" was changed to "romantic relationship (like a boyfriend or girlfriend)". Response options to attraction and partner characteristics were changed from multiple choice to "check all that apply"
+
+At the 4-year follow-up, conversations with parents about sex were added (3 items covering abstinence/waiting to have sex, safe sex practices, or other sex topics adapted from the approach validated by @sales2008).
+
+At the 5-year follow-up, items assessing sexual activity were branched off a single gating item (`ph_y_sex__beh_003`). The gating question was only populated for youth who endorsed `ph_y_sex__beh_002a` and/or `ph_y_sex__beh_002b`. Additional questions ask about type of sexual activity with more branching for each type of activity to assess number of partners and safe sex practices, adapted from the Healthy Passages study of adolescent health @windle2004.
+
+**Notes and special considerations:**
+
+Between November 2021- March 2022, some behavior items were inadvertently not administered at the Medical University of South Carolina (`5`) and the survey was temporarily not administered at the Laureate Institute for Brain Research (`4`) due to administrative issues; data are missing in these cases.
+
+In March 2022, some changes were made to instructions and order of some sections to reduce ambiguity; no item content was changed. Changes included: Expanding the preamble to better describe the domains covered by the survey and to note that some of the questions are very personal; shortening the introduction to the behavior questions to just "The next questions are about your behavior. They are only about people who are not related to you." and moving behavior items to immediately follow attraction and precede relationship items.
+
+Some items in the Youth Sexual Behavior Survey have parent-reported counterparts (See table below)
+
+|                      |                      |
+|----------------------|----------------------|
+| Multi-informant      |                      |
+| Youth SBS            | Parent GSBS          |
+| `ph_y_sex__cnvs_001` | `ph_p_sex__cnvs_001` |
+| `ph_y_sex__cnvs_002` | `ph_p_sex__cnvs_002` |
+| `ph_y_sex__cnvs_003` | `ph_p_sex__cnvs_003` |
+
+Youth sexual orientation is assessed within the Youth KSADS Background Items (see Measure description below), noted in the data dictionary by the keyword `kbi_`. Refer to Mental Health Data Documentation for the complete youth KSADS background survey.
+
+**References:**
+
+- @potter2022
+- @sales2008
+- @windle2004
+
+## Sports and Activities Involvement Questionnaire (Youth) {#ph_y_saiq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_saiq")`
+`r r_link_table("ph_y_saiq")`
+
+**Measure description:** Youth survey of youth involvement in sports, music, reading, and hobbies. The following document reviews summary scores for this measure: days per month per activity. Minutes per week per activity, hours per month per activity: [SAIQ - Summary Scores](https://drive.google.com/file/d/1FL4nl0-IcZ6V_K0s1yH7uisBRU8zGUyn/view?usp=sharing)
+
+**Modifications since initial administration:** In Year 6 (February 2022), the following changes were made:
+
+- Added following response options: Debate Team, Fencing, Clubs, Special Interest Group, Affinity Group, Scouts
+- Branching logic for these response options is the same as the branching logic for the option "`2`, Baseball, Softball"
+- Changed following response options: 
+* "`1`, Ballet, Dance" modify to: "1, Ballet, Dance, Color Guard" 
+* "`39`, Fishing, Hunting, Archery, Rifle Club" modify to: "`39`, Fishing, Hunting, Rifle Club, Archery"
+
+The history of questions asked in this instrument, and the parent version of this instrument are:
+
+- Year 1 (baseline): Parents are asked all questions, youth are asked none
+
+- Year 2: parents asked all questions, youth asked none
+
+- Year 3: Parents asked all questions, as well as reading and music questions (worded differently from the way that reading and music questions were asked in baseline), youth asked questions pertaining to reading and music questions only
+
+- Year 4: parents asked all questions EXCEPT reading and music questions, Youth asked reading and music questions only
+
+- Year 5 and beyond: Parents asked no questions, youth asked ALL questions
+
+**Notes and special considerations:** Although this instrument is titled 'Sports and Activities Involvement Questionnaire - Reading & Music', we are now asking all questions in the Sports and Activities Involvement Questionnaire to youth.
+
+## Youth Risk Behavior Survey---Physical Activity {#ph_y_pa}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_pa")`
+`r r_link_table("ph_y_pa")`
+
+**Measure description:** A brief assessment of physical exercise.
+
+**References:** 
+
+- @dolsen2019
+- @hunsberger2015
+
+# Youth tables (Biospecimens)
+
+## Anthropometrics (Youth) {#ph_y_anthr}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_anthr")`
+`r r_link_table("ph_y_anthr")`
+
+::: {#use-ph_y_anthr .callout-important collapse="false" title="Resoponsible Use Warning: Anthropometric Data"}
+ABCD collects anthropometric (e.g., height, weight, waist circumference) data. Users may use these measurements to calculate body mass index (BMI), BMI z-scores, and percentiles using reference data from the CDC or WHO. Users should be aware of the challenges  associated with BMI as a measure, highlighted by the [American Medical Association](https://www.ama-assn.org/delivering-care/public-health/ama-use-bmi-alone-imperfect-clinical-measure). BMI is a proxy for body fat mass and may not accurately represent risk of metabolic disease or other conditions. While waist circumference may be a better predictor of health risk, good reference data for waist circumference in children do not yet exist.
+
+For children, historical reference cut-offs for weight categories (e.g., CDC, WHO) may not accurately represent current norms or risk profiles across diverse populations. Users should consider this limitation when interpreting BMI z-scores or percentiles.(e.g., in longitudinal research questions, see for a larger discussion); BMI z-score difference scores may lead to erroneous conclusions.
+
+@adise2024  reviews the methodology used to create reference growth curves and discusses the appropriate use of reference pediatric BMI growth curves within the context of cross-sectional and longitudinal analyses in research. It also provides recommendations around how to select metrics based on desired evaluations.
+
+(<https://www.ama-assn.org/delivering-care/public-health/ama-use-bmi-alone-imperfect-clinical-measure>)
+
+- This is a link to the AMA statement on the limitations of BMI as a measurement and recommendations for future studies.
+- AMA advises caution when using BMI alone, as original BMI norms were based on populations that may not represent all individuals equally and did not account for varying body compositions or health risks across diverse populations.
+:::
+
+**Measure description**: Measurements of height, weight, waist circumference.
+
+Recommendation on how to calculate a summary score is below:
+
+- if exactly one measurement is available, do not compute a mean. Use the single measurement in your analysis
+- if exactly two measurements are available, compute the mean over the two measurements
+- if exactly three measurements are available, compute the mean over the two closest measurements among the three
+- An average score (Summary score) will now be available for each participant in the data release based on the recommendations provided above.
+
+When tracking change in weight status over time, consider which calculated variable is most appropriate/valid for this purpose. See linked manuscript (which was also referenced above) for a discussion regarding use of BMI z-score, BMI percentiles, and BMI controlling for sex and age [@adise2024]
+
+**Notes and special considerations:** Starting in March 2020, for **remote visits,** self-reported estimates of height and weight were obtained from the participant or parent/caregiver. Estimates for waist circumference were not obtained. Variable name `ab_g_dyn__visit_type` can indicate if the visit was "remote" or "hybrid" (some components of the visit were completed in person with RA measurement and some remotely). All height and weight data from "remote" visits were estimated values provided by the parent or participant. Hybrid visits should have included measured heights and weights, but this cannot be confirmed. Some height and weight data provided during a  hybrid visit might have been self-reported. Given the variability of estimated heights and weights, data from a remote or hybrid visit should be used judiciously.
+
+**References:**
+
+- @cdc2021
+- @adise2024
+- @berg2023
+
+## Blood Analysis {#ph_y_bld}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_bld")`
+`r r_link_table("ph_y_bld")`
+
+**Measure description:** This instrument summarizes results from blood panels. Purple top EDTA tubes were used to collect blood for CBC with differential (if ambient) and HbA1C. Red/tiger top SST tubes were used to collect blood for total cholesterol, HDL cholesterol, and ferritin. Blood was shipped and processed at either frozen or ambient temperature until September 2023, after which it was only shipped at ambient temperature. CBC analysis is only performed on ambient temperature whole blood, while all other panels are performed on either ambient or frozen samples. Analysis sponsored by the [NIH National Heart, Lung, and Blood Institute](https://www.nhlbi.nih.gov/).
+
+Blood samples were scheduled to be collected at the 2-year, 4-year, and 6-year follow-up visits. If a participant missed the blood draw during one of these timepoints—or if the sample was insufficient for any reason—they were asked to provide a sample at the next available odd-numbered year visit. As a result, some participants contributed blood samples during odd-year follow-ups to compensate for a missed or unusable sample from the corresponding even-year visit.
+
+**Modifications since initial administration:** In September 2022, a 2 ml tube of blood collection was added to increase the ease of lab testing.
+
+In September 2023, all blood was shipped at ambient temperature, with a cold pack and mylar sleeve to maintain optimal temperature conditions, but not frozen.
+
+**Notes and special considerations:** For collections prior to September 2022:
+
+- 10 mL purple top EDTA tube is used for CBC with differential (if ambient), HbA1c, DNA extraction, and aliquots for future use (Tube 2)
+
+- 10 mL red/tiger top SST tube (transferred into 6ml FluidX tube after processing) is used for the lipid panel (total and HDL cholesterol), ferritin, and aliquots for future use (Tube 1)
+
+For collections since September 2022:
+
+- 2mL purple top EDTA is used for CBC with differential (if ambient) and HbA1c and sent directly to processing lab (Tube 3)
+
+- 10 mL purple top EDTA tube is used for DNA extraction and aliquots for future use. When the 2mL EDTA tube was not collected or was not able to have the CBC performed, the 10mL EDTA tube is used for CBC with differential and HbA1c if ambient (Tube 2)
+
+- 10 mL red/tiger top SST tube (transferred into 6ml FluidX tube after processing) is used for the lipid panel (total and HDL cholesterol), ferritin, and aliquots for future use (Tube 1)
+
+- Until March 2025, the tube collection order was 10 mL red/tiger top SST tube, 10mL purple top EDTA tube, 2 mL purple top EDTA tube.
+
+::: {.callout-warning collapse="true" title="Data warning: Blood analysis" #data-blood}
+Some ambient shipments were not processed within 24-48 hours as would be recommended for CBC stability; thus, the integrity of the sample and subsequent results cannot be guaranteed. Researchers can use the date-timestamp variables for the relevant blood tube (`ph_y_bld__coll__edta10_dtt` or `ph_y_bld__coll__edta2_dtt`)  and lab accession date (`ph_y_bld__lab__acc_dt`) to determine the time from collection to processing and aid in decisions on whether sample integrity was jeopardized. Researchers should be cautious when analyzing results in light of this variance.
+:::
+
+Test completion date-timestamps are only available for samples analyzed after September 2021.
+
+As of August 18, 2023, all blood samples were shipped within 72 hours of collection, and CBC analysis only performed if received within 48 hours of collection.
+
+Information on genetics results from blood can be found in the Genetics Release Notes.
+
+## Blood Pressure {#ph_y_bp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_bp")`
+`r r_link_table("ph_y_bp")`
+
+**Measure description:** We collected 3 consecutive blood pressure and pulse measurements, with a 1-minute interval between each reading. This instrument gives the mean of the 3 blood pressure readings. As of April 2023, the protocol was changed to only include 2 consecutive blood pressure and pulse measurements.
+
+**Modifications since initial administration:**
+
+As of April 2023, only 2 consecutive Blood Pressure (BP) and Heart Rate (HR) measurements were taken with a 1-minute interval between readings. If any of these measurements were outside the normal ranges for age, a repeat set of measurements were taken which included 2 consecutive BP and HR measures. If these measurements were still outside the range of normal, they were still entered into the database. Mean calculations were done with the last 2 measurements, whether they were the first round or second round (i.e., if only one round of measurements were taken, the average was derived from those measurements; if a second round of measurements were taken, the average was only derived from those measurements (ignoring the first round of measurements).
+
+## Saliva Analysis---Hormones {#ph_y_phs}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_phs")`
+`r r_link_table("ph_y_phs")`
+
+**Measure description:** Collection notes and pubertal hormone levels (Estradiol, testosterone, and DHEA) from saliva. Analyses conducted by [Salimetrics](https://salimetrics.com/). There are two testing "repetitions" for each test. The first repetition evaluates the adequacy of the sample for testing and provides the first testing for the presence of hormone. The second repetition provides quantification metrics of the hormone.
+
+**Notes and special considerations:** 
+The time of sample collection may be useful in analyses.
+
+- In Years 2-5, saliva collection was impacted by the pandemic, with the largest proportion of missingness in Year 3. Researchers will want to examine sample biases, particularly in Year 3 salivary hormones, given the high level of non-random missingness.
+
+- Researchers can find more details on salivary hormone data, methods, meaningful covariates and decision-making for determining final analytical sample in @cheng2021 and  @herting2021
+
+**Reference:**@dolsen2019
+
+# Parent tables
+
+## Annual ABCD COVID Survey (Parent) {#ph_p_covid}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_covid")`
+`r r_link_table("ph_p_covid")`
+
+**Measure description:** This survey asks about the impacts on the family, school and academic work time, internet access, peer communication, vaccination, family infections, parent height and weight, and stress.
+
+**Modifications since initial administration:**
+
+In June (Summer) 2023, this survey was discontinued. But 4 items were retained (past year covid, total times had covid lifetime, past year covid vaccine, lifetime number of covid vaccines) but moved to the Medication History questionnaire.
+
+ABCD participated in the RECOVER study; additional COVID-related survey items were completed by ABCD participants who opted to participate in the RECOVER study; those data are located within the [RECOVER dataset](https://recovercovid.org/data).
+
+## Anthropometrics (Parent) {#ph_p_anthr}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_anthr")`
+`r r_link_table("ph_p_anthr")`
+
+**Measure description:** This measure contains the height and weight of the biological mother and biological father of the youth.
+
+**Modifications since initial administration:** Parent height and weight was first assessed in the Covid Annual Questionnaire Form in the 3, 4, 5, and 6-year follow up. The measures were subsequently moved into the Demographics form (`ab_p_demo`) on May 31, 2023, in an off-cycle move, after the Covid Questionnaire was discontinued. Therefore parent height and weight may be found on the Demographics form as early as the 5-year follow up protocol for some participants.
+
+## Block Kids Food Screener (Parent){#ph_p_bkfs}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_bkfs")`
+`r r_link_table("ph_p_bkfs")`
+
+**Measure description:** This screener assesses children's intake by food group, with outcomes measured in number of servings.
+
+**Modifications since initial administration:** In the 2-year and 3-year follow-ups, the Block Kids Food Screener was given to the parent to report on the youth. The youth then confirmed the responses. Starting on 4/1/21 (during Year 3 protocol), the youth completed the questionnaire themself, regardless of visit time point.
+
+**Notes and special considerations:** For participants whose 3-year follow-up visit occurred prior to 4/1/21, parents completed the questionnaire and youth confirmed the responses. For participants whose 3-year follow-up visit occurred after 4/1/21, youth completed the questionnaire. Starting with the 4-year follow-up visit, all youth completed the questionnaire themselves.
+
+**Reference:** @hunsberger2015
+
+## Breastfeeding Questionnaire {#ph_p_bfq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_bfq")`
+`r r_link_table("ph_p_bfq")`
+
+**Measure description:** The Breastfeeding Questionnaire is a parent report survey of medication and substance use during breastfeeding of the participant. Based on @kessler2009.
+
+**Reference:** @kessler2009
+
+## Child Nutrition Assessment {#ph_p_cna}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_cna")`
+`r r_link_table("ph_p_cna")`
+
+**Measure description:** The nutrition assessment (MIND) was a parent-report measure as a means of assessing the dietary patterns of participants during a typical week. It includes 13 questions on food categories eaten and 2 questions on vitamin and folic acid supplement use by the biological mother [@morris2015].
+
+**Notes and special considerations:** This survey was not asked after the 1 Year follow-up ; instead, the Block Kids Food Screener was given starting at the 2 Year follow-up.
+
+**References:** @morris2015
+
+## Developmental History {#ph_p_dhx}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_dhx")`
+`r r_link_table("ph_p_dhx")`
+
+**Measure description:** This questionnaire surveys basic birth information (e.g., birth weight) and prenatal exposure before and during pregnancy to medications, drugs, alcohol, and tobacco.
+
+**Modifications since initial administration:** In the 4-year follow-up, responses from baseline were pre-populated into the questionnaire and the research associate asked the parent to update where necessary. The form was shortened to only re-ask some of the items (e.g. alcohol/tobacco/marijuana use, age of first word, etc.) Added new pre-eclampsia/eclampsia/toxemia follow-up questions.
+
+::: {.callout-warning collapse="true" title="Data warning: Birthweight" #data-birthweight}
+The birth weight data were parent-reported so there are outliers, and should be noted and interpreted as such.
+:::
+
+**References:**
+
+- @kessler2009
+- @merikangas2009
+
+## International Physical Activity Questionnaire {#ph_p_ipaq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_ipaq")`
+`r r_link_table("ph_p_ipaq")`
+
+**Measure description:** The short form of the International Physical Activity Questionnaire is a parent report measure of the parent's level of physical activity.
+
+**Reference:** @booth2000
+
+## Medical History (Parent)  {#ph_p_mhx}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_mhx")`
+`r r_link_table("ph_p_mhx")`
+
+**Measure description:** Medical history and health services utilization.
+
+**Notes and special considerations:** `ph_p_mhx__cvd_001` and `ph_p_mhx__cvd_002` were withdrawn from the protocol in the middle of the 4-year follow-up visit, so the 4-year follow-up visit data on these two variables are incomplete.
+
+**Reference:** @todd2003
+
+## Medications Inventory (Parent) {#ph_p_meds}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_meds")`
+`r r_link_table("ph_p_meds")`
+
+**Measure description:** Medications youth participants have taken in the last two weeks. The medication questionnaire was drawn from the [PhenX Toolkit](https://www.phenxtoolkit.org/search/results?searchTerm=medications&searchtype=smartsearch). Drug names, dosage, etc. used the [RxNorm](https://www.nlm.nih.gov/research/umls/rxnorm/index.html) database available from the NIH National Library of Medicine.
+**Modifications since initial administration:** Starting in 3-year follow-up, questions asked about medications in the past year. Also, questions about the use of cannabidiol (CBD) for medical purposes were added starting at the 3-year follow-up.
+
+## Ohio State Traumatic Brain Injury Screen (Parent)  {#ph_p_otbi}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_otbi")`
+`r r_link_table("ph_p_otbi")`
+
+**Measure description:** Surveys traumatic brain injury in the youth participant.
+
+**Notes and special considerations:**
+
+For the non-baseline variables, we have detected several cases in which parents reported implausible values for the questions asking “age when TBIs happened.” Since the non-baseline questions only covered the time “since we last saw you”, values that are more than a year before the current assessment are potential errors. We recommend filtering these data and excluding implausible values from any analysis, or if kept in the analysis file, interpreting the results with caution. Please see the private release notes on the NBDC Platform for the list of affected pguids.
+
+**Reference:** @bogner2017
+
+## Pubertal Development Scale & Menstrual Cycle Survey History (Parent) {#ph_p_pds}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_pds")`
+`r r_link_table("ph_p_pds")`
+
+**Measure description:** Parent survey of pubertal stage and menstrual phase (for postmenarcheal girls).
+
+**Notes and special considerations:** In 2023, as follow-up of the study was underway, it was brought to our attention that many youth had completed pubertal maturation and no longer recording further development. As such, if participants reported a maximum score on the PDS for two years in a row, the PDS was not administered.
+
+- Years 2-5 PDS collection was impacted by the pandemic, with peak missingness in Year 3. Researchers will want to examine sample biases, particularly in Year 3, when using PDS scores. Occasionally, responses may indicate inconsistent developmental patterns, including apparent reversals in pubertal development stages based on parent or youth reports. Researchers should carefully examine these instances when interpreting data. We have opted not to modify this data, but will leave it up to the user to make an informed decision on how to handle these variances in the parent or youth reports. Articles referenced below will provide additional details on how to handle these variables.
+
+- Researchers can find more details on pubertal development scale data, methods, meaningful covariates and decision-making for determining final analytical sample in @cheng2021 and @herting2021. 
+
+**Reference:** @petersen1988
+
+## Sleep Disturbance Scale for Children {#ph_p_sds}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_sds")`
+`r r_link_table("ph_p_sds")`
+
+**Measure description:** Parent survey of youth sleep and sleep disorders.
+
+**References:** 
+
+- @bruni1996
+- @ferreira2009
+
+## Sports and Activities Involvement Questionnaire (Parent) {#ph_p_saiq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_saiq")`
+`r r_link_table("ph_p_saiq")`
+
+**Measure description:** Parent survey of youth involvement in sports, music, reading, and hobbies. The following document reviews summary scores for this measure: days per month per activity. Minutes per week per activity, hours per month per activity: [SAIQ - Summary Scores](https://drive.google.com/file/d/1FL4nl0-IcZ6V_K0s1yH7uisBRU8zGUyn/view?usp=sharing)
+
+**Modifications since initial administration:** Starting in the 4-year follow-up, five follow-up items were removed from each question for time considerations.
+
+The history of questions asked in this instrument, and the parent version of this instrument are:
+
+- Year 0 (Baseline): Parents are asked all questions, youth are asked none
+
+- Year 1: Parents are asked all questions, youth are asked none
+
+- Year 2: Parents are asked all questions, youth are asked none
+
+- Year 3: Parents asked all questions, as well as reading and music questions (worded differently from the way that reading and music questions were asked in baseline); youth asked questions pertaining to reading and music questions only
+
+- Year 4: Parents asked all questions EXCEPT reading and music questions; youth asked reading and music questions only
+
+- Year 5 and beyond: Parents asked NO questions; youth asked ALL questions
+
+**Reference:** @huppertz2016
+
+## Sexual Orientation & Communication {#ph_p_sex}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_sex")`
+`r r_link_table("ph_p_sex")`
+
+**Measure description:** Parent-report of sexual orientation is assessed as part of the background items to the Kiddie Schedule of Affective Disorders and Schizophrenia (KSADS; see description in Mental Health documentation). These items are duplicated here for comprehensive Sexuality data tables. The parent-report Sexual Behavior Survey has 3 items about parent-youth discussions about sex that were added at 4-year follow up.
+
+The sexuality-relevant background items to the KSADS include whether the child is "gay". "Yes" and "maybe" responses are followed with "has this caused problems for your child with your family or with kids at school?"
+
+KSADS items- Annually from the Baseline visit (see below for changes) through the end of 5-Year follow up. Sexual Behavior Survey- Annually, starting part way through the 3-year follow-up
+
+**Modifications since initial administration:** Sexual Behavior Survey- At the 4-year visit, 3 items assessing conversations about sex were added. All items in the Parent Sexual Behavior Survey have direct youth-reported counterparts for multi-informant analysis. Parent-report of youth's sexual orientation are not assessed in this measure; refer to Demographics and KSADS Background Items (see the abbreviated Measure descriptions below).
+
+**Notes and special considerations:** If using these categorical variables for sexual orientation, careful consideration should go into whether and how to use them. For example, researchers should avoid the assumption that a "no" response to "Is your child gay?" is the same as an endorsement of their child being heterosexual. For sexual orientation, it is best practice to use self-report. If parent- or informant-report is used in the absence of self-report, it should be with acknowledgement of the limitations.
+
+Multi-Informant analysis - some items in the Parent KSADS Background Survey have youth-reported counterparts. See table below:
+
+|                            |                            |
+|----------------------------|----------------------------|
+| Multi-Informant            |                            |
+| Youth KBI                  | Parent KBI                 |
+| `ph_y_sex__so_kbi_001`     | `ph_p_sex__so_kbi_001`     |
+| `ph_y_sex__so_kbi_001__02` | `ph_p_sex__so_kbi_001__01` |
+
+**Reference:** @sales2008
