@@ -14,7 +14,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 ```{r}
 library(dplyr)
 library(stringr)
-render_table_info("str_detect(table_name, 'mr_y_dti')")
+render_table_info("str_detect(sub_domain, 'Diffusion MRI')")
 ```
 
 The Diffusion MRI (DTI) data contains imaging field maps, non-diffusion weighted images with opposite phase encode polarity, and multi-b-value, multi-direction diffusion weighted images.
@@ -29,7 +29,9 @@ The Diffusion MRI (DTI) data contains imaging field maps, non-diffusion weighted
 - T~2~-weighted b=0 images to T~1~w structural images using mutual information [@wells1996]
 - Resampled into a standard orientation with 1.7 mm isotropic resolution
     
-## Diffusion tensor imaging (DTI) analysis
+## Diffusion tensor imaging (DTI) analysis {#mr_y_dti}
+![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_dti](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Imaging%22%2C%22Diffusion+MRI+%28DTI%29%22%5D%5D#/my-datasets/create-dataset)
+
 - Conventional DTI methods [@basser1994; @lebihan2001; @pierpaoli1996]
 - Two modeling approaches
   - DTI inner shell (DTI~IS~): b values \> 1000 excluded from tensor fitting. DTI inner shell may be useful when comparing results to other, single-shell diffusion studies, particularly for MD, LD, or TD.
@@ -40,7 +42,9 @@ The Diffusion MRI (DTI) data contains imaging field maps, non-diffusion weighted
   - Longitudinal (or axial) diffusivity (LD)
   - Transverse (or radial) diffusivity (TD)
         
-## Restriction Spectrum Imaging (RSI)
+## Restriction Spectrum Imaging (RSI) {#mr_y_rsi}
+![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_rsi](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Imaging%22%2C%22Diffusion+MRI+%28RSI%29%22%5D%5D#/my-datasets/create-dataset)
+
 - Linear estimation approach allowing for mixtures of “restricted”, “hindered”, and “free” diffusion pools within individual voxels [@white2013; @white2014]
 - Takes advantage of multiple b-value acquisition
 - Two signal fractions modeled as fiber orientation density (FOD) functions

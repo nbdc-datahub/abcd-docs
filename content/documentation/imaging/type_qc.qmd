@@ -27,7 +27,8 @@ Participants in the ABCD Study may not have usable data for a variety of reasons
 Factors associated with missing or unusable data can correlate with participant characteristics or environmental variables. Researchers should carefully assess patterns of missing data to understand how these patterns may influence analytical outcomes and interpretations. Additionally, researchers are encouraged to implement appropriate statistical methods, such as imputation or population weighting [@gard2023], to reduce biases resulting from missing data, thus improving the representativeness and generalizability of their results.
 :::
 
-# Recommended imaging inclusion {#recommended-imaging-inclusion}
+# Recommended imaging inclusion {#mr_y_qc__incl}
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__incl")` 
 
 Users of the imaging data are advised to choose inclusion criteria that are appropriate for their analyses. We provide a set of recommended inclusion criteria for each modality that take into account factors such as imaging QC, task performance, etc., and for convenience, we provide an instrument `r link_table("mr_y_qc__incl")` with modality-specific imaging inclusion flags based on those criteria. Each modality (T~1~w, T~2~w, DTI/RSI, rsfMRI, SST, nBack, and MID tfMRI) is scored as 1=include, 0=exclude.
 
@@ -162,7 +163,8 @@ Automated post-processing QC metrics were statistically characterized in associa
 - Imaging series may have been manually reviewed after initial preprocessing stage and QC pipeline (see \[Automated selection for manual post-processing QC\]). Series that fail raw QC do not get processed (e.g., `mr_y_qc__raw__smri__t1__pass__qc__comp_count` is 0).
 - For task fMRI, the average degrees of freedom is set at an arbitrary 200; this can be increased for a more restrictive selection criteria. For single runs, the required degrees of freedom are halved (i.e., dof \> 100).
 
-# MRI clinical findings
+# MRI clinical findings {#mr_y_qc__clfind}
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__clfind")`
 
 T~1~w and T~2~w-weighted images, if available, were screened for incidental findings by a Board Certified Neuroradiologist. Any findings requiring clinical investigation were relayed to appropriate site personnel via the ABCD Coordinating Center (CC).
 
@@ -176,7 +178,8 @@ The most important measure is the Report Score (`mrif_score`):
 
 Although not included in the recommended inclusion criteria, users may, depending on their research question and analytical design, opt to exclude participants with `mrif_score != 3` *OR* `mrif_score !=4`.
 
-# MRI raw QC
+# MRI raw QC {#mr_y_qc__raw}
+![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_qc__raw](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Diffusion+MRI+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Event+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Resting+State+fMRI+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Structural+MRI+-+T1+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Structural+MRI+-+T2+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+All+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+MID+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+N-Back+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+SST+%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset)
 
 - Protocol compliance checking
   - Performed by on-site FIONA workstations to provide feedback to scan operators
@@ -208,7 +211,8 @@ Although not included in the recommended inclusion criteria, users may, dependin
 
 # Manual post processing QC
 
-## FreeSurfer QC
+## FreeSurfer QC {#mr_y_qc__post__man__fsurf}
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__post__man__fsurf")`
 
 - Manual review of FreeSurfer cortical surface reconstruction
  - Reviewers assigned binary QC score
@@ -227,9 +231,10 @@ Although not included in the recommended inclusion criteria, users may, dependin
    - Absent, mild, moderate, or severe, respectively
    - Overall QC score of `0` assigned if severity score of `3` for any artifact type
 
-Note: Imaging-derived results are included in shared tabulated data regardless of post-processing QC. QC variables (derived from procedures described above) are included in shared tabulated data. The overall, binary QC score described above indicates whether inclusion or exclusion is recommended based on this criterion alone (see above [Recommended Imaging Inclusion](#recommended-imaging-inclusion)). FreeSurfer QC was performed for \~7% of participant-events with T1w imaging data.
+Note: Imaging-derived results are included in shared tabulated data regardless of post-processing QC. QC variables (derived from procedures described above) are included in shared tabulated data. The overall, binary QC score described above indicates whether inclusion or exclusion is recommended based on this criterion alone (see above [Recommended Imaging Inclusion](#mr_y_qc__incl)). FreeSurfer QC was performed for \~7% of participant-events with T1w imaging data.
 
-## sMRI T~2~w post processing QC {#smri-t2w-post-processing-qc}
+## sMRI T~2~w post processing QC {#mr_y_qc__post__man__t2}
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__post__man__t2")`
 
 - Manual review of DTI reconstruction
   - Reviewers assigned binary QC score
@@ -249,7 +254,8 @@ Note: Imaging-derived results are included in shared tabulated data regardless o
 
 Note: The T~2~w Post Processing QC was performed for \~7% of participant-events with T2w imaging data.
 
-## dMRI post processing QC {#dmri-post-processing-qc}
+## dMRI post processing QC {#mr_y_qc__post__man__dmri}
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__post__man__dmri")`
 
 - Manual review of processed dMRI data
   - Reviewers assigned binary QC score
@@ -270,7 +276,8 @@ Note: The T~2~w Post Processing QC was performed for \~7% of participant-events 
 
 Note: The dMRI Post Processing QC was performed for \~13% of participant-events with dMRI data.
 
-## fMRI post processing QC {#fmri-post-processing-qc}
+## fMRI post processing QC {#mr_y_qc__post__man__fmri}
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__post__man__fmri")`
 
 - Manual review of processed fMRI data
   - Reviewers assigned binary QC score
@@ -290,7 +297,8 @@ Note: The dMRI Post Processing QC was performed for \~13% of participant-events 
 
 Note: The fMRI Post Processing QC was performed for \~18% of participant-events with fMRI data.
 
-# Automated post processing QC {#automated-post-processing-qc}
+# Automated post processing QC {#mr_y_qc__post__aut}
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__post__aut")`
 
 Automated QC measures were defined and calculated based on processed imaging data.
 
@@ -313,7 +321,7 @@ Automated QC measures were defined and calculated based on processed imaging dat
 
 # Automated selection for manual post-processing QC
 
-Our manual quality control process involves manual examination of brain images from a subset of participant-events for each modality, with ratings for each dataset according to pre-defined quality criteria such as brain cutoff, residual distortion, or registration to T~1~. Such measures are described above (see [*FreeSurfer QC*](d#freesurfer-qc), [*sMRI T~2~w Post Processing QC*](#smri-t2w-post-processing-qc), [*dMRI Post Processing QC*](#dmri-post-processing-qc), and [*fMRI Post Processing QC)*](#fmri-post-processing-qc). Because an exhaustive manual review of every scan is not practical, we deploy statistical learning/AI guided sub-sampling methods where we generate automated metrics for an array of quality control issues (see [*Automated Post Processing QC*](#automated-post-processing-qc)) and sub-select participant-events to be sent for a given modality to manual review based on their quality measure scores. The automatic selection priority scores generally indicate how likely a dataset of a given type is to contain identifiable data quality issues such as a residual distortion or brain cutoff.
+Our manual quality control process involves manual examination of brain images from a subset of participant-events for each modality, with ratings for each dataset according to pre-defined quality criteria such as brain cutoff, residual distortion, or registration to T~1~. Such measures are described above (see [*FreeSurfer QC*](#mr_y_qc__post__man__fsurf), [*sMRI T~2~w Post Processing QC*](#mr_y_qc__post__man__t2), [*dMRI Post Processing QC*](#mr_y_qc__post__man__dmri), and [*fMRI Post Processing QC)*](#mr_y_qc__post__man__fmri). Because an exhaustive manual review of every scan is not practical, we deploy statistical learning/AI guided sub-sampling methods where we generate automated metrics for an array of quality control issues (see [*Automated Post Processing QC*](#mr_y_qc__post__aut)) and sub-select participant-events to be sent for a given modality to manual review based on their quality measure scores. The automatic selection priority scores generally indicate how likely a dataset of a given type is to contain identifiable data quality issues such as a residual distortion or brain cutoff.
 
 ## Overview of selection strategies
 

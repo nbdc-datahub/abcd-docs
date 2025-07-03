@@ -125,6 +125,7 @@ format:
           <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
           <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
           <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+          <script type="module" src="/assets/js/url-handler.js"></script>
           <script type="module" src="/assets/js/left_menu.min.js"></script>
           <script type="module" src="/assets/js/version.min.js"></script>
 format-links: []
@@ -132,3 +133,4 @@ resources:
   - CNAME
   - .nojekyll
   - assets/js/left_menu.min.js
+  - assets/js/url-handler.js

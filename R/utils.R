@@ -39,9 +39,9 @@ link_table <- function(
     name = name_url,
     url = switch(
       dest,
-      "deap" = data$url_deap,
-      "docs" = data$url_docs,
-      "score" = data$url_score
+      "deap" = data[['url_deap']],
+      "docs" = data[['url_docs']],
+      "score" = data[['url_score']]
     ),
     type = type
   )
@@ -59,10 +59,7 @@ r_link_table <- function(
     name_other = name_other
   )
   if (
-    is.null(link) || 
-    is.na(link) || 
-    length(link) == 0 ||
-    stringr::str_ends(link, "\\(NA\\)") 
+    !stringr::str_detect(link, "https?://")
   ) {
     return("")
   }
@@ -70,6 +67,9 @@ r_link_table <- function(
 }
 
 create_link <- function(name, url, type = "md", code = TRUE) {
+  if (is.null(url) || is.na(url) || length(url) == 0) {
+    return(name)
+  }
   if (code) {
     name <- glue::glue("<code>{name}</code>")
   }

@@ -495,7 +495,7 @@ render_table_info <- function(filter, remove_source = FALSE) {
             cell = function(value, index) {
               create_link(
                 name = value,
-                url = table_info_domain$url_docs[index],
+                url = table_info_domain[['url_docs']][index],
                 type = "html",
                 code = FALSE
               )
@@ -522,7 +522,7 @@ render_table_info <- function(filter, remove_source = FALSE) {
               glue::glue(
                 "
                 <span>
-                  <img src=\"/assets/img/documentation/deap_icon.svg\" style=\"width:1.2em; height:1.2em;\">
+                  <img src='https://cdn.jsdelivr.net/gh/deap-science/web-resources@main/img/deap_icon.svg' style=\"width:1.2em; height:1.2em;\">
                   {link}
                 </span>
                 "
@@ -591,7 +591,7 @@ render_table_info <- function(filter, remove_source = FALSE) {
               value = "score",
               tooltip =  htmltools::div(
                 htmltools::span(
-                  "<img src=\"/assets/img/documentation/rlogo.svg\" style=\"width:1.2em; height:1.2em; filter: brightness(20);\">",
+                  '<i class="fa-brands fa-r-project" style="filter: grayscale(1);"></i>',
                   " ABCDscores R package source code available"
                 ),
               ) |> 
@@ -616,9 +616,7 @@ render_table_info <- function(filter, remove_source = FALSE) {
                   href="{url}" 
                   target="_blank" 
                   rel="noopener noreferrer">
-                    <img src="/assets/img/documentation/rlogo.svg" 
-                    alt="R logo" 
-                    title="source code">
+                    <i class="fa-brands fa-r-project" style="filter: grayscale(1);"></i>
                   </a>
                   <span>{value}</span>
                   <style>

@@ -1,13 +1,43 @@
 ---
-title: "Changelog"
-order: 3
+title: " Website changelog"
+order: 4
 ---
 
+# 7.0
 
-# 6.0.0
+## 7.0.0
+
 <span style="font-size: 0.85em; color: gray;">
-**Date:** 2025-07-03<br>
-**URL:** [https://docs.abcdstudy.org/v/6_0_0](https://docs.abcdstudy.org/v/6_0_0)
+**Date:** 2025-12-25<br>
+**URL:** [https://docs.abcdstudy.org/v7.0.0/](https://docs.abcdstudy.org/v7.0.0/)
 </span>
 
-Initial version of the data documentation website for ABCD release 6.0.0
+# 6.0
+
+## 6.0.2
+
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2025-06-25<br>
+**URL:** [https://docs.abcdstudy.org/v6.0.2/](https://docs.abcdstudy.org/v6.0.2/)
+</span>
+
+- Some of the [Family, Friends, & Community](../documentation/non_imaging/fc.qmd) summary scores (e.g. MNBS) have some errors (i.e. 777's were not coded as missing), so please note this in analysis.
+- Under [Neurocognition NIH Toolbox section](../documentation/non_imaging/nt.qmd), added in Notes and special considerations: In cases with remote administration of the NIH Toolbox (see variable X that indicates remote or in person), the Crystallized Cognition Composite Score is not calculated.
+
+## 6.0.1
+
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2025-06-15<br>
+**URL:** [https://docs.abcdstudy.org/v6.0.1/](https://docs.abcdstudy.org/v6.0.1/)
+</span>
+
+- Under [Family, Friends, & Community](../documentation/non_imaging/fc.qmd), in the Wills Problem Solving Scale, added note: "Note that some values in the early years for wps_q(1-6)\_y have 0's, which do not map to the data dictionary and need to be filtered out."
+- Under [Mental Health CBCL measure](../documentation/non_imaging/mh.qmd), added note: "Based on ASEBA scoring,the DSM and subscale measures have a range \>= 50. The three CBCL Internalizing, Externalizing, and Total Problem scales have a full T-score range with a mean = 50 and SD = 10."
+
+## 6.0.0
+
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2025-06-06<br>
+**URL:** [https://docs.abcdstudy.org/v6.0.0/](https://docs.abcdstudy.org/v6.0.0/)
+</span>
+
