@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Overview</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/favicon/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-19cb40036d0cd7ef4cbef03ff3e7a6c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8f54f8d61a323a02bc591d69a6fd3237.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SB9F54HS16"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SB9F54HS16', { 'anonymize_ip': true});
+</script>
+<script src="../../site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="../../site_libs/react-18.2.0/react.min.js"></script>
+<script src="../../site_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="../../site_libs/reactwidget-2.0.0/react-tools.js"></script>
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../../site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+<script src="../../site_libs/reactable-binding-0.4.4/reactable.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
+<script type="module" src="../../assets/js/left_menu.min.js"></script>
+<script type="module" src="../../assets/js/version.min.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/img/logo-abcd.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-home" aria-label="home"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../study/index.html"> 
+<span class="menu-text">Study</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-usage" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Data Usage</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-usage">    
+        <li>
+    <a class="dropdown-item" href="../../usage/access.html">
+ <span class="dropdown-text">Access &amp; download data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/responsible_use.html">
+ <span class="dropdown-text">Responsible use</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/acknowledgement.html">
+ <span class="dropdown-text">Acknowledgment</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-documentation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Documentation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-documentation">    
+        <li>
+    <a class="dropdown-item" href="../../documentation/curation/structure.html">
+ <span class="dropdown-text">Curation &amp; structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/non_imaging/ab.html">
+ <span class="dropdown-text">Non-imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/imaging/index.html">
+ <span class="dropdown-text">Imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/substudies/covid.html">
+ <span class="dropdown-text">Substudies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/release_notes/6_0.html">
+ <span class="dropdown-text">Release notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../../tools/tools.html">
+ <span class="dropdown-text">Data tools</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/r_packages.html">
+ <span class="dropdown-text">R Packages</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-circle-info--info" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><i class="fa-solid fa-circle-info" aria-label="circle-info"></i> Info</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-fa-circle-info--info">    
+        <li>
+    <a class="dropdown-item" href="../../info/faq.html">
+ <span class="dropdown-text">FAQs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/issues.html">
+ <span class="dropdown-text">Report issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/changelog.html">
+ <span class="dropdown-text">Changelog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/citation.html">
+ <span class="dropdown-text">Cite this website</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-version" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Version</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-version">    
+        <li class="dropdown-header">empty</li>
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/imaging/index.html">Imaging data</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Curation &amp; structure</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curation standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/naming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Naming convention</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/metadata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metadata</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Non-imaging data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ABCD (General)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/fc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Friends, Family, &amp; Community</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/gn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Genetics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/le.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linked External Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/mh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mental Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurocognition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Novel Technologies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ph.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/su.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Substance Use</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../documentation/imaging/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Imaging data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/admin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Administrative tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_concat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Concatenated</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI derivatives data documentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_source_raw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Source data / raw data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_suppl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Supplementary tables</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Scan types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_dmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffusion MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Quality Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_rsfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resting-state fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_smri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structural MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmribeh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI (Behavioral performance)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trial level behavioral performance during task-based fMRI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">ABCD BIDS Community Collection (ABCC)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_start_page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ABCD-BIDS community collection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_inputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BIDS conversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data processing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_qualitycontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality control procedures</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Substudy data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/covid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">COVID-19 rapid response research</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/ecb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Endocannabinoid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/irma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IRMA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/mrs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MR Spectroscopy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Release notes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/release_notes/6_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.0 data release</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#general-information" id="toc-general-information" class="nav-link active" data-scroll-target="#general-information">General Information</a>
+  <ul>
+  <li><a href="#nomenclature" id="toc-nomenclature" class="nav-link" data-scroll-target="#nomenclature">Nomenclature</a></li>
+  <li><a href="#expected-mri-series" id="toc-expected-mri-series" class="nav-link" data-scroll-target="#expected-mri-series">Expected MRI Series</a></li>
+  </ul></li>
+  <li><a href="#imaging-data-sharing" id="toc-imaging-data-sharing" class="nav-link" data-scroll-target="#imaging-data-sharing">Imaging data sharing</a>
+  <ul>
+  <li><a href="#mri-unprocessed-data-sharing" id="toc-mri-unprocessed-data-sharing" class="nav-link" data-scroll-target="#mri-unprocessed-data-sharing">MRI unprocessed data sharing</a></li>
+  <li><a href="#mri-derivatives-data-sharing" id="toc-mri-derivatives-data-sharing" class="nav-link" data-scroll-target="#mri-derivatives-data-sharing">MRI derivatives data sharing</a></li>
+  </ul></li>
+  <li><a href="#tabulated-roi-based-analysis" id="toc-tabulated-roi-based-analysis" class="nav-link" data-scroll-target="#tabulated-roi-based-analysis">Tabulated ROI-based Analysis</a></li>
+  <li><a href="#quality-control-and-recommended-image-inclusion-criteria" id="toc-quality-control-and-recommended-image-inclusion-criteria" class="nav-link" data-scroll-target="#quality-control-and-recommended-image-inclusion-criteria">Quality Control and Recommended Image Inclusion Criteria</a>
+  <ul>
+  <li><a href="#recommended-inclusion-criteria" id="toc-recommended-inclusion-criteria" class="nav-link" data-scroll-target="#recommended-inclusion-criteria">Recommended Inclusion Criteria</a></li>
+  <li><a href="#incidental-findings" id="toc-incidental-findings" class="nav-link" data-scroll-target="#incidental-findings">Incidental Findings</a></li>
+  <li><a href="#protocol-compliance-and-quality-control" id="toc-protocol-compliance-and-quality-control" class="nav-link" data-scroll-target="#protocol-compliance-and-quality-control">Protocol Compliance and Quality Control</a>
+  <ul class="collapse">
+  <li><a href="#e-prime-errors-in-task-fmri" id="toc-e-prime-errors-in-task-fmri" class="nav-link" data-scroll-target="#e-prime-errors-in-task-fmri">E-Prime errors in task fMRI</a></li>
+  <li><a href="#behavioral-performance-in-task-fmri" id="toc-behavioral-performance-in-task-fmri" class="nav-link" data-scroll-target="#behavioral-performance-in-task-fmri">Behavioral performance in task fMRI</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#scan-software-effect" id="toc-scan-software-effect" class="nav-link" data-scroll-target="#scan-software-effect">Effects of scanner instance and software version</a></li>
+  <li><a href="#concatenated-data" id="toc-concatenated-data" class="nav-link" data-scroll-target="#concatenated-data">Concatenated data</a></li>
+  <li><a href="#voxelwise-data" id="toc-voxelwise-data" class="nav-link" data-scroll-target="#voxelwise-data">Voxelwise data</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Overview</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="general-information" class="level1">
+<h1>General Information</h1>
+<p>This document details how to obtain information, metrics, and imaging files from the magnetic resonance imaging (MRI) components of the ABCD Study. An in-depth discussion and reference resource on the ABCD processing pipeline is available at <a href="https://doi.org/10.1016/j.neuroimage.2019.116091" class="uri">https://doi.org/10.1016/j.neuroimage.2019.116091</a>.</p>
+<section id="nomenclature" class="level2">
+<h2 class="anchored" data-anchor-id="nomenclature">Nomenclature</h2>
+<p>Every table in the Imaging domain has the prefix <code>mr_y_</code> (<code>mr</code>: domain = “imaging”; <code>y</code>: source = “youth”), followed by abbreviations to describe the exact imaging data available.</p>
+<p><strong>Subdomain</strong></p>
+<ul>
+<li>Administrative: <code>adm</code></li>
+<li>Quality Control: <code>qc</code></li>
+<li>Diffusion MRI (DTI): <code>dti</code></li>
+<li>Diffusion MRI (RSI): <code>rsi</code></li>
+<li>Resting State fMRI: <code>rsfmr</code></li>
+<li>Structural MRI: <code>smr</code></li>
+<li>Task fMRI: <code>tfmr</code></li>
+</ul>
+<p><strong>Metric</strong></p>
+<ul>
+<li><em>Diffusion MRI (DTI)</em>
+<ul>
+<li>Fractional Anisotropy: <code>fa</code></li>
+<li>Longitudinal Diffusivity: <code>ld</code></li>
+<li>Mean Diffusivity: <code>md</code></li>
+<li>Transverse Diffusivity: <code>td</code></li>
+<li>Volume: <code>vol</code></li>
+</ul></li>
+<li><em>Diffusion MRI (RSI)</em>
+<ul>
+<li>Free Normalized Isotropic: <code>fni</code></li>
+<li>Hindered Normalized Directional: <code>hnd</code></li>
+<li>Hindered Normalized Isotropic: <code>hni</code></li>
+<li>Hindered Normalized Total: <code>hnt</code></li>
+<li>Restricted Normalized Directional: <code>rnd</code></li>
+<li>Restricted Normalized Isotropic: <code>rni</code></li>
+<li>Restricted Normalized Total: <code>rnt</code></li>
+</ul></li>
+<li><em>Resting State fMRI</em>
+<ul>
+<li>Correlation: <code>cor</code></li>
+<li>Temporal Variance: <code>var</code></li>
+</ul></li>
+<li><em>Structural MRI</em>
+<ul>
+<li>Cortical Thickness: <code>thk</code></li>
+<li>Sulcal Depth: <code>sulc</code></li>
+<li>Surface Area: <code>area</code></li>
+<li>T1 Intensity: <code>t1</code></li>
+<li>T2 Intensity: <code>t2</code></li>
+<li>Volume: <code>vol</code></li>
+</ul></li>
+<li><em>Task fMRI</em>
+<ul>
+<li>Emotional N-Back: <code>nback</code></li>
+<li>Monetary Incentive Delay: <code>mid</code></li>
+<li>Stop Signal Task: <code>sst</code></li>
+</ul></li>
+</ul>
+<p><strong>Atlas</strong></p>
+<ul>
+<li><em>Diffusion MRI (DTI)</em>
+<ul>
+<li>AtlasTrack: <code>at</code></li>
+<li>Desikan: <code>dsk</code></li>
+<li>Destrieux: <code>dst</code></li>
+<li>Subcortical: <code>aseg</code></li>
+</ul></li>
+<li><em>Diffusion MRI (RSI)</em>
+<ul>
+<li>AtlasTrack: <code>at</code></li>
+<li>Desikan: <code>dsk</code></li>
+<li>Destrieux: <code>dst</code></li>
+<li>Subcortical: <code>aseg</code></li>
+</ul></li>
+<li><em>Resting State fMRI</em>
+<ul>
+<li>Desikan: <code>dsk</code></li>
+<li>Destrieux: <code>dst</code></li>
+<li>Gordon Parcellations: <code>gp</code></li>
+<li>Subcortical: <code>aseg</code></li>
+</ul></li>
+<li><em>Structural MRI</em>
+<ul>
+<li>Desikan: <code>dsk</code></li>
+<li>Destrieux: <code>dst</code></li>
+<li>Fuzzy Clustering: <code>fzy</code></li>
+<li>Subcortical: <code>aseg</code></li>
+</ul></li>
+<li><em>Task fMRI</em>
+<ul>
+<li>Behavior: <code>beh</code></li>
+<li>Desikan: <code>dsk</code></li>
+<li>Destrieux: <code>dst</code></li>
+<li>Subcortical: <code>aseg</code></li>
+</ul></li>
+</ul>
+<p>Within the different imaging modalities, variables are grouped into tables using additional criteria. The resulting tables are listed in more detail in the data documentations pages for each specific imaging modalities. Users can use <a href="https://nbdc.deapscience.com">DEAP (Data Exploration and Analysis Portal)</a> to explore what variables a given instrument contains and how instruments are hierarchically organized within the ABCD ontology. Abbreviations of anatomical locations for the ROI-based tabulated imaging tables are detailed in <a href="../../documentation/imaging/data_suppl.html"><em>Supplementary Imaging Tables</em></a>.</p>
+</section>
+<section id="expected-mri-series" class="level2">
+<h2 class="anchored" data-anchor-id="expected-mri-series">Expected MRI Series</h2>
+<p>The number of expected MRI series varies depending on participant scheduling, scanner manufacturer requirements, and repeat acquisitions during scanning. Scanning sessions are typically performed in one session for ~2 hours. However, sometimes the participant prefers completing the scan in two separate 1-hour sessions, typically a few minutes apart but occasionally separated by several days. If the scanning is split over two sessions, an initial T1 is acquired for reference at the start of each session, leading to two available T1 images. Additionally, because the T1 is the first, short essential scan of the session, the operator will repeat the scan if there is a problem with the acquisition (e.g.&nbsp;excessive motion). Other series may also have a repeat acquisition if there is enough time. If multiple acquisitions exceed the expected number of files, users should manually inspect the images for quality assurance.</p>
+<p>Below is a guide to the expected number of series per modality/scanner manufacturer:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="reactable html-widget html-fill-item" id="htmlwidget-431fde2b9ad4b545ce44" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-431fde2b9ad4b545ce44">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Modality":["sMRI",null,"dMRI",null,"rs-fMRI",null,"Task fMRI",null],"Series type":["T1","T2","Field map","DWI","Field map","BOLD","Field map","BOLD"],"GE":[1,1,1,1,2,4,1,2],"Philips":[1,1,2,2,4,4,2,2],"Siemens":["1 (T1_NORM)","1 (T2_NORM)",null,"1","4","4","2","2"]},"columns":[{"id":"Modality","name":"Modality","type":"character"},{"id":"Series type","name":"Series type","type":"character"},{"id":"GE","name":"GE","type":"numeric"},{"id":"Philips","name":"Philips","type":"numeric"},{"id":"Siemens","name":"Siemens","type":"character"}],"resizable":true,"defaultPageSize":25,"dataKey":"c1ad3cf5f1b7f0f3161efe0711f74a51"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Note that the order of the task fMRI series acquisition is randomized per subject.</p>
+<p>See <a href="https://abcdstudy.org/images/Protocol_Imaging_Sequences.pdf" class="uri">https://abcdstudy.org/images/Protocol_Imaging_Sequences.pdf</a> for more information about ABCD MRI protocols.</p>
+</section>
+</section>
+<section id="imaging-data-sharing" class="level1">
+<h1>Imaging data sharing</h1>
+<section id="mri-unprocessed-data-sharing" class="level2">
+<h2 class="anchored" data-anchor-id="mri-unprocessed-data-sharing">MRI unprocessed data sharing</h2>
+<p>Unprocessed MRI data are shared as DICOM files in a BIDS source data format as well as NIfTI files in the standard BIDS raw data format. See ABCD MRI Unprocessed Data Sharing section for more information about ABCD MRI Raw Data Sharing.</p>
+</section>
+<section id="mri-derivatives-data-sharing" class="level2">
+<h2 class="anchored" data-anchor-id="mri-derivatives-data-sharing">MRI derivatives data sharing</h2>
+<p>Processed MRI data volumes are shared as NIfTI files in a BIDS derivatives format. FreeSurfer outputs are shared in their standard form, also within a BIDS derivatives format. See ABCD MRI Derivatives Data Sharing section for more information about ABCD MRI Derivatives Data Sharing.</p>
+</section>
+</section>
+<section id="tabulated-roi-based-analysis" class="level1">
+<h1>Tabulated ROI-based Analysis</h1>
+<p>MR images are corrected for distortions and head motion, and cross-modality registrations are performed. Using the T1w sMRI scan, the cortical surface is reconstructed, and subcortical and white matter regions of the brain are segmented. From this, we carry out modality-specific analyses and extract imaging-derived measures using a variety of regions of interest (ROI).</p>
+<p>Finally, ROI analysis results are compiled across participants and summarized in tabulated form. Information on the different tabulated imaging data instruments is detailed in modality-specific release notes:</p>
+<ul>
+<li><a href="../../documentation/imaging/type_smri.html">Structural Magnetic Resonance Imaging</a></li>
+<li><a href="../../documentation/imaging/type_dmri.html">Diffusion Magnetic Resonance Imaging</a></li>
+<li><a href="../../documentation/imaging/type_rsfmri.html">Resting-State Functional Magnetic Resonance Imaging</a></li>
+<li><a href="../../documentation/imaging/type_tfmri.html">Task-Based Functional Magnetic Resonance Imaging (task-fMRI)</a></li>
+<li><a href="../../documentation/imaging/type_tfmribeh.html">Behavioral Performance During Task-Based fMRI</a></li>
+</ul>
+<p>Despite the convenience of ROI-based analyses and the advantages related to reduced numbers of statistical comparisons, there are inherent limitations to this approach. Effects of interest (e.g., associations between cortical morphometry and cognitive variables, or task- related fMRI activation) could potentially straddle multiple ROIs, or occupy a small region of a large ROI, thereby reducing the sensitivity of an ROI-based analysis relative to mapping-based approaches. For this reason, users should be cautious about interpreting the results of ROI- based analyses, particularly for task fMRI.</p>
+</section>
+<section id="quality-control-and-recommended-image-inclusion-criteria" class="level1">
+<h1>Quality Control and Recommended Image Inclusion Criteria</h1>
+<p>QC procedures and image inclusion criteria are described in more detail in the <a href="../../documentation/imaging/type_qc.html">MRI Quality Control &amp; Recommended Image Inclusion Criteria</a> data documentation.</p>
+<section id="recommended-inclusion-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-inclusion-criteria">Recommended Inclusion Criteria</h2>
+<p>The Recommended Imaging Inclusion instrument (<a href="https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&amp;hierarchy=%5B%5B%22Youth%22%2C%22Quality%20Control%20-%20Recommended%20Image%20Inclusion%20%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset"><code>mr_y_qc__incl</code></a>) provides the simple option of include or exclude sessions (1 or 0) based on automated and manual QC review per MR measure - T1w, T2w, DTI/RSI, rsfMRI, SST, nBack and MID tfMRI.</p>
+</section>
+<section id="incidental-findings" class="level2">
+<h2 class="anchored" data-anchor-id="incidental-findings">Incidental Findings</h2>
+<p>T1w and T2w images, if available, were screened for incidental findings by a board-certified neuroradiologist. Any findings requiring clinical investigation were relayed to appropriate site personnel via the ABCD Coordinating Center (CC). These MR findings (see instrument <a href="https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&amp;hierarchy=%5B%5B%22Youth%22%2C%22Quality%20Control%20-%20MRI%20Clinical%20Report%2FFindings%20%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset"><code>mr_y_qc__clfind</code></a>) are not included in our recommended inclusion criteria but are noted here because some investigators may find them to be relevant inclusion criteria for their analyses.</p>
+</section>
+<section id="protocol-compliance-and-quality-control" class="level2">
+<h2 class="anchored" data-anchor-id="protocol-compliance-and-quality-control">Protocol Compliance and Quality Control</h2>
+<p>All ABCD MRI exams have been systematically checked for MRI protocol compliance and completeness, and images have been manually rated for quality by trained MR analysts before and after processing. All MRI data are provided, but we highly recommend that researchers filter subjects by QC results based on the project aims and tolerance for MR artifacts/motion. Severe artifact in all T1w image in a given visit (MRI Quality Control: <code>iqc_t1_ok_ser = 0</code>) results in the inability to produce subsequent MR-metrics for all other modalities.</p>
+<section id="e-prime-errors-in-task-fmri" class="level3">
+<h3 class="anchored" data-anchor-id="e-prime-errors-in-task-fmri">E-Prime errors in task fMRI</h3>
+<p>For task fMRI, series were also excluded due to E-Prime problems including missing, corrupted, duplicated or unsynchronized E-Prime files. The variety of E-Prime errors that would invalidate the series are generalized in the task-specific QC instruments as being “mismatched” (<code>iqc_mid_ep_t_series_match = 1</code>; <code>iqc_nback_ep_t_series_match = 1</code>; <code>iqc_sst_ep_t_series_match = 1</code>). In manual review, some errors can be corrected, so there is an additional override to this switch when needed (<code>eprime_mismatch_ok_mid = 1</code>; <code>eprime_mismatch_ok_mid = 1</code>, <code>eprime_mismatch_ok_mid = 1</code>).</p>
+</section>
+<section id="behavioral-performance-in-task-fmri" class="level3">
+<h3 class="anchored" data-anchor-id="behavioral-performance-in-task-fmri">Behavioral performance in task fMRI</h3>
+<p>Behavioral measures calculated from participant button presses during task fMRI acquisition are also included (see <a href="../../documentation/imaging/type_tfmribeh.html">Behavioral Performance During Task-Based fMRI</a> release note). Based on those measures, behavioral performance flags are provided, indicating whether a subject’s performance for each task was within acceptable standards. It is suggested that users exclude subjects from group analysis based on sub-optimal performance and possibly additional criteria such as the number of degrees of freedom (reduced by motion censoring) in the individual subject task-fMRI analysis and/or based on outlier detection on the ROI-averages themselves. Users should choose inclusion/exclusion performance criteria that are appropriate for their analyses.</p>
+<div id="use-head" class="callout callout-style-default callout-important callout-titled" title="Responsible Use Warning: Head motion">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible Use Warning: Head motion
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Head motion is a serious issue for neuroimaging, and especially for resting state fMRI. It creates brain-wide artifactual effects including elevated short-distance connectivity and attenuated long-distance connectivity <span class="citation" data-cites="power2012">(<a href="#ref-power2012" role="doc-biblioref">Power et al. 2012</a>)</span>. In order to guard against artifactual effects due to head motion, researchers typically implement a variety of strategies that operate at multiple points of the data collection and processing pipeline, with guidance regularly evolving over time <span class="citation" data-cites="power2014 power2015 satterthwaite2013 siegel2017 gratton2020">(<a href="#ref-power2014" role="doc-biblioref">Power et al. 2014</a>; <a href="#ref-power2015" role="doc-biblioref">Power, Schlaggar, and Petersen 2015</a>; <a href="#ref-satterthwaite2013" role="doc-biblioref">Satterthwaite et al. 2013</a>; <a href="#ref-siegel2017" role="doc-biblioref">Siegel et al. 2017</a>; <a href="#ref-gratton2020" role="doc-biblioref">Gratton et al. 2020</a>)</span>. Some of these strategies include discarding entire runs of data that exceed certain motion thresholds and discarding individual functional imaging frames that are proximal to motion events (i.e., “motion censoring”). These strategies in particular typically lead to the exclusion of some participants from further analysis for lack of sufficient data. Levels of head motion differ according to demographic factors such as sex, race/ethnicity, and SES <span class="citation" data-cites="cosgrove2022">(<a href="#ref-cosgrove2022" role="doc-biblioref">Cosgrove et al. 2022</a>)</span>. Therefore, strategies to deal with head motion may lead to differential exclusions across demographic groups. In addition, data quality procedures cause sessions to vary by the amount of data remaining. Such variability may continue to inflate findings especially in the presence of conditions that may correlate with the motion artifact like autism or ADHD <span class="citation" data-cites="eggebrecht2017">(<a href="#ref-eggebrecht2017" role="doc-biblioref">Eggebrecht et al. 2017</a>)</span>. One strategy that avoids this confound is to strictly control the degrees of freedom, where functional connectivity measures are calculated with the exact same amount of data. To aid researchers in exploring this impact further, the ABCD study has released 5 minute- and 10 minute-trimmed and untrimmed functional connectivity datasets. Researchers interested in examining brain-behavior associations or multivariate predictions should follow strategies such as those in <span class="citation" data-cites="eggebrecht2017">Eggebrecht et al. (<a href="#ref-eggebrecht2017" role="doc-biblioref">2017</a>)</span>: 1) assess how missing data impacts dependent, independent variables and covariates, 2) examine the association between the degrees of freedom and non-FC variables, 3) use trimmed FC measures when needed to mitigate artifacts due to data quality.</p>
+<p>For more information please see: <a href="../../documentation/imaging/type_rsfmri.html">“Resting-state fMRI Data Documentation”</a>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="scan-software-effect" class="level1">
+<h1>Effects of scanner instance and software version</h1>
+<p>Multisite longitudinal MRI imaging data are potentially susceptible to influences of scanning parameters, scanner manufacturer, scanner model, and software version, which vary across sites, and sometimes across time. Some multisite correction methods (e.g., COMBAT) <span class="citation" data-cites="fortin2017">(<a href="#ref-fortin2017" role="doc-biblioref">Fortin et al. 2017</a>)</span> have been suggested for application to diffusion-weighted, structural, and functional imaging data, including for ABCD data <span class="citation" data-cites="dudley2023">(<a href="#ref-dudley2023" role="doc-biblioref">Dudley et al. 2023</a>)</span>. The Imaging Workgroups have verified that scanner effects are detectable in ABCD data and are substantial enough in some circumstances that they warrant correction.</p>
+<p>For diffusion imaging, derived-measures obtained from different scanner manufacturers/models have been found to vary substantially. Substantial effects of software updates have also been found on GE scanners between DV25 to DV26, and of Siemens between VE11 and XA30. Philips scanners have had a larger number of minor and major software upgrades, but it is unclear whether these impact the data substantially.</p>
+<p>One recommended approach is to include scanner ID and software version as covariates in regression models. For example, this approach was applied by <span class="citation" data-cites="palmer2022">Palmer et al. (<a href="#ref-palmer2022" role="doc-biblioref">2022</a>)</span> in their report on age-related changes in restriction spectrum imaging (RSI) metrics calculated from the diffusion-weighted imaging scan. An example model is below:</p>
+<p><img src="../../assets/img/documentation/imaging/palmer_model.png" class="img-fluid"></p>
+<p>Investigators should make informed decisions based on the analytic goals. For example, some investigators have recommended including “site”, either as a fixed or random effect, in regression models <span class="citation" data-cites="dick2021">(<a href="#ref-dick2021" role="doc-biblioref">Dick et al. 2021</a>)</span>. However, it may be unnecessary to model “site” as a fixed effect if “scanner ID” is included, but this also may depend on whether random effects are modeled as nested effects (e.g., subject within family within site). In some cases, scanner variables may be collinear with other predictors of interest. For example, if one is examining a specific sub-sample, scanner upgrades may occur between scheduled data collection, increasing the probability that age is collinear with changes in scanner software. Investigators should carefully check their statistical models for issues with multicollinearity. Indeed, in some cases statistical packages will fail to return a result for collinear variables. For example, depending on the analysis, R may fail to return a result, or return a “Singular fit” warning. Investigators may want to assess the Variance Inflation Factor from the car package (e.g., vif(model)), which will return values that indicate the degree of collinearity for each variable in the model. Investigators can manually remove predictors that are collinear.</p>
+<p>When running FEMA for voxel- or vertex-wise data analysis, the custom R function makeDesign will check the rank of the design matrix during its construction, and drop columns that are collinear (see <a href="https://github.com/cmig-research-group/cmig_tools/blob/main/cmig_tools_utils/r/makeDesign.R" class="uri">https://github.com/cmig-research-group/cmig_tools/blob/main/cmig_tools_utils/r/makeDesign.R</a>).</p>
+<p>In summary, investigators should be aware of potential effects of scanner manufacturer and software, and carefully control for these effects in their analyses.</p>
+</section>
+<section id="concatenated-data" class="level1">
+<h1>Concatenated data</h1>
+<p>To facilitate whole-brain analyses of 3D volumes at the voxel-level and cortical surfaces at the vertex level, we have concatenated the complete neuroimaging data from the ABCD Data Release 6.0 across all observations, for multiple imaging phenotypes across all imaging modalities.</p>
+</section>
+<section id="voxelwise-data" class="level1">
+<h1>Voxelwise data</h1>
+<p>To establish anatomical correspondence across all observations, the ABCD atlas was synthesized using the Multimodal Image Normalisation Tool (MINT) developed by the DAIRC. The MINT ABCD atlas is generated from baseline and two-year follow up imaging data and all observations included in Data Release 6.0 from all modalities were registered to the ABCD atlas. Below is a brief overview, for more details please see <span class="citation" data-cites="pecheva2022">Pecheva et al. (<a href="#ref-pecheva2022" role="doc-biblioref">2022</a>)</span>.</p>
+</section>
+<section id="methods" class="level1">
+<h1>Methods</h1>
+<p>Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in <span class="citation" data-cites="hagler2019">Hagler et al. (<a href="#ref-hagler2019" role="doc-biblioref">2019</a>)</span>. Changes to image processing and analysis methods in prior releases are documented in the relevant release notes below.</p>
+<ul>
+<li><a href="../../documentation/imaging/type_smri.html">Structural Magnetic Resonance Imaging</a></li>
+<li><a href="../../documentation/imaging/type_dmri.html">Diffusion Magnetic Resonance Imaging</a></li>
+<li><a href="../../documentation/imaging/type_rsfmri.html">Resting-State Functional Magnetic Resonance Imaging</a></li>
+<li><a href="../../documentation/imaging/type_tfmri.html">Task-Based Functional Magnetic Resonance Imaging (task-fMRI)</a></li>
+<li><a href="../../documentation/imaging/type_tfmribeh.html">Behavioral Performance During Task-Based fMRI</a></li>
+<li><a href="../../documentation/imaging/type_qc.html">MRI Quality Control &amp; Recommended Image Inclusion Criteria</a></li>
+</ul>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-cosgrove2022" class="csl-entry" role="listitem">
+Cosgrove, Kelly T., Timothy J. McDermott, Evan J. White, Matthew W. Mosconi, Wesley K. Thompson, Martin P. Paulus, Carlos Cardenas-Iniguez, and Robin L. Aupperle. 2022. <em>Brain Imaging and Behavior</em> 16 (4): 1919–25. doi:<a href="https://doi.org/10.1007/s11682-022-00665-2">10.1007/s11682-022-00665-2</a>.
+</div>
+<div id="ref-dick2021" class="csl-entry" role="listitem">
+Dick, Anthony Steven, Daniel A. Lopez, Ashley L. Watts, Steven Heeringa, Chase Reuter, Hauke Bartsch, Chun Chieh Fan, et al. 2021. <em>NeuroImage</em> 239 (October): 118262. doi:<a href="https://doi.org/10.1016/j.neuroimage.2021.118262">10.1016/j.neuroimage.2021.118262</a>.
+</div>
+<div id="ref-dudley2023" class="csl-entry" role="listitem">
+Dudley, Jonathan A., Thomas C. Maloney, John O. Simon, Gowtham Atluri, Sarah L. Karalunas, Mekibib Altaye, Jeffery N. Epstein, and Leanne Tamm. 2023. <em>Neuroinformatics</em> 21 (2): 323–37. doi:<a href="https://doi.org/10.1007/s12021-023-09624-8">10.1007/s12021-023-09624-8</a>.
+</div>
+<div id="ref-eggebrecht2017" class="csl-entry" role="listitem">
+Eggebrecht, Adam T, Jed T Elison, Eric Feczko, Alexandre Todorov, Jason J Wolff, Sridhar Kandala, Chloe M Adams, et al. 2017. <em>Cerebral Cortex</em> 27 (3): 1709–20. doi:<a href="https://doi.org/10.1093/cercor/bhw403">10.1093/cercor/bhw403</a>.
+</div>
+<div id="ref-fortin2017" class="csl-entry" role="listitem">
+Fortin, Jean-Philippe, Drew Parker, Birkan Tunç, Takanori Watanabe, Mark A. Elliott, Kosha Ruparel, David R. Roalf, et al. 2017. <em>NeuroImage</em> 161 (November): 149–70. doi:<a href="https://doi.org/10.1016/j.neuroimage.2017.08.047">10.1016/j.neuroimage.2017.08.047</a>.
+</div>
+<div id="ref-gratton2020" class="csl-entry" role="listitem">
+Gratton, Caterina, Ally Dworetsky, Rebecca S. Coalson, Babatunde Adeyemo, Timothy O. Laumann, Gagan S. Wig, Tania S. Kong, et al. 2020. <em>NeuroImage</em> 217 (August): 116866. doi:<a href="https://doi.org/10.1016/j.neuroimage.2020.116866">10.1016/j.neuroimage.2020.116866</a>.
+</div>
+<div id="ref-hagler2019" class="csl-entry" role="listitem">
+Hagler, Donald J., SeanN. Hatton, M. Daniela Cornejo, Carolina Makowski, Damien A. Fair, Anthony Steven Dick, Matthew T. Sutherland, et al. 2019. <em>NeuroImage</em> 202 (November): 116091. doi:<a href="https://doi.org/10.1016/j.neuroimage.2019.116091">10.1016/j.neuroimage.2019.116091</a>.
+</div>
+<div id="ref-palmer2022" class="csl-entry" role="listitem">
+Palmer, Clare E., Diliana Pecheva, John R. Iversen, Donald J. Hagler, Leo Sugrue, Pierre Nedelec, Chun Chieh Fan, Wesley K. Thompson, Terry L. Jernigan, and Anders M. Dale. 2022. <em>Developmental Cognitive Neuroscience</em> 53 (February): 101044. doi:<a href="https://doi.org/10.1016/j.dcn.2021.101044">10.1016/j.dcn.2021.101044</a>.
+</div>
+<div id="ref-pecheva2022" class="csl-entry" role="listitem">
+Pecheva, Diliana, John R. Iversen, Clare E. Palmer, Richard Watts, Terry L. Jernigan, Donald J. Hagler, and Anders M. Dale. 2022. bioRxiv. doi:<a href="https://doi.org/10.1101/2022.08.09.503395">10.1101/2022.08.09.503395</a>.
+</div>
+<div id="ref-power2012" class="csl-entry" role="listitem">
+Power, Jonathan D., Kelly A. Barnes, Abraham Z. Snyder, Bradley L. Schlaggar, and Steven E. Petersen. 2012. <em>NeuroImage</em> 59 (3): 2142–54. doi:<a href="https://doi.org/10.1016/j.neuroimage.2011.10.018">10.1016/j.neuroimage.2011.10.018</a>.
+</div>
+<div id="ref-power2014" class="csl-entry" role="listitem">
+Power, Jonathan D., Anish Mitra, Timothy O. Laumann, Abraham Z. Snyder, Bradley L. Schlaggar, and Steven E. Petersen. 2014. <em>NeuroImage</em> 84 (January): 320–41. doi:<a href="https://doi.org/10.1016/j.neuroimage.2013.08.048">10.1016/j.neuroimage.2013.08.048</a>.
+</div>
+<div id="ref-power2015" class="csl-entry" role="listitem">
+Power, Jonathan D., Bradley L. Schlaggar, and Steven E. Petersen. 2015. <em>NeuroImage</em> 105 (January): 536–51. doi:<a href="https://doi.org/10.1016/j.neuroimage.2014.10.044">10.1016/j.neuroimage.2014.10.044</a>.
+</div>
+<div id="ref-satterthwaite2013" class="csl-entry" role="listitem">
+Satterthwaite, Theodore D., Mark A. Elliott, Raphael T. Gerraty, Kosha Ruparel, James Loughead, Monica E. Calkins, Simon B. Eickhoff, et al. 2013. <em>NeuroImage</em> 64 (January): 240–56. doi:<a href="https://doi.org/10.1016/j.neuroimage.2012.08.052">10.1016/j.neuroimage.2012.08.052</a>.
+</div>
+<div id="ref-siegel2017" class="csl-entry" role="listitem">
+Siegel, Joshua S., Anish Mitra, Timothy O. Laumann, Benjamin A. Seitzman, Marcus Raichle, Maurizio Corbetta, and Abraham Z. Snyder. 2017. <em>Cerebral Cortex</em> 27 (9): 4492–502. doi:<a href="https://doi.org/10.1093/cercor/bhw253">10.1093/cercor/bhw253</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><i>ABCD Study</i>®, <i>Teen Brains. Today’s Science. Brighter Future.</i>® and the ABCD Study Logo are registered marks of the U.S. Department of Health &amp; Human Services (HHS). Adolescent Brain Cognitive Development℠ Study is a service mark of the U.S. Department of Health &amp; Human Services (HHS).</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

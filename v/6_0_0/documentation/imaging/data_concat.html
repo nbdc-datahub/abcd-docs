@@ -1,0 +1,3565 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Concatenated</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/favicon/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-19cb40036d0cd7ef4cbef03ff3e7a6c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8f54f8d61a323a02bc591d69a6fd3237.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SB9F54HS16"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SB9F54HS16', { 'anonymize_ip': true});
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
+<script type="module" src="../../assets/js/left_menu.min.js"></script>
+<script type="module" src="../../assets/js/version.min.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/img/logo-abcd.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-home" aria-label="home"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../study/index.html"> 
+<span class="menu-text">Study</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-usage" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Data Usage</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-usage">    
+        <li>
+    <a class="dropdown-item" href="../../usage/access.html">
+ <span class="dropdown-text">Access &amp; download data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/responsible_use.html">
+ <span class="dropdown-text">Responsible use</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/acknowledgement.html">
+ <span class="dropdown-text">Acknowledgment</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-documentation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Documentation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-documentation">    
+        <li>
+    <a class="dropdown-item" href="../../documentation/curation/structure.html">
+ <span class="dropdown-text">Curation &amp; structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/non_imaging/ab.html">
+ <span class="dropdown-text">Non-imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/imaging/index.html">
+ <span class="dropdown-text">Imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/substudies/covid.html">
+ <span class="dropdown-text">Substudies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/release_notes/6_0.html">
+ <span class="dropdown-text">Release notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../../tools/tools.html">
+ <span class="dropdown-text">Data tools</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/r_packages.html">
+ <span class="dropdown-text">R Packages</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-circle-info--info" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><i class="fa-solid fa-circle-info" aria-label="circle-info"></i> Info</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-fa-circle-info--info">    
+        <li>
+    <a class="dropdown-item" href="../../info/faq.html">
+ <span class="dropdown-text">FAQs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/issues.html">
+ <span class="dropdown-text">Report issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/changelog.html">
+ <span class="dropdown-text">Changelog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/citation.html">
+ <span class="dropdown-text">Cite this website</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-version" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Version</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-version">    
+        <li class="dropdown-header">empty</li>
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/imaging/index.html">Imaging data</a></li><li class="breadcrumb-item">Data types</li><li class="breadcrumb-item">Documentation</li><li class="breadcrumb-item"><a href="../../documentation/imaging/data_concat.html">Imaging</a></li><li class="breadcrumb-item"><a href="../../documentation/imaging/data_concat.html">Concatenated</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Curation &amp; structure</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curation standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/naming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Naming convention</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/metadata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metadata</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Non-imaging data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ABCD (General)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/fc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Friends, Family, &amp; Community</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/gn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Genetics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/le.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linked External Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/mh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mental Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurocognition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Novel Technologies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ph.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/su.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Substance Use</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../documentation/imaging/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imaging data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/admin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Administrative tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data types</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth4 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_concat.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Concatenated</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI derivatives data documentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_source_raw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Source data / raw data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_suppl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Supplementary tables</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Scan types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_dmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffusion MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Quality Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_rsfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resting-state fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_smri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structural MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmribeh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI (Behavioral performance)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trial level behavioral performance during task-based fMRI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">ABCD BIDS Community Collection (ABCC)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_start_page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ABCD-BIDS community collection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_inputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BIDS conversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data processing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_qualitycontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality control procedures</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Substudy data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/covid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">COVID-19 rapid response research</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/ecb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Endocannabinoid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/irma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IRMA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/mrs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MR Spectroscopy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Release notes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/release_notes/6_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.0 data release</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#atlas-creation-and-registration" id="toc-atlas-creation-and-registration" class="nav-link active" data-scroll-target="#atlas-creation-and-registration">Atlas creation and registration</a></li>
+  <li><a href="#concatenation-and-data-storage" id="toc-concatenation-and-data-storage" class="nav-link" data-scroll-target="#concatenation-and-data-storage">Concatenation and data storage</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data types</a>
+  <ul>
+  <li><a href="#voxelwise-voxel-based-derived-measures-in-abcd-atlas-space" id="toc-voxelwise-voxel-based-derived-measures-in-abcd-atlas-space" class="nav-link" data-scroll-target="#voxelwise-voxel-based-derived-measures-in-abcd-atlas-space">voxelwise voxel-based derived measures in ABCD atlas space</a></li>
+  <li><a href="#vertexwise-cortical-surface-based-derived-measures-on-freesurfer-spherical-average" id="toc-vertexwise-cortical-surface-based-derived-measures-on-freesurfer-spherical-average" class="nav-link" data-scroll-target="#vertexwise-cortical-surface-based-derived-measures-on-freesurfer-spherical-average">vertexwise cortical surface-based derived measures on FreeSurfer spherical average</a></li>
+  <li><a href="#corrrmat-roi-time-series-and-correlation-matrix-data-with-gordon-desikan-destrieux-and-aseg-rois" id="toc-corrrmat-roi-time-series-and-correlation-matrix-data-with-gordon-desikan-destrieux-and-aseg-rois" class="nav-link" data-scroll-target="#corrrmat-roi-time-series-and-correlation-matrix-data-with-gordon-desikan-destrieux-and-aseg-rois">corrrmat: ROI time series and correlation matrix data with Gordon, Desikan, Destrieux, and aseg ROIs</a></li>
+  </ul></li>
+  <li><a href="#vertex-numbering-and-visualization-for-vertexwise-concatenated-imaging-data" id="toc-vertex-numbering-and-visualization-for-vertexwise-concatenated-imaging-data" class="nav-link" data-scroll-target="#vertex-numbering-and-visualization-for-vertexwise-concatenated-imaging-data">Vertex numbering and visualization for vertexwise concatenated imaging data</a></li>
+  <li><a href="#volume-information-files" id="toc-volume-information-files" class="nav-link" data-scroll-target="#volume-information-files">Volume information files</a></li>
+  <li><a href="#reading-concatenated-imaging-data-files" id="toc-reading-concatenated-imaging-data-files" class="nav-link" data-scroll-target="#reading-concatenated-imaging-data-files">Reading concatenated imaging data files</a></li>
+  <li><a href="#dmri-dti-voxelwise-data" id="toc-dmri-dti-voxelwise-data" class="nav-link" data-scroll-target="#dmri-dti-voxelwise-data">dMRI-DTI Voxelwise Data</a></li>
+  <li><a href="#dmri-rsi-voxelwise-data" id="toc-dmri-rsi-voxelwise-data" class="nav-link" data-scroll-target="#dmri-rsi-voxelwise-data">dMRI-RSI Voxelwise Data</a></li>
+  <li><a href="#smri-voxelwise-data" id="toc-smri-voxelwise-data" class="nav-link" data-scroll-target="#smri-voxelwise-data">sMRI Voxelwise Data</a></li>
+  <li><a href="#task-based-fmri-voxelwise-data" id="toc-task-based-fmri-voxelwise-data" class="nav-link" data-scroll-target="#task-based-fmri-voxelwise-data">Task-based fMRI Voxelwise Data</a></li>
+  <li><a href="#roi-voxelwise-data" id="toc-roi-voxelwise-data" class="nav-link" data-scroll-target="#roi-voxelwise-data">ROI Voxelwise Data</a></li>
+  <li><a href="#surfaces-vertexwise-data" id="toc-surfaces-vertexwise-data" class="nav-link" data-scroll-target="#surfaces-vertexwise-data">Surfaces Vertexwise Data</a></li>
+  <li><a href="#smri-vertexwise-data" id="toc-smri-vertexwise-data" class="nav-link" data-scroll-target="#smri-vertexwise-data">sMRI Vertexwise Data</a></li>
+  <li><a href="#dmri-dti-vertexwise-data" id="toc-dmri-dti-vertexwise-data" class="nav-link" data-scroll-target="#dmri-dti-vertexwise-data">dMRI-DTI Vertexwise Data</a></li>
+  <li><a href="#dmri-rsi-vertexwise-data" id="toc-dmri-rsi-vertexwise-data" class="nav-link" data-scroll-target="#dmri-rsi-vertexwise-data">dMRI-RSI Vertexwise Data</a></li>
+  <li><a href="#task-based-fmri-vertexwise-data" id="toc-task-based-fmri-vertexwise-data" class="nav-link" data-scroll-target="#task-based-fmri-vertexwise-data">Task-based fMRI Vertexwise Data</a></li>
+  <li><a href="#conditions-and-contrasts" id="toc-conditions-and-contrasts" class="nav-link" data-scroll-target="#conditions-and-contrasts">Conditions and contrasts</a></li>
+  <li><a href="#resting-state-fmri-roi-correlation-and-time-series-data" id="toc-resting-state-fmri-roi-correlation-and-time-series-data" class="nav-link" data-scroll-target="#resting-state-fmri-roi-correlation-and-time-series-data">Resting-state fMRI ROI Correlation and Time Series Data</a></li>
+  <li><a href="#task-based-fmri-roi-correlation-and-time-series-data" id="toc-task-based-fmri-roi-correlation-and-time-series-data" class="nav-link" data-scroll-target="#task-based-fmri-roi-correlation-and-time-series-data">Task-based fMRI ROI Correlation and Time Series Data</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/imaging/index.html">Imaging data</a></li><li class="breadcrumb-item">Data types</li><li class="breadcrumb-item">Documentation</li><li class="breadcrumb-item"><a href="../../documentation/imaging/data_concat.html">Imaging</a></li><li class="breadcrumb-item"><a href="../../documentation/imaging/data_concat.html">Concatenated</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Concatenated</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="atlas-creation-and-registration" class="level1">
+<h1>Atlas creation and registration</h1>
+<p>Images were registered according to the numerical method outlined by <span class="citation" data-cites="holland2011">Holland and Dale (<a href="#ref-holland2011" role="doc-biblioref">2011</a>)</span>, extended to include multimodal inputs. This consisted of rigid body, affine and nonlinear transformations. In total eleven multimodal channels were used to align scans and create the MINT ABCD atlas, however the input channels varied according to the registration step. Three structural MRI (sMRI) channels were included: T1w images, white matter segmentation, and grey matter segmentation; and eight diffusion MRI (dMRI) channels: the zeroth and second order spherical harmonics (SH) coefficients of the restricted orientation distribution function (ODF) and the zeroth order SH coefficients from the hindered and free water FODs from the restriction spectrum imaging (RSI) model. sMRI and dMRI channels were first aligned within-subject using rigid body registration transforms. Then inter-subject anatomical alignment was achieved using rigid body, affine and nonlinear transforms.</p>
+<p>An iterative procedure was used to generate a registration target and the final ABCD atlas. The initial registration target was chosen as the atlas image used by <span class="citation" data-cites="hagler2019">Hagler et al. (<a href="#ref-hagler2019" role="doc-biblioref">2019</a>)</span> for the AtlasTrack method. A weighted group average was calculated for all eleven channels and the registration target was updated with the new multimodal average. The registration was repeated and the registration target updated again. This procedure was repeated three times, producing the iteratively refined multimodal ABCD atlas.</p>
+<p>All available scans from all observations included in Data Release 6.0 were registered to the final group average, the ABCD atlas. The warps were applied to numerous imaging measures across dMRI, sMRI and tfMRI. This produced 3D volumes which were anatomically aligned across observations and modalities.</p>
+</section>
+<section id="concatenation-and-data-storage" class="level1">
+<h1>Concatenation and data storage</h1>
+<p>To reduce the total data size and facilitate data sharing, a brain mask was applied to the 3D volumes for each imaging measure and only voxels within the mask were stored as a 2D vector. The masked vector data were concatenated across observations and according to each measure. For each imaging measure (FA, MD, RNI etc) .mat files of the concatenated data contain a variable volmat that is a matrix of size N x P, where N = number of observations and P=number of voxels within the mask. Please see the Concatenated Imaging Data Documentation for details. Imaging measures are located in modality specific directories along with a <code>vol_info.mat</code> file which contains participant and session IDs and high and low resolution 3D volumes of the ABCD atlas mask. The ABCD atlas masks can be used to convert the 2D vectors into 3D volumes. The following Matlab code provides an example of how to do this using the <code>fullvol.m</code> function provided by the Fast and Efficient Mixed-effects Algorithm (FEMA) available from <a href="https://github.com/cmig-research-group/cmig_tools" class="uri">https://github.com/cmig-research-group/cmig_tools</a>.</p>
+<p>Load the data for a given imaging measure, say FA (this may take a while)</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">'/path/to/ABCD/data/6.0/imaging_concat/voxelwise/dti/fa.mat'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To transform a single observation from a 2D vector to a 3D volume, select the row number you want. If you want a specific participant and session you can select that data finding the corresponding row in the <code>vol_info.mat</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">'/path/to/ABCD/data/6.0/imaging_concat/voxelwise/dti/vol_info.mat'</span>);                    </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">=</span> <span class="fu">find</span>(<span class="sc">**</span>contains<span class="sc">**</span>(<span class="sc">**</span>participant_id<span class="sc">**</span>, <span class="st">'sub-0001'</span>) <span class="sc">&amp;</span> <span class="fu">contains</span>(<span class="sc">**</span>session_id<span class="sc">**</span>, <span class="st">'ses-00A'</span>)) </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>vec_subj <span class="ot">=</span> <span class="fu">volmat</span>(<span class="sc">**</span>idx<span class="sc">**</span>,<span class="sc">:</span>);                                                                  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Transform the 2D vector to a 3D volume using the fullvol function and vol_mask_sub</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>vol_subj <span class="ot">=</span> <span class="fu">fullvol</span>(vec_subj, vol_mask_sub);</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">showVol</span>(vol_subj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or saved as a nifti using the niftiwrite_amd function also part of FEMA.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fname_nii <span class="ot">=</span> <span class="st">'vol_subj.nii.gz'</span>;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">niftiwrite_amd</span>(vol_subj, fname_nii, M_atl);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The fullvol function can be applied to multiple row vectors, say if you wanted to look at all sessions for a given participant</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">=</span> <span class="fu">find</span>(<span class="sc">**</span>contains<span class="sc">**</span>(<span class="sc">**</span>participant_id<span class="sc">**</span>, <span class="st">'sub-0001'</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>idx</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">=</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>     <span class="dv">1</span>     <span class="dv">2</span>     <span class="dv">3</span>     <span class="dv">4</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>vec_subj <span class="ot">=</span> <span class="fu">volmat</span>(<span class="sc">**</span>idx<span class="sc">**</span>,<span class="sc">:</span>); </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>vol_subj <span class="ot">=</span> <span class="fu">fullvol</span>(vec_subj, vol_mask_sub);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Where vol_subj would now be a 4D volume. It is not recommended that you convert the complete volmat variable into a 4D volume as that would be a 100x100x130x29173 matrix which would require an exceptionally large amount of computer memory.</p>
+</section>
+<section id="data-types" class="level1">
+<h1>Data types</h1>
+<section id="voxelwise-voxel-based-derived-measures-in-abcd-atlas-space" class="level2">
+<h2 class="anchored" data-anchor-id="voxelwise-voxel-based-derived-measures-in-abcd-atlas-space">voxelwise voxel-based derived measures in ABCD atlas space</h2>
+<p><strong>smri</strong>: structural MRI derived measures; e.g., T1, T2, etc.</p>
+<p><strong>dti</strong>: Diffusion Tensor Imaging derived; e.g., FA, MD, etc.</p>
+<p><strong>rsi:</strong> Restriction Spectrum Imaging derived; e.g., RND, HNT, etc.</p>
+<p><strong>tfmri</strong>: task fMRI derived beta coefficients</p>
+</section>
+<section id="vertexwise-cortical-surface-based-derived-measures-on-freesurfer-spherical-average" class="level2">
+<h2 class="anchored" data-anchor-id="vertexwise-cortical-surface-based-derived-measures-on-freesurfer-spherical-average">vertexwise cortical surface-based derived measures on FreeSurfer spherical average</h2>
+<p><strong>surf</strong>: cortical surface coordinates; i.e., white and pial surfaces</p>
+<p><strong>smri</strong>: sMRI-derived measures; e.g., thickness (thk), area, sulc, T1, T2</p>
+<p><strong>dti</strong>: Diffusion Tensor Imaging derived; e.g., FA, MD, etc.</p>
+<p><strong>rsi</strong>: Restriction Spectrum Imaging derived; e.g., RND, HNT, etc.</p>
+<p><strong>tfmri</strong>: task fMRI derived beta and SEM coefficients</p>
+</section>
+<section id="corrrmat-roi-time-series-and-correlation-matrix-data-with-gordon-desikan-destrieux-and-aseg-rois" class="level2">
+<h2 class="anchored" data-anchor-id="corrrmat-roi-time-series-and-correlation-matrix-data-with-gordon-desikan-destrieux-and-aseg-rois">corrrmat: ROI time series and correlation matrix data with Gordon, Desikan, Destrieux, and aseg ROIs</h2>
+<p><strong>rsfmri</strong>: resting-state fMRI</p>
+<p><strong>tfmri</strong>: task fMRI</p>
+</section>
+</section>
+<section id="vertex-numbering-and-visualization-for-vertexwise-concatenated-imaging-data" class="level1">
+<h1>Vertex numbering and visualization for vertexwise concatenated imaging data</h1>
+<p>The number of vertices is 10242. They form a 5th order icosahedral surface, and correspond to the first 10242 vertices of the 7th order icosahedral surface used for the FreeSurfer fsaverage subject and spherical average surface atlas. Cortical surface based measures on this ico 5 surface can be visualized using the <a href="https://github.com/cmig-research-group/cmig_tools/tree/main/showSurf">cmig_tools showSurf package</a>.</p>
+</section>
+<section id="volume-information-files" class="level1">
+<h1>Volume information files</h1>
+<p>Each concatenated imaging data type (e.g., voxelwise smri, vertexwise dti, corrmat tfmri, etc.) is accompanied by a volume information file (<code>vol_info.mat</code>) which contains participant and session IDs needed to link the rows of concatenated data matrices to the corresponding rows in the tabulated data.</p>
+<p><strong>Contents of <code>vol_info.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>participant_id</code></td>
+<td><p>cell array of participant IDs</p>
+<p>with one entry per visit (participant-event)</p>
+<pre><code>  e.g., sub-XXXXXXXX</code></pre></td>
+</tr>
+<tr class="odd">
+<td><code>session_id</code></td>
+<td><p>cell array of session IDs</p>
+<p>with one entry per visit</p>
+<pre><code>e.g., `ses-00A`, `ses-02A`, `ses-04A`, `ses-06A`</code></pre></td>
+</tr>
+<tr class="even">
+<td><code>visitidvec</code></td>
+<td><p>cell array of visit IDs</p>
+<p>with one entry per visit</p>
+<p>e.g., S042_INVXXXXXXXX_baseline</p>
+<pre><code>   {siteID}\_{subjID}\_{eventID}</code></pre></td>
+</tr>
+<tr class="odd">
+<td><code>dirlist</code></td>
+<td><p>cell array of input directory names; e.g.,</p>
+<p>FSURF_{siteID}_{subjID}_{eventID}_{datetime}</p>
+<p>DTIPROC_{siteID}_{subjID}_{eventID}_{datetime}</p>
+<p>BOLDPROC_{siteID}_{subjID}_{eventID}_{datetime}</p>
+<p>DTIREG_{siteID}_{subjID}_{eventID}_{datetime}</p></td>
+</tr>
+<tr class="even">
+<td><strong>voxelwise data types</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>vol_mask_aseg</code></td>
+<td>high resolution 3D volume of ABCD atlas mask</td>
+</tr>
+<tr class="even">
+<td><code>vol_mask_sub</code></td>
+<td>lower resolution 3D volume of ABCD atlas mask</td>
+</tr>
+<tr class="odd">
+<td><code>M_atl</code></td>
+<td>4x4 voxel to RAS transform of ABCD atlas</td>
+</tr>
+<tr class="even">
+<td><strong>vertexwise data types</strong></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>vol_mask_lh</code></td>
+<td><p>cortical mask vector for left hemisphere vertices</p>
+<p>excludes non-cortical midbrain region</p></td>
+</tr>
+<tr class="even">
+<td><code>vol_mask_rh</code></td>
+<td><p>cortical mask vector for right hemisphere vertices</p>
+<p>excludes non-cortical midbrain region</p></td>
+</tr>
+<tr class="odd">
+<td><strong>corrmat data types</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>vol_mask</code></td>
+<td>empty mask vector – all ROIs are valid</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+</section>
+<section id="reading-concatenated-imaging-data-files" class="level1">
+<h1>Reading concatenated imaging data files</h1>
+<p>Concatenated imaging data are stored as Version 7.3 MAT-files, which use an HDF5-based format and can be read into memory using the MATLAB load function. HDF5 is an open source format that can also be read in R (e.g., using the <a href="https://stackoverflow.com/a/75871385">hdf5r package</a>) and python (e.g, using the <a href="https://stackoverflow.com/a/19340117">numpy library and h5py extension</a>). The memory (RAM) required to read each file depends on the contents of the file and memory overhead requirements while running matlab. The time it takes to read each file into memory depends on the contents of the file as well factors such as CPU speed, disk read speed, and network bandwidth. Approximate values below should be taken as rough estimates of what to expect when using the MATLAB load function.<br>
+</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 38%">
+<col style="width: 14%">
+<col style="width: 19%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Category</strong></td>
+<td><strong>Modality</strong></td>
+<td><strong>File name pattern</strong></td>
+<td><strong>Time (min)</strong></td>
+<td><strong>Required RAM (GB)</strong></td>
+</tr>
+<tr class="even">
+<td>voxelwise</td>
+<td>dti</td>
+<td><code>{measure}.mat</code></td>
+<td>10</td>
+<td>57</td>
+</tr>
+<tr class="odd">
+<td>voxelwise</td>
+<td>rsi</td>
+<td><code>{measure}.mat</code></td>
+<td>9</td>
+<td>57</td>
+</tr>
+<tr class="even">
+<td>voxelwise</td>
+<td>smri</td>
+<td><code>{measure}.mat</code></td>
+<td>10</td>
+<td>66</td>
+</tr>
+<tr class="odd">
+<td>voxelwise</td>
+<td>tfmri</td>
+<td><code>{task}_{condition}_{stat}_{run}.mat</code></td>
+<td>10</td>
+<td>57</td>
+</tr>
+<tr class="even">
+<td>voxelwise</td>
+<td>roi</td>
+<td><code>{segmentation}.mat</code></td>
+<td>1</td>
+<td>48</td>
+</tr>
+<tr class="odd">
+<td>vertexwise</td>
+<td>surf</td>
+<td><code>{surface}-{hemi}.mat</code></td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>vertexwise</td>
+<td>smri</td>
+<td><code>{measure}_sm{smoothing}-{hemi}.mat</code></td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>vertexwise</td>
+<td>dti</td>
+<td><code>{measure}_{layer}_sm{smoothing}_{hemi}.mat</code></td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>vertexwise</td>
+<td>rsi</td>
+<td><code>{measure}_{layer}_sm{smoothing}_{hemi}.mat</code></td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>vertexwise</td>
+<td>tfmri</td>
+<td><code>{task}_{condition}_{stat}_{run}_{hemi}.mat</code></td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>corrmat</td>
+<td>rsfmri</td>
+<td><code>tseries.mat</code></td>
+<td>77</td>
+<td>121</td>
+</tr>
+<tr class="odd">
+<td>corrmat</td>
+<td>rsfmri</td>
+<td><code>gp_tseries.mat</code></td>
+<td>67</td>
+<td>78</td>
+</tr>
+<tr class="even">
+<td>corrmat</td>
+<td>rsfmri</td>
+<td><code>corr.mat</code></td>
+<td>4</td>
+<td>28</td>
+</tr>
+<tr class="odd">
+<td>corrmat</td>
+<td>rsfmri</td>
+<td><code>gp_corr.mat</code></td>
+<td>4</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>corrmat</td>
+<td>rsfmri</td>
+<td><code>gpnet_corr.mat</code></td>
+<td>&lt;1</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>corrmat</td>
+<td>rsfmri</td>
+<td><code>gpnet_aseg_corr.mat</code></td>
+<td>&lt;1</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>corrmat</td>
+<td>tfmri</td>
+<td><code>{task}_tseries.mat</code></td>
+<td>12</td>
+<td>75</td>
+</tr>
+<tr class="odd">
+<td>corrmat</td>
+<td>tfmri</td>
+<td><code>{task}_gp_tseries.mat</code></td>
+<td>8</td>
+<td>52</td>
+</tr>
+<tr class="even">
+<td>corrmat</td>
+<td>tfmri</td>
+<td><code>{task}_corr_{type}.mat</code></td>
+<td>9</td>
+<td>29</td>
+</tr>
+<tr class="odd">
+<td>corrmat</td>
+<td>tfmri</td>
+<td><code>{task}_gp_corr_{type}.mat</code></td>
+<td>4</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>corrmat</td>
+<td>tfmri</td>
+<td><code>{task}_gpnet_corr_{type}.mat</code></td>
+<td>&lt;1</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>corrmat</td>
+<td>tfmri</td>
+<td><code>{task}_gpnet_aseg_corr_{type}.mat</code></td>
+<td>&lt;1</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Note: File name patterns used above (e.g., <code>{surface}</code>, <code>{hemi}</code>, <code>{measure}</code>, <code>{smoothing}</code>, <code>{layer}</code>, <code>{task}</code>, <code>{condition}</code>, <code>{stat}</code>, <code>{run}</code>, <code>{type}</code>) represent groups of files for a given data type with varying values for the label in curly braces. The patterns for the respective data types are explained in the subsequent sections of this document.</p>
+</section>
+<section id="dmri-dti-voxelwise-data" class="level1">
+<h1>dMRI-DTI Voxelwise Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/voxelwise/dti</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td>participant and session IDs used to link to tabulated data and ABCD atlas brain masks</td>
+</tr>
+<tr class="odd">
+<td><code>fa.mat</code></td>
+<td>measure: DTI fractional anisotropy</td>
+</tr>
+<tr class="even">
+<td><code>md.mat</code></td>
+<td>measure: DTI mean diffusivity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contents of <code>{measure}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>volmat</code></td>
+<td>matrix of size N x P where N = number of observations and P=number of voxels</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dmri-rsi-voxelwise-data" class="level1">
+<h1>dMRI-RSI Voxelwise Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/voxelwise/rsi</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td>participant and session IDs used to link to tabulated data and ABCD atlas brain masks</td>
+</tr>
+<tr class="odd">
+<td><code>ri.mat</code></td>
+<td>measure: RSI restricted isotropic</td>
+</tr>
+<tr class="even">
+<td><code>rif.mat</code></td>
+<td>measure: RSI restricted isotropic fraction of total restricted signal</td>
+</tr>
+<tr class="odd">
+<td><code>rni.mat</code></td>
+<td>measure: RSI restricted normalized isotropic</td>
+</tr>
+<tr class="even">
+<td><code>rd.mat</code></td>
+<td>measure: RSI restricted directional</td>
+</tr>
+<tr class="odd">
+<td><code>rdf.mat</code></td>
+<td>measure: RSI restricted directional fraction of total restricted signal</td>
+</tr>
+<tr class="even">
+<td><code>rnd.mat</code></td>
+<td>measure: RSI restricted normalized directional</td>
+</tr>
+<tr class="odd">
+<td><code>rt.mat</code></td>
+<td>measure: RSI restricted total</td>
+</tr>
+<tr class="even">
+<td><code>rnt.mat</code></td>
+<td>measure: RSI restricted normalized total</td>
+</tr>
+<tr class="odd">
+<td><code>hi.mat</code></td>
+<td>measure: RSI hindered isotropic</td>
+</tr>
+<tr class="even">
+<td><code>hif.mat</code></td>
+<td>Measure: RSI hindered isotropic fraction of total hindered signal</td>
+</tr>
+<tr class="odd">
+<td><code>hni.mat</code></td>
+<td>measure: RSI hindered normalized isotropic</td>
+</tr>
+<tr class="even">
+<td><code>hd.mat</code></td>
+<td>measure: RSI hindered directional</td>
+</tr>
+<tr class="odd">
+<td><code>hdf.mat</code></td>
+<td>measure: RSI hindered directional fraction of total hindered signal</td>
+</tr>
+<tr class="even">
+<td><code>hnd.mat</code></td>
+<td>measure: RSI hindered normalized directional</td>
+</tr>
+<tr class="odd">
+<td><code>ht.mat</code></td>
+<td>measure: RSI hindered total</td>
+</tr>
+<tr class="even">
+<td><code>hnt.mat</code></td>
+<td>measure: RSI hindered normalized total</td>
+</tr>
+<tr class="odd">
+<td><code>fi.mat</code></td>
+<td>measure: RSI free isotropic</td>
+</tr>
+<tr class="even">
+<td><code>fni.mat</code></td>
+<td>measure: RSI free normalized isotropic</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contents of <code>{measure}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>volmat</code></td>
+<td>matrix of size N x P where N= number of observations and P=number of voxels</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="smri-voxelwise-data" class="level1">
+<h1>sMRI Voxelwise Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/voxelwise/smri</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td>participant and session IDs used to link to tabulated data and ABCD atlas brain masks</td>
+</tr>
+<tr class="odd">
+<td><code>nu.mat</code></td>
+<td>measure: T1-weighted signal intensity</td>
+</tr>
+<tr class="even">
+<td><code>t2.mat</code></td>
+<td>measure: T2-weighted signal intensity</td>
+</tr>
+<tr class="odd">
+<td><code>ja.mat</code></td>
+<td>measure: the determinant of the Jacobian matrix of the nonlinear warp to atlas space</td>
+</tr>
+<tr class="even">
+<td><code>gm_new.mat</code></td>
+<td>measure: grey matter segmentation</td>
+</tr>
+<tr class="odd">
+<td><code>wm.mat</code></td>
+<td>measure: white matter segmentation</td>
+</tr>
+<tr class="even">
+<td><code>bm.mat</code></td>
+<td>measure: brain mask</td>
+</tr>
+<tr class="odd">
+<td><code>b0.mat</code></td>
+<td>measure: b=0 signal intensity</td>
+</tr>
+<tr class="even">
+<td><code>di1vol1.mat</code></td>
+<td>measure: nonlinear deformation field for y-direction</td>
+</tr>
+<tr class="odd">
+<td><code>di2vol1.mat</code></td>
+<td>measure: nonlinear deformation field for x-direction</td>
+</tr>
+<tr class="even">
+<td><code>di3vol1.mat</code></td>
+<td>measure: nonlinear deformation field for z-direction</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contents of <code>{measure}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>volmat</code></td>
+<td>matrix of size N x P where N= number of observations and P=number of voxels</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="task-based-fmri-voxelwise-data" class="level1">
+<h1>Task-based fMRI Voxelwise Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/voxelwise/tfmri</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td>participant and session IDs used to link to tabulated data and ABCD atlas brain masks</td>
+</tr>
+<tr class="odd">
+<td><p><code>mid_{condition}_{stat}_{run}.mat</code></p>
+<p>e.g., <code>mid_sra_beta_r01.mat</code></p>
+<p><code>mid_sra_beta_r02.mat</code></p></td>
+<td><p>task: mid (Monetary Incentive Delay)<br>
+conditions: see below</p>
+<p>stats: beta</p>
+<p>runs: r01, r02</p></td>
+</tr>
+<tr class="even">
+<td><p><code>nback_{condition}_{stat}_{run}.mat</code></p>
+<p>e.g., <code>nback_2b_beta_r01.mat</code></p>
+<p><code>nback_2b_beta_r02.mat</code></p></td>
+<td><p>task: nback (Emotional n-Back)</p>
+<p>conditions: see below</p>
+<p>stats: beta</p>
+<p>runs: r01, r02</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>sst_{condition}_{stat}_{run}.mat</code></p>
+<p>e.g., <code>sst_cg_beta_r01.mat</code></p>
+<p><code>sst_cg_beta_r02.mat</code></p></td>
+<td><p>task: sst (Stop Signal Task)</p>
+<p>conditions: see below</p>
+<p>stats: beta</p>
+<p>runs: r01, r02</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li>File name patterns above with <code>{condition}</code>, <code>{stat}</code> and <code>{run}</code> represent a group of files for a given task (i.e.,”mid” = Monetary Incentive Delay, “nback” = Emotional N-Back, and “sst” = Stop Signal Task) with varying conditions (see tables below), GLM statistic beta = time series model coefficient, two separate runs (“r01” = run 1, and “r02” = run 2) represented.</li>
+<li>Outlier beta values (i.e., outside the mean ± 3 x standard deviation) are present for some particular voxels, runs, conditions, and/or paticipant-events. See “Task fMRI Outliers” in <a href="../../documentation/imaging/type_tfmri.html">Task-Based fMRI Data Documentation</a> for more information and guidance.</li>
+</ul>
+<p><strong>Conditions and contrasts</strong></p>
+<p>Concatenated data files containing beta estimates derived from AFNI’s 3dDeconvolve were created for each of the conditions and contrasts defined in supplementary tables for each task. Contrasts were implemented as general linear tests with AFNI’s 3dDeconvolve, defined as a subtraction between two groups of conditions that can each include zero, one, or more conditions, depending on the contrast definition. See <a href="../../documentation/imaging/data_suppl.html">Supplementary Tables</a> for more info.</p>
+<p><strong>Contents of <code>{task}\_{condition}\_{stat}\_{run}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>volmat</code></td>
+<td>matrix of size N x P where N= number of observations and P=number of voxels</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="roi-voxelwise-data" class="level1">
+<h1>ROI Voxelwise Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/voxelwise/smri</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>aparcaseg.mat</code></td>
+<td>probabilistic ROIs of the Freesurfer automatic cortical parcellation (aparc) and the automatic subcortical segmentation (aseg)</td>
+</tr>
+<tr class="odd">
+<td><code>aseg.mat</code></td>
+<td>probabilistic ROIs of the Freesurfer automatic subcortical segmentation (ages)</td>
+</tr>
+<tr class="even">
+<td><code>fiber.mat</code></td>
+<td>probabilistic ROIs of white matter tracts labelled using AtlasTrack</td>
+</tr>
+<tr class="odd">
+<td><code>pauli_subcortnuclei_abcd3_cor10.mat</code></td>
+<td>subcortical ROIs from <span class="citation" data-cites="pauli2018">Pauli, Nili, and Tyszka (<a href="#ref-pauli2018" role="doc-biblioref">2018</a>)</span> |</td>
+</tr>
+<tr class="even">
+<td><code>thalamus_abcd3_cor10.mat</code></td>
+<td>thalamic nuclei ROIs from <span class="citation" data-cites="najdenovska2018">Najdenovska et al. (<a href="#ref-najdenovska2018" role="doc-biblioref">2018</a>)</span> |</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contents of <code>{segmentation}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 71%">
+<col style="width: 9%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>volmat_prob</code></td>
+<td>matrix of size X x Y x Z x R where X,Y,Z voxels dimension and R is number of ROIs</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>volmat_prob_rgb</code></td>
+<td>5D matrix of size X x Y x Z x R x 3 where X,Y,Z voxels dimension and R is number of ROIs</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>volmat_prob_rgbsum</code></td>
+<td>4D matrix of size X x Y x Z x 3 where X,Y,Z voxels dimensions.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>roicodes</code></td>
+<td>array of ROI numeric identifiers</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>roinames</code></td>
+<td>ROI names</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>roirgb</code></td>
+<td>ROI RGB color codes</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>subjlist</code></td>
+<td>list of subjects included in cohort average</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contents of <code>pauli_subcortnuclei_abcd3_cor10.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 75%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>D_fwd</code></td>
+<td>combined 3D nonlinear warp from subcortical nuclei atlas to ABCD atlas</td>
+</tr>
+<tr class="odd">
+<td><code>M_atl</code></td>
+<td>M transform of ABCD atlas</td>
+</tr>
+<tr class="even">
+<td><code>M_reg_af</code></td>
+<td>reslice matrix from ABCD atlas to subcortical nuclei atlas</td>
+</tr>
+<tr class="odd">
+<td><code>di1vol1</code></td>
+<td>nonlinear deformation field for y-direction</td>
+</tr>
+<tr class="even">
+<td><code>di2vol1</code></td>
+<td>nonlinear deformation field for x-direction</td>
+</tr>
+<tr class="odd">
+<td><code>di3vol1</code></td>
+<td>nonlinear deformation field for z-direction</td>
+</tr>
+<tr class="even">
+<td><code>muvols_T1_ctx</code></td>
+<td>ABCD atlas T1 volume</td>
+</tr>
+<tr class="odd">
+<td><code>pauli_lut</code></td>
+<td>look up table for ROI code, name and RGB color code</td>
+</tr>
+<tr class="even">
+<td><code>vol_T1</code></td>
+<td>subcortical nuclei atlas T1 volume in original space</td>
+</tr>
+<tr class="odd">
+<td><code>vol_T1_af</code></td>
+<td>subcortical nuclei atlas T1 volume affine transformed to ABCD atlas space</td>
+</tr>
+<tr class="even">
+<td><code>vol_T1_rb</code></td>
+<td>subcortical nuclei atlas T1 volume rigid body transformed to ABCD atlas space</td>
+</tr>
+<tr class="odd">
+<td><code>vol_T1_reg</code></td>
+<td>subcortical nuclei atlas T1 volume nonlinearly transformed to ABCD atlas space</td>
+</tr>
+<tr class="even">
+<td><code>vol_T2</code></td>
+<td>subcortical nuclei atlas T2 volume in original space</td>
+</tr>
+<tr class="odd">
+<td><code>vol_T2_af</code></td>
+<td>subcortical nuclei atlas T2 volume affine transformed to ABCD atlas space</td>
+</tr>
+<tr class="even">
+<td><code>vol_T2_rb</code></td>
+<td>subcortical nuclei atlas T2 volume rigid body transformed to ABCD atlas space</td>
+</tr>
+<tr class="odd">
+<td><code>vol_T2_reg</code></td>
+<td>subcortical nuclei atlas T2 volume nonlinearly transformed to ABCD atlas space</td>
+</tr>
+<tr class="even">
+<td><code>vol_labels_T1_reg_rgb</code></td>
+<td>color coded segmentation volume nonlinearly transformed to ABCD atlas space</td>
+</tr>
+<tr class="odd">
+<td><code>vol_labels_af</code></td>
+<td>segmentation volume affine transformed to ABCD atlas space</td>
+</tr>
+<tr class="even">
+<td><code>vol_labels_reg</code></td>
+<td>segmentation volume rigid body transformed to ABCD atlas space</td>
+</tr>
+<tr class="odd">
+<td><code>vol_labels_reg_rgb</code></td>
+<td>segmentation volume nonlinearly transformed to ABCD atlas space</td>
+</tr>
+<tr class="even">
+<td><code>vol_labels_res_T1</code></td>
+<td>segmentation volume in original space, T1 resolution</td>
+</tr>
+<tr class="odd">
+<td><code>volresfun_reg</code></td>
+<td>function handle to transform subcortical nuclei atlas to ABCD atlas space</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contents of <code>thalamus_abcd3_cor10.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>D_fwd</code></td>
+<td>combined 3D nonlinear warp from thalamic nuclei atlas to ABCD atlas</td>
+</tr>
+<tr class="odd">
+<td><code>M_atl</code></td>
+<td>M transform of ABCD atlas</td>
+</tr>
+<tr class="even">
+<td><code>M_reg_af</code></td>
+<td>reslice matrix from ABCD atlas to thalamic nuclei atlas</td>
+</tr>
+<tr class="odd">
+<td><code>di1vol1</code></td>
+<td>nonlinear deformation field for y-direction</td>
+</tr>
+<tr class="even">
+<td><code>di2vol1</code></td>
+<td>nonlinear deformation field for x-direction</td>
+</tr>
+<tr class="odd">
+<td><code>di3vol1</code></td>
+<td>nonlinear deformation field for z-direction</td>
+</tr>
+<tr class="even">
+<td><code>muvols_T1_ctx</code></td>
+<td>ABCD atlas T1 volume</td>
+</tr>
+<tr class="odd">
+<td><code>thalamus_lut</code></td>
+<td>look up table for ROI code, name and RGB color code</td>
+</tr>
+<tr class="even">
+<td><code>vol_T1</code></td>
+<td>thalamic nuclei atlas T1 volume in original space</td>
+</tr>
+<tr class="odd">
+<td><code>vol_T1_af</code></td>
+<td>thalamic nuclei atlas T1 volume affine transformed to ABCD atlas space</td>
+</tr>
+<tr class="even">
+<td><code>vol_T1_rb</code></td>
+<td>thalamic nuclei atlas T1 volume rigid body transformed to ABCD atlas space</td>
+</tr>
+<tr class="odd">
+<td><code>vol_T1_reg</code></td>
+<td>thalamic nuclei atlas T1 volume nonlinearly transformed to ABCD atlas space</td>
+</tr>
+<tr class="even">
+<td><code>vol_labels_T1_reg_rgb</code></td>
+<td>color coded T1 volume nonlinearly transformed to ABCD atlas space</td>
+</tr>
+<tr class="odd">
+<td><code>vol_labels_af</code></td>
+<td>segmentation volume affine transformed to ABCD atlas space</td>
+</tr>
+<tr class="even">
+<td><code>vol_labels_reg</code></td>
+<td>segmentation volume nonlinearly transformed to ABCD atlas space</td>
+</tr>
+<tr class="odd">
+<td><code>vol_labels_reg_rgb</code></td>
+<td>color coded segmentation volume nonlinearly transformed to ABCD atlas space</td>
+</tr>
+<tr class="even">
+<td><code>vol_labels_res_T1</code></td>
+<td>segmentation volume in original space, T1 resolution</td>
+</tr>
+<tr class="odd">
+<td><code>volresfun_reg</code></td>
+<td>function handle to transform thalamic atlas to ABCD atlas space</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="surfaces-vertexwise-data" class="level1">
+<h1>Surfaces Vertexwise Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/vertexwise/surfs</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 52%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td><p>participant IDs and event names</p>
+<p>used to link to tabulated data</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>pial-{hemi}.mat</code><br>
+i.e., <code>pial-lh.mat</code></p>
+<pre><code>   `pial-rh.mat`</code></pre></td>
+<td>measure: cortical pial surface<br>
+vertex coordinates<br>
+hemispheres: lh, rh</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: File names above with {hemi} represent a group of files for a given measure (i.e., white or pial surfaces) with both hemispheres (lh and rh) represented</em></p>
+<p><strong>Contents of <code>vol_info</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 68%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>subjidvec</code></td>
+<td><p>cell array of subject IDs</p>
+<p>with one entry per visit (participant-event)</p>
+<pre><code>  e.g., “XXXXXXXX”</code></pre>
+<p>compare with old style*:</p>
+<pre><code>  “NDAR_INVXXXXXXXX”</code></pre></td>
+</tr>
+<tr class="odd">
+<td><code>eventvec</code></td>
+<td><p>cell array of event names</p>
+<p>with one entry per visit (participant-event)</p>
+<pre><code>    e.g., 00A, 02A, 04A, 06A</code></pre>
+<p>compare with old style:</p>
+<pre><code>    baseline_year_1_arm_1
+
+    2_year_follow_up_y_arm_1
+
+    4_year_follow_up_y_arm_1
+
+    6_year_follow_up_y_arm_1</code></pre></td>
+</tr>
+<tr class="even">
+<td><code>visitidvec</code></td>
+<td><p>cell array of visit IDs</p>
+<p>with one entry per visit (participant-event)</p>
+<p>e.g., S042_INVXXXXXXXX_baseline</p></td>
+</tr>
+<tr class="odd">
+<td><code>vol_mask_lh</code></td>
+<td><p>cortical mask vector for left hemisphere</p>
+<p>e.g., excludes non-cortical midbrain region</p></td>
+</tr>
+<tr class="even">
+<td><code>vol_mask_rh</code></td>
+<td><p>cortical mask vector for right hemisphere</p>
+<p>e.g., excludes non-cortical midbrain region</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: examples shown for subject IDs and event names reflect new convention for Release 6.0, which removes the “NDAR_INV” from the subject ID and changes the event names to be “00A”, “02A”, “04A”, and “06A”.</em></p>
+<p><strong>Contents of <code>{surface}-{hemi}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>measmat</code></td>
+<td><p>cortical surface coordinates</p>
+<p>matrix with size = [ndirs,nverts,3]</p>
+<p>with ndirs = number of directories (visits)</p>
+<p>with nverts = number of vertices = 10242</p>
+<p>and 3 coordinate axes (x, y, z)</p></td>
+</tr>
+<tr class="odd">
+<td><code>mask</code></td>
+<td><p>binary mask</p>
+<p>(e.g., exclude non-cortical midbrain region)</p>
+<p>vector with size = [nverts,1]</p>
+<p>nverts: number of vertices</p></td>
+</tr>
+<tr class="even">
+<td><code>vctx</code></td>
+<td><p>vertex numbers of fsaverage vertices in mask</p>
+<p>vector with size = [nmask,1]</p>
+<p>nmask: number of vertices with mask = 1</p></td>
+</tr>
+<tr class="odd">
+<td><code>dirlist</code></td>
+<td><p>cell array of directory names with length ndirs</p>
+<p>with ndirs = number of directories (visits)</p>
+<p>e.g., FSURF_ S042_INVXXXXXXXX_baseline_20181001.095833.791000_1</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: Loading the file <code>{measure}\_sm{smoothing}-{hemi}.mat</code> file takes ~1 minute (depending on CPU speed) and requires ~10 GB</em></p>
+<p>*Note: The number of vertices is 10242. They form a 5th order icosahedral surface, and correspond to the first 10242 vertices of the 7th order icosahedral surface used for the FreeSurfer fsaverage subject and spherical average surface atlas. Cortical surface based measures on this ico 5 surface can be visualized using the <a href="https://github.com/cmig-research-group/cmig_tools/tree/main/showSurf">cmig_tools showSurf package</a>.</p>
+</section>
+<section id="smri-vertexwise-data" class="level1">
+<h1>sMRI Vertexwise Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/vertexwise/smri</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td><p>participant and session IDs</p>
+<p>used to link to tabulated data</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>thk_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>thk_sm0_lh.mat</code></p>
+<pre><code>    `thk_sm0_rh.mat`
+
+    `thk_sm16_lh.mat`
+
+    `thk_sm16_rh.mat`
+
+    `thk_sm256_lh.mat`
+
+    `thk_sm256_rh.mat`
+
+    `thk_sm1000_lh.mat`
+
+    `thk_sm1000_rh.mat`</code></pre></td>
+<td><p>measure: cortical thickness<br>
+smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="even">
+<td><code>area_sm{smoothing}_{hemi}.mat</code><br>
+e.g., <code>area_sm0_lh.mat</code></td>
+<td><p>measure: cortical surface area</p>
+<p>smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>sulc_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>sulc_sm0_lh.mat</code></p></td>
+<td><p>measure: cortical sulcal depth</p>
+<p>smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="even">
+<td><p><code>t1_gwc_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>t1_gwc_sm0_lh.mat</code></p></td>
+<td><p>measure: cortical T1w contrast</p>
+<p>smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>t2_gwc_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>t2_gwc_sm0_lh.mat</code></p></td>
+<td><p>measure: cortical T2w contrast</p>
+<p>smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note: File names above with <code>{smoothing}</code> and <code>{hemi}</code> represent a group of files for a given measure (i.e., thk = thickness, area = surface area, sulc = sulcal depth, t1_gwc = T1w gray-white contrast, t2_gwc = T2w gray-white contrast) with varying smoothing levels (0, 16, 256, 1000 iterations) and two hemispheres (lh and rh) represented.</p>
+<p><strong>Contents of <code>{measure}\_sm{smoothing}\_{hemi}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>measmat</code></td>
+<td><p>cortical surface measure</p>
+<p>matrix with size = [ndirs,nverts]</p>
+<p>with ndirs = number of directories (visits)</p>
+<p>with nverts = number of vertices = 10242</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dmri-dti-vertexwise-data" class="level1">
+<h1>dMRI-DTI Vertexwise Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/vertexwise/dti</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 54%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td><p>participant and session IDs</p>
+<p>used to link to tabulated data</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>fa_{layer}_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>fa_gm_sm0_lh.mat</code></p>
+<pre><code>    `fa_gm_sm0_rh.mat`
+
+    `fa_wm_sm0_lh.mat`
+
+    `fa_wm_sm0_rh.mat`
+
+    `fa_gm_sm1000_lh.mat`
+
+    `fa_gm_sm1000_rh.mat`
+
+    `fa_wm_sm1000_lh.mat`
+
+    `fa_wm_sm1000_rh.mat`</code></pre></td>
+<td><p>measure: DTI fractional anisotropy</p>
+<p>layers: gm, wm<br>
+smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="even">
+<td><p><code>md_{layer}_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>md_gm_sm0_lh.mat</code></p>
+<pre><code>    `md_gm_sm0_rh.mat`
+
+    `md_wm_sm0_lh.mat`
+
+    `md_wm_sm0_rh.mat`</code></pre></td>
+<td><p>measure: DTI mean diffusivity</p>
+<p>layers: gm, wm<br>
+smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>ld_{layer}_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>ld_gm_sm0_lh.mat</code></p>
+<pre><code>    `ld_gm_sm0_rh.mat`
+
+    `ld_wm_sm0_lh.mat`
+
+    `ld_wm_sm0_rh.mat`</code></pre></td>
+<td><p>measure: DTI longitudinal (axial) diffusivity</p>
+<p>layers: gm, wm<br>
+smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="even">
+<td><p><code>td_{layer}_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>td_gm_sm0_lh.mat</code></p>
+<pre><code>    `td_gm_sm0_rh.mat`</code></pre></td>
+<td><p>measure: DTI transverse (radial) diffusivity</p>
+<p>layers: gm, wm<br>
+smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note: File names above with <code>{layer}</code>, <code>{smoothing}</code>, and <code>{hemi}</code> represent a group of files for a given measure (i.e., DTI measures: FA, MD, LD, TD) with varying layers (gm = gray matter, wm = white matter), smoothing levels (0, 16, 256, 1000 iterations), and hemispheres (lh = left hemisphere and rh = right hemisphere) represented</p>
+<p><strong>Contents of <code>{measure}\_{layer}\_sm{smoothing}\_{hemi}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>measmat</code></td>
+<td><p>cortical surface measure</p>
+<p>matrix with size = [ndirs,nverts]</p>
+<p>with ndirs = number of directories (visits)</p>
+<p>with nverts = number of vertices = 10242</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dmri-rsi-vertexwise-data" class="level1">
+<h1>dMRI-RSI Vertexwise Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/vertexwise/rsi</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 54%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td><p>participant and session IDs</p>
+<p>used to link to tabulated data</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>rni_{layer}_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>rni_gm_sm0_lh.mat</code></p>
+<pre><code>    `rni_gm_sm0_rh.mat`</code></pre></td>
+<td><p>measure: RSI restricted normalized isotropic</p>
+<p>layers: gm, wm<br>
+smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="even">
+<td><p><code>rnd_{layer}_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>rnd_gm_sm0_lh.mat</code></p>
+<pre><code>    `rnd_gm_sm0_rh.mat`</code></pre></td>
+<td><p>measure: RSI restricted normalized directional</p>
+<p>layers: gm, wm<br>
+smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>rnt_{layer}_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>rnt_gm_sm0_lh.mat</code></p>
+<pre><code>    `rnt_gm_sm0_rh.mat`</code></pre></td>
+<td><p>measure: RSI restricted normalized total</p>
+<p>layers: gm, wm<br>
+smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="even">
+<td><p><code>hnt_{layer}_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>hnt_gm_sm0_lh.mat</code></p>
+<pre><code>    `hnt_gm_sm0_rh.mat`</code></pre></td>
+<td><p>measure: RSI hindered normalized total</p>
+<p>layers: gm, wm<br>
+smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>fni_{layer}_sm{smoothing}_{hemi}.mat</code></p>
+<p>e.g., <code>fni_gm_sm0_lh.mat</code></p>
+<pre><code>    `fni_gm_sm0_rh.mat`</code></pre></td>
+<td><p>measure: RSI free normalized isotropic</p>
+<p>layers: gm, wm<br>
+smoothing: 0, 16, 256, 1000 iterations</p>
+<pre><code>               0, 5,   20,   40 mm FWHM</code></pre>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+</tbody>
+</table>
+<p>Note: File names above with <code>{layer}</code>, <code>{smoothing}</code>, and <code>{hemi}</code> represent a group of files for a given measure (i.e., RSI measures: RNI, RND, RNT, HNT, FNI) with varying layers (gm = gray matter, wm = white matter), smoothing levels (0, 16, 256, 1000 iterations), and hemispheres (lh = left hemisphere and rh = right hemisphere) represented.</p>
+<p><strong>Contents of <code>{measure}\_{layer}\_sm{smoothing}\_{hemi}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>measmat</code></td>
+<td><p>cortical surface measure</p>
+<p>matrix with size = [ndirs,nverts]</p>
+<p>with ndirs = number of directories (visits)</p>
+<p>with nverts = number of vertices = 10242</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="task-based-fmri-vertexwise-data" class="level1">
+<h1>Task-based fMRI Vertexwise Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/vertexwise/tfmri</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 53%">
+<col style="width: 46%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td><p>participant and session IDs</p>
+<p>used to link to tabulated data</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>mid_{condition}_{stat}_{run}_{hemi}.mat</code></p>
+<p>e.g., <code>mid_sra_beta_r01_lh.mat</code></p>
+<pre><code>    `mid_sra_sem_r01_lh.mat`
+
+    `mid_sra_beta_r02_lh.mat`
+
+    `mid_sra_sem_r02_lh.mat`</code></pre></td>
+<td><p>task: mid (Monetary Incentive Delay)<br>
+conditions: see below</p>
+<p>stats: beta, sem</p>
+<p>runs: r01, r02</p>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="even">
+<td><p><code>nback_{condition}_{stat}_{run}_{hemi}.mat</code></p>
+<p>e.g., <code>nback_2b_beta_r01_lh.mat</code></p>
+<pre><code>    `nback_2b_sem_r01_lh.mat`</code></pre></td>
+<td><p>task: nback (Emotional n-Back)</p>
+<p>conditions: see below</p>
+<p>stats: beta, sem</p>
+<p>runs: r01, r02</p>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>sst_{condition}_{stat}_{run}_{hemi}.mat</code></p>
+<p>e.g., <code>sst_cg_beta_r01_lh.mat</code></p>
+<pre><code>    `sst_cg_sem_r01_lh.mat`</code></pre></td>
+<td><p>task: sst (Stop Signal Task)</p>
+<p>conditions: see below</p>
+<p>stats: beta, sem</p>
+<p>runs: r01, r02</p>
+<p>hemispheres: lh, rh</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li>File name patterns above with <code>{condition}</code>, <code>{stat}</code>, <code>{run}</code>, and <code>{hemi}</code> represent a group of files for a given task (i.e.,”mid” = Monetary Incentive Delay, “nback” = Emotional N-Back, and “sst” = Stop Signal Task) with varying conditions (see tables below), two GLM statistics (beta = time series model coefficient, sem = standard error of the mean), two separate runs (“r01” = run 1, and “r02” = run 2), and two hemispheres (lh = left and rh = right) represented.</li>
+<li>Outlier beta values (i.e., outside the mean ± 3 x standard deviation) are present for some particular vertices, runs, conditions, and/or paticipant-events. See “Task fMRI Outliers” in <a href="../../documentation/imaging/type_tfmri.html">Task-Based fMRI Data Documentation</a> for more information and guidance.<br>
+</li>
+</ul>
+<p><strong>Conditions and contrasts</strong></p>
+<p>Concatenated data files containing beta estimates and standard errors derived from AFNI’s 3dDeconvolve were created for each of the conditions and contrasts defined in supplementary tables for each task. Contrasts were implemented as general linear tests with AFNI’s 3dDeconvolve, defined as a subtraction between two groups of conditions that can each include zero, one, or more conditions, depending on the contrast definition. See <a href="../../documentation/imaging/data_suppl.html">Supplementary Tables</a> for more info.</p>
+<p><strong>Contents of <code>{task}\_{condition}\_{stat}\_{run}\_hemi}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>measmat</code></td>
+<td><p>beta or sem on cortical surface</p>
+<p>matrix with size = [ndirs,nverts]</p>
+<p>with ndirs = number of directories (visits)</p>
+<p>with nverts = number of vertices = 10242</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="conditions-and-contrasts" class="level1">
+<h1>Conditions and contrasts</h1>
+<p>Concatenated data files containing beta estimates and standard errors derived from AFNI’s 3dDeconvolve were created for each of the conditions and contrasts defined in supplementary tables for each task. Contrasts were implemented as general linear tests with AFNI’s 3dDeconvolve, defined as a subtraction between two groups of conditions that can each include zero, one, or more conditions, depending on the contrast definition.</p>
+<p><strong>Contents of <code>{task}\_{condition}\_{stat}\_{run}\_hemi}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>measmat</code></td>
+<td><p>beta or sem on cortical surface</p>
+<p>matrix with size = [ndirs,nverts]</p>
+<p>with ndirs = number of directories (visits)</p>
+<p>with nverts = number of vertices = 10242</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="resting-state-fmri-roi-correlation-and-time-series-data" class="level1">
+<h1>Resting-state fMRI ROI Correlation and Time Series Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/corrmat/rsfmri</code></p>
+<p><strong>List of files</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td><p>participant and session IDs</p>
+<p>used to link to tabulated data</p></td>
+</tr>
+<tr class="odd">
+<td><code>corr.mat</code></td>
+<td>ROI correlation matrices for all ROIs (includes Desikan, Destrieux, and Gordon parcels plus subcortical volumetric ROIs)</td>
+</tr>
+<tr class="even">
+<td><code>dsk_aseg_corr.mat</code></td>
+<td>ROI correlation matrices for Desikan parcels plus subcortical volumetric ROIs</td>
+</tr>
+<tr class="odd">
+<td><code>dst_aseg_corr.mat</code></td>
+<td>ROI correlation matrices for Destrieux parcels plus subcortical volumetric ROIs</td>
+</tr>
+<tr class="even">
+<td><code>gp_aseg_corr.mat</code></td>
+<td>ROI correlation matrices for Gordon parcels plus subcortical volumetric ROIs</td>
+</tr>
+<tr class="odd">
+<td><code>gpnet_corr.mat</code></td>
+<td>Within and between network correlation matrices derived from ROI correlations for Gordon parcels</td>
+</tr>
+<tr class="even">
+<td><code>gpnet_aseg_corr.mat</code></td>
+<td>Network to subcortical ROI correlation matrices derived from ROI correlations for Gordon parcels and subcortical volumetric ROIs</td>
+</tr>
+<tr class="odd">
+<td><code>tseries.mat</code></td>
+<td>ROI time series data (includes Desikan, Destrieux, and Gordon parcels plus subcortical volumetric ROIs)</td>
+</tr>
+<tr class="even">
+<td><code>dsk_aseg_tseries.mat</code></td>
+<td>ROI time series data for Desikan parcels plus subcortical volumetric ROIs</td>
+</tr>
+<tr class="odd">
+<td><code>dst_aseg_tseries.mat</code></td>
+<td>ROI time series data for Destrieux parcels plus subcortical volumetric ROIs</td>
+</tr>
+<tr class="even">
+<td><code>gp_aseg_tseries.mat</code></td>
+<td>ROI time series data for Gordon parcels plus subcortical volumetric ROIs</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li>File names above with <code>dsk</code>, <code>dst</code>, or <code>gp</code>, and <code>aseg</code> indicate ROI data for one specific cortical surface atlas (i.e., dsk = Desikan, dst = Destrieux, and gp = Gordon) plus a selection of subcortical volumetric ROIs (aseg = FreeSurfer automated segmentation).</li>
+<li>File names with <code>gpnet</code> indicate correlations within or between networks defined by the Gordon parcel “communities”.</li>
+<li>File names with <code>trim5</code> or <code>trim10</code> indicate correlations derived from time series data “trimmed” to either 5 or 10 minutes of low-motion (FD &lt; 0.2 mm) time points. Time points were randomly selected from available time points. Excess time points were discarded. Correlations for visits with fewer available time points were set to NaN (see <a href="../../documentation/imaging/type_rsfmri.html#use-rsfmri">Responsible Use Warning: Head motion</a> in Resting-State fMRI Data Documentation).<br>
+</li>
+</ul>
+<p><strong>Contents of <code>corr.mat</code> and <code>{atlas}\_aseg_corr.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>corrmat</code></td>
+<td><p>ROI-ROI correlations</p>
+<p>matrix with size = [ndirs,nnodes]</p>
+<p>notes:</p>
+<p>correlation values range from -1 to 1</p>
+<p>no R to Z transform applied</p>
+<p>for reduced memoy usage, corrmat contains</p>
+<pre><code>only the “upper triangle” of the matrrix
+
+not the full matrix</code></pre></td>
+</tr>
+<tr class="odd">
+<td><code>varmat</code></td>
+<td><p>ROI temporal variance</p>
+<p>matrix with size = [ndirs,nroi]</p></td>
+</tr>
+<tr class="even">
+<td><code>meanfdvec</code></td>
+<td><p>mean framewise displacement</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="odd">
+<td><code>ntpointvec</code></td>
+<td><p>number of time points</p>
+<p>after censoring frames with excessive motion</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="even">
+<td><code>ndirs</code></td>
+<td><p>number of input directories</p>
+<p>matches lengths of participant_id and session_id in vol_info</p></td>
+</tr>
+<tr class="odd">
+<td><code>nroi</code></td>
+<td>number of ROIs</td>
+</tr>
+<tr class="even">
+<td><code>roinames</code></td>
+<td><p>cell array of ROI names with length nroi</p>
+<p>e.g., ctx-lh-bankssts</p>
+<pre><code>    ctx-lh-caudalanteriorcingulate
+
+    ctx-lh-caudalmiddlefrontal
+
+    …
+
+    ctx_lh_G_and_S_frontomargin'
+
+    ctx_lh_G_and_S_occipital_inf'
+
+    ctx_lh_G_and_S_paracentral'
+
+   …
+
+    ctx-lh-gp1
+
+    ctx-lh-gp2
+
+    ctx-lh-gp3
+
+   …
+
+    Left-Cerebral-White-Matter
+
+    Left-Cerebral-Cortex
+
+    Left-Lateral-Ventricle
+
+   …</code></pre></td>
+</tr>
+<tr class="odd">
+<td><code>nnodes</code></td>
+<td><p>number of nodes (ROI-ROI pairs)</p>
+<p>equal to (nroi x (nroi + 1))/2</p>
+<p>includes upper triangle of ROI-ROI matrix</p></td>
+</tr>
+<tr class="even">
+<td><code>roi1vec</code></td>
+<td>specifies ROI number (index to roinames) for first ROI of each node of correlation matrix</td>
+</tr>
+<tr class="odd">
+<td><code>roi2vec</code></td>
+<td>specifies ROI number (index to roinames) for second ROI of each node of correlation matrix</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example: extract correlation matrix for one visit</strong></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">find</span>(<span class="fu">strcmp</span>(visitidvec,’ S042_INVXXXXXXXX_baseline’))</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>rvec <span class="ot">=</span> <span class="fu">reshape</span>(<span class="fu">corrmat</span>(x,<span class="sc">:</span>),\[nroi,nroi\])</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>idx_triu <span class="ot">=</span> <span class="fu">find</span>(<span class="fu">triu</span>(<span class="fu">ones</span>(nroi,nroi)));</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>idx_tril <span class="ot">=</span> <span class="fu">find</span>(<span class="fu">tril</span>(<span class="fu">ones</span>(nroi,nroi)));</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>R_upper <span class="ot">=</span> <span class="fu">nan</span>(nroi,nroi);</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="fu">R_upper</span>(idx_triu) <span class="ot">=</span> rvec;</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>R_lower <span class="ot">=</span> R_upper<span class="st">';</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="st">R = R_upper;</span></span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a><span class="st">R(idx_tril) = R_lower(idx_tril);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Contents of <code>gpnet_corr.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 84%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>corrmat</code></td>
+<td><p>ROI-ROI correlations</p>
+<p>matrix with size = [ndirs,nnodes]</p>
+<p>notes:</p>
+<p>correlation values range from -1 to 1</p>
+<p>no R to Z transform applied</p>
+<p>for reduced memoy usage, corrmat contains</p>
+<pre><code>only the “upper triangle” of the matrrix
+
+not the full matrix</code></pre></td>
+</tr>
+<tr class="odd">
+<td><code>meanfdvec</code></td>
+<td><p>mean framewise displacement</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="even">
+<td><code>ntpointvec</code></td>
+<td><p>number of time points</p>
+<p>after censoring frames with excessive motion</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="odd">
+<td><code>ndirs</code></td>
+<td><p>number of input directories</p>
+<p>matches lengths of participant_id and session_id in vol_info</p></td>
+</tr>
+<tr class="even">
+<td><code>nnet</code></td>
+<td>number of networks</td>
+</tr>
+<tr class="odd">
+<td><code>network_names</code></td>
+<td><p>cell array of network names with length nnet</p>
+<p>i.e., Auditory</p>
+<pre><code>   CinguloOperc
+
+   CinguloParietal
+
+   Default
+
+   DorsalAttn
+
+   FrontoParietal
+
+   None
+
+   RetrosplenialTemporal
+
+   SMhand
+
+   SMmouth
+
+   Salience
+
+   VentralAttn
+
+   Visual</code></pre></td>
+</tr>
+<tr class="even">
+<td><code>nnodes</code></td>
+<td><p>number of nodes (network-network pairs)</p>
+<p>equal to (nnet x (nnet + 1))/2</p>
+<p>includes upper triangle of ROI-ROI matrix</p></td>
+</tr>
+<tr class="odd">
+<td><code>net1vec</code></td>
+<td>specifies network number (index to network_names) for first network of each node of correlation matrix</td>
+</tr>
+<tr class="even">
+<td><code>net2vec</code></td>
+<td>specifies network number (index to roinames) for second network of each node of correlation matrix</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contents of <code>gpnet_aseg_corr.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 84%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>corrmat</code></td>
+<td><p>network-ROI correlations</p>
+<p>matrix with size = [ndirs,nnodes]</p>
+<p>notes:</p>
+<p>correlation values range from -1 to 1</p>
+<p>no R to Z transform applied</p></td>
+</tr>
+<tr class="odd">
+<td><code>meanfdvec</code></td>
+<td><p>mean framewise displacement</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="even">
+<td><code>ntpointvec</code></td>
+<td><p>number of time points</p>
+<p>after censoring frames with excessive motion</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="odd">
+<td><code>ndirs</code></td>
+<td><p>number of input directories</p>
+<p>matches lengths of participant_id and session_id in vol_info</p></td>
+</tr>
+<tr class="even">
+<td><code>nnet</code></td>
+<td>number of networks</td>
+</tr>
+<tr class="odd">
+<td><code>network_names</code></td>
+<td><p>cell array of network names with length nnet</p>
+<p>i.e., Auditory</p>
+<pre><code>   CinguloOperc
+
+   CinguloParietal
+
+   Default
+
+   DorsalAttn
+
+   FrontoParietal
+
+   None
+
+   RetrosplenialTemporal
+
+   SMhand
+
+   SMmouth
+
+   Salience
+
+   VentralAttn
+
+   Visual</code></pre></td>
+</tr>
+<tr class="even">
+<td><code>nroi</code></td>
+<td>number of subcortical ROIs</td>
+</tr>
+<tr class="odd">
+<td><code>roinames</code></td>
+<td><p>cell array of ROI names with length nroi</p>
+<p>i.e., Left-Cerebellum-Cortex</p>
+<pre><code>   Left-Thalamus-Proper
+
+   Left-Caudate
+
+   Left-Putamen
+
+   Left-Pallidum
+
+   Brain-Stem
+
+   Left-Hippocampus
+
+   Left-Amygdala
+
+   Left-Accumbens-area
+
+   Left-VentralDC
+
+   Right-Cerebellum-Cortex
+
+   Right-Thalamus-Proper
+
+   Right-Caudate
+
+   Right-Putamen
+
+   Right-Pallidum
+
+   Right-Hippocampus
+
+   Right-Amygdala
+
+   Right-Accumbens-area
+
+   Right-VentralDC</code></pre></td>
+</tr>
+<tr class="even">
+<td><code>nnodes</code></td>
+<td><p>number of nodes (network-ROI pairs)</p>
+<p>equal to nnet x nroi</p></td>
+</tr>
+<tr class="odd">
+<td><code>net1vec</code></td>
+<td>specifies network number (index to network_names) for first network of each node of correlation matrix</td>
+</tr>
+<tr class="even">
+<td><code>roi2vec</code></td>
+<td>specifies ROI number (index to roinames) for second ROI of each node of correlation matrix</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contents of <code>tseries.mat</code> and <code>{atlas}\_aseg_tseries.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 75%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>datamat_tsdata</code></td>
+<td><p>ROI time series data</p>
+<p>with size = [ndirs,nruns,ntpoints,nroi]</p></td>
+</tr>
+<tr class="odd">
+<td><code>datamat_motion</code></td>
+<td><p>motion time series data</p>
+<p>with size = [ndirs,nruns,ntpoints,6]</p>
+<p>6 motion parameters: dx, dy, dz, rx, ry, rz</p>
+<p>notch-filtered to remove respiratory signals</p></td>
+</tr>
+<tr class="even">
+<td><code>censvec</code></td>
+<td><p>censor vector</p>
+<p>with size = [ndirs,nruns,ntpoints]</p>
+<p>value of 1 indicates time point was censored</p>
+<p>due to excessive motion</p></td>
+</tr>
+<tr class="odd">
+<td><code>ndirs</code></td>
+<td><p>number of input directories</p>
+<p>matches lengths of participant_id and session_id in vol_info</p></td>
+</tr>
+<tr class="even">
+<td><code>nroi</code></td>
+<td>number of ROIs</td>
+</tr>
+<tr class="odd">
+<td><code>roinames</code></td>
+<td><p>cell array of ROI names with length nroi</p>
+<p>e.g., ctx-lh-bankssts</p>
+<pre><code>    ctx-lh-caudalanteriorcingulate
+
+    ctx-lh-caudalmiddlefrontal
+
+    …
+
+    ctx_lh_G_and_S_frontomargin'
+
+    ctx_lh_G_and_S_occipital_inf'
+
+    ctx_lh_G_and_S_paracentral'
+
+   …
+
+    ctx-lh-gp1
+
+    ctx-lh-gp2
+
+    ctx-lh-gp3
+
+   …
+
+    Left-Cerebral-White-Matter
+
+    Left-Cerebral-Cortex
+
+    Left-Lateral-Ventricle
+
+   …</code></pre></td>
+</tr>
+<tr class="even">
+<td><code>nruns</code></td>
+<td>number of imaging runs (scans)</td>
+</tr>
+<tr class="odd">
+<td><code>ntpoints</code></td>
+<td>number of time points per run</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example: extract time series data for one run of one visit</strong></p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">find</span>(<span class="fu">strcmp</span>(visitidvec,’ S042_INVXXXXXXXX_baseline’))</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>tmp_censvec <span class="ot">=</span> <span class="fu">censvec</span>(x,r,<span class="sc">:</span>);</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>tmp_tsdata <span class="ot">=</span>  <span class="fu">datamat_tsdata</span>(x,r,<span class="sc">:</span>,<span class="sc">:</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="task-based-fmri-roi-correlation-and-time-series-data" class="level1">
+<h1>Task-based fMRI ROI Correlation and Time Series Data</h1>
+<p><strong>Location of data files</strong>: <code>release/concat/imaging/corrmat/tfmri</code></p>
+<p><strong>List of files and file name patterns</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>File name</strong></td>
+<td><strong>Description of contents</strong></td>
+</tr>
+<tr class="even">
+<td><code>vol_info.mat</code></td>
+<td><p>participant and session IDs</p>
+<p>used to link to tabulated data</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>{task}_corr_{type}.mat</code><br>
+e.g., <code>mid_corr_data.mat</code></p>
+<pre><code>    `nback_corr_data.mat`
+
+    `sst_corr_data.mat`
+
+    `mid_corr_task.mat`
+
+    `mid_corr_residual.mat`</code></pre></td>
+<td><p>ROI correlation matrices for all ROIs (includes Desikan, Destrieux, and Gordon parcels plus subcortical volumetric ROIs)<br>
+<br>
+</p>
+<p>task: mid, nback, sst</p>
+<p>types: data, task, residual</p></td>
+</tr>
+<tr class="even">
+<td><p><code>{task}_{atlas}_aseg_corr_{type}.mat</code></p>
+<p>e.g., <code>mid_dsk_aseg_corr_data.mat</code></p>
+<pre><code>    `mid_dst_aseg_corr_data.mat`
+
+    `mid_gp_aseg_corr_data.mat`</code></pre></td>
+<td><p>ROI correlation matrices for {atlas} parcels plus subcortical volumetric ROIs</p>
+<p><br>
+</p>
+<p>atlases: dsk, dst, gp</p>
+<p>task: mid, nback, sst</p>
+<p>types: data, task, residual</p></td>
+</tr>
+<tr class="odd">
+<td><code>{task}_gpnet_corr_{type}.mat</code></td>
+<td><p>Within and between network correlation matrices derived from ROI correlations for Gordon parcels</p>
+<p><br>
+</p>
+<p>atlas: gpnet</p>
+<p>task: mid, nback, sst</p>
+<p>types: data, task, residual</p></td>
+</tr>
+<tr class="even">
+<td><code>{task}_gpnet_aseg_corr_{type}.mat</code></td>
+<td><p>Network to subcortical ROI correlation matrices derived from ROI correlations for Gordon parcels and subcortical volumetric ROIs</p>
+<p><br>
+</p>
+<p>atlas: gpnet</p>
+<p>task: mid, nback, sst</p>
+<p>types: data, task, residual</p></td>
+</tr>
+<tr class="odd">
+<td><p><code>{task}_tseries.mat</code></p>
+<p>e.g., <code>mid_tseries.mat</code></p></td>
+<td><p>ROI time series data (includes Desikan, Destrieux, and Gordon parcels plus subcortical volumetric ROIs)</p>
+<p><br>
+</p>
+<p>task: mid, nback, sst</p></td>
+</tr>
+<tr class="even">
+<td><p><code>{task}_{atlas}_aseg_tseries.mat</code></p>
+<p>e.g., <code>mid_dsk_aseg_tseries.mat</code></p>
+<pre><code>    `mid_dst_aseg_tseries.mat`
+
+    `mid_gp_aseg_tseries.mat`</code></pre></td>
+<td><p>ROI time series data for {atlas} parcels plus subcortical volumetric ROIs</p>
+<p><br>
+</p>
+<p>atlases: dsk, dst, gp</p>
+<p>task: mid, nback, sst</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li>File names above with {task} represent a group of files for each task (i.e.,”mid” = Monetary Incentive Delay, “nback” = Emotional N-Back, and “sst” = Stop Signal Task).</li>
+<li>File names above with {type} represent a group of files derived from time series data (i.e., data = preprocessed time series, residual = task residualized time series, task = estimated task-related time series).</li>
+<li>File names above with {atlas} represent a group of files that include ROI data for one specific cortical surface atlas (i.e., dsk = Desikan, dst = Destrieux, and gp = Gordon) plus a selection of subcortical volumetric ROIs (aseg = FreeSurfer automated segmentation).</li>
+<li>File names with “gpnet” indicate correlations within or between networks defined by the Gordon parcel “communities”.</li>
+<li>File names with “trim5” indicate correlations derived from time series data “trimmed” to 5 minutes of low-motion (FD &lt; 0.2 mm) time points. Time points were randomly selected from available time points. Excess time points were discarded. Correlations for visits with fewer available time points were set to NaN (see <a href="../../documentation/imaging/type_rsfmri.html">Responsible Use Warning: Head Motion</a> in Resting-State fMRI Data Documentation).</li>
+</ul>
+<p><strong>Contents of <code>{task}\_corr\_{type}.mat</code> and <code>{task}\_{atlas}\_aseg_corr\_{type}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>corrmat</code></td>
+<td><p>ROI-ROI correlations</p>
+<p>matrix with size = [ndirs,nnodes]</p>
+<p>notes:</p>
+<p>correlation values range from -1 to 1</p>
+<p>no R to Z transform applied</p>
+<p>for reduced memoy usage, corrmat contains</p>
+<pre><code>only the “upper triangle” of the matrrix
+
+not the full matrix</code></pre></td>
+</tr>
+<tr class="odd">
+<td><code>varmat</code></td>
+<td><p>ROI temporal variance</p>
+<p>matrix with size = [ndirs,nroi]</p></td>
+</tr>
+<tr class="even">
+<td><code>meanfdvec</code></td>
+<td><p>mean framewise displacement</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="odd">
+<td><code>ntpointvec</code></td>
+<td><p>number of time points</p>
+<p>after censoring frames with excessive motion</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="even">
+<td><code>ndirs</code></td>
+<td><p>number of input directories</p>
+<p>matches lengths of participant_id and session_id in vol_info</p></td>
+</tr>
+<tr class="odd">
+<td><code>nroi</code></td>
+<td>number of ROIs</td>
+</tr>
+<tr class="even">
+<td><code>roinames</code></td>
+<td><p>cell array of ROI names with length nroi</p>
+<p>e.g., ctx-lh-bankssts</p>
+<pre><code>    ctx-lh-caudalanteriorcingulate
+
+    ctx-lh-caudalmiddlefrontal
+
+    …
+
+    ctx_lh_G_and_S_frontomargin'
+
+    ctx_lh_G_and_S_occipital_inf'
+
+    ctx_lh_G_and_S_paracentral'
+
+   …
+
+    ctx-lh-gp1
+
+    ctx-lh-gp2
+
+    ctx-lh-gp3
+
+   …
+
+    Left-Cerebral-White-Matter
+
+    Left-Cerebral-Cortex
+
+    Left-Lateral-Ventricle
+
+   …</code></pre></td>
+</tr>
+<tr class="odd">
+<td><code>nnodes</code></td>
+<td><p>number of nodes (ROI-ROI pairs)</p>
+<p>equal to (nroi x (nroi + 1))/2</p>
+<p>includes upper triangle of ROI-ROI matrix</p></td>
+</tr>
+<tr class="even">
+<td><code>roi1vec</code></td>
+<td>specifies ROI number (index to roinames) for first ROI of each node of correlation matrix</td>
+</tr>
+<tr class="odd">
+<td><code>roi2vec</code></td>
+<td>specifies ROI number (index to roinames) for second ROI of each node of correlation matrix</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li>Concatenated ROI-ROI correlation data is derived from the concatenated ROI time series data, which is provided in a relatively raw state, without pre-residualization or filtering.</li>
+<li>Additional processing steps applied before calculation of ROI-ROI correlations match those used in the standard analysis pipeline (see <a href="../../documentation/imaging/type_rsfmri.html">Resting-State fMRI Data Documentation</a>).</li>
+<li>Additional processing steps:
+<ul>
+<li>Normalization and demean time series for each ROI</li>
+<li>Residualization of motion, squared motion, derivatives, and squared derivatives</li>
+<li>Residualization of global signals (white matter, brain, CSF)</li>
+<li>Band pass filtering (between 0.009 and 0.08 Hz)</li>
+<li>Motion censoring of bad frames
+<ul>
+<li>FD &gt; 0.2 mm</li>
+<li>&lt; 5 contiguous uncensored frames</li>
+<li>Outliers in standard deviation across ROIs</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>Example: extract correlation matrix for one visit</strong></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">find</span>(<span class="fu">strcmp</span>(visitidvec,’ S042_INVXXXXXXXX_baseline’))</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>rvec <span class="ot">=</span> <span class="fu">reshape</span>(<span class="fu">corrmat</span>(x,<span class="sc">:</span>),\[nroi,nroi\])</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>idx_triu <span class="ot">=</span> <span class="fu">find</span>(<span class="fu">triu</span>(<span class="fu">ones</span>(nroi,nroi)));</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>idx_tril <span class="ot">=</span> <span class="fu">find</span>(<span class="fu">tril</span>(<span class="fu">ones</span>(nroi,nroi)));</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>R_upper <span class="ot">=</span> <span class="fu">nan</span>(nroi,nroi);</span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="fu">R_upper</span>(idx_triu) <span class="ot">=</span> rvec;</span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>R_lower <span class="ot">=</span> R_upper<span class="st">';</span></span>
+<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a><span class="st">R = R_upper;</span></span>
+<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a><span class="st">R(idx_tril) = R_lower(idx_tril);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Contents of <code>{task}\_gpnet_corr\_{type}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 84%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>corrmat</code></td>
+<td><p>ROI-ROI correlations</p>
+<p>matrix with size = [ndirs,nnodes]</p>
+<p>notes:</p>
+<p>correlation values range from -1 to 1</p>
+<p>no R to Z transform applied</p>
+<p>for reduced memoy usage, corrmat contains</p>
+<pre><code>only the “upper triangle” of the matrrix
+
+not the full matrix</code></pre></td>
+</tr>
+<tr class="odd">
+<td><code>meanfdvec</code></td>
+<td><p>mean framewise displacement</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="even">
+<td><code>ntpointvec</code></td>
+<td><p>number of time points</p>
+<p>after censoring frames with excessive motion</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="odd">
+<td><code>ndirs</code></td>
+<td><p>number of input directories</p>
+<p>matches lengths of participant_id and session_id in vol_info</p></td>
+</tr>
+<tr class="even">
+<td><code>nnet</code></td>
+<td>number of networks</td>
+</tr>
+<tr class="odd">
+<td><code>network_names</code></td>
+<td>cell array of network names with length nnet</td>
+</tr>
+<tr class="even">
+<td><code>nnodes</code></td>
+<td><p>number of nodes (network-network pairs)</p>
+<p>equal to (nnet x (nnet + 1))/2</p>
+<p>includes upper triangle of ROI-ROI matrix</p></td>
+</tr>
+<tr class="odd">
+<td><code>net1vec</code></td>
+<td>specifies network number (index to network_names) for first network of each node of correlation matrix</td>
+</tr>
+<tr class="even">
+<td><code>net2vec</code></td>
+<td>specifies network number (index to roinames) for second network of each node of correlation matrix</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li>Concatenated network-network correlation data is derived from the concatenated ROI-ROI correlation data.</li>
+<li>Differences between the concatenated and tabulated network correlation data are attributable to differences in the order of pre-processing steps.</li>
+<li>For the concatenated data, average ROI time series are first calculated from relatively unprocessed time series data, and residualization, filtering, and censoring are performed on the average ROI times series data.</li>
+<li>For the tabulated data, residualization and filtering is performed on the voxelwise time series data, and then average ROI time series are calculated from the pre-processed voxelwise data.</li>
+</ul>
+<p><strong>Contents of <code>{task}\_gpnet_aseg_corr\_{type}.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 84%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>corrmat</code></td>
+<td><p>network-ROI correlations</p>
+<p>matrix with size = [ndirs,nnodes]</p>
+<p>notes:</p>
+<p>correlation values range from -1 to 1</p>
+<p>no R to Z transform applied</p>
+<p>for reduced memoy usage, corrmat contains</p>
+<pre><code>only the “upper triangle” of the matrrix
+
+not the full matrix</code></pre></td>
+</tr>
+<tr class="odd">
+<td><code>meanfdvec</code></td>
+<td><p>mean framewise displacement</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="even">
+<td><code>ntpointvec</code></td>
+<td><p>number of time points</p>
+<p>after censoring frames with excessive motion</p>
+<p>vector with size = [ndirs,1]</p></td>
+</tr>
+<tr class="odd">
+<td><code>ndirs</code></td>
+<td><p>number of input directories</p>
+<p>matches lengths of participant_id and session_id in vol_info</p></td>
+</tr>
+<tr class="even">
+<td><code>nnet</code></td>
+<td>number of networks</td>
+</tr>
+<tr class="odd">
+<td><code>network_names</code></td>
+<td><p>cell array of network names with length nnet</p>
+<p>i.e., Auditory</p>
+<pre><code>   CinguloOperc
+
+   CinguloParietal
+
+   Default
+
+   DorsalAttn
+
+   FrontoParietal
+
+   None
+
+   RetrosplenialTemporal
+
+   SMhand
+
+   SMmouth
+
+   Salience
+
+   VentralAttn
+
+   Visual</code></pre></td>
+</tr>
+<tr class="even">
+<td><code>nroi</code></td>
+<td>number of subcortical ROIs</td>
+</tr>
+<tr class="odd">
+<td><code>roinames</code></td>
+<td><p>cell array of ROI names with length nroi</p>
+<p>e.g., Left-Cerebral-White-Matter</p>
+<pre><code>    Left-Cerebral-Cortex
+
+    Left-Lateral-Ventricle
+
+   …</code></pre></td>
+</tr>
+<tr class="even">
+<td><code>nnodes</code></td>
+<td><p>number of nodes (network-ROI pairs)</p>
+<p>equal to nnet x nroi</p></td>
+</tr>
+<tr class="odd">
+<td><code>net1vec</code></td>
+<td>specifies network number (index to network_names) for first network of each node of correlation matrix</td>
+</tr>
+<tr class="even">
+<td><code>roi2vec</code></td>
+<td>specifies ROI number (index to roinames) for second ROI of each node of correlation matrix</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contents of <code>{task}\_tseries</code> and <code>{task}\_{atlas}\_aseg_tseries.mat</code></strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 75%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Variable name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>datamat_tsdata</code></td>
+<td><p>ROI time series data</p>
+<p>with size = [ndirs,nruns,ntpoints,nroi]</p></td>
+</tr>
+<tr class="odd">
+<td><code>datamat_motion</code></td>
+<td><p>motion time series data</p>
+<p>with size = [ndirs,nruns,ntpoints,6]</p>
+<p>6 motion parameters: dx, dy, dz, rx, ry, rz</p>
+<p>notch-filtered to remove respiratory signals</p></td>
+</tr>
+<tr class="even">
+<td><code>censvec</code></td>
+<td><p>censor vector</p>
+<p>with size = [ndirs,nruns,ntpoints]</p>
+<p>value of 1 indicates time point was censored</p>
+<p>due to excessive motion</p></td>
+</tr>
+<tr class="odd">
+<td><code>ndirs</code></td>
+<td><p>number of input directories</p>
+<p>matches lengths of participant_id and session_id in vol_info</p></td>
+</tr>
+<tr class="even">
+<td><code>nroi</code></td>
+<td>number of ROIs</td>
+</tr>
+<tr class="odd">
+<td><code>roinames</code></td>
+<td><p>cell array of ROI names with length nroi</p>
+<p>e.g., ctx-lh-bankssts</p>
+<pre><code>    ctx-lh-caudalanteriorcingulate
+
+    ctx-lh-caudalmiddlefrontal
+
+    …
+
+    ctx_lh_G_and_S_frontomargin
+
+    ctx_lh_G_and_S_occipital_inf
+
+    ctx_lh_G_and_S_paracentral
+
+   …
+
+    ctx-lh-gp1
+
+    ctx-lh-gp2
+
+    ctx-lh-gp3
+
+   …
+
+    Left-Cerebral-White-Matter
+
+    Left-Cerebral-Cortex
+
+    Left-Lateral-Ventricle
+
+   …</code></pre></td>
+</tr>
+<tr class="even">
+<td><code>nruns</code></td>
+<td>number of imaging runs (scans)</td>
+</tr>
+<tr class="odd">
+<td><code>ntpoints</code></td>
+<td>number of time points per run</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li>Concatenated ROI time series data is provided in a relatively raw state, without pre-residualization or filtering.</li>
+<li>ROI time series data is derived from the minimally processed data with these steps:
+<ul>
+<li>Removal of initial “dummy” volumes</li>
+<li>Sampling of time series data to cortical surface</li>
+<li>Calculation of average ROI times series for cortical and subcortical ROIs</li>
+</ul></li>
+</ul>
+<p><strong>Example: extract time series data for one run of one visit</strong></p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">find</span>(<span class="fu">strcmp</span>(visitidvec,’ S042_INVXXXXXXXX_baseline’))</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>tmp_censvec <span class="ot">=</span> <span class="fu">censvec</span>(x,r,<span class="sc">:</span>);</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a>tmp_tsdata <span class="ot">=</span>  <span class="fu">datamat_tsdata</span>(x,r,<span class="sc">:</span>,<span class="sc">:</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-hagler2019" class="csl-entry" role="listitem">
+Hagler, Donald J., SeanN. Hatton, M. Daniela Cornejo, Carolina Makowski, Damien A. Fair, Anthony Steven Dick, Matthew T. Sutherland, et al. 2019. <em>NeuroImage</em> 202 (November): 116091. doi:<a href="https://doi.org/10.1016/j.neuroimage.2019.116091">10.1016/j.neuroimage.2019.116091</a>.
+</div>
+<div id="ref-holland2011" class="csl-entry" role="listitem">
+Holland, H, and A Dale. 2011. <em>Medical Image Analysis</em> 15 (4): 489–97. doi:<a href="https://doi.org/10.1016/j.media.2011.02.005">10.1016/j.media.2011.02.005</a>.
+</div>
+<div id="ref-najdenovska2018" class="csl-entry" role="listitem">
+Najdenovska, Elena, Yasser Alemán-Gómez, Giovanni Battistella, Maxime Descoteaux, Patric Hagmann, Sebastien Jacquemont, Philippe Maeder, Jean-Philippe Thiran, Eleonora Fornari, and Meritxell Bach Cuadra. 2018. <em>Scientific Data</em> 5 (1). Nature Publishing Group: 180270. doi:<a href="https://doi.org/10.1038/sdata.2018.270">10.1038/sdata.2018.270</a>.
+</div>
+<div id="ref-pauli2018" class="csl-entry" role="listitem">
+Pauli, Wolfgang M., Amanda N. Nili, and J. Michael Tyszka. 2018. <em>Scientific Data</em> 5 (1). Nature Publishing Group: 180063. doi:<a href="https://doi.org/10.1038/sdata.2018.63">10.1038/sdata.2018.63</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><i>ABCD Study</i>®, <i>Teen Brains. Today’s Science. Brighter Future.</i>® and the ABCD Study Logo are registered marks of the U.S. Department of Health &amp; Human Services (HHS). Adolescent Brain Cognitive Development℠ Study is a service mark of the U.S. Department of Health &amp; Human Services (HHS).</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

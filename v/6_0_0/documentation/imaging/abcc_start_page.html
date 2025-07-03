@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ABCD-BIDS community collection</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/favicon/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-19cb40036d0cd7ef4cbef03ff3e7a6c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8f54f8d61a323a02bc591d69a6fd3237.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SB9F54HS16"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SB9F54HS16', { 'anonymize_ip': true});
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
+<script type="module" src="../../assets/js/left_menu.min.js"></script>
+<script type="module" src="../../assets/js/version.min.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/img/logo-abcd.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-home" aria-label="home"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../study/index.html"> 
+<span class="menu-text">Study</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-usage" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Data Usage</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-usage">    
+        <li>
+    <a class="dropdown-item" href="../../usage/access.html">
+ <span class="dropdown-text">Access &amp; download data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/responsible_use.html">
+ <span class="dropdown-text">Responsible use</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/acknowledgement.html">
+ <span class="dropdown-text">Acknowledgment</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-documentation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Documentation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-documentation">    
+        <li>
+    <a class="dropdown-item" href="../../documentation/curation/structure.html">
+ <span class="dropdown-text">Curation &amp; structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/non_imaging/ab.html">
+ <span class="dropdown-text">Non-imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/imaging/index.html">
+ <span class="dropdown-text">Imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/substudies/covid.html">
+ <span class="dropdown-text">Substudies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/release_notes/6_0.html">
+ <span class="dropdown-text">Release notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../../tools/tools.html">
+ <span class="dropdown-text">Data tools</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/r_packages.html">
+ <span class="dropdown-text">R Packages</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-circle-info--info" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><i class="fa-solid fa-circle-info" aria-label="circle-info"></i> Info</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-fa-circle-info--info">    
+        <li>
+    <a class="dropdown-item" href="../../info/faq.html">
+ <span class="dropdown-text">FAQs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/issues.html">
+ <span class="dropdown-text">Report issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/changelog.html">
+ <span class="dropdown-text">Changelog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/citation.html">
+ <span class="dropdown-text">Cite this website</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-version" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Version</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-version">    
+        <li class="dropdown-header">empty</li>
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/imaging/index.html">Imaging data</a></li><li class="breadcrumb-item">ABCD BIDS Community Collection (ABCC)</li><li class="breadcrumb-item">Documentation</li><li class="breadcrumb-item"><a href="../../documentation/imaging/abcc_start_page.html">Imaging</a></li><li class="breadcrumb-item"><a href="../../documentation/imaging/abcc_start_page.html">ABCD-BIDS community collection</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Curation &amp; structure</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curation standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/naming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Naming convention</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/metadata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metadata</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Non-imaging data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ABCD (General)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/fc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Friends, Family, &amp; Community</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/gn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Genetics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/le.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linked External Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/mh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mental Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurocognition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Novel Technologies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ph.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/su.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Substance Use</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../documentation/imaging/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imaging data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/admin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Administrative tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_concat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Concatenated</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI derivatives data documentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_source_raw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Source data / raw data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_suppl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Supplementary tables</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Scan types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_dmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffusion MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Quality Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_rsfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resting-state fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_smri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structural MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmribeh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI (Behavioral performance)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trial level behavioral performance during task-based fMRI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">ABCD BIDS Community Collection (ABCC)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth4 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_start_page.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">ABCD-BIDS community collection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_inputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BIDS conversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data processing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_qualitycontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality control procedures</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Substudy data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/covid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">COVID-19 rapid response research</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/ecb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Endocannabinoid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/irma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IRMA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/mrs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MR Spectroscopy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Release notes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/release_notes/6_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.0 data release</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-the-abcc" id="toc-what-is-the-abcc" class="nav-link active" data-scroll-target="#what-is-the-abcc">🧠 What is the ABCC?</a></li>
+  <li><a href="#what-makes-abcc-special" id="toc-what-makes-abcc-special" class="nav-link" data-scroll-target="#what-makes-abcc-special">🚀 What Makes ABCC Special?</a></li>
+  <li><a href="#featured-in-high-impact-studies" id="toc-featured-in-high-impact-studies" class="nav-link" data-scroll-target="#featured-in-high-impact-studies">📚 Featured In High-Impact Studies</a></li>
+  <li><a href="#whats-in-release-3.0.0-2025-06-26" id="toc-whats-in-release-3.0.0-2025-06-26" class="nav-link" data-scroll-target="#whats-in-release-3.0.0-2025-06-26">📦 What’s in Release 3.0.0 (2025-06-26)?</a>
+  <ul>
+  <li><a href="#core-data" id="toc-core-data" class="nav-link" data-scroll-target="#core-data">Core Data</a></li>
+  <li><a href="#at-a-glance-data-availability" id="toc-at-a-glance-data-availability" class="nav-link" data-scroll-target="#at-a-glance-data-availability">At-A-Glance: Data Availability</a></li>
+  </ul></li>
+  <li><a href="#highlights-of-this-release" id="toc-highlights-of-this-release" class="nav-link" data-scroll-target="#highlights-of-this-release">🆕 Highlights of This Release</a>
+  <ul>
+  <li><a href="#new-data" id="toc-new-data" class="nav-link" data-scroll-target="#new-data">New Data</a></li>
+  <li><a href="#key-revisions" id="toc-key-revisions" class="nav-link" data-scroll-target="#key-revisions">🔧 Key Revisions</a></li>
+  </ul></li>
+  <li><a href="#nmind-standards-for-reproducibility" id="toc-nmind-standards-for-reproducibility" class="nav-link" data-scroll-target="#nmind-standards-for-reproducibility">🧠 NMIND Standards for Reproducibility</a></li>
+  <li><a href="#coming-soon-in-the-next-release" id="toc-coming-soon-in-the-next-release" class="nav-link" data-scroll-target="#coming-soon-in-the-next-release">Coming Soon in the Next Release</a></li>
+  <li><a href="#known-issues-temporary" id="toc-known-issues-temporary" class="nav-link" data-scroll-target="#known-issues-temporary">Known Issues (Temporary)</a></li>
+  <li><a href="#release-history" id="toc-release-history" class="nav-link" data-scroll-target="#release-history">Release History</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/imaging/index.html">Imaging data</a></li><li class="breadcrumb-item">ABCD BIDS Community Collection (ABCC)</li><li class="breadcrumb-item">Documentation</li><li class="breadcrumb-item"><a href="../../documentation/imaging/abcc_start_page.html">Imaging</a></li><li class="breadcrumb-item"><a href="../../documentation/imaging/abcc_start_page.html">ABCD-BIDS community collection</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">ABCD-BIDS community collection</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="what-is-the-abcc" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-abcc">🧠 What is the ABCC?</h2>
+<p>The ABCD-BIDS Community Collection (ABCC) is a rigorously curated MRI dataset derived from the ABCD Study. It leverages the Brain Imaging Data Structure (BIDS) standards and software standards grounded in the NMIND framework for reproducible neuroimaging, ABCC delivers ready-to-use MRI raw data and derivative data enabling rapid, robust scientific discovery.</p>
+<p>All data in the collection are collated or run on data that has passed <a href="https://abcdstudy.org/study-sites/daic/">Data Analysis, Informatics &amp; Resource Center (DAIRC)</a> quality control and are processed using peer-reviewed, open-source pipelines.</p>
+<p><a href="https://brainswipes.us/">BrainSwipes</a> is used to perform visual inspection for quality control of derivatives generated by processing pipelines - this is an active community-driven effort - please see details and information on how to get involved <a href="../../documentation/imaging/abcc_qualitycontrol.html#brainswipes">here</a>.</p>
+<p>See <span class="citation" data-cites="feczko2021">Feczko et al. (<a href="#ref-feczko2021" role="doc-biblioref">2021</a>)</span> for details.</p>
+</section>
+<section id="what-makes-abcc-special" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-abcc-special">🚀 What Makes ABCC Special?</h2>
+<ul>
+<li><strong>BIDS-Standardized</strong>: Harmonized formats that accelerate cross-study integration and reproducibility.</li>
+<li><strong>NMIND reviewed Pipelines</strong>: Data passed through NMIND reviewed tools including the DCAN Labs ABCD-HCP pipeline, QSIPrep, and soon to include fMRIPrep and XCP-D pipelines.</li>
+<li><strong>Surface + Volume Data</strong>: Includes both BIDS input and derived MRI data provided in BIDS validated formats (e.g.&nbsp;CIFTI/NIFTI/GIFTI).</li>
+<li><strong>Versioned &amp; Transparent</strong>: Every release includes detailed change logs and version tracking for reproducibility.</li>
+<li><strong>Continually Updated</strong>: Reflects the most current ABCD data releases, with ongoing additions planned.</li>
+</ul>
+</section>
+<section id="featured-in-high-impact-studies" class="level2">
+<h2 class="anchored" data-anchor-id="featured-in-high-impact-studies">📚 Featured In High-Impact Studies</h2>
+<p>ABCC data has already powered impactful neuroscience research, including:</p>
+<ul>
+<li><strong><span class="citation" data-cites="marek2019">Marek et al. (<a href="#ref-marek2019" role="doc-biblioref">2019</a>)</span></strong> - Identifying reproducible individual differences in childhood functional brain networks: An ABCD study (<em>Developmental Cognitive Neuroscience</em>)</li>
+<li><strong><span class="citation" data-cites="chaarani2021">Chaarani et al. (<a href="#ref-chaarani2021" role="doc-biblioref">2021</a>)</span></strong> – Task activation patterns in 9-10 year old youths</li>
+<li><strong><span class="citation" data-cites="cieslak2021">Cieslak et al. (<a href="#ref-cieslak2021" role="doc-biblioref">2021</a>)</span></strong> - QSIPrep: an integrative platform for preprocessing and reconstructing diffusion MRI data (<em>Nature Methods</em>)</li>
+<li><strong><span class="citation" data-cites="bethlehem2022">Bethlehem et al. (<a href="#ref-bethlehem2022" role="doc-biblioref">2022</a>)</span></strong> – Brain Charts for the human lifespan</li>
+<li><strong><span class="citation" data-cites="marek2022">Marek et al. (<a href="#ref-marek2022" role="doc-biblioref">2022</a>)</span></strong> – Reproducible brain behavior associations require thousands of samples</li>
+<li><strong><span class="citation" data-cites="gordon2023">Gordon et al. (<a href="#ref-gordon2023" role="doc-biblioref">2023</a>)</span></strong> - Identification of the human SCAN network, revolutionizing our understanding of the human motor system.</li>
+<li><strong><span class="citation" data-cites="keller2023">Keller et al. (<a href="#ref-keller2023" role="doc-biblioref">2023</a>)</span></strong> – Functional topography is associated with youth cognition</li>
+<li><strong><span class="citation" data-cites="hermosillo2024">Hermosillo et al. (<a href="#ref-hermosillo2024" role="doc-biblioref">2024</a>)</span></strong> — Individualized functional network mapping in adolescents (<em>Nature Neuroscience</em>)</li>
+<li><strong><span class="citation" data-cites="keller2024">Keller et al. (<a href="#ref-keller2024" role="doc-biblioref">2024</a>)</span></strong> – Environmental exposures mediate the association between functional topography and cognition</li>
+<li><strong><span class="citation" data-cites="mehta2024">Mehta et al. (<a href="#ref-mehta2024" role="doc-biblioref">2024</a>)</span></strong> - XCP-D: an extensible pipeline for rs-fMRI connectivity preprocessing</li>
+</ul>
+<p>Over 90 studies have been published referencing the ABCC. You can find a list of them and formatted reference files <a href="https://drive.google.com/drive/folders/1OrN2IAAQIIgLVx_D_qmABoHuW_yqppZf?usp=sharing">here</a>.</p>
+</section>
+<section id="whats-in-release-3.0.0-2025-06-26" class="level2">
+<h2 class="anchored" data-anchor-id="whats-in-release-3.0.0-2025-06-26">📦 What’s in Release 3.0.0 (2025-06-26)?</h2>
+<section id="core-data" class="level3">
+<h3 class="anchored" data-anchor-id="core-data">Core Data</h3>
+<ul>
+<li><strong>BIDS input data</strong> (converted from DICOM)</li>
+<li><strong><a href="(https://doi.org/10.5281/zenodo.2587210)">abcd-hcp-pipeline (v0.1.4)</a> derivatives</strong> (volume + surface data, <a href="https://doi.org/10.1016/j.neuroimage.2013.04.127">HCP-style processing</a> with BIDS formatted derivatives)</li>
+<li><strong>FreeSurfer 5.3.0-HCP</strong> segmentation statistics + surface morphometrics</li>
+<li><strong><a href="https://qsiprep.readthedocs.io/en/latest/index.html">QSIPrep</a></strong>-processed diffusion-weighted MRI</li>
+</ul>
+</section>
+<section id="at-a-glance-data-availability" class="level3">
+<h3 class="anchored" data-anchor-id="at-a-glance-data-availability">At-A-Glance: Data Availability</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 26%">
+<col style="width: 15%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>BIDS Inputs</th>
+<th>abcd-hcp-pipeline Derivatives</th>
+<th>DWI Inputs</th>
+<th>QSIPrep Derivatives</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Baseline</td>
+<td>11,753</td>
+<td>11,751</td>
+<td>9,564</td>
+<td>8,852</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8,086</td>
+<td>8,085</td>
+<td>7,669</td>
+<td>7,273</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>6,355</td>
+<td>6,351</td>
+<td>6,207</td>
+<td>6,066</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>3,820</td>
+<td>3,820</td>
+<td>3,748</td>
+<td>3,676</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="highlights-of-this-release" class="level2">
+<h2 class="anchored" data-anchor-id="highlights-of-this-release">🆕 Highlights of This Release</h2>
+<section id="new-data" class="level3">
+<h3 class="anchored" data-anchor-id="new-data">New Data</h3>
+<ul>
+<li>Additional inputs and derivatives for <strong>Years 2, 4, and 6</strong></li>
+<li>Expanded <strong>QSIPrep</strong> diffusion derivatives</li>
+<li>New <code>sessions.tsv</code> files within subject directories with:
+<ul>
+<li>Session demographics &amp; acquisition timestamps</li>
+<li>Updated scanner software metadata</li>
+<li>Inclusion of QC columns described in <a href="../../documentation/imaging/type_qc.html">Automated QA section</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="key-revisions" class="level3">
+<h3 class="anchored" data-anchor-id="key-revisions">🔧 Key Revisions</h3>
+<ul>
+<li>Updated <strong>abcd-hcp-pipeline v0.1.4</strong> (see changes <a href="https://github.com/DCAN-Labs/abcd-hcp-pipeline/releases/tag/v0.1.4">here</a>): More BIDS-compliant outputs, cleaner directory structure, an updated ExecutiveSummary for QC, and improved BOLD bandpass filtering in DCANBoldProc.</li>
+<li>Fixed incorrect AP/PA labeling in subset of GE dv26 subjects.</li>
+<li>Updated <strong><a href="https://qsiprep.readthedocs.io/en/stable/">QSIPrep v0.21.4</a></strong> (see changes <a href="https://github.com/PennLINC/qsiprep/releases/tag/0.21.4">here</a>): Critical fixes to distortion correction and QC metric calculation.</li>
+</ul>
+<p><strong>Important Note: Users of earlier QSIPrep derivatives are encouraged to reprocess analyses to account for the distortion correction fix.</strong></p>
+<p><em>Details:</em> In the prior release. TOPUP being given a denoised b=0 image from the DWI series and a raw b=0 image in the opposite phase encoding direction, resulted in inaccurate distortion correction results for a subset of subjects. The updated version uses unprocessed b=0 images in both phase encoding directions.</p>
+</section>
+</section>
+<section id="nmind-standards-for-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="nmind-standards-for-reproducibility">🧠 NMIND Standards for Reproducibility</h2>
+<p>All ABCC processing pipelines have undergone independent peer review under the <a href="https://www.nmind.org/about">NMIND</a> infrastructure designed to maximize reproducibility and standardization across neuroimaging tools. Please <a href="../../documentation/imaging/abcc_pipeline.html#processing-analytic-standards">see here</a> for details.</p>
+</section>
+<section id="coming-soon-in-the-next-release" class="level2">
+<h2 class="anchored" data-anchor-id="coming-soon-in-the-next-release">Coming Soon in the Next Release</h2>
+<ul>
+<li><strong>Structural &amp; functional MRI</strong> processed through <strong><a href="https://fmriprep.org">fMRIPrep</a></strong> and <strong><a href="https://xcp-d.readthedocs.io">XCP-D</a></strong></li>
+<li><strong>Task fMRI pipeline results</strong></li>
+<li><strong><a href="https://qsirecon.readthedocs.io">QSIRecon</a></strong> derivatives for DWI</li>
+<li><strong>Individualized network maps</strong> <span class="citation" data-cites="hermosillo2024">(<a href="#ref-hermosillo2024" role="doc-biblioref">Hermosillo et al. 2024</a>)</span></li>
+</ul>
+</section>
+<section id="known-issues-temporary" class="level2">
+<h2 class="anchored" data-anchor-id="known-issues-temporary">Known Issues (Temporary)</h2>
+<div class="callout callout-style-default callout-caution callout-titled" title="Missing Volume-Based Resting-State Run Files (Runs 3–8)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Missing Volume-Based Resting-State Run Files (Runs 3–8)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Due to a transfer issue, some minimally processed, volume-based resting-state data are missing for runs 3–8 (mainly affecting data from Years 4 and 6). <strong>Surface-based CIFTI data — used by most researchers — are fully available and unaffected.</strong> Affected files include:</p>
+<ul>
+<li><code>*_task-rest_run-{3-8}_motion.tsv</code></li>
+<li><code>*_task-rest_run-{3-8}_space-MNI_bold.nii.gz</code></li>
+<li><code>*_task-rest_run-{3-8}_desc-filteredincludingFD_motion.tsv</code></li>
+</ul>
+<p>These files will be restored in the next release. In the meantime, users who require these files can regenerate them from the concatenated motion files using the <a href="https://github.com/nbdc-datahub/abcd-abcc_motion_reg_generator">abcd-abcc_motion_reg_generator</a> utility (see its documentation for details).</p>
+</div>
+</div>
+</section>
+<section id="release-history" class="level2">
+<h2 class="anchored" data-anchor-id="release-history">Release History</h2>
+<div class="callout callout-style-default callout-caution callout-titled" title="Release 3.0 changes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Release 3.0 changes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The below release history reflects releases previously available through the <a href="https://nda.nih.gov/">NIMH Data Archive (NDA)</a>. Starting with Release 3.0.0 (2025-06-26), the ABCC is made available through the <a href="https://www.nbdc-datahub.org/">NBDC Data Hub</a> and does not reflect revisions made to the NDA repository. The release history for versions 2.0.0 and below are provided below for legacy purposes. Please visit the <a href="https://nda-abcd-collection-3165.readthedocs.io">ABCC Archival Data Release Documentation</a> for the archived release documentation associated wih the data available for prior releases via the NDA.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Release 2.0.0 (2022-06-22)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Release 2.0.0 (2022-06-22)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>REVISIONS</strong></p>
+<ol type="1">
+<li><strong>Uploading 144 participants with new data due to revised fast track QC</strong>: The initial release was processed prior to new updates to the fast track QC spreadsheet that affected the original inputs for 144 participants. This led to discrepancies in the number of timepoints reported for connectivity matrices (see below) relative to the inputs. The 144 participants were re-processed through the ABCD-BIDS pipeline at the Minnesota Supercomputing Institute (MSI). The <code>participants.tsv</code> file indicates which subjects were reprocessed. These subjects have new Gordon 10 and 5 minute connectivity matrices generated and replaced on the NDA. The old matrices remain valid, but may use different frames from the new matrices. The labels for the updated connectivity matrices were defined in <span class="citation" data-cites="gordon2016">Gordon et al. (<a href="#ref-gordon2016" role="doc-biblioref">2016</a>)</span> and generated using the <a href="https://github.com/DCAN-Labs/cifti-connectivity/">DCAN Labs cifti connectivity wrapper</a> at a frame displacement (FD) threshold of 0.2 mm to filter out high-motion frames. An outlier detection procedure was used to exclude remaining frames 2 STD from the mean.</li>
+<li><strong>Providing Connectivity matrices</strong> for those participants with discrepancies in the number of timepoints used</li>
+<li><strong>Uploading JSONs for the diffusion inputs</strong> in some participants.</li>
+<li><strong>Updated version of the participants.tsv to v1.0.2</strong> includes correction to site and sex designation for a small subset of subjects based on new information from the DAIRC.</li>
+</ol>
+<p><strong>NEW ADDITIONS</strong></p>
+<ol type="1">
+<li><strong>Individualized Network Maps Generated with Infomap and Template Matching (<em>Submission ID: 36448</em>)</strong></li>
+<li><strong>Derivatives for the fmriprep pipeline:</strong> fMRIPrep v20.2.0 was run on all 10,038 participants whose visit one data was successfully converted to BIDS. The limited fMRIPrep processing errors were due to subjects that did not have any valid fMRI runs, but we did not do any manual quality control of outputs. 9,484 participants have at least one output. The data is available in 18 submissions (a summary, including number of files and submission size can be found <a href="https://docs.google.com/spreadsheets/d/1NbZ28vBvGVJb9miivgsJ695VVoFBSBuBQmWigN5pg_c/edit#gid=678992105">here</a>). Detailed information about the files included in each submission are on the second tab of that spreadsheet. Files with no submission name listed have not yet been uploaded.</li>
+<li><strong>DWI sidecar JSON patch (Diffusion inputs) (<em>Submission IDs: 36449 - 36452</em>)</strong>: The DWI acquisition parameters from subjects scanned on Philips and GE with MR Software release versions 5.3.0_5.3.0.0 and DV25.0_R02_1549.b respectively (n=423) are missing the required field, PhaseEncodingDirection. This omission is because they reported the axis and not direction; therefore we did a manual check of these images to check the phase encoding direction, so that these JSON inputs are BIDS compatible and can be processed by pipelines like QSIprep. These JSONs have been updated and uploaded.</li>
+<li><strong>Level-2 task files from the ABCD-task-fMRI pipeline (<em>Submission IDs: 36458 - 36630</em>)</strong></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Release 2.0.0 (2022-06-22)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Release 2.0.0 (2022-06-22)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>REVISIONS</strong></p>
+<ol type="1">
+<li><strong>Uploading 144 participants with new data due to revised fast track QC</strong>: The initial release was processed prior to new updates to the fast track QC spreadsheet that affected the original inputs for 144 participants. This led to discrepancies in the number of timepoints reported for connectivity matrices (see below) relative to the inputs. The 144 participants were re-processed through the ABCD-BIDS pipeline at the Minnesota Supercomputing Institute (MSI). The <code>participants.tsv</code> file indicates which subjects were reprocessed. These subjects have new Gordon 10 and 5 minute connectivity matrices generated and replaced on the NDA. The old matrices remain valid, but may use different frames from the new matrices. The labels for the updated connectivity matrices were defined in <span class="citation" data-cites="gordon2016">Gordon et al. (<a href="#ref-gordon2016" role="doc-biblioref">2016</a>)</span> and generated using the <a href="https://github.com/DCAN-Labs/cifti-connectivity/">DCAN Labs cifti connectivity wrapper</a> at a frame displacement (FD) threshold of 0.2 mm to filter out high-motion frames. An outlier detection procedure was used to exclude remaining frames 2 STD from the mean.</li>
+<li><strong>Providing Connectivity matrices</strong> for those participants with discrepancies in the number of timepoints used</li>
+<li><strong>Uploading JSONs for the diffusion inputs</strong> in some participants.</li>
+<li><strong>Updated version of the participants.tsv to v1.0.2</strong> includes correction to site and sex designation for a small subset of subjects based on new information from the DAIC.</li>
+</ol>
+<p><strong>NEW ADDITIONS</strong></p>
+<ol type="1">
+<li><strong>Individualized Network Maps Generated with Infomap and Template Matching (<em>Submission ID: 36448</em>)</strong></li>
+<li><strong>Derivatives for the fmriprep pipeline:</strong> fMRIPrep v20.2.0 was run on all 10,038 participants whose visit one data was successfully converted to BIDS. The limited fMRIPrep processing errors were due to subjects that did not have any valid fMRI runs, but we did not do any manual quality control of outputs. 9,484 participants have at least one output. The data is available in 18 submissions (a summary, including number of files and submission size can be found <a href="https://docs.google.com/spreadsheets/d/1NbZ28vBvGVJb9miivgsJ695VVoFBSBuBQmWigN5pg_c/edit#gid=678992105">here</a>). Detailed information about the files included in each submission are on the second tab of that spreadsheet. Files with no submission name listed have not yet been uploaded.</li>
+<li><strong>DWI sidecar JSON patch (Diffusion inputs) (<em>Submission IDs: 36449 - 36452</em>)</strong>: The DWI acquisition parameters from subjects scanned on Philips and GE with MR Software release versions 5.3.0_5.3.0.0 and DV25.0_R02_1549.b respectively (n=423) are missing the required field, PhaseEncodingDirection. This omission is because they reported the axis and not direction; therefore we did a manual check of these images to check the phase encoding direction, so that these JSON inputs are BIDS compatible and can be processed by pipelines like QSIprep. These JSONs have been updated and uploaded.</li>
+<li><strong>Level-2 task files from the ABCD-task-fMRI pipeline (<em>Submission IDs: 36458 - 36630</em>)</strong></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Release 1.1.1 (2020-10-07)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Release 1.1.1 (2020-10-07)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This was a small version 1.0.0 release of the <code>derivatives_qc.(json|tsv)</code> with additional BIDS derivatives quality control data including a “brain coverage score” for the <code>derivatives.func.runs_task-(MID|nback|rest|SST)_volume</code> data subsets.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Release 1.1.0 (2020-07-27)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Release 1.1.0 (2020-07-27)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>NEW ADDITIONS</strong></p>
+<ul>
+<li>157 additional subjects due to updated fast track QC spreadsheet</li>
+<li><code>participants.(json|tsv)</code> version 1.0.0: BIDS standard participants files with matched groups</li>
+<li><code>sourcedata.func.task_events</code>: Task-based fMRI E-Prime files</li>
+<li><code>inputs.dwi.dwi</code>: DWI BIDS input data</li>
+<li><code>derivatives.anat.stats</code>: FreeSurfer stats files</li>
+<li><code>derivatives.anat.(T1w|T2w)</code>: T1 and T2 volumes</li>
+<li><code>derivatives.anat.wmparc</code>: white-matter volume ROIs</li>
+<li><code>derivatives.func.updated_motion_task-(MID|nback|SST|rest)</code>: Improved motion files (including outlier calculation)</li>
+<li><code>derivatives.func.pconns</code>: Curated parcellated connectivity files</li>
+<li><code>derivatives.func.runs_task-(MID|nback|SST|rest)_volume</code>: Minimally-processed fMRI volumes</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Release 1.0.0 (2020-02-17)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Release 1.0.0 (2020-02-17)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This was the initial release of DCAN Labs ABCD-BIDS inputs and derivatives containing <strong>10,038 MRI sessions worth of NDA imagingcollection01 data</strong> and <strong>9,647 MRI sessions worth of NDA fmriresults01 data</strong>.</p>
+<p><strong>KNOWN ISSUES</strong></p>
+<ul>
+<li><code>sourcedata</code>: Event Related Information <code>sourcedata</code> files can be csv files as well as txt files, but this release only includes the txt files</li>
+<li><code>task-rest_bold.json</code>: Discovered in the middle of June 2020, the modality-specific BIDS inherited <code>task-rest_bold.json</code> file at the top of the directory tree which is nested in almost every <code>task-rest</code> associated record in the NDA database has a typo in it. The <code>"TaskDescription"</code> key has a value of <code>"See http://www.cognitiveatlas.org/task/id/tsk_4a57abb949e1a/"</code>. However, this link goes to the stop signal task page on the Cognitive Atlas website. Instead you should refer to <a href="http://www.cognitiveatlas.org/task/id/trm_4c8a834779883/">the Cognitive Atlas website for “rest eyes open”</a>. This website describes the task as: “Subjects rest passively with their eyes open. Often used as a baseline for comparison for other tasks.”</li>
+<li><code>derivatives.func.runs_task-rest_volume</code>: This data subset was originally uploaded in Release 1.1.0, but was missing all runs chronologically numbered 3 and up. We are uploading these missing data in Release 1.1.2.</li>
+<li><code>updated_dwi_input_json</code>: The DWI acquisition parameters from all subjects scanned on GE with MR Software release DV25.0_R02_1549.b (n=281) are missing the required field, PhaseEncodingDirection. This omission is because they reported the axis and not direction.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bethlehem2022" class="csl-entry" role="listitem">
+Bethlehem, R. a. I., J. Seidlitz, S. R. White, J. W. Vogel, K. M. Anderson, C. Adamson, S. Adler, et al. 2022. <em>Nature</em> 604 (7906). Nature Publishing Group: 525–33. doi:<a href="https://doi.org/10.1038/s41586-022-04554-y">10.1038/s41586-022-04554-y</a>.
+</div>
+<div id="ref-chaarani2021" class="csl-entry" role="listitem">
+Chaarani, B., S. Hahn, N. Allgaier, S. Adise, M. M. Owens, A. C. Juliano, D. K. Yuan, et al. 2021. <em>Nature Neuroscience</em> 24 (8). Nature Publishing Group: 1176–86. doi:<a href="https://doi.org/10.1038/s41593-021-00867-9">10.1038/s41593-021-00867-9</a>.
+</div>
+<div id="ref-cieslak2021" class="csl-entry" role="listitem">
+Cieslak, Matthew, Philip A. Cook, Xiaosong He, Fang-Cheng Yeh, Thijs Dhollander, Azeez Adebimpe, Geoffrey K. Aguirre, et al. 2021. <em>Nature Methods</em> 18 (7). Nature Publishing Group: 775–78. doi:<a href="https://doi.org/10.1038/s41592-021-01185-5">10.1038/s41592-021-01185-5</a>.
+</div>
+<div id="ref-feczko2021" class="csl-entry" role="listitem">
+Feczko, Eric, Greg Conan, Scott Marek, Brenden Tervo-Clemmens, Michaela Cordova, Olivia Doyle, Eric Earl, et al. 2021. doi:<a href="https://doi.org/10.1101/2021.07.09.451638">10.1101/2021.07.09.451638</a>.
+</div>
+<div id="ref-gordon2023" class="csl-entry" role="listitem">
+Gordon, Evan M., Roselyne J. Chauvin, Andrew N. Van, Aishwarya Rajesh, Ashley Nielsen, Dillan J. Newbold, Charles J. Lynch, et al. 2023. <em>Nature</em> 617 (7960). Nature Publishing Group: 351–59. doi:<a href="https://doi.org/10.1038/s41586-023-05964-2">10.1038/s41586-023-05964-2</a>.
+</div>
+<div id="ref-gordon2016" class="csl-entry" role="listitem">
+Gordon, Evan M., Timothy O. Laumann, Babatunde Adeyemo, Jeremy F. Huckins, William M. Kelley, and Steven E. Petersen. 2016. <em>Cerebral Cortex</em> 26 (1): 288–303. doi:<a href="https://doi.org/10.1093/cercor/bhu239">10.1093/cercor/bhu239</a>.
+</div>
+<div id="ref-hermosillo2024" class="csl-entry" role="listitem">
+Hermosillo, Robert J. M., Lucille A. Moore, Eric Feczko, Óscar Miranda-Domínguez, Adam Pines, Ally Dworetsky, Gregory Conan, et al. 2024. <em>Nature Neuroscience</em> 27 (5): 1000–1013. doi:<a href="https://doi.org/10.1038/s41593-024-01596-5">10.1038/s41593-024-01596-5</a>.
+</div>
+<div id="ref-keller2024" class="csl-entry" role="listitem">
+Keller, Arielle S., Tyler M. Moore, Audrey Luo, Elina Visoki, Mārtiņš M. Gataviņš, Alisha Shetty, Zaixu Cui, et al. 2024. <em>Developmental Cognitive Neuroscience</em> 66 (April): 101370. doi:<a href="https://doi.org/10.1016/j.dcn.2024.101370">10.1016/j.dcn.2024.101370</a>.
+</div>
+<div id="ref-keller2023" class="csl-entry" role="listitem">
+Keller, Arielle S., Adam R. Pines, Sheila Shanmugan, Valerie J. Sydnor, Zaixu Cui, Maxwell A. Bertolero, Ran Barzilay, et al. 2023. <em>Nature Communications</em> 14 (1). Nature Publishing Group: 8411. doi:<a href="https://doi.org/10.1038/s41467-023-44087-0">10.1038/s41467-023-44087-0</a>.
+</div>
+<div id="ref-marek2022" class="csl-entry" role="listitem">
+Marek, Scott, Brenden Tervo-Clemmens, Finnegan J. Calabro, David F. Montez, Benjamin P. Kay, Alexander S. Hatoum, Meghan Rose Donohue, et al. 2022. <em>Nature</em> 603 (7902). Nature Publishing Group: 654–60. doi:<a href="https://doi.org/10.1038/s41586-022-04492-9">10.1038/s41586-022-04492-9</a>.
+</div>
+<div id="ref-marek2019" class="csl-entry" role="listitem">
+Marek, Scott, Brenden Tervo-Clemmens, Ashley N. Nielsen, Muriah D. Wheelock, Ryland L. Miller, Timothy O. Laumann, Eric Earl, et al. 2019. <em>Developmental Cognitive Neuroscience</em> 40 (December): 100706. doi:<a href="https://doi.org/10.1016/j.dcn.2019.100706">10.1016/j.dcn.2019.100706</a>.
+</div>
+<div id="ref-mehta2024" class="csl-entry" role="listitem">
+Mehta, Kahini, Taylor Salo, Thomas J. Madison, Azeez Adebimpe, Danielle S. Bassett, Max Bertolero, Matthew Cieslak, et al. 2024. <em>Imaging Neuroscience</em> 2 (August): 1–26. doi:<a href="https://doi.org/10.1162/imag_a_00257">10.1162/imag_a_00257</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><i>ABCD Study</i>®, <i>Teen Brains. Today’s Science. Brighter Future.</i>® and the ABCD Study Logo are registered marks of the U.S. Department of Health &amp; Human Services (HHS). Adolescent Brain Cognitive Development℠ Study is a service mark of the U.S. Department of Health &amp; Human Services (HHS).</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

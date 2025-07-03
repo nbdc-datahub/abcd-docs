@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ABCD (General)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/favicon/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-19cb40036d0cd7ef4cbef03ff3e7a6c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8f54f8d61a323a02bc591d69a6fd3237.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SB9F54HS16"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SB9F54HS16', { 'anonymize_ip': true});
+</script>
+<script src="../../site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="../../site_libs/react-18.2.0/react.min.js"></script>
+<script src="../../site_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="../../site_libs/reactwidget-2.0.0/react-tools.js"></script>
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../../site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+<script src="../../site_libs/reactable-binding-0.4.4/reactable.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
+<script type="module" src="../../assets/js/left_menu.min.js"></script>
+<script type="module" src="../../assets/js/version.min.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/img/logo-abcd.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-home" aria-label="home"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../study/index.html"> 
+<span class="menu-text">Study</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-usage" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Data Usage</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-usage">    
+        <li>
+    <a class="dropdown-item" href="../../usage/access.html">
+ <span class="dropdown-text">Access &amp; download data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/responsible_use.html">
+ <span class="dropdown-text">Responsible use</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/acknowledgement.html">
+ <span class="dropdown-text">Acknowledgment</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-documentation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Documentation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-documentation">    
+        <li>
+    <a class="dropdown-item" href="../../documentation/curation/structure.html">
+ <span class="dropdown-text">Curation &amp; structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/non_imaging/ab.html">
+ <span class="dropdown-text">Non-imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/imaging/index.html">
+ <span class="dropdown-text">Imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/substudies/covid.html">
+ <span class="dropdown-text">Substudies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/release_notes/6_0.html">
+ <span class="dropdown-text">Release notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../../tools/tools.html">
+ <span class="dropdown-text">Data tools</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/r_packages.html">
+ <span class="dropdown-text">R Packages</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-circle-info--info" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><i class="fa-solid fa-circle-info" aria-label="circle-info"></i> Info</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-fa-circle-info--info">    
+        <li>
+    <a class="dropdown-item" href="../../info/faq.html">
+ <span class="dropdown-text">FAQs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/issues.html">
+ <span class="dropdown-text">Report issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/changelog.html">
+ <span class="dropdown-text">Changelog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/citation.html">
+ <span class="dropdown-text">Cite this website</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-version" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Version</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-version">    
+        <li class="dropdown-header">empty</li>
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/non_imaging/ab.html">Non-imaging data</a></li><li class="breadcrumb-item"><a href="../../documentation/non_imaging/ab.html">ABCD (General)</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Curation &amp; structure</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curation standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/naming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Naming convention</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/metadata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metadata</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Non-imaging data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ab.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">ABCD (General)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/fc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Friends, Family, &amp; Community</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/gn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Genetics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/le.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linked External Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/mh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mental Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurocognition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Novel Technologies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ph.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/su.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Substance Use</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../documentation/imaging/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imaging data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/admin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Administrative tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_concat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Concatenated</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI derivatives data documentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_source_raw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Source data / raw data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_suppl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Supplementary tables</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Scan types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_dmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffusion MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Quality Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_rsfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resting-state fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_smri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structural MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmribeh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI (Behavioral performance)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trial level behavioral performance during task-based fMRI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">ABCD BIDS Community Collection (ABCC)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_start_page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ABCD-BIDS community collection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_inputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BIDS conversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data processing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_qualitycontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality control procedures</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Substudy data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/covid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">COVID-19 rapid response research</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/ecb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Endocannabinoid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/irma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IRMA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/mrs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MR Spectroscopy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Release notes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/release_notes/6_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.0 data release</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#domain-overview" id="toc-domain-overview" class="nav-link active" data-scroll-target="#domain-overview">Domain overview</a></li>
+  <li><a href="#parent-tables" id="toc-parent-tables" class="nav-link" data-scroll-target="#parent-tables">Parent tables</a>
+  <ul>
+  <li><a href="#ab_p_demo" id="toc-ab_p_demo" class="nav-link" data-scroll-target="#ab_p_demo">Demographics</a></li>
+  <li><a href="#ab_p_ocp" id="toc-ab_p_ocp" class="nav-link" data-scroll-target="#ab_p_ocp">Occupation Survey</a></li>
+  <li><a href="#ab_p_screen" id="toc-ab_p_screen" class="nav-link" data-scroll-target="#ab_p_screen">Screener (Study eligibility)</a></li>
+  </ul></li>
+  <li><a href="#general_tables" id="toc-general_tables" class="nav-link" data-scroll-target="#general_tables">General tables</a>
+  <ul>
+  <li><a href="#ab_g_dyn" id="toc-ab_g_dyn" class="nav-link" data-scroll-target="#ab_g_dyn">ABCD Dynamic variables</a></li>
+  <li><a href="#ab_g_stc" id="toc-ab_g_stc" class="nav-link" data-scroll-target="#ab_g_stc">ABCD Static variables</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/non_imaging/ab.html">Non-imaging data</a></li><li class="breadcrumb-item"><a href="../../documentation/non_imaging/ab.html">ABCD (General)</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">ABCD (General)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- Invisible reference to the R logo so the resource can be captured by quarto -->
+<div style="display: none;">
+<p><a href="../../assets/img/documentation/rlogo.svg"></a></p>
+</div>
+<section id="domain-overview" class="level1">
+<h1>Domain overview</h1>
+<div class="cell">
+<div class="cell-output-display">
+<style>
+  .tag {
+    display: inline-block;
+    padding: 0.125rem 0.75rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+
+  .source-youth {
+    background: hsl(203, 60%, 90%);
+    color: hsl(203, 30%, 25%);
+  }
+  .source-parent {
+    background: hsl(115, 70%, 90%);
+    color: hsl(115, 45%, 30%);
+  }
+  .source-teacher {
+    background: hsl(19, 70%, 90%);
+    color: hsl(19, 45%, 30%);
+  }
+  .source-experimenter {
+    background: hsl(353, 70%, 90%);
+    color: hsl(353, 45%, 30%);
+  }
+  .source-led {
+    background: hsl(70, 70%, 90%);
+    color: hsl(70, 45%, 30%);
+  }
+  .source-general {
+    background: hsl(44, 70%, 90%);
+    color: hsl(44, 45%, 30%);
+  }
+  
+  :root {
+    --tooltip-color: rgb(8 81 156 / 90%);
+    --tooltip-text-color: white; 
+  }
+  .tippy-box[data-theme~='mytheme'] {
+    background-color: var(--tooltip-color); 
+    color: var(--tooltip-text-color);
+  }
+  
+  .tippy-box[data-theme~='mytheme'][data-placement^='top'] > .tippy-arrow::before {
+    border-top-color: var(--tooltip-color);
+  }
+  .tippy-box[data-theme~='mytheme'][data-placement^='bottom'] > .tippy-arrow::before {
+    border-bottom-color: var(--tooltip-color);
+  }
+  .tippy-box[data-theme~='mytheme'][data-placement^='left'] > .tippy-arrow::before {
+    border-left-color: var(--tooltip-color);
+  }
+  .tippy-box[data-theme~='mytheme'][data-placement^='right'] > .tippy-arrow::before {
+    border-right-color: var(--tooltip-color);
+  }
+  
+  abbr.tool-tip {
+    display: flex;
+  }
+  abbr.tool-tip > div {
+    cursor: help;
+    padding-left: 2px;
+    & > i {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-7706c4a0dc439cdf5b7d" style="width:auto;height:auto;"></div>
+<p>
+        </p><div style="text-align: center; font-size: 0.8em; color: gray;">
+            <i>Please <b>scroll horizontally</b> 
+            <i class="fa fa-info-circle" id="scroll_tip" data-tippy-content="Use touchpad gestures or hold shift and scroll with the mouse wheel or use the bottom scroll bar" style="color: #a7a7a7;" data-charge="this is a 5-dollar tip">
+            </i>
+            to view the number of variables and events of administration for the displayed tables.</i>
+        </div>
+        <script>
+          tippy("#scroll_tip", {
+            allowHTML: true,
+            theme: "mytheme",
+            placement: "top",
+            delay: 100
+          });
+        </script>
+        <p></p>
+<script type="application/json" data-for="htmlwidget-7706c4a0dc439cdf5b7d">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"table_label":["Demographics ","Occupation Survey ","Screener (Study Eligibility) ","ABCD Dynamic Variables ","ABCD Static Variables "],"table_name":["ab_p_demo","ab_p_ocp","ab_p_screen","ab_g_dyn","ab_g_stc"],"source":["Parent","Parent","Parent","General","General"],"sub_domain":["Demographics","Demographics","Screener","Standard Variables","Standard Variables"],"n_total":[236,56,90,24,49],"n_admin":[3,3,3,19,9],"n_item":[233,53,87,"NA","NA"],"n_score":["NA","NA","NA",5,40],"type":["dynamic","dynamic","dynamic","dynamic","static"],"00S":[null,null,true,null,null],"00A":[true,null,null,true,null],"01A":[true,null,null,true,null],"02A":[true,true,null,true,null],"03A":[true,true,null,true,null],"04A":[true,true,null,true,null],"05A":[true,true,null,true,null],"06A":[true,true,null,true,null]},"columns":[{"id":"table_label","name":"Table label","type":"character","html":true,"cell":["<a href='/documentation/non_imaging/ab.html#ab_p_demo'>Demographics <\/a>","<a href='/documentation/non_imaging/ab.html#ab_p_ocp'>Occupation Survey <\/a>","<a href='/documentation/non_imaging/ab.html#ab_p_screen'>Screener (Study Eligibility) <\/a>","<a href='/documentation/non_imaging/ab.html#ab_g_dyn'>ABCD Dynamic Variables <\/a>","<a href='/documentation/non_imaging/ab.html#ab_g_stc'>ABCD Static Variables <\/a>"],"width":250,"sticky":"left","style":{"borderRight":"1px solid #ccc"},"headerStyle":{"borderRight":"1px solid #ccc"}},{"id":"table_name","name":"Table name","type":"character","html":true,"cell":["<span>\n  <img src=\"/assets/img/documentation/deap_icon.svg\" style=\"width:1.2em; height:1.2em;\">\n  <a href='https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Parent%22%2C%22Demographics%20%5BParent%5D%22%5D%5D#/my-datasets/create-dataset'><code>ab_p_demo<\/code><\/a>\n<\/span>","<span>\n  <img src=\"/assets/img/documentation/deap_icon.svg\" style=\"width:1.2em; height:1.2em;\">\n  <a href='https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Parent%22%2C%22Occupation%20Survey%20%5BParent%5D%22%5D%5D#/my-datasets/create-dataset'><code>ab_p_ocp<\/code><\/a>\n<\/span>","<span>\n  <img src=\"/assets/img/documentation/deap_icon.svg\" style=\"width:1.2em; height:1.2em;\">\n  <a href='https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Parent%22%2C%22Screener%20%28Study%20Eligibility%29%20%5BParent%5D%22%5D%5D#/my-datasets/create-dataset'><code>ab_p_screen<\/code><\/a>\n<\/span>","<span>\n  <img src=\"/assets/img/documentation/deap_icon.svg\" style=\"width:1.2em; height:1.2em;\">\n  <a href='https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22General%22%2C%22ABCD%20Dynamic%20Variables%20%5BGeneral%5D%22%5D%5D#/my-datasets/create-dataset'><code>ab_g_dyn<\/code><\/a>\n<\/span>","<span>\n  <img src=\"/assets/img/documentation/deap_icon.svg\" style=\"width:1.2em; height:1.2em;\">\n  <a href='https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22General%22%2C%22ABCD%20Static%20Variables%20%5BGeneral%5D%22%5D%5D#/my-datasets/create-dataset'><code>ab_g_stc<\/code><\/a>\n<\/span>"],"width":180},{"id":"source","name":"Source","type":"character","html":true,"cell":[{"name":"div","attribs":{"className":"tag source-parent"},"children":["Parent"]},{"name":"div","attribs":{"className":"tag source-parent"},"children":["Parent"]},{"name":"div","attribs":{"className":"tag source-parent"},"children":["Parent"]},{"name":"div","attribs":{"className":"tag source-general"},"children":["General"]},{"name":"div","attribs":{"className":"tag source-general"},"children":["General"]}],"width":130},{"id":"sub_domain","name":"Subdomain","type":"character","html":true,"width":150},{"id":"n_total","name":"TOTAL","type":"numeric","html":true,"width":65,"style":{"fontWeight":"bold","borderLeft":"1px solid #ccc"},"headerStyle":{"borderLeft":"1px solid #ccc"}},{"id":"n_admin","name":"admin","type":"numeric","html":true,"width":60},{"id":"n_item","name":"item","type":"numeric","html":true,"width":60},{"id":"n_score","name":"n_score","type":"numeric","html":true,"cell":["","","","<span class=\"info-total-rlogo\">\n  <a \n  href=\"https://software.nbdc-datahub.org/ABCDscores/reference/index.html#abcd-dynamic-variables-general-\" \n  target=\"_blank\" \n  rel=\"noopener noreferrer\">\n    <img src=\"/assets/img/documentation/rlogo.svg\" \n    alt=\"R logo\" \n    title=\"source code\">\n  <\/a>\n  <span>5<\/span>\n  <style>\n  span.info-total-rlogo  > a > img {\n    width:1.2em;\n    height:1.2em;\n    vertical-align:top;\n    opacity:0.7;\n    cursor:pointer;\n  }\n  span.info-total-rlogo {\n    display: flex;\n    justify-content: space-between;\n  }\n  span.info-total-rlogo a {\n    text-decoration:none;\n    & > img {\n      filter: brightness(0.0);\n    }\n  }\n  img.info-total-rlogo:hover {\n  opacity:1;\n  }\n  <\/style>\n<\/span>","<span class=\"info-total-rlogo\">\n  <a \n  href=\"https://software.nbdc-datahub.org/ABCDscores/reference/index.html#abcd-static-variables-general-\" \n  target=\"_blank\" \n  rel=\"noopener noreferrer\">\n    <img src=\"/assets/img/documentation/rlogo.svg\" \n    alt=\"R logo\" \n    title=\"source code\">\n  <\/a>\n  <span>40<\/span>\n  <style>\n  span.info-total-rlogo  > a > img {\n    width:1.2em;\n    height:1.2em;\n    vertical-align:top;\n    opacity:0.7;\n    cursor:pointer;\n  }\n  span.info-total-rlogo {\n    display: flex;\n    justify-content: space-between;\n  }\n  span.info-total-rlogo a {\n    text-decoration:none;\n    & > img {\n      filter: brightness(0.0);\n    }\n  }\n  img.info-total-rlogo:hover {\n  opacity:1;\n  }\n  <\/style>\n<\/span>"],"header":"\n    function() {\n      let iconsHTML = \"\";\n      const tooltipID1 = \"tooltip-header-\" + Math.random().toString(36).substring(2, 15);\n      setTimeout(function() {\n        tippy(`#${tooltipID1}`, {allowHTML: true, theme: \"mytheme\"});\n      }, 100);\n      iconsHTML += `<div id=\"${tooltipID1}\" data-tippy-content=\"<div><span>  &lt;img src='/assets/img/documentation/rlogo.svg' style='width:1.2em; height:1.2em; filter: brightness(20);'&gt;   ABCDscores R package source code available<\/span>\n<\/div>\"><i class=\\\"fa fa-info-circle\\\" style=\\\"color: #a7a7a7;\\\"><\/i><\/div>`;\n      return `<abbr class=\"tool-tip\">score${iconsHTML}<\/abbr>`;\n    }\n    ","width":80},{"id":"type","name":"Type","type":"character","html":true,"cell":["<i class=\"fa-solid fa-chart-line\"><\/i>","<i class=\"fa-solid fa-chart-line\"><\/i>","<i class=\"fa-solid fa-chart-line\"><\/i>","<i class=\"fa-solid fa-chart-line\"><\/i>","<i class=\"fa-solid fa-minus\"><\/i>"],"header":"\n    function() {\n      let iconsHTML = \"\";\n      const tooltipID1 = \"tooltip-header-\" + Math.random().toString(36).substring(2, 15);\n      setTimeout(function() {\n        tippy(`#${tooltipID1}`, {allowHTML: true, theme: \"mytheme\"});\n      }, 100);\n      iconsHTML += `<div id=\"${tooltipID1}\" data-tippy-content=\"<div><span>  <i class='fa-solid fa-minus' style='color: #a7a7a7;'><\/i>  static<\/span><br/><span>  <i class='fa-solid fa-chart-line' style='color: #a7a7a7;'><\/i>  longitudinal<\/span>\n<\/div>\"><i class=\\\"fa fa-info-circle\\\" style=\\\"color: #a7a7a7;\\\"><\/i><\/div>`;\n      return `<abbr class=\"tool-tip\">Type${iconsHTML}<\/abbr>`;\n    }\n    ","width":70,"align":"center","style":{"borderLeft":"1px solid #ccc"},"headerStyle":{"borderLeft":"1px solid #ccc"}},{"id":"00S","name":"00S","type":"logical","html":true,"cell":["","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>","",""],"width":50,"align":"center"},{"id":"00A","name":"00A","type":"logical","html":true,"cell":["<span style='font-size: 13px; color: #145090;'>⬤<\/span>","","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>",""],"width":50,"align":"center"},{"id":"01A","name":"01A","type":"logical","html":true,"cell":["<span style='font-size: 13px; color: #145090;'>⬤<\/span>","","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>",""],"width":50,"align":"center"},{"id":"02A","name":"02A","type":"logical","html":true,"cell":["<span style='font-size: 13px; color: #145090;'>⬤<\/span>","<span style='font-size: 13px; color: #145090;'>⬤<\/span>","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>",""],"width":50,"align":"center"},{"id":"03A","name":"03A","type":"logical","html":true,"cell":["<span style='font-size: 13px; color: #145090;'>⬤<\/span>","<span style='font-size: 13px; color: #145090;'>⬤<\/span>","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>",""],"width":50,"align":"center"},{"id":"04A","name":"04A","type":"logical","html":true,"cell":["<span style='font-size: 13px; color: #145090;'>⬤<\/span>","<span style='font-size: 13px; color: #145090;'>⬤<\/span>","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>",""],"width":50,"align":"center"},{"id":"05A","name":"05A","type":"logical","html":true,"cell":["<span style='font-size: 13px; color: #145090;'>⬤<\/span>","<span style='font-size: 13px; color: #145090;'>⬤<\/span>","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>",""],"width":50,"align":"center"},{"id":"06A","name":"06A","type":"logical","html":true,"cell":["<span style='font-size: 13px; color: #145090;'>⬤<\/span>","<span style='font-size: 13px; color: #145090;'>⬤<\/span>","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>",""],"width":50,"align":"center"}],"columnGroups":[{"name":"","align":"left","sticky":"left","headerStyle":{"borderRight":"1px solid #ccc"},"columns":["table_label"]},{"name":"","columns":["table_name","source","sub_domain"]},{"name":"No. of variables","headerStyle":{"borderLeft":"1px solid #ccc"},"columns":["n_total","n_admin","n_item","n_score"]},{"name":"Events","headerStyle":{"borderLeft":"1px solid #ccc"},"columns":["type","00S","00A","01A","02A","03A","04A","05A","06A"]}],"resizable":true,"filterable":true,"pagination":false,"bordered":true,"striped":true,"theme":{"headerStyle":{"fontFamily":"Inter","fontWeight":"600","fontSize":"0.8em"},"groupHeaderStyle":{"fontFamily":"Inter","fontWeight":"600","fontSize":"0.9em"},"tableBodyStyle":{"fontFamily":"Inter"},"cellStyle":{"display":"flex","flexDirection":"column","justifyContent":"center","fontSize":"0.8em"},"searchInputStyle":{"fontFamily":"Inter","fontSize":"0.8em"}},"dataKey":"cb19a38fef21ca3b6372f6cc11562009"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.7.header","tag.attribs.columns.8.header"],"jsHooks":[]}</script>
+</div>
+</div>
+<p><br></p>
+<p>“ABCD (General)” which provides standard variables, as well as demographic information and surveys. In this new domain we introduce two new tables: <code>ab_g_dyn</code> and <code>ab_g_stc</code>. These tables use a new source <code>g</code> (for General), introduced specifically for these summary and administrative fields. The data in these tables are often derived or computed from multiple sources, including REDCap timestamps, research administrator (RA) input, and participant responses (youth and parent). The variables in these tables are cohort descriptors &amp; useful nesting variables–participant demographic information, visit characteristics (site, date, etc), relational variables (family ID, principal genetic ancestry), etc–that are useful for cohort characterization and modeling. We anticipate that these tables will be of great importance for most research questions using ABCD data.</p>
+</section>
+<section id="parent-tables" class="level1">
+<h1>Parent tables</h1>
+<section id="ab_p_demo" class="level2">
+<h2 class="anchored" data-anchor-id="ab_p_demo">Demographics</h2>
+<p><img src="../../assets/img/documentation/deap_icon.svg" class="img-fluid" width="30"> <a href="https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&amp;hierarchy=%5B%5B%22Parent%22%2C%22Demographics%20%5BParent%5D%22%5D%5D#/my-datasets/create-dataset"><code>ab_p_demo</code></a></p>
+<p><strong>Measure description:</strong> Extensive lists of parent-reported demographics about the youth, themselves, and family. Note that this table includes the American Community Survey (ACS) Ranked Propensity score that imputed ranked propensity weight. The ranked propensity weight merges the ACS and ABCD data (with missing data imputed), estimates the propensity model, computes and scales/trims the propensity weights and finally rakes the scaled weights to final ACS control totals by age, sex, and race/ethnicity.</p>
+<div id="use-income" class="callout callout-style-default callout-important callout-titled" title="Responsible use warning: Household income">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible use warning: Household income
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong><code>ab_p_demo__income__hhold_001</code>, <code>ab_p_demo__income__hhold_001__v01</code></strong></p>
+<p>Researchers should carefully evaluate whether <code>"Do Not Know"</code> or <code>"Decline to Answer"</code> responses (coded as <code>777</code> and <code>999</code>) are ignorable or informative when deciding how to handle them in analyses, as they correlate with other key demographic variables across study visits (see Table below).</p>
+<p>Current evidence suggests <strong>not</strong> treating these responses as simply missing. Researchers are encouraged to explore how these response types relate to other variables and consider potential impacts on findings. Not accounting for these responses appropriately could introduce bias and compromise validity of results.</p>
+<p>The table below shows that these response types correlate with other important demographic variables across the first four full study visits (Baseline through Three year follow-up) and the partial four year follow-up visit. For instance, participants from households that responded “Do not know” were disproportionately Hispanic and from households with less than some college education. Participants from households that responded “Decline to answer” were disproportionately White and from households with at least a bachelor’s degree. These responses may reflect contextual, cultural, or social factors, such as who manages household finances or potential language barriers, rather than lack of financial knowledge.</p>
+<p><strong>Distribution of Income Categories and Non-Response Patterns Across Study Visits by Key Demographics</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><strong>&lt;50K</strong></td>
+<td><strong>≥50K &amp; &lt;100K</strong></td>
+<td><strong>≥100K</strong></td>
+<td><strong>Do not know</strong></td>
+<td><strong>Decline to answer</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Study Visit</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Baseline (n=11,868)</td>
+<td>3222 (25.2)</td>
+<td>3068 (23.7)</td>
+<td>4561 (23.4)</td>
+<td>504 (25.8)</td>
+<td>511 (25.6)</td>
+</tr>
+<tr class="even">
+<td>1 year (n=11,220)</td>
+<td>2932 (22.9)</td>
+<td>2940 (22.7)</td>
+<td>4432 (22.8)</td>
+<td>454 (23.3)</td>
+<td>461 (23.1)</td>
+</tr>
+<tr class="odd">
+<td>2 year (n=10,973)</td>
+<td>2859 (22.3)</td>
+<td>2893 (22.3)</td>
+<td>4343 (22.3)</td>
+<td>428 (21.9)</td>
+<td>450 (22.5)</td>
+</tr>
+<tr class="even">
+<td>3 year (n=10,336)</td>
+<td>2608 (20.4)</td>
+<td>2745 (21.2)</td>
+<td>4193 (21.5)</td>
+<td>391 (20.1)</td>
+<td>399 (20.0)</td>
+</tr>
+<tr class="odd">
+<td>4 year (n=4,754)</td>
+<td>1171 (9.2)</td>
+<td>1300 (10.0)</td>
+<td>1933 (9.9)</td>
+<td>173 (8.9)</td>
+<td>177 (8.9)</td>
+</tr>
+<tr class="even">
+<td><strong>Child race/ethnicity</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>White</td>
+<td>3072 (24.0)</td>
+<td>7686 (59.4)</td>
+<td>14323 (73.6)</td>
+<td>496 (25.4)</td>
+<td>716 (35.8)</td>
+</tr>
+<tr class="even">
+<td>Black</td>
+<td>3829 (29.9)</td>
+<td>1298 (10.0)</td>
+<td>708 (3.6)</td>
+<td>502 (25.7)</td>
+<td>472 (23.6)</td>
+</tr>
+<tr class="odd">
+<td>Hispanic</td>
+<td>4301 (33.6)</td>
+<td>2540 (19.6)</td>
+<td>1807 (9.3)</td>
+<td>705 (36.2)</td>
+<td>496 (24.8)</td>
+</tr>
+<tr class="even">
+<td>Asian</td>
+<td>114 (0.9)</td>
+<td>207 (1.6)</td>
+<td>594 (3.1)</td>
+<td>48 (2.5)</td>
+<td>92 (4.6)</td>
+</tr>
+<tr class="odd">
+<td>Other</td>
+<td>1476 (11.5)</td>
+<td>1215 (9.4)</td>
+<td>2027 (10.4)</td>
+<td>199 (10.2)</td>
+<td>222 (11.1)</td>
+</tr>
+<tr class="even">
+<td><strong>Household Education</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>&lt; HS Diploma</td>
+<td>2004 (15.7)</td>
+<td>245 (1.9)</td>
+<td>23 (0.1)</td>
+<td>531 (27.2)</td>
+<td>182 (9.1)</td>
+</tr>
+<tr class="even">
+<td>HS Diploma/GED</td>
+<td>2902 (22.7)</td>
+<td>934 (7.2)</td>
+<td>316 (1.6)</td>
+<td>426 (21.8)</td>
+<td>335 (16.8)</td>
+</tr>
+<tr class="odd">
+<td>Some College</td>
+<td>5675 (44.4)</td>
+<td>4717 (36.4)</td>
+<td>2599 (13.4)</td>
+<td>620 (31.8)</td>
+<td>596 (29.8)</td>
+</tr>
+<tr class="even">
+<td>Bachelor</td>
+<td>1524 (11.9)</td>
+<td>4333 (33.5)</td>
+<td>7617 (39.1)</td>
+<td>226 (11.6)</td>
+<td>490 (24.5)</td>
+</tr>
+<tr class="odd">
+<td>Post Graduate Degree</td>
+<td>659 (5.2)</td>
+<td>2717 (21.0)</td>
+<td>8907 (45.8)</td>
+<td>144 (7.4)</td>
+<td>359 (18.0)</td>
+</tr>
+<tr class="even">
+<td><strong>Marital Status</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Yes</td>
+<td>4410 (34.5)</td>
+<td>9391 (72.5)</td>
+<td>17538 (90.1)</td>
+<td>850 (43.6)</td>
+<td>1188 (59.5)</td>
+</tr>
+<tr class="even">
+<td>No</td>
+<td>8188 (64.0)</td>
+<td>3533 (27.3)</td>
+<td>1916 (9.8)</td>
+<td>1057 (54.2)</td>
+<td>731 (36.6)</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Values in parentheses are percentages calculated within each study visit unless otherwise noted</p>
+<p>*Race/ethnicity of the child was parent-reported</p>
+</div>
+</div>
+</div>
+<div id="data-income" class="callout callout-style-default callout-warning callout-titled" title="Data warning: Household income">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data warning: Household income
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The total household income measure in ABCD refers to the <strong>“total combined family income for the past 12 months.”</strong> The non-summary variable includes the following response options:</p>
+<ul>
+<li>Less than $5,000</li>
+<li>$5,000 through $11,999</li>
+<li>$12,000 through $15,999</li>
+<li>$16,000 through $24,999</li>
+<li>$25,000 through $34,999</li>
+<li>$35,000 through $49,999</li>
+<li>$50,000 through $74,999</li>
+<li>$75,000 through $99,999</li>
+<li>$100,000 through $199,999</li>
+<li>$200,000 and greater</li>
+</ul>
+<p>Additionally, two special response categories are included: - <code>999</code> = “Don’t know” - <code>777</code> = “Decline to answer”</p>
+<p>In earlier data releases, <code>999</code> and <code>777</code> responses were coded as missing. As a result, any researcher using the household income variable— for statistical adjustment or as a variable of interest—would have their number of observations reduced by ~10%. More recent releases retained <code>999</code> and <code>777</code> as distinct levels in the variable rather than coding them as missing.</p>
+<p>** Recommendation for handling <code>777</code> and <code>999</code> responses**</p>
+<p>Instead of re-coding <code>777</code> (“Decline to answer”) and <code>999</code> (“Don’t know”) as missing, consider the following strategies:</p>
+<ol type="1">
+<li><p><strong>Retain as distinct values</strong><br>
+Keep <code>777</code> and <code>999</code> as valid categories. This allows for analysis of their distribution and potential associations with other variables.</p></li>
+<li><p><strong>Document your approach</strong><br>
+Clearly describe in your methods how these values were treated, along with the rationale and implications for interpretation.</p></li>
+</ol>
+<p>These practices help minimize bias and enhance the transparency and validity of research findings.</p>
+<p><strong>Reference:</strong> <span class="citation" data-cites="li2025">Li et al. (<a href="#ref-li2025" role="doc-biblioref">2025</a>)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="ab_p_ocp" class="level2" data-link="Occupation Survey">
+<h2 data-link="Occupation Survey" class="anchored" data-anchor-id="ab_p_ocp">Occupation Survey</h2>
+<p><img src="../../assets/img/documentation/deap_icon.svg" class="img-fluid" width="30"> <a href="https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&amp;hierarchy=%5B%5B%22Parent%22%2C%22Occupation%20Survey%20%5BParent%5D%22%5D%5D#/my-datasets/create-dataset"><code>ab_p_ocp</code></a></p>
+<p><strong>Measure description:</strong> Asks caregivers about their own and their partner’s occupation and job category according to the ACS job classifications.</p>
+</section>
+<section id="ab_p_screen" class="level2">
+<h2 class="anchored" data-anchor-id="ab_p_screen">Screener (Study eligibility)</h2>
+<p><img src="../../assets/img/documentation/deap_icon.svg" class="img-fluid" width="30"> <a href="https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&amp;hierarchy=%5B%5B%22Parent%22%2C%22Screener%20%28Study%20Eligibility%29%20%5BParent%5D%22%5D%5D#/my-datasets/create-dataset"><code>ab_p_screen</code></a></p>
+<p><strong>Measure description:</strong> Data from the Screener Instrument that was used to determine study eligibility prior to enrollment. This also includes estimates of twin participants’ physical similarity.</p>
+</section>
+</section>
+<section id="general_tables" class="level1">
+<h1>General tables</h1>
+<section id="ab_g_dyn" class="level2">
+<h2 class="anchored" data-anchor-id="ab_g_dyn">ABCD Dynamic variables</h2>
+<p><img src="../../assets/img/documentation/deap_icon.svg" class="img-fluid" width="30"> <a href="https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&amp;hierarchy=%5B%5B%22General%22%2C%22ABCD%20Dynamic%20Variables%20%5BGeneral%5D%22%5D%5D#/my-datasets/create-dataset"><code>ab_g_dyn</code></a> <img src="../../assets/img/documentation/rlogo.svg" class="img-fluid" width="30"> <a href="https://software.nbdc-datahub.org/ABCDscores/reference/index.html#abcd-dynamic-variables-general-"><code>score documentation</code></a></p>
+<p><strong>Measure description:</strong> The ABCD Dynamic Variables table includes <strong>dynamic</strong> (<code>dyn</code>), i.e., longitudinally changing variables. This table contains important visit-level (e.g., event dates, visit types, participant age), design/nesting (e.g., school identifiers, MRI scanner details), and cohort description variables (e.g., school grade, caregiver education, household income). The table includes several variables that should be considered when accounting for clustering of participants into different groups in statistical analyses:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Sites">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sites
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>The <code>ab_g_dyn__design_site</code> variable describes the site at which a participant completed a given event.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Schools and School Districts">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schools and School Districts
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Using data from the National Center for Education Statistics (NCES), pseudo-identifiers were generated and assigned to each school and school district:</p>
+<ul>
+<li><code>ab_g_dyn__design_id__district</code>: Pseudo ID for clustering participants by school district</li>
+<li><code>ab_g_dyn__design_id__school</code>: Pseudo ID for clustering participants by school</li>
+</ul>
+<p><strong>School Assignment Process:</strong></p>
+<ol type="1">
+<li><strong>Primary Method</strong>: Match visit completion date with school calendar dates to identify the school</li>
+<li><strong>Secondary Method</strong>: If no match, compare reported grade with school grade ranges</li>
+<li><strong>Fallback Method</strong>: Use event name (e.g., <code>ses-01A</code>) to infer attendance</li>
+<li><strong>No ID Assigned</strong>: If no NCES ID is found, no school or district ID is assigned</li>
+</ol>
+<p><strong>Notes:</strong> NCES IDs may correspond to educational environments beyond public or public charter schools. Researchers may want to distinguish among them (e.g., public vs.&nbsp;homeschool). Additional information can be found in:</p>
+<ul>
+<li><code>mh_p_kbi__school_004</code> (baseline)</li>
+<li><code>mh_p_kbi__school_004_l</code> (follow-up)</li>
+</ul>
+<p>Pseudo school IDs for specific school settings can be excluded if needed.</p>
+</div>
+</div>
+</div>
+<div id="use-cohort_income__hhold" class="callout callout-style-default callout-important callout-titled" title="Responsible use warning: Household income summary scores">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible use warning: Household income summary scores
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong><code>ab_g_dyn__cohort_income__hhold__3lvl</code>, <code>ab_g_dyn__cohort_income__hhold__6lvl</code></strong></p>
+<p><a href="#use-income">See warning related to input variables</a></p>
+</div>
+</div>
+</div>
+<div id="data-cohort_income__hhold" class="callout callout-style-default callout-warning callout-titled" title="Data warning: Household income summary scores">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data warning: Household income summary scores
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong><code>ab_g_dyn__cohort_income__hhold__3lvl</code>, <code>ab_g_dyn__cohort_income__hhold__6lvl</code></strong></p>
+<p><a href="#data-income">See warning related to input variables</a></p>
+</div>
+</div>
+</div>
+<div id="data-ab_g_dyn__cohort_prtnrshp__employ" class="callout callout-style-default callout-warning callout-titled" title="Data warning: Marital/partner and labor force participation variable">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data warning: Marital/partner and labor force participation variable
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong><code>ab_g_dyn__cohort_prtnrshp__employ</code></strong></p>
+<p>This variable combines marital/partner status with labor force participation to provide a more comprehensive measure of household structure and economic engagement. It is designed to enhance contextualization of household dynamics and improve statistical modeling by addressing both relationship status and economic activity.</p>
+<p><strong>Description</strong></p>
+<ul>
+<li><strong>Marital/Partner Status</strong></li>
+<li>Partnered: Includes married individuals and those living with a partner.</li>
+<li>Not Partnered: Includes widowed, divorced, separated, and never married individuals.</li>
+<li>Missing Data: Decline to answer (777) or don’t know (999).</li>
+<li><strong>Labor Force Participation</strong></li>
+<li>In the Labor Force: Includes individuals who are working (full-or part-time), temporarily laid off, looking for work, on sick leave, or on parental leave.</li>
+<li>Not in the Labor Force: Includes retired individuals, those permanently or temporarily disabled, stay-at-home parents, students not seeking work, and those unemployed but not seeking work.</li>
+<li>Missing Data: Decline to answer (777) or don’t know (999).</li>
+</ul>
+<p>Labor force classification follows definitions from the American Community Survey and integrates ABCD Study employment data.</p>
+<p><strong>Why Combine These Variables</strong> - Contextualizing household structure by linking relationship and employment status. - Improves statistical power by reducing missingness and integrating multiple household dimensions. - Provides predictive utility—e.g., improves model fit for longitudinal outcomes.</p>
+<p><strong>Construction Details</strong></p>
+<ul>
+<li><p><strong>Source variables</strong></p></li>
+<li><p><code>ab_p_demo__prtnr_001</code>: Marital/partner status</p></li>
+<li><p><code>ab_p_demo__empl__prtnr_001</code>: Partner employment status</p></li>
+<li><p><strong>Skip pattern</strong> Only respondents who reported having a partner (≥40% involvement in the child’s activities) were asked about partner employment.</p></li>
+<li><p><strong>Resulting classifications</strong></p></li>
+<li><p>Partnered and in the labor force</p></li>
+<li><p>Partnered and not in the labor force</p></li>
+<li><p>Not partnered and in the labor force</p></li>
+<li><p>Not partnered and not in the labor force</p></li>
+</ul>
+<p><strong>Use in Baseline Propensity Scores</strong></p>
+<p>A variant of this variable was used in baseline propensity score modeling to balance study groups and improve causal inference by accounting for household context.</p>
+<p>Reference: Heeringa, Steven G., and Patricia A. Berglund. <em>“A guide for population-based analysis of the Adolescent Brain Cognitive Development (ABCD) Study baseline data.”</em> BioRxiv (2020): 2020-02.</p>
+<p><strong>Potential Uses</strong></p>
+<ul>
+<li>As a <strong>confounder</strong>: Adjust for household structure and economic activity in outcome models.</li>
+<li>As a <strong>predictor</strong>: Examine how household dynamics influence longitudinal outcomes (e.g., child mental health).</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="ab_g_stc" class="level2">
+<h2 class="anchored" data-anchor-id="ab_g_stc">ABCD Static variables</h2>
+<p><img src="../../assets/img/documentation/deap_icon.svg" class="img-fluid" width="30"> <a href="https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&amp;hierarchy=%5B%5B%22General%22%2C%22ABCD%20Static%20Variables%20%5BGeneral%5D%22%5D%5D#/my-datasets/create-dataset"><code>ab_g_stc</code></a> <img src="../../assets/img/documentation/rlogo.svg" class="img-fluid" width="30"> <a href="https://software.nbdc-datahub.org/ABCDscores/reference/index.html#abcd-static-variables-general-"><code>score documentation</code></a></p>
+<p><strong>Measure description:</strong> The ABCD Static table includes static (<code>stc</code>) variables that do not change over time (as such, this and other static tables do not contain a <code>session_id</code> column which leads to their values being duplicated to every event when they are joined with “dynamic”/longitudinal tables). This table contains participant-level descriptors such as derived family IDs, birth event groupings, ethno-racial identity variables, participant sex, imputed propensity weights, and principal components of genetic ancestry.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Family and Birth IDs">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Family and Birth IDs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Participants belonging to the same family share a family ID (<code>ab_g_stc__design_id__fam</code>). The table additionally includes a birth ID (<code>ab_g_stc__design_id__birth</code>), which provides a unique ID for individuals within the same family who share the same birthdate.</p>
+<p>Participants who share a birthdate—or whose birthdates are on consecutive days—are assigned the same <code>ab_g_stc__design_id__birth</code>. This variable can be used to differentiate between siblings and twins/triplets within the sample.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Family and Birth IDs (Genetics)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Family and Birth IDs (Genetics)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>ab_g_stc__design_id__fam__gen</code></strong> and <strong><code>ab_g_stc__design_id__birth__gen</code></strong> indicate individuals who are in the same family (as indicated by genetics) and individuals who were born within three months of each other (derived based on genetic information), respectively.</p>
+<p>These fields are cross listed from variables in the Genetics domain: - <code>gn_y_renrel_id__fam</code> - <code>gn_y_genrel_id__birth</code></p>
+<p>For additional documentation, see: <a href="../../documentation/non_imaging/gn.html">Genetics data documentation</a>.</p>
+</div>
+</div>
+<div id="use-race_ethnicity" class="callout callout-style-default callout-important callout-titled" title="Responsible use warning: Race &amp; ethnicity">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible use warning: Race &amp; ethnicity
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong><code>ab_g_stc__cohort_ethn</code>, <code>ab_g_stc__cohort_ethnrace__leg</code>, <code>ab_g_stc__cohort_ethnrace__mblack</code>, <code>ab_g_stc__cohort_ethnrace__meim</code>, <code>ab_g_stc__cohort_ethnrace__mhisp</code>, <code>ab_g_stc__cohort_race__nih</code></strong></p>
+<p>A 5-level race/ethnicity variable (<code>ab_g_stc__cohort_ethnrace__leg</code>) was constructed based on parent or caregiver report of the youth’s race and ethnicity at baseline. The algorithm prioritizes Hispanic ethnicity first and then categorizes based on the selected race(s). The categories are:</p>
+<ul>
+<li><strong>Hispanic</strong> If Hispanic/Latino/Latina is selected</li>
+<li><strong>White</strong> If White is the only race selected and Hispanic/Latino/Latina is not selected</li>
+<li><strong>Black</strong> If Black is the only race selected and Hispanic/Latino/Latina is not selected</li>
+<li><strong>Asian</strong> If Asian is the only race selected and Hispanic/Latino/Latina is not selected</li>
+<li><strong>Other</strong> If Other race is selected and Hispanic/Latino/Latina is not selected OR If more than one race is selected and Hispanic/Latino/Latina is not selected</li>
+</ul>
+<p>Using a large-population dataset like ABCD requires careful consideration of race and ethnicity variables. A 5-level race/ethnicity variable is included in the dataset, but usage may differ depending on study goals. For example:</p>
+<ul>
+<li>In one paper using ABCD data, race/ethnicity categories included White, Black, Hispanic, Asian, and Other, with racial subgroups identified within the “Other” category <span class="citation" data-cites="fadus2021">(<a href="#ref-fadus2021" role="doc-biblioref">Fadus et al. 2021</a>)</span>.</li>
+<li>Another study used non-Hispanic White, non-Hispanic Black, Hispanic, Asian, Native American/Alaska Native, Multi-racial, and additional race groups <span class="citation" data-cites="barch2021">(<a href="#ref-barch2021" role="doc-biblioref">Barch et al. 2021</a>)</span>.</li>
+</ul>
+<p>For guidance on appropriate use of race/ethnicity data, see <span class="citation" data-cites="cardenas-iniguez2024">(<a href="#ref-cardenas-iniguez2024" role="doc-biblioref">Cardenas-Iniguez et al. 2024</a>)</span>.</p>
+</div>
+</div>
+</div>
+<div id="use-family_relationship" class="callout callout-style-default callout-important callout-titled" title="Responsible use warning: Family relationship">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible use warning: Family relationship
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong><code>ab_g_stc__design_id__fam__gen</code></strong></p>
+<p>This variable indicates participants who were enrolled with the same guardian (i.e.&nbsp;siblings) at the baseline visit. It serves as a clustering variable to capture overlapping environmental and genetic influences, making these participants more similar to each other (on average) than to unrelated participants.</p>
+<p>Recommended uses:</p>
+<ol type="1">
+<li><p>Account for nesting within families using random effects in mixed models.</p></li>
+<li><p>Maintain independence across test and replication sets by assigning all members of a family to the same set.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="use-genetics" class="callout callout-style-default callout-important callout-titled" title="Responsible use warning: Genetics">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible use warning: Genetics
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Variables with stems that include: <code>ab_g_stc__gen_pc</code></p>
+<p>We encourage users to consult the NASEM report for guidance on selecting appropriate population descriptors in analyses. The report emphasizes that terms such as “race”—whether self-identified or otherwise—do not adequately represent the full continuum of human genetic diversity and should not be used as proxies for genetic variation.</p>
+<p>The data release includes genetic principal components (PCs) of ancestry, which are unlabeled variables that capture genetic variation. It does <strong>not</strong> include genetic ancestry factors, which label variation in terms of continental groupings (e.g., European, African, Asian).</p>
+<p><span class="citation" data-cites="bates2022">Bates, Chin, and Becker (<a href="#ref-bates2022" role="doc-biblioref">2022</a>)</span></p>
+</div>
+</div>
+</div>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-barch2021" class="csl-entry" role="listitem">
+Barch, Deanna M., Matthew D. Albaugh, Arielle Baskin-Sommers, Brittany E. Bryant, Duncan B. Clark, Anthony Steven Dick, Eric Feczko, et al. 2021. <em>Developmental Cognitive Neuroscience</em> 52 (December): 101031. doi:<a href="https://doi.org/10.1016/j.dcn.2021.101031">10.1016/j.dcn.2021.101031</a>.
+</div>
+<div id="ref-bates2022" class="csl-entry" role="listitem">
+Bates, Nancy, Marshall Chin, and Tara Becker, eds. 2022. <em>Measuring <span>Sex</span>, <span>Gender Identity</span>, and <span>Sexual Orientation</span></em>. Washington, D.C.: National Academies Press. doi:<a href="https://doi.org/10.17226/26424">10.17226/26424</a>.
+</div>
+<div id="ref-cardenas-iniguez2024" class="csl-entry" role="listitem">
+Cardenas-Iniguez, Carlos, Jared N. Schachner, Ka I. Ip, Kathryn E. Schertz, Marybel R. Gonzalez, Shermaine Abad, and Megan M. Herting. 2024. <em>Developmental Cognitive Neuroscience</em> 65 (February): 101338. doi:<a href="https://doi.org/10.1016/j.dcn.2023.101338">10.1016/j.dcn.2023.101338</a>.
+</div>
+<div id="ref-fadus2021" class="csl-entry" role="listitem">
+Fadus, Matthew C., Emilio A. Valadez, Brittany E. Bryant, Alexis M. Garcia, Brian Neelon, Rachel L. Tomko, and Lindsay M. Squeglia. 2021. <em>Journal of the American Academy of Child &amp; Adolescent Psychiatry</em> 60 (8): 998–1009. doi:<a href="https://doi.org/10.1016/j.jaac.2020.11.017">10.1016/j.jaac.2020.11.017</a>.
+</div>
+<div id="ref-li2025" class="csl-entry" role="listitem">
+Li, Lin, Mohammadreza Bayat, Timothy B. Hayes, Wesley K. Thompson, Michael C. Neale, Arianna M. Gard, and Anthony Steven Dick. 2025. <em>Developmental Cognitive Neuroscience</em> 74 (August): 101563. doi:<a href="https://doi.org/10.1016/j.dcn.2025.101563">10.1016/j.dcn.2025.101563</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><i>ABCD Study</i>®, <i>Teen Brains. Today’s Science. Brighter Future.</i>® and the ABCD Study Logo are registered marks of the U.S. Department of Health &amp; Human Services (HHS). Adolescent Brain Cognitive Development℠ Study is a service mark of the U.S. Department of Health &amp; Human Services (HHS).</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

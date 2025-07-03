@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Trial level behavioral performance during task-based fMRI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/favicon/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-19cb40036d0cd7ef4cbef03ff3e7a6c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8f54f8d61a323a02bc591d69a6fd3237.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SB9F54HS16"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SB9F54HS16', { 'anonymize_ip': true});
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
+<script type="module" src="../../assets/js/left_menu.min.js"></script>
+<script type="module" src="../../assets/js/version.min.js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/img/logo-abcd.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-home" aria-label="home"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../study/index.html"> 
+<span class="menu-text">Study</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-usage" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Data Usage</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-usage">    
+        <li>
+    <a class="dropdown-item" href="../../usage/access.html">
+ <span class="dropdown-text">Access &amp; download data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/responsible_use.html">
+ <span class="dropdown-text">Responsible use</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/acknowledgement.html">
+ <span class="dropdown-text">Acknowledgment</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-documentation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Documentation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-documentation">    
+        <li>
+    <a class="dropdown-item" href="../../documentation/curation/structure.html">
+ <span class="dropdown-text">Curation &amp; structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/non_imaging/ab.html">
+ <span class="dropdown-text">Non-imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/imaging/index.html">
+ <span class="dropdown-text">Imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/substudies/covid.html">
+ <span class="dropdown-text">Substudies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/release_notes/6_0.html">
+ <span class="dropdown-text">Release notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../../tools/tools.html">
+ <span class="dropdown-text">Data tools</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/r_packages.html">
+ <span class="dropdown-text">R Packages</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-circle-info--info" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><i class="fa-solid fa-circle-info" aria-label="circle-info"></i> Info</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-fa-circle-info--info">    
+        <li>
+    <a class="dropdown-item" href="../../info/faq.html">
+ <span class="dropdown-text">FAQs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/issues.html">
+ <span class="dropdown-text">Report issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/changelog.html">
+ <span class="dropdown-text">Changelog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/citation.html">
+ <span class="dropdown-text">Cite this website</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-version" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Version</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-version">    
+        <li class="dropdown-header">empty</li>
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/imaging/index.html">Imaging data</a></li><li class="breadcrumb-item">Scan types</li><li class="breadcrumb-item">Documentation</li><li class="breadcrumb-item"><a href="../../documentation/imaging/type_dmri.html">Imaging</a></li><li class="breadcrumb-item"><a href="../../documentation/imaging/type_trial.html">Trial level behavioral performance during task-based fMRI</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Curation &amp; structure</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curation standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/naming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Naming convention</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/metadata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metadata</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Non-imaging data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ABCD (General)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/fc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Friends, Family, &amp; Community</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/gn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Genetics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/le.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linked External Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/mh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mental Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurocognition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Novel Technologies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ph.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/su.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Substance Use</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../documentation/imaging/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imaging data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/admin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Administrative tables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_concat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Concatenated</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI derivatives data documentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_source_raw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Source data / raw data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_suppl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Supplementary tables</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Scan types</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth4 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_dmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffusion MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Quality Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_rsfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resting-state fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_smri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structural MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmribeh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI (Behavioral performance)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_trial.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Trial level behavioral performance during task-based fMRI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">ABCD BIDS Community Collection (ABCC)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_start_page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ABCD-BIDS community collection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_inputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BIDS conversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data processing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_qualitycontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality control procedures</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Substudy data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/covid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">COVID-19 rapid response research</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/ecb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Endocannabinoid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/irma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IRMA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/mrs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MR Spectroscopy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Release notes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/release_notes/6_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.0 data release</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#domain-overview" id="toc-domain-overview" class="nav-link active" data-scroll-target="#domain-overview">Domain overview</a></li>
+  <li><a href="#trial-level-behavioral-data" id="toc-trial-level-behavioral-data" class="nav-link" data-scroll-target="#trial-level-behavioral-data">Trial-Level Behavioral Data</a>
+  <ul>
+  <li><a href="#monetary-incentive-delay-mid-task" id="toc-monetary-incentive-delay-mid-task" class="nav-link" data-scroll-target="#monetary-incentive-delay-mid-task">Monetary Incentive Delay (MID) Task</a></li>
+  <li><a href="#stop-signal-task-sst" id="toc-stop-signal-task-sst" class="nav-link" data-scroll-target="#stop-signal-task-sst">Stop Signal Task (SST)</a>
+  <ul class="collapse">
+  <li><a href="#concerns-regarding-abcd-sst-task" id="toc-concerns-regarding-abcd-sst-task" class="nav-link" data-scroll-target="#concerns-regarding-abcd-sst-task">Concerns regarding ABCD SST task</a></li>
+  <li><a href="#appendix-a" id="toc-appendix-a" class="nav-link" data-scroll-target="#appendix-a">Appendix A</a></li>
+  <li><a href="#appendix-b" id="toc-appendix-b" class="nav-link" data-scroll-target="#appendix-b">Appendix B</a></li>
+  </ul></li>
+  <li><a href="#emotional-nback-working-memory-task" id="toc-emotional-nback-working-memory-task" class="nav-link" data-scroll-target="#emotional-nback-working-memory-task">Emotional nBack Working Memory Task</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/imaging/index.html">Imaging data</a></li><li class="breadcrumb-item">Scan types</li><li class="breadcrumb-item">Documentation</li><li class="breadcrumb-item"><a href="../../documentation/imaging/type_dmri.html">Imaging</a></li><li class="breadcrumb-item"><a href="../../documentation/imaging/type_trial.html">Trial level behavioral performance during task-based fMRI</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Trial level behavioral performance during task-based fMRI</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="domain-overview" class="level1">
+<h1>Domain overview</h1>
+<p>To facilitate use of trial-level behavioral performance data from the different task-based fMRI a set of pre-processing steps that can be applied to the stimulus event timing and behavioral performance files was developed for ABCD.The code used to implement these pre-processing steps has been made publicly available on the ABCD Study’s <a href="https://github.com/ABCD-STUDY">GitHub page</a>. The input E-prime files are available in the sourcedata BIDS structure (see MRI Raw Data File Sharing Data Documentation). The E-prime task files used for ABCD are available at <a href="https://abcdstudy.org/scientists/abcd-fmri-tasks-and-tools" class="uri">https://abcdstudy.org/scientists/abcd-fmri-tasks-and-tools</a>. The tasks and the summary behavioral performance measures extracted from the E-prime files and included in the tabulated data are described in the Behavioral Performance Data Documentation. The processing and analysis of the associated fMRI data is described in Task-Based fMRI Data Documentation. The behavioral performance review is part of the ABCD Study QC procedures and recommended imaging inclusion criteria (see MRI Quality Control Data Documentation).</p>
+<div id="use-trial" class="callout callout-style-default callout-important callout-titled" title="Responsible Use Warning: Trial-Level Data">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible Use Warning: Trial-Level Data
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Using open-access datasets like ABCD requires responsible conceptualization and use of the data, including being mindful of variations in experience that impact performance. Below are specific considerations:</p>
+<ul>
+<li>Cognitive task performance can be influenced by various environmental and personal factors, including participant health, attention, nutrition, fatigue, or other transient conditions.Cognitive task performance has been shown to correlate strongly with a variety of socio-economic factors. Attention and other performance factors can also be confounded by transient factors influenced by low SES, such as fatigue, poor nutrition, or environmental stressors.</li>
+<li>Although the ABCD protocol captures several environmental and personal variables that may influence performance (e.g., potential covariates), it is unlikely that all relevant factors have been measured.Although the ABCD protocol captures several SES-related variables (e.g.&nbsp;for use as potential covariates), it is unlikely that the ABCD dataset captures all of them.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="trial-level-behavioral-data" class="level1">
+<h1>Trial-Level Behavioral Data</h1>
+<section id="monetary-incentive-delay-mid-task" class="level2">
+<h2 class="anchored" data-anchor-id="monetary-incentive-delay-mid-task">Monetary Incentive Delay (MID) Task</h2>
+<p>The following table provides the column names that are contained within the MID pre-processed behavioral data files, as well as a brief description of the variable and what type of data it contains.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Column name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>task</code></td>
+<td>Behavioral task completed</td>
+</tr>
+<tr class="odd">
+<td><code>subject</code></td>
+<td>Subject ID ashow it’s defined in lab/project</td>
+</tr>
+<tr class="even">
+<td><code>eventname</code></td>
+<td>The event name for which the data was collected</td>
+</tr>
+<tr class="odd">
+<td><code>site</code></td>
+<td>Data collection site ID</td>
+</tr>
+<tr class="even">
+<td><code>date</code></td>
+<td>Date of data collection (month/day/year)</td>
+</tr>
+<tr class="odd">
+<td><code>time</code></td>
+<td>Time that data was collected (hours/minutes/seconds)</td>
+</tr>
+<tr class="even">
+<td><code>mid_run</code></td>
+<td>Which run the task data corresponds to <code>mid_trialnum</code></td>
+</tr>
+<tr class="odd">
+<td><code>mid_anticipationtype</code></td>
+<td>The type of anticipation for that trial</td>
+</tr>
+<tr class="even">
+<td><code>mid_anticipationonset</code></td>
+<td>The time that the anticipation phase started</td>
+</tr>
+<tr class="odd">
+<td><code>mid_anticipationduration</code></td>
+<td>The length of time that the anticipation phase lasted</td>
+</tr>
+<tr class="even">
+<td><code>mid_feedbacktype</code></td>
+<td>The type of feedback received based on the subject’s performance <code>mid_feedbackonset</code></td>
+</tr>
+<tr class="odd">
+<td><code>mid_feedbackduration</code></td>
+<td>The length of time that the feedback phase lasted</td>
+</tr>
+<tr class="even">
+<td><code>mid_acc</code></td>
+<td>Accuracy of the subject’s performance for that trial</td>
+</tr>
+<tr class="odd">
+<td><code>mid_resp</code></td>
+<td>Whether or not the subject provided a response for that <code>trialmid_rt</code></td>
+</tr>
+<tr class="even">
+<td><code>mid_rttime</code></td>
+<td>The timepoint in the task when the participant responded</td>
+</tr>
+<tr class="odd">
+<td><code>mid_trialmoney</code></td>
+<td>The money resulting from the subject’s performance on that trial</td>
+</tr>
+</tbody>
+</table>
+<p>The following information pertains to the variables:</p>
+<ul>
+<li><code>mid_anticipationonset</code></li>
+<li><code>mid_anticipationduration</code></li>
+<li><code>mid_feedbackonset</code></li>
+<li><code>mid_feedbackduration</code></li>
+<li><code>mid_rt</code></li>
+<li><code>mid_rttime</code></li>
+</ul>
+<ol type="1">
+<li>All times have already been corrected and represent the actual start time of the task.</li>
+</ol>
+<ul>
+<li>In other words, as this task was carried out as an fMRI task, the “PrepTime” times for each of the runs has already been subtracted out, producing the times contained in the pre-processed behavioral data files. These times are consistent with those produced by the abcd_extract_eprime scripts, which are publicly-available in the ABCD study’s <a href="https://github.com/ABCD-STUDY">GitHub page</a>.</li>
+<li>If you are analyzing these behavioral data with the MID fMRI data and you do not plan on removing any initial frames prior to analysis, you must adjust the mid_anticipationonset, mid_feedbackonset, and mid_rttime variables in the following way:
+<ul>
+<li>Siemens/Philips Scanners: Add 6400 ms</li>
+<li>GE DV25: Add 4000 ms</li>
+<li>GE DV26: Add 12,800 ms</li>
+</ul></li>
+</ul>
+<ol start="2" type="1">
+<li>All times are presented in milliseconds</li>
+</ol>
+</section>
+<section id="stop-signal-task-sst" class="level2">
+<h2 class="anchored" data-anchor-id="stop-signal-task-sst">Stop Signal Task (SST)</h2>
+<p>The following table provides the column names that are contained within the SST pre-processed behavioral data files, as well as a brief description of the variable and what type of data it contains.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Column name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>task</code></td>
+<td>Behavioral task completed</td>
+</tr>
+<tr class="odd">
+<td><code>src_subject_id</code></td>
+<td>Subject IDeventname</td>
+</tr>
+<tr class="even">
+<td><code>site</code></td>
+<td>Data collection site ID</td>
+</tr>
+<tr class="odd">
+<td><code>date</code></td>
+<td>Date at which the data were collected</td>
+</tr>
+<tr class="even">
+<td><code>time</code></td>
+<td>Local time at which the data were collected</td>
+</tr>
+<tr class="odd">
+<td><code>sst_run</code></td>
+<td>Whether the trial occurred on the first or second run of the task</td>
+</tr>
+<tr class="even">
+<td><code>sst_trialnum</code></td>
+<td>E-Prime-labeled trial number within each run (note: these numbers are generated by E-Prime and do not necessarily correspond with the absolute trial number; e.g., the first trial in a run may be labeled as number 3)</td>
+</tr>
+<tr class="odd">
+<td><code>sst_stimonset</code></td>
+<td>Variable constructed by the trial-level task force (see <a href="#appendix-b">Appendix B</a>) that indicates the global onset time of each trial</td>
+</tr>
+<tr class="even">
+<td><code>sst_beginfix_starttime</code></td>
+<td>Global “start time” (when an E-Prime slide is scheduled to be presented) for the fixation slide that began each run; this time should correspond to the beginning of fMRI data collection for the run</td>
+</tr>
+<tr class="odd">
+<td><code>sst_beginfix_onsettime</code></td>
+<td>Global “onset time” (when an E-Prime slide actually begins to be presented) for the fixation slide that began each run</td>
+</tr>
+<tr class="even">
+<td><code>sst_stim</code></td>
+<td>Variable constructed by the trial-level task force (see <a href="#appendix-b">Appendix B</a>) that indicates the choice stimulus presented for the trial (right- or left-facing arrow)</td>
+</tr>
+<tr class="odd">
+<td><code>sst_stimfile</code></td>
+<td>Name of the .bmp file for the presented choice stimulus, which was used to compute the “sst_stim” variable</td>
+</tr>
+<tr class="even">
+<td><code>sst_primaryresp</code></td>
+<td>Variable constructed by the trial-level task force (see <a href="#appendix-b">Appendix B</a>) that indicates the first response the participant made on each trial (right- or left-facing arrow)</td>
+</tr>
+<tr class="odd">
+<td><code>sst_primaryrt</code></td>
+<td>Variable constructed by the trial-level task force (see <a href="#appendix-b">Appendix B</a>) that indicates the response time for the first response the participant made on each trial</td>
+</tr>
+<tr class="even">
+<td><code>sst_go_onsettime</code></td>
+<td>Global onset time for “go” slidessst_go_resp</td>
+</tr>
+<tr class="odd">
+<td><code>sst_go_rt</code></td>
+<td>Response times locked to the beginning of “go” slides</td>
+</tr>
+<tr class="even">
+<td><code>sst_go_rttime</code></td>
+<td>Global timing of responses to “go” slides</td>
+</tr>
+<tr class="odd">
+<td><code>sst_ssd_onsettime</code></td>
+<td>Global onset time for “ssd” <code>slidessst_ssd_resp</code></td>
+</tr>
+<tr class="even">
+<td><code>sst_ssd_rt</code></td>
+<td>Response times locked to the beginning of “ssd” slides</td>
+</tr>
+<tr class="odd">
+<td><code>sst_ssd_rttime</code></td>
+<td>Global timing of responses to “ssd” slides</td>
+</tr>
+<tr class="even">
+<td><code>sst_ssd_dur</code></td>
+<td>Duration of the stop-signal delay (SSD) for STOP trials</td>
+</tr>
+<tr class="odd">
+<td><code>sst_stopsignal_onsettime</code></td>
+<td>Global onset time for “stopsignal” <code>slidessst_stopsignal_resp</code></td>
+</tr>
+<tr class="even">
+<td><code>sst_stopsignal_rt</code></td>
+<td>Response times locked to the beginning of “stopsignal” slides</td>
+</tr>
+<tr class="odd">
+<td><code>sst_stopsignal_rttime</code></td>
+<td>Global timing of responses to “stopsignal” slides</td>
+</tr>
+<tr class="even">
+<td><code>sst_fix_onsettime</code></td>
+<td>Global onset time for “fix” <code>slidessst_fix_resp</code></td>
+</tr>
+<tr class="odd">
+<td><code>sst_fix_rt</code></td>
+<td>Response times locked to the beginning of “fix” slides (note: the global timing of responses to “fix” slides was not recorded by the task)</td>
+</tr>
+<tr class="even">
+<td><code>sst_leftarrow</code></td>
+<td>Variable that maps participants’ button press responses to the “left arrow” response</td>
+</tr>
+<tr class="odd">
+<td><code>sst_rightarrow</code></td>
+<td>Variable that maps participants’ button press responses to the “right arrow” response</td>
+</tr>
+<tr class="even">
+<td><code>sst_expcon</code></td>
+<td>Whether the trial was in the GO or STOP condition</td>
+</tr>
+<tr class="odd">
+<td><code>sst_choiceacc</code></td>
+<td>Variable constructed by the trial-level task force (see <a href="#appendix-b">Appendix B</a>) for whether participants’ response to the choice task (left- vs.&nbsp;right-facing arrow) was accurate (1) or inaccurate (0)</td>
+</tr>
+<tr class="even">
+<td><code>sst_inhibitacc</code></td>
+<td>Variable constructed by the trial-level task force (see <a href="#appendix-b">Appendix B</a>) indicating, for STOP trials, whether participants successfully inhibited (1) or failed to inhibit (0)</td>
+</tr>
+</tbody>
+</table>
+<section id="concerns-regarding-abcd-sst-task" class="level3">
+<h3 class="anchored" data-anchor-id="concerns-regarding-abcd-sst-task">Concerns regarding ABCD SST task</h3>
+<p><span class="citation" data-cites="bissett2020">Bissett et al. (<a href="#ref-bissett2020" role="doc-biblioref">2020</a>)</span> raised several concerns about the design and data recording procedures of the ABCD SST. Trial-level data users are encouraged to read this manuscript, as well as our response <span class="citation" data-cites="garavan2020">Garavan et al. (<a href="#ref-garavan2020" role="doc-biblioref">2020</a>)</span>), and the outline (see <a href="#appendix-a">Appendix A</a> below) of how each identified concern affects the trial-level data in this release. Two of the concerns raised have particularly important implications for the inclusion of individual subjects:</p>
+<ol type="1">
+<li><p>The fact that a subset of individuals display response time (RT) data that cannot be explained by the standard SST Independent Race Model (mean failed STOP RT &gt; mean GO RT)</p></li>
+<li><p>A data recording glitch, which occurs when a participant makes a fast (&lt;50ms) response on a STOP trial with a 50ms stop-signal delay and which causes all subsequent STOP trials to be incorrectly recorded as failures to stop with the same RT, altering the tracking algorithm. Therefore, in addition to the standard ABCD performance exclusion criteria outlined above, users interested in applying race models of inhibition to the trial-level data are encouraged to exclude participants from analysis who have the following flags:</p></li>
+</ol>
+<ul>
+<li>Participants with mean STOP RT &gt; mean GO RT, indicating clear violations of Independent Race Model assumptions (<code>tfmri_sst_beh_violatorflag</code>)</li>
+<li>Participants who display evidence of the recording glitch, as outlined in <a href="#appendix-a">Appendix A</a> (<code>tfmri_sst_beh_glitchflag</code>)</li>
+</ul>
+<p>However, if users are primarily interested in analyzing features of performance on the GO choice task (e.g., GO RT variability), such exclusions may not be necessary.</p>
+<p>Task trials involved the presentation of stimuli on several different slides in E-Prime: GO trials involved the presentation of a “go” slide with the choice stimulus for 1000ms, or until a participant responded, followed by a “fix” slide which presented a fixation cross for the remaining duration of the 1000ms trial and jittered intertrial interval; STOP trials involved the presentation of a “ssd” slide with the choice stimulus for the duration of the variable stop-signal delay on that trial, followed by a “stopsignal” slide that presented the stop signal (upward facing arrow) for 300ms, and finally by a “fix” slide which presented a fixation cross for the remaining duration of the 1000ms trial plus the duration of the jittered intertrial interval. The recording of RTs and responses was linked to the individual slide, rather than being locked to the onset of the trial.</p>
+<p>To facilitate use of the trial-level data, the ABCD trial-level behavioral data (TLBD) task force applied minimal pre-processing steps (outlined in <a href="#appendix-b">Appendix B</a>) to determine the first response a participant made on each trial (sst_primaryresp variable), which in standard research contexts is treated as the participant’s main response, and accurately estimates the RT for this response (<code>sst_primaryresp</code> variable). However, all relevant response, RT and onset timing variables from the individual slides have been retained, as described below, which will allow other researchers to compute response and RT variables using their own methods, if desired.</p>
+<p>When possible, participants who were unable to complete the task in the scanner, completed the task behaviorally outside the scanner on a laptop computer. Whether a participant performed the SST in the scanner or on a laptop is indicated by the following variable in the main tabulated data: <code>mr_y_adm__nts__tfmri__sst_indicator</code>. For more details, see the <a href="../../documentation/imaging/admin.html#mr_y_adm__nts">MRI Scanning Checklist and Notes</a> instrument.</p>
+</section>
+<section id="appendix-a" class="level3">
+<h3 class="anchored" data-anchor-id="appendix-a">Appendix A</h3>
+<p><strong>Details on the specific issues raised in the “Cautionary Note” manuscript by Bisset et al, and how they affect the use of these trial-level data.</strong></p>
+<p>As noted above, a manuscript entitled “A cautionary note on stop-signal data from the Adolescent Brain Cognitive Development [ABCD] study” (<span class="citation" data-cites="bissett2020">Bissett et al. (<a href="#ref-bissett2020" role="doc-biblioref">2020</a>)</span>) raised several concerns about the ABCD SST’s design and data recording procedures. Users of the trial-level data are encouraged to read this manuscript and any associated commentaries prior to analyzing these data. For clarity, this section provides a brief summary of each concern and the specific implications that these concerns present for analysis of the trial-level data included in this release.</p>
+<p><strong>1. Different “go” choice stimulus presentation durations across trials.</strong></p>
+<p><em>Summary:</em></p>
+<p>On GO trials, the choice stimulus (a right- or left-facing arrow) is presented on screen until the participant responds or until a 1000ms window passes, whichever occurs first. However, on STOP trials, the visual stop signal (an upward facing arrow) replaces the “go” choice stimulus following the stop-signal delay. This causes the presentation time of the choice stimulus to be substantially shorter, on average, for STOP trials than for GO trials, which likely makes the choice task more difficult in the STOP condition. The increase in difficulty likely yields slower and less accurate choice responses in this condition (particularly for STOP trials with relative short stop-signal delays). The Independent Race Model, which is the dominant framework for estimating the main index of inhibition on the SST (stop-signal reaction time; SSRT) assumes context independence, which means that the “go” choice process and its average finishing time are not affected by the presentation of the stop signal (i.e., that the “go” process is identical between GO and STOP trials). As context independence is essential for accurate estimation of SSRT in the race model, and as the choice stimulus presentation durations of the ABCD SST likely cause violations of the context independence assumption, especially at short stop-signal delays, SSRT estimates drawn from applications of the race model to these data could be inaccurate.</p>
+<p><em>Implications for the use of trial-level data:</em></p>
+<p>This issue does not affect the accurate recording of trial-level data, but it does present a problem for applications of SSRT measurement models, such as at the Independent Race Model, that assume context independence. However, the extent to which this design feature impacts estimates of SSRT, and whether this impact has a substantial effect on the rank ordering of subjects (i.e., whether individuals with high vs.&nbsp;low inhibitory ability still show relatively high and low SSRT estimates, respectively, even if the absolute values of SSRT are biased), has yet to be determined. Future experimental or computational modeling studies could help provide greater clarity about these questions. Current users are encouraged to carefully consider the assumptions of any measurement model they apply to these data and to consider the possible limitations of parameter estimates and measures derived from any model that assumes context independence. Another important implication related to this assumption is that individual participants who display mean RT on failed STOP trials that is longer than mean RT on GO trials (which occurs in a small subset of ABCD participants) exhibit a pattern of data that cannot be explained by a race model that assumes context independence. Therefore, users interested in applying models with this assumption should consider excluding these participants (who can be identified with the tfmri_sst_beh_violatorflag variable) as violators of the independence assumption.</p>
+<p><strong>2. “Go” choice stimulus is not presented on STOP trials with a 0ms stop-signal delay.</strong></p>
+<p><em>Summary:</em></p>
+<p>This is a special case of the first issue discussed above. Since the visual stop-signal stimulus replaces the “go” choice stimulus after the stop-signal delay, the choice stimulus is not actually presented on trials where the stop-signal delay is 0ms. This may violate assumptions of measurement models applied to the task (including the Independent Race Model) and may confuse participants.</p>
+<p><em>Implications for the use of trial-level data:</em></p>
+<p>Similar to the first issue discussed above, the implications of this feature depend on the assumptions of the specific measurement model being applied to the data and whether users believe that this feature would substantially impact their ability to test their specific research question. Users may consider excluding these trials from analysis and/or excluding participants with a large proportion of these trials if they determine that doing so is appropriate. To facilitate these participant-level exclusions, variable tfmri_sst_beh_0ssdcount provides a count of how many 0ms stop-signal delay trials each participant has.</p>
+<p><strong>3. A glitch leads to incorrect stop-signal delays for some participants.</strong></p>
+<p><em>Summary:</em></p>
+<p>Due to a glitch in the experimental program, if a participant makes a response in &lt;50ms on a STOP trial where the stop-signal delay is equal to 50ms, all subsequent STOP trials will be erroneously recorded as having a response with the exact same RT on the “ssd” slide. Because these trials are incorrectly coded as stopping failures by the experimental program, all subsequent stop-signal delays will be stuck at 0ms. As the conditions that trigger this glitch are very specific, it is only present in about 3% of participants.</p>
+<p><em>Implications for the use of trial-level data:</em></p>
+<p>As this glitch leads incorrect values of <code>sst_ssd_rt</code> to be recorded on subsequent trials and leads to stop-signal delays that do not correspond to the task’s standard staircase pattern, users are encouraged to exclude participants who show evidence of the glitch (who can be identified with the <code>tfmri_sst_beh_glitchflag</code> variable). However, users should also note that, because the glitch primarily affects the <code>sst_ssd_rt</code> variable, but the pre-processing steps (outlined in Appendix B) ignore the “ssd” slide on trials with 0ms stop-signal delays, the constructed variables in the trial-level data (<code>sst_primaryresp</code>, <code>sst_primaryrt</code>, <code>sst_choiceacc</code>, <code>sst_inhibitacc</code>) should be accurate for subsequent trials.</p>
+<p><strong>4. Stop-signal duration is shorter for trials with stop-signal delays &gt;700ms.</strong></p>
+<p><em>Summary:</em></p>
+<p>If the stop-signal delay for a given STOP trial is &gt;700ms, the stop-signal stimulus is not presented for the standard 300ms and is instead presented for a shorter duration (1000ms minus the stop-signal delay). As the Independent Race Model assumes “stop” context independence in addition to “go” context independence, and the shorter presentation time on these trials may violate this assumption, these trials may be inappropriate to include in race model analyses.</p>
+<p><em>Implications for the use of trial-level data:</em></p>
+<p>As these trials are relatively rare (roughly 1% of STOP trials in the data set), users may consider excluding them from analysis and/or excluding participants with a large proportion of these trials if they determine that doing so is appropriate.</p>
+<p><strong>5. Non-uniform conditional trial probability.</strong></p>
+<p><em>Summary:</em></p>
+<p>As reviewed in detail in Bisset et al, the probability of encountering a stop signal on a given trial in the ABCD SST is not uniform and instead depends on the recency of previous STOP trials. The most notable feature of the conditional trial probability distribution is that STOP trials are never repeated two times in a row, which could allow participants to learn this contingency and therefore improve their performance on the task. However, the authors provide evidence that, at least for the baseline ABCD session, participants did not appear to learn the contingency.</p>
+<p><em>Implications for the use of trial-level data:</em></p>
+<p>Unless users encounter compelling evidence that participants are learning the conditional trial probability contingencies, no adjustments are necessary.</p>
+<p><strong>6. Trial accuracy incorrectly coded.</strong></p>
+<p><em>Summary:</em></p>
+<p>The experimental program incorrectly classified a small number (&lt;1%) of correct “go” choices as incorrect “go” choices and a small number (2-3%) of incorrect “go” choices as correct “go” choices. In addition, &lt;1% of stop failure trials were incorrectly classified as correctly inhibited STOP trials. These incorrect classifications were recorded in a column of the raw E-Prime output (“TrialCode”) that is not included in this trial-level data release and was not used to generate any of the constructed variables in the minimally pre-processed data columns.</p>
+<p><em>Implications for the use of trial-level data:</em></p>
+<p>As the column with these errors is not included in the data release, and as these errors would only have minimal impacts on participants’ stop-signal delays produced by the tracking algorithm, no adjustments are necessary.</p>
+<p><strong>7. Stop-signal delay values start at 50ms.</strong></p>
+<p><em>Summary:</em></p>
+<p>The initial stop-signal delay value of 50ms, which is relatively low, could present problems if it leads to abnormally high stop success rates on the first few trials of the task or if it drives participants to shift their strategy over the course of the experiment. The authors provide evidence that stopping accuracy is elevated on the first 10 trials relative to the rest of the trials, and specifically that the first 7 trials have stop success rates &gt; .60.</p>
+<p><em>Implications for the use of trial-level data:</em></p>
+<p>Users can consider removing the first 7 to 10 STOP trials of the task or conducting separate sensitivity analyses in which these trials are removed.</p>
+<p><strong>8. Low STOP trial probability.</strong></p>
+<p><em>Summary:</em></p>
+<p>The authors point out that the stop trial probability on the ABCD SST (.167) is somewhat lower than stop trial probabilities on most other SST paradigms (.25-.33). However, there are currently no indications that this low stop trial probability impacts inferences from the task.</p>
+<p><em>Implications for the use of trial-level data:</em></p>
+<p>Unless users encounter compelling evidence that this design feature impacts inferences, no adjustments are necessary.</p>
+</section>
+<section id="appendix-b" class="level3">
+<h3 class="anchored" data-anchor-id="appendix-b">Appendix B</h3>
+<p><strong>Details of minimal pre-processing steps</strong></p>
+<p>These pre-processing steps were conducted to facilitate the use of the trial-level data in most applications by creating variables that record participants’ first response on each trial (regardless of which slide this response occurs on), the global onset times of each trial, easily interpretable names for the stimuli and responses, and variables that indicate separately whether participants made accurate decisions on the choice task and whether they succeeded in inhibiting responses on STOP trials. The code used to implement the following pre-processing steps have been made publicly available on the ABCD-STUDY GitHub: <a href="https://github.com/ABCD-STUDY" class="uri">https://github.com/ABCD-STUDY</a>.</p>
+<p>1. Create general stimulus onset variable for all trials</p>
+<ul>
+<li>For GO trials –&gt; set <code>sst_stimonset</code> = <code>sst_go_onsettime</code></li>
+<li>For STOP trials in which <code>sst_ssd_dur &gt; 0ms</code> –&gt; set <code>sst_stimonset</code> = <code>sst_ssd_onsettime</code></li>
+<li>For STOP trials in which <code>sst_ssd_dur</code> = 0ms –&gt; set <code>sst_stimonset</code> = <code>sst_stopsignal_onsettime</code></li>
+</ul>
+<p>2. Create variable with details of the presented stimulus</p>
+<ul>
+<li>For any trial in which <code>sst_stimfile</code> = “images/Right_Arrow.bmp” –&gt; set <code>sst_stim = "right_arrow"</code></li>
+<li>For any trial in which <code>sst_stimfile</code> = “images/Left_Arrow.bmp” –&gt; set <code>sst_stim = "left_arrow"</code></li>
+</ul>
+<p>3. Determine response mapping for the participant</p>
+<ul>
+<li>Responses on the E-Prime slides (<code>sst_go_resp</code>, <code>sst_fix_resp</code>, <code>sst_ssd_resp</code>, <code>sst_stopsignal_resp</code>) are sometimes recorded as integers (e.g., 1 or 2) and sometimes recorded as strings (e.g., “LEFTARROW”). Therefore, the mapping between raw response data and the “right_arrow” and “left_arrow” responses must be established for each participant. If raw responses were integers, the <code>sst_leftarrow</code> and <code>sst_rightarrow</code> columns were used to establish response mapping. If raw responses were strings, the presence of “right” or “left” in the string was used to establish response mapping.</li>
+</ul>
+<p>4. Compute primary response and primary RT for GO trials</p>
+<ul>
+<li>If the participant’s first response on the trial is during the “go” slide, the RT and response from that slide (<code>sst_go_rt</code> and <code>sst_go_resp</code>) are recorded as the participant’s primary RT and response for that trial. Subsequent responses during the following “fix” slide are ignored.</li>
+<li>If the participant’s first response on the trial is instead during the “fix” slide (i.e., their response latency was &gt;1000ms), the reconstructed RT (<code>sst_fix_rt</code> + 1000) and the response (<code>sst_fix_resp</code>) from the “fix” slide are recorded as the participant’s primary RT and response for that trial.</li>
+<li>If the participant fails to respond during either the “go” or “fix” slide, their response and RT on that trial are treated as missing (blank)</li>
+</ul>
+<p>5. Compute primary response and primary RT for STOP trials</p>
+<ul>
+<li>If <code>sst_ssd_dur</code> &gt; 0ms AND <code>sst_ssd_dur</code> &gt; &lt;700ms:
+<ul>
+<li>If the participant’s first response on the trial is during the “ssd” slide, the RT and response from that slide (<code>sst_ssd_rt</code> and <code>sst_ssd_resp</code>) are recorded as the participant’s primary RT and response for that trial. Subsequent responses during the following “stopsignal” and “fix” slides are ignored.</li>
+<li>If the participant’s first response on the trial is during the “stopsignal” slide, the reconstructed RT (<code>sst_stopsignal_rttime - sst_ssd_onsettime</code>) and the response (<code>sst_stopsignal_resp</code>) from that slide are recorded as the participant’s primary RT and response for that trial. Subsequent responses during the following “fix” slide are ignored.</li>
+<li>If the participant’s first response on the trial is during the “fix” slide, the reconstructed RT (<code>sst_fix_rt + 300 + sst_ssd_dur</code>) and the response (<code>sst_fix_resp</code>) from that slide are recorded as the participant’s primary RT and response for that trial.</li>
+<li>If the participant fails to respond during any of these three slides, their primary response and RT on that trial are treated as missing (blank)</li>
+</ul></li>
+<li>If <code>sst_ssd_dur</code> = 0ms:
+<ul>
+<li>If the participant’s first response on the trial is during the “stopsignal” slide, the RT (<code>sst_stopsignal_rt</code>) and the response (<code>sst_stopsignal_resp</code>) from that slide are recorded as the participant’s primary RT and response for that trial. Subsequent responses during the following “fix” slide are ignored.</li>
+<li>If the participant’s first response on the trial is during the “fix” slide, the reconstructed RT (<code>sst_fix_rt</code> + 300) and the response (<code>sst_fix_resp</code>) from that slide are recorded as the participant’s primary RT and response for that trial.</li>
+<li>If the participant fails to respond during either of the two slides, their response and RT on that trial are treated as missing (blank)</li>
+</ul></li>
+<li>If <code>sst_ssd_dur</code> &gt; 700ms:
+<ul>
+<li>Same procedures as used above (for if <code>sst_ssd_dur</code> is &gt;0ms and &lt;700ms) are implemented, unless the first response is on the “fix” slide, in which case the RT is calculated simply as <code>sst_fix_rt</code> + 1000</li>
+</ul></li>
+</ul>
+<p>6. Compute accuracy variables</p>
+<ul>
+<li>To compute the sst_choiceacc variable for each trial:
+<ul>
+<li>If <code>sst_primaryresp</code> = NA/blank –&gt; set <code>sst_choiceacc</code> = NA/blank</li>
+<li>If <code>sst_primaryresp</code> ≠ NA/blank AND <code>sst_stim</code> = <code>sst_primaryresp</code> –&gt; set <code>sst_choiceacc</code> = 1</li>
+<li>If <code>sst_primaryresp</code> ≠ NA/blank AND <code>sst_stim</code> ≠ <code>sst_primaryresp</code> –&gt; set <code>sst_choiceacc</code> = 0</li>
+</ul></li>
+<li>To compute the sst_inhibitacc variable for each trial:
+<ul>
+<li>If <code>sst_expcon</code> = GoTrial, <code>sst_inhibitacc</code> = NA/blank</li>
+<li>If <code>sst_expcon</code> ≠ GoTrial AND <code>sst_primaryresp</code> = NA/blank –&gt; set <code>sst_inhibitacc</code> = 1</li>
+<li>If <code>sst_expcon</code> ≠ GoTrial AND <code>sst_primaryresp</code> ≠ NA/blank –&gt; set <code>sst_inhibitacc</code> = 0</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="emotional-nback-working-memory-task" class="level2">
+<h2 class="anchored" data-anchor-id="emotional-nback-working-memory-task">Emotional nBack Working Memory Task</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Column name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="even">
+<td><code>task</code></td>
+<td>Behavioral task completed</td>
+</tr>
+<tr class="odd">
+<td><code>subject</code></td>
+<td>Subject IDeventname</td>
+</tr>
+<tr class="even">
+<td><code>site</code></td>
+<td>Data collection site ID</td>
+</tr>
+<tr class="odd">
+<td><code>date</code></td>
+<td>Date at which the data were collected</td>
+</tr>
+<tr class="even">
+<td><code>time</code></td>
+<td>Local time at which the data were collected</td>
+</tr>
+<tr class="odd">
+<td><code>enback_trialnum</code></td>
+<td>Variable constructed by the trial-level task force which indicates the trial number within each run</td>
+</tr>
+<tr class="even">
+<td><code>enback_run</code></td>
+<td>Variable constructed by the trial-level task force which indicates the run number</td>
+</tr>
+<tr class="odd">
+<td><code>enback_runtrialnumber[Block]</code></td>
+<td>E-Prime-labeled trial number (note: these numbers are generated by E-Prime and do not necessarily correspond with the absolute trial number; e.g., the first trial may be labeled as number 3)</td>
+</tr>
+<tr class="even">
+<td><code>enback_cue0back_onsettime</code></td>
+<td>Global onset time for the cues that begin 0-back blocks</td>
+</tr>
+<tr class="odd">
+<td><code>enback_cue2back_onsettime</code></td>
+<td>Global onset time for the cues that begin 2-back blocks</td>
+</tr>
+<tr class="even">
+<td><code>enback_stim_onsettime</code></td>
+<td>Global onset time for each stimulus</td>
+</tr>
+<tr class="odd">
+<td><code>enback_fix_onsettime</code></td>
+<td>Global onset time for the intertrial interval following each stimulus, during which a fixation cross is presented</td>
+</tr>
+<tr class="even">
+<td><code>enback_cuefix_starttime</code></td>
+<td>Global start time of the fixation cross presentation that precedes each block (note: the first of these times in each run should correspond to the beginning of fMRI data collection for that run)</td>
+</tr>
+<tr class="odd">
+<td><code>enback_loadcon</code></td>
+<td>N-back load condition (0-back or 2-back)</td>
+</tr>
+<tr class="even">
+<td><code>enback_stimtype</code></td>
+<td>Emotion condition (PosFace, NegFace, NeutFace, Place) of the stimulus</td>
+</tr>
+<tr class="odd">
+<td><code>enback_targettype</code></td>
+<td>Target status (target, lure, nonlure) of the stimulus</td>
+</tr>
+<tr class="even">
+<td><code>enback_stimfile</code></td>
+<td>Name of the specific .bmp image presented for each stimulus</td>
+</tr>
+<tr class="odd">
+<td><code>enback_stim_resp</code></td>
+<td>Participant’s button press response</td>
+</tr>
+<tr class="even">
+<td><code>enback_stim_rt</code></td>
+<td>Response time</td>
+</tr>
+<tr class="odd">
+<td><code>enback_stim_acc</code></td>
+<td>Whether the participant’s choice was accurate</td>
+</tr>
+<tr class="even">
+<td><code>enback_stim_rttime</code></td>
+<td>Global time of the response to the trial</td>
+</tr>
+</tbody>
+</table>
+<p>Although most of the variables in this release were drawn from the raw E-Prime output, two variables (enback_trialnum and enbackrun) were computed with minimal pre-processing steps carried out by the ABCD trial-level task force. The code used to implement these pre-processing steps has been made publicly available on the ABCD Study’s <a href="https://github.com/ABCD-STUDY">GitHub page</a>.</p>
+<p>When possible, participants who were unable to complete the task in the scanner, completed the task behaviorally outside the scanner on a laptop computer. Whether a participant performed the nBack task in the scanner or on a laptop is indicated by the following variable in the main tabulated data: ra_scan_cl_nbac_scan_lap. For more details, see the <a href="../../documentation/imaging/admin.html#mr_y_adm__nts">MRI Scanning Checklist and Notes</a>.</p>
+<p>Note on global timing variables: All global timing variables reflect the raw global times recorded in E-Prime, which are locked to the beginning of the E-Prime task. As fMRI data begin to be collected some time after the experimenter starts the E-Prime task, users interested in locking events in the trial-level data to the fMRI data will need to transform these global times by subtracting the global start time of each run from all global timing variables (as detailed in the variable descriptions above).</p>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bissett2020" class="csl-entry" role="listitem">
+Bissett, Patrick G., McKenzie P. Hagen, Henry M. Jones, and Russell A. Poldrack. 2020. doi:<a href="https://doi.org/10.1101/2020.05.08.084707">10.1101/2020.05.08.084707</a>.
+</div>
+<div id="ref-garavan2020" class="csl-entry" role="listitem">
+Garavan, H, B Chaarani, S Hahn, N Allgaier, A Juliano, Dk Yuan, C Orr, et al. 2020. doi:<a href="https://doi.org/10.1101/2020.07.27.223057">10.1101/2020.07.27.223057</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><i>ABCD Study</i>®, <i>Teen Brains. Today’s Science. Brighter Future.</i>® and the ABCD Study Logo are registered marks of the U.S. Department of Health &amp; Human Services (HHS). Adolescent Brain Cognitive Development℠ Study is a service mark of the U.S. Department of Health &amp; Human Services (HHS).</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
