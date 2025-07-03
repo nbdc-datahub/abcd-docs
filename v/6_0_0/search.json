@@ -1337,7 +1337,7 @@
     "href": "documentation/imaging/type_dmri.html",
     "title": "Diffusion MRI",
     "section": "",
-    "text": "Please scroll horizontally \n            \n            \n            to view the number of variables and events of administration for the displayed tables.\n        \n        \n        \n\n\n\nThe Diffusion MRI (DTI) data contains imaging field maps, non-diffusion weighted images with opposite phase encode polarity, and multi-b-value, multi-direction diffusion weighted images.\n\n\n\nEddy current distortion correction with a nonlinear estimation using diffusion gradient orientations and amplitudes to predict the pattern of distortions (Zhuang et al. 2006)\nHead motion corrected by registering to images synthesized from tensor fit (Hagler et al. 2019)\nDiffusion gradients adjusted for head rotation (Hagler et al. 2009; Leemans and Jones 2009)\nRobust diffusion tensor estimation (Chang, Jones, and Pierpaoli 2005) used to identify and replace dark slices caused by abrupt head motion\nB0 distortions were corrected using the reversing gradient method with FMRIB Software Library’s topup (Andersson, Skare, and Ashburner 2003; Smith et al. 2004)\nGradient nonlinearity distortion correction (Jovicich et al. 2006)\nT2-weighted b=0 images to T1w structural images using mutual information (Wells et al. 1996)\nResampled into a standard orientation with 1.7 mm isotropic resolution\n\n\n\n\n\nConventional DTI methods (Basser, Mattiello, and LeBihan 1994; Le Bihan et al. 2001; Pierpaoli et al. 1996)\nTwo modeling approaches\n\nDTI inner shell (DTIIS): b values &gt; 1000 excluded from tensor fitting. DTI inner shell may be useful when comparing results to other, single-shell diffusion studies, particularly for MD, LD, or TD.\nDTI full shell (DTIFS): all b values used in the tensor fitting DTI full shell is recommended for most applications.\n\nMeasures of microstructural tissue properties\n\nFractional anisotropy (FA)\nMean diffusivity (MD)\nLongitudinal (or axial) diffusivity (LD)\nTransverse (or radial) diffusivity (TD)\n\n\n\n\n\n\nLinear estimation approach allowing for mixtures of “restricted”, “hindered”, and “free” diffusion pools within individual voxels (N. S. White et al. 2013; Nathan S. White et al. 2014)\nTakes advantage of multiple b-value acquisition\nTwo signal fractions modeled as fiber orientation density (FOD) functions\n\nLongitudinal diffusivity constant for both fractions, with a value of 1.0 x 10-3 mm2/s\nRestricted fraction (e.g. intracellular): transverse diffusivity modelled as 0\nHindered fraction (e.g. extracellular): transverse diffusivity modelled as 0.9 x 10-3 mm2/s\n\nOne signal fractions modeled as isotropic free water diffusion\n\nFree fraction (e.g., CSF): isotropic diffusivity modeled as 3.0 x10-3 mm2/s\n\nMeasures derived from the RSI model fit (see Supplementary Tables)\n\nRestricted normalized isotropic (RNI, previously N0)\n\nThe 0th order spherical harmonic coefficient of the restricted fraction divided by the Euclidean norm (square root of the sum of squares) of all model coefficients\n\nRestricted normalized directional or “neurite density” (RND, previously ND)\n\nNorm of the 2nd and 4th order spherical harmonic coefficients of the restricted fraction divided by the norm of all model coefficients\n\nRestricted normalized total (RNT, previously NT)\n\nNorm of the 0th, 2nd, and 4th order spherical harmonic coefficients of the restricted fraction divided by the norm of all model coefficients\n\nHindered normalized isotropic (HNI, previously N0_s2)\n\nThe 0th order spherical harmonic coefficient of the hindered fraction divided by the norm of all model coefficients\n\nHindered normalized directional (HND, previously ND_s2)\n\nNorm of the 2nd and 4th order spherical harmonic coefficients of the hindered fraction divided by the norm of all model coefficients\n\nHindered normalized total (HNT, aka NT_s2)\n\nNorm of the 0th, 2nd, and 4th order spherical harmonic coefficients of the hindered fraction divided by the norm of all model coefficients\n\nFree normalized isotropic (FNI)\n\nThe 0th order spherical harmonic coefficient of the free water fraction divided by the norm of all model coefficients\n\n\n\n\n\n\n\nSubcortical structures labeled with atlas-based segmentation (Fischl et al. 2002)\nCortical regions labeled with the Desikan atlas-based classification (Desikan et al. 2006)\nCortical regions labeled with the Destrieux atlas-based classification (Destrieux et al. 2010)\nWhite and gray matter values sampled near gray/white boundary (Elman et al. 2017)\nMajor white matter tracts labelled using AtlasTrack (Hagler et al. 2009)\n\nVoxels containing primarily gray matter or cerebral spinal fluid excluded from analysis\n\nAtlas files and additional AtlasTrack documentation available here.",
+    "text": "Please scroll horizontally \n            \n            \n            to view the number of variables and events of administration for the displayed tables.\n        \n        \n        \n\n\n\nThe Diffusion MRI (DTI) data contains imaging field maps, non-diffusion weighted images with opposite phase encode polarity, and multi-b-value, multi-direction diffusion weighted images.\n\n\n\nEddy current distortion correction with a nonlinear estimation using diffusion gradient orientations and amplitudes to predict the pattern of distortions (Zhuang et al. 2006)\nHead motion corrected by registering to images synthesized from tensor fit (Hagler et al. 2019)\nDiffusion gradients adjusted for head rotation (Hagler et al. 2009; Leemans and Jones 2009)\nRobust diffusion tensor estimation (Chang, Jones, and Pierpaoli 2005) used to identify and replace dark slices caused by abrupt head motion\nB0 distortions were corrected using the reversing gradient method with FMRIB Software Library’s topup (Andersson, Skare, and Ashburner 2003; Smith et al. 2004)\nGradient nonlinearity distortion correction (Jovicich et al. 2006)\nT2-weighted b=0 images to T1w structural images using mutual information (Wells et al. 1996)\nResampled into a standard orientation with 1.7 mm isotropic resolution\n\n\n\n\n mr_y_dti\n\nConventional DTI methods (Basser, Mattiello, and LeBihan 1994; Le Bihan et al. 2001; Pierpaoli et al. 1996)\nTwo modeling approaches\n\nDTI inner shell (DTIIS): b values &gt; 1000 excluded from tensor fitting. DTI inner shell may be useful when comparing results to other, single-shell diffusion studies, particularly for MD, LD, or TD.\nDTI full shell (DTIFS): all b values used in the tensor fitting DTI full shell is recommended for most applications.\n\nMeasures of microstructural tissue properties\n\nFractional anisotropy (FA)\nMean diffusivity (MD)\nLongitudinal (or axial) diffusivity (LD)\nTransverse (or radial) diffusivity (TD)\n\n\n\n\n\n mr_y_rsi\n\nLinear estimation approach allowing for mixtures of “restricted”, “hindered”, and “free” diffusion pools within individual voxels (N. S. White et al. 2013; Nathan S. White et al. 2014)\nTakes advantage of multiple b-value acquisition\nTwo signal fractions modeled as fiber orientation density (FOD) functions\n\nLongitudinal diffusivity constant for both fractions, with a value of 1.0 x 10-3 mm2/s\nRestricted fraction (e.g. intracellular): transverse diffusivity modelled as 0\nHindered fraction (e.g. extracellular): transverse diffusivity modelled as 0.9 x 10-3 mm2/s\n\nOne signal fractions modeled as isotropic free water diffusion\n\nFree fraction (e.g., CSF): isotropic diffusivity modeled as 3.0 x10-3 mm2/s\n\nMeasures derived from the RSI model fit (see Supplementary Tables)\n\nRestricted normalized isotropic (RNI, previously N0)\n\nThe 0th order spherical harmonic coefficient of the restricted fraction divided by the Euclidean norm (square root of the sum of squares) of all model coefficients\n\nRestricted normalized directional or “neurite density” (RND, previously ND)\n\nNorm of the 2nd and 4th order spherical harmonic coefficients of the restricted fraction divided by the norm of all model coefficients\n\nRestricted normalized total (RNT, previously NT)\n\nNorm of the 0th, 2nd, and 4th order spherical harmonic coefficients of the restricted fraction divided by the norm of all model coefficients\n\nHindered normalized isotropic (HNI, previously N0_s2)\n\nThe 0th order spherical harmonic coefficient of the hindered fraction divided by the norm of all model coefficients\n\nHindered normalized directional (HND, previously ND_s2)\n\nNorm of the 2nd and 4th order spherical harmonic coefficients of the hindered fraction divided by the norm of all model coefficients\n\nHindered normalized total (HNT, aka NT_s2)\n\nNorm of the 0th, 2nd, and 4th order spherical harmonic coefficients of the hindered fraction divided by the norm of all model coefficients\n\nFree normalized isotropic (FNI)\n\nThe 0th order spherical harmonic coefficient of the free water fraction divided by the norm of all model coefficients\n\n\n\n\n\n\n\nSubcortical structures labeled with atlas-based segmentation (Fischl et al. 2002)\nCortical regions labeled with the Desikan atlas-based classification (Desikan et al. 2006)\nCortical regions labeled with the Destrieux atlas-based classification (Destrieux et al. 2010)\nWhite and gray matter values sampled near gray/white boundary (Elman et al. 2017)\nMajor white matter tracts labelled using AtlasTrack (Hagler et al. 2009)\n\nVoxels containing primarily gray matter or cerebral spinal fluid excluded from analysis\n\nAtlas files and additional AtlasTrack documentation available here.",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -1361,11 +1361,11 @@
     ]
   },
   {
-    "objectID": "documentation/imaging/type_dmri.html#diffusion-tensor-imaging-dti-analysis",
-    "href": "documentation/imaging/type_dmri.html#diffusion-tensor-imaging-dti-analysis",
+    "objectID": "documentation/imaging/type_dmri.html#mr_y_dti",
+    "href": "documentation/imaging/type_dmri.html#mr_y_dti",
     "title": "Diffusion MRI",
     "section": "",
-    "text": "Conventional DTI methods (Basser, Mattiello, and LeBihan 1994; Le Bihan et al. 2001; Pierpaoli et al. 1996)\nTwo modeling approaches\n\nDTI inner shell (DTIIS): b values &gt; 1000 excluded from tensor fitting. DTI inner shell may be useful when comparing results to other, single-shell diffusion studies, particularly for MD, LD, or TD.\nDTI full shell (DTIFS): all b values used in the tensor fitting DTI full shell is recommended for most applications.\n\nMeasures of microstructural tissue properties\n\nFractional anisotropy (FA)\nMean diffusivity (MD)\nLongitudinal (or axial) diffusivity (LD)\nTransverse (or radial) diffusivity (TD)",
+    "text": "mr_y_dti\n\nConventional DTI methods (Basser, Mattiello, and LeBihan 1994; Le Bihan et al. 2001; Pierpaoli et al. 1996)\nTwo modeling approaches\n\nDTI inner shell (DTIIS): b values &gt; 1000 excluded from tensor fitting. DTI inner shell may be useful when comparing results to other, single-shell diffusion studies, particularly for MD, LD, or TD.\nDTI full shell (DTIFS): all b values used in the tensor fitting DTI full shell is recommended for most applications.\n\nMeasures of microstructural tissue properties\n\nFractional anisotropy (FA)\nMean diffusivity (MD)\nLongitudinal (or axial) diffusivity (LD)\nTransverse (or radial) diffusivity (TD)",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -1375,11 +1375,11 @@
     ]
   },
   {
-    "objectID": "documentation/imaging/type_dmri.html#restriction-spectrum-imaging-rsi",
-    "href": "documentation/imaging/type_dmri.html#restriction-spectrum-imaging-rsi",
+    "objectID": "documentation/imaging/type_dmri.html#mr_y_rsi",
+    "href": "documentation/imaging/type_dmri.html#mr_y_rsi",
     "title": "Diffusion MRI",
     "section": "",
-    "text": "Linear estimation approach allowing for mixtures of “restricted”, “hindered”, and “free” diffusion pools within individual voxels (N. S. White et al. 2013; Nathan S. White et al. 2014)\nTakes advantage of multiple b-value acquisition\nTwo signal fractions modeled as fiber orientation density (FOD) functions\n\nLongitudinal diffusivity constant for both fractions, with a value of 1.0 x 10-3 mm2/s\nRestricted fraction (e.g. intracellular): transverse diffusivity modelled as 0\nHindered fraction (e.g. extracellular): transverse diffusivity modelled as 0.9 x 10-3 mm2/s\n\nOne signal fractions modeled as isotropic free water diffusion\n\nFree fraction (e.g., CSF): isotropic diffusivity modeled as 3.0 x10-3 mm2/s\n\nMeasures derived from the RSI model fit (see Supplementary Tables)\n\nRestricted normalized isotropic (RNI, previously N0)\n\nThe 0th order spherical harmonic coefficient of the restricted fraction divided by the Euclidean norm (square root of the sum of squares) of all model coefficients\n\nRestricted normalized directional or “neurite density” (RND, previously ND)\n\nNorm of the 2nd and 4th order spherical harmonic coefficients of the restricted fraction divided by the norm of all model coefficients\n\nRestricted normalized total (RNT, previously NT)\n\nNorm of the 0th, 2nd, and 4th order spherical harmonic coefficients of the restricted fraction divided by the norm of all model coefficients\n\nHindered normalized isotropic (HNI, previously N0_s2)\n\nThe 0th order spherical harmonic coefficient of the hindered fraction divided by the norm of all model coefficients\n\nHindered normalized directional (HND, previously ND_s2)\n\nNorm of the 2nd and 4th order spherical harmonic coefficients of the hindered fraction divided by the norm of all model coefficients\n\nHindered normalized total (HNT, aka NT_s2)\n\nNorm of the 0th, 2nd, and 4th order spherical harmonic coefficients of the hindered fraction divided by the norm of all model coefficients\n\nFree normalized isotropic (FNI)\n\nThe 0th order spherical harmonic coefficient of the free water fraction divided by the norm of all model coefficients",
+    "text": "mr_y_rsi\n\nLinear estimation approach allowing for mixtures of “restricted”, “hindered”, and “free” diffusion pools within individual voxels (N. S. White et al. 2013; Nathan S. White et al. 2014)\nTakes advantage of multiple b-value acquisition\nTwo signal fractions modeled as fiber orientation density (FOD) functions\n\nLongitudinal diffusivity constant for both fractions, with a value of 1.0 x 10-3 mm2/s\nRestricted fraction (e.g. intracellular): transverse diffusivity modelled as 0\nHindered fraction (e.g. extracellular): transverse diffusivity modelled as 0.9 x 10-3 mm2/s\n\nOne signal fractions modeled as isotropic free water diffusion\n\nFree fraction (e.g., CSF): isotropic diffusivity modeled as 3.0 x10-3 mm2/s\n\nMeasures derived from the RSI model fit (see Supplementary Tables)\n\nRestricted normalized isotropic (RNI, previously N0)\n\nThe 0th order spherical harmonic coefficient of the restricted fraction divided by the Euclidean norm (square root of the sum of squares) of all model coefficients\n\nRestricted normalized directional or “neurite density” (RND, previously ND)\n\nNorm of the 2nd and 4th order spherical harmonic coefficients of the restricted fraction divided by the norm of all model coefficients\n\nRestricted normalized total (RNT, previously NT)\n\nNorm of the 0th, 2nd, and 4th order spherical harmonic coefficients of the restricted fraction divided by the norm of all model coefficients\n\nHindered normalized isotropic (HNI, previously N0_s2)\n\nThe 0th order spherical harmonic coefficient of the hindered fraction divided by the norm of all model coefficients\n\nHindered normalized directional (HND, previously ND_s2)\n\nNorm of the 2nd and 4th order spherical harmonic coefficients of the hindered fraction divided by the norm of all model coefficients\n\nHindered normalized total (HNT, aka NT_s2)\n\nNorm of the 0th, 2nd, and 4th order spherical harmonic coefficients of the hindered fraction divided by the norm of all model coefficients\n\nFree normalized isotropic (FNI)\n\nThe 0th order spherical harmonic coefficient of the free water fraction divided by the norm of all model coefficients",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -2682,11 +2682,11 @@
     ]
   },
   {
-    "objectID": "documentation/imaging/type_qc.html#freesurfer-qc",
-    "href": "documentation/imaging/type_qc.html#freesurfer-qc",
+    "objectID": "documentation/imaging/type_qc.html#mr_y_qc__post__man__fsurf",
+    "href": "documentation/imaging/type_qc.html#mr_y_qc__post__man__fsurf",
     "title": "MRI Quality Control",
     "section": "FreeSurfer QC",
-    "text": "FreeSurfer QC\n\nManual review of FreeSurfer cortical surface reconstruction\nReviewers assigned binary QC score\n\n0 = reject\nMost severe artifacts or irregularities\nResults still included in shared tabulated data\nRecommended exclusion from group analyses involving cortical surface ROIs\n1 = accept\n\nReviewers gauged the severity of five types of artifact or processing problem\n\nQU_motion: motion artifact in T1w image\nQU_inhomo: intensity inhomogeneity\nQU_wmunder: white matter underestimation\nQU_pialover: pial overestimation\nQU_artifact: magnetic susceptibility artifact\n\nNumeric values assigned on a scale of 0-3\n\nAbsent, mild, moderate, or severe, respectively\nOverall QC score of 0 assigned if severity score of 3 for any artifact type\n\n\nNote: Imaging-derived results are included in shared tabulated data regardless of post-processing QC. QC variables (derived from procedures described above) are included in shared tabulated data. The overall, binary QC score described above indicates whether inclusion or exclusion is recommended based on this criterion alone (see above Recommended Imaging Inclusion). FreeSurfer QC was performed for ~7% of participant-events with T1w imaging data.",
+    "text": "FreeSurfer QC\n mr_y_qc__post__man__fsurf\n\nManual review of FreeSurfer cortical surface reconstruction\nReviewers assigned binary QC score\n\n0 = reject\nMost severe artifacts or irregularities\nResults still included in shared tabulated data\nRecommended exclusion from group analyses involving cortical surface ROIs\n1 = accept\n\nReviewers gauged the severity of five types of artifact or processing problem\n\nQU_motion: motion artifact in T1w image\nQU_inhomo: intensity inhomogeneity\nQU_wmunder: white matter underestimation\nQU_pialover: pial overestimation\nQU_artifact: magnetic susceptibility artifact\n\nNumeric values assigned on a scale of 0-3\n\nAbsent, mild, moderate, or severe, respectively\nOverall QC score of 0 assigned if severity score of 3 for any artifact type\n\n\nNote: Imaging-derived results are included in shared tabulated data regardless of post-processing QC. QC variables (derived from procedures described above) are included in shared tabulated data. The overall, binary QC score described above indicates whether inclusion or exclusion is recommended based on this criterion alone (see above Recommended Imaging Inclusion). FreeSurfer QC was performed for ~7% of participant-events with T1w imaging data.",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -2696,11 +2696,11 @@
     ]
   },
   {
-    "objectID": "documentation/imaging/type_qc.html#smri-t2w-post-processing-qc",
-    "href": "documentation/imaging/type_qc.html#smri-t2w-post-processing-qc",
+    "objectID": "documentation/imaging/type_qc.html#mr_y_qc__post__man__t2",
+    "href": "documentation/imaging/type_qc.html#mr_y_qc__post__man__t2",
     "title": "MRI Quality Control",
     "section": "sMRI T2w post processing QC",
-    "text": "sMRI T2w post processing QC\n\nManual review of DTI reconstruction\n\nReviewers assigned binary QC score\n\n0 = reject\n\nMost severe artifacts or irregularities\nResults still included in shared tabulated data\nRecommended exclusion from group analyses involving cortical, subcortical, and tract-based ROIs\n\n1 = accept\n\nReviewers gauged the severity of four types of artifact or processing problem\n\nQU_motion: motion\nQU_inhomo: intensity inhomogeneity\nQU_artifact: magnetic susceptibility artifact\nQU_regT1: registration with T1w image\n\nNumeric values assigned on a scale of 0-3\n\nAbsent, mild, moderate, or severe, respectively\nOverall QC score of 0 assigned if severity score of 3 for any artifact type\n\n\n\nNote: The T2w Post Processing QC was performed for ~7% of participant-events with T2w imaging data.",
+    "text": "sMRI T2w post processing QC\n mr_y_qc__post__man__t2\n\nManual review of DTI reconstruction\n\nReviewers assigned binary QC score\n\n0 = reject\n\nMost severe artifacts or irregularities\nResults still included in shared tabulated data\nRecommended exclusion from group analyses involving cortical, subcortical, and tract-based ROIs\n\n1 = accept\n\nReviewers gauged the severity of four types of artifact or processing problem\n\nQU_motion: motion\nQU_inhomo: intensity inhomogeneity\nQU_artifact: magnetic susceptibility artifact\nQU_regT1: registration with T1w image\n\nNumeric values assigned on a scale of 0-3\n\nAbsent, mild, moderate, or severe, respectively\nOverall QC score of 0 assigned if severity score of 3 for any artifact type\n\n\n\nNote: The T2w Post Processing QC was performed for ~7% of participant-events with T2w imaging data.",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -2710,11 +2710,11 @@
     ]
   },
   {
-    "objectID": "documentation/imaging/type_qc.html#dmri-post-processing-qc",
-    "href": "documentation/imaging/type_qc.html#dmri-post-processing-qc",
+    "objectID": "documentation/imaging/type_qc.html#mr_y_qc__post__man__dmri",
+    "href": "documentation/imaging/type_qc.html#mr_y_qc__post__man__dmri",
     "title": "MRI Quality Control",
     "section": "dMRI post processing QC",
-    "text": "dMRI post processing QC\n\nManual review of processed dMRI data\n\nReviewers assigned binary QC score\n\n0 = reject\n\nMost severe artifacts or irregularities\nResults still included in shared tabulated data\nRecommended exclusion from group analyses involving cortical, subcortical, and tract-based ROIs\n\n1 = accept\n\nReviewers gauged the severity of five types of artifact or processing problem\n\nQU_B0warp: residual (uncorrected) B0 warping\nQU_ImagQual: image quality based on motion-related artifacts and magnetic susceptibility-induced drop-out artifact or other image quality issue\nQU_FOV: full head coverage\nQU_regT1: registration with T1w image\nQU_fseg: accuracy of fiber tract segmentation\n\nNumeric values assigned on a scale of 0-3\n\nAbsent, mild, moderate, or severe, respectively\nOverall QC score of 0 assigned if severity score of 3 for any artifact type\n\n\n\nNote: The dMRI Post Processing QC was performed for ~13% of participant-events with dMRI data.",
+    "text": "dMRI post processing QC\n mr_y_qc__post__man__dmri\n\nManual review of processed dMRI data\n\nReviewers assigned binary QC score\n\n0 = reject\n\nMost severe artifacts or irregularities\nResults still included in shared tabulated data\nRecommended exclusion from group analyses involving cortical, subcortical, and tract-based ROIs\n\n1 = accept\n\nReviewers gauged the severity of five types of artifact or processing problem\n\nQU_B0warp: residual (uncorrected) B0 warping\nQU_ImagQual: image quality based on motion-related artifacts and magnetic susceptibility-induced drop-out artifact or other image quality issue\nQU_FOV: full head coverage\nQU_regT1: registration with T1w image\nQU_fseg: accuracy of fiber tract segmentation\n\nNumeric values assigned on a scale of 0-3\n\nAbsent, mild, moderate, or severe, respectively\nOverall QC score of 0 assigned if severity score of 3 for any artifact type\n\n\n\nNote: The dMRI Post Processing QC was performed for ~13% of participant-events with dMRI data.",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -2724,11 +2724,11 @@
     ]
   },
   {
-    "objectID": "documentation/imaging/type_qc.html#fmri-post-processing-qc",
-    "href": "documentation/imaging/type_qc.html#fmri-post-processing-qc",
+    "objectID": "documentation/imaging/type_qc.html#mr_y_qc__post__man__fmri",
+    "href": "documentation/imaging/type_qc.html#mr_y_qc__post__man__fmri",
     "title": "MRI Quality Control",
     "section": "fMRI post processing QC",
-    "text": "fMRI post processing QC\n\nManual review of processed fMRI data\n\nReviewers assigned binary QC score\n\n0 = reject\n\nMost severe artifacts or irregularities\nResults still included in shared tabulated data\nRecommended exclusion from group analyses involving cortical, subcortical, and tract-based ROIs\n\n1 = accept\n\nReviewers gauged the severity of five types of artifact or processing problem\n\nQU_B0warp: residual (uncorected) B0 warping\nQU_ImagQual: image quality based primarily on magnetic susceptibility-induced drop-out or other image quality issues artifact\nQU_FOV: full head coverage\nQU_regT1: registration with T1w image\n\nNumeric values assigned on a scale of 0-3\n\nAbsent, mild, moderate, or severe, respectively\nOverall QC score of 0 assigned if severity score of 3 for any artifact type\n\n\n\nNote: The fMRI Post Processing QC was performed for ~18% of participant-events with fMRI data.",
+    "text": "fMRI post processing QC\n mr_y_qc__post__man__fmri\n\nManual review of processed fMRI data\n\nReviewers assigned binary QC score\n\n0 = reject\n\nMost severe artifacts or irregularities\nResults still included in shared tabulated data\nRecommended exclusion from group analyses involving cortical, subcortical, and tract-based ROIs\n\n1 = accept\n\nReviewers gauged the severity of five types of artifact or processing problem\n\nQU_B0warp: residual (uncorected) B0 warping\nQU_ImagQual: image quality based primarily on magnetic susceptibility-induced drop-out or other image quality issues artifact\nQU_FOV: full head coverage\nQU_regT1: registration with T1w image\n\nNumeric values assigned on a scale of 0-3\n\nAbsent, mild, moderate, or severe, respectively\nOverall QC score of 0 assigned if severity score of 3 for any artifact type\n\n\n\nNote: The fMRI Post Processing QC was performed for ~18% of participant-events with fMRI data.",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -3893,11 +3893,51 @@
   {
     "objectID": "info/changelog.html",
     "href": "info/changelog.html",
-    "title": "Changelog",
+    "title": "Website changelog",
     "section": "",
-    "text": "6.0.0\n Date: 2025-07-03 URL: https://docs.abcdstudy.org/v/6_0_0 \nInitial version of the data documentation website for ABCD release 6.0.0",
+    "text": "Date: 2025-12-25 URL: https://docs.abcdstudy.org/v7.0.0/",
     "crumbs": [
-      "Changelog"
+      "Website changelog"
+    ]
+  },
+  {
+    "objectID": "info/changelog.html#section-1",
+    "href": "info/changelog.html#section-1",
+    "title": "Website changelog",
+    "section": "",
+    "text": "Date: 2025-12-25 URL: https://docs.abcdstudy.org/v7.0.0/",
+    "crumbs": [
+      "Website changelog"
+    ]
+  },
+  {
+    "objectID": "info/changelog.html#section-3",
+    "href": "info/changelog.html#section-3",
+    "title": "Website changelog",
+    "section": "6.0.2",
+    "text": "6.0.2\n Date: 2025-06-25 URL: https://docs.abcdstudy.org/v6.0.2/ \n\nSome of the Family, Friends, & Community summary scores (e.g. MNBS) have some errors (i.e. 777’s were not coded as missing), so please note this in analysis.\nUnder Neurocognition NIH Toolbox section, added in Notes and special considerations: In cases with remote administration of the NIH Toolbox (see variable X that indicates remote or in person), the Crystallized Cognition Composite Score is not calculated.",
+    "crumbs": [
+      "Website changelog"
+    ]
+  },
+  {
+    "objectID": "info/changelog.html#section-4",
+    "href": "info/changelog.html#section-4",
+    "title": "Website changelog",
+    "section": "6.0.1",
+    "text": "6.0.1\n Date: 2025-06-15 URL: https://docs.abcdstudy.org/v6.0.1/ \n\nUnder Family, Friends, & Community, in the Wills Problem Solving Scale, added note: “Note that some values in the early years for wps_q(1-6)_y have 0’s, which do not map to the data dictionary and need to be filtered out.”\nUnder Mental Health CBCL measure, added note: “Based on ASEBA scoring,the DSM and subscale measures have a range &gt;= 50. The three CBCL Internalizing, Externalizing, and Total Problem scales have a full T-score range with a mean = 50 and SD = 10.”",
+    "crumbs": [
+      "Website changelog"
+    ]
+  },
+  {
+    "objectID": "info/changelog.html#section-5",
+    "href": "info/changelog.html#section-5",
+    "title": "Website changelog",
+    "section": "6.0.0",
+    "text": "6.0.0\n Date: 2025-06-06 URL: https://docs.abcdstudy.org/v6.0.0/",
+    "crumbs": [
+      "Website changelog"
     ]
   },
   {
