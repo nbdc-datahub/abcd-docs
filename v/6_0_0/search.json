@@ -1743,7 +1743,49 @@
     "href": "documentation/imaging/type_tfmri.html",
     "title": "Task-based fMRI",
     "section": "",
-    "text": "Please scroll horizontally \n            \n            \n            to view the number of variables and events of administration for the displayed tables.\n        \n        \n        \n\n\n\nThe Task based Functional MRI (TfMRI) data conatins field maps, spin echo images with opposite phase encode polarity, and multi-frame, gradient echo, echo-planar imaging images.\n\n\n\nHead motion corrected by registering each frame to the first using AFNI’s 3dvolreg (Cox 1996)\nB0 distortions were corrected using the reversing gradient method with FSL’s topup Smith et al. (2004)\nDisplacement field estimated from spin-echo field map scans\nApplied to gradient-echo images after adjustment for between-scan head motion\nCorrected for gradient nonlinearity distortions (Jovicich et al. 2006)\nBetween scan motion correction across all fMRI scans in imaging event\nRegistration between T2-weighted, spin-echo B0 calibration scans and T1-weighted structural images performed using mutual information (Wells et al. 1996)\n\n\n\n\nNote: not included in “minimal processing” (minproc) - Removal of initial volumes - Siemens: 8 TRs - Philips: 8 TRs - GE DV25: 4 TRs - GE DV26 and later (RX28, DV29, etc.): 15 TRs - Normalization and demean - Divide by the mean of each voxel, subtract 1, multiply by 100\n\n\n\n\nGeneral linear model (GLM) using AFNI’s 3dDeconvolve (Cox 1996)\nNuisance regressors to model baseline, quadratic trend, and motion (Power et al. 2014)\n\nMotion estimates, derivatives, and squared estimates and derivatives included\n\nTime points with framewise displacement (FD) &gt; 0.9 mm censored (Siegel et al. 2014)\nHemodynamic response function\n\nModelled as gamma functions with temporal derivatives, using AFNI’s SPMG model\nFor MID and SST models, events modeled as instantaneous\nFor n-back, duration of cues (~3 s) and trial blocks (~24 s) modeled as square waves convolved with SPMG\n\nGLM coefficients and t-statistics sampled onto cortical surface\n\nProjected 1mm into cortical gray matter along surface normal vector\n\nMonetary Incentive Delay (MID)\n\nPredictors for anticipation of large, small, and no rewards and feedback for large, small, and no rewards for wins and losses\nLinear contrasts computed for anticipation of large and small reward vs. no reward, anticipation of large and small loss vs. no reward, feedback of win vs. no reward, and feedback of loss vs. no reward\n\nStop Signal Task (SST)\n\nPredictors for successful go trial, failed go trial, successful stop trial, and failed stop trial\nContrasts computed for successful vs. failed stop trials and successful vs. failed go trials\n\nEmotional N-back (EN-back)\n\nPredictors for each type of stimulus (i.e. place and emotional face) in each of the n-back conditions (i.e., 0-back and 2-back) plus fixation\nLinear contrasts computed for 2-back vs. 0-back across stimulus types, emotional faces vs. places across memory loads, 2-back vs. 0-back for each stimulus type, and each memory load and each stimulus type vs. fixation\n\n\n\n\n\n\nSubcortical structures labeled with atlas-based segmentation (Fischl et al. 2002)\nCortical regions labeled with the Desikan atlas-based classification (Desikan et al. 2006)\nCortical regions labeled with the Destrieux atlas-based classification (Destrieux et al. 2010)\nROI average coefficients and t-statistics for each run were averaged across two runs, weighted by degrees of freedom",
+    "text": "Please scroll horizontally \n            \n            \n            to view the number of variables and events of administration for the displayed tables.\n        \n        \n        \n\n\n\n\n\n\n\n\n\n\n\n        \n            Please scroll horizontally \n            \n            \n            to view the number of variables and events of administration for the displayed tables.\n        \n        \n        \n\n\n\n\n\n\n\n\n\n\n\n        \n            Please scroll horizontally \n            \n            \n            to view the number of variables and events of administration for the displayed tables.",
+    "crumbs": [
+      "Imaging data",
+      "Scan types",
+      "Documentation",
+      "Imaging",
+      "Task-based fMRI"
+    ]
+  },
+  {
+    "objectID": "documentation/imaging/type_tfmri.html#monetary-incentive-delay-mid-task",
+    "href": "documentation/imaging/type_tfmri.html#monetary-incentive-delay-mid-task",
+    "title": "Task-based fMRI",
+    "section": "",
+    "text": "Please scroll horizontally \n            \n            \n            to view the number of variables and events of administration for the displayed tables.",
+    "crumbs": [
+      "Imaging data",
+      "Scan types",
+      "Documentation",
+      "Imaging",
+      "Task-based fMRI"
+    ]
+  },
+  {
+    "objectID": "documentation/imaging/type_tfmri.html#stop-signal-task-sst",
+    "href": "documentation/imaging/type_tfmri.html#stop-signal-task-sst",
+    "title": "Task-based fMRI",
+    "section": "",
+    "text": "Please scroll horizontally \n            \n            \n            to view the number of variables and events of administration for the displayed tables.",
+    "crumbs": [
+      "Imaging data",
+      "Scan types",
+      "Documentation",
+      "Imaging",
+      "Task-based fMRI"
+    ]
+  },
+  {
+    "objectID": "documentation/imaging/type_tfmri.html#emotional-n-back-task",
+    "href": "documentation/imaging/type_tfmri.html#emotional-n-back-task",
+    "title": "Task-based fMRI",
+    "section": "",
+    "text": "Please scroll horizontally \n            \n            \n            to view the number of variables and events of administration for the displayed tables.",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -1756,8 +1798,8 @@
     "objectID": "documentation/imaging/type_tfmri.html#image-processing-common-to-all-fmri",
     "href": "documentation/imaging/type_tfmri.html#image-processing-common-to-all-fmri",
     "title": "Task-based fMRI",
-    "section": "",
-    "text": "Head motion corrected by registering each frame to the first using AFNI’s 3dvolreg (Cox 1996)\nB0 distortions were corrected using the reversing gradient method with FSL’s topup Smith et al. (2004)\nDisplacement field estimated from spin-echo field map scans\nApplied to gradient-echo images after adjustment for between-scan head motion\nCorrected for gradient nonlinearity distortions (Jovicich et al. 2006)\nBetween scan motion correction across all fMRI scans in imaging event\nRegistration between T2-weighted, spin-echo B0 calibration scans and T1-weighted structural images performed using mutual information (Wells et al. 1996)",
+    "section": "Image processing (common to all fMRI)",
+    "text": "Image processing (common to all fMRI)\n\nHead motion corrected by registering each frame to the first using AFNI’s 3dvolreg (Cox 1996)\nB0 distortions were corrected using the reversing gradient method with FSL’s topup Smith et al. (2004)\nDisplacement field estimated from spin-echo field map scans\nApplied to gradient-echo images after adjustment for between-scan head motion\nCorrected for gradient nonlinearity distortions (Jovicich et al. 2006)\nBetween scan motion correction across all fMRI scans in imaging event\nRegistration between T2-weighted, spin-echo B0 calibration scans and T1-weighted structural images performed using mutual information (Wells et al. 1996)",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -1770,8 +1812,8 @@
     "objectID": "documentation/imaging/type_tfmri.html#task-fmri-specific-pre-processing",
     "href": "documentation/imaging/type_tfmri.html#task-fmri-specific-pre-processing",
     "title": "Task-based fMRI",
-    "section": "",
-    "text": "Note: not included in “minimal processing” (minproc) - Removal of initial volumes - Siemens: 8 TRs - Philips: 8 TRs - GE DV25: 4 TRs - GE DV26 and later (RX28, DV29, etc.): 15 TRs - Normalization and demean - Divide by the mean of each voxel, subtract 1, multiply by 100",
+    "section": "Task-fMRI specific pre-processing",
+    "text": "Task-fMRI specific pre-processing\nNote: not included in “minimal processing” (minproc) - Removal of initial volumes - Siemens: 8 TRs - Philips: 8 TRs - GE DV25: 4 TRs - GE DV26 and later (RX28, DV29, etc.): 15 TRs - Normalization and demean - Divide by the mean of each voxel, subtract 1, multiply by 100",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -1784,8 +1826,8 @@
     "objectID": "documentation/imaging/type_tfmri.html#estimation-of-task-related-activation-strength",
     "href": "documentation/imaging/type_tfmri.html#estimation-of-task-related-activation-strength",
     "title": "Task-based fMRI",
-    "section": "",
-    "text": "General linear model (GLM) using AFNI’s 3dDeconvolve (Cox 1996)\nNuisance regressors to model baseline, quadratic trend, and motion (Power et al. 2014)\n\nMotion estimates, derivatives, and squared estimates and derivatives included\n\nTime points with framewise displacement (FD) &gt; 0.9 mm censored (Siegel et al. 2014)\nHemodynamic response function\n\nModelled as gamma functions with temporal derivatives, using AFNI’s SPMG model\nFor MID and SST models, events modeled as instantaneous\nFor n-back, duration of cues (~3 s) and trial blocks (~24 s) modeled as square waves convolved with SPMG\n\nGLM coefficients and t-statistics sampled onto cortical surface\n\nProjected 1mm into cortical gray matter along surface normal vector\n\nMonetary Incentive Delay (MID)\n\nPredictors for anticipation of large, small, and no rewards and feedback for large, small, and no rewards for wins and losses\nLinear contrasts computed for anticipation of large and small reward vs. no reward, anticipation of large and small loss vs. no reward, feedback of win vs. no reward, and feedback of loss vs. no reward\n\nStop Signal Task (SST)\n\nPredictors for successful go trial, failed go trial, successful stop trial, and failed stop trial\nContrasts computed for successful vs. failed stop trials and successful vs. failed go trials\n\nEmotional N-back (EN-back)\n\nPredictors for each type of stimulus (i.e. place and emotional face) in each of the n-back conditions (i.e., 0-back and 2-back) plus fixation\nLinear contrasts computed for 2-back vs. 0-back across stimulus types, emotional faces vs. places across memory loads, 2-back vs. 0-back for each stimulus type, and each memory load and each stimulus type vs. fixation",
+    "section": "Estimation of task-related activation strength",
+    "text": "Estimation of task-related activation strength\n\nGeneral linear model (GLM) using AFNI’s 3dDeconvolve (Cox 1996)\nNuisance regressors to model baseline, quadratic trend, and motion (Power et al. 2014)\n\nMotion estimates, derivatives, and squared estimates and derivatives included\n\nTime points with framewise displacement (FD) &gt; 0.9 mm censored (Siegel et al. 2014)\nHemodynamic response function\n\nModelled as gamma functions with temporal derivatives, using AFNI’s SPMG model\nFor MID and SST models, events modeled as instantaneous\nFor n-back, duration of cues (~3 s) and trial blocks (~24 s) modeled as square waves convolved with SPMG\n\nGLM coefficients and t-statistics sampled onto cortical surface\n\nProjected 1mm into cortical gray matter along surface normal vector\n\nMonetary Incentive Delay (MID)\n\nPredictors for anticipation of large, small, and no rewards and feedback for large, small, and no rewards for wins and losses\nLinear contrasts computed for anticipation of large and small reward vs. no reward, anticipation of large and small loss vs. no reward, feedback of win vs. no reward, and feedback of loss vs. no reward\n\nStop Signal Task (SST)\n\nPredictors for successful go trial, failed go trial, successful stop trial, and failed stop trial\nContrasts computed for successful vs. failed stop trials and successful vs. failed go trials\n\nEmotional N-back (EN-back)\n\nPredictors for each type of stimulus (i.e. place and emotional face) in each of the n-back conditions (i.e., 0-back and 2-back) plus fixation\nLinear contrasts computed for 2-back vs. 0-back across stimulus types, emotional faces vs. places across memory loads, 2-back vs. 0-back for each stimulus type, and each memory load and each stimulus type vs. fixation",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -1798,8 +1840,8 @@
     "objectID": "documentation/imaging/type_tfmri.html#regions-of-interest-rois",
     "href": "documentation/imaging/type_tfmri.html#regions-of-interest-rois",
     "title": "Task-based fMRI",
-    "section": "",
-    "text": "Subcortical structures labeled with atlas-based segmentation (Fischl et al. 2002)\nCortical regions labeled with the Desikan atlas-based classification (Desikan et al. 2006)\nCortical regions labeled with the Destrieux atlas-based classification (Destrieux et al. 2010)\nROI average coefficients and t-statistics for each run were averaged across two runs, weighted by degrees of freedom",
+    "section": "Regions of interest (ROIs)",
+    "text": "Regions of interest (ROIs)\n\nSubcortical structures labeled with atlas-based segmentation (Fischl et al. 2002)\nCortical regions labeled with the Desikan atlas-based classification (Desikan et al. 2006)\nCortical regions labeled with the Destrieux atlas-based classification (Destrieux et al. 2010)\nROI average coefficients and t-statistics for each run were averaged across two runs, weighted by degrees of freedom",
     "crumbs": [
       "Imaging data",
       "Scan types",
@@ -2083,7 +2125,7 @@
     "href": "documentation/curation/standards.html#data-types",
     "title": "Curation standards",
     "section": "Data types",
-    "text": "Data types\nTo provide clarity about the format of the underlying values and their use in exploratory and inferential analysis, each variable is assigned one of the following data types (indicated in the type_data column of the data dictionary):\n\ncharacter: Used exclusively for categorical variables, i.e., variables with defined levels. These variables store numeric values formatted as character strings (e.g., \"0\", \"1\", \"777\", which differentiates them from variables with type_data: 'integer') to represent categorical labels (e.g., \"No\", \"Yes\", \"Decline to answer\"). The value-to-label correspondence is defined in the levels table in the metadata (see below for more information on categorical coding standards).\ndouble: Numeric values with decimals (e.g., 2.5, 17.325).\ninteger: Whole numbers without decimals (e.g., 0, 1, 2).\ndate: Calendar dates in YYYY-MM-DD format; often denoted by a variable name ending in _dt.\ntime: Time of day formatted as a character string \"HH:MM:SS\", representing a time without a date component; often denoted by a variable name ending in _t.4\ntimestamp: Combined date and time values (e.g., 2019-09-16 10:49:00); often denoted by a variable name ending in _dtt.\ntext: Used for arbitrary-length string values, such as administrative information like IDs, scanner details, medication names, or RxNorm codes.",
+    "text": "Data types\nTo provide clarity about the format of the underlying values and their use in exploratory and inferential analysis, each variable is assigned one of the following data types (indicated in the type_data column of the data dictionary):\n\ncharacter: Used exclusively for categorical variables, i.e., variables with defined levels. These variables store numeric values formatted as character strings (e.g., \"0\", \"1\", \"777\", which differentiates them from variables with type_data: 'integer') to represent categorical labels (e.g., \"No\", \"Yes\", \"Decline to answer\"). The value-to-label correspondence is defined in the levels table in the metadata (see below for more information on categorical coding standards).\ndouble: Numeric values with decimals (e.g., 2.5, 17.325).\ninteger: Whole numbers without decimals (e.g., 0, 1, 2).\ndate: Calendar dates in YYYY-MM-DD format; often denoted by a variable name ending in _dt.\ntime: Time of day formatted as a character string \"HH:MM:SS\", representing a time without a date component; often denoted by a variable name ending in _t.4\ntimestamp: Combined date and time values (e.g., 2019-09-16 10:49:00); often denoted by a variable name ending in _dtt.\ntext: Used for arbitrary-length string values, such as administrative information like IDs, scanner details, medication names, or RxNorm codes.\n\n\n\n\n\n\n\nData types and file formats\n\n\n\nWhen working with downloaded files from the ABCD tabulated data resource, please be aware that plain-text formats like csv and tsv do not preserve data types. Users will need to specify the correct data types when reading a plain-text file into their analysis environment.\nTherefore, we recommend using file types that preserve data types (e.g., parquet files) and allow users to automatically read in the data with the correct types wherever possible. For more information on file formats, see here.",
     "crumbs": [
       "Curation & structure",
       "Curation standards"

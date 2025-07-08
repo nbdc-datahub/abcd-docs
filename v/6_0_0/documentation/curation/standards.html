@@ -991,7 +991,20 @@ Issue with timestamps and ages
 <li><strong>timestamp</strong>: Combined date and time values (e.g., <code>2019-09-16 10:49:00</code>); often denoted by a variable name ending in <code>_dtt</code>.</li>
 <li><strong>text</strong>: Used for arbitrary-length string values, such as administrative information like IDs, scanner details, medication names, or RxNorm codes.</li>
 </ul>
-<!-- TODO: add note about different file types and their representation of data types (e.g., CSV vs. Parquet) and point to structure.qmd for more information. -->
+<div class="callout callout-style-default callout-important callout-titled" title="Data types and file formats">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data types and file formats
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When working with downloaded files from the ABCD tabulated data resource, please be aware that plain-text formats like <code>csv</code> and <code>tsv</code> <em>do not preserve data types</em>. Users will need to specify the correct data types when reading a plain-text file into their analysis environment.</p>
+<p>Therefore, we recommend <em>using file types that preserve data types</em> (e.g., <code>parquet</code> files) and allow users to automatically read in the data with the correct types wherever possible. For more information on file formats, see <a href="../../documentation/curation/structure.html#file-formats">here</a>.</p>
+</div>
+</div>
 </section>
 <section id="measurement-levels" class="level2">
 <h2 class="anchored" data-anchor-id="measurement-levels">Measurement levels</h2>
