@@ -13,7 +13,11 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 ```{r}
 library(dplyr)
 library(stringr)
-render_table_info("str_detect(table_name, 'mr_y_adm')")
+render_table_info(
+  "str_detect(table_name, 'mr_y_adm')",
+  remove_source = TRUE,
+  remove_subdomain = TRUE
+)
 ```
 <br>
 

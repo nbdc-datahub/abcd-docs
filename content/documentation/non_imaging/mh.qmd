@@ -167,7 +167,10 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 ### KSADS Modules (Youth) {#mh_y_ksads}
 
 ```{r}
-render_table_info("domain_abbr == 'ksads_y'", remove_source = TRUE)
+render_table_info(
+  "domain_abbr == 'ksads_y'",
+  remove_source = TRUE
+)
 ```
 <br>
 
@@ -455,7 +458,10 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 See the [youth section](#mh_y_ksads) for more details.
 
 ```{r}
-render_table_info("domain_abbr == 'ksads_p'", remove_source = TRUE)
+render_table_info(
+  "domain_abbr == 'ksads_p'",
+  remove_source = TRUE
+)
 ```
 <br>
 

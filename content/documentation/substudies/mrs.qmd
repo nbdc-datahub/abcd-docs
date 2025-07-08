@@ -13,7 +13,11 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 ```
 
 ```{r}
-render_table_info("domain_abbr == 'mrs'")
+render_table_info(
+  "domain_abbr == 'mrs'",
+  remove_source = TRUE,
+  remove_subdomain = TRUE
+)
 ```
 
 The ABCD Magnetic Resonance Spectroscopy (MRS) Substudy was conducted in a subsample of youth enrolled in the ABCD study at the University of Utah and University of Maryland (Baltimore) sites. The aim of this study was to acquire neurometabolite/neurochemical data to determine the associations between neurometabolite/neurochemical concentrations and clinical factors such as substance use exposure and potential risk and resilience factors for substance use. Study participants were recruited from the main ABCD study cohort during their 3-Year follow-up visit.

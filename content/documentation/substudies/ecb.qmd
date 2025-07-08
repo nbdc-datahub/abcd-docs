@@ -12,7 +12,11 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 ```
 
 ```{r}
-render_table_info("domain_abbr == 'ecb'")
+render_table_info(
+  "domain_abbr == 'ecb'",
+  remove_source = TRUE,
+  remove_subdomain = TRUE
+)
 ```
 
 ---

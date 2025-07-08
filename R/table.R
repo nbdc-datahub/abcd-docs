@@ -74,7 +74,7 @@ css_styles <- tags$style(HTML(
     background: hsl(353, 70%, 90%);
     color: hsl(353, 45%, 30%);
   }
-  .source-led {
+  .source-linked-dataset {
     background: hsl(70, 70%, 90%);
     color: hsl(70, 45%, 30%);
   }
@@ -372,7 +372,11 @@ render_dd_levels <- function(dd_levels) {
 
 # instrument tables ------------------------------------------------------------
 
-render_table_info <- function(filter, remove_source = FALSE) {
+render_table_info <- function(
+  filter,
+  remove_source = FALSE,
+  remove_subdomain = FALSE
+) {
   path <- stringr::str_extract(getwd(), ".*?/content")
   table_info <- readr::read_csv(
     paste0(path, "/assets/tbl/documentation/table_info.csv"),
@@ -406,6 +410,9 @@ render_table_info <- function(filter, remove_source = FALSE) {
       ),
       table_name
     )
+  
+  length_table_name <- max(nchar(table_info_domain$table_name))
+  length_source <- max(nchar(table_info_domain$source))
   
   cols_vars <- table_info_domain |>
     select(
@@ -467,11 +474,26 @@ render_table_info <- function(filter, remove_source = FALSE) {
     col_def_source <- list(
       source = reactable::colDef(
         name = "Source",
-        width = 130,
+        width = length_source * 10 + 30,
         cell = function(value) {
-          class <- paste0("tag source-", tolower(value))
+          class <- paste0("tag source-", stringr::str_replace(tolower(value), " ", "-"))
           div(class = class, value)
         }
+      )
+    )
+  }
+  
+  if (remove_subdomain) {
+    col_def_subdomain <- list(
+      sub_domain = reactable::colDef(
+        show = FALSE
+      )
+    )
+  } else {
+    col_def_subdomain <- list(
+      sub_domain = reactable::colDef(
+        name = "Subdomain",
+        width = 150
       )
     )
   }
@@ -510,9 +532,9 @@ render_table_info <- function(filter, remove_source = FALSE) {
           ),
           table_name = reactable::colDef(
             name = "Table name",
-            width = 180,
+            width = length_table_name * 10 + 40,
             cell = function(value, index) {
-              link <-               create_link(
+              link <- create_link(
                 name = value,
                 url = table_info_domain$url_deap[index],
                 type = "html",
@@ -529,10 +551,6 @@ render_table_info <- function(filter, remove_source = FALSE) {
               )
 
             }
-          ),
-          sub_domain = reactable::colDef(
-            name = "Subdomain",
-            width = 150
           ),
           type = reactable::colDef(
             name = "Type",
@@ -648,7 +666,8 @@ render_table_info <- function(filter, remove_source = FALSE) {
         ),
         col_defs_events,
         col_defs_vars,
-        col_def_source
+        col_def_source,
+        col_def_subdomain
       ),
       columnGroups = list(
         reactable::colGroup(

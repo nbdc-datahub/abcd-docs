@@ -10,13 +10,43 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 ```
 
 # Domain overview
+
+## Monetary Incentive Delay (MID) Task
+
 ```{r}
-render_table_info("sub_domain == 'Task fMRI'")
+render_table_info(
+  "sub_domain == 'Task fMRI' & stringr::str_detect(table_name, '__mid_')",
+  remove_source = TRUE,
+  remove_subdomain = TRUE
+)
 ```
 
-The Task based Functional MRI (TfMRI) data conatins field maps, spin echo images with opposite phase encode polarity, and multi-frame, gradient echo, echo-planar imaging images.
+## Stop Signal Task (SST)
+
+```{r}
+render_table_info(
+  "sub_domain == 'Task fMRI' & stringr::str_detect(table_name, '__sst_')",
+  remove_source = TRUE,
+  remove_subdomain = TRUE
+)
+```
+
+## Emotional N-Back Task
+
+```{r}
+render_table_info(
+  "sub_domain == 'Task fMRI' & stringr::str_detect(table_name, '__nback_')",
+  remove_source = TRUE,
+  remove_subdomain = TRUE
+)
+```
+
+# Processing
+
+The Task based Functional MRI (TfMRI) data contains field maps, spin echo images with opposite phase encode polarity, and multi-frame, gradient echo, echo-planar imaging images.
 
 ## Image processing (common to all fMRI)
+
 - Head motion corrected by registering each frame to the first using AFNI's `3dvolreg` [@cox1996]
 - B~0~ distortions were corrected using the reversing gradient method with FSL's `topup` [@andersson2003, @smith2004]
 - Displacement field estimated from spin-echo field map scans
@@ -26,6 +56,7 @@ The Task based Functional MRI (TfMRI) data conatins field maps, spin echo images
 - Registration between T~2~-weighted, spin-echo B~0~ calibration scans and T~1~-weighted structural images performed using mutual information [@wells1996]
     
 ## Task-fMRI specific pre-processing
+
 Note: not included in "minimal processing" (minproc)
 - Removal of initial volumes
   - Siemens: 8 TRs
@@ -36,6 +67,7 @@ Note: not included in "minimal processing" (minproc)
   - Divide by the mean of each voxel, subtract 1, multiply by 100
 
 ## Estimation of task-related activation strength
+
 - General linear model (GLM) using AFNI's 3dDeconvolve [@cox1996]
 - Nuisance regressors to model baseline, quadratic trend, and motion [@power2014]
   - Motion estimates, derivatives, and squared estimates and derivatives included
@@ -60,6 +92,7 @@ Note: not included in "minimal processing" (minproc)
   - Linear contrasts computed for 2-back vs. 0-back across stimulus types, emotional faces vs. places across memory loads, 2-back vs. 0-back for each stimulus type, and each memory load and each stimulus type vs. fixation
 
 ## Regions of interest (ROIs)
+
 - Subcortical structures labeled with atlas-based segmentation [@fischl2002]
 - Cortical regions labeled with the Desikan atlas-based classification [@desikan2006]
 - Cortical regions labeled with the Destrieux atlas-based classification [@destrieux2010]
@@ -84,7 +117,7 @@ The full fMRI tasks are available for download on GE scanners, Siemens and Phili
 
 ## Monetary Incentive Delay Task {#mr_y_tfmri__mid}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_tfmri__mid](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Broad+Psychopathology%22%2C%22Youth%22%5D%2C%5B%22Temperament%2FPersonality%22%2C%22Youth%22%5D%2C%5B%22Youth%22%2C%22Monetary+Incentive+Delay%22%5D%5D#/my-datasets/create-dataset)
+![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_tfmri__mid](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Task+fMRI%22%2C%22Monetary+Incentive+Delay%22%5D%5D#/my-datasets/create-dataset)
 
 When referring to the ABCD monetary incentive task in publications or talks, please cite: Knutson B, Westdorp A, Kaiser E, Hommer D (2000) FMRI visualization of brain activity during a monetary incentive delay task. NeuroImage 12: 20–27. To download the following, please right click and select “open link in new tab.”
 
@@ -93,7 +126,7 @@ When referring to the ABCD monetary incentive task in publications or talks, ple
 
 ## Stop Signal Task {#mr_y_tfmri__sst}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_tfmri__sst](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Broad+Psychopathology%22%2C%22Youth%22%5D%2C%5B%22Temperament%2FPersonality%22%2C%22Youth%22%5D%2C%5B%22Youth%22%2C%22Stop+Signal+Task%22%5D%5D#/my-datasets/create-dataset)
+![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_tfmri__sst](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Task+fMRI%22%2C%22Stop+Signal+Task%22%5D%5D#/my-datasets/create-dataset)
 
 When referring to the ABCD stop signal task in publications or talks, please cite @logan1984.
 
@@ -104,7 +137,7 @@ This updated version of the STOP task program addresses the issues arising from 
 
 ## Emotional N-Back Task {#mr_y_tfmri__nback}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_tfmri__nback](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Broad+Psychopathology%22%2C%22Youth%22%5D%2C%5B%22Temperament%2FPersonality%22%2C%22Youth%22%5D%2C%5B%22Youth%22%2C%22Emotional+N-Back%22%5D%5D#/my-datasets/create-dataset)
+![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_tfmri__nback](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Task+fMRI%22%2C%22Emotional+N-Back%22%5D%5D#/my-datasets/create-dataset)
 
 When referring to the ABCD emotional n-back task in publications or talks, please cite: [@cohen2016]. The impact of emotional cues on short-term and long-term memory during adolescence. Society for Neuroscience, San Diego, CA. (Please check for the updated publication). To download the following, please right click and select "open link in new tab".
 
@@ -184,4 +217,3 @@ Users of the task fMRI tabulated or concatenated data are advised to examine out
 
 - @chang1992
 - @morgan2004
-

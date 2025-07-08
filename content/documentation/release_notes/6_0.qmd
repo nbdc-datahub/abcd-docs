@@ -162,7 +162,7 @@ During the recuration process, we made several general changes to the data struc
 
 ### Standard variables tables
 
-The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain. Examples of these variables include visit-level information, design/nesting variables, and variables useful for describing the cohort.
+The 6.0 release includes [two new tables](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain. Examples of these variables include visit-level information, design/nesting variables, and variables useful for describing the cohort.
 
 ### School and district IDs
 

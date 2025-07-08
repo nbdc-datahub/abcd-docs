@@ -131,7 +131,11 @@ To provide clarity about the format of the underlying values and their use in ex
 - **timestamp**: Combined date and time values (e.g., `2019-09-16 10:49:00`); often denoted by a variable name ending in `_dtt`.
 - **text**: Used for arbitrary-length string values, such as administrative information like IDs, scanner details, medication names, or RxNorm codes.
 
-<!-- TODO: add note about different file types and their representation of data types (e.g., CSV vs. Parquet) and point to structure.qmd for more information. -->
+::: {.callout-important title="Data types and file formats"}
+When working with downloaded files from the ABCD tabulated data resource, please be aware that plain-text formats like `csv` and `tsv` *do not preserve data types*. Users will need to specify the correct data types when reading a plain-text file into their analysis environment. 
+
+Therefore, we recommend *using file types that preserve data types* (e.g., `parquet` files) and allow users to automatically read in the data with the correct types wherever possible. For more information on file formats, see [here](structure.qmd#file-formats).
+:::
 
 ## Measurement levels
 

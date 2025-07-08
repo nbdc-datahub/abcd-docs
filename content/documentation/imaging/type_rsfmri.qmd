@@ -11,7 +11,11 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 
 # Domain overview
 ```{r}
-render_table_info("sub_domain == 'Resting State fMRI'")
+render_table_info(
+  "sub_domain == 'Resting State fMRI'",
+  remove_source = TRUE,
+  remove_subdomain = TRUE
+)
 ```
 
 The Resting State fMRI (rsfMRI) data contains field maps, spin echo images with opposite phase encode polarity, and multi-frame, gradient echo, echo-planar imaging.

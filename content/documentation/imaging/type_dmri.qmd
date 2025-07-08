@@ -14,7 +14,11 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 ```{r}
 library(dplyr)
 library(stringr)
-render_table_info("str_detect(sub_domain, 'Diffusion MRI')")
+render_table_info(
+  "str_detect(sub_domain, 'Diffusion MRI')",
+  remove_source = TRUE,
+  remove_subdomain = TRUE
+)
 ```
 
 The Diffusion MRI (DTI) data contains imaging field maps, non-diffusion weighted images with opposite phase encode polarity, and multi-b-value, multi-direction diffusion weighted images.
