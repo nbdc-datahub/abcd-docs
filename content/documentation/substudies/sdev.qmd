@@ -1,0 +1,262 @@
+---
+title: "Social Development"
+---
+
+# Domain overview
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+```{r}
+render_table_info("domain_abbr == 'sdev'")
+```
+
+Data for the ABCD Social Development Substudy (SD) were collected approximately annually. Participation in `ses-S01` data collection was offered to families who had completed either a `1`- or `2-year` ABCD follow up assessment. Each successive follow up assessment was conducted in a window of 12 months ±3 months from the last SD assessment. The timing of the SD data collection in relation to ABCD visits was left up to the research staff and the participating family. In some cases, SD assessments were completed concurrently with ABCD assessments, while in others they were completed independently on separate days. Thus, SD and core protocol data collection dates may or may not correspond directly to those of ABCD. The researcher should be mindful of these assessment date differences, if analyzing SD data with ABCD measures.
+
+## Cross-sectional analyses
+
+**Matching SD data to `ses-S01` ABCD data:**
+
+-   Calculate the difference between `ses-S01` age/date (`ab_g_dyn__visit_age`) and SD age (`sdev_p_vt__visit_age`). Differences can be calculated for each SD wave, `ses-S01`, `ses-S02`, and so forth.
+    - Can do this for whatever variable you are trying to match (that has non NA values).
+    - Use the absolute value -- no negative values -- and select the SD visit that is closest to the ABCD `ses-S01` visit (`ses-00A` -- lowest date_diff/age_diff) for the assessment you are interested in -- i.e., if interested in matching, for example, ABCD imaging data to SD assessment date.
+    - May want some allowable threshold depending on the data type you are trying to match (i.e., date_diff/age_diff \> 1 year) given that this is a developmental cohort
+    - Can use the calculated date/age differences (date_diff/age_diff) as a covariate in models.
+- Controlling for wave effects (i.e., if `ses-S01` (SD Visit 1) is used for one participant because it's the closest to the `ses-00A` (core protocol `ses-S01`) but `ses-S02` is closest for another participant) -- could use 'true_wave' in the model as a potential covariate or you could use date.
+
+**Matching SD data to any ABCD visit (`ses-0#A`):**
+
+-   Calculate the difference between ABCD wave of interest age/date (i.e., `ses-02A`) and all available SD waves (i.e., `ses-S01`, `ses-S02`) as date_diff or age_diff (i.e., date_diff_1, date_diff_2).
+-   Can do this for whatever variable you are trying to match (that has non NA values).
+-   Use the absolute value -- no negative values -- and select the SD visit that is closest to the ABCD visit of interest (lowest date_diff/age_diff) for the assessment you are interested in
+-   Like above, can use the calculated date/age differences as a covariate in models.
+
+## Longitudinal analyses
+
+**Matching multiple visits (longitudinal):**
+
+- Decide on a starting point for your longitudinal analysis, the earliest assessment collected, or last assessment before some sentinel event (such as first drink of alcohol), and define that as your `ses-S01`.
+- Decide on a threshold for how much time is allowable between SD assessments & ABCD assessments -- depends on the variable of interest.
+    - Decide which SD wave will be closest to the ABCD `ses-S01` visit (`ses-00A`) and label that as '`ses-S01`' (`ses-S01`).
+    - From there, label the following SD waves in sequential order (so `ses-S01` might actually become `ses-S01`, `ses-S02` might become SD_1 and so forth).
+    - Match new SD labels to ABCD waves and calculate the age_diff/date_diff at each visit to be used as a covariate in models.
+
+- A secondary strategy:
+    - Get ABCD wave that is closest to first SD assessment (`ses-S01`) and label that as '`ses-S01`' (`ses-00A`).
+    - From there, label the following ABCD waves in sequential order (so `ses-001` might actually become `ses-00A`, ABCD_2 might become ABCD_1 and so forth).
+    - Match new ABCD labels to SD waves and calculate the age_diff/date_diff at each visit to be used as a covariate in models.
+
+-   Third strategy:
+    - Calculate date_diff/age_diff between each SD assessment and each ABCD assessment and at each wave (for SD for example), select the ABCD visit that has the lowest date_diff/age_diff but taking care not to repeat data (so if `ses-02A` has the same date_diff/age_diff between `ses-S01` and `ses-S02`, will have to decide which to use and not use ABCD_2 twice).
+  - This depends on how much time (date_diff/age_diff) there was between initial ABCD `ses-S01` assessment (`ses-00A`) and initial SD assessment (`ses-S01`).
+  - If within the allowable limit, can just match visits (`ses-S01` to `ses-S01` and so forth moving forward).
+  - If the `ses-S01` assessments were to distal (i.e., date_diff/age_diff \> 1 year), consider above strategies.
+
+Below follows a brief description of each of the instruments included in this data release. For each instrument (where available) we provide suggested scales and summary scores. These suggestions are based on previous research and have not been validated for this data set specifically. Psychometric testing is ongoing and updated scales will be included with future data releases if necessary.
+
+Within each participant's dataset you will find instruments with similar questions asked at `ses-S01` and at follow-up visits. For example, the Child Victimization `ses-S01` instrument captured data with questions in the format: 
+
+- `ses-S01` (`ses-S01`): At any time in your life, did anyone use force to take something away from you that you were carrying or wearing?
+- 1-year follow-up (`ses-S02`): Since your last SD visit, did anyone use force to take something away from you that you were carrying or wearing?
+
+Due to the different time frame and wording of the `ses-S01` and follow-up questions, distinct variables have been used to capture these data. Longitudinal variables are coded with a `__l` suffix at the end of the `ses-S01` variable; `ses-S01` [`sdev_y_vict_001`] turns into [`sdev_y_vict_001__l`] for the longitudinal variable. 
+
+**Reference**: @brislin2024
+
+# Youth tables {#sdev_y}
+
+## Reported Delinquency (Youth) {#sdev_y_rd}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_rd")`  
+
+**Measure description:** ABCD-SD uses a contemporary version of the Self-Reported Delinquency Scale (SRD) with co-offending added, and substance use, and sexual items removed to avoid duplication with the ABCD measures. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02` on, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of measurement bias across demographic groups in this measure and thus discontinued use/sharing of this measure. Unlike the main study, the ABCD-SD uses the full Self-Reported Delinquency Scale. We recommend conducting differential item functioning for this measure to determine whether there are biases before including it in your analyses as was done in @brislin2024.
+
+**References:**
+
+- @shaw2012
+- @brislin2024
+
+## Firearms {#youth-firearms}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_fa")`  
+
+**Measure description:** Firearm access, safety, and storage is measured with items from the Youth Risk Behavior Surveillance System (YRBSS). YRBSS is an established measure used in national surveys. The youth are asked about carrying a firearm, and how easy or difficult it is for them to get access to, load, and fire a gun.
+
+**References:**
+
+- @kann2016
+- @xu2014
+
+## Victimization {#sdev_y_vict}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_vict")`  
+
+**Measure description:** Victimization is measured using the Juvenile Victimization Questionnaire (JVQ). The ABCD-SD version includes the following sub scales: Conventional crime, Peer and sibling victimization, Peer aggression (including social aggression), Witnessing (exposure) and indirect victimization, Gun violence (including exposure), School violence and threat, and Internet victimization. The JVQ includes detailed follow-up questions to determine the circumstances and the context where any victimization occurred. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+**References:**
+
+@finkelhor2005
+
+## Personality Disposition {#sdev_y_pd}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_pd")`  
+
+**Measure description:** Personality disposition includes measures of psychopathy, fearlessness, prosociality, and aggression. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+*Psychopathy* is measured using the Youth Psychopathy Inventory (YPI). YPI measures a key personality construct strongly associated with antisocial behavior and criminality, including interpersonal, affective, and behavioral domains. The YPI has demonstrated excellent validity in children and adolescents and in community and clinical samples. YPI has three main factors and generates ten subscales. 
+
+Scales: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibility); callous unemotional (unemotionality, remorselessness, callousness); grandiose manipulative (dishonest charm, lying, grandiosity, manipulation).
+
+*Fearlessness* is measured using the Trait Fear Questionnaire (TFQ-20). Fear-proneness is an inhibitory propensity that restricts antisocial behavior through sensitivity to punishment and conscience development. Low fear proneness (fearlessness) has been implicated in psychopathy, antisocial behavior, and substance use. Trait fear has been studied extensively in children as behavioral inhibition and psychometric studies of fear proneness in adults converge on a very similar set of phenotypic expressions suggesting strong developmental continuity. Fear is also strongly associated with amygdala activation, providing a neural target to link brain and behavioral measures. The domains of fear that are consistently identified in children and adults are: experiential fear or general distress (e.g., having a lot of fear, being easily frightened), social fears (e.g., shyness, discomfort with strangers, dislike of crowds), physical caution fears (dislike of potentially dangerous activities), and tolerance for uncertainty (exploratory behavior and novelty in uncertain situations).
+
+*Prosociality* is measured using items from the Prosociality scale of the Child and Adolescent Disposition scale (CADS) and the Inventory of Callous Unemotional Traits (ICU). Prosociality describes attributes such as empathy and altruism that parents and society typically value and try to foster in children. Prosociality is thought to reflect internal control systems that facilitate harmonious relationships, compliant behavior, and good social adjustment.
+
+*Aggression* is measured by the Reactive-Proactive Aggression Questionnaire (RPAQ). Distinguishing proactive and reactive aggression dimensions is important for understanding neurobiological foundations.
+
+**References:**
+
+- @andershed2002
+- @kramer2012
+- @lahey2010
+- @kimonis2008
+- @raine2006
+
+## Peer Behavior {#sdev_y_pb}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_pb")`
+
+**Measure description:** The Peer Delinquent Behavior items from the Rochester Youth Study will provide the basis for the examination of the influence of variations in peer characteristics on early adolescence in relation to the development of delinquency and victimization. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+**Reference:** @thornberry1994
+
+## Difficulties in Emotion Regulation {#sdev_y_ders}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_ders")`
+
+**Measure description:** Emotion regulation is related to juvenile arrest, aggression, and conduct problems. Emotional awareness and insight advance during early adolescence and are measurable in this developmental period (@vasilev2009). The Difficulties in Emotion Regulation Scale (DERS) has good psychometric properties and has been tested in children as young as 11 years old. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+Scales: lack of emotional clarity; lack of emotional awareness; impulse control difficulties; non-acceptance of emotional response; difficulty engaging in goal-directed behavior; limited access to emotion regulating strategies.
+
+Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibility); callous unemotional (unemotionality, remorselessness, callousness); grandiose manipulative (dishonest charm, lying, grandiosity, manipulation).
+
+**References:**
+
+- @vasilev2009
+- @gratz2004
+
+## Alabama Parenting Questionnaire {#sdev_y_apq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_apq")`
+
+**Measure description:** Parenting strategies are measured by the Alabama Parenting Questionnaire (APQ). APQ assesses five constructs: Positive involvement with children, Supervision and monitoring, Use of positive discipline techniques, Consistency in the use of such discipline, and Use of corporal punishment. Parenting practices have been consistently associated with behavioral outcomes, including delinquency. All measures were administered in all waves to date. At `ses-S01` all question were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time in between the `ses-S01` assessment and the follow-up assessment.
+
+Scales: parental involvement; positive parenting; poor monitoring/supervision; inconsistent discipline; corporal punishment; items not in any scale.
+
+**Reference:** @elgar2007
+
+# Parent tables {#sdev_p}
+
+## Visit Type {#sdev_p_vt}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_vt")`
+
+**Measure description:** The visit type table includes information about the date of assessment, and whether the visit is completed in person or remotely. In addition, it shows if the visit was completed on the same day as any ABCD visit, or separately. Can't schedule = Scheduled but doesn't show up until out of the assessment window. Declined = Can't or won't come this year, but does not withdraw from the SD study. Opted out = Still in ABCD but formally withdraws from the SD study. Ineligible = Withdraws from the main ABCD study, and can no longer participate in the SD study even if they wish to do so. All measures were administered in all waves to date.
+
+## Alabama Parenting Questionnaire {#sdev_p_apq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_apq")`
+
+**Measure description:** Parenting strategies are measured by the Alabama Parenting Questionnaire (APQ). APQ assesses five constructs: Positive involvement with children, Supervision and monitoring, Use of positive discipline techniques, Consistency in the use of such discipline, and Use of corporal punishment. Parenting practices have been consistently associated with behavioral outcomes, including delinquency. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+Scales: parental involvement; positive parenting; poor monitoring/supervision; inconsistent discipline; corporal punishment; items not in any scale.
+
+**Reference:** @elgar2007
+
+## Difficulties in Emotion Regulation {#sdev_p_ders}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_ders")`
+
+**Measure description:** Emotion regulation is related to juvenile arrest, aggression, and conduct problems. Emotional awareness and insight advance during early adolescence and are measurable in this developmental period (@vasilev2009). The Difficulties in Emotion Regulation Scale (DERS) has good psychometric properties and has been tested in children as young as 11 years old. The DERS consists of 6 subscales: Lack of emotional awareness, Lack of emotional clarity, Difficulties controlling impulsive behaviors when distressed, Difficulties in goal-directed behaviors when distressed, Non-acceptance of negative emotional responses, and Limited access to ER strategies. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+Scales: lack of emotional clarity; lack of emotional awareness; impulse control difficulties; non-acceptance of emotional response; difficulty engaging in goal-directed behavior; limited access to emotion regulating strategies.
+
+Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibility); callous unemotional (unemotionality, remorselessness, callousness); grandiose manipulative (dishonest charm, lying, grandiosity, manipulation).
+
+**Reference:** @gratz2004
+
+## Firearms {#sdev_p_fa}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_fa")`
+
+**Measure description:** Firearm access, safety, and storage is measured with items from the Behavioral Risk Behavior Surveillance System (BRFSS). BRFSS is an established measure used in national surveys. The caregiver is asked whether there are firearms in the household, and how they are stored and secured. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+**References:**
+
+- @kann2016
+- @xu2014
+
+## Perception of Neighborhood {#sdev_p_nbh}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_nbh")`
+
+**Measure description:** Caregiver report on the Collective Efficacy- Social Conscious scale and Perception of Neighborhood Disorder scale about their neighborhood. Neighborhood influences and perceptions have been found to be related to adolescent delinquency. The constructs measured include perceptions of safety, police resources, social cohesion, and cleanliness of the neighborhood. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+Scales: lack of efficacy and disorder
+
+**References:**
+
+- @sampson1997
+- @ross1999
+
+## Personality Disposition {#sdev_p_pd}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_pd")`
+
+All measures were administered in all waves so far. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+*Prosociality* is measured using items from the Prosociality scale of the Child and Adolescent Disposition scale (CADS) and the Inventory of Callous Unemotional Traits (ICU). Prosociality describes attributes such as empathy and altruism that parents and society typically value and try to foster in children. Prosociality is thought to reflect internal control systems that facilitate harmonious relationships, compliant behavior, and good social adjustment.
+
+Scales: pro-sociality [CADS] for child, or parent; callous unemotional [ICU] for child, for parent
+
+*Aggression* is measured by the Reactive-Proactive Aggression Questionnaire (RPAQ). Distinguishing proactive and reactive aggression dimensions is important for understanding neurobiological foundations.
+
+Scales: proactive aggression for child, for parent; reactive aggression for child, for parent
+
+**References:**
+
+- @andershed2002
+- @kramer2012
+- @lahey2010
+- @kimonis2008
+- @raine2006
+
+## Reported Delinquency (Parent) {#sdev_p_rd}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_rd")`
+
+**Measure description:** ABCD-SD uses a contemporary version of the Self-Reported Delinquency Scale (SRD) with co-offending added, and substance use, and sexual items. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of significant measurement bias across demographic groups and thus discontinued use/sharing of this measure. Unlike the main study, the ABCD-SD uses the full Self-Reported Delinquency Scale. We recommend conducting differential item functioning for this measure to determine whether there are biases before including it in your analyses as was done in @brislin2024.
+
+Scales: vandalism; theft; violence; police contact
+
+**References:**
+
+- @shaw2012
+- @brislin2024
+
+## Victimization {#sdev_p_vict}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_vict")`
+
+**Measure description:** Victimization is measured using the Juvenile Victimization Questionnaire (JVQ). The ABCD-SD version includes the following sub scales: Conventional crime, Peer and sibling victimization, Peer aggression (including social aggression), Witnessing (exposure) and indirect victimization, Gun violence (including exposure), School violence and threat, and Internet victimization. The JVQ includes detailed follow-up questions to determine the circumstances and the context where any victimization occurred. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment. There is some missingness as some data have been removed due to erroneous data.
+
+Scales: conventional crime; peer physical; peer social; witnessing indirect; gun; school threats; internet
+
+**Reference:** @finkelhor2005
