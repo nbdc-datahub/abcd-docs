@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Genetics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/favicon/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0b413532dc9c185b4fafa03f9921a4ac.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5f3fb21e433880d79b747d1c5d262f0a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SB9F54HS16"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-SB9F54HS16', { 'anonymize_ip': true});
+</script>
+<script src="../../site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="../../site_libs/react-18.2.0/react.min.js"></script>
+<script src="../../site_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="../../site_libs/reactwidget-2.0.0/react-tools.js"></script>
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../../site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+<script src="../../site_libs/reactable-binding-0.4.4/reactable.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
+<script type="module" src="../../assets/js/url-handler.js"></script>
+<script type="module" src="../../assets/js/left_menu.min.js"></script>
+<script type="module" src="../../assets/js/version.min.js"></script>
+<script type="module" src="../../assets/js/callout_expand.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/img/logo-abcd.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-home" aria-label="home"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../study/index.html"> 
+<span class="menu-text">Study</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-use" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Data use</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-use">    
+        <li>
+    <a class="dropdown-item" href="../../usage/access.html">
+ <span class="dropdown-text">Access &amp; download data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/responsible_use.html">
+ <span class="dropdown-text">Responsible use</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usage/acknowledgement.html">
+ <span class="dropdown-text">Acknowledgment</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-documentation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Documentation</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-documentation">    
+        <li>
+    <a class="dropdown-item" href="../../documentation/curation/structure.html">
+ <span class="dropdown-text">Curation &amp; structure</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/non_imaging/ab.html">
+ <span class="dropdown-text">Non-imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/imaging/index.html">
+ <span class="dropdown-text">Imaging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/substudies/covid.html">
+ <span class="dropdown-text">Substudies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../documentation/release_notes/6_0.html">
+ <span class="dropdown-text">Release notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../../tools/tools.html">
+ <span class="dropdown-text">Data tools</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/r_packages.html">
+ <span class="dropdown-text">R Packages</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fa-circle-info--info" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"><i class="fa-solid fa-circle-info" aria-label="circle-info"></i> Info</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-fa-circle-info--info">    
+        <li>
+    <a class="dropdown-item" href="../../info/faq.html">
+ <span class="dropdown-text">FAQs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/issues.html">
+ <span class="dropdown-text">Report issues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/changelog.html">
+ <span class="dropdown-text">Changelog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../info/citation.html">
+ <span class="dropdown-text">Cite this website</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-version" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Version</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-version">    
+        <li class="dropdown-header">empty</li>
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/non_imaging/ab.html">Non-imaging data</a></li><li class="breadcrumb-item"><a href="../../documentation/non_imaging/gn.html">Genetics</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Curation &amp; structure</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data structure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curation standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/naming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Naming convention</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/curation/metadata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metadata</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Non-imaging data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ab.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ABCD (General)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/fc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Friends, Family, &amp; Community</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/gn.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Genetics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/le.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linked External Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/mh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mental Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurocognition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/nt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Novel Technologies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/ph.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Physical Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/non_imaging/su.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Substance Use</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../documentation/imaging/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Imaging data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Administrative &amp; QC tables</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/admin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Administration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Quality control</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_concat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Concatenated</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI derivatives data documentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_source_raw.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Source data / raw data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/data_suppl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Supplementary tables</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Scan types</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_dmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diffusion MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_qc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MRI Quality control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_rsfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resting-state fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_smri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Structural MRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmri.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_tfmribeh.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Task-based fMRI (Behavioral performance)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/type_trial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trial level behavioral performance during task-based fMRI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">ABCD BIDS Community Collection (ABCC)</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Documentation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Imaging</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_start_page.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ABCD-BIDS community collection</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_inputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BIDS conversion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_pipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data processing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Derivatives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/imaging/abcc_qualitycontrol.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality control procedures</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Substudy data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/covid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">COVID-19 rapid response research</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/ecb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Endocannabinoid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/irma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IRMA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/mrs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MR Spectroscopy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/substudies/sdev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Social Development</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Release notes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/release_notes/6_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.0 data release</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#domain-overview" id="toc-domain-overview" class="nav-link active" data-scroll-target="#domain-overview">Domain overview</a></li>
+  <li><a href="#youth-tables-tabulated-data" id="toc-youth-tables-tabulated-data" class="nav-link" data-scroll-target="#youth-tables-tabulated-data">Youth tables (tabulated data)</a>
+  <ul>
+  <li><a href="#gn_y_genrel" id="toc-gn_y_genrel" class="nav-link" data-scroll-target="#gn_y_genrel">Genetic relatedness</a></li>
+  <li><a href="#gn_y_popstruct" id="toc-gn_y_popstruct" class="nav-link" data-scroll-target="#gn_y_popstruct">Population structure</a></li>
+  <li><a href="#gn_e_zygrat" id="toc-gn_e_zygrat" class="nav-link" data-scroll-target="#gn_e_zygrat">Twin zygosity rating</a></li>
+  </ul></li>
+  <li><a href="#file-based" id="toc-file-based" class="nav-link" data-scroll-target="#file-based">File-based data</a>
+  <ul>
+  <li><a href="#smokescreen-binarized-plink-files-and-batch-info" id="toc-smokescreen-binarized-plink-files-and-batch-info" class="nav-link" data-scroll-target="#smokescreen-binarized-plink-files-and-batch-info">Smokescreen binarized PLINK files and batch info</a></li>
+  <li><a href="#imputed-vcf-files-using-topmed-imputation-panel" id="toc-imputed-vcf-files-using-topmed-imputation-panel" class="nav-link" data-scroll-target="#imputed-vcf-files-using-topmed-imputation-panel">Imputed VCF files using TOPMED imputation panel</a></li>
+  <li><a href="#genesis-derived-genetic-principal-component-weights-and-relatedness-estimates" id="toc-genesis-derived-genetic-principal-component-weights-and-relatedness-estimates" class="nav-link" data-scroll-target="#genesis-derived-genetic-principal-component-weights-and-relatedness-estimates">GENESIS derived genetic principal component weights and relatedness estimates</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/non_imaging/ab.html">Non-imaging data</a></li><li class="breadcrumb-item"><a href="../../documentation/non_imaging/gn.html">Genetics</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Genetics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="domain-overview" class="level1">
+<h1>Domain overview</h1>
+<div class="cell">
+<div class="cell-output-display">
+<style>
+  .tag {
+    display: inline-block;
+    padding: 0.125rem 0.75rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+
+  .source-youth {
+    background: hsl(203, 60%, 90%);
+    color: hsl(203, 30%, 25%);
+  }
+  .source-parent {
+    background: hsl(115, 70%, 90%);
+    color: hsl(115, 45%, 30%);
+  }
+  .source-teacher {
+    background: hsl(19, 70%, 90%);
+    color: hsl(19, 45%, 30%);
+  }
+  .source-experimenter {
+    background: hsl(353, 70%, 90%);
+    color: hsl(353, 45%, 30%);
+  }
+  .source-led {
+    background: hsl(70, 70%, 90%);
+    color: hsl(70, 45%, 30%);
+  }
+  .source-general {
+    background: hsl(44, 70%, 90%);
+    color: hsl(44, 45%, 30%);
+  }
+  
+  :root {
+    --tooltip-color: rgb(8 81 156 / 90%);
+    --tooltip-text-color: white; 
+  }
+  .tippy-box[data-theme~='mytheme'] {
+    background-color: var(--tooltip-color); 
+    color: var(--tooltip-text-color);
+  }
+  
+  .tippy-box[data-theme~='mytheme'][data-placement^='top'] > .tippy-arrow::before {
+    border-top-color: var(--tooltip-color);
+  }
+  .tippy-box[data-theme~='mytheme'][data-placement^='bottom'] > .tippy-arrow::before {
+    border-bottom-color: var(--tooltip-color);
+  }
+  .tippy-box[data-theme~='mytheme'][data-placement^='left'] > .tippy-arrow::before {
+    border-left-color: var(--tooltip-color);
+  }
+  .tippy-box[data-theme~='mytheme'][data-placement^='right'] > .tippy-arrow::before {
+    border-right-color: var(--tooltip-color);
+  }
+  
+  abbr.tool-tip {
+    display: flex;
+  }
+  abbr.tool-tip > div {
+    cursor: help;
+    padding-left: 2px;
+    & > i {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-b87f3acc056e2713a279" style="width:auto;height:auto;"></div>
+<p>
+        </p><div style="text-align: center; font-size: 0.8em; color: gray;">
+            <i>Please <b>scroll horizontally</b> 
+            <i class="fa fa-info-circle" id="scroll_tip" data-tippy-content="Use touchpad gestures or hold shift and scroll with the mouse wheel or use the bottom scroll bar" style="color: #a7a7a7;" data-charge="this is a 5-dollar tip">
+            </i>
+            to view the number of variables and events of administration for the displayed tables.</i>
+        </div>
+        <script>
+          tippy("#scroll_tip", {
+            allowHTML: true,
+            theme: "mytheme",
+            placement: "top",
+            delay: 100
+          });
+        </script>
+        <p></p>
+<script type="application/json" data-for="htmlwidget-b87f3acc056e2713a279">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"table_label":["Genetic Relatedness ","Genetic Population Structure ","Twin Zygosity Rating "],"table_name":["gn_y_genrel","gn_y_popstruct","gn_e_zygrat"],"source":["Youth","Youth","Experimenter"],"sub_domain":["Relatedness","Population Structure","Relatedness"],"n_total":[14,32,25],"n_admin":[6,"NA",2],"n_item":["NA","NA",23],"n_score":[8,32,"NA"],"type":["static","static","dynamic"],"00A":[null,null,true],"01A":[null,null,true],"02A":[null,null,true]},"columns":[{"id":"table_label","name":"Table label","type":"character","html":true,"cell":["<a href='/documentation/non_imaging/gn.html#gn_y_genrel'>Genetic Relatedness <\/a>","<a href='/documentation/non_imaging/gn.html#gn_y_popstruct'>Genetic Population Structure <\/a>","<a href='/documentation/non_imaging/gn.html#gn_e_zygrat'>Twin Zygosity Rating <\/a>"],"width":250,"sticky":"left","style":{"borderRight":"1px solid #ccc"},"headerStyle":{"borderRight":"1px solid #ccc"}},{"id":"table_name","name":"Table name","type":"character","html":true,"cell":["<span>\n  <img src='https://cdn.jsdelivr.net/gh/deap-science/web-resources@main/img/deap_icon.svg' style=\"width:1.2em; height:1.2em;\">\n  <a href='https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Youth%22%2C%22Genetic%20Relatedness%20%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset'><code>gn_y_genrel<\/code><\/a>\n<\/span>","<span>\n  <img src='https://cdn.jsdelivr.net/gh/deap-science/web-resources@main/img/deap_icon.svg' style=\"width:1.2em; height:1.2em;\">\n  <a href='https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Youth%22%2C%22Genetic%20Population%20Structure%20%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset'><code>gn_y_popstruct<\/code><\/a>\n<\/span>","<span>\n  <img src='https://cdn.jsdelivr.net/gh/deap-science/web-resources@main/img/deap_icon.svg' style=\"width:1.2em; height:1.2em;\">\n  <a href='https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Experimenter%22%2C%22Twin%20Zygosity%20Rating%20%5BExperimenter%5D%22%5D%5D#/my-datasets/create-dataset'><code>gn_e_zygrat<\/code><\/a>\n<\/span>"],"width":180},{"id":"source","name":"Source","type":"character","html":true,"cell":[{"name":"div","attribs":{"className":"tag source-youth"},"children":["Youth"]},{"name":"div","attribs":{"className":"tag source-youth"},"children":["Youth"]},{"name":"div","attribs":{"className":"tag source-experimenter"},"children":["Experimenter"]}],"width":130},{"id":"sub_domain","name":"Subdomain","type":"character","html":true,"width":150},{"id":"n_total","name":"TOTAL","type":"numeric","html":true,"width":65,"style":{"fontWeight":"bold","borderLeft":"1px solid #ccc"},"headerStyle":{"borderLeft":"1px solid #ccc"}},{"id":"n_admin","name":"admin","type":"numeric","html":true,"width":60},{"id":"n_item","name":"item","type":"numeric","html":true,"width":60},{"id":"n_score","name":"n_score","type":"numeric","html":true,"cell":["8","32",""],"header":"\n    function() {\n      let iconsHTML = \"\";\n      const tooltipID1 = \"tooltip-header-\" + Math.random().toString(36).substring(2, 15);\n      setTimeout(function() {\n        tippy(`#${tooltipID1}`, {allowHTML: true, theme: \"mytheme\"});\n      }, 100);\n      iconsHTML += `<div id=\"${tooltipID1}\" data-tippy-content=\"<div><span>  &lt;i class='fa-brands fa-r-project' style='filter: grayscale(1);'&gt;&lt;/i&gt;   ABCDscores R package source code available<\/span>\n<\/div>\"><i class=\\\"fa fa-info-circle\\\" style=\\\"color: #a7a7a7;\\\"><\/i><\/div>`;\n      return `<abbr class=\"tool-tip\">score${iconsHTML}<\/abbr>`;\n    }\n    ","width":80},{"id":"type","name":"Type","type":"character","html":true,"cell":["<i class=\"fa-solid fa-minus\"><\/i>","<i class=\"fa-solid fa-minus\"><\/i>","<i class=\"fa-solid fa-chart-line\"><\/i>"],"header":"\n    function() {\n      let iconsHTML = \"\";\n      const tooltipID1 = \"tooltip-header-\" + Math.random().toString(36).substring(2, 15);\n      setTimeout(function() {\n        tippy(`#${tooltipID1}`, {allowHTML: true, theme: \"mytheme\"});\n      }, 100);\n      iconsHTML += `<div id=\"${tooltipID1}\" data-tippy-content=\"<div><span>  <i class='fa-solid fa-minus' style='color: #a7a7a7;'><\/i>  static<\/span><br/><span>  <i class='fa-solid fa-chart-line' style='color: #a7a7a7;'><\/i>  longitudinal<\/span>\n<\/div>\"><i class=\\\"fa fa-info-circle\\\" style=\\\"color: #a7a7a7;\\\"><\/i><\/div>`;\n      return `<abbr class=\"tool-tip\">Type${iconsHTML}<\/abbr>`;\n    }\n    ","width":70,"align":"center","style":{"borderLeft":"1px solid #ccc"},"headerStyle":{"borderLeft":"1px solid #ccc"}},{"id":"00A","name":"00A","type":"logical","html":true,"cell":["","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>"],"width":50,"align":"center"},{"id":"01A","name":"01A","type":"logical","html":true,"cell":["","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>"],"width":50,"align":"center"},{"id":"02A","name":"02A","type":"logical","html":true,"cell":["","","<span style='font-size: 13px; color: #145090;'>⬤<\/span>"],"width":50,"align":"center"}],"columnGroups":[{"name":"","align":"left","sticky":"left","headerStyle":{"borderRight":"1px solid #ccc"},"columns":["table_label"]},{"name":"","columns":["table_name","source","sub_domain"]},{"name":"No. of variables","headerStyle":{"borderLeft":"1px solid #ccc"},"columns":["n_total","n_admin","n_item","n_score"]},{"name":"Events","headerStyle":{"borderLeft":"1px solid #ccc"},"columns":["type","00A","01A","02A"]}],"resizable":true,"filterable":true,"pagination":false,"bordered":true,"striped":true,"theme":{"headerStyle":{"fontFamily":"Inter","fontWeight":"600","fontSize":"0.8em"},"groupHeaderStyle":{"fontFamily":"Inter","fontWeight":"600","fontSize":"0.9em"},"tableBodyStyle":{"fontFamily":"Inter"},"cellStyle":{"display":"flex","flexDirection":"column","justifyContent":"center","fontSize":"0.8em"},"searchInputStyle":{"fontFamily":"Inter","fontSize":"0.8em"}},"dataKey":"f6798004ca17017938098c4a97a7ff02"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.7.header","tag.attribs.columns.8.header"],"jsHooks":[]}</script>
+</div>
+</div>
+<p><br> This document contains information on zygosity, genetic, and genetic derived data that are available for the ABCD sample for the 6.0 data release. We describe both tabulated data that is available in release tables listed below, in addition to bulk genetic data that contains the following:</p>
+<ol type="1">
+<li>Curated genotyping data from Smokescreen array - set of PLINK files containing 11,664 unique subjects at ~500k variants</li>
+<li>Imputed data based on TOPMED reference panel - set of vcf files containing all imputed genotype data for 11,664 unique subjects at ~260 million variants</li>
+<li>Genetic relatedness and <span class="math inline">\(\hat{\pi}\)</span> estimates across the full sample using methods correcting ancestry background</li>
+<li>Genetic principal component weights to enable projection of other samples to ABCD genetic PC space</li>
+</ol>
+<p>For comprehensive details of quality control steps performed and a description of the genetic data within the ABCD sample please refer to and cite the following work:</p>
+<strong>Key reference:</strong> Fan, C. C., Loughnan, R., Wilson, S., Hewitt, J. K., &amp; ABCD Genetic Working Group. (2023). Behavior Genetics, 53(3), 159–168. <a href="https://doi.org/10.1007/s10519-023-10143-0">https://doi.org/10.1007/s10519-023-10143-0</a>
+<div style="display: none;">
+<span class="citation" data-cites="fan2023">Fan et al. (<a href="#ref-fan2023" role="doc-biblioref">2023</a>)</span>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Release notes: `gn`">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Release notes: <code>gn</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="../../documentation/release_notes/6_0.html#genetics"><strong>File naming &amp; inclusion (6.0)</strong></a>: Consistent with the rest of the 6.0 data release, the <code>NDAR_INV</code> prefix has been removed from all subject identifiers in files. Four individuals were also removed from files due to withdrawal of consent or familial genetic relatedness inconsistency.</p>
+<p><a href="../../documentation/release_notes/6_0.html#topmed-imputed-data-shared-as-vcfs"><strong>Variant call files (6.0)</strong></a>: TOPMED imputed data is now shared as VCFs (Variant Call Files) instead of as PLINK files; this facilitates the inclusion of imputation INFO scores which indicate the quality of imputation and enables the inclusion of multiallelic variants.</p>
+</div>
+</div>
+</div>
+<div id="use-genetics" class="callout callout-style-default callout-important callout-titled" title="Responsible use warning: Genetics">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible use warning: Genetics
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Balanced Research Practices</strong></p>
+<p>Researchers must adhere to ethical guidelines and ensure that genetic data are analyzed and interpreted responsibly. Research should aim to advance scientific understanding and avoid misinterpretation or misuse of genetic findings. Evidence of users engaging in stigmatizing research will result in termination of data access.</p>
+<p><strong>Consideration of Population Descriptors</strong></p>
+<p>The use of population descriptors in genetic research can often be varied and inconsistent. We encourage users to review the <a href="https://nap.nationalacademies.org/catalog/26902/using-population-descriptors-in-genetics-and-genomics-research-a-new">NASEM report</a> for consideration of appropriate population descriptors for their analysis. Self-reported race and ethnicity may reflect social and environmental experiences that do not directly correspond to genetic variation. Genetic principal components are provided to more accurately represent genetic variation without reliance on self-reported categories. Principal components provide unlabelled variables capturing genetic variation, whereas ancestry labels capture similar variation but typically are labeled in terms of continental ancestry groups (European, African, etc.).</p>
+<p>To ensure genetic analyses are conducted with scientific rigor and precision, this data release provides genetic principal components rather than ancestry labels, following best practices in genomic research.</p>
+<strong>Key reference:</strong> (2023). <a href="https://doi.org/10.17226/26902">https://doi.org/10.17226/26902</a>
+<div style="display: none;">
+<span class="citation" data-cites="creapdgr2023"><em>Using <span>Population Descriptors</span> in <span>Genetics</span> and <span>Genomics Research</span></em> (<a href="#ref-creapdgr2023" role="doc-biblioref">2023</a>)</span>
+</div>
+</div>
+</div>
+</div>
+<div id="data-genetics" class="callout callout-style-default callout-warning callout-titled" title="Data warning: Genetics principal components">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data warning: Genetics principal components
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Outliers of the genetics principal components appear in the <code>gn_y_popstruct</code> table should be noted and analyzed as such.</p>
+</div>
+</div>
+</div>
+<strong>Key reference:</strong> Fan, C. C., Loughnan, R., Wilson, S., Hewitt, J. K., &amp; ABCD Genetic Working Group. (2023). Behavior Genetics, 53(3), 159–168. <a href="https://doi.org/10.1007/s10519-023-10143-0">https://doi.org/10.1007/s10519-023-10143-0</a>
+<div style="display: none;">
+<span class="citation" data-cites="fan2023">Fan et al. (<a href="#ref-fan2023" role="doc-biblioref">2023</a>)</span>
+</div>
+</section>
+<section id="youth-tables-tabulated-data" class="level1">
+<h1>Youth tables (tabulated data)</h1>
+<section id="gn_y_genrel" class="level2">
+<h2 class="anchored" data-anchor-id="gn_y_genrel">Genetic relatedness</h2>
+<p><img src="../../assets/img/documentation/deap_icon.svg" class="img-fluid" width="30"> <a href="https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&amp;hierarchy=%5B%5B%22Youth%22%2C%22Genetic%20Relatedness%20%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset"><code>gn_y_genrel</code></a></p>
+<p><strong>Measure description:</strong> Data in this instrument indicate genetic and related similarity. <code>gn_y_genrel_id__fam</code> contains a unique number for each set of individuals who appear genetically related (genetic relatedness&gt;0.35). We include <code>gn_y_genrel_id__birth</code> which, for individuals in the same (genetic) family, indicates those whose birthdays are within three months of each other (i.e., twins or triplets). These fields are cross listed in the “ABCD (general)” domain (<strong><code>ab_g_stc__design_id__fam__gen</code></strong> and <strong><code>ab_g_stc__design_id__birth__gen</code></strong>).</p>
+<p><code>gn_y_genrel_id__fam</code> can be used as a random effect in mixed effects models to account for relatedness in the ABCD sample. Depending on the analysis, users may select either or a combination of these variables to account for familial/shared environmental effects within the sample.</p>
+<p><strong>Twin Analysis Variables:</strong> To identify siblings or twins/triplets in the sample, researchers can use <code>gn_y_genrel_id__paired__{N}</code>, <code>gn_y_genrel_zyg__{N}</code> and <code>gn_y_genrel_pihat__{N}</code> columns. These columns are derived from pairs of related individuals where both individuals have been genotyped. These columns are aligned such that for a given subject, <code>gn_y_genrel_id__paired__01</code> indicates the other subject in the sample they are related to, and<code>gn_y_genrel_zyg__01</code> indicates whether this relationship is monozygotic (1), dizygotic (2) or singleton siblings (3). Monozygotic relationships have <span class="math inline">\(\hat{\pi}\)</span>&gt;0.8, dizygotic relationships have 0.8&gt;<span class="math inline">\(\hat{\pi}\)</span>&gt;0.35 and matching birth dates between pairs, and sibling relationships have 0.8&gt;<span class="math inline">\(\hat{\pi}\)</span>&gt;0.35 and birth dates more than 3 months apart. Finally, <code>gn_y_genrel_pihat__01</code> represents the genetic relatedness of this relationship (as captured by <span class="math inline">\(\hat{\pi}\)</span> ). These columns are only defined for individuals for pihat &gt;0.35. Genetic relatedness across all pairs in the sample (thresholded) is available as part of the bulk genetic data (see section GENESIS below, which describes how genetic relatedness was calculated).</p>
+<p><strong>Modifications since initial administration:</strong> From data release 5.0 onwards, genetic relatedness has been computed by PC-Relate (see GENESIS section below for details). Previous data releases used <code>PLINK --genome</code> for this calculation which is less suitable for the population structure of the ABCD study.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Release notes: `gn_y_genrel`">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Release notes: <code>gn_y_genrel</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="../../documentation/release_notes/6_0.html#genetically-derived-family-and-birth-ids"><strong>Missing genotypes (6.0)</strong></a>: In the 6.0 data release, 200 individuals have still not been genotyped from the full enrolled sample and so <code>gn_y_genrel_id__fam</code> and <code>gn_y_genrel_id__birth</code> are not defined for these individuals.</p>
+<p><a href="../../documentation/release_notes/6_0.html#genetically-derived-family-and-birth-ids"><strong>Family relatedness (6.0)</strong></a>: In previous data releases, family relatedness was captured by <code>rel_family_id</code>, this variable is now named <code>gn_y_genrel_id__fam</code> in the genetics table and crosslisted as <code>ab_g_stc__design_id__fam__gen</code> in the <code>ab_g_stc</code> table.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Release notes: `gn_y_genrel`">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Release notes: <code>gn_y_genrel</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="../../documentation/release_notes/6_0.html#genetically-derived-family-and-birth-ids"><strong>Missing genotypes (6.0)</strong></a>: In the 6.0 data release, 200 individuals have still not been genotyped from the full enrolled sample and so <code>gn_y_genrel_id__fam</code> and <code>gn_y_genrel_id__birth</code> are not defined for these individuals.</p>
+<p><a href="../../documentation/release_notes/6_0.html#genetically-derived-family-and-birth-ids"><strong>Family relatedness (6.0)</strong></a>: In previous data releases, family relatedness was captured by <code>rel_family_id</code>, this variable is now named <code>gn_y_genrel_id__fam</code> in the genetics table and crosslisted as <code>ab_g_stc__design_id__fam__gen</code> in the <code>ab_g_stc</code> table.</p>
+</div>
+</div>
+</div>
+<p><strong>Key references:</strong></p>
+<ul>
+<li>Gogarten, S. M., Sofer, T., Chen, H., Yu, C., Brody, J. A., Thornton, T. A., Rice, K. M., &amp; Conomos, M. P. (2019). Bioinformatics (Oxford, England), 35(24), 5346–5348. <a href="https://doi.org/10.1093/bioinformatics/btz567">https://doi.org/10.1093/bioinformatics/btz567</a>
+<div style="display: none;">
+<span class="citation" data-cites="gogarten2019">Gogarten et al. (<a href="#ref-gogarten2019" role="doc-biblioref">2019</a>)</span>
+</div></li>
+<li>Conomos, M. P., Miller, M. B., &amp; Thornton, T. A. (2015). Genetic Epidemiology, 39(4), 276–293. <a href="https://doi.org/10.1002/gepi.21896">https://doi.org/10.1002/gepi.21896</a>
+<div style="display: none;">
+<span class="citation" data-cites="conomos2015">Conomos et al. (<a href="#ref-conomos2015" role="doc-biblioref">2015</a>)</span>
+</div></li>
+<li>Conomos, M. P., Reiner, A. P., Weir, B. S., &amp; Thornton, T. A. (2016). The American Journal of Human Genetics, 98(1), 127–148. <a href="https://doi.org/10.1016/j.ajhg.2015.11.022">https://doi.org/10.1016/j.ajhg.2015.11.022</a>
+<div style="display: none;">
+<span class="citation" data-cites="conomos2016">Conomos et al. (<a href="#ref-conomos2016" role="doc-biblioref">2016</a>)</span>
+</div></li>
+</ul>
+</section>
+<section id="gn_y_popstruct" class="level2">
+<h2 class="anchored" data-anchor-id="gn_y_popstruct">Population structure</h2>
+<p><img src="../../assets/img/documentation/deap_icon.svg" class="img-fluid" width="30"> <a href="https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&amp;hierarchy=%5B%5B%22Youth%22%2C%22Genetic%20Population%20Structure%20%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset"><code>gn_y_popstruct</code></a></p>
+<p><strong>Measure description:</strong> Genetic principal components (PC), computed using GENESIS (Gogarten et. al., Bioinformatics, 2019), are provided under fields <code>gn_y_popstruct_pc__{N}</code>. For details of this procedure, including details of where to find PC weights to enable projection of other samples onto this PC space, please see section GENESIS Derived Principal Component Weights and Relatedness Estimates below.</p>
+<p><strong>Modifications since initial administration:</strong> Genetic ancestry factors had been previously released with ABCD 4.0 data release and earlier releases. See “Non-tabuled Genetic Data” section of this document to find some resources for computing these measures if necessary. From the 5.0 data release forward, population structure is captured by genetic principal components described below in “GENESIS…” section.</p>
+</section>
+<section id="gn_e_zygrat" class="level2" data-link="Twin Zygosity Rating">
+<h2 data-link="Twin Zygosity Rating" class="anchored" data-anchor-id="gn_e_zygrat">Twin zygosity rating</h2>
+<p><img src="../../assets/img/documentation/deap_icon.svg" class="img-fluid" width="30"> <a href="https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&amp;hierarchy=%5B%5B%22Experimenter%22%2C%22Twin%20Zygosity%20Rating%20%5BExperimenter%5D%22%5D%5D#/my-datasets/create-dataset"><code>gn_e_zygrat</code></a></p>
+<p><strong>Measure description:</strong> The Twin Zygosity Rating study characterized photos of twins on physical characteristics to estimate zygosity. Research assistants assessed similarities between twin pairs based on the photos. Please note, as described above, genetic-based zygosity is provided as part of the <code>gn_y_genrel</code> table.</p>
+</section>
+</section>
+<section id="file-based" class="level1">
+<h1>File-based data</h1>
+<p>For extraction of single genetic variants, users can use tools like <a href="https://github.com/fastlmm/bed-reader">bed-reader</a> for python and <a href="https://rdrr.io/bioc/snpStats/man/read.plink.html">snpStats</a> for R to parse plink bed files described below. Methods such as <a href="https://github.com/getian107/PRScsx">PRS-csx</a> have been developed to generate polygenic scores in samples with the high degree of genetic diversity found in ABCD. I<a href="https://github.com/getian107/PRScs">PRScs</a> can show comparable performance with PRS-csx in ABCD data, whilst requiring fewer analysis steps (e.g.&nbsp;cross validation)(Ahern, J et. al., Behavior Genetics, 2023). The performance of polygenic scores varies as genomic distance from the training sample increases (Ding et. al., 2023) . Due to this known issue, conducting stratified analysis of individuals that share similar continental ancestry is currently considered best practice, although this is an evolving field with new approaches constantly being developed. Tools such as <a href="https://dalexander.github.io/admixture/">ADMIXTURE</a> can generate genetic factors to enable this type of analysis.</p>
+<p><strong>Key references:</strong></p>
+<ul>
+<li>Ahern, J., Thompson, W., Fan, C. C., &amp; Loughnan, R. (2023). Behavior Genetics, 53(3), 292–309. <a href="https://doi.org/10.1007/s10519-023-10139-w">https://doi.org/10.1007/s10519-023-10139-w</a>
+<div style="display: none;">
+<span class="citation" data-cites="ahern2023">Ahern et al. (<a href="#ref-ahern2023" role="doc-biblioref">2023</a>)</span>
+</div></li>
+<li>Ding, Y., Hou, K., Xu, Z., Pimplaskar, A., Petter, E., Boulier, K., &amp; Priv\'e. (2023). Nature, 618(7966), 774–781. <a href="https://doi.org/10.1038/s41586-023-06079-4">https://doi.org/10.1038/s41586-023-06079-4</a>
+<div style="display: none;">
+<span class="citation" data-cites="ding2023">Ding et al. (<a href="#ref-ding2023" role="doc-biblioref">2023</a>)</span>
+</div></li>
+</ul>
+<p>Plink files described do not contain family relatedness or sex information. For family relatedness please refer to “GENESIS Derived Genetic Principal Component Weights and Relatedness Estimates” section below or “Genetic Relatedness” above. For sex, refer to <code>ab_g_stc__cohort_sex</code> in <code>ab_g_stc</code>.</p>
+<p>Non tabulated genetic data is split into three directories as follows: <code>../dairc/concat/genetics/genotype_microarray/..</code></p>
+<ul>
+<li><code>/smokescreen/</code> smokescreen genotype array data (non-imputed)</li>
+<li><code>/imputed/</code> TOPMED imputed array data - derived from smokescreen</li>
+<li><code>/genesis/</code> GENESIS derived variables.</li>
+</ul>
+<p>The contents of each of these directories is described in sections below.</p>
+<section id="smokescreen-binarized-plink-files-and-batch-info" class="level2">
+<h2 class="anchored" data-anchor-id="smokescreen-binarized-plink-files-and-batch-info">Smokescreen binarized PLINK files and batch info</h2>
+<p><strong>Files:</strong> ..<code>/smokescreen/</code>..</p>
+<ul>
+<li><code>merged_chroms.bed</code></li>
+<li><code>merged_chroms.bim</code></li>
+<li><code>merged_chroms.fam</code></li>
+<li><code>batch.info</code></li>
+<li><code>removed_individuals.txt</code></li>
+</ul>
+<p><strong>Measure description:</strong> After dish quality control and profile checks, genotypes were called using Axiom Analysis Suite (apt version 2.11) on raw intensities from the Affymetrix Smokescreen array. Based on the best practices analysis workflow by Thermo Fisher, classifications that passed the final SNP quality controls were recommended, resulting in ~515K recommended probe sets in each genotyping batch. Blood and Saliva DNA samples were genotyped separately. We include one genotype result for each subject, using whichever sample has the best QC metrics (call rates and missingness). There were nine genotyping batches in Data Release 6.0, spanning 147 plates (See <code>batch.info</code> in downloaded files). After obtaining the genotype batch, we mapped the probesets to SNPs using annotations derived from genome build hg19. After the mapping, we merged all nine batches into one study cohort and then performed additional study level QC to include missingness less than 10% in the SNP level, and less than 20% in the sample level. 515,279 variants and 11,664 people passed filters and QC. The subsequent imputation and relatedness inferences were based on the final curated genotype data. The batch information can be found in <code>batch.info</code>. Removed_individuals.txt indicates individuals that have been removed from 5.0 to 6.0 data release due to either withdrawn consent or indications of sample mixup (e.g.&nbsp;mismatching of genetic relatedness with known family members).</p>
+<p><strong>Genome Build:</strong> hg19</p>
+<p><strong>Number of variants:</strong> ~515k</p>
+<p><strong>Number of individuals:</strong> 11,664</p>
+<p><strong>Modifications since initial release:</strong> Genotyping of missing individuals from previous data releases due to sample mix up or failing quality control measures.</p>
+<strong>Key reference:</strong> Baurley, J. W., Edlund, C. K., Pardamean, C. I., Conti, D. V., &amp; Bergen, A. W. (2016). BMC Genomics, 17(1), 145. <a href="https://doi.org/10.1186/s12864-016-2495-7">https://doi.org/10.1186/s12864-016-2495-7</a>
+<div style="display: none;">
+<span class="citation" data-cites="baurley2016">Baurley et al. (<a href="#ref-baurley2016" role="doc-biblioref">2016</a>)</span>
+</div>
+</section>
+<section id="imputed-vcf-files-using-topmed-imputation-panel" class="level2">
+<h2 class="anchored" data-anchor-id="imputed-vcf-files-using-topmed-imputation-panel">Imputed VCF files using TOPMED imputation panel</h2>
+<p><strong>Files:</strong> ..<code>/imputed/</code>..</p>
+<ul>
+<li><code>chr{c}_dose.vsf.gz</code></li>
+<li><code>chr{c}_dose.vcf.gz.tbi</code></li>
+<li>…</li>
+<li><code>qcreport.html</code></li>
+</ul>
+<p><strong>Measure description:</strong> The curated genotype data was used for the imputation, using the bioinformatic pipelines and recommendations of TOPMED Server, with TOPMED reference panel. Post processing of these files included adding RSID numbers from dbSNP build 156 and using reference=GRCh38.p14 found here <a href="https://ftp.ncbi.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz" class="uri">https://ftp.ncbi.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz</a>.</p>
+<p>The TOPMED imputation scores and post-imputation quality report can be found at cqcreport.html in this folder. In addition to estimated allele dosages, an R2 field in vcf files contains an estimated imputation accuracy which can be used to filter high quality imputed variants.</p>
+<p><strong>ABCD Classification:</strong> Genetic</p>
+<p><strong>Genome Build:</strong> GRCh38</p>
+<p><strong>Number of variants:</strong> ~260 million</p>
+<p><strong>Number of individuals:</strong> 11,664</p>
+<p><strong>Key references:</strong></p>
+<ul>
+<li>Das, S., Forer, L., &amp; Sch\"o. (2016). Nature Genetics, 48(10), 1284–1287. <a href="https://doi.org/10.1038/ng.3656">https://doi.org/10.1038/ng.3656</a>
+<div style="display: none;">
+<span class="citation" data-cites="das2016">Das et al. (<a href="#ref-das2016" role="doc-biblioref">2016</a>)</span>
+</div></li>
+<li>Loh, P., Danecek, P., Palamara, P. F., Fuchsberger, C., A Reshef, Y., K Finucane, H., Schoenherr, S., Forer, L., McCarthy, S., Abecasis, G. R., Durbin, R., &amp; L Price, A. (2016). Nature Genetics, 48(11), 1443–1448. <a href="https://doi.org/10.1038/ng.3679">https://doi.org/10.1038/ng.3679</a>
+<div style="display: none;">
+<span class="citation" data-cites="loh2016">Loh et al. (<a href="#ref-loh2016" role="doc-biblioref">2016</a>)</span>
+</div></li>
+</ul>
+</section>
+<section id="genesis-derived-genetic-principal-component-weights-and-relatedness-estimates" class="level2">
+<h2 class="anchored" data-anchor-id="genesis-derived-genetic-principal-component-weights-and-relatedness-estimates">GENESIS derived genetic principal component weights and relatedness estimates</h2>
+<p><strong>Files:</strong> ..<code>/genesis/</code>..</p>
+<ul>
+<li><code>pcair_weights.tsv</code></li>
+<li><code>pcrelate_relatedness.tsv</code></li>
+<li><code>unrelateds_individuals.txt</code></li>
+</ul>
+<p><strong>Measure description:</strong> Accounting for genetic principal components (PCs) in genetic studies (both GWAS and Polygenic Score analysis) is considered best practice to account for effects of population stratification that can lead to spurious results. Traditional approaches for calculating PCs (e.g., <a href="https://urldefense.com/v3/__https://github.com/gabraham/flashpca__;!!Mih3wA!DAFS_uCCsIWrhd3A4uGdRJiQ4SrqyL14ZV_WBgqqzzjfu3LS0J9iFF96XtoQdR53IAnzpfFNMlqG1m8Ve29Z$">FlashPCA</a>), although considered best practice for many genetic studies, may not be suited for samples with large known or cryptic relatedness, as is observed in ABCD. As such, we have replaced these genetic PCs with ones calculated using PC-AiR, a method developed and validated for samples with large family structure. PC-AiR captures ancestry information not confounded by relatedness by finding a set of unrelated individuals in the sample that have the highest divergent ancestry, and computing PCs in this set. The remaining related individuals are then projected into this space. This method is used by the Population Architecture through Genomics and Environment (PAGE) Consortium, which is principally concerned with genetic studies in diverse ancestry populations.</p>
+<p>PC-AiR was run using default suggested settings from the GENESIS package. We used non-imputed SNPs passing QCs from the 6.0 data release (~500k variants and 11,664 individuals). PC-AiR takes in kinship estimates for defining its unrelated set of individuals with divergent ancestry; this was computed using <code>snpgdsIBDKING</code> as suggested by GENESIS authors. SNPs were LD pruned using snpgdsLDpruning with parameters: <code>method=“corr”</code>, <code>slide.max.bp=10e6</code> and <code>ld.threshold=sqrt(0.1)</code>. This resulted in 114,707 SNPs remaining after pruning. Using the computed kinship matrix PC-Air was then run on this pruned set of SNPs. This resulted in 8,177 unrelated individuals from which PCs were derived – leaving 3,391 related individuals being projected onto this space. Subsequent analysis indicated a sample mix of 2 samples which were then removed from other genetic data.This is why the sum of unrelated and related individuals is more than the number of individuals in PLINK files (8,177+3,391&gt;1,668). The weights, which can be used to project other samples into the same PC space, can be found in <code>pcair_weights.tsv</code>, with the file /smokescreen/merged_chroms.bim indicating allele codings. The list of 8,177 unrelated individuals used for deriving PC’s is available in unrelateds_individuals.txt.</p>
+<p>After Computing PCs from PC-AiR, we then computed a genetic relatedness matrix (GRM) using PC-Relate. PC-Relate aims to compute a GRM that is independent from ancestry effects as derived from PC-AiR. PC-Relate was run on the same pruned set of SNPs described above using the first two PCs computed from PC-Air. Identity by descent probabilities between individuals i and j were calculated as <span class="math inline">\(\hat{\pi}_{ij}= \hat{k}_{ij}^{(2)}+0.5× \hat{k}_{ij}^{(1)}\)</span>, where <span class="math inline">\(\hat{k}_{ij}^{(2)}\)</span> and <span class="math inline">\(\hat{k}_{ij}^{(1)}\)</span> represent the probabilities that individuals i and j share 2 or 1 alleles at a locus – calculated from PC-Relate. For all off-diagonal elements of the GRM we provide estimates of <span class="math inline">\(\hat{k}_{ij}^{(0)}\)</span>, <span class="math inline">\(\hat{k}_{ij}^{(1)}\)</span>, <span class="math inline">\(\hat{k}_{ij}^{(2)}\)</span>, <span class="math inline">\(\hat{\pi}_{ij}\)</span> and genetic relatedness in pcrelate_relatedness.tsv. For a subset of related individuals (<span class="math inline">\(\hat{\pi}\)</span>&gt;0.35) we include estimates in tabulated data in the gen_y_genrel instrument described above. Code used to perform the processes described in this section can be found here: <a href="https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness"><strong>https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness</strong></a>.</p>
+<p><strong>Number of individuals:</strong> 11,664</p>
+<p><strong>Modifications since initial release:</strong> Genotyping of missing individuals from previous data releases due to sample mix up or failing quality control measures. Use of PC-Relate for relatedness computation, previous data releases used <code>PLINK --genome</code> for this calculation.</p>
+<p><strong>Key references:</strong></p>
+<ul>
+<li>Gogarten, S. M., Sofer, T., Chen, H., Yu, C., Brody, J. A., Thornton, T. A., Rice, K. M., &amp; Conomos, M. P. (2019). Bioinformatics (Oxford, England), 35(24), 5346–5348. <a href="https://doi.org/10.1093/bioinformatics/btz567">https://doi.org/10.1093/bioinformatics/btz567</a>
+<div style="display: none;">
+<span class="citation" data-cites="gogarten2019">Gogarten et al. (<a href="#ref-gogarten2019" role="doc-biblioref">2019</a>)</span>
+</div></li>
+<li>Conomos, M. P., Miller, M. B., &amp; Thornton, T. A. (2015). Genetic Epidemiology, 39(4), 276–293. <a href="https://doi.org/10.1002/gepi.21896">https://doi.org/10.1002/gepi.21896</a>
+<div style="display: none;">
+<span class="citation" data-cites="conomos2015">Conomos et al. (<a href="#ref-conomos2015" role="doc-biblioref">2015</a>)</span>
+</div></li>
+<li>Conomos, M. P., Reiner, A. P., Weir, B. S., &amp; Thornton, T. A. (2016). The American Journal of Human Genetics, 98(1), 127–148. <a href="https://doi.org/10.1016/j.ajhg.2015.11.022">https://doi.org/10.1016/j.ajhg.2015.11.022</a>
+<div style="display: none;">
+<span class="citation" data-cites="conomos2016">Conomos et al. (<a href="#ref-conomos2016" role="doc-biblioref">2016</a>)</span>
+</div></li>
+</ul>
+
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-ahern2023" class="csl-entry" role="listitem">
+Ahern, J., Thompson, W., Fan, C. C., &amp; Loughnan, R. (2023). <em>Behavior Genetics</em>, <em>53</em>(3), 292–309. <a href="https://doi.org/10.1007/s10519-023-10139-w">https://doi.org/10.1007/s10519-023-10139-w</a>
+</div>
+<div id="ref-baurley2016" class="csl-entry" role="listitem">
+Baurley, J. W., Edlund, C. K., Pardamean, C. I., Conti, D. V., &amp; Bergen, A. W. (2016). <em>BMC Genomics</em>, <em>17</em>(1), 145. <a href="https://doi.org/10.1186/s12864-016-2495-7">https://doi.org/10.1186/s12864-016-2495-7</a>
+</div>
+<div id="ref-conomos2015" class="csl-entry" role="listitem">
+Conomos, M. P., Miller, M. B., &amp; Thornton, T. A. (2015). <em>Genetic Epidemiology</em>, <em>39</em>(4), 276–293. <a href="https://doi.org/10.1002/gepi.21896">https://doi.org/10.1002/gepi.21896</a>
+</div>
+<div id="ref-conomos2016" class="csl-entry" role="listitem">
+Conomos, M. P., Reiner, A. P., Weir, B. S., &amp; Thornton, T. A. (2016). <em>The American Journal of Human Genetics</em>, <em>98</em>(1), 127–148. <a href="https://doi.org/10.1016/j.ajhg.2015.11.022">https://doi.org/10.1016/j.ajhg.2015.11.022</a>
+</div>
+<div id="ref-das2016" class="csl-entry" role="listitem">
+Das, S., Forer, L., Schönherr, S., Sidore, C., Locke, A. E., Kwong, A., Vrieze, S. I., Chew, E. Y., Levy, S., McGue, M., Schlessinger, D., Stambolian, D., Loh, P.-R., Iacono, W. G., Swaroop, A., Scott, L. J., Cucca, F., Kronenberg, F., Boehnke, M., … Fuchsberger, C. (2016). <em>Nature Genetics</em>, <em>48</em>(10), 1284–1287. <a href="https://doi.org/10.1038/ng.3656">https://doi.org/10.1038/ng.3656</a>
+</div>
+<div id="ref-ding2023" class="csl-entry" role="listitem">
+Ding, Y., Hou, K., Xu, Z., Pimplaskar, A., Petter, E., Boulier, K., Privé, F., Vilhjálmsson, B. J., Olde Loohuis, L. M., &amp; Pasaniuc, B. (2023). <em>Nature</em>, <em>618</em>(7966), 774–781. <a href="https://doi.org/10.1038/s41586-023-06079-4">https://doi.org/10.1038/s41586-023-06079-4</a>
+</div>
+<div id="ref-fan2023" class="csl-entry" role="listitem">
+Fan, C. C., Loughnan, R., Wilson, S., Hewitt, J. K., ABCD Genetic Working Group, Agrawal, A., Dowling, G., Garavan, H., LeBlanc, K., Neale, M., Friedman, N., Madden, P., Little, R., Brown, S. A., Jernigan, T., &amp; Thompson, W. K. (2023). <em>Behavior Genetics</em>, <em>53</em>(3), 159–168. <a href="https://doi.org/10.1007/s10519-023-10143-0">https://doi.org/10.1007/s10519-023-10143-0</a>
+</div>
+<div id="ref-gogarten2019" class="csl-entry" role="listitem">
+Gogarten, S. M., Sofer, T., Chen, H., Yu, C., Brody, J. A., Thornton, T. A., Rice, K. M., &amp; Conomos, M. P. (2019). <em>Bioinformatics (Oxford, England)</em>, <em>35</em>(24), 5346–5348. <a href="https://doi.org/10.1093/bioinformatics/btz567">https://doi.org/10.1093/bioinformatics/btz567</a>
+</div>
+<div id="ref-loh2016" class="csl-entry" role="listitem">
+Loh, P.-R., Danecek, P., Palamara, P. F., Fuchsberger, C., A Reshef, Y., K Finucane, H., Schoenherr, S., Forer, L., McCarthy, S., Abecasis, G. R., Durbin, R., &amp; L Price, A. (2016). <em>Nature Genetics</em>, <em>48</em>(11), 1443–1448. <a href="https://doi.org/10.1038/ng.3679">https://doi.org/10.1038/ng.3679</a>
+</div>
+<div id="ref-creapdgr2023" class="csl-entry" role="listitem">
+<em>Using <span>Population Descriptors</span> in <span>Genetics</span> and <span>Genomics Research</span>: <span>A New Framework</span> for an <span>Evolving Field</span></em>. (2023). National Academies Press. <a href="https://doi.org/10.17226/26902">https://doi.org/10.17226/26902</a>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p><i>ABCD Study</i>®, <i>Teen Brains. Today’s Science. Brighter Future.</i>® and the ABCD Study Logo are registered marks of the U.S. Department of Health &amp; Human Services (HHS). Adolescent Brain Cognitive Development℠ Study is a service mark of the U.S. Department of Health &amp; Human Services (HHS).</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
