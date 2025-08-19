@@ -24,7 +24,13 @@ This document contains information on zygosity, genetic, and genetic derived dat
 
 For comprehensive details of quality control steps performed and a description of the genetic data within the ABCD sample please refer to and cite the following work:
 
-**Reference:** @fan2023
+**Key reference:** `r full_cite("fan2023")`
+
+::: {.callout-caution collapse="true" title="Release notes: `gn`"}
+[**File naming & inclusion (6.0)**](../release_notes/6_0.qmd#genetics): Consistent with the rest of the 6.0 data release, the `NDAR_INV` prefix has been removed from all subject identifiers in files. Four individuals were also removed from files due to withdrawal of consent or familial genetic relatedness inconsistency.
+
+[**Variant call files (6.0)**](../release_notes/6_0.qmd#topmed-imputed-data-shared-as-vcfs): TOPMED imputed data is now shared as VCFs (Variant Call Files) instead of as PLINK files; this facilitates the inclusion of imputation INFO scores which indicate the quality of imputation and enables the inclusion of multiallelic variants.
+:::
 
 ::: {.callout-important collapse="true" title="Responsible use warning: Genetics" #use-genetics}
 **Balanced Research Practices**
@@ -37,12 +43,14 @@ The use of population descriptors in genetic research can often be varied and in
 
 To ensure genetic analyses are conducted with scientific rigor and precision, this data release provides genetic principal components rather than ancestry labels, following best practices in genomic research.
 
-**Reference:** @creapdgr2023
+**Key reference:** `r full_cite("creapdgr2023")`
 :::
 
 ::: {.callout-warning collapse="true" title="Data warning: Genetics principal components" #data-genetics}
 Outliers of the genetics principal components appear in the `gn_y_popstruct` table should be noted and analyzed as such.
 :::
+
+**Key reference:** `r full_cite("fan2023")`
 
 # Youth tables (tabulated data) 
 
@@ -58,11 +66,24 @@ Outliers of the genetics principal components appear in the `gn_y_popstruct` tab
 
 **Modifications since initial administration:** From data release 5.0 onwards, genetic relatedness has been computed by PC-Relate (see GENESIS section below for details). Previous data releases used `PLINK --genome` for this calculation which is less suitable for the population structure of the ABCD study.
 
-**References:**
 
-- @gogarten2019
-- @conomos2015
-- @conomos2016
+::: {.callout-caution collapse="true" title="Release notes: `gn_y_genrel`"}
+[**Missing genotypes (6.0)**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids): In the 6.0 data release, 200 individuals have still not been genotyped from the full enrolled sample and so `gn_y_genrel_id__fam` and `gn_y_genrel_id__birth` are not defined for these individuals.
+
+[**Family relatedness (6.0)**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids): In previous data releases, family relatedness was captured by `rel_family_id`, this variable is now named `gn_y_genrel_id__fam` in the genetics table and crosslisted as `ab_g_stc__design_id__fam__gen` in the `ab_g_stc` table.
+::: 
+
+::: {.callout-caution collapse="true" title="Release notes: `gn_y_genrel`"}
+[**Missing genotypes (6.0)**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids): In the 6.0 data release, 200 individuals have still not been genotyped from the full enrolled sample and so `gn_y_genrel_id__fam` and `gn_y_genrel_id__birth` are not defined for these individuals.
+
+[**Family relatedness (6.0)**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids): In previous data releases, family relatedness was captured by `rel_family_id`, this variable is now named `gn_y_genrel_id__fam` in the genetics table and crosslisted as `ab_g_stc__design_id__fam__gen` in the `ab_g_stc` table.
+::: 
+
+**Key references:**
+
+- `r full_cite("gogarten2019")`
+- `r full_cite("conomos2015")`
+- `r full_cite("conomos2016")`
 
 ## Population structure {#gn_y_popstruct}
 
@@ -82,10 +103,10 @@ Outliers of the genetics principal components appear in the `gn_y_popstruct` tab
 
 For extraction of single genetic variants, users can use tools like [bed-reader](https://github.com/fastlmm/bed-reader) for python and [snpStats](https://rdrr.io/bioc/snpStats/man/read.plink.html) for R to parse plink bed files described below. Methods such as [PRS-csx](https://github.com/getian107/PRScsx) have been developed  to generate polygenic scores in samples with the high degree of genetic diversity found in ABCD. I[PRScs](https://github.com/getian107/PRScs) can show comparable performance with PRS-csx in ABCD data, whilst requiring fewer analysis steps (e.g. cross validation)(Ahern, J et. al., Behavior Genetics, 2023).  The performance of polygenic scores varies as genomic distance from the training sample increases (Ding et. al., 2023) . Due to this known issue, conducting stratified analysis of individuals that share similar continental ancestry is currently considered best practice, although this is an evolving field with new approaches constantly being developed. Tools such as [ADMIXTURE](https://dalexander.github.io/admixture/) can generate genetic factors to enable this type of analysis.
 
-**References:**
+**Key references:**
 
-- @ahern2023
-- @ding2023
+- `r full_cite("ahern2023")`
+- `r full_cite("ding2023")`
 
 Plink files described do not contain family relatedness or sex information. For family relatedness please refer to "GENESIS Derived Genetic Principal Component Weights and Relatedness Estimates" section below or "Genetic Relatedness" above. For sex, refer to `ab_g_stc__cohort_sex` in `ab_g_stc`. 
 
@@ -118,7 +139,7 @@ The contents of each of these directories is described in sections below.
 
 **Modifications since initial release:** Genotyping of missing individuals from previous data releases due to sample mix up or failing quality control measures.
 
-**Reference:** @baurley2016
+**Key reference:** `r full_cite("baurley2016")`
 
 ## Imputed VCF files using TOPMED imputation panel
 
@@ -141,10 +162,10 @@ The TOPMED imputation scores and post-imputation quality report can be found at 
 
 **Number of individuals:** 11,664
 
-**References:**
+**Key references:**
 
-- @das2016
-- @loh2016
+- `r full_cite("das2016")`
+- `r full_cite("loh2016")`
 
 ## GENESIS derived genetic principal component weights and relatedness estimates
 
@@ -164,8 +185,8 @@ After Computing PCs from PC-AiR, we then computed a genetic relatedness matrix (
 
 **Modifications since initial release:** Genotyping of missing individuals from previous data releases due to sample mix up or failing quality control measures. Use of PC-Relate for relatedness computation, previous data releases used `PLINK --genome` for this calculation.
 
-**References:**
+**Key references:**
 
-- @gogarten2019
-- @conomos2015
-- @conomos2016
+- `r full_cite("gogarten2019")`
+- `r full_cite("conomos2015")`
+- `r full_cite("conomos2016")`

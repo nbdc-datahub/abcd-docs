@@ -18,10 +18,10 @@ render_table_info("domain_abbr == 'nc'")
 
 The neurocognition domain encompasses approximately 30 different neurocognitive task variables derived from 17 separate tasks and 1 parent-reported questionnaire-based probe of daily-life executive functioning. These tasks, and their software platforms of delivery and variable descriptions, are systematically described below.
 
-**References:**
+**Key references:**
 
-- @luciana2018
-- @anokhin2022
+- `r full_cite("luciana2018")`
+- `r full_cite("anokhin2022")`
 
 ::: {.callout-note collapse="false" title="Changes due to Covid-19"}
 Some adjustments in testing procedures were required for remote testing.
@@ -43,13 +43,18 @@ Some adjustments in testing procedures were required for remote testing.
    * [Delayed Discounting Task](#nc_y_ddis)
    * [Stanford Mental Arithmetic Response Time Evaluation (SMARTE)](#nc_y_smarte)
    * [Behavioral Indicator of Resiliency to Distress Task (BIRD)](#nc_y_bird)
+
+:::
+
+::: {.callout-caution collapse="true" title="Release notes: `nt`"}
+[**Administrative variables**](../release_notes/6_0.qmd#neurocognition): In the 6.0 data release we removed the neurocognition administration table and added all relevant variables specific to a task’s administration to the tables themselves.
 :::
 
 ::: {.callout-important collapse="true" title="Responsible use warning: Neurocognition domain general" #use-nc}
 
 The ABCD study has released all neurocognition data at each testing wave without exclusion. Potential quality control issues are summarized in the release notes that accompany each task description. End-users should apply their own preferred performance cutoff criteria.
 
-Using ABCD data requires responsible conceptualization and use of the data, including being mindful of variations in experience that impact performance.Cognitive task performance has been shown to correlate with a variety of socio-demographic factors. Attention and other performance factors can be confounded by transient factors such as fatigue, poor sleep, poor nutrition, or stressors. The ABCD protocol captures several SES-related variables for use as potential covariates, but not all environmental influences on cognition are measured. Normative samples for tasks used were generally smaller than the ABCD cohort, so norming may not represent American youth as well (see papers below). Measurement invariance concerns may affect interpretation; @cardenas-iniguez2024
+Using ABCD data requires responsible conceptualization and use of the data, including being mindful of variations in experience that impact performance.Cognitive task performance has been shown to correlate with a variety of socio-demographic factors. Attention and other performance factors can be confounded by transient factors such as fatigue, poor sleep, poor nutrition, or stressors. The ABCD protocol captures several SES-related variables for use as potential covariates, but not all environmental influences on cognition are measured. Normative samples for tasks used were generally smaller than the ABCD cohort, so norming may not represent American youth as well (see papers below). Measurement invariance concerns may affect interpretation (@cardenas-iniguez2024)
 
 American Academy of Clinical Neuropsychology (AACN) Position Statement on Use of Race as a Factor in Neuropsychological Test Norming and Performance Prediction: <https://theaacn.org/wp-content/uploads/2021/11/AACN-Position-Statement-on-Race-Norms.pdf>
 :::
@@ -79,7 +84,7 @@ For longitudinal analyses, we recommend using either *uncorrected Scaled Scores*
 
 In cases with remote administration of Picture Vocabulary, the Crystallized Cognition Composite Score cannot be calculated.
 
-**Reference:** @mcdonald2014
+**Key reference:** `r full_cite("mcdonald2014")`
 
 ## Cash Choice Task {#nc_y_cct}
 
@@ -88,10 +93,10 @@ In cases with remote administration of Picture Vocabulary, the Crystallized Cogn
 
 **Measure description:** The Cash Choice is a single-item proxy for the delay discounting task that asked the youth "*Let's pretend a kind person wanted to give you some money. Would you rather have \$75 in three days or \$115 in 3 months?"*. The youth indicated one of these two options or a third *can't decide* option.
 
-**References:**
+**Key references:**
 
-- @wulfert2002
-- @anokhin2011
+- `r full_cite("wulfert2002")`
+- `r full_cite("anokhin2011")`
 
 ## Little Man Task {#nc_y_lmt}
 
@@ -102,7 +107,7 @@ In cases with remote administration of Picture Vocabulary, the Crystallized Cogn
 
 **Modifications since initial administration**: The Little Man Task used in the baseline assessment was administered using a customized program designed by ABCD, whereas the 2-year and 4-year follow-up assessments used a task presented in the *Inquisit* system from [*Millisecond*](https://www.millisecond.com). We recommend users consider this difference in analyses.
 
-**Reference:** @acker1982
+**Key reference:** `r full_cite("acker1982")`
 
 ## The Pearson Rey Auditory Verbal Learning Test {#nc_y_ravlt}
 
@@ -115,10 +120,10 @@ The Rey Auditory Verbal Learning Test (RAVLT) assesses verbal learning and memor
 
 **Modifications since initial administration**: An alternate form of the RAVLT was used in the 2-year follow-up, using words designed to be similar to those in the original list in difficulty, complexity, and length.
 
-**References:**
+**Key references:**
 
-- @strauss2006
-- @lezak2012
+- `r full_cite("strauss2006")`
+- `r full_cite("lezak2012")`
 
 ## Wechsler Intelligence Scale for Children - Matrix Reasoning {#nc_y_wisc}
 
@@ -129,7 +134,7 @@ The Rey Auditory Verbal Learning Test (RAVLT) assesses verbal learning and memor
 
 Measures fluid intelligence and visuospatial reasoning. The task is from the Wechsler Intelligence Scale for Children-V (WISC-V). Total raw scores, scaled scores (mean = 10, SD = 3), and scores for each item are available.
 
-**Reference:** @wechsler2014
+**Key reference:** `r full_cite("wechsler2014")`
 
 ## Delay Discounting {#nc_y_ddis}
 
@@ -150,7 +155,7 @@ Per @johnson2008, `values.Consistent_per_JBcriterion2` (yes,no) essentially indi
 
 Users should consider restricting data analysis to participants for whom `values.Consistent per_JBcriterion1` and `values.Consistent per_JBcriterion2` are both "yes."
 
-**Reference:** @johnson2008
+**Key reference:** `r full_cite("johnson2008")`
 
 ## Emotional Stroop Task {#nc_y_est}
 
@@ -163,26 +168,26 @@ Users should consider restricting data analysis to participants for whom `values
 There may be aberrant data in the task with reaction times (RTs). We recommend that researchers should use cut-offs to omit RTs \< 200 ms and \> 2000 ms. The task's upper limit for issuing a response was 2000ms. End-users might consider downloading trial-wise data and selectively omitting certain outlier trials and recalculating mean RT values.
 :::
 
-**References:**
+**Key references:**
 
-- @banich2019
-- @basgoze2015
-- @kane2003
-- @stroop1935
+- `r full_cite("banich2019")`
+- `r full_cite("basgoze2015")`
+- `r full_cite("kane2003")`
+- `r full_cite("stroop1935")`
 
 ## Game of Dice Task {#nc_y_gdt}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_gdt")`
 `r r_link_table("nc_y_gdt")`
 
-**Measure description:** The Game of Dice Task (GDT) [@brand2005] assesses decision-making under conditions of specified risk and has been successfully used with adolescent samples [@duperrouzel2019; @drechsler2008; @ross2016]. Risk taking is assessed by having participants attempt to predict the outcome of a dice roll by choosing among different options that vary on their outcome probability and pay-off across 18 trials. Specific rules and probabilities for monetary gains and losses are evident throughout the task [@brand2005]. On each trial, participants predict the outcome of a die roll by choosing from four different options (e.g., one number vs. multiple numbers). Options with more numbers (i.e. higher probability of winning) are associated with a lesser reward compared to those with one or two possible numbers (i.e. lower probability of winning). The two options with the lowest probability of winning are considered 'risky choices.' The total number of risky choices is often used to quantify performance.
+**Measure description:** The Game of Dice Task (GDT) (@brand2005) assesses decision-making under conditions of specified risk and has been successfully used with adolescent samples (@duperrouzel2019; @drechsler2008; @ross2016). Risk taking is assessed by having participants attempt to predict the outcome of a dice roll by choosing among different options that vary on their outcome probability and pay-off across 18 trials. Specific rules and probabilities for monetary gains and losses are evident throughout the task (@brand2005). On each trial, participants predict the outcome of a die roll by choosing from four different options (e.g., one number vs. multiple numbers). Options with more numbers (i.e. higher probability of winning) are associated with a lesser reward compared to those with one or two possible numbers (i.e. lower probability of winning). The two options with the lowest probability of winning are considered 'risky choices.' The total number of risky choices is often used to quantify performance.
 
-**References:**
+**Key references:**
 
-- @brand2005
-- @drechsler2008
-- @duperrouzel2019
-- @ross2016
+- `r full_cite("brand2005")`
+- `r full_cite("drechsler2008")`
+- `r full_cite("duperrouzel2019")`
+- `r full_cite("ross2016")`
 
 ## Social Influence Task {#nc_y_sit}
 
@@ -195,7 +200,7 @@ The task is designed to try to ensure \~25% of trials (\~10 trials) are in each 
 
 This task was administered at year 4 but discontinued 9/14/2021 based on participant burden and task data showing lack of peer “pull” during the 4-year follow-up (n=~3000).
 
-**Reference:** @knoll2017
+**Key reference:** `r full_cite("knoll2017")`
 
 ## Stanford Mental Arithmetic Response Time Evaluation {#nc_y_smarte}
 
@@ -204,7 +209,7 @@ This task was administered at year 4 but discontinued 9/14/2021 based on partici
 
 **Measure description:** The Stanford Mental Arithmetic Response Time Evaluation (SMARTE) is a youth measure that assesses dot enumeration, math fluency, and single- and double-digit arithmetic operations via an iPad or smartphone app. Multiple accuracy and reaction time summary scores are calculated (@starkey2014).
 
-**Reference:** @starkey2014
+**Key reference:** `r full_cite("starkey2014")`
 
 ## Behavioral Indicator of Resilience to Distress Task {#nc_y_bird}
 
@@ -213,10 +218,10 @@ This task was administered at year 4 but discontinued 9/14/2021 based on partici
 
 **Measure description:** The Behavioral Indicator of Resilience to Distress (BIRD) task measures a participant's ability to persist despite distress. The paradigm shows a bird in a cage with 10 number boxes arranged in a circle around it; a green dot moves at random from box to box. The participant must reach the green dot before it moves or else an unpleasant sound is delivered. In level 1 (2 minutes), the participant completes an adaptive training level to estimate RTs; in level 2 (3 minutes) the dot moves faster than the participant's RT at random (distress component); in level 3 (5 minutes) the participant is allowed to quit at any time (with longer level 3 durations indicating higher tolerance for distress; a binary quit \[1: high distress\] and no quit \[0: low distress\] variable is also computed); affective scales are given prior to the task and after level 2.
 
-**References:**
+**Key references:**
 
-- @lejuez2003
-- @feldner2006
+- `r full_cite("lejuez2003")`
+- `r full_cite("feldner2006")`
 
 ## Millisecond Flanker Task {#nc_y_flnkr}
 
@@ -242,7 +247,7 @@ Information regarding neurocognition administration type: in-person, remote, and
 
 **Notes and special considerations:** We suggest that users of neurocognitive data first examine the participants' vision using the `nc_y_svs_002` variable. It is possible that poor vision could influence task performance.
 
-**Reference:** @snellen1862
+**Key reference:** `r full_cite("snellen1862")`
 
 ## Edinburgh Handedness Inventory {#nc_y_ehis}
 
@@ -251,10 +256,10 @@ Information regarding neurocognition administration type: in-person, remote, and
 
 **Measure description:** A measure of handedness. In this short form, participants complete four self-report items to yield an estimate of handedness (right, mixed, left). The short form was validated by confirmatory factor analysis. See @veale2014.
 
-**References:**
+**Key references:**
 
-- @oldfield1971
-- @veale2014
+- `r full_cite("oldfield1971")`
+- `r full_cite("veale2014")`
 
 # Youth tables (Raw Data)
 
@@ -698,7 +703,7 @@ For a description of the data details for this tasks raw data see the table belo
 
 **Measure description:** This measure is the short form of the Barkley Deficits in Executive Functioning Scale for Children and Adolescents. A parent reports on several different dimensions of their child or adolescent's day-to-day executive functioning (EF), such as organization, acting without thinking, clarity of expression, and procrastination that are predictive of future impairments in psychosocial functioning. See @barkley2012. Both an EF summary score (sum of all 20 item responses) and an EF Symptom Count (tally of responses of 3 or 4 across all items) are calculated for cases with either no missing item responses or only one missing item response (i.e. Decline to answer code `777`).
 
-**References:**
+**Key references:**
 
-- @barkley2012
-- @obrien2021
+- `r full_cite("barkley2012")`
+- `r full_cite("obrien2021")`

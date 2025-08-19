@@ -24,7 +24,7 @@ Here you will find detailed information about the ABCD data resource, including
 | &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Non-imaging</span>](documentation/non_imaging/ab.qmd) | Surveys, biospecimens, neurocognitive tasks, and wearable sensors. |
 | &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Sub-studies</span>](documentation/substudies/covid.qmd) | Information about ABCD's substudies (e.g., Social Development; COVID-19; etc.). |
 | &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Release notes</span>](documentation/release_notes/6_0.qmd) | Data quality notes and known issues by release. |
-| [<span class="pill_blue_large">Tools</span>](tools/tools.qmd) | Tools and platforms for data exploration and analysis: [DEAP](https://abcd.deapscience.com/), [Lasso](https://nbdc-datashare.lassoinformatics.com/), [R packages](tools/r_packages.qmd). |
+| [<span class="pill_blue_large">Tools</span>](tools/tools.qmd) | Tools and platforms for data exploration and analysis: [DEAP](https://abcd.deapscience.com/), [NBDC Data Access Platform](https://nbdc-datashare.lassoinformatics.com/), [R packages](tools/r_packages.qmd). |
 
 ### Additional Resources
 

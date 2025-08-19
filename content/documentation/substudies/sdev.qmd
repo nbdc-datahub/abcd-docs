@@ -65,7 +65,7 @@ Within each participant's dataset you will find instruments with similar questio
 
 Due to the different time frame and wording of the `ses-S01` and follow-up questions, distinct variables have been used to capture these data. Longitudinal variables are coded with a `__l` suffix at the end of the `ses-S01` variable; `ses-S01` [`sdev_y_vict_001`] turns into [`sdev_y_vict_001__l`] for the longitudinal variable. 
 
-**Reference**: @brislin2024
+**Key reference:** `r full_cite("brislin2024")`
 
 # Youth tables {#sdev_y}
 
@@ -77,10 +77,10 @@ Due to the different time frame and wording of the `ses-S01` and follow-up quest
 
 Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of measurement bias across demographic groups in this measure and thus discontinued use/sharing of this measure. Unlike the main study, the ABCD-SD uses the full Self-Reported Delinquency Scale. We recommend conducting differential item functioning for this measure to determine whether there are biases before including it in your analyses as was done in @brislin2024.
 
-**References:**
+**Key references:**
 
-- @shaw2012
-- @brislin2024
+- `r full_cite("shaw2012")`
+- `r full_cite("brislin2024")`
 
 ## Firearms {#youth-firearms}
 
@@ -88,10 +88,10 @@ Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of
 
 **Measure description:** Firearm access, safety, and storage is measured with items from the Youth Risk Behavior Surveillance System (YRBSS). YRBSS is an established measure used in national surveys. The youth are asked about carrying a firearm, and how easy or difficult it is for them to get access to, load, and fire a gun.
 
-**References:**
+**Key references:**
 
-- @kann2016
-- @xu2014
+- `r full_cite("kann2016")`
+- `r full_cite("xu2014")`
 
 ## Victimization {#sdev_y_vict}
 
@@ -99,9 +99,7 @@ Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of
 
 **Measure description:** Victimization is measured using the Juvenile Victimization Questionnaire (JVQ). The ABCD-SD version includes the following sub scales: Conventional crime, Peer and sibling victimization, Peer aggression (including social aggression), Witnessing (exposure) and indirect victimization, Gun violence (including exposure), School violence and threat, and Internet victimization. The JVQ includes detailed follow-up questions to determine the circumstances and the context where any victimization occurred. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
-**References:**
-
-@finkelhor2005
+**Key reference:** `r full_cite("finkelhor2005")`
 
 ## Personality Disposition {#sdev_y_pd}
 
@@ -119,13 +117,13 @@ Scales: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibility
 
 *Aggression* is measured by the Reactive-Proactive Aggression Questionnaire (RPAQ). Distinguishing proactive and reactive aggression dimensions is important for understanding neurobiological foundations.
 
-**References:**
+**Key references:**
 
-- @andershed2002
-- @kramer2012
-- @lahey2010
-- @kimonis2008
-- @raine2006
+- `r full_cite("andershed2002")`
+- `r full_cite("kramer2012")`
+- `r full_cite("lahey2010")`
+- `r full_cite("kimonis2008")`
+- `r full_cite("raine2006")`
 
 ## Peer Behavior {#sdev_y_pb}
 
@@ -133,7 +131,7 @@ Scales: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibility
 
 **Measure description:** The Peer Delinquent Behavior items from the Rochester Youth Study will provide the basis for the examination of the influence of variations in peer characteristics on early adolescence in relation to the development of delinquency and victimization. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
-**Reference:** @thornberry1994
+**Key reference:** `r full_cite("thornberry1994")`
 
 ## Difficulties in Emotion Regulation {#sdev_y_ders}
 
@@ -145,10 +143,10 @@ Scales: lack of emotional clarity; lack of emotional awareness; impulse control 
 
 Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibility); callous unemotional (unemotionality, remorselessness, callousness); grandiose manipulative (dishonest charm, lying, grandiosity, manipulation).
 
-**References:**
+**Key references:**
 
-- @vasilev2009
-- @gratz2004
+- `r full_cite("vasilev2009")`
+- `r full_cite("gratz2004")`
 
 ## Alabama Parenting Questionnaire {#sdev_y_apq}
 
@@ -158,7 +156,7 @@ Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibi
 
 Scales: parental involvement; positive parenting; poor monitoring/supervision; inconsistent discipline; corporal punishment; items not in any scale.
 
-**Reference:** @elgar2007
+**Key reference:** `r full_cite("elgar2007")`
 
 # Parent tables {#sdev_p}
 
@@ -176,7 +174,7 @@ Scales: parental involvement; positive parenting; poor monitoring/supervision; i
 
 Scales: parental involvement; positive parenting; poor monitoring/supervision; inconsistent discipline; corporal punishment; items not in any scale.
 
-**Reference:** @elgar2007
+**Key reference:** `r full_cite("elgar2007")`
 
 ## Difficulties in Emotion Regulation {#sdev_p_ders}
 
@@ -188,7 +186,7 @@ Scales: lack of emotional clarity; lack of emotional awareness; impulse control 
 
 Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibility); callous unemotional (unemotionality, remorselessness, callousness); grandiose manipulative (dishonest charm, lying, grandiosity, manipulation).
 
-**Reference:** @gratz2004
+**Key reference:** `r full_cite("gratz2004")`
 
 ## Firearms {#sdev_p_fa}
 
@@ -196,10 +194,10 @@ Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibi
 
 **Measure description:** Firearm access, safety, and storage is measured with items from the Behavioral Risk Behavior Surveillance System (BRFSS). BRFSS is an established measure used in national surveys. The caregiver is asked whether there are firearms in the household, and how they are stored and secured. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
-**References:**
+**Key references:**
 
-- @kann2016
-- @xu2014
+- `r full_cite("kann2016")`
+- `r full_cite("xu2014")`
 
 ## Perception of Neighborhood {#sdev_p_nbh}
 
@@ -209,10 +207,10 @@ Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibi
 
 Scales: lack of efficacy and disorder
 
-**References:**
+**Key references:**
 
-- @sampson1997
-- @ross1999
+- `r full_cite("sampson1997")`
+- `r full_cite("ross1999")`
 
 ## Personality Disposition {#sdev_p_pd}
 
@@ -228,13 +226,13 @@ Scales: pro-sociality [CADS] for child, or parent; callous unemotional [ICU] for
 
 Scales: proactive aggression for child, for parent; reactive aggression for child, for parent
 
-**References:**
+**Key references:**
 
-- @andershed2002
-- @kramer2012
-- @lahey2010
-- @kimonis2008
-- @raine2006
+- `r full_cite("andershed2002")`
+- `r full_cite("kramer2012")`
+- `r full_cite("lahey2010")`
+- `r full_cite("kimonis2008")`
+- `r full_cite("raine2006")`
 
 ## Reported Delinquency (Parent) {#sdev_p_rd}
 
@@ -246,10 +244,10 @@ Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of
 
 Scales: vandalism; theft; violence; police contact
 
-**References:**
+**Key references:**
 
-- @shaw2012
-- @brislin2024
+- `r full_cite("shaw2012")`
+- `r full_cite("brislin2024")`
 
 ## Victimization {#sdev_p_vict}
 
@@ -259,4 +257,12 @@ Scales: vandalism; theft; violence; police contact
 
 Scales: conventional crime; peer physical; peer social; witnessing indirect; gun; school threats; internet
 
-**Reference:** @finkelhor2005
+::: {.callout-caution collapse="true" title="Release notes: `sdev_p_vict`"}
+[**Item order error (6.0)**](../release_notes/6_0.qmd#social-development): A data integrity issue was identified in the `r link_table("sdev_p_vict", dest = "docs", name = "label")` measure, affecting 273 item instances in which questions were presented out of order and improperly labeled, making item data for these instances therefore unreliable in the dataset.
+:::
+
+::: {.callout-caution collapse="true" title="Release notes: `sdev_p_vict`"}
+[**Item order error (6.0)**](../release_notes/6_0.qmd#social-development): A data integrity issue was identified in the `r link_table("sdev_p_vict", dest = "docs", name = "label")` measure, affecting 273 item instances in which questions were presented out of order and improperly labeled, making item data for these instances therefore unreliable in the dataset.
+:::
+
+**Key reference:** `r full_cite("finkelhor2005")`

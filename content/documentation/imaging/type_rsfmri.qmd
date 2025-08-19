@@ -11,14 +11,11 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 
 # Domain overview
 ```{r}
-render_table_info(
-  "sub_domain == 'Resting State fMRI'",
-  remove_source = TRUE,
-  remove_subdomain = TRUE
-)
+render_table_info("sub_domain == 'Resting State fMRI'")
 ```
 
 The Resting State fMRI (rsfMRI) data contains field maps, spin echo images with opposite phase encode polarity, and multi-frame, gradient echo, echo-planar imaging.
+
 
 ::: {.callout-important collapse="true" title="Responsible Use Warning: Head motion" #use-rsfmri}
 
@@ -27,9 +24,7 @@ Head motion is a serious issue for neuroimaging, and especially for resting stat
 1. Assess how missing data impacts dependent, independent variables and covariates. 
 2. Examine the association between the degrees of freedom and non-FC variables. 
 3. Use trimmed FC measures when needed to mitigate artifacts due to data quality.
-
 :::
-
 
 ## Image processing (common to all fMRI)
 - Head motion corrected by registering each frame to the first using AFNI's `3dvolreg` [@cox1996]
@@ -71,6 +66,10 @@ Note: not included in "minimal processing"
 - Cortical regions labeled with the Destrieux atlas-based classification [@destrieux2010]
 - Functionally-defined parcels derived resting-state functional connectivity patterns [@gordon2016]
 
+::: {.callout-caution collapse="true" title="Release notes: `mr_y_rsfmri`"}
+[**Column name correction (6.0)**](../release_notes/6_0.qmd#column-misnaming-in-rsfmri-network-to-subcortical-roi-correlation-tabulated-data): Column names in the [`mr_y_rsfmri__corr__gpnet__aseg`](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Youth%22%2C%22MRS+%28HERMES%29+%5BYouth%5D%22%5D%2C%5B%22Correlation%22%2C%22Resting+State+fMRI+-+Correlations+%28Gordon+network+to+Subcortical%29+%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset) table—which contains tabulated imaging data representing rsfMRI correlations between cortical networks and subcortical ROIs—were corrected in the current release.
+:::
+
 ## Functional connectivity analysis
 - Seed-based, correlational approach [@vandijk2010]
   - Adapted for cortical surface based analysis [@seibert2011]
@@ -93,11 +92,11 @@ Image processing and analysis methods corresponding to ABCD Release 2.0.1 are de
 
 Multisite longitudinal MRI imaging data are potentially susceptible to influences of scanning parameters, scanner manufacturer, scanner model, and software version, which vary across sites, and sometimes across time. For more information, please refer to "Effects of scanner instance and software version" in [Imaging Overview Data Documentation](index.qmd).
 
-**Additional references:**
+**Key references:**
 
-- @fair2007
-- @holland2010
-- @pruim2015
-- @pruim2015a
-- @ramduny2024
-- @wells1996
+- `r full_cite("fair2007")`
+- `r full_cite("holland2010")`
+- `r full_cite("pruim2015")`
+- `r full_cite("pruim2015a")`
+- `r full_cite("ramduny2024")`
+- `r full_cite("wells1996")`

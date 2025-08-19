@@ -24,12 +24,12 @@ For complete details on the dataset access process, visit the [NBDC website](htt
 
 ## What to do prior to your DUC approval? 
 
-Both data access applications, [Data Exploration & Analysis Portal (DEAP)](https://abcd.deapscience.com) and [Lasso](https://nbdc-datashare.lassoinformatics.com), offer the ability to explore the ABCD data dictionary without a DUC. Once you get your DUC you will be able to start compiling & creating datasets for use. 
+Both data access applications, [Data Exploration & Analysis Portal (DEAP)](https://abcd.deapscience.com) and the [NBDC Data Access Platform](https://nbdc-datashare.lassoinformatics.com), offer the ability to explore the ABCD data dictionary without a DUC. Once you get your DUC you will be able to start compiling & creating datasets for use. 
 
 - [DEAP Data Dictionary & Ontology Explorer](https://abcd.deapscience.com/#/my-datasets/create-dataset)
-- [Lasso Query Tool](https://nbdc-datashare.lassoinformatics.com/)
+- [Data Access Platform Query Tool](https://nbdc-datashare.lassoinformatics.com/)
 
-Understanding the ABCD variable naming structure is extremely helpful in navigating our large data set and using applications like DEAP & Lasso. You can learn more about ABCD's data assets at the below resources: 
+Understanding the ABCD variable naming structure is extremely helpful in navigating our large data set and using applications like DEAP & the NBDC Data Access Platform. You can learn more about ABCD's data assets at the below resources: 
 
 - [Data structure](../documentation/curation/structure.qmd)
 - [Naming conventions](../documentation/curation/naming.qmd)
@@ -40,7 +40,7 @@ Understanding the ABCD variable naming structure is extremely helpful in navigat
 
 # Data download
 
-NBDC offers two applications to explore, query, and download data; [Data Exploration & Analysis Portal (DEAP)](https://abcd.deapscience.com) and [Lasso](https://nbdc-datashare.lassoinformatics.com). 
+NBDC offers two applications to explore, query, and download data; [Data Exploration & Analysis Portal (DEAP)](https://abcd.deapscience.com) and the [NBDC Data Access Platform](https://nbdc-datashare.lassoinformatics.com). 
 
 ::: {layout-ncol=2 .text-center}
 

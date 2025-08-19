@@ -8,7 +8,7 @@ name,label,description,values_examples,locked,tooltip_info,tooltip_json
 <code>table_name</code>,Table name,The name of the table/measure,<b><u>Example:</u></b><br><code>mh_p_cbcl</code>,YES,,BIDS JSON element: <code>MeasurementToolMetadata: Description</code>
 <code>table_label</code>,Table label,The label of the table/measure,<b><u>Example:</u></b><br>Child Behavior Checklist [Parent],NO,,
 <code>name</code>,Variable name,The name of the column/variable/question,<b><u>Example:</u></b><br><code>mh_p_cbcl__aggr_001</code>,YES,,
-<code>label</code>,Variable label,The label of the column/variable/question,"<b><u>Example:</u></b><br><i>""Demands a lot of attention""</i>",NO,<code>Description</code> in Lasso&#39s data dictionary table,BIDS JSON element: <code>Description</code>
+<code>label</code>,Variable label,The label of the column/variable/question,"<b><u>Example:</u></b><br><i>""Demands a lot of attention""</i>",NO,<code>Description</code> in the NBDC Data Access Portal&#39s data dictionary table,BIDS JSON element: <code>Description</code>
 <code>instruction</code>,Instruction,The instructions <i>preceding all questions<i> in this table/measure,"<b><u>Example:</u></b><br><i>""The next set of question is about your childs behavior in different situations and contexts. Please fill in a response to all questions.""</i>",NO,,
 <code>header</code>,Header,The intermediate header/instructions <i>pertaining to subset of questions</i> that this column/variable/question belongs to,"<b><u>Example:</u></b><br><i>""We are now going to ask some questions about the birth and early development of the child who is participating in this study.""</i>
 ",NO,,

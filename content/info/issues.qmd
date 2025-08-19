@@ -8,7 +8,7 @@ lightbox: true
 See [frequently asked questions](faq.qmd) for a synthesized location of resources & information.
 :::
 
-If you encounter any issues or have questions regarding the ABCD data release, study documentation, or data release applications (DEAP & Lasso), please use the [NBDC ticketing system](https://nbdc-datashare.lassoinformatics.com/). When you access the system you can navigate to 'Help Center' and initiate a ticket there. 
+If you encounter any issues or have questions regarding the ABCD data release, study documentation, or data release applications (DEAP & NBDC Data Access Platform), please use the [NBDC ticketing system](https://nbdc-datashare.lassoinformatics.com/). When you access the system you can navigate to 'Help Center' and initiate a ticket there. 
 
 When your ticket is submitted you will receive a case number via email. When there is a response to your ticket, you will be notified via email. You may also add more details through the link to your case provided in the email you receive. 
 

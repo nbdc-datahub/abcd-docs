@@ -9,7 +9,7 @@ The ABCD data documentation is version-controlled. ABCD uses [Zenodo](https://ze
 Because the documentation is regularly updated, we strongly recommend citing the exact version you used.
 :::
 
-To cite the current version (_{{< var version_current >}}_), visit the most recent release on [Zenodo](https://doi.org/10.5281/zenodo.15800724). The appropriate citation with the DOI for the latest version is listed in the citation box on the right side of the page—simply copy and paste it into your references.
+To cite the current version (_{{< var version_current >}}_), visit the most recent release on [Zenodo](https://doi.org/10.5281/zenodo.15800725). The appropriate citation with the DOI for the latest version is listed in the citation box on the right side of the page—simply copy and paste it into your references.
 
 ::: {.callout-note title="Why use versioning?"}
 Versioning is important because content and tools may change over time. This includes information about the study. Citing versions of this website allows for:

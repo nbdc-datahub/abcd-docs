@@ -127,15 +127,11 @@ To provide clarity about the format of the underlying values and their use in ex
 - **double**: Numeric values with decimals (e.g., `2.5`, `17.325`).
 - **integer**: Whole numbers without decimals (e.g., `0`, `1`, `2`).
 - **date**: Calendar dates in `YYYY-MM-DD` format; often denoted by a variable name ending in `_dt`.
-- **time**: Time of day formatted as a character string `"HH:MM:SS"`, representing a time without a date component; often denoted by a variable name ending in `_t`.^[For help converting times to `HMS` format, we provide a function in the [`NBDCtools` R package](https://software.nbdc-datahub.org/NBDCtools/reference/transf_time_to_hms.html).]
+- **time**: Time of day formatted as a character string `"HH:MM:SS"`, representing a time without a date component; often denoted by a variable name ending in `_t`.^[The [`NBDCtools`](https://software.nbdc-datahub.org/NBDCtools) R package allows users to convert times to `HMS` format with the [`create_dataset()`](https://software.nbdc-datahub.org/NBDCtools/reference/create_dataset.html) and [`transf_time_to_hms()`](https://software.nbdc-datahub.org/NBDCtools/reference/transf_time_to_hms.html) functions.]
 - **timestamp**: Combined date and time values (e.g., `2019-09-16 10:49:00`); often denoted by a variable name ending in `_dtt`.
 - **text**: Used for arbitrary-length string values, such as administrative information like IDs, scanner details, medication names, or RxNorm codes.
 
-::: {.callout-important title="Data types and file formats"}
-When working with downloaded files from the ABCD tabulated data resource, please be aware that plain-text formats like `csv` and `tsv` *do not preserve data types*. Users will need to specify the correct data types when reading a plain-text file into their analysis environment. 
-
-Therefore, we recommend *using file types that preserve data types* (e.g., `parquet` files) and allow users to automatically read in the data with the correct types wherever possible. For more information on file formats, see [here](structure.qmd#file-formats).
-:::
+<!-- TODO: add note about different file types and their representation of data types (e.g., CSV vs. Parquet) and point to structure.qmd for more information. -->
 
 ## Measurement levels
 

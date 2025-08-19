@@ -35,13 +35,13 @@ In the year before Hurricane Irma’s landfall, a large sample of children in Fl
 
 **Perceived stress:**  Youth completed the Perceived Stress Scale (@cohen1983), the most widely used assessment of subjectively experienced stress. To assess child posttraumatic stress symptoms, children completed the well-validated UCLA Reaction Index for DSM-5; the UCLA RI is a child self-report measure (@bhi2025).
 
-**References**
+**Key references:**
 
-- @vernberg1996
-- @lagreca2010
-- @carpenter2017
-- @cohen1983
-- @bhi2025
+- `r full_cite("vernberg1996")`
+- `r full_cite("lagreca2010")`
+- `r full_cite("carpenter2017")`
+- `r full_cite("cohen1983")`
+- `r full_cite("bhi2025")`
 
 ---
 
@@ -53,11 +53,11 @@ In the year before Hurricane Irma’s landfall, a large sample of children in Fl
 
 **Perceived stress:**  Parents completed the Perceived Stress Scale (@cohen1983), the most widely used assessment of subjectively experienced stress. 
 
-**References**
+**Key references:**
 
-- @vernberg1996
-- @lagreca2010
-- @carpenter2017
-- @cohen1983
+- `r full_cite("vernberg1996")`
+- `r full_cite("lagreca2010")`
+- `r full_cite("carpenter2017")`
+- `r full_cite("cohen1983")`
 
 ---

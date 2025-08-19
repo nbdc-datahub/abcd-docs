@@ -1,0 +1,6 @@
+title: "Custom Citation Filter"
+author: "ABCD Documentation"
+version: "1.0.0"
+contributes:
+  filters:
+    - custom_citation.lua

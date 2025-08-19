@@ -1,0 +1,28 @@
+{
+  "creators": [
+    {
+      "name": "ABCD Consortium",
+      "type": "Organizational"
+    }
+  ],
+  "title": "ABCD Data Documentation",
+  "description": "Data documentation website for the Adolescent Brain Cognitive Development℠ (ABCD) Study: https://docs.abcdstudy.org.",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://docs.abcdstudy.org",
+      "relation": "isPublishedIn",
+      "resource_type": {
+        "type": "other"
+      }
+    }
+  ],
+  "keywords": [
+    "ABCD",
+    "data documentation"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "other",
+  "language": "eng"
+}

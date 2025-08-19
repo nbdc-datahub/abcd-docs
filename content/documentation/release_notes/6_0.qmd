@@ -13,7 +13,6 @@ levels_recode <- readr::read_csv(
 )
 ```
 
-
 # Sample
 
 The 6.0 data release includes data from *11,868 participants*, representing the full ABCD cohort (N = 11,880) except for 12 participants who withdrew consent to share their data, and *13 events*. Data is considered complete through the 4-year follow-up and nearly complete for the 5-year follow-up, with varying numbers of missed visits per event. The 5.5-year and 6-year follow-up events were still ongoing when the data were frozen (cutoff date: January 15, 2025), so these events include only participants who had assented by the cutoff date. No data are included from events after the 6-year follow-up to ensure sufficient event completion.
@@ -96,9 +95,11 @@ The table and item components may include additional subcomponents, which are se
 For detailed information about each component of the naming convention, please refer to the documentation [here](/documentation/curation/naming.qmd#components).
 :::
 
-As a result, all variables in the tabulated dataset have been renamed according to this new convention. To facilitate the transition of existing workflows, we have retained the mapping to previously used variable and table names in the [data dictionary](/documentation/curation/metadata.qmd#dd_levels_tables) (see [here](/documentation/curation/metadata.qmd#add-info) for more details).
+As a result, all variables in the tabulated dataset have been renamed according to this new convention. To provide a transparent mapping between the new and previously used names, we provide all previously used variable and table names as metadata in the [data dictionary](/documentation/curation/metadata.qmd#dd_levels_tables) (see [here](/documentation/curation/metadata.qmd#add-info) for more details).
 
-We recognize that this change will necessitate adjustments to current analysis pipelines and may introduce some initial friction. However, we believe that this recuration effort will ultimately benefit all users of the ABCD tabulated data resource. The new curation standard resolves many inconsistencies from previous releases and offers a clearer structure that is easier to search and process across the entire dataset. 
+We recognize that this change will necessitate adjustments to current analysis pipelines and may introduce some initial friction. However, we believe that this recuration effort will ultimately benefit all users of the ABCD tabulated data resource. The new curation standard resolves many inconsistencies from previous releases and offers a clearer structure that is easier to search and process across the entire dataset.
+
+To ease the transition of existing workflows to the new naming standard, we provide utility functions as part of our [NBDCtools](https://software.nbdc-datahub.org/NBDCtools/index.html) R package. These functions allow users to convert column names in a [data frame](https://software.nbdc-datahub.org/NBDCtools/reference/convert_names_data.html) between the new and legacy variable names or replace variable names in [text/script files](https://software.nbdc-datahub.org/NBDCtools/reference/convert_names_file.html), making it easier to adapt existing scripts and analyses to the new naming convention. If you use these utility functions, please always consider the other changes that were introduced in the 6.0 release, as the values for some variables might not be identical to previous releases.
 
 ## Curation standards
 
@@ -162,7 +163,7 @@ During the recuration process, we made several general changes to the data struc
 
 ### Standard variables tables
 
-The 6.0 release includes [two new tables](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain. Examples of these variables include visit-level information, design/nesting variables, and variables useful for describing the cohort.
+The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain. Examples of these variables include visit-level information, design/nesting variables, and variables useful for describing the cohort.
 
 ### School and district IDs
 
@@ -286,6 +287,109 @@ Users should refer to the private data documentation [here](LINK) for a list of 
 As part of the 6.0 curation efforts, ABCD merged data from KSADS 1.0 and 2.0 in order to combine all equivalent symptoms and diagnoses across the two assessment versions into singular variables. However, we were unable to complete this process for the item-level KSADS data. As a result, the 6.0 release does not include individual items, but these will be included in a future release.
 
 Additionally, the symptoms and diagnoses have been moved from a 'summary scores' table into their respective module's table.
+
+#### KSADS Psychosis
+
+Psychotic disorders diagnoses were not generated in KSADS-COMP 1.0. Only the presence of psychotic symptoms are reported in 1.0 (Baseline, Year 1, Year 2). Psychotic disorder diagnoses are generated in KSADS-COMP 2.0 (Year 3 and beyond) and can be used.
+
+#### KSADS Autism Spectrum Disorders
+
+Autism spectrum disorders were not generated in KSADS-COMP 1.0. Only the presence of autism symptoms are reported in 1.0 (Baseline, Year 1, Year 2). Autism spectrum disorders diagnoses are generated in KSADS-COMP 2.0 (Year 3 and beyond) and can be used.
+
+#### KSADS Attention Deficit Hyperactivity Disorder (ADHD)
+
+In KSADS 1.0, youth whose symptoms of ADHD were remitted because of ongoing treatment (e.g., medication use) received a diagnosis of past ADHD. In KSADS 2.0, those youth instead receive a diagnosis of ADHD in full or partial remission. In addition, the criteria for ADHD in partial remission changed from 1.0 to 2.0 (see below), with only 1 current symptom needed as compared to 2 symptoms, making it easier to meet partial remission criteria. As such, the rates of PAST ADHD are lower with KSADS 2.0, and the rates of ADHD in partial remission are higher.
+
+In both KSADS 1.0 and KSADS 2.0, the diagnostic criteria for Present ADHD are as follows:
+
+**Current ADHD**
+
+- Either Inattention Subtype or Hyperactivity Subtype Criteria are met (or both)
+
+**Inattention Subtype**: 
+
+- At least 6 of the following are met:
+  - Careless Mistakes
+  - Difficulty Sustaining Attention
+  - Doesn’t Listen
+  - Difficulty Following Instructions
+  - Difficulty Organizing Tasks
+  - Avoids Tasks Requiring Attention
+  - Loses Things
+  - Easily Distracted
+  - Forgetful in Daily Activities
+
+**Hyperactivity Subtype:** 
+
+- At least 6 of the following are met:
+  - Fidgets
+  - Difficulty remaining seated
+  - Runs or Climbs Excessively
+  - Acts Like Driven by a Motor
+  - Difficulty Playing Quietly
+  - Blurts Out Answers
+  - Difficulty Waiting Turn
+  - Interrupts or Intrudes
+  - Talks Excessively
+- Some symptoms present before 12 yrs old or the youth is currently younger than 12.
+- Present in two or more settings and causes some impairment in functioning
+
+In KSADS 1.0, the criteria for **ADHD in Partial Remission** were:
+
+- Meets criteria for past Attention-Deficit/Hyperactivity Disorder (any subtype)
+- Does not meet criteria for current Attention-Deficit/Hyperactivity Disorder (any subtype)
+- At least two CURRENT symptoms are present
+- At least one current impairment item is marked yes
+
+However, in KSADS 2.0, the criteria for **ADHD in Partial Remission** are:
+
+- Meets criteria for past Attention-Deficit/Hyperactivity Disorder (any subtype) OR (has at least 6 current or past symptoms of inattentive subtype symptoms OR at least 6 current or past symptoms of hyperactive subtype)
+- Does not meet criteria for CURRENT Attention-Deficit/Hyperactivity Disorder (any subtype)
+- At least one CURRENT symptom is present
+- At least two current impairment items are marked yes
+
+In both KSADS 1.0 and KSADS 2.0, the diagnostic criteria for Past ADHD are as follows:
+
+**Past ADHD**
+
+- Either Inattention Subtype or Hyperactivity Subtype Criteria in the past are met
+- Some symptoms present before 12 yrs old or the youth is currently younger than 12.
+- Impairment was present in TWO or more settings
+
+However, KSADS 2.0 now has diagnoses of ADHD Full Remission Maintained on Medication that are used if the youth meets criteria for PAST ADHD and is currently on ADHD medications.
+
+#### KSADS Oppositional Defiant Disorder (ODD)
+
+Due to a glitch in the symptom administration algorithm, past ODD was not initially assessed at the launch of KSADS-COMP 2.0. The glitch was corrected by the end of Year 4 follow-up accounting for the small percentage of youth with ODD past diagnoses in that year. The diagnostic criteria for present ODD changed from KSADS 1.0 to KSADS 2.0 to include a rule out for also meeting criteria for Disruptive Mood Dysregulation Disorder. In KSADS 2.0, the ODD criteria are as follows:
+
+**Criteria for Oppositional Defiant Disorder Present**
+
+- At least four of the eight current symptoms below are positive:
+  - Explosive Irritability
+  - Easily Annoyed
+  - Angry or Resentful
+  - Spiteful and Vindictive
+  - Annoys People on Purpose
+  - Blames Others for Own Mistakes
+  - Argues with Adults
+  - Disobeys Rules/Noncompliance
+- Duration of Symptoms have been present 6 months or longer
+- Causes distress or impacts functioning
+- If also meets diagnostic criteria for Disruptive Mood Dysregulation Disorder, give that diagnosis instead
+
+**Criteria for Oppositional Defiant Disorder Past**
+
+- At least four of the eight symptoms below were positive:
+  - Explosive Irritability
+  - Easily Annoyed
+  - Angry or Resentful
+  - Spiteful and Vindictive
+  - Annoys People on Purpose
+  - Blames Others for Own Mistakes
+  - Argues a with Adults
+  - Disobeys Rules/Noncompliance
+- Duration of Symptoms were present 6 months or longer
+- Caused distress or impacted functioning
 
 #### KSADS eating disorders
 
@@ -482,6 +586,10 @@ readr::read_csv(
 
 {{< downloadthis ../../assets/tbl/documentation/release_notes/rsfmri_gpnet_aseg_correction.csv dname="rsfmri_gpnet_aseg_correction" label="rsfmri_gpnet_aseg_correction.csv" type="light" >}}
 :::
+
+### Mismatch between tabulated and bids (sourcedata and rawdata) in anonymized MRI scanner serial numbers
+
+In the ABCD 6.0 release, there is a mismatch between the tabulated and BIDS (sourcedata and rawdata) in the anonymized MRI scanner serial numbers. In the BIDS data, the sidecar json files contain a field `DeviceSerialNumber` of the form "anon12da", which differs from the corresponding variable in the tabulated data, `ab_g_dyn__design_mr__serial`, which has the form "HASHd7cb4c6d". Within each datatype (BIDS and tabulated), the values used are internally consistent. In future releases, the form of the serial number anonymization will be standardized across these data types.
 
 # Substudies
 

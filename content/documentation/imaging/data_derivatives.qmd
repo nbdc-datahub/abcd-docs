@@ -5,11 +5,11 @@ title: "MRI derivatives data documentation"
 # MRI Processed Data {#mproc}
 
 The ABCD Data Release 6.0 contains minimally processed neuroimaging data for ABCD Study participants, including:
-  
-- High-resolution structural data (3D T1w and T2w scans)
-- Advanced diffusion MRI (multiple b-values and directions)
-- Resting State fMRI
-- Task fMRI (Monetary Incentive Delay, Stop-Signal, and Emotional N-Back) with event files for each fMRI run
+
+-   High-resolution structural data (3D T1w and T2w scans)
+-   Advanced diffusion MRI (multiple b-values and directions)
+-   Resting State fMRI
+-   Task fMRI (Monetary Incentive Delay, Stop-Signal, and Emotional N-Back) with event files for each fMRI run
 
 These series have been run through standard modality-specific pre-processing stages including conversion from raw to compressed files, distortion correction, movement correction, alignment to standard space, and initial quality control (refer to the [MRI Quality Control](type_qc.qmd) release notes). This is to enable researchers to use the ABCD neuroimaging data in their own processing pipelines more quickly and efficiently than starting with raw data. Note that minimal processing is identical for rs-fMRI and task-fMRI and does not include analysis-specific pre-processing steps (e.g. removal of initial TRs, normalization by mean, etc.).
 
@@ -21,7 +21,56 @@ fMRI-specific information includes estimated motion time courses and a rigid-bod
 
 Information about this is included in the modality-specific data documentation notes and in @hagler2019. They also describe what processing steps are included in the "minimally processed" data.
 
-A containerized version of the ABCD processing pipeline will become available as a Docker or singularity image (location of docker/singularity).
+A containerized version of the ABCD processing pipeline is available as a Docker or singularity image (location of docker/singularity) here: <https://www.nitrc.org/projects/cmig_pipeline>
+
+::: {.callout-note collapse="true" title="Example code to run pipeline with ABCD sourcedata"}
+``` bash
+#!/bin/csh
+
+# note: example ABCD cannot be shared except for via official NIH sharing platform
+set participant_id = 'sub-XXXXXXXX'
+set session_id = 'ses-02A'
+set indir = 'path/to/release/bids/sourcedata'
+
+# name and version of pipeline singularity image
+set imgname = cmig_pipeline_abcd_sourcedata
+set ver = mmps_271b
+
+# set these based on to where cmig_pipeline package was unziped
+set imgdir = path/to/packages/cmig_pipeline_abcd_sourcedata_package_271b/images
+set pubswdir = path/to/packages/cmig_pipeline_abcd_sourcedata_package_271b/pubsw
+
+# set this to location of matlab runtime library package (download from MathWorks)
+set mrtdir = path/to/packages/matlabruntime/R2023a
+
+# series classification file
+set classname = ABCD_Series_Classify.csv
+set classdir = $pubswdir/packages/MMPS/MMPS_271/parms/classify
+
+# set these output directories wherever desired
+set outdir = path/to/output
+set logdir = path/to/logs
+
+#################################################################################
+
+set imgfile = $imgdir'/'$imgname'-'$ver'.sif'
+set classify = $classdir/$classname
+
+set dstamp = `date +%Y``date +%m``date +%d`'_'`date +%H``date +%M``date +%S`
+set log = $logdir'/'$imgname'_singularity_'$dstamp'.log'
+
+mkdir -p $outdir
+mkdir -p $logdir
+
+singularity run -e \
+  -B $pubswdir':'/usr/pubsw':'ro \
+  -B $mrtdir':'/opt/matlabruntime/R2023a':'ro \
+  -B $indir':'$indir':'ro \
+  -B $classdir':'$classdir':'ro \
+  -B $outdir':'$outdir \
+  $imgfile $participant_id $session_id $indir $outdir $classify |& tee $log
+```
+:::
 
 # FreeSurfer {#freesurfer}
 
@@ -30,4 +79,3 @@ The ABCD Data Release 6.0 contains the complete FreeSurfer output directories fo
 ::: {.callout-note title="Additional notes"}
 The MRI Derivatives Data included with ABCD Data Release 6.0 is packaged in a BIDS-compliant derivatives structure. Note that derivatives were not generated directly from source and raw BIDS data (see [MRI Raw Data File Sharing Data Documentation](data_source_raw.qmd)). Instead, source and raw BIDS are a repackaging / conversion of the data that is supplied to the ABCD processing pipeline. The derivatives are a repackaging of the outputs of the processing pipeline. Future versions of the ABCD processing pipeline will work directly with the raw data BIDS to avoid potential inconsistencies and for better reproducibility.
 :::
-

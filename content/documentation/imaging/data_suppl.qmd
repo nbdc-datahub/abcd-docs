@@ -879,7 +879,7 @@ Note: Concatenated data files containing beta estimates and standard errors deri
 | igvcg | incorrect go vs correct go | ig | incorrect go | cg | correct go |
 | igvis | incorrect go vs incorrect stop | ig | incorrect go | is | incorrect stop |
 
-Note: Contrasts defined above were implemented as general linear tests with AFNI’s 3dDeconvolve. Condition A and B above refer to the task conditions used to define a contrast and can each include zero, one, or more conditions, depending on the contrast definition. Restriction Spectrum Imaging (RSI) measures. [@white2013a; @white2014]
+Note: Contrasts defined above were implemented as general linear tests with AFNI’s 3dDeconvolve. Condition A and B above refer to the task conditions used to define a contrast and can each include zero, one, or more conditions, depending on the contrast definition. Restriction Spectrum Imaging (RSI) measures [@white2013a; @white2014].
 
 | Name | Alias | Description | Size scale | Notes |
 |:--------------|:--------------|:--------------|:--------------|:--------------|

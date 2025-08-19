@@ -17,6 +17,8 @@ glossary <- readr::read_csv(
 
 ::: {.callout-caution title="Release 6.0 changes"}
 For the 6.0 release, the complete ABCD tabulated data resource has been recurated using a *standardized naming convention*. That means that all variables in the tabulated dataset have been renamed using the new convention. We acknowledge that this change will require some adjustments of existing analysis pipelines and might generally introduce some friction. We nevertheless hope that the recuration effort will benefit all users of the ABCD tabulated data resource going forward as the new data curation standard resolves a lot of inconsistencies that existed in previous releases and implements a clear structure that is easier to search and process across the whole dataset.
+
+To ease the transition of existing workflows to the new naming standard, we provide utility functions as part of our [NBDCtools](https://software.nbdc-datahub.org/NBDCtools/index.html) R package. These functions allow users to convert column names in a [data frame](https://software.nbdc-datahub.org/NBDCtools/reference/convert_names_data.html) between the new and legacy variable names or replace variable names in [text/script files](https://software.nbdc-datahub.org/NBDCtools/reference/convert_names_file.html), making it easier to adapt existing scripts and analyses to the new naming convention. If you use these utility functions, please always consider the other changes that were introduced in the 6.0 release, as the values for some variables might not be identical to previous releases.
 :::
 
 ## General design

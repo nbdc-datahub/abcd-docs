@@ -1,1 +1,11 @@
-Initial version of the data documentation website for ABCD release 6.0.0
+-   **General Changes**
+    -   Added callout boxes to data documentation that direct users to the relevant Release Notes section
+-   **Non-imaging**
+    -   **Linked External Data:** Fixed and updated some citations
+-   **Imaging**
+    -   **Source data / raw data:** Added a known issue regarding mismatch between the tabulated and BIDS (sourcedata and rawdata) in the anonymized MRI scanner serial numbers
+    -   **MRI derivatives:** Added example code to run pipeline with ABCD sourcedata
+-   **Release Notes**
+    -   Updated Mental Health Release Notes regarding KSADS
+-   **Tools**
+    -   Added content regarding utility functions as part of the NBDCtools R package

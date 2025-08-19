@@ -43,7 +43,6 @@ Current evidence suggests **not** treating these responses as simply missing. Re
 The table below shows that these response types correlate with other important demographic variables across the first four full study visits (Baseline through Three year follow-up) and the partial four year follow-up visit. For instance, participants from households that responded "Do not know" were disproportionately Hispanic and from households with less than some college education. Participants from households that responded "Decline to answer" were disproportionately White and from households with at least a bachelor's degree. These responses may reflect contextual, cultural, or social factors, such as who manages household finances or potential language barriers, rather than lack of financial knowledge.
 
  
-
 **Distribution of Income Categories and Non-Response Patterns
 Across Study Visits by Key Demographics**
 
@@ -110,7 +109,7 @@ Instead of re-coding `777` ("Decline to answer") and `999` ("Don't know") as mis
 
 These practices help minimize bias and enhance the transparency and validity of research findings.
 
-**Reference:** @li2025 
+**Key reference:** `r full_cite("li2025")`
 
 :::
 ## Occupation Survey {#ab_p_ocp data-link="Occupation Survey"}
@@ -162,6 +161,12 @@ Using data from the National Center for Education Statistics (NCES), pseudo-iden
 Pseudo school IDs for specific school settings can be excluded if needed.
 :::
 
+::: {.callout-caution collapse="true" title="Release notes: `ab_g_dyn`"}
+[**New tables (6.0)**](../release_notes/6_0.qmd#standard-variables-tables): The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain.
+
+[**Updated school IDs (6.0)**](../release_notes/6_0.qmd#school-and-district-ids): For the 6.0 release, school and district IDs were amended. These changes are specific to the pseudo school ID `ab_g_dyn__design_id__district` and `ab_g_dyn__design_id__school` and do not impact the linked SEDA data.
+:::
+
 ::: {.callout-important collapse="true" title="Responsible use warning: Household income summary scores" #use-cohort_income__hhold}
 **`ab_g_dyn__cohort_income__hhold__3lvl`, `ab_g_dyn__cohort_income__hhold__6lvl`**
 
@@ -182,51 +187,52 @@ Pseudo school IDs for specific school settings can be excluded if needed.
 
 This variable combines marital/partner status with labor force participation to provide a more comprehensive measure of household structure and economic engagement. It is designed to enhance contextualization of household dynamics and improve statistical modeling by addressing both relationship status and economic activity.
 
-**Description**
+**Marital/Partner Status**
 
-- **Marital/Partner Status**
-- Partnered: Includes married individuals and those living with a partner.
-- Not Partnered: Includes widowed, divorced, separated, and never married individuals.
-- Missing Data: Decline to answer (777) or don't know (999).
-- **Labor Force Participation**
-- In the Labor Force: Includes individuals who are working (full-or part-time), temporarily laid off, looking for work, on sick leave, or on parental leave.
-- Not in the Labor Force: Includes retired individuals, those permanently or temporarily disabled, stay-at-home parents, students not seeking work, and those unemployed but not seeking work.
-- Missing Data: Decline to answer (777) or don't know (999).
+- Partnered: Includes married individuals and those living with a partner
+- Not Partnered: Includes widowed, divorced, separated, and never married individuals
+- Missing Data: Decline to answer (`777`) or Don't know (`999`)
+
+**Labor Force Participation**
+
+- In the Labor Force: Includes individuals who are working (full-or part-time), temporarily laid off, looking for work, on sick leave, or on parental leave
+- Not in the Labor Force: Includes retired individuals, those permanently or temporarily disabled, stay-at-home parents, students not seeking work, and those unemployed but not seeking work
+- Missing Data: Decline to answer (`777`) or Don't know (`999`)
 
 Labor force classification follows definitions from the American Community Survey and integrates ABCD Study employment data.
 
 **Why Combine These Variables**
+
 - Contextualizing household structure by linking relationship and employment status.
 - Improves statistical power by reducing missingness and integrating multiple household dimensions.
 - Provides predictive utility—e.g., improves model fit for longitudinal outcomes.
 
-**Construction Details**
+**Source variables**
 
-- **Source variables**
+- `ab_p_demo__prtnr_001`: Marital/partner status
+- `ab_p_demo__empl__prtnr_001`: Partner employment status
 
- - `ab_p_demo__prtnr_001`: Marital/partner status
- - `ab_p_demo__empl__prtnr_001`: Partner employment status
+**Skip pattern:** Only respondents who reported having a partner (≥40% involvement in  the child’s activities) were asked about partner employment.
 
-- **Skip pattern**
-Only respondents who reported having a partner (≥40% involvement in  the child’s activities) were asked about partner employment.
+**Resulting classifications**
 
-- **Resulting classifications**
-
- - Partnered and in the labor force
- - Partnered and not in the labor force
- - Not partnered and in the labor force
- - Not partnered and not in the labor force
+- Partnered and in the labor force
+- Partnered and not in the labor force
+- Not partnered and in the labor force
+- Not partnered and not in the labor force
 
 **Use in Baseline Propensity Scores**
 
 A variant of this variable was used in baseline propensity score modeling to balance study groups and improve causal inference by accounting for household context.
 
-Reference: Heeringa, Steven G., and Patricia A. Berglund. *"A guide for population-based analysis of the Adolescent Brain Cognitive Development (ABCD) Study baseline data."* BioRxiv (2020): 2020-02.
+**Key reference:** `r full_cite("heeringa2020")`
 
 **Potential Uses**
 
-- As a **confounder**: Adjust for household structure and economic activity in outcome models.
-- As a **predictor**: Examine how household dynamics influence longitudinal outcomes (e.g., child mental health).
+- As a confounder: Adjust for household structure and economic activity in outcome models.
+- As a predictor: Examine how household dynamics influence longitudinal outcomes (e.g., child mental health).
+
+**Key reference:** `r full_cite("heeringa2020")`
 :::
 
 ## ABCD Static variables {#ab_g_stc}
@@ -234,7 +240,7 @@ Reference: Heeringa, Steven G., and Patricia A. Berglund. *"A guide for populati
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ab_g_stc")`
 `r r_link_table("ab_g_stc")`
 
-**Measure description:** The ABCD Static table includes static (`stc`) variables that do not change over time (as such, this and other static tables do not contain a `session_id` column which leads to their values being duplicated to every event when they are joined with “dynamic”/longitudinal tables). This table contains participant-level descriptors such as derived family IDs, birth event groupings, ethno-racial identity variables, participant sex, imputed propensity weights, and principal components of genetic ancestry.
+**Measure description:** The ABCD Static table includes static (`stc`) variables that do not change over time (as such, this and other static tables do not contain a `session_id` column which leads to their values being duplicated to every event when they are joined with "dynamic"/longitudinal tables). This table contains participant-level descriptors such as derived family IDs, birth event groupings, ethno-racial identity variables, participant sex, imputed propensity weights, and principal components of genetic ancestry.
 
 ::: {.callout-note title="Family and Birth IDs"}
 Participants belonging to the same family share a family ID (`ab_g_stc__design_id__fam`). The table additionally includes a birth ID (`ab_g_stc__design_id__birth`), which provides a unique ID for individuals within the same family who share the same birthdate.
@@ -250,6 +256,16 @@ These fields are cross listed from variables in the Genetics domain: -
 `gn_y_renrel_id__fam` - `gn_y_genrel_id__birth`
 
 For additional documentation, see: [Genetics data documentation](gn.qmd).
+:::
+
+::: {.callout-caution collapse="true" title="Release notes: `ab_g_stc`"}
+[**New tables (6.0)**](../release_notes/6_0.qmd#standard-variables-tables): The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain.
+
+[**Corrected sibling relationships (6.0)**](../release_notes/6_0.qmd#family-and-birth-ids): In the 6.0 release, we corrected a small number of errors in the `ab_g_stc__design_id__fam` and `ab_g_stc__design_id__birth` variables to more accurately reflect sibling relationships between participants.
+
+[**Ethno-racial summary scores (6.0)**](../release_notes/6_0.qmd#ethno-racial-identity): Several new ethno-racial identity summary score variables are available in the data release, capturing ethnicity and race based on baseline and longitudinal responses from youth and parents.
+
+[**Anonomized birth-dates (6.0)**](../release_notes/6_0.qmd#anonymized-date-of-birth): We changed the algorithm for how anonomized birth-dates are computed in the 6.0 release.
 :::
 
 ::: {.callout-important collapse="true" title="Responsible use warning: Race & ethnicity" #use-race_ethnicity}
@@ -303,5 +319,5 @@ We encourage users to consult the NASEM report for guidance on selecting appropr
 
 The data release includes genetic principal components (PCs) of ancestry, which are unlabeled variables that capture genetic variation. It does **not** include genetic ancestry factors, which label variation in terms of continental groupings (e.g., European, African, Asian).
 
-@bates2022
+`r full_cite("bates2022")
 :::

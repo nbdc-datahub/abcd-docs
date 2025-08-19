@@ -2,6 +2,10 @@
 title: "Source data / raw data"
 ---
 
+::: {.callout-caution collapse="true" title="Release notes: Scanner serial number"}
+[**Mismatched data (6.0)**](../release_notes/6_0.qmd#mismatch-between-tabulated-and-bids-sourcedata-and-rawdata-in-anonymized-mri-scanner-serial-numbers): In the ABCD 6.0 release, there is a mismatch between the tabulated and BIDS (sourcedata and rawdata) in the anonymized MRI scanner serial numbers.
+:::
+
 # Source data DICOM file sharing {#sourcedata}
 
 Unprocessed imaging data are made publicly available in DICOM format in a "source data" BIDS directory structure. DICOM files are packaged in individual archive files (.dicom, .tgz) for each series and arranged in BIDS-compliant directory trees. Metadata are provided in JSON-format text files. For task-fMRI series, also included are the files containing stimulus and behavioral response timing information exported from the stimulus program (E-Prime). Source DICOM data may be shared prior to quality control or curation.
@@ -35,3 +39,5 @@ Some Siemens fMRI data have been reported to have negative values for the Siemen
 # Raw data NIfTI file sharing {#rawdata}
 
 Unprocessed imaging data are also made publicly available in NIfTI format in a "raw data" BIDS directory structure. Metadata are included in JSON-format text files. For task-fMRI series, also included are BIDS-compliant events.tsv files containing stimulus and behavioral response timing information extracted from the source data event timing files (i.e., exported from E-prime). For dMRI series, also included are bvecs and bvals files for use in diffusion modeling.
+
+

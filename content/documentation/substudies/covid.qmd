@@ -88,11 +88,11 @@ Some children reported taking online classes for more than 24 hours a day, if on
 
 **Physical activity:** Questions about physical activity in the past week (no distinction is made for school days and school-free days) are modified from the International Physical Activity Questionnaire (IPAQ) short form (@lee2011). Questions ask about walking and moderate/vigorous activity, first establishing the number of days that these activities were performed, followed by the amount of time spent doing the activity on a day. A question is included about daily sedentary (sitting) activity.
 
-**References:**
+**Key references:**
 
-- @glynn2019
-- @roenneberg2003
-- @lee2011
+- `r full_cite("glynn2019")`
+- `r full_cite("roenneberg2003")`
+- `r full_cite("lee2011")`
 
 ### Screen media use
 
@@ -236,10 +236,10 @@ A new question (`covid_y_qtn__cope`...) asked about activities in the past week 
 
 A second item was constructed to measure how much a youth's perceived mental well-being has changed in the past week, ranging from "much worse" to "much better."
 
-**References:** 
+**Key references:** 
 
-- @gershon2013
-- @cohen1983
+- `r full_cite("gershon2013")`
+- `r full_cite("cohen1983")`
 
 ### Friends and family relationships
 
@@ -262,13 +262,13 @@ The items were written for ABCD to measure parents' knowledge and monitoring of 
 
 These survey items were written by William Pelham, PhD at UC San Diego. Contact [wpelham\@ucsd.edu](mailto:wpelham@ucsd.edu){.email} with further questions.
 
-**Reference:** @zucker2018
+**Key reference:** `r full_cite("zucker2018")`
 
 ### Family and friend communication quality
 
 Youth were asked how the frequency and tone of their communications with their parents, siblings, and friends had changed during the pandemic.
 
-**Reference:** @zucker2018
+**Key reference:** `r full_cite("zucker2018")`
 
 ### Substance use
 
@@ -326,10 +326,10 @@ The Sleep Disturbance Scale is included in the main ABCD Study assessment protoc
 
 **Physical activity** - Questions about moderate-vigorous physical activity in the past week are modified from the International Physical Activity Questionnaire (IPAQ) short form (@lee2011).
 
-**References:** 
+**Key references:** 
 
-- @bruni1996
-- @lee2011
+- `r full_cite("bruni1996")`
+- `r full_cite("lee2011")`
 
 ### COVID attitudes and practices
 
@@ -410,7 +410,7 @@ For additional notes, see [Geocoded Data - Administrative information](#covid_l_
 
 Daily metrics for mobile device behaviors were made publicly available by [SafeGraph](https://docs.safegraph.com/docs/welcome) at the census block level from 2019 through Dec 2020. Their [website](https://docs.safegraph.com/docs/social-distancing-metrics) provides the following description:
 
-> This product is delivered daily (3 days delayed from actual). Daily data is available going back to January 1, 2019. We used v2.1 to create the historical data from Jan 1, 2019 - Dec 31, 2019 (the backfill) as well as the data from May 10, 2020 forwards. However, the Jan 1-May 9, 2020 data is on v2.0. Apologies for any inconvenience, please see Release Notes below for more information.*
+> This product is delivered daily (3 days delayed from actual). Daily data is available going back to January 1, 2019. We used v2.1 to create the historical data from Jan 1, 2019 - Dec 31, 2019 (the backfill) as well as the data from May 10, 2020 forwards. However, the Jan 1-May 9, 2020 data is on v2.0. Apologies for any inconvenience, please see [release notes](https://docs.safegraph.com/docs/social-distancing-metrics#release-notes) for more information.*
 
 > The data was generated using a panel of GPS pings from anonymous mobile devices. We determined the common nighttime location of each mobile device over a 6-week period to a Geohash-7 granularity (\~153m x \~153m). For ease of reference, we call this common nighttime location, the device's "home". We then aggregate the devices by home census block group and provide the metrics set out below for each census block group.*
 

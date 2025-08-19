@@ -43,7 +43,10 @@ In some instances, users have less than 3 weeks (21 days) of data collected; the
 
 * `nt_y_earsadm`: Administrative table with information on operating system (OS), device type, device version, and data availability for each participant and event. Instances in which \>1 OS, device type, and/or device version was used for the same participant and event, a pipe symbol is used to denote each one. For example, if subject ABCD123 in follow-up year 4 used both an iPhone XR and iPhone 12 during the 21-day data collection, device version is denoted as: iPhone XR \| iPhone 12.
 
-Files ending in .parquet can be imported into R using the duckplyr package with the following sample code snippet: duckplyr::duckplyr_df_from_parquet( path = "path/to/file/ears_appusage_raw.parquet",
+Files ending in `.parquet` can be imported into R using the `duckplyr` package with the following sample code snippet:
+```r
+duckplyr::duckplyr_df_from_parquet( path = "path/to/file/ears_appusage_raw.parquet"
+```
 
 For ABCD Release 6.0, Ksana Health reprocessed all participant features using improved algorithms. This led to recomputed summary scores for all cases. Scores are very similar to prior data releases.
 
@@ -59,10 +62,18 @@ Ksana Health provided the following data lineage diagrams to detail their proces
 
 **Modifications since initial administration:** iPhone keyboard data collection was collected through 10/19/22, with cessation of keystrokes data collection due to participant burden with the third-party keyboard on iPhones. Beginning 4/10/23, ABCD-EARS resumed collecting iPhone screen on/off data; keystroke data did not resume collection at this time. Future data releases will include iPhone app use information.
 
-**References:**
+::: {.callout-caution collapse="true" title="Release notes: `nt_y_ears`"}
+[**Improved algorithms (6.0)**](../release_notes/6_0.qmd#ears): For ABCD Release 6.0, Ksana Health reprocessed all participant features using improved algorithms.
+:::
 
-- @lind2018
-- @alexander2023
+::: {.callout-caution collapse="true" title="Release notes: `nt_y_ears`"}
+[**Improved algorithms (6.0)**](../release_notes/6_0.qmd#ears): For ABCD Release 6.0, Ksana Health reprocessed all participant features using improved algorithms.
+:::
+
+**Key references:**
+
+- `r full_cite("lind2018")`
+- `r full_cite("alexander2023")`
 
 ### EARS -- Device Usage Statistics (Pilot) {#nt_y_earsplt}
 
@@ -73,7 +84,7 @@ Ksana Health provided the following data lineage diagrams to detail their proces
 
 **Notes and special considerations:** As a pilot study, these data were collected at a subset of ABCD sites.
 
-**Reference:** @lind2018
+**Key reference:** `r full_cite("lind2018")`
 
 ### EARS -- Post-Assessment Survey {#nt_y_earsq}
 
@@ -151,9 +162,13 @@ Note.
 Includes variables: `nt_y_stq__screen__wkdy__hr_001__01`, `nt_y_stq__screen__wkdy__min_001__01`, 
 `nt_y_stq__screen__wknd__hr_001__01`, `nt_y_stq__screen__wknd__min_001__01` (and `_v01` of those variables).
 
-\*Asked only for weekend days.
+*Asked only for weekend days.
 
-**Reference:** @andreassen2012
+::: {.callout-caution collapse="true" title="Release notes: `nt_y_stq`"}
+[**Non-integer value codes (6.0)**](../release_notes/6_0.qmd#screen-time-questionnaire): There are variables that contain non-integer value codes for categorical levels. These non-integers prevents these variables to be exported to Stata files when exporting data from [DEAP](https://abcd.deapscience.com).
+:::
+
+**Key reference:** `r full_cite("andreassen2012")`
 
 ## Fitbit
 
@@ -175,7 +190,7 @@ Includes variables: `nt_y_stq__screen__wkdy__hr_001__01`, `nt_y_stq__screen__wkd
 
 **Notes and special considerations:** As a pilot study, these data were collected at a subset of ABCD sites.
 
-**Reference:** @starkey2014
+**Key reference:** `r full_cite("starkey2014")`
 
 # Parent tables
 
@@ -204,7 +219,7 @@ Includes variables: `nt_y_stq__screen__wkdy__hr_001__01`, `nt_y_stq__screen__wkd
 
 **Measure description:** This is a parent self-report of screentime behaviors and behavior modeling. The parent is asked about the amount of time that they themselves spend using various forms of visual media, on weekdays and weekends. Questions about screentime behavior modeling are from Tang et al. (2018).
 
-**Reference:** @tang2018
+**Key reference:** `r full_cite("tang2018")`
 
 ## Screen Time Questionnaire on Youth {#nt_p_yst}
 
@@ -215,7 +230,7 @@ Includes variables: `nt_y_stq__screen__wkdy__hr_001__01`, `nt_y_stq__screen__wkd
 
 **Modifications since initial administration:** From 2-year follow-up, parents also answered questions about their experiences with their child's media use. The question "Does your child have their own device" is discontinued in Year 4; use the item "Do you have your own mobile phone?" from the youth self-report Screen Time Questionnaire for years 4 onwards.
 
-**Reference:** @bagot2018
+**Key reference:** `r full_cite("bagot2018")`
 
 ## Fitbit
 
@@ -240,6 +255,13 @@ Includes variables: `nt_y_stq__screen__wkdy__hr_001__01`, `nt_y_stq__screen__wkd
 ## Fitbit raw data
 
 The description of Fitbit Physical Activity (Daily) are [here](#fitbit-physical-activity-daily) and Fitbit Sleep (Daily) data are [here](#fitbit-sleep-daily). To download these raw data, follow the instructions on our ['Access & Download' page](../../usage/access.qmd).
+
+
+::: {.callout-caution collapse="true" title="Release notes: `Fitbit raw data`"}
+[**Summary scores (6.0)**](../release_notes/6_0.qmd#fitbit-summary-scores): Fitbit summary scores will not be released with the 6.0 data due to calculation errors.
+
+[**File data errors (6.0)**](../release_notes/6_0.qmd#fitbit-raw-data-files): Please note that the raw Fitbit data files being released as individual-level csv files in the file-based data contain some known issues.
+:::
 
 ### Details of data in Physical Activity raw data files
 

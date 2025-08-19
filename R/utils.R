@@ -80,3 +80,8 @@ create_link <- function(name, url, type = "md", code = TRUE) {
     glue::glue("<a href='{url}'>{name}</a>")
   }
 }
+
+
+full_cite <- function(key) {
+  glue::glue("<${key}><div style=\"display: none;\">@{key}</div>")
+}

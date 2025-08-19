@@ -52,7 +52,7 @@ website:
       contents: study/index.qmd
 
     - id: usage
-      title: "Data Usage"
+      title: "Data use"
       style: "floating"
       pinned: true
       collapse-level: 1
@@ -74,8 +74,10 @@ website:
         - text: "Imaging data"
           href: documentation/imaging/index.qmd
           contents:
-            - file: documentation/imaging/admin.qmd
-              text: "Administrative tables"
+            - section: "Administrative & QC tables"
+              contents: 
+                - file: documentation/imaging/admin.qmd
+                - file: documentation/imaging/type_qc.qmd
 
             - section: "Data types"
               contents: documentation/imaging/data_*.qmd
@@ -113,12 +115,14 @@ format:
       - pulse
       - assets/css/styles-abcd.scss
     bibliography: assets/ref/references.bib
-    csl: assets/ref/chicago-author-date-no-title.csl
+    csl: assets/ref/apa.csl
     suppress-bibliography: false
     page-layout: full
     toc: true
     toc-depth: 4
     toc-expand: 1
+    filters:
+      - custom_citation
     include-in-header:
       - text: |
           <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
@@ -128,9 +132,12 @@ format:
           <script type="module" src="/assets/js/url-handler.js"></script>
           <script type="module" src="/assets/js/left_menu.min.js"></script>
           <script type="module" src="/assets/js/version.min.js"></script>
+          <script type="module" src="/assets/js/callout_expand.min.js"></script>
 format-links: []
 resources:
   - CNAME
   - .nojekyll
   - assets/js/left_menu.min.js
   - assets/js/url-handler.js
+  - assets/js/version.min.js
+  - assets/js/callout_expand.min.js

@@ -18,9 +18,9 @@ render_table_info("domain_abbr == 'ph'")
 
 Learn about the Physical Health domain by reviewing the below references: 
 
-- @uban2018
-- @herting2021
-- @palmer2021
+- `r full_cite("uban2018")`
+- `r full_cite("herting2021")`
+- `r full_cite("palmer2021")`
 
 # Youth tables (Surveys)
 
@@ -53,7 +53,7 @@ ABCD participated in the RECOVER study (<https://recovercovid.org/>);additional 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_meds")`
 `r r_link_table("ph_y_meds")`
 
-**Measure description:** Medications youth participant has taken in the last two weeks
+**Measure description:** Medications youth participant has taken in the last two weeks.
 
 ## Munich Chronotype Questionnaire {#ph_y_mctq}
 
@@ -122,7 +122,7 @@ Participants responding "Evening" or "Nighttime" may be in error or highly unusu
 
 Participants responding "Evening" or "Nighttime" may be in error or highly unusual. Therefore, for some analyses, excluding participants responding `3` or `4` to this item may be appropriate. For participants responding `0`, the response to this item should be excluded from time-based "time to leave for school" analyses.
 
-**Reference:** @zavada2005
+**Key reference:** `r full_cite("zavada2005")`
 
 ## Pain Questionnaire {#ph_y_pq}
 
@@ -131,7 +131,7 @@ Participants responding "Evening" or "Nighttime" may be in error or highly unusu
 
 **Measure description:** The CAPQ is based on the Seattle's Children's "Child and Adolescent Pain Questionnaire" and conforms to the NRS-11 standard for examining pain intensity over the past month, which is the recommended time-frame. The participant is first asked about pain and pain levels, and then asked to identify pain sites on a body map.
 
-**Reference:** @luntamo2012
+**Key reference:** `r full_cite("luntamo2012")`
 
 ## Pubertal Development Scale & Menstrual Cycle Survey History (Youth) {#ph_y_pds}
 
@@ -150,11 +150,11 @@ In 2023, as the year-6 follow-up of the study was underway, it was brought to ou
 
 - Researchers can find more details on pubertal development scale data, methods, meaningful covariates and decision-making for determining final analytical sample in @cheng2021 and @herting2021
 
-**References:** 
+**Key references:** 
 
-- @petersen1988
-- @cheng2021
-- @herting2021
+- `r full_cite("petersen1988")`
+- `r full_cite("cheng2021")`
+- `r full_cite("herting2021")`
 
 ## Respiratory Functioning {#ph_y_rq}
 
@@ -165,11 +165,10 @@ In 2023, as the year-6 follow-up of the study was underway, it was brought to ou
 
 **Notes and special considerations:** Thanks to Sonia Arteaga, Ph.D., a program official at the Environmental influences on Child Health Outcomes Project (ECHO), for supplying the respiratory questions from the ECHO project.
 
-**References:**
+**Key references:**
 
-@gillman2018
-
-@asher1995
+- `r full_cite("gillman2018")`
+- `r full_cite("asher1995")`
 
 ## Sexual Behavior, Orientation, & Communication {#ph_y_sex}
 
@@ -204,11 +203,19 @@ Some items in the Youth Sexual Behavior Survey have parent-reported counterparts
 
 Youth sexual orientation is assessed within the Youth KSADS Background Items (see Measure description below), noted in the data dictionary by the keyword `kbi_`. Refer to Mental Health Data Documentation for the complete youth KSADS background survey.
 
-**References:**
+::: {.callout-caution collapse="true" title="Release notes: `ph_y_sex`"}
+[**New domain classification (6.0)**](../release_notes/6_0.qmd#sexual-behavior-orientation-and-communication): Variables related to sexual behavior, orientation, and communication are now available in the `Physical Health` domain, under the `Sex` subdomain.
+:::
 
-- @potter2022
-- @sales2008
-- @windle2004
+::: {.callout-caution collapse="true" title="Release notes: `ph_y_sex`"}
+[**New domain classification (6.0)**](../release_notes/6_0.qmd#sexual-behavior-orientation-and-communication): Variables related to sexual behavior, orientation, and communication are now available in the `Physical Health` domain, under the `Sex` subdomain.
+:::
+
+**Key references:**
+
+- `r full_cite("potter2022")`
+- `r full_cite("sales2008")`
+- `r full_cite("windle2004")`
 
 ## Sports and Activities Involvement Questionnaire (Youth) {#ph_y_saiq}
 
@@ -246,10 +253,10 @@ The history of questions asked in this instrument, and the parent version of thi
 
 **Measure description:** A brief assessment of physical exercise.
 
-**References:** 
+**Key references:** 
 
-- @dolsen2019
-- @hunsberger2015
+- `r full_cite("dolsen2019")`
+- `r full_cite("hunsberger2015")`
 
 # Youth tables (Biospecimens)
 
@@ -284,11 +291,11 @@ When tracking change in weight status over time, consider which calculated varia
 
 **Notes and special considerations:** Starting in March 2020, for **remote visits,** self-reported estimates of height and weight were obtained from the participant or parent/caregiver. Estimates for waist circumference were not obtained. Variable name `ab_g_dyn__visit_type` can indicate if the visit was "remote" or "hybrid" (some components of the visit were completed in person with RA measurement and some remotely). All height and weight data from "remote" visits were estimated values provided by the parent or participant. Hybrid visits should have included measured heights and weights, but this cannot be confirmed. Some height and weight data provided during a  hybrid visit might have been self-reported. Given the variability of estimated heights and weights, data from a remote or hybrid visit should be used judiciously.
 
-**References:**
+**Key references:**
 
-- @cdc2021
-- @adise2024
-- @berg2023
+- `r full_cite("cdc2021")`
+- `r full_cite("adise2024")`
+- `r full_cite("berg2023")`
 
 ## Blood Analysis {#ph_y_bld}
 
@@ -327,7 +334,7 @@ Test completion date-timestamps are only available for samples analyzed after Se
 
 As of August 18, 2023, all blood samples were shipped within 72 hours of collection, and CBC analysis only performed if received within 48 hours of collection.
 
-Information on genetics results from blood can be found in the Genetics Release Notes.
+Information on genetics results from blood can be found in the [Genetics documentation](gn.qmd#smokescreen-binarized-plink-files-and-batch-info).
 
 ## Blood Pressure {#ph_y_bp}
 
@@ -354,7 +361,7 @@ The time of sample collection may be useful in analyses.
 
 - Researchers can find more details on salivary hormone data, methods, meaningful covariates and decision-making for determining final analytical sample in @cheng2021 and  @herting2021
 
-**Reference:**@dolsen2019
+**Key reference:** `r full_cite("dolsen2019")`
 
 # Parent tables
 
@@ -391,7 +398,7 @@ ABCD participated in the RECOVER study; additional COVID-related survey items we
 
 **Notes and special considerations:** For participants whose 3-year follow-up visit occurred prior to 4/1/21, parents completed the questionnaire and youth confirmed the responses. For participants whose 3-year follow-up visit occurred after 4/1/21, youth completed the questionnaire. Starting with the 4-year follow-up visit, all youth completed the questionnaire themselves.
 
-**Reference:** @hunsberger2015
+**Key reference:** `r full_cite("hunsberger2015")`
 
 ## Breastfeeding Questionnaire {#ph_p_bfq}
 
@@ -400,7 +407,7 @@ ABCD participated in the RECOVER study; additional COVID-related survey items we
 
 **Measure description:** The Breastfeeding Questionnaire is a parent report survey of medication and substance use during breastfeeding of the participant. Based on @kessler2009.
 
-**Reference:** @kessler2009
+**Key reference:** `r full_cite("kessler2009")`
 
 ## Child Nutrition Assessment {#ph_p_cna}
 
@@ -411,7 +418,7 @@ ABCD participated in the RECOVER study; additional COVID-related survey items we
 
 **Notes and special considerations:** This survey was not asked after the 1 Year follow-up ; instead, the Block Kids Food Screener was given starting at the 2 Year follow-up.
 
-**References:** @morris2015
+**Key reference:** `r full_cite("morris2015")`
 
 ## Developmental History {#ph_p_dhx}
 
@@ -426,10 +433,10 @@ ABCD participated in the RECOVER study; additional COVID-related survey items we
 The birth weight data were parent-reported so there are outliers, and should be noted and interpreted as such.
 :::
 
-**References:**
+**Key references:**
 
-- @kessler2009
-- @merikangas2009
+- `r full_cite("kessler2009")`
+- `r full_cite("merikangas2009")`
 
 ## International Physical Activity Questionnaire {#ph_p_ipaq}
 
@@ -438,7 +445,7 @@ The birth weight data were parent-reported so there are outliers, and should be 
 
 **Measure description:** The short form of the International Physical Activity Questionnaire is a parent report measure of the parent's level of physical activity.
 
-**Reference:** @booth2000
+**Key reference:** `r full_cite("booth2000")`
 
 ## Medical History (Parent)  {#ph_p_mhx}
 
@@ -449,7 +456,7 @@ The birth weight data were parent-reported so there are outliers, and should be 
 
 **Notes and special considerations:** `ph_p_mhx__cvd_001` and `ph_p_mhx__cvd_002` were withdrawn from the protocol in the middle of the 4-year follow-up visit, so the 4-year follow-up visit data on these two variables are incomplete.
 
-**Reference:** @todd2003
+**Key reference:** `r full_cite("todd2003")`
 
 ## Medications Inventory (Parent) {#ph_p_meds}
 
@@ -470,7 +477,7 @@ The birth weight data were parent-reported so there are outliers, and should be 
 
 For the non-baseline variables, we have detected several cases in which parents reported implausible values for the questions asking “age when TBIs happened.” Since the non-baseline questions only covered the time “since we last saw you”, values that are more than a year before the current assessment are potential errors. We recommend filtering these data and excluding implausible values from any analysis, or if kept in the analysis file, interpreting the results with caution. Please see the private release notes on the NBDC Platform for the list of affected pguids.
 
-**Reference:** @bogner2017
+**Key reference:** `r full_cite("bogner2017")`
 
 ## Pubertal Development Scale & Menstrual Cycle Survey History (Parent) {#ph_p_pds}
 
@@ -485,7 +492,7 @@ For the non-baseline variables, we have detected several cases in which parents 
 
 - Researchers can find more details on pubertal development scale data, methods, meaningful covariates and decision-making for determining final analytical sample in @cheng2021 and @herting2021. 
 
-**Reference:** @petersen1988
+**Key reference:** `r full_cite("petersen1988")`
 
 ## Sleep Disturbance Scale for Children {#ph_p_sds}
 
@@ -494,10 +501,20 @@ For the non-baseline variables, we have detected several cases in which parents 
 
 **Measure description:** Parent survey of youth sleep and sleep disorders.
 
-**References:** 
 
-- @bruni1996
-- @ferreira2009
+::: {.callout-caution collapse="true" title="Release notes: `ph_p_sds`"}
+[**SDS summary score (6.0)**](../release_notes/6_0.qmd#sleep-disturbance-scale-for-children-sds-summary-scores): All summary scores were re-calculated for the 6.0 data release. However, SDS summary scores were not included in the development plan and were therefore not ready in time for this release.
+:::
+
+
+::: {.callout-caution collapse="true" title="Release notes: `ph_p_sds`"}
+[**SDS summary score (6.0)**](../release_notes/6_0.qmd#sleep-disturbance-scale-for-children-sds-summary-scores): All summary scores were re-calculated for the 6.0 data release. However, SDS summary scores were not included in the development plan and were therefore not ready in time for this release.
+:::
+
+**Key references:** 
+
+- `r full_cite("bruni1996")`
+- `r full_cite("ferreira2009")`
 
 ## Sports and Activities Involvement Questionnaire (Parent) {#ph_p_saiq}
 
@@ -522,7 +539,7 @@ The history of questions asked in this instrument, and the parent version of thi
 
 - Year 5 and beyond: Parents asked NO questions; youth asked ALL questions
 
-**Reference:** @huppertz2016
+**Key reference:** `r full_cite("huppertz2016")`
 
 ## Sexual Orientation & Communication {#ph_p_sex}
 
@@ -548,4 +565,8 @@ Multi-Informant analysis - some items in the Parent KSADS Background Survey have
 | `ph_y_sex__so_kbi_001`     | `ph_p_sex__so_kbi_001`     |
 | `ph_y_sex__so_kbi_001__02` | `ph_p_sex__so_kbi_001__01` |
 
-**Reference:** @sales2008
+::: {.callout-caution collapse="true" title="Release notes: `ph_p_sex`"}
+[**New domain classification (6.0)**](../release_notes/6_0.qmd#sexual-behavior-orientation-and-communication): In the 6.0 data release, variables related to sexual behavior, orientation and communication are available in the `Physical Health` domain, under the `Sex` subdomain.
+:::
+
+**Key reference:** `r full_cite("sales2008")`

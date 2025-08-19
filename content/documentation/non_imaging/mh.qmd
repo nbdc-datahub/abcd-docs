@@ -45,7 +45,7 @@ When writing about mental health symptoms or diagnoses, it is important to use p
 
 **Measure description:** Assesses youth mania symptoms.
 
-**Reference:** @youngstrom2013
+**Key reference:** `r full_cite("youngstrom2013")`
 
 ## Behavioral Inhibition / Behavioral Approach System Scales {#mh_y_bisbas}
 
@@ -54,10 +54,10 @@ When writing about mental health symptoms or diagnoses, it is important to use p
 
 **Measure description:** A self-report questionnaire designed to measure two motivational systems: the behavioral inhibition system (BIS), which corresponds to motivation to avoid aversive outcomes, and the behavioral activation system (BAS), which corresponds to motivation to approach goal-oriented outcomes. The scale has four subscales that were derived via factor analysis. One subscale corresponds to the BIS and has seven items that contribute to this score (e.g., "Criticism or scolding hurts me quite a bit"). The remaining three subscales correspond to three components of BAS (Drive, Reward Responsiveness, and Fun Seeking). BAS Drive measures the motivation to follow one's goals and has four items that contribute to this score (e.g., "When I want something I usually go all-out to get it"). BAS Reward Responsiveness measures the sensitivity to pleasant reinforcers in the environment and has four items that contribute to this score (e.g., "It would excite me to win a contest"). BAS Fun Seeking measures the  motivation to find novel rewards spontaneously has five items that contribute to this score (e.g., "I crave excitement and new sensations"). Participants respond to each item using a 4-point Likert scale: 1 (very true for me), 2 (somewhat true for me), 3 (somewhat false for me), and 4 (very false for me). 
 
-**References:** 
+**Key references:** 
 
-- @carver1994
-- @pagliaccio2016
+- `r full_cite("carver1994")`
+- `r full_cite("pagliaccio2016")`
 
 ## Brief Problem Monitor {#mh_y_bpm}
 
@@ -66,7 +66,7 @@ When writing about mental health symptoms or diagnoses, it is important to use p
 
 **Measure description:** Normed multi-informant monitoring of children's functioning. The BPM's Internalizing (`int`), Attention Problems (`att`), Externalizing (`ext`), and Total Problems scales comprise items from the ASEBA Youth Self-Report (`ysr`). The items, scales, and norms are based on decades of research and practical experience, as summarized in the BPM Manual (@achenbach2009).
 
-**Reference:** @achenbach2009
+**Key reference:** `r full_cite("achenbach2009")`
 
 ## Cyberbullying {#mh_y_cb}
 
@@ -75,7 +75,7 @@ When writing about mental health symptoms or diagnoses, it is important to use p
 
 **Measure description:** This instrument assesses whether a youth has experienced or perpetrated cyberbullying, including information about whether it occurred in the past year and the frequency.
 
-**Reference:** @stewart2014
+**Key reference:** `r full_cite("stewart2014")`
 
 ## Emotion Regulation Questionnaire {#mh_y_erq}
 
@@ -84,10 +84,10 @@ When writing about mental health symptoms or diagnoses, it is important to use p
 
 **Measure description:** The ERQ uses items with a 5-point Likert scale to measure children's tendencies to engage in two specific emotion regulation strategies: reappraisal (reframing the meaning of a situation; a prototypically adaptive strategy) and suppression (inhibiting emotional expression; a prototypically maladaptive strategy).
 
-**References:** 
+**Key references:** 
 
-- @gullone2012
-- @gross2003
+- `r full_cite("gullone2012")`
+- `r full_cite("gross2003")`
 
 ## KSADS – Background Items (Youth) {#mh_y_kbi}
 
@@ -158,19 +158,25 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 | Anorexia                                        | Including duration of illness 3 months or more                            |
 | Autism -- Criterion A                           | Requiring the presence of all three criterion A symptoms for the disorder |
 
-**References:**
+**Key references:**
 
-- @townsend2020
-- @kaufman2021
+- `r full_cite("townsend2020")`
+- `r full_cite("kaufman2021")`
 :::
+
+::: {.callout-caution collapse="true" title="Release notes: `mh_y_kbi`"}
+[**KSADS 1.0 & 2.0 (6.0)**](../release_notes/6_0.qmd#ksads): As part of the 6.0 curation efforts, ABCD merged data from KSADS 1.0 and 2.0 in order to combine all equivalent symptoms and diagnoses across the two assessment versions into singular variables. However, we were unable to complete this process for the item-level KSADS data. 
+
+[**Eating disorders module (6.0)**](../release_notes/6_0.qmd#ksads-eating-disorders): The Mental Health Workgroup did an extensive review of the criteria used for all previously released eating disorder diagnoses in KSADS. The group agreed that the criterion were more restrictive than necessary, and thus underestimated the rates of eating disorder diagnoses. 
+
+[**Oppositional defiant disorder module (6.0)**](../release_notes/6_0.qmd#ksads-comp-updates-to-2.0): There was a diagnostic algorithm error detected in 2023 (update pending 7.0).
+:::
+
 
 ### KSADS Modules (Youth) {#mh_y_ksads}
 
 ```{r}
-render_table_info(
-  "domain_abbr == 'ksads_y'",
-  remove_source = TRUE
-)
+render_table_info("domain_abbr == 'ksads_y'", remove_source = TRUE)
 ```
 <br>
 
@@ -250,10 +256,10 @@ render_table_info(
 
 **Modifications since initial administration:** Some of the items in the Life Events Scale (e.g., school shooter, not having a home, hospitalization of parent, foster care, seeing or hearing people being shot, hit, etc. in the neighborhood) were added at later waves and are not available at earlier waves. 6 items were added at the 3 year follow-up (`026` to `031` ),  2 more items were added at the 4 year follow-up (`032`, 034), and 1 more item was added at the 6 year follow-up (`033`).   Items added at various years were continued in subsequent years. We provide multiple summary scores for life events that reflect these differing numbers of items.
 
-**References:**
+**Key references:**
 
-- @tiet2001
-- @grant2004
+- `r full_cite("tiet2001")`
+- `r full_cite("grant2004")`
 
 ## Modified Urgency, Premeditation, Perseverance, Sensation Seeking, Positive Urgency, Impulsive Behavior Scale for Children {#mh_y_upps}
 
@@ -264,10 +270,10 @@ render_table_info(
 
 **Notes and special considerations:** There are a small number of cases where 1 or 2 items were missing and a summary score was computed without adjusting for the missing item. The number of items missing are in the output, so users can recompute the value as an average of the number of items answered if they would like.
 
-**References:**
+**Key references:**
 
-- @cyders2007
-- @whiteside2005
+- `r full_cite("cyders2007")`
+- `r full_cite("whiteside2005")`
 
 ## NIH Toolbox Positive Affect {#mh_y_pai}
 
@@ -276,10 +282,10 @@ render_table_info(
 
 **Measure description:** This measure evaluates feelings of contentment, happiness, enthusiasm, joy, and excitement in the past week.
 
-**References:** 
+**Key references:** 
 
-- @gershon2013
-- @salsman2013
+- `r full_cite("gershon2013")`
+- `r full_cite("salsman2013")`
 
 ## Other Resilience {#mh_y_resil}
 
@@ -288,7 +294,7 @@ render_table_info(
 
 **Measure description:** A short survey on the number of friends.
 
-**Reference:** @barch2018
+**Key reference:** `r full_cite("barch2018")`
 
 ## Peer Experience Questionnaire {#mh_y_peq}
 
@@ -297,10 +303,10 @@ render_table_info(
 
 **Measure description:** Assesses whether the youth has either experienced overt, relational, or reputational victimization from peers or perpetrated overt, relational, or reputational aggression towards peers.
 
-**References:** 
+**Key references:** 
 
-- @delosreyes2004
-- @prinstein2001
+- `r full_cite("delosreyes2004")`
+- `r full_cite("prinstein2001")`
 
 ## Prodromal Psychosis Scale {#mh_y_pps}
 
@@ -309,12 +315,12 @@ render_table_info(
 
 **Measure description:** The Prodromal Questionnaire--Brief Child Version may be a useful measure of early risk for psychotic disorders and is associated with several familial, cognitive, and emotional factors related to psychotic symptoms in older populations.
 
-**References:** 
+**Key references:** 
 
-- @karcher2018
-- @loewy2005
-- @ising2012
-- @therman2014
+- `r full_cite("karcher2018")`
+- `r full_cite("loewy2005")`
+- `r full_cite("ising2012")`
+- `r full_cite("therman2014")`
 
 ## Youth Self-Report {#mh_y_ysr}
 
@@ -332,7 +338,7 @@ render_table_info(
 
 **Measure description:** This ASEBA instrument is completed by the primary parent about the other parent (if applicable) and provides dimensional measures of parental psychopathology.
 
-**Reference:** @achenbach2009
+**Key reference:** `r full_cite("achenbach2009")`
 
 ## Adult Self Report (Parent) {#mh_p_asr}
 
@@ -341,7 +347,7 @@ render_table_info(
 
 **Measure description:** This ASEBA instrument reports parent self-reported psychopathological syndromes.
 
-**Reference:** @achenbach2009
+**Key reference:** `r full_cite("achenbach2009")`
 
 ## Child Behavior Checklist {#mh_p_cbcl}
 
@@ -352,7 +358,7 @@ render_table_info(
 
 **Notes and special considerations:** ASEBA recommends not using summary scores for participants with more than 8 missing items.
 
-**Reference:** @achenbach2009
+**Key reference:** `r full_cite("achenbach2009")`
 
 ## Family History {#mh_p_famhx}
 
@@ -373,10 +379,10 @@ render_table_info(
 
 - The Research Assistant did not administer questions pertaining to all biological relatives because the participant or parent  had knowledge of the biological relatives,indicated that one or more relative had the problem, but was asked to respond only to questions about relatives they knew were affected, rather than indicating "no problems" for relatives not affected. For example, a respondent was asked about problems due to alcohol (e.g., marital separation or divorce) only for the affected relative. The respondent has knowledge of the youth's biological relatives, one or more relatives is believed to have a problem due to alcohol, but there is no endorsement of "no problems" for the father (`mh_p_famhx__alc__fath_001___0`), no endorsement of any specific problem (`mh_p_famhx__alc__fath_001___1` -- `mh_p_famhx__alc__fath_001___6`), and no endorsement of "don't know" (`mh_p_famhx__alc__fath_001___999`). In this example, one can presume the absence of a problem related to alcohol in the father.
 
-**References:**
+**Key references:**
 
-- @brown2015
-- @rice1995
+- `r full_cite("brown2015")`
+- `r full_cite("rice1995")`
 
 ## General Behavior Inventory - Mania {#mh_p_gbi}
 
@@ -385,7 +391,7 @@ render_table_info(
 
 **Measure description:** Parent assessment of mania symptoms in their youth participant.
 
-**Reference:** @youngstrom2008
+**Key reference:** `r full_cite("youngstrom2008")`
 
 ## Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children ([KSADS-COMP](https://www.ksadslogin.net/ksads-comp/aboutKC.aspx))
 
@@ -404,6 +410,15 @@ The following levels are used for symptoms and diagnoses:
 - `555` = Not administered in the assessment
 
 We switched to the KSADS 2.0 at the 3-year follow-up for both parent and youth report as this updated version incorporates several improved features, including better assessments of Autism Spectrum and Psychotic disorders. These KSADS tables include both data from 1.0 and 2.0 for the same variables in the same columns for ease of analysis.
+
+
+::: {.callout-caution collapse="true" title="Release notes: `mh_p_ksads`"}
+[**KSADS 1.0 & 2.0 (6.0)**](../release_notes/6_0.qmd#ksads): As part of the 6.0 curation efforts, ABCD merged data from KSADS 1.0 and 2.0 in order to combine all equivalent symptoms and diagnoses across the two assessment versions into singular variables. However, we were unable to complete this process for the item-level KSADS data.
+
+[**Eating disorder module (6.0)**](../release_notes/6_0.qmd#ksads-eating-disorders):The Mental Health Workgroup did an extensive review of the criteria used for all previously released eating disorder diagnoses in KSADS. The group agreed that the criterion were more restrictive than necessary, and thus underestimated the rates of eating disorder diagnoses.
+
+[**Oppositional defiant disorder module (6.0)**](../release_notes/6_0.qmd#ksads-comp-updates-to-2.0): There was a diagnostic algorithm error detected in 2023 (update pending 7.0). 
+:::
 
 ::: {.callout-note collapse="false" title="KSADS-COMP Changes 1.0 to 2.0"}
 
@@ -447,10 +462,10 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 | Anorexia                                        | Including duration of illness 3 months or more                            |
 | Autism -- Criterion A                           | Requiring the presence of all three criterion A symptoms for the disorder |
 
-**References:**
+**Key references:**
 
-- @townsend2020
-- @kaufman2021
+- `r full_cite("townsend2020")`
+- `r full_cite("kaufman2021")`
 :::
 
 ### KSADS Modules (Parent) {#mh_p_ksads}
@@ -458,10 +473,7 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 See the [youth section](#mh_y_ksads) for more details.
 
 ```{r}
-render_table_info(
-  "domain_abbr == 'ksads_p'",
-  remove_source = TRUE
-)
+render_table_info("domain_abbr == 'ksads_p'", remove_source = TRUE)
 ```
 <br>
 
@@ -587,10 +599,10 @@ render_table_info(
 
 **Modifications since initial administration:** Some of the items in the Life Events Scale (e.g., school shooter, not having a home, hospitalization of parent, foster care, seeing or hearing people being shot, hit, etc. in the neighborhood) were added at later waves and are not available at earlier waves. We provide multiple summary scores for life events that reflect these differing numbers of items. The specific items included in each summary score can be found in the [R package](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#life-events-parent-). 
 
-**References:**
+**Key references:**
 
-- @tiet2001
-- @grant2004
+- `r full_cite("tiet2001")`
+- `r full_cite("grant2004")`
 
 ## Perceived Stress Scale {#mh_p_pss}
 
@@ -599,7 +611,7 @@ render_table_info(
 
 **Measure description:** A 10-item parent report of the parent's perception of stress feelings and thoughts over the past month.
 
-**Reference:** @cohen1983
+**Key reference:** `r full_cite("cohen1983")`
 
 ## Short Social Responsiveness Scale {#mh_p_ssrs}
 
@@ -614,17 +626,17 @@ Practically, these features suggest at least three precautions. First, the influ
 
 Note that autism levels 2 ("Requiring substantial support") and 3 ("Requiring very substantial support") were exclusion criteria during recruitment for the ABCD Study.
 
-**References:**
+**Key references:**
 
-- @aldridge2012
-- @constantino2011
-- @constantino2000
-- @constantino2000a
-- @constantino2003
-- @constantino2004
-- @hus2013
-- @kaat2017
-- @norris2010
+- `r full_cite("aldridge2012")`
+- `r full_cite("constantino2011")`
+- `r full_cite("constantino2000")`
+- `r full_cite("constantino2000a")`
+- `r full_cite("constantino2003")`
+- `r full_cite("constantino2004")`
+- `r full_cite("hus2013")`
+- `r full_cite("kaat2017")`
+- `r full_cite("norris2010")`
 
 # Teacher tables
 
@@ -635,4 +647,4 @@ Note that autism levels 2 ("Requiring substantial support") and 3 ("Requiring ve
 
 **Measure description:** ASEBA measure of teacher-reported internalizing, externalizing, and attention problems in the youth participant.
 
-**Reference:** @achenbach2009
+**Key reference:** `r full_cite("achenbach2009")`

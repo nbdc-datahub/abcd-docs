@@ -46,7 +46,7 @@ Additional details/resources are available on this site in documentation provide
 
 You can read more about the ABCD protocol development in a special issue of Developmental Cognitive Neuroscience here: [https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32](https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32).
 
-General information about the studies data dictionary & release variables can explored via DEAP and Lasso [(see details)](../tools/tools.qmd). 
+General information about the studies data dictionary & release variables can explored via DEAP and the NBDC Data Access Platform [(see details)](../tools/tools.qmd). 
 :::
 
 ::: {.callout-tip collapse="true" title="Can I propose a new assay for collected biospecimens?"}

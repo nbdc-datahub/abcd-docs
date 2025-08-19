@@ -11,11 +11,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 
 # Domain overview
 ```{r}
-render_table_info(
-  "sub_domain == 'Task fMRI' & atlas == 'Behavior'", 
-  remove_source = TRUE,
-  remove_subdomain = TRUE
-)
+render_table_info("atlas == 'Behavior'")
 ```
 
 The above table lists instruments with summary scores for participants' behavioral performance in the different task-based fMRI paradigms. Besides these curated tabulated data, users can also download the raw (trial-level) behavioral data that the summary scores are computed from (see [Trial Level Behavioral Performance Data Documentation](type_trial.qmd)). The tasks and stimuli listed in this document are also available at <https://abcdstudy.org/scientists/abcd-fmri-tasks-and-tools>. The behavioral performance review is part of the ABCD Study QC procedures and imaging inclusion criteria. For additional information please refer to the [MRI Quality Control & Recommended Image Inclusion Criteria](type_qc.qmd) release note.
