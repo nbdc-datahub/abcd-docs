@@ -29,18 +29,28 @@ class URLHandler {
             return '';
         }
         
+        // For versioned deployments, we need to determine the base URL from the current path
+        // not from where we came from. This fixes issues when navigating between versions.
+        
+        // Versioned deployments: /v/.*/ (this should be checked first)
+        const versionMatch = pathname.match(/^\/v\/([^\/]+)/);
+        if (versionMatch) {
+            const baseUrl = `/v/${versionMatch[1]}`;
+            this.log(`Detected versioned deployment: ${baseUrl}`);
+            return baseUrl;
+        }
+        
         // Latest version deployment
         if (pathname.startsWith('/latest/')) {
             this.log('Detected latest version deployment');
             return '/latest';
         }
         
-        // Versioned deployments: /reports/.*/ or /v/.*/
-        const versionMatch = pathname.match(/^\/(?:reports|v)\/([^\/]+)/);
-        if (versionMatch) {
-            const prefix = pathname.match(/^\/reports\//) ? 'reports' : 'v';
-            const baseUrl = `/${prefix}/${versionMatch[1]}`;
-            this.log(`Detected versioned deployment: ${baseUrl}`);
+        // Legacy reports deployments: /reports/.*/
+        const reportsMatch = pathname.match(/^\/reports\/([^\/]+)/);
+        if (reportsMatch) {
+            const baseUrl = `/reports/${reportsMatch[1]}`;
+            this.log(`Detected reports deployment: ${baseUrl}`);
             return baseUrl;
         }
         
@@ -119,6 +129,11 @@ class URLHandler {
         document.addEventListener('click', (event) => {
             const link = event.target.closest('a[href^="/"]');
             if (link) {
+                // Skip version switcher dropdown items - they have their own click handler
+                if (link.classList.contains('dropdown-item')) {
+                    return;
+                }
+                
                 const href = link.getAttribute('href');
                 const adjustedHref = this.adjustPath(href);
                 
