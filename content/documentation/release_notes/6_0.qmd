@@ -15,7 +15,7 @@ levels_recode <- readr::read_csv(
 
 # Sample
 
-The 6.0 data release includes data from *11,868 participants*, representing the full ABCD cohort (N = 11,880) except for 12 participants who withdrew consent to share their data, and *13 events*. Data is considered complete through the 4-year follow-up and nearly complete for the 5-year follow-up, with varying numbers of missed visits per event. The 5.5-year and 6-year follow-up events were still ongoing when the data were frozen (cutoff date: January 15, 2025), so these events include only participants who had assented by the cutoff date. No data are included from events after the 6-year follow-up to ensure sufficient event completion.
+The 6.0 data release includes data from *11,868 participants*, representing the full ABCD cohort (N = 11,880) except for 12 participants who withdrew consent to share their data, and *13 events*. Data is considered complete through the 4-year follow-up and nearly complete for the 5-year follow-up, with varying numbers of missed visits per event. The 5.5-year and 6-year follow-up events were still ongoing when the data were frozen (cutoff date: January 15, 2024), so these events include only participants who had assented by the cutoff date. No data are included from events after the 6-year follow-up to ensure sufficient event completion.
 
 The following table shows the number of participants per *core study* event^[Please note that the event identifier has been changed to be compatible with the BIDS standard; read more [here](../curation/standards.qmd#identifier-columns).]:
 

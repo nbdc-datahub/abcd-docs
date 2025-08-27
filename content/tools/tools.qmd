@@ -9,21 +9,18 @@ The [NBDC Data Hub](https://nbdc-datahub.org) offers users two major application
 - [Data Exploration and Analysis Portal (DEAP)](https://nbdc.deapscience.com)
 - [NBDC Data Access Platform](https://nbdc-datashare.lassoinformatics.com)
 
-<div style="float: right; margin-left: 150px; margin-right: 150px; text-align: center;">
-  <img src="../assets/img/tools/nbdc_icon.png" width="200"><br>
-  <strong>NIH Brain Development Cohorts Data Hub</strong>
-</div>
-
-<p>
   While the applications can be used for similar tasks, they differ with regard to their user 
   interface and offer distinct features. The table below gives an overview of current features 
   as well as planned future directions of the two applications—we encourage users to explore 
   both applications to see what best suits their needs.
-</p>
+  
+<div style="float: right; margin-left: 150px; margin-right: 150px; text-align: center;">
+  <strong>NIH Brain Development Cohorts Data Hub</strong>
+</div>
 
 | | | |
 |:-|:-:|:-:|
-| [<span style="white-space: nowrap;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Curated datasets with varying subsets of data]{style="color: #FFFFFF;"}</span> |  <span style="white-space: nowrap;">Data Exploration and Analysis Portal</span> <br> [nbdc.deapscience.com](https://deapscience.com/#/home) <br> [docs.deapscience.com](https://docs.deapscience.com) | NBDC Data Access Platform <br> <span style="white-space: nowrap;">[nbdc-datashare.lassoinformatics.com](https://nbdc-datashare.lassoinformatics.com)</span> <br> [nbdc.lassoinformatics.com](https://nbdc.lassoinformatics.com/data-query-and-downloads) |
+| ![](../assets/img/tools/nbdc_logo){width="225"} |  <span style="white-space: nowrap;">Data Exploration and Analysis Portal</span> <br> [nbdc.deapscience.com](https://deapscience.com/#/home) <br> [docs.deapscience.com](https://docs.deapscience.com) | NBDC Data Access Platform <br> <span style="white-space: nowrap;">[nbdc-datashare.lassoinformatics.com](https://nbdc-datashare.lassoinformatics.com)</span> <br> [nbdc.lassoinformatics.com](https://nbdc.lassoinformatics.com/data-query-and-downloads) |
 | **ABCD & HBCD data** | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |
 | **Data dictionary explorer** | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> | 
 | **Access file-based data** <br> [Raw & derived MRI/EEG, wearables, etc]{style="color: #A9A9A9;"} | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" viewBox="0 0 24 24" aria-hidden="true" data-bs-toggle="tooltip" title="Close or error icon"> <path d="M18.364 5.636a1 1 0 00-1.414 0L12 10.586 7.05 5.636a1 1 0 10-1.414 1.414L10.586 12l-4.95 4.95a1 1 0 101.414 1.414L12 13.414l4.95 4.95a1 1 0 001.414-1.414L13.414 12l4.95-4.95a1 1 0 000-1.414z"/> </svg> | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |
