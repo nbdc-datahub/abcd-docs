@@ -408,13 +408,3 @@ tbl_dict_categories_ios <- read.csv("../../assets/tbl/documentation/release_note
 reactable(tbl_dict_categories_ios)
 ```
 :::
-
-### Pilot Study -- EARS raw data {#pilot-study-ears-screentime-raw-data}
-
-#### Description of data
-
-During planning for the rollout of a real-time screen time use app, ABCD performed pilot testingat 4 ABCD study sites using EARS from [Ksana Health](https://ksanahealth.com/ears/). The full EARS pilot protocol lasted for 4 weeks.
-
-The following describes the data available from the pilot study of the EARS app. Data are available in both summary tabulated form and in raw (i.e., logs of every instance of app use by participant) form. In tabulated form, the data are similar to the future iterations of the full ABCD passive sensing protocol. Namely, the Google Play Categories are provided with summary times over the length of the passive sensing protocol (in the pilot, 4 full weeks). In addition, Ksana Health created composite app categories based on a list created by the Novel Tech Workgroup. These composite categories are described as "ABCD composite categories" (e.g., Gaming, Communications). They do not take into consideration the Google Play Store category, but were labeled based on Ksana's judgment on how the app would best be categorized. Given the very large number of participants and apps used, this ABCD composite category process was not used beyond the initial pilot study, though ABCD Google Playstore Categories are provided in the full ABCD EARS protocol.
-
-Detailed pilot study information is published: @wade2021

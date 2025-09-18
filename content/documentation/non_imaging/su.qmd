@@ -13,7 +13,6 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 ```{r}
 render_table_info("domain_abbr == 'su'")
 ```
-<br>
 
 For additional information about 1-year to 3-year follow-up substance use methods and Baseline to 3-year follow-up substance use base rates, see @sullivan2022
 
@@ -180,6 +179,15 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 - `r full_cite("greenbaum1995")`
 - `r full_cite("stein2007")`
 
+### Alcohol Hangover Symptoms {#su_y_alchss}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alchss")`
+`r r_link_table("su_y_alchss")`
+
+**Measure description:** Measures frequency of hangover symptoms over the last 6 months. The HSS queries 13 hangover symptoms that are manifestations of toxic neurologic effects, measured on a scale ranging from 0% (never) to 100% of drinking occasions (Slutske, Piasecki, & Hunt-Carter, 2003).
+
+**Key references:** `r full_cite("slutske2003")`
+
 ### Alcohol Motives {#su_y_alcmot}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcmot")`
@@ -193,6 +201,31 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 - `r full_cite("grant2007")`
 - `r full_cite("kuntsche2009")`
 
+### Alcohol Problems {#su_y_alcprob}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcprob")`
+`r r_link_table("su_y_alcprob")`
+
+**Measure description:** Symptom frequency checklist of alcohol-related problems over the past 6 months. The RAPI queries how many times in the last year the participant has felt a certain consequence for drinking alcohol (@white1989).
+
+**Key reference:** `r full_cite("white1989")`
+
+### Alcohol Subjective Effects {#su_y_alcsre}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcsre")`
+`r r_link_table("su_y_alcsre")`
+
+**Measure description:** Sensitivity to alcohol effects. This is a modification of the PhenX instrument found [here](https://www.phenxtoolkit.org/protocols/view/520202).
+
+**Key reference:** `r full_cite("schuckit1997")`
+
+### Caffeine Use Questionnaire {#su_y_caff}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_caff")`
+`r r_link_table("su_y_caff")`
+
+**Measure description:** Measures youth's use of caffeine
+
 ### Cigarette Expectancies {#su_y_cigexp}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_cigexp")`
@@ -204,58 +237,42 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 **Key reference:** `r full_cite("lewisesquerre2005")`
 
-### ENDS Expectancies {#su_y_nicvapeexp}
+### Tobacco Motives {#su_y_cigmot data-link="Tobacco Motives"}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicvapeexp")`
-`r r_link_table("su_y_nicvapeexp")`
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_cigmot")`
+`r r_link_table("su_y_cigmot")`
 
-**Measure description:** Measure of thoughts, feelings and beliefs about effects of using electronic nicotine delivery systems (ENDS).
+**Measure description:** Motives for using tobacco products.
 
-**Key reference:** `r full_cite("pokhrel2018")`
+**Key reference:** `r full_cite("smith2010")`
 
-### Marijuana Expectancies {#su_y_mjexp}
+### Community Risk and Protective Factors (Youth) {#su_y_crpf}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjexp")`
-`r r_link_table("su_y_mjexp")`
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_crpf")`
+`r r_link_table("su_y_crpf")`
 
-**Measure description:** Measures thoughts, feelings, and beliefs about effects of marijuana. Asked if "heard of" marijuana question was answered positively.
+**Measure description:** Perceived access to substances of abuse.
 
-**Modifications since initial administration:** Starting with the 3-year follow-up, participants were no longer asked the "heard of" questions. Starting on 11/16/2023, 9 marijuana-specific vaping expectancy items added to the end of the measure at the 7-year follow up and beyond.
-
-**Key reference:** `r full_cite("torrealday2008")`
-
-::: {.callout-important collapse="true" title="Responsible use warning: Marijuana expectancies (MEEQ-B)" #use-su_y_can_exp}
-The Substance Use Interview and Timeline FollowBack use the word "marijuana" due to familiarity for adolescents and vernacular connected to THC products in particular, however, cannabis is considered more scientific. Data users should consider historical context and contemporary terminology preferences when publishing findings. When using cannabis measures in analyses, specifying the cannabinoid content and product types improves specificity of findings.
-
-- `r full_cite("nccih2025")`
-- `r full_cite("solomon2020")`
-:::
-
-### Marijuana Motives {#su_y_mjmot}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjmot")`
-`r r_link_table("su_y_mjmot")`
-
-**Measure description:** This is a modified version of the PhenX Marijuana Motives Questionnaire. It consists of 25 questions about the respondent's coping and enhancement motives (reasons) for using marijuana. The respondent is asked to respond to each question via a five-item scale ranging from 1 for "almost never/never" to 5 for "almost always/always."
+**Modifications since initial administration:** A definition of neighborhood (\~1m mile, 20 min walk) was added to the original instrument on September 7, 2022.
 
 **Key references:**
 
-- `r full_cite("lee2009")`
-- `r full_cite("simons1998")`
+- `r full_cite("arthur2007")`
+- `r full_cite("trentacosta2011")`
 
-### Caffeine Use Questionnaire {#su_y_caff}
+### Drug Problems {#su_y_drgprob}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_caff")`
-`r r_link_table("su_y_caff")`
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_drgprob")`
+`r r_link_table("su_y_drgprob")`
 
-**Measure description:** Measures youth's use of caffeine
+**Measure description:** Symptom frequency checklist of "other" drug-related problems over past 6 months
 
-### Low Level Use Questionnaire {#su_y_lowuse}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_lowuse")`
-`r r_link_table("su_y_lowuse")`
+**Key references:**
 
-**Measure description:** Measures youth's low level use of substances
+- `r full_cite("johnson1989")`
+- `r full_cite("caldwell2002")`
+- `r full_cite("kingston2011")`
 
 ### PATH Intention to Use {#su_y_itu}
 
@@ -359,130 +376,6 @@ was split into:
 - `r full_cite("pierce1996")`
 - `r full_cite("strong2015")`
 
-### Peer Deviance {#su_y_pgd}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_pgd")`
-`r r_link_table("su_y_pgd")`
-
-**Measure description:** Measures friends' use of alcohol, nicotine, marijuana, inhalants, and "other" drugs.
-
-**Key reference:** `r full_cite("freedman1988")`
-
-::: {.callout-important collapse="true" title="Responsible use warning: Peer deviant behavior" #use-su_y_peerdevia}
-Although historically referred to as 'Peer Deviant Behavior,' 'peer substance use' or 'peer involvement in illegal activities' is more precise terminology without unintended negative implications (@torrente2012; @freedman1988).
-:::
-
-### Peer Tolerance {#su_y_ptu}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_ptu")`
-`r r_link_table("su_y_ptu")`
-
-**Measure description:** Measure of how youth believes their close friends would feel about them engaging in substance use behaviors, including drinking, smoking, using e-cigarettes, cannabis use, nonmedical use of prescription drugs, and "other drug" use. Modified from *Monitoring the Future* PhenX form ([Find here](https://www.phenxtoolkit.org/protocols/view/540402?origin=search)).
-
-**Key references:** 
-
-- `r full_cite("johnson2003")`
-- `r full_cite("johnston2016")`
-
-### Perceived Harm {#su_y_perc}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_perc")`
-`r r_link_table("su_y_perc")`
-
-**Measure description:** Measure of youth's opinion regarding how much people risk harming themselves (physically or in other ways) if they engage in various substance use behaviors, including drinking, smoking, using e-cigarettes, marijuana use, nonmedical use of prescription drugs, and "other drug" use. Modified from *Monitoring the Future* PhenX form ([Find here](https://www.phenxtoolkit.org/protocols/view/550401?origin=search)).
-
-**Key references:** 
-
-- `r full_cite("johnson2003")`
-- `r full_cite("johnston2016")`
-
-### Reasons for ENDS Use {#su_y_nicvapereas data-link="Reasons for ENDS Use"}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicvapereas")`
-`r r_link_table("su_y_nicvapereas")`
-
-**Measure description:** Reasons for using electronic nicotine delivery systems (ENDS).
-
-**Key references:**
-
-- `r full_cite("wills2002")`
-- `r full_cite("piper2004")`
-
-### Tobacco Motives {#su_y_cigmot data-link="Tobacco Motives"}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_cigmot")`
-`r r_link_table("su_y_cigmot")`
-
-**Measure description:** Motives for using tobacco products.
-
-**Key reference:** `r full_cite("smith2010")`
-
-### Vaping Expectancies {#su_y_vapeexp}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_vapeexp")`
-`r r_link_table("su_y_vapeexp")`
-
-**Measure description:** Measures thoughts, feelings and beliefs about effects of vaping. This was adapted from the Marijuana Expectancies measure described above [here](#Marijuana%20Expectancies%20(MEEQ-B)).
-
-**Notes and special considerations:** Because this measure was introduced midway through the 3-year follow-up assessment, a proportion of participants did not receive the measure and appear as missing data.
-
-**Key reference:** `r full_cite("torrealday2008")`
-
-### Vaping & ENDS Motives {#su_y_vapemot}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_vapemot")`
-`r r_link_table("su_y_vapemot")`
-
-**Measure description:** Reasons for vaping. This inventory was created by a subgroup on the ABCD Substance Use workgroup, including Drs. Krista Lisdahl, Mary Heitzeg, Marsha Lopez, Susan Tapert, and Gaya Dowling. The instructions were modified from the Monitoring the Future Study 2020 interview and Tobacco Motive Inventory and items were modified from the Reasons for ENDS Use, PATH Study, Tobacco Motive Inventory with additional items created by the subgroup.
-
-**Notes and special considerations:** The Vaping Motives questionnaire was administered midway through the 2-year follow-up. Thus, a proportion of participants in this assessment wave were not administered the questionnaire and will appear as missing.
-
-**Key references:** 
-
-- `r full_cite("diez2019")`
-- `r full_cite("piper2004")`
-
-### Alcohol Hangover Symptoms {#su_y_alchss}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alchss")`
-`r r_link_table("su_y_alchss")`
-
-**Measure description:** Measures frequency of hangover symptoms over the last 6 months. The HSS queries 13 hangover symptoms that are manifestations of toxic neurologic effects, measured on a scale ranging from 0% (never) to 100% of drinking occasions (Slutske, Piasecki, & Hunt-Carter, 2003).
-
-**Key references:** `r full_cite("slutske2003")`
-
-### Alcohol Problems {#su_y_alcprob}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcprob")`
-`r r_link_table("su_y_alcprob")`
-
-**Measure description:** Symptom frequency checklist of alcohol-related problems over the past 6 months. The RAPI queries how many times in the last year the participant has felt a certain consequence for drinking alcohol (@white1989).
-
-**Key reference:** `r full_cite("white1989")`
-
-### Alcohol Subjective Effects {#su_y_alcsre}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcsre")`
-`r r_link_table("su_y_alcsre")`
-
-**Measure description:** Sensitivity to alcohol effects. This is a modification of the PhenX instrument found [here](https://www.phenxtoolkit.org/protocols/view/520202).
-
-**Key reference:** `r full_cite("schuckit1997")`
-
-### Drug Problems {#su_y_drgprob}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_drgprob")`
-`r r_link_table("su_y_drgprob")`
-
-**Measure description:** Symptom frequency checklist of "other" drug-related problems over past 6 months
-
-
-**Key references:**
-
-- `r full_cite("johnson1989")`
-- `r full_cite("caldwell2002")`
-- `r full_cite("kingston2011")`
-
 ### KSADS---Alcohol Use Disorder (Youth) {#su_y_ksads__aud}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_ksads__aud")`
@@ -500,6 +393,43 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 **Measure description:** DSM-5 based symptoms and diagnoses (although not clinician administered; therefore, not official psychiatric diagnoses) of drug use disorder based on the responses to individual questions using the computer administered version of the Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children ([KSADS-COMP](https://www.ksadslogin.net/ksads-comp/aboutKC.aspx)).
 
 **Key reference:** `r full_cite("kaufman2021")`
+
+### Low Level Use Questionnaire {#su_y_lowuse}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_lowuse")`
+`r r_link_table("su_y_lowuse")`
+
+**Measure description:** Measures youth's low level use of substances
+
+### Marijuana Expectancies {#su_y_mjexp}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjexp")`
+`r r_link_table("su_y_mjexp")`
+
+**Measure description:** Measures thoughts, feelings, and beliefs about effects of marijuana. Asked if "heard of" marijuana question was answered positively.
+
+**Modifications since initial administration:** Starting with the 3-year follow-up, participants were no longer asked the "heard of" questions. Starting on 11/16/2023, 9 marijuana-specific vaping expectancy items added to the end of the measure at the 7-year follow up and beyond.
+
+**Key reference:** `r full_cite("torrealday2008")`
+
+::: {.callout-important collapse="true" title="Responsible use warning: Marijuana expectancies (MEEQ-B)" #use-su_y_can_exp}
+The Substance Use Interview and Timeline FollowBack use the word "marijuana" due to familiarity for adolescents and vernacular connected to THC products in particular, however, cannabis is considered more scientific. Data users should consider historical context and contemporary terminology preferences when publishing findings. When using cannabis measures in analyses, specifying the cannabinoid content and product types improves specificity of findings.
+
+- `r full_cite("nccih2025")`
+- `r full_cite("solomon2020")`
+:::
+
+### Marijuana Motives {#su_y_mjmot}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjmot")`
+`r r_link_table("su_y_mjmot")`
+
+**Measure description:** This is a modified version of the PhenX Marijuana Motives Questionnaire. It consists of 25 questions about the respondent's coping and enhancement motives (reasons) for using marijuana. The respondent is asked to respond to each question via a five-item scale ranging from 1 for "almost never/never" to 5 for "almost always/always."
+
+**Key references:**
+
+- `r full_cite("lee2009")`
+- `r full_cite("simons1998")`
 
 ### Marijuana Problems {#su_y_mjprob}
 
@@ -535,6 +465,18 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 
 **Key reference:** `r full_cite("allsop2011")`
 
+### PATH Nicotine Dependence {#su_y_nicdpnd}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicdpnd")`
+`r r_link_table("su_y_nicdpnd")`
+
+**Measure description:** Symptom frequency checklist of nicotine-related problems over the past 6 months.
+
+**Key references:**
+
+- `r full_cite("pomerleau1998")`
+- `r full_cite("prokhorov1996")`
+
 ### Nicotine Subjective Response {#su_y_nicsre}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicsre")`
@@ -549,31 +491,27 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 - `r full_cite("pomerleau1998")`
 - `r full_cite("rodriguez2004")`
 
-### PATH Nicotine Dependence {#su_y_nicdpnd}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicdpnd")`
-`r r_link_table("su_y_nicdpnd")`
+### ENDS Expectancies {#su_y_nicvapeexp}
 
-**Measure description:** Symptom frequency checklist of nicotine-related problems over the past 6 months.
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicvapeexp")`
+`r r_link_table("su_y_nicvapeexp")`
 
-**Key references:**
+**Measure description:** Measure of thoughts, feelings and beliefs about effects of using electronic nicotine delivery systems (ENDS).
 
-- `r full_cite("pomerleau1998")`
-- `r full_cite("prokhorov1996")`
+**Key reference:** `r full_cite("pokhrel2018")`
 
-### Community Risk and Protective Factors (Youth) {#su_y_crpf}
+### Reasons for ENDS Use {#su_y_nicvapereas data-link="Reasons for ENDS Use"}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_crpf")`
-`r r_link_table("su_y_crpf")`
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicvapereas")`
+`r r_link_table("su_y_nicvapereas")`
 
-**Measure description:** Perceived access to substances of abuse.
-
-**Modifications since initial administration:** A definition of neighborhood (\~1m mile, 20 min walk) was added to the original instrument on September 7, 2022.
+**Measure description:** Reasons for using electronic nicotine delivery systems (ENDS).
 
 **Key references:**
 
-- `r full_cite("arthur2007")`
-- `r full_cite("trentacosta2011")`
+- `r full_cite("wills2002")`
+- `r full_cite("piper2004")`
 
 ### Opportunity to Use {#su_y_otu}
 
@@ -581,6 +519,53 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 `r r_link_table("su_y_otu")`
 
 **Measure description:** Measures youth's opportunity to use substances
+
+### Perceived Harm {#su_y_perc}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_perc")`
+`r r_link_table("su_y_perc")`
+
+**Measure description:** Measure of youth's opinion regarding how much people risk harming themselves (physically or in other ways) if they engage in various substance use behaviors, including drinking, smoking, using e-cigarettes, marijuana use, nonmedical use of prescription drugs, and "other drug" use. Modified from *Monitoring the Future* PhenX form ([Find here](https://www.phenxtoolkit.org/protocols/view/550401?origin=search)).
+
+**Key references:** 
+
+- `r full_cite("johnson2003")`
+- `r full_cite("johnston2016")`
+
+
+### Peer Deviance {#su_y_pgd}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_pgd")`
+`r r_link_table("su_y_pgd")`
+
+**Measure description:** Measures friends' use of alcohol, nicotine, marijuana, inhalants, and "other" drugs.
+
+**Key reference:** `r full_cite("freedman1988")`
+
+::: {.callout-important collapse="true" title="Responsible use warning: Peer deviant behavior" #use-su_y_peerdevia}
+Although historically referred to as 'Peer Deviant Behavior,' 'peer substance use' or 'peer involvement in illegal activities' is more precise terminology without unintended negative implications (@torrente2012; @freedman1988).
+:::
+
+### Participant Last Use Survey (Youth; Day 1/2/3/4) {#su_y_plus}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_plus")`
+`r r_link_table("su_y_plus")`
+
+**Measure description:** Measures recent over-the-counter (OTC) or prescription medications, nicotine, and caffeine use prior to neurocognitive tasks or MRI. May be used to control for withdrawal or acute effects of nicotine, caffeine, OTC or prescription medications.
+
+**Key reference:** `r full_cite("lisdahl2018")`
+
+### Peer Tolerance {#su_y_ptu}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_ptu")`
+`r r_link_table("su_y_ptu")`
+
+**Measure description:** Measure of how youth believes their close friends would feel about them engaging in substance use behaviors, including drinking, smoking, using e-cigarettes, cannabis use, nonmedical use of prescription drugs, and "other drug" use. Modified from *Monitoring the Future* PhenX form ([Find here](https://www.phenxtoolkit.org/protocols/view/540402?origin=search)).
+
+**Key references:** 
+
+- `r full_cite("johnson2003")`
+- `r full_cite("johnston2016")`
 
 ### Sibling Use {#su_y_sibu}
 
@@ -593,14 +578,32 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 
 **Key reference:** `r full_cite("samek2018")`
 
-### Participant Last Use Survey (Youth; Day 1/2/3/4) {#su_y_plus}
+### Vaping Expectancies {#su_y_vapeexp}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_plus")`
-`r r_link_table("su_y_plus")`
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_vapeexp")`
+`r r_link_table("su_y_vapeexp")`
 
-**Measure description:** Measures recent over-the-counter (OTC) or prescription medications, nicotine, and caffeine use prior to neurocognitive tasks or MRI. May be used to control for withdrawal or acute effects of nicotine, caffeine, OTC or prescription medications.
+**Measure description:** Measures thoughts, feelings and beliefs about effects of vaping. This was adapted from the Marijuana Expectancies measure described above [here](#Marijuana%20Expectancies%20(MEEQ-B)).
 
-**Key reference:** `r full_cite("lisdahl2018")`
+**Notes and special considerations:** Because this measure was introduced midway through the 3-year follow-up assessment, a proportion of participants did not receive the measure and appear as missing data.
+
+**Key reference:** `r full_cite("torrealday2008")`
+
+### Vaping & ENDS Motives {#su_y_vapemot}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_vapemot")`
+`r r_link_table("su_y_vapemot")`
+
+**Measure description:** Reasons for vaping. This inventory was created by a subgroup on the ABCD Substance Use workgroup, including Drs. Krista Lisdahl, Mary Heitzeg, Marsha Lopez, Susan Tapert, and Gaya Dowling. The instructions were modified from the Monitoring the Future Study 2020 interview and Tobacco Motive Inventory and items were modified from the Reasons for ENDS Use, PATH Study, Tobacco Motive Inventory with additional items created by the subgroup.
+
+**Notes and special considerations:** The Vaping Motives questionnaire was administered midway through the 2-year follow-up. Thus, a proportion of participants in this assessment wave were not administered the questionnaire and will appear as missing.
+
+**Key references:** 
+
+- `r full_cite("diez2019")`
+- `r full_cite("piper2004")`
+
+
 
 ## Interview & Timeline Followback 
 
@@ -850,6 +853,30 @@ reactable(tlfb_substance_doses)
 
 # Parent tables
 
+### Community Risk and Protective Factors (Parent) {#su_p_crpf}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_crpf")`
+`r r_link_table("su_p_crpf")`
+
+**Measure description:** Parent reported perceived access to substances of abuse.
+
+**Key references:**
+
+- `r full_cite("arthur2007")`
+- `r full_cite("trentacosta2011")`
+
+### Substance Use Density, Storage, and Exposure {#su_p_des}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_des")`
+`r r_link_table("su_p_des")`
+
+**Measure description:** Parent reported inventory that measures three household substance use issues: household density, second-hand exposure, and storage. Household density was developed by the ABCD Substance Use workgroup. The survey is based on semi-structured household substance use interviews. It measures household substance use density (i.e., number of adults or youth who use each substance) in up to three households where the youth spends regular time. Second-hand cigarette, electronic nicotine delivery systems (ENDS) or smoked cannabis exposure in these households is also measured (modified from PhenX [*Current Environmental Tobacco Exposure*](https://www.phenxtoolkit.org/protocols/view/60701) assessing total days and hours per day in a typical week for each substance. It also asks parents how each household stores alcohol and drugs (visible/unlocked, hidden/unlocked, or locked) (Bartels et al, 2016; Friese, Grube & Moore, 2012).
+
+**Key references:**
+
+- `r full_cite("bartels2016")`
+- `r full_cite("friese2012")`
+
 ### KSADS---Alcohol Use Disorder (Parent) {#su_p_ksads__aud}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_ksads__aud")`
@@ -870,17 +897,14 @@ reactable(tlfb_substance_doses)
 
 **Key reference:** `r full_cite("kaufman2021")`
 
-### Community Risk and Protective Factors (Parent) {#su_p_crpf}
+### Participant Last Use Survey (Parent; Day 1/2/3/4) {#su_p_plus}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_crpf")`
-`r r_link_table("su_p_crpf")`
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_plus")`
+`r r_link_table("su_p_plus")`
 
-**Measure description:** Parent reported perceived access to substances of abuse.
+**Measure description:** Parent reported measures of recent over--the-counter (OTC) and prescription medications, nicotine, and caffeine use prior to neurocognitive tasks or MRI. May be used to control for withdrawal or acute effects of nicotine, caffeine, OTC or prescription medications.
 
-**Key references:**
-
-- `r full_cite("arthur2007")`
-- `r full_cite("trentacosta2011")`
+**Key reference:** `r full_cite("lisdahl2018")`
 
 ### Parental Rules on Substance Use {#su_p_rule data-link="Parental Rules on Substance Use"}
 
@@ -898,23 +922,4 @@ reactable(tlfb_substance_doses)
 - `r full_cite("jackson2015")`
 - `r full_cite("jackson2014")`
 
-### Substance Use Density, Storage, and Exposure {#su_p_des}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_des")`
-`r r_link_table("su_p_des")`
-
-**Measure description:** Parent reported inventory that measures three household substance use issues: household density, second-hand exposure, and storage. Household density was developed by the ABCD Substance Use workgroup. The survey is based on semi-structured household substance use interviews. It measures household substance use density (i.e., number of adults or youth who use each substance) in up to three households where the youth spends regular time. Second-hand cigarette, electronic nicotine delivery systems (ENDS) or smoked cannabis exposure in these households is also measured (modified from PhenX [*Current Environmental Tobacco Exposure*](https://www.phenxtoolkit.org/protocols/view/60701) assessing total days and hours per day in a typical week for each substance. It also asks parents how each household stores alcohol and drugs (visible/unlocked, hidden/unlocked, or locked) (Bartels et al, 2016; Friese, Grube & Moore, 2012).
-
-**Key references:**
-
-- `r full_cite("bartels2016")`
-- `r full_cite("friese2012")`
-
-### Participant Last Use Survey (Parent; Day 1/2/3/4) {#su_p_plus}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_plus")`
-`r r_link_table("su_p_plus")`
-
-**Measure description:** Parent reported measures of recent over--the-counter (OTC) and prescription medications, nicotine, and caffeine use prior to neurocognitive tasks or MRI. May be used to control for withdrawal or acute effects of nicotine, caffeine, OTC or prescription medications.
-
-**Key reference:** `r full_cite("lisdahl2018")`

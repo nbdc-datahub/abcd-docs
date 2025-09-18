@@ -4,6 +4,27 @@ order: 3
 ---
 
 
+# 6.0.2
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2025-09-18<br>
+**URL:** [https://docs.abcdstudy.org/v/6_0_2](https://docs.abcdstudy.org/v/6_0_2)
+</span>
+
+-   **General Changes**
+
+    -   Reorganized content to better align with table order and domain
+
+-   **Non-imaging**
+
+    -   **Novel Technologies:** Updated content regarding EARS data
+
+-   **Release Notes**
+
+    -   Updated Mental Health Release Notes regarding KSADS - Suicidality Youth items
+
+
+
+
 # 6.0.1
 <span style="font-size: 0.85em; color: gray;">
 **Date:** 2025-08-19<br>

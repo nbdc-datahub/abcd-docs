@@ -397,6 +397,10 @@ The Mental Health Workgroup did an extensive review of the criteria used for all
 
 In the meantime, the Mental Health Workgroup is working with KSADS to create more accurate diagnoses, which we hope to include in the 7.0 data release.
 
+#### KSADS Suicidality
+
+For the Youth items, note that at 5-year follow-up and beyond, items ask about current suicidality only (not lifetime). Some cases are coded as `1` (Present) for lifetime suicidality, but these should all be coded as `555` (Not Administered). This correction will be implemented in the 6.1 patch release.
+
 #### KSADS-COMP Updates to 2.0
 
 There was a diagnostic algorithm error detected in 2023 (update pending 7.0):

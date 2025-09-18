@@ -38,15 +38,6 @@ When writing about mental health symptoms or diagnoses, it is important to use p
 
 # Youth tables 
 
-## 7-Up Mania Inventory {#mh_y_sup}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_sup")`
-`r r_link_table("mh_y_sup")`
-
-**Measure description:** Assesses youth mania symptoms.
-
-**Key reference:** `r full_cite("youngstrom2013")`
-
 ## Behavioral Inhibition / Behavioral Approach System Scales {#mh_y_bisbas}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_bisbas")`
@@ -170,6 +161,8 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 [**Eating disorders module (6.0)**](../release_notes/6_0.qmd#ksads-eating-disorders): The Mental Health Workgroup did an extensive review of the criteria used for all previously released eating disorder diagnoses in KSADS. The group agreed that the criterion were more restrictive than necessary, and thus underestimated the rates of eating disorder diagnoses. 
 
 [**Oppositional defiant disorder module (6.0)**](../release_notes/6_0.qmd#ksads-comp-updates-to-2.0): There was a diagnostic algorithm error detected in 2023 (update pending 7.0).
+
+[**Suicidality module (6.0)**](../release_notes/6_0.qmd#ksads-suicidality): There is some error in the past suicide data for Year 5 and beyond (update pending 6.1).
 :::
 
 
@@ -244,8 +237,34 @@ render_table_info("domain_abbr == 'ksads_y'", remove_source = TRUE)
 `r r_link_table("mh_y_ksads__suic")`  
 *Measure description:* Assesses Suicidality.  
 
-*Modifications since initial administration:* At 4-year follow-up and beyond, items ask about current suicidality only (not lifetime).
+*Modifications since initial administration:* At 5-year follow-up and beyond, items ask about current suicidality only (not lifetime). 
 
+*Notes and special considerations:*
+Some cases are coded as 1 (Present) for lifetime suicidality, but these should all be coded as 555 (Not Administered). This correction will be implemented in the 6.1 patch release.
+
+## NIH Toolbox Positive Affect {#mh_y_pai}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_pai")`
+`r r_link_table("mh_y_pai")`
+
+**Measure description:** This measure evaluates feelings of contentment, happiness, enthusiasm, joy, and excitement in the past week.
+
+**Key references:** 
+
+- `r full_cite("gershon2013")`
+- `r full_cite("salsman2013")`
+
+## Peer Experience Questionnaire {#mh_y_peq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_peq")`
+`r r_link_table("mh_y_peq")`
+
+**Measure description:** Assesses whether the youth has either experienced overt, relational, or reputational victimization from peers or perpetrated overt, relational, or reputational aggression towards peers.
+
+**Key references:** 
+
+- `r full_cite("delosreyes2004")`
+- `r full_cite("prinstein2001")`
 
 ## Life Events (Youth) {#mh_y_ple}
 
@@ -261,6 +280,38 @@ render_table_info("domain_abbr == 'ksads_y'", remove_source = TRUE)
 - `r full_cite("tiet2001")`
 - `r full_cite("grant2004")`
 
+## Prodromal Psychosis Scale {#mh_y_pps}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_pps")`
+`r r_link_table("mh_y_pps")`
+
+**Measure description:** The Prodromal Questionnaire--Brief Child Version may be a useful measure of early risk for psychotic disorders and is associated with several familial, cognitive, and emotional factors related to psychotic symptoms in older populations.
+
+**Key references:** 
+
+- `r full_cite("karcher2018")`
+- `r full_cite("loewy2005")`
+- `r full_cite("ising2012")`
+- `r full_cite("therman2014")`
+
+## Other Resilience {#mh_y_resil}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_resil")`
+`r r_link_table("mh_y_resil")`
+
+**Measure description:** A short survey on the number of friends.
+
+**Key reference:** `r full_cite("barch2018")`
+
+## 7-Up Mania Inventory {#mh_y_sup}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_sup")`
+`r r_link_table("mh_y_sup")`
+
+**Measure description:** Assesses youth mania symptoms.
+
+**Key reference:** `r full_cite("youngstrom2013")`
+
 ## Modified Urgency, Premeditation, Perseverance, Sensation Seeking, Positive Urgency, Impulsive Behavior Scale for Children {#mh_y_upps}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_upps")`
@@ -275,52 +326,6 @@ render_table_info("domain_abbr == 'ksads_y'", remove_source = TRUE)
 - `r full_cite("cyders2007")`
 - `r full_cite("whiteside2005")`
 
-## NIH Toolbox Positive Affect {#mh_y_pai}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_pai")`
-`r r_link_table("mh_y_pai")`
-
-**Measure description:** This measure evaluates feelings of contentment, happiness, enthusiasm, joy, and excitement in the past week.
-
-**Key references:** 
-
-- `r full_cite("gershon2013")`
-- `r full_cite("salsman2013")`
-
-## Other Resilience {#mh_y_resil}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_resil")`
-`r r_link_table("mh_y_resil")`
-
-**Measure description:** A short survey on the number of friends.
-
-**Key reference:** `r full_cite("barch2018")`
-
-## Peer Experience Questionnaire {#mh_y_peq}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_peq")`
-`r r_link_table("mh_y_peq")`
-
-**Measure description:** Assesses whether the youth has either experienced overt, relational, or reputational victimization from peers or perpetrated overt, relational, or reputational aggression towards peers.
-
-**Key references:** 
-
-- `r full_cite("delosreyes2004")`
-- `r full_cite("prinstein2001")`
-
-## Prodromal Psychosis Scale {#mh_y_pps}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_pps")`
-`r r_link_table("mh_y_pps")`
-
-**Measure description:** The Prodromal Questionnaire--Brief Child Version may be a useful measure of early risk for psychotic disorders and is associated with several familial, cognitive, and emotional factors related to psychotic symptoms in older populations.
-
-**Key references:** 
-
-- `r full_cite("karcher2018")`
-- `r full_cite("loewy2005")`
-- `r full_cite("ising2012")`
-- `r full_cite("therman2014")`
 
 ## Youth Self-Report {#mh_y_ysr}
 
@@ -359,6 +364,28 @@ render_table_info("domain_abbr == 'ksads_y'", remove_source = TRUE)
 **Notes and special considerations:** ASEBA recommends not using summary scores for participants with more than 8 missing items.
 
 **Key reference:** `r full_cite("achenbach2009")`
+
+## Difficulty in Emotion Regulation {#mh_p_ders}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ders")`
+`r r_link_table("mh_p_ders")`
+
+**Measure description:** Assesses the youth participant’s emotion regulation across multiple domains, including awareness and acceptance of emotions, ability to engage in goal-directed behavior and refrain from impulsive behavior, and access to effective emotion regulation strategies.
+
+**Key reference:** 
+
+- `r full_cite("bardeen2016")`
+- `r full_cite("bunford2020")`
+
+## Early Adolescent Temperament Questionnaire (Parent) {#mh_p_eatq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_eatq")`
+`r r_link_table("mh_p_eatq")`
+
+**Measure description:** The Early Adolescent Temperament Questionnaire (EATQ-R; parent version), completed by a caregiver on the youth, assesses children and adolescents (9-15 years old) on 8 basic dimensions of temperament (Activation, Affiliation, Attention, Fear, Frustration, Surgency, Inhibitory Control, , and Shyness), 2 dimensions of behavior (Aggression and Depressive Mood), and three higher-order scales based responses to these primary scales (Effort Control, Surgency, and Negative Affect).
+
+**Key reference:** `r full_cite("latham2020")`
+
 
 ## Family History {#mh_p_famhx}
 
@@ -587,7 +614,6 @@ render_table_info("domain_abbr == 'ksads_p'", remove_source = TRUE)
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__suic")`
 `r r_link_table("mh_p_ksads__suic")`  
 *Measure description:* Parent assessment of Suicidality for their youth participant.  
-*Notes and special considerations:* Suicide in the 4-year follow-up and beyond is only asking about current and not lifetime.
 
 
 ## Life Events (Parent) {#mh_p_ple}

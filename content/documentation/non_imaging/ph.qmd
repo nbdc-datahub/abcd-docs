@@ -13,7 +13,6 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 ```{r}
 render_table_info("domain_abbr == 'ph'")
 ```
-<br>
 
 
 Learn about the Physical Health domain by reviewing the below references: 
@@ -23,6 +22,18 @@ Learn about the Physical Health domain by reviewing the below references:
 - `r full_cite("palmer2021")`
 
 # Youth tables (Surveys)
+
+
+## Block Kids Food Screener (Youth) {#ph_y_bkfs}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_bkfs")`
+`r r_link_table("ph_y_bkfs")`
+
+**Measure description:** This screener assesses children's intake by food group, with outcomes measured in number of servings.
+
+**Modifications since initial administration:** In the 2-year and 3-year follow-ups, the Block Kids Food Screener was given to the parent to report on the youth and the youth then confirmed responses. See `ph_p_bkfs` for details on that method of administration. Starting on 4/1/21, the youth completed the questionnaire themselves, across visit time points.
+
+**Notes and special considerations:** For participants whose 3-year follow-up visit occurred prior to 4/1/23, parents completed the questionnaire and youth confirmed the responses. For participants whose 3-year follow-up visit occurred after 4/1/23, youth completed the questionnaire. Starting with the 4-year follow-up visit, all youth completed the questionnaire themselves.
 
 ## Annual ABCD COVID Survey (Youth) {#ph_y_covid}
 
@@ -36,24 +47,6 @@ Learn about the Physical Health domain by reviewing the below references:
 In June 2023, the Annual COVID survey was discontinued. Four items were retained (past year covid, total times had covid lifetime, past year covid vaccine, lifetime \# covid vaccines) in the Medication History Questionnaire.
 
 ABCD participated in the RECOVER study (<https://recovercovid.org/>);additional COVID-related survey items and antibody tests were completed by ABCD participants. These data are located within the [RECOVER dataset](https://recovercovid.org/data) and can be accessed when they release their data. Future releases of the ABCD data may include the RECOVER survey responses and COVID antibody data.
-
-## Block Kids Food Screener (Youth) {#ph_y_bkfs}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_bkfs")`
-`r r_link_table("ph_y_bkfs")`
-
-**Measure description:** This screener assesses children's intake by food group, with outcomes measured in number of servings.
-
-**Modifications since initial administration:** In the 2-year and 3-year follow-ups, the Block Kids Food Screener was given to the parent to report on the youth and the youth then confirmed responses. See `ph_p_bkfs` for details on that method of administration. Starting on 4/1/21, the youth completed the questionnaire themselves, across visit time points.
-
-**Notes and special considerations:** For participants whose 3-year follow-up visit occurred prior to 4/1/23, parents completed the questionnaire and youth confirmed the responses. For participants whose 3-year follow-up visit occurred after 4/1/23, youth completed the questionnaire. Starting with the 4-year follow-up visit, all youth completed the questionnaire themselves.
-
-## Medications Inventory (Youth) {#ph_y_meds}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_meds")`
-`r r_link_table("ph_y_meds")`
-
-**Measure description:** Medications youth participant has taken in the last two weeks.
 
 ## Munich Chronotype Questionnaire {#ph_y_mctq}
 
@@ -124,14 +117,24 @@ Participants responding "Evening" or "Nighttime" may be in error or highly unusu
 
 **Key reference:** `r full_cite("zavada2005")`
 
-## Pain Questionnaire {#ph_y_pq}
+## Medications Inventory (Youth) {#ph_y_meds}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_pq")`
-`r r_link_table("ph_y_pq")`
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_meds")`
+`r r_link_table("ph_y_meds")`
 
-**Measure description:** The CAPQ is based on the Seattle's Children's "Child and Adolescent Pain Questionnaire" and conforms to the NRS-11 standard for examining pain intensity over the past month, which is the recommended time-frame. The participant is first asked about pain and pain levels, and then asked to identify pain sites on a body map.
+**Measure description:** Medications youth participant has taken in the last two weeks.
 
-**Key reference:** `r full_cite("luntamo2012")`
+## Youth Risk Behavior Survey---Physical Activity {#ph_y_pa}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_pa")`
+`r r_link_table("ph_y_pa")`
+
+**Measure description:** A brief assessment of physical exercise.
+
+**Key references:** 
+
+- `r full_cite("dolsen2019")`
+- `r full_cite("hunsberger2015")`
 
 ## Pubertal Development Scale & Menstrual Cycle Survey History (Youth) {#ph_y_pds}
 
@@ -156,6 +159,15 @@ In 2023, as the year-6 follow-up of the study was underway, it was brought to ou
 - `r full_cite("cheng2021")`
 - `r full_cite("herting2021")`
 
+## Pain Questionnaire {#ph_y_pq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_pq")`
+`r r_link_table("ph_y_pq")`
+
+**Measure description:** The CAPQ is based on the Seattle's Children's "Child and Adolescent Pain Questionnaire" and conforms to the NRS-11 standard for examining pain intensity over the past month, which is the recommended time-frame. The participant is first asked about pain and pain levels, and then asked to identify pain sites on a body map.
+
+**Key reference:** `r full_cite("luntamo2012")`
+
 ## Respiratory Functioning {#ph_y_rq}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_rq")`
@@ -169,6 +181,35 @@ In 2023, as the year-6 follow-up of the study was underway, it was brought to ou
 
 - `r full_cite("gillman2018")`
 - `r full_cite("asher1995")`
+
+## Sports and Activities Involvement Questionnaire (Youth) {#ph_y_saiq}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_saiq")`
+`r r_link_table("ph_y_saiq")`
+
+**Measure description:** Youth survey of youth involvement in sports, music, reading, and hobbies. The following document reviews summary scores for this measure: days per month per activity. Minutes per week per activity, hours per month per activity: [SAIQ - Summary Scores](https://drive.google.com/file/d/1FL4nl0-IcZ6V_K0s1yH7uisBRU8zGUyn/view?usp=sharing)
+
+**Modifications since initial administration:** In Year 6 (February 2022), the following changes were made:
+
+- Added following response options: Debate Team, Fencing, Clubs, Special Interest Group, Affinity Group, Scouts
+- Branching logic for these response options is the same as the branching logic for the option "`2`, Baseball, Softball"
+- Changed following response options: 
+* "`1`, Ballet, Dance" modify to: "1, Ballet, Dance, Color Guard" 
+* "`39`, Fishing, Hunting, Archery, Rifle Club" modify to: "`39`, Fishing, Hunting, Rifle Club, Archery"
+
+The history of questions asked in this instrument, and the parent version of this instrument are:
+
+- Year 1 (baseline): Parents are asked all questions, youth are asked none
+
+- Year 2: parents asked all questions, youth asked none
+
+- Year 3: Parents asked all questions, as well as reading and music questions (worded differently from the way that reading and music questions were asked in baseline), youth asked questions pertaining to reading and music questions only
+
+- Year 4: parents asked all questions EXCEPT reading and music questions, Youth asked reading and music questions only
+
+- Year 5 and beyond: Parents asked no questions, youth asked ALL questions
+
+**Notes and special considerations:** Although this instrument is titled 'Sports and Activities Involvement Questionnaire - Reading & Music', we are now asking all questions in the Sports and Activities Involvement Questionnaire to youth.
 
 ## Sexual Behavior, Orientation, & Communication {#ph_y_sex}
 
@@ -217,46 +258,6 @@ Youth sexual orientation is assessed within the Youth KSADS Background Items (se
 - `r full_cite("sales2008")`
 - `r full_cite("windle2004")`
 
-## Sports and Activities Involvement Questionnaire (Youth) {#ph_y_saiq}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_saiq")`
-`r r_link_table("ph_y_saiq")`
-
-**Measure description:** Youth survey of youth involvement in sports, music, reading, and hobbies. The following document reviews summary scores for this measure: days per month per activity. Minutes per week per activity, hours per month per activity: [SAIQ - Summary Scores](https://drive.google.com/file/d/1FL4nl0-IcZ6V_K0s1yH7uisBRU8zGUyn/view?usp=sharing)
-
-**Modifications since initial administration:** In Year 6 (February 2022), the following changes were made:
-
-- Added following response options: Debate Team, Fencing, Clubs, Special Interest Group, Affinity Group, Scouts
-- Branching logic for these response options is the same as the branching logic for the option "`2`, Baseball, Softball"
-- Changed following response options: 
-* "`1`, Ballet, Dance" modify to: "1, Ballet, Dance, Color Guard" 
-* "`39`, Fishing, Hunting, Archery, Rifle Club" modify to: "`39`, Fishing, Hunting, Rifle Club, Archery"
-
-The history of questions asked in this instrument, and the parent version of this instrument are:
-
-- Year 1 (baseline): Parents are asked all questions, youth are asked none
-
-- Year 2: parents asked all questions, youth asked none
-
-- Year 3: Parents asked all questions, as well as reading and music questions (worded differently from the way that reading and music questions were asked in baseline), youth asked questions pertaining to reading and music questions only
-
-- Year 4: parents asked all questions EXCEPT reading and music questions, Youth asked reading and music questions only
-
-- Year 5 and beyond: Parents asked no questions, youth asked ALL questions
-
-**Notes and special considerations:** Although this instrument is titled 'Sports and Activities Involvement Questionnaire - Reading & Music', we are now asking all questions in the Sports and Activities Involvement Questionnaire to youth.
-
-## Youth Risk Behavior Survey---Physical Activity {#ph_y_pa}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_y_pa")`
-`r r_link_table("ph_y_pa")`
-
-**Measure description:** A brief assessment of physical exercise.
-
-**Key references:** 
-
-- `r full_cite("dolsen2019")`
-- `r full_cite("hunsberger2015")`
 
 # Youth tables (Biospecimens)
 
@@ -365,19 +366,6 @@ The time of sample collection may be useful in analyses.
 
 # Parent tables
 
-## Annual ABCD COVID Survey (Parent) {#ph_p_covid}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_covid")`
-`r r_link_table("ph_p_covid")`
-
-**Measure description:** This survey asks about the impacts on the family, school and academic work time, internet access, peer communication, vaccination, family infections, parent height and weight, and stress.
-
-**Modifications since initial administration:**
-
-In June (Summer) 2023, this survey was discontinued. But 4 items were retained (past year covid, total times had covid lifetime, past year covid vaccine, lifetime number of covid vaccines) but moved to the Medication History questionnaire.
-
-ABCD participated in the RECOVER study; additional COVID-related survey items were completed by ABCD participants who opted to participate in the RECOVER study; those data are located within the [RECOVER dataset](https://recovercovid.org/data).
-
 ## Anthropometrics (Parent) {#ph_p_anthr}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_anthr")`
@@ -420,6 +408,20 @@ ABCD participated in the RECOVER study; additional COVID-related survey items we
 
 **Key reference:** `r full_cite("morris2015")`
 
+## Annual ABCD COVID Survey (Parent) {#ph_p_covid}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_covid")`
+`r r_link_table("ph_p_covid")`
+
+**Measure description:** This survey asks about the impacts on the family, school and academic work time, internet access, peer communication, vaccination, family infections, parent height and weight, and stress.
+
+**Modifications since initial administration:**
+
+In June (Summer) 2023, this survey was discontinued. But 4 items were retained (past year covid, total times had covid lifetime, past year covid vaccine, lifetime number of covid vaccines) but moved to the Medication History questionnaire.
+
+ABCD participated in the RECOVER study; additional COVID-related survey items were completed by ABCD participants who opted to participate in the RECOVER study; those data are located within the [RECOVER dataset](https://recovercovid.org/data).
+
+
 ## Developmental History {#ph_p_dhx}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_dhx")`
@@ -447,6 +449,14 @@ The birth weight data were parent-reported so there are outliers, and should be 
 
 **Key reference:** `r full_cite("booth2000")`
 
+## Medications Inventory (Parent) {#ph_p_meds}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_meds")`
+`r r_link_table("ph_p_meds")`
+
+**Measure description:** Medications youth participants have taken in the last two weeks. The medication questionnaire was drawn from the [PhenX Toolkit](https://www.phenxtoolkit.org/search/results?searchTerm=medications&searchtype=smartsearch). Drug names, dosage, etc. used the [RxNorm](https://www.nlm.nih.gov/research/umls/rxnorm/index.html) database available from the NIH National Library of Medicine.
+**Modifications since initial administration:** Starting in 3-year follow-up, questions asked about medications in the past year. Also, questions about the use of cannabidiol (CBD) for medical purposes were added starting at the 3-year follow-up.
+
 ## Medical History (Parent)  {#ph_p_mhx}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_mhx")`
@@ -458,13 +468,7 @@ The birth weight data were parent-reported so there are outliers, and should be 
 
 **Key reference:** `r full_cite("todd2003")`
 
-## Medications Inventory (Parent) {#ph_p_meds}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_meds")`
-`r r_link_table("ph_p_meds")`
-
-**Measure description:** Medications youth participants have taken in the last two weeks. The medication questionnaire was drawn from the [PhenX Toolkit](https://www.phenxtoolkit.org/search/results?searchTerm=medications&searchtype=smartsearch). Drug names, dosage, etc. used the [RxNorm](https://www.nlm.nih.gov/research/umls/rxnorm/index.html) database available from the NIH National Library of Medicine.
-**Modifications since initial administration:** Starting in 3-year follow-up, questions asked about medications in the past year. Also, questions about the use of cannabidiol (CBD) for medical purposes were added starting at the 3-year follow-up.
 
 ## Ohio State Traumatic Brain Injury Screen (Parent)  {#ph_p_otbi}
 
@@ -494,28 +498,6 @@ For the non-baseline variables, we have detected several cases in which parents 
 
 **Key reference:** `r full_cite("petersen1988")`
 
-## Sleep Disturbance Scale for Children {#ph_p_sds}
-
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_sds")`
-`r r_link_table("ph_p_sds")`
-
-**Measure description:** Parent survey of youth sleep and sleep disorders.
-
-
-::: {.callout-caution collapse="true" title="Release notes: `ph_p_sds`"}
-[**SDS summary score (6.0)**](../release_notes/6_0.qmd#sleep-disturbance-scale-for-children-sds-summary-scores): All summary scores were re-calculated for the 6.0 data release. However, SDS summary scores were not included in the development plan and were therefore not ready in time for this release.
-:::
-
-
-::: {.callout-caution collapse="true" title="Release notes: `ph_p_sds`"}
-[**SDS summary score (6.0)**](../release_notes/6_0.qmd#sleep-disturbance-scale-for-children-sds-summary-scores): All summary scores were re-calculated for the 6.0 data release. However, SDS summary scores were not included in the development plan and were therefore not ready in time for this release.
-:::
-
-**Key references:** 
-
-- `r full_cite("bruni1996")`
-- `r full_cite("ferreira2009")`
-
 ## Sports and Activities Involvement Questionnaire (Parent) {#ph_p_saiq}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_saiq")`
@@ -540,6 +522,30 @@ The history of questions asked in this instrument, and the parent version of thi
 - Year 5 and beyond: Parents asked NO questions; youth asked ALL questions
 
 **Key reference:** `r full_cite("huppertz2016")`
+
+## Sleep Disturbance Scale for Children {#ph_p_sds}
+
+![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_sds")`
+`r r_link_table("ph_p_sds")`
+
+**Measure description:** Parent survey of youth sleep and sleep disorders.
+
+
+::: {.callout-caution collapse="true" title="Release notes: `ph_p_sds`"}
+[**SDS summary score (6.0)**](../release_notes/6_0.qmd#sleep-disturbance-scale-for-children-sds-summary-scores): All summary scores were re-calculated for the 6.0 data release. However, SDS summary scores were not included in the development plan and were therefore not ready in time for this release.
+:::
+
+
+::: {.callout-caution collapse="true" title="Release notes: `ph_p_sds`"}
+[**SDS summary score (6.0)**](../release_notes/6_0.qmd#sleep-disturbance-scale-for-children-sds-summary-scores): All summary scores were re-calculated for the 6.0 data release. However, SDS summary scores were not included in the development plan and were therefore not ready in time for this release.
+:::
+
+**Key references:** 
+
+- `r full_cite("bruni1996")`
+- `r full_cite("ferreira2009")`
+
+
 
 ## Sexual Orientation & Communication {#ph_p_sex}
 

@@ -1,11 +1,11 @@
 -   **General Changes**
-    -   Added callout boxes to data documentation that direct users to the relevant Release Notes section
+
+    -   Reorganized content to better align with table order and domain
+
 -   **Non-imaging**
-    -   **Linked External Data:** Fixed and updated some citations
--   **Imaging**
-    -   **Source data / raw data:** Added a known issue regarding mismatch between the tabulated and BIDS (sourcedata and rawdata) in the anonymized MRI scanner serial numbers
-    -   **MRI derivatives:** Added example code to run pipeline with ABCD sourcedata
+
+    -   **Novel Technologies:** Updated content regarding EARS data
+
 -   **Release Notes**
-    -   Updated Mental Health Release Notes regarding KSADS
--   **Tools**
-    -   Added content regarding utility functions as part of the NBDCtools R package
+
+    -   Updated Mental Health Release Notes regarding KSADS - Suicidality Youth items
