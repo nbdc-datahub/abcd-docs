@@ -16,6 +16,8 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'mrs'")
 ```
 
+[Download table as a pdf](../../assets/files/documentation/substudies/6_0_mrs.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+
 The ABCD Magnetic Resonance Spectroscopy (MRS) Substudy was conducted in a subsample of youth enrolled in the ABCD study at the University of Utah and University of Maryland (Baltimore) sites. The aim of this study was to acquire neurometabolite/neurochemical data to determine the associations between neurometabolite/neurochemical concentrations and clinical factors such as substance use exposure and potential risk and resilience factors for substance use. Study participants were recruited from the main ABCD study cohort during their 3-Year follow-up visit.
 
 The MRS scans were completed on a separate day than the 3-Year follow-up visit. Generally, the visits were completed +/- 30 days of each other. However, there are certain instances where the data collection was not within that time frame, and thus must be taken into consideration when analyzing measures from this substudy with ABCD core protocol measures. For the single-voxel proton spectroscopy scans (2DJ-resolved \[1\] and HERMES \[2\] ), the voxel was positioned in the anterior cingulate cortex (ACC), measuring 30 x 25 x 25mm 3 (LR, AP, FH axis).

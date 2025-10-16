@@ -39,37 +39,37 @@ The identifier columns adhere to the [BIDS (Brain Imaging Data Structure)](https
   - A letter indicating the substudy (e.g., `C` for the COVID substudy)
   - Two digits to indicate the assessment wave
 
-::: {.callout-note collapse="true" title="List of session/event identifiers"}
+::: {#event-id .callout-note collapse="true" title="List of session/event identifiers"}
 The table below shows the session identifiers and their corresponding labels for data included in the ABCD 6.0 data release.
 
-| Study     | Session/event ID | Session/event label        |
-|-----------|------------------|----------------------------|
-| Core      | ses-00S          | Screener                   |
-| Core      | ses-00A          | Baseline                   |
-| Core      | ses-00M          | 0.5 Year                   |
-| Core      | ses-01A          | 1 Year                     |
-| Core      | ses-01M          | 1.5 Year                   |
-| Core      | ses-02A          | 2 Year                     |
-| Core      | ses-02M          | 2.5 Year                   |
-| Core      | ses-03A          | 3 Year                     |
-| Core      | ses-03M          | 3.5 Year                   |
-| Core      | ses-04A          | 4 Year                     |
-| Core      | ses-04M          | 4.5 Year                   |
-| Core      | ses-05A          | 5 Year                     |
-| Core      | ses-05M          | 5.5 Year                   |
-| Core      | ses-06A          | 6 Year                     |
-| Substudy  | ses-C01          | COVID Wave 1               |
-| Substudy  | ses-C02          | COVID Wave 2               |
-| Substudy  | ses-C03          | COVID Wave 3               |
-| Substudy  | ses-C04          | COVID Wave 4               |
-| Substudy  | ses-C05          | COVID Wave 5               |
-| Substudy  | ses-C06          | COVID Wave 6               |
-| Substudy  | ses-C07          | COVID Wave 7               |
-| Substudy  | ses-S01          | SDev Wave 1                |
-| Substudy  | ses-S02          | SDev Wave 2                |
-| Substudy  | ses-S03          | SDev Wave 3                |
-| Substudy  | ses-S04          | SDev Wave 4                |
-| Substudy  | ses-S05          | SDev Wave 5                |
+| Study     | Session/event ID | Session/event label        | Past release event ID      |
+|-----------|------------------|----------------------------|----------------------------|
+| Core      | ses-00S          | Screener                   | screener_arm_1             |
+| Core      | ses-00A          | Baseline                   | baseline_year_1_arm_1      |
+| Core      | ses-00M          | 0.5 Year                   | 6_month_follow_up_arm_1    |
+| Core      | ses-01A          | 1 Year                     | 1_year_follow_up_y_arm_1   |
+| Core      | ses-01M          | 1.5 Year                   | 18_month_follow_up_arm_1   |
+| Core      | ses-02A          | 2 Year                     | 2_year_follow_up_y_arm_1   |
+| Core      | ses-02M          | 2.5 Year                   | 30_month_follow_up_arm_1   |
+| Core      | ses-03A          | 3 Year                     | 3_year_follow_up_y_arm_1   |
+| Core      | ses-03M          | 3.5 Year                   | 42_month_follow_up_arm_1   |
+| Core      | ses-04A          | 4 Year                     | 4_year_follow_up_y_arm_1   |
+| Core      | ses-04M          | 4.5 Year                   | N/A: New to 6.0 release    |
+| Core      | ses-05A          | 5 Year                     | N/A: New to 6.0 release    |
+| Core      | ses-05M          | 5.5 Year                   | N/A: New to 6.0 release    |
+| Core      | ses-06A          | 6 Year                     | N/A: New to 6.0 release    |
+| Substudy  | ses-C01          | COVID Wave 1               | covid19_cv1_arm_2          |
+| Substudy  | ses-C02          | COVID Wave 2               | covid19_cv2_arm_2          |
+| Substudy  | ses-C03          | COVID Wave 3               | covid19_cv3_arm_2          |
+| Substudy  | ses-C04          | COVID Wave 4               | covid19_cv4_arm_2          |
+| Substudy  | ses-C05          | COVID Wave 5               | covid19_cv5_arm_2          |
+| Substudy  | ses-C06          | COVID Wave 6               | covid19_cv6_arm_2          |
+| Substudy  | ses-C07          | COVID Wave 7               | covid19_cv7_arm_2          |
+| Substudy  | ses-S01          | SDev Wave 1                | sd_wave1_arm_3             |
+| Substudy  | ses-S02          | SDev Wave 2                | sd_wave2_arm_3             |
+| Substudy  | ses-S03          | SDev Wave 3                | sd_wave3_arm_3             |
+| Substudy  | ses-S04          | SDev Wave 4                | N/A: New to 6.0 release    |
+| Substudy  | ses-S05          | SDev Wave 5                | N/A: New to 6.0 release    |
 :::
 
 ## Date timestamps and participant age at administration {#dtt-age}

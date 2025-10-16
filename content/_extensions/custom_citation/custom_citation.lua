@@ -4,13 +4,70 @@ local pandoc = require 'pandoc'
 -- Cache for bibliography entries
 local bib_cache = {}
 local cited_keys = {}
+local g_bib_paths = nil
+
+-- Helpers
+local function trim(s)
+  if not s then return s end
+  return (s:gsub('^%s+', ''):gsub('%s+$', ''))
+end
+
+-- Return the content inside a balanced {...} starting at idx (which must point to '{')
+local function extract_braced_value(text, idx)
+  local n = #text
+  local brace_count = 0
+  local start_i = idx
+  local i = idx
+  while i <= n do
+    local ch = text:sub(i,i)
+    if ch == '{' then
+      brace_count = brace_count + 1
+      if brace_count == 1 then start_i = i end
+    elseif ch == '}' then
+      brace_count = brace_count - 1
+      if brace_count == 0 then
+        -- Return content without outer braces and end index
+        return text:sub(start_i + 1, i - 1), i
+      end
+    end
+    i = i + 1
+  end
+  return nil, nil
+end
+
+-- Extract field value for patterns like: field = { ... } or field = "..."
+local function get_field_value(entry_text, field)
+  local _, pos = entry_text:find(field .. '%s*=%s*')
+  if not pos then return nil end
+  local next_char = entry_text:sub(pos + 1, pos + 1)
+  if next_char == '{' then
+    local val, end_pos = extract_braced_value(entry_text, pos + 1)
+    if val then return trim(val) end
+  elseif next_char == '"' then
+    local s = pos + 2
+    local e = entry_text:find('"', s)
+    if e then
+      return trim(entry_text:sub(s, e - 1))
+    end
+  else
+    -- Unbraced/unquoted value until comma or newline
+    local s = pos + 1
+    local e = entry_text:find('[,\n]', s)
+    if e then
+      return trim(entry_text:sub(s, e - 1))
+    else
+      return trim(entry_text:sub(s))
+    end
+  end
+  return nil
+end
 
 -- Function to parse a simple bibtex entry and extract key information
 function parse_bib_entry(entry_text, key)
   local result = {key = key}
   
   -- Extract authors
-  local author = entry_text:match('author%s*=%s*{([^}]+)}') or entry_text:match('author%s*=%s*"([^"]+)"')
+  local author = get_field_value(entry_text, 'author')
   if author then
     result.author = author
   end
@@ -60,26 +117,23 @@ function format_authors(author_string)
   
   -- Remove braces and clean up
   author_string = author_string:gsub("[{}]", "")
+  -- Normalize whitespace to ensure splitting works across line breaks
+  author_string = author_string:gsub("%s+", " ")
   
   -- Split authors on ' and ' (as whole word)
   local authors = {}
-  local current_pos = 1
-  while current_pos <= #author_string do
-    local and_pos = author_string:find(" and ", current_pos)
-    if and_pos then
-      local author = author_string:sub(current_pos, and_pos - 1)
-      author = author:gsub("^%s+", ""):gsub("%s+$", "") -- trim whitespace
-      if author ~= "" then
-        authors[#authors + 1] = author
+  do
+    local s = author_string
+    while true do
+      local i, j = s:find(" and ", 1, true)
+      if not i then
+        local a = (s or ""):gsub("^%s+", ""):gsub("%s+$", "")
+        if a ~= "" then table.insert(authors, a) end
+        break
       end
-      current_pos = and_pos + 5 -- move past " and "
-    else
-      local author = author_string:sub(current_pos)
-      author = author:gsub("^%s+", ""):gsub("%s+$", "") -- trim whitespace
-      if author ~= "" then
-        authors[#authors + 1] = author
-      end
-      break
+      local a = s:sub(1, i - 1):gsub("^%s+", ""):gsub("%s+$", "")
+      if a ~= "" then table.insert(authors, a) end
+      s = s:sub(j + 1)
     end
   end
   
@@ -189,13 +243,22 @@ function load_bib_entry(key)
     return bib_cache[key]
   end
   
-  -- Try different possible paths for the bibliography file
-  local possible_paths = {
+  -- Preferred paths discovered from document metadata (set in Pandoc())
+  local possible_paths = {}
+  if g_bib_paths and #g_bib_paths > 0 then
+    for _, p in ipairs(g_bib_paths) do table.insert(possible_paths, p) end
+  end
+  -- Fallback guesses
+  local fallback_paths = {
+    "content/assets/ref/references.bib",
     "assets/ref/references.bib",
     "../assets/ref/references.bib",
     "../../assets/ref/references.bib",
-    "../../../assets/ref/references.bib"
+    "../../../assets/ref/references.bib",
+    "./content/assets/ref/references.bib",
+    "./assets/ref/references.bib"
   }
+  for _, p in ipairs(fallback_paths) do table.insert(possible_paths, p) end
   
   local content = nil
   for _, bib_file in ipairs(possible_paths) do
@@ -214,7 +277,11 @@ function load_bib_entry(key)
   end
   
   -- Find the entry using improved pattern matching
-  local start_pos = content:find('@%w+{' .. key .. ',')
+  -- Escape Lua pattern magic in the key (e.g., '-') so we match literally
+  local function escape_lua_pattern(s)
+    return (s:gsub("([%%%(%).%+%-%*%?%[%]%^%$])", "%%%1"))
+  end
+  local start_pos = content:find('@%w+{' .. escape_lua_pattern(key) .. ',')
   if start_pos then
     -- Find the matching closing brace
     local brace_count = 0
@@ -256,27 +323,25 @@ end
 
 function Str(elem)
   -- Pattern to match <@key> format  
-  local pattern = "<$([%w_]+)>"
+  -- Allow word chars, underscore, and hyphen in keys (e.g., cardenas-iniguez2024)
+  local pattern = "<$([%w_%-]+)>"
+  local text = elem.text
   
-  if string.match(elem.text, pattern) then
+  if string.match(text, pattern) then
     local results = {}
     local last_pos = 1
-    
-    for key in string.gmatch(elem.text, pattern) do
+    while true do
+      local s, e, key = string.find(text, pattern, last_pos)
+      if not s then break end
+      -- Add text before the citation
+      if s > last_pos then
+        results[#results + 1] = pandoc.Str(text:sub(last_pos, s - 1))
+      end
       -- Store cited key for bibliography
       cited_keys[key] = true
-      
+      -- Generate citation
       local full_citation = load_bib_entry(key)
-      local start_pos, end_pos = string.find(elem.text, "<$" .. key .. ">", last_pos)
-      
-      -- Add text before the citation
-      if start_pos > last_pos then
-        results[#results + 1] = pandoc.Str(string.sub(elem.text, last_pos, start_pos - 1))
-      end
-      
-      -- Parse the citation and create proper elements
       if full_citation and string.match(full_citation, 'https://doi.org/') then
-        -- Split citation at DOI URL
         local citation_part, doi_url = full_citation:match('(.+)%. (https://doi.org/.+)$')
         if citation_part and doi_url then
           results[#results + 1] = pandoc.Str(citation_part .. '. ')
@@ -287,23 +352,52 @@ function Str(elem)
       else
         results[#results + 1] = pandoc.Str(full_citation or ("[@" .. key .. "]"))
       end
-      
-      last_pos = end_pos + 1
+      -- Move past this match
+      last_pos = e + 1
     end
-    
-    -- Add remaining text
-    if last_pos <= #elem.text then
-      results[#results + 1] = pandoc.Str(string.sub(elem.text, last_pos))
+    -- Trailing text
+    if last_pos <= #text then
+      results[#results + 1] = pandoc.Str(text:sub(last_pos))
     end
-    
     return results
   end
-  
   return elem
 end
 
 -- Add cited references to nocite metadata for automatic bibliography inclusion
 function Pandoc(doc)
+  -- Build bib paths from metadata and input file directory
+  g_bib_paths = {}
+  local add_path = function(p) if p and #p > 0 then table.insert(g_bib_paths, p) end end
+  -- From metadata 'bibliography'
+  local bibmeta = doc.meta and doc.meta.bibliography
+  local meta_paths = {}
+  if bibmeta then
+    if bibmeta.t == 'MetaList' then
+      local items = pandoc.List(bibmeta)
+      for i = 1, #items do table.insert(meta_paths, pandoc.utils.stringify(items[i])) end
+    else
+      table.insert(meta_paths, pandoc.utils.stringify(bibmeta))
+    end
+  end
+  -- Derive input directory from PANDOC_STATE if available
+  local docdir = nil
+  if PANDOC_STATE and PANDOC_STATE.input_files and #PANDOC_STATE.input_files > 0 then
+    local input_file = PANDOC_STATE.input_files[1]
+    -- crude dirname extraction
+    docdir = input_file:match("^(.*)/[^/]-$")
+  end
+  -- Add resolved meta paths
+  for _, p in ipairs(meta_paths) do
+    add_path(p)
+    if docdir then add_path(docdir .. "/" .. p) end
+  end
+  -- Also add common project-relative fallbacks if meta missing
+  if #g_bib_paths == 0 then
+    add_path("content/assets/ref/references.bib")
+    add_path("assets/ref/references.bib")
+  end
+
   -- Process all Str elements first
   doc = doc:walk({Str = Str})
   
@@ -313,19 +407,11 @@ function Pandoc(doc)
     local existing_nocite = doc.meta.nocite
     local nocite_list = {}
     
-    -- If there's existing nocite, parse it
+    -- If there's existing nocite, parse it (stringify to be robust across Pandoc versions)
     if existing_nocite then
-      if existing_nocite.t == "MetaInlines" then
-        -- Extract existing citations from nocite
-        for _, elem in ipairs(existing_nocite) do
-          if elem.t == "Str" then
-            local text = elem.text
-            -- Find citation patterns like @key
-            for cite in text:gmatch("@([%w_]+)") do
-              nocite_list[#nocite_list + 1] = "@" .. cite
-            end
-          end
-        end
+      local text = pandoc.utils.stringify(existing_nocite)
+      for cite in text:gmatch("@([%w_%-]+)") do
+        nocite_list[#nocite_list + 1] = "@" .. cite
       end
     end
     

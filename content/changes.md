@@ -1,11 +1,14 @@
 -   **General Changes**
-
-    -   Reorganized content to better align with table order and domain
-
--   **Non-imaging**
-
-    -   **Novel Technologies:** Updated content regarding EARS data
-
+    -   All domain overview tables are now available to download as a pdf
+-   **Tools**
+    -   CMIG Pipeline documentation has been added
+-   **Curation & Structure**
+    -   Updated the curation standard's session/event identifier table to now include mapping to prior release naming where applicable
 -   **Release Notes**
-
-    -   Updated Mental Health Release Notes regarding KSADS - Suicidality Youth items
+    -   A downloadable curation brochure pdf is available for users
+    -   Added release note regarding `ab_g_dyn__cohort_income__hhold` summary scores levels
+    -   Added release note regarding time point mapping errors in the Domain Overview tables
+    -   Added release note regarding known issues in Neurocognition (`nc_y_lmt` and `nc_y_nihtb`)
+    -   Added release note with regard to `ph_y_bp` summary scores
+    -   Added release note with regard to error in `mh_y_bpm` and `mh_t_bpm` tables
+    -   Added release note with regard to `mh_p_asr` table

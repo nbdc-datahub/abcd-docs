@@ -17,6 +17,8 @@ library(stringr)
 render_table_info("str_detect(sub_domain, 'Diffusion MRI')")
 ```
 
+[Download table as a pdf](../../assets/files/documentation/imaging/6_0_mr_y_dti.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+
 The Diffusion MRI (DTI) data contains imaging field maps, non-diffusion weighted images with opposite phase encode polarity, and multi-b-value, multi-direction diffusion weighted images.
     
 ## Image processing

@@ -15,6 +15,8 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'sdev'")
 ```
 
+[Download table as a pdf](../../assets/files/documentation/substudies/6_0_sdev.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+
 Data for the ABCD Social Development Substudy (SD) were collected approximately annually. Participation in `ses-S01` data collection was offered to families who had completed either a `1`- or `2-year` ABCD follow up assessment. Each successive follow up assessment was conducted in a window of 12 months ±3 months from the last SD assessment. The timing of the SD data collection in relation to ABCD visits was left up to the research staff and the participating family. In some cases, SD assessments were completed concurrently with ABCD assessments, while in others they were completed independently on separate days. Thus, SD and core protocol data collection dates may or may not correspond directly to those of ABCD. The researcher should be mindful of these assessment date differences, if analyzing SD data with ABCD measures.
 
 ## Cross-sectional analyses

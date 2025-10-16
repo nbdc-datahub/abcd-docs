@@ -15,7 +15,8 @@ library(dplyr)
 library(stringr)
 render_table_info("str_detect(table_name, 'mr_y_adm')")
 ```
-<br>
+
+[Download table as a pdf](../../assets/files/documentation/imaging/6_0_my_y_adm.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 # Youth tables 
 

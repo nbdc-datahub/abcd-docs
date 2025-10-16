@@ -1,5 +1,6 @@
 ---
 title: "6.0 data release"
+lightbox: true
 ---
 
 ```{r}
@@ -12,6 +13,21 @@ levels_recode <- readr::read_csv(
   "../../assets/tbl/documentation/release_notes/levels_recode.csv"
 )
 ```
+
+# Overview
+
+::::: {layout-ncol="2"}
+::: {style="display: flex; justify-content: center;"}
+![](../../assets/img/documentation/release_notes/release_6_brochure_1){width="110%" style="border: 2px solid black; border-radius: 5px;" data-lightbox="img"}
+:::
+
+::: {style="text-align: center;"}
+![](../../assets/img/documentation/release_notes/release_6_brochure_2){width="110%" style="border: 2px solid black; border-radius: 5px;" data-lightbox="img"}
+:::
+:::::
+
+[Download: Linear format (above)](../../assets/files/documentation/release_notes/release_6_curation_brochure.pdf){style="display: block; text-align: right; margin-top: 4px; color: ##0000FF;"} 
+[Download: Trifold brochure format](../../assets/files/documentation/release_notes/release_6_curation_trifold.pdf){style="display: block; text-align: right; margin-top: 4px; color: ##0000FF;"}
 
 # Sample
 
@@ -54,6 +70,10 @@ The following table shows the number of participants with data per *substudy* ev
 | Social Development | ses-S03              | SDev Wave 3                | 1942  |
 | Social Development | ses-S04              | SDev Wave 4                | 1842  |
 | Social Development | ses-S05              | SDev Wave 5                | 1384  |
+
+::: {#event-id .callout-note title="Event identifier mapping"}
+Mapping to the event identifiers used in previous releases can be found in [Curation standards](../curation/standards.qmd#event-id)
+:::
 
 # Curation & structure
 
@@ -154,8 +174,12 @@ Due to the significant changes made to many summary scores included in previous 
 
 During the recuration process, we made several general changes to the data structure and content to improve usability and consistency across the dataset. These changes include:
 
-- In previous releases, variables that captured the same concept were sometimes named differently across different events. To reduce redundancy and confusion, these variables have been collapsed into a single variable.
-- Previously, all variables were associated with a longitudinal event. Static variables (such as race, ethnicity, genetic PCs, etc.) were typically linked to the baseline event. In the 6.0 release, static variables are now provided in static data tables—tables that do not include the session/event column `session_id` (see [here](/documentation/curation/standards.qmd#identifier-columns) for more details on the identifier columns). This change facilitates easier linking of static variables to the longitudinal data tables.
+-   In previous releases, variables that captured the same concept were sometimes named differently across different events. To reduce redundancy and confusion, these variables have been collapsed into a single variable.
+-   Previously, all variables were associated with a longitudinal event. Static variables (such as race, ethnicity, genetic PCs, etc.) were typically linked to the baseline event. In the 6.0 release, static variables are now provided in static data tables—tables that do not include the session/event column `session_id` (see [here](/documentation/curation/standards.qmd#identifier-columns) for more details on the identifier columns). This change facilitates easier linking of static variables to the longitudinal data tables.
+
+## Domain overview tables
+
+There are a few errors in the Domain overview tables with regard to what time point(s) that task is administered. This is due to an error in mapping admin questions that are asked for an overall time point being carried into the task specific tables despite no task data being collected. This issue will be corrected in the 7.0 release data and users should rely on task data rather than administrative fields to determine if a task was done at any given visit.
 
 # Core domains
 
@@ -164,6 +188,23 @@ During the recuration process, we made several general changes to the data struc
 ### Standard variables tables
 
 The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain. Examples of these variables include visit-level information, design/nesting variables, and variables useful for describing the cohort.
+
+### Household income scores levels labelling error
+
+A levels labeling error was identified in summary scores: 
+
+- `ab_g_dyn__cohort_income__hhold__3lvl`  
+- `ab_g_dyn__cohort_income__hhold__6lvl`  
+
+Response labels were incorrectly assigned:  
+- `777 = Don't know`  
+- `999 = Decline to answer`  
+
+They should have been assigned:  
+- `777 = Decline to answer`  
+- `999 = Don’t know`  
+
+If you are using summary scores downloaded from the 6.0 data release, please reassign levels labels accordingly. Please note that this error has been corrected in the [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#abcd-static-variables-general-) package and the levels table will be corrected in the upcoming 6.1 patch release.
 
 ### School and district IDs
 
@@ -412,14 +453,27 @@ There was a diagnostic algorithm error detected in 2023 (update pending 7.0):
 
 ### Life Events (PhenX)
 
-In order to account for changes over time to the Life Events (PhenX) measures it was necessary to develop muliple versions of summary scores. This allows for the summary scores to be computed based on the specific questions asked at each event.
+In order to account for changes over time to the Life Events (PhenX) measures it was necessary to develop multiple versions of summary scores. This allows for the summary scores to be computed based on the specific questions asked at each event.
 
-Documentation on youth scores can be found here: [Life Events (Youth)](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#life-events-youth-)
-Documentation for parent scores can be found here: [Life Events (Parent)](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#life-events-parent-). 
+Documentation on youth scores can be found here: [Life Events (Youth)](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#life-events-youth-) Documentation for parent scores can be found here: [Life Events (Parent)](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#life-events-parent-).
+
+### Adult Self Report
+
+The table `mh_p_asr` does not currently have t-scores available in the dataset due to not having a caregiver sex variable available in the correct structure to compute the score. This issue will be resolved in a future release.
+
+### Brief Problem Monitor
+
+There was an issue in the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect mapping table being used. The raw scores are still correct and the mapping table will be corrected in ABCDscores and t-score data corrected with the 6.1 patch release.
 
 ## Neurocognition
 
 In the 6.0 data release we removed the neurocognition administration table and added all relevant variables specific to a task's administration to the tables themselves. All such variables related to administration (e.g., visit type, device information, etc.) are indicated by their variable names, in accordance with our new variable [naming convention](/documentation/curation/naming.qmd) (e.g. <code>[dm_s_tab]{style="color: black"}[_adm]{style="color: #BF0000"}</code>, <code>[dm_s_tab]{style="color: black"}[_dev]{style="color: #BF0000"}</code>, etc.)
+
+### Neurocoginition Known Issues
+
+For `nc_y_lmt`, some data are incorrectly entered in percentage form and some data contain zero, which might seem implausible. The issues are being looked into and will be addressed in a future release.
+
+For `nc_y_nihtb__readr__uncor_score`, there are some potential outliers. The issue is being looked into and will be addressed in a future release.
 
 ## Novel Technologies
 
@@ -478,6 +532,11 @@ In the 6.0 data release, variables related to sexual behavior, orientation and c
 All summary scores were re-calculated for the 6.0 data release. However, SDS summary scores were not included in the development plan and were therefore not ready in time for this release.
 
 The [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores) R package will soon be updated to include these scores. Once the updated package has been published, users will be able to compute the scores using the SDS item-level data released in 6.0. The SDS scores will also be included in the 7.0 release.
+
+### Blood Pressure
+
+There are some errors with the summary scores counting invalid inputs like 0, and there are some outliers in the data. These issues are being looked into and will be addressed in future release. 
+
 
 ## Substance Use
 

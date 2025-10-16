@@ -15,6 +15,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'le'")
 ```
 
+[Download table as a pdf](../../assets/files/documentation/non_imaging/6_0_le.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 ABCD residential histories cannot be shared with data users, as addresses are personally identifiable information (PII). Instead, external data are linked within ABCD's secure environment to provide geocoded measures while safeguarding participant privacy. The Linked External Data (LED) workgroup can consider requests for new linked data. Visit [ABCD Study External Data Link Request](https://docs.google.com/forms/d/e/1FAIpQLSfFOfO6edWk7SghtdTEMAgPAhZFCLAd_aFQG-ZlChsqOnPObw/viewform) to suggest additional geocoded measures for future release.
 

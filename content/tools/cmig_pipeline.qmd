@@ -1,0 +1,17 @@
+---
+title: "CMIG Pipeline"
+order: 3
+---
+
+The CMIG (Center for Multimodal Imaging and Genetics) Pipeline is a comprehensive image processing and analysis pipeline that closely matches that used by the ABCD Data Analysis and Informatics Resource Center for the ABCD 6.0 data release. The CMIG Pipeline is shared as Singularity and Docker images along with a collection of required external software packages. There are three pipeline packages to choose from:
+
+-   `cmig_pipeline_package_271b.zip` includes a pipeline that processes DICOM files for sMRI, dMRI, and rsfMRI for datasets similar to ABCD
+
+-   `cmig_pipeline_abcd_dicom_package_271b.zip` includes those steps as well as ABCD-specific task fMRI analysis
+
+-   `cmig_pipeline_abcd_sourcedata_package_271b.zip` includes all of those steps but starts from sourcedata tgz files in a BIDS-like directory structure, as shared in the ABCD 6.0 data release
+
+Each package is \~10 GB, so expect downloads to take an hour or more, depending on data transfer rates.
+
+The CMIG Pipeline is available on NITRC: <https://www.nitrc.org/projects/cmig_pipeline>\
+For more info, see <https://docs.abcdstudy.org/latest/documentation/imaging/>

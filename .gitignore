@@ -11,3 +11,5 @@ docs/
 _freeze/
 
 trackdown/
+
+/.luarc.json

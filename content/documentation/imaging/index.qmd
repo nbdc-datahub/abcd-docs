@@ -17,6 +17,8 @@ expect_series <- readr::read_csv(
 
 This document details how to obtain information, metrics, and imaging files from the magnetic resonance imaging (MRI) components of the ABCD Study. An in-depth discussion and reference resource on the ABCD processing pipeline is available at <https://doi.org/10.1016/j.neuroimage.2019.116091>.
 
+Download a pdf of all imaging tables (mr) [here](../../assets/files/documentation/imaging/6_0_mr.pdf).
+
 ## Nomenclature
 
 Every table in the Imaging domain has the prefix `mr_y_` (`mr`: domain = "imaging"; `y`: source = "youth"), followed by abbreviations to describe the exact imaging data available.

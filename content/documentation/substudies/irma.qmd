@@ -15,6 +15,8 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'irma'")
 ```
 
+[Download table as a pdf](../../assets/files/documentation/substudies/6_0_irma.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+
 The ABCD Hurricane Irma Substudy was supported by a grant from the National Science Foundation.
 
 > [National Science Foundation RAPID 1805645](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1805645&HistoricalAwards=false): Leveraging the ABCD study to examine the effects of Hurricane Irma exposure: The Disaster and Youth, Neural, and Affective Maturation in Context (DYNAMIC) Study. 

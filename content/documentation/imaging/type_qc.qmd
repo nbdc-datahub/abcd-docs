@@ -14,6 +14,8 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("sub_domain == 'Quality Control'")
 ```
 
+[Download table as a pdf](../../assets/files/documentation/imaging/6_0_mr_y_qc.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+
 ::: {.callout-important collapse="true" title="Responsible Use Warning: Quality Control"#use-qc }
 
 Researchers analyzing neuroimaging data should ensure responsible and thoughtful use of demographic and participant-related variables. Analyses comparing groups based solely on demographic categories may lead to misinterpretations about neurobiological differences and unintended implications regarding participants' abilities or outcomes. To avoid potential misinterpretation or misuse of research findings, data users must carefully consider all variables included in their analyses, and ensure results are presented with appropriate scientific context.
@@ -160,8 +162,8 @@ Automated post-processing QC metrics were statistically characterized in associa
 
 **Notes:**
 
-- Imaging series may have been manually reviewed after initial preprocessing stage and QC pipeline (see \[Automated selection for manual post-processing QC\]). Series that fail raw QC do not get processed (e.g., `mr_y_qc__raw__smri__t1__pass__qc__comp_count` is 0).
-- For task fMRI, the average degrees of freedom is set at an arbitrary 200; this can be increased for a more restrictive selection criteria. For single runs, the required degrees of freedom are halved (i.e., dof \> 100).
+-   Imaging series may have been manually reviewed after initial preprocessing stage and QC pipeline (see [Automated selection for manual raw QC]). Series that fail raw QC do not get processed (e.g., `mr_y_qc__raw__smri__t1__pass__qc__comp_count` is 0).
+-   For task fMRI, the average degrees of freedom is set at an arbitrary 200; this can be increased for a more restrictive selection criteria. For single runs, the required degrees of freedom are halved (i.e., dof \> 100).
 
 # MRI clinical findings {#mr_y_qc__clfind}
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__clfind")`
@@ -179,35 +181,44 @@ The most important measure is the Report Score (`mrif_score`):
 Although not included in the recommended inclusion criteria, users may, depending on their research question and analytical design, opt to exclude participants with `mrif_score != 3` *OR* `mrif_score !=4`.
 
 # MRI raw QC {#mr_y_qc__raw}
-![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_qc__raw](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Diffusion+MRI+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Event+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Resting+State+fMRI+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Structural+MRI+-+T1+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Structural+MRI+-+T2+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+All+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+MID+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+N-Back+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+SST+%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset)
 
-- Protocol compliance checking
-  - Performed by on-site FIONA workstations to provide feedback to scan operators
-  - Out-of-compliance series reviewed by DAIRC staff
-  - Criteria included whether key imaging parameters matched expected values for a given scanner, such as voxel size or repetition time
-  - Presence or absence of B0 distortion field map series was checked for diffusion MRI (dMRI) and functional MRI (fMRI) series
-  - Each imaging series checked for completeness (i.e., no missing files)
-- Automated quality control metrics
-  - Structural MRI (sMRI): mean and standard deviation of brain values and spatial SNR
-  - dMRI: mean motion (average framewise displacement), and the number of slices and frames affected by slice dropout caused by abrupt head motion
-  - fMRI: mean motion (average framewise displacement), the number of seconds with framewise displacements less than 0.2, 0.3, or 0.4 mm [@power2012], temporal SNR (tSNR) [@triantafyllou2005]
-- Manual review of data quality
-  - Reviewers assigned binary QC score
-    - `0` = reject
-      - Most severe artifacts or irregularities
-      - Rejected series excluded from subsequent processing and analysis
-    - `1` = accept
-  - Types of images reviewed
-    - T~1~w, T~2~w, dMRI, dMRI field map, fMRI, and fMRI field map
-    - Raw and some derived images were reviewed
-    - dMRI derived images included average b=0 image, FA, MD, tensor fit residual error, and direction encoded color image
-    - fMRI derived images included the average across time and the temporal standard deviation
-  - Inspected for signs of artifacts and poor image quality
-    - Presence of wrap-around field of view artifacts
-    - Brain cut-off due to participant movement outside prescribed slices
-    - Magnetic susceptibility artifacts due to dental implants
-    - T~1~w and T~2~w motion artifact (e.g., blurring and ghosting)
-  - Artifact type and severity for series with QC = `0` is indicated in reviewer notes made with internally standard abbreviations
+![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_qc\_\_raw](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Diffusion+MRI+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Event+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Resting+State+fMRI+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Structural+MRI+-+T1+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Structural+MRI+-+T2+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+All+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+MID+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+N-Back+%5BYouth%5D%22%5D%2C%5B%22Youth%22%2C%22Quality+Control+-+Raw+-+Task+fMRI+-+SST+%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset)
+
+-   Protocol compliance checking
+    -   Performed by on-site FIONA workstations to provide feedback to scan operators
+    -   Out-of-compliance series reviewed by DAIRC staff
+    -   Criteria included whether key imaging parameters matched expected values for a given scanner, such as voxel size or repetition time
+    -   Presence or absence of B0 distortion field map series was checked for diffusion MRI (dMRI) and functional MRI (fMRI) series
+    -   Each imaging series checked for completeness (i.e., no missing files)
+-   Automated quality control metrics
+    -   Structural MRI (sMRI): mean and standard deviation of brain values and spatial SNR
+    -   dMRI: mean motion (average framewise displacement), and the number of slices and frames affected by slice dropout caused by abrupt head motion
+    -   fMRI: mean motion (average framewise displacement), the number of seconds with framewise displacements less than 0.2, 0.3, or 0.4 mm [@power2012], temporal SNR (tSNR) [@triantafyllou2005]
+-   Manual review of data quality
+    -   Reviewers assigned binary QC score
+        -   `0` = reject
+            -   Most severe artifacts or irregularities
+            -   Rejected series excluded from subsequent processing and analysis
+        -   `1` = accept
+    -   Types of images reviewed
+        -   T~1~w, T~2~w, dMRI, dMRI field map, fMRI, and fMRI field map
+        -   Raw and some derived images were reviewed
+        -   dMRI derived images included average b=0 image, FA, MD, tensor fit residual error, and direction encoded color image
+        -   fMRI derived images included the average across time and the temporal standard deviation
+    -   Inspected for signs of artifacts and poor image quality
+        -   Presence of wrap-around field of view artifacts
+        -   Brain cut-off due to participant movement outside prescribed slices
+        -   Magnetic susceptibility artifacts due to dental implants
+        -   T~1~w and T~2~w motion artifact (e.g., blurring and ghosting)
+    -   Artifact type and severity for series with QC = `0` is indicated in reviewer notes made with internally standard abbreviations
+
+# Automated selection for manual raw QC
+
+Our manual quality control process for unprocessed (called "raw" for convenience) MRI images involves manual examination of brain images from a subset of participant-events for each modality, with ratings for each dataset according to pre-defined quality criteria such as motion artifact (for T1w and T2w scans), brain cutoff, or line artifacts (for dMRI or fMRI scans). Such measures are described above (see [*MRI Raw QC*]). Because an exhaustive manual review of every scan is not practical for very large datasets like ABCD, we deploy statistical learning based sub-sampling methods where we generate automated metrics for an array of quality control issues and select scans to be sent for manual review based on their quality measure scores. The automatic selection priority scores generally indicate how likely a dataset of a given type is to contain identifiable data quality issues.
+
+Using the manual scoring of previously acquired data, we compiled a set of manually labeled scan data. For series that failed QC review (i.e., QC = 0), the artifact type and severity were parsed from reviewer notes made with internally standard abbreviations. We used these to create a set of binarized (pass/fail) manual QC scores (i.e., for motion, cutoff, line artifact, etc.). For each imaging series, we generated a set of automated measures described in [*MRI Raw QC*]. We used the manual and automated QC metrics to construct Bayesian classifiers (see <https://en.wikipedia.org/wiki/Bayes_classifier>) that calculate the relative probability of QC failure associated with different types of QC issues (e.g., motion, cutoff, line artifact, etc.) for a given imaging series.
+
+Relative QC failure probabilities given a particular automated QC metric value were calculated for each combination of manual scores and automated metrics. For each binarized manual QC score, automated metrics with low correlation (r \< 0.5) or low classification accuracy (ROC AUC \< 0.6) to the manual QU score were excluded for use in selection. The remaining set of automated metrics were transformed with singular value decomposition to remove redundant information. The resulting reduced matrix was entered into a logistic regression with the binarized QC score. The values predicted by the logistic regression were then passed to the Bayesian classifier described above to calculate the probability of QC failure. A relative probability score was calculated such that values greater than 0 indicate a greater likelihood of QC failure. Imaging series were sorted based on their QC failure probabilities, and those with the highest scores were prioritized for review. Imaging series with relative probability scores less than 0 were generally excluded from review.
 
 # Manual post processing QC
 
@@ -321,11 +332,11 @@ Automated QC measures were defined and calculated based on processed imaging dat
 
 # Automated selection for manual post-processing QC
 
-Our manual quality control process involves manual examination of brain images from a subset of participant-events for each modality, with ratings for each dataset according to pre-defined quality criteria such as brain cutoff, residual distortion, or registration to T~1~. Such measures are described above (see [*FreeSurfer QC*](#mr_y_qc__post__man__fsurf), [*sMRI T~2~w Post Processing QC*](#mr_y_qc__post__man__t2), [*dMRI Post Processing QC*](#mr_y_qc__post__man__dmri), and [*fMRI Post Processing QC)*](#mr_y_qc__post__man__fmri). Because an exhaustive manual review of every scan is not practical, we deploy statistical learning/AI guided sub-sampling methods where we generate automated metrics for an array of quality control issues (see [*Automated Post Processing QC*](#mr_y_qc__post__aut)) and sub-select participant-events to be sent for a given modality to manual review based on their quality measure scores. The automatic selection priority scores generally indicate how likely a dataset of a given type is to contain identifiable data quality issues such as a residual distortion or brain cutoff.
+Our manual quality control process involves manual examination of brain images from a subset of participant-events for each modality, with ratings for each dataset according to pre-defined quality criteria such as brain cutoff, residual distortion, or registration to T~1~. Such measures are described above (see [*FreeSurfer QC*](#mr_y_qc__post__man__fsurf), [*sMRI T~2~w Post Processing QC*](#mr_y_qc__post__man__t2), [*dMRI Post Processing QC*](#mr_y_qc__post__man__dmri), and [*fMRI Post Processing QC)*](#mr_y_qc__post__man__fmri). Because an exhaustive manual review of every scan is not practical, we deploy statistical learning based sub-sampling methods where we generate automated metrics for an array of quality control issues (see [*Automated Post Processing QC*](#mr_y_qc__post__aut)) and select participant-events for a given modality to be manually reviewed based on their quality measure scores. The automatic selection priority scores generally indicate how likely a dataset of a given type is to contain identifiable data quality issues such as residual distortion or brain cutoff.
 
 ## Overview of selection strategies
 
-Because there were no significant changes in the MRI processing pipeline between ABCD Release 4.0 and Release 6.0, it was not necessary to reprocess most of the previously collected imaging data, except in rare cases, such as due to recovery of missing data or revision of manual raw QC. Because of this, manual post-processing QC scores from Release 4.0 were mostly carried forward into Release 6.0. Changes to the processing were made between Release 3.0 and 4.0, so the old QC scores were not carried forward for Release 4.0. Instead, participant-events were selected for manual post-processig QC based on failed post-processing QC from Release 3.0, random selection of participant-events, and statistical outliers (see below for details). The manual scoring and automated QC metrics for those three sets were then used for classifier guided selection (see below for details), and those additional visits were reviewed as well. For more recently collected imaging data not included in Release 4.0, additional subsets of participant-events were selected for manual post-processing QC using classifier guided selection and Mahalanobis distance outliers (see below for details). In addition, we undertook a limited retrospective review of past QC failures to help ensure that usable data were not inappropriately or mistakenly marked for exclusion (see below for details).
+Because there were no significant changes in the MRI processing pipeline between ABCD Release 4.0 and Release 6.0, it was not necessary to reprocess most of the previously collected imaging data, except in rare cases, such as due to recovery of missing data or revision of manual raw QC. Because of this, manual post-processing QC scores from Release 4.0 were mostly carried forward into Release 6.0. Changes to the processing were made between Release 3.0 and 4.0, so the old QC scores were not carried forward for Release 4.0. Instead, participant-events were selected for manual post-processing QC based on failed post-processing QC from Release 3.0, random selection of participant-events, and statistical outliers (see below for details). The manual scoring and automated QC metrics for those three sets were then used for classifier guided selection (see below for details), and those additional visits were reviewed as well. For more recently collected imaging data not included in Release 4.0, additional subsets of participant-events were selected for manual post-processing QC using classifier guided selection and Mahalanobis distance outliers (see below for details). In addition, we undertook a limited retrospective review of past QC failures to help ensure that usable data were not inappropriately or mistakenly marked for exclusion (see below for details).
 
 ## Selection strategies used for Release 4.0
 
@@ -343,7 +354,7 @@ ROI summary vectors for all individual participant-events were used to deduce a 
 
 ### Classifier-guided selection
 
-Using the manual scoring of the above sets, namely the random samples, Release 3.0 QC failures, and Mahalanobis distance outliers, we collected a subset of manually labeled scan data. For each participant-event we generated a set of automated measures described in *Automated Post Processing QC*. Using binarized (pass/fail) manual quality control (QC) labels associated with these measures, we constructed a Bayesian classifier (see <https://en.wikipedia.org/wiki/Bayes_classifier>) that calculates the probability of QC failure associated with different types of QC issues (e.g., bad registration or brain FOV cutoff) for any given dataset. Each combination of automated QC metric and manual quality (QU) score was tested. Combinations of manual QC scores and automated QC metrics with low correlation (r \< 0.5) or low classification accuracy (ROC AUC \< 0.6) were excluded for use in selection. Selected manual QU scores were binarized such that "QC fail" was defined as QU score \> 2, and "QC pass" was defined as QU score \<= 2. Relative QC failure probabilities given a particular automated QC metric value were calculated for each combination of manual scores and automated metics. Participant-events were sorted based on their QC failure probabilities, and roughly the top 3-5% were selected for manual review for each modality, making up \~30-50% of manually reviewed participant-events in Release 4.0.
+Using the manual scoring of the above sets, namely the random samples, Release 3.0 QC failures, and Mahalanobis distance outliers, we collected a subset of manually labeled scan data. For each participant-event we generated a set of automated measures described in *Automated Post Processing QC*. Using binarized (pass/fail) manual QC scores, we constructed a Bayesian classifier (see <https://en.wikipedia.org/wiki/Bayes_classifier>) that calculates the probability of QC failure associated with different types of QC issues (e.g., bad registration or brain FOV cutoff) for any given dataset. Each combination of automated QC metric and manual quality (QU) score was tested. Combinations of manual QC scores and automated QC metrics with low correlation (r \< 0.5) or low classification accuracy (ROC AUC \< 0.6) were excluded for use in selection. Selected manual QU scores were binarized such that "QC fail" was defined as QU score \> 2, and "QC pass" was defined as QU score \<= 2. Relative QC failure probabilities given a particular automated QC metric value were calculated for each combination of manual scores and automated metrics. Participant-events were sorted based on their QC failure probabilities, and roughly the top 3-5% were selected for manual review for each modality, making up \~30-50% of manually reviewed participant-events in Release 4.0.
 
 ## Selection strategies used for Release 5.0 and 6.0
 
@@ -351,13 +362,11 @@ Using the manual scoring of the above sets, namely the random samples, Release 3
 
 For imaging data collected more recently than that included in Release 4.0, the classifier-guided selection approach described above was extended to use a multivariate logistic regression that uses multiple auto QC metrics as well as the Mahalanobis distance metrics derived from ROI summary measures. The Mahalanobis distance value was calculated separately for each modality represented in the tabulated ROI summary measures (i.e., FreeSurfer, T1w, T2w, dMRI-DTI, dMRI-RSI, MID, nBack, SST, rsfMRI). These outlier distance metrics were included along with the other automated QC metrics used for prediction.
 
-For each manual post-processing QU score, automated metrics (including automated QC metrics and Mahalanobis distances) with low correlation (r \< 0.5) or low classification accuracy (ROC AUC \< 0.6) to the manual QU score were excluded for use in selection. The remaining set of automated metrics were transformed with singular value decomposition to remove redundant information. The resulting reduced matrix was entered into a logistic regression with the binarized QU score. The values predicted by the logistic regression were then passed to the Bayesian classifier described above to calculate the probability of QC failure. Additional methodological details and an analysis of selection performance will be presented in a forthcoming paper (Hagler et al., in preparation).
+For each manual post-processing QU score, automated metrics (including automated QC metrics and Mahalanobis distances) with low correlation (r \< 0.5) or low classification accuracy (ROC AUC \< 0.6) to the manual QU score were excluded for use in selection. The remaining set of automated metrics were transformed with singular value decomposition to remove redundant information. The resulting reduced matrix was entered into a logistic regression with the binarized QU score. The values predicted by the logistic regression were then passed to the Bayesian classifier described above to calculate the probability of QC failure.
 
 ### Retrospective QC review
 
-A retrospective review of prior, post-processing QC failures was undertaken to ensure that usable data were not inappropriately or mistakenly marked for exclusion. This was done on a limited basis for particular causes of QC failure when we found reason to doubt some of the reviews of a given type; e.g., white matter underestimation, T1 or T2 intensity inhomogeneity. In this re-review, scores were changed in some but not most cases selected for re-review.Methods
-
-Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in @hagler2019.
+A retrospective review of prior, post-processing QC failures was undertaken to ensure that usable data were not inappropriately or mistakenly marked for exclusion. This was done on a limited basis for particular causes of QC failure when we found reason to doubt some of the reviews of a given type; e.g., white matter underestimation, T1 or T2 intensity inhomogeneity. In this re-review, scores were changed in some but not most cases selected for re-review.
 
 **Key references:**
 
