@@ -15,7 +15,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'irma'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/substudies/6_0_irma.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+[Download table as a pdf](../../assets/files/documentation/substudies/6_1_irma.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 The ABCD Hurricane Irma Substudy was supported by a grant from the National Science Foundation.
 

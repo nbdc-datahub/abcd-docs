@@ -1,0 +1,246 @@
+﻿table_name,difference,name,details
+ab_g_dyn,VALUES differ between 6.0 and 6.1,ab_g_dyn__design_site,2 cases
+fc_p_vs,COLUMN exists in 6.1 but not in 6.0,fc_p_vs__famil_mean,
+fc_p_vs,COLUMN exists in 6.1 but not in 6.0,fc_p_vs__famil_nm,
+fc_p_vs,COLUMN exists in 6.1 but not in 6.0,fc_p_vs__famil_mean__v01,
+fc_p_vs,COLUMN exists in 6.1 but not in 6.0,fc_p_vs__famil_nm__v01,
+fc_y_vs,COLUMN exists in 6.1 but not in 6.0,fc_y_vs__famil_mean,
+fc_y_vs,COLUMN exists in 6.1 but not in 6.0,fc_y_vs__famil_nm,
+fc_y_vs,COLUMN exists in 6.1 but not in 6.0,fc_y_vs__famil_mean__v01,
+fc_y_vs,COLUMN exists in 6.1 but not in 6.0,fc_y_vs__famil_nm__v01,
+mh_t_bpm,VALUES differ between 6.0 and 6.1,mh_t_bpm__attn_tscore,11253 cases
+mh_t_bpm,VALUES differ between 6.0 and 6.1,mh_t_bpm__ext_tscore,23259 cases
+mh_t_bpm,VALUES differ between 6.0 and 6.1,mh_t_bpm__int_tscore,23102 cases
+mh_t_bpm,VALUES differ between 6.0 and 6.1,mh_t_bpm_tscore,23354 cases
+mh_y_bpm,VALUES differ between 6.0 and 6.1,mh_y_bpm__attn_tscore,55415 cases
+mh_y_bpm,VALUES differ between 6.0 and 6.1,mh_y_bpm__ext_tscore,79491 cases
+mh_y_bpm,VALUES differ between 6.0 and 6.1,mh_y_bpm__int_tscore,84615 cases
+mh_y_bpm,VALUES differ between 6.0 and 6.1,mh_y_bpm_tscore,84351 cases
+mr_y_qc__incl,VALUES differ between 6.0 and 6.1,mr_y_qc__incl__tfmri__sst_indicator,3152 cases
+mr_y_tfmri__sst__beh,VALUES differ between 6.0 and 6.1,mr_y_tfmri__sst__beh__qc_indicator,3524 cases
+nc_y_est,VALUES differ between 6.0 and 6.1,nc_y_est__50congr__incongr__angf_rt,1 cases
+nc_y_est,VALUES differ between 6.0 and 6.1,nc_y_est__50congr__incongr_rt,1 cases
+nc_y_est,VALUES differ between 6.0 and 6.1,nc_y_est__50congr_rt,1 cases
+nc_y_est,VALUES differ between 6.0 and 6.1,nc_y_est__75congr__congr__angf_rt,1 cases
+nc_y_est,VALUES differ between 6.0 and 6.1,nc_y_est__75congr__congr_rt,1 cases
+nc_y_est,VALUES differ between 6.0 and 6.1,nc_y_est__75congr_rt,1 cases
+nc_y_est,VALUES differ between 6.0 and 6.1,nc_y_est__congr_rt,1 cases
+nc_y_est,VALUES differ between 6.0 and 6.1,nc_y_est__incongr_rt,1 cases
+nc_y_est,VALUES differ between 6.0 and 6.1,nc_y_est_rt,2 cases
+nc_y_nihtb,COLUMN exists in 6.0 but not in 6.1,nc_y_nihtb__comp__fluid_dtt,
+nc_y_nihtb,COLUMN exists in 6.0 but not in 6.1,nc_y_nihtb__comp__fluid_age,
+nc_y_nihtb,COLUMN exists in 6.0 but not in 6.1,nc_y_nihtb__comp__tot_dtt,
+nc_y_nihtb,COLUMN exists in 6.0 but not in 6.1,nc_y_nihtb__comp__tot_age,
+nc_y_nihtb,COLUMN ORDER differs between 6.0 and 6.1,,148 cases
+ph_p_anthr,VALUES differ between 6.0 and 6.1,ph_p_anthr__height__fath_001,14319 cases
+ph_p_anthr,VALUES differ between 6.0 and 6.1,ph_p_anthr__height__moth_001,15007 cases
+ph_p_meds,COLUMN exists in 6.0 but not in 6.1,ph_p_meds_001__v02,
+ph_p_meds,VALUES differ between 6.0 and 6.1,ph_p_meds_001__v01,5017 cases
+ph_p_meds,COLUMN ORDER differs between 6.0 and 6.1,,387 cases
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__da_sum,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__da_nm,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__dims_sum,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__dims_nm,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__does_sum,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__does_nm,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__hyphy_sum,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__hyphy_nm,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__sbd_sum,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__sbd_nm,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__swtd_sum,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds__swtd_nm,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds_sum,
+ph_p_sds,COLUMN exists in 6.1 but not in 6.0,ph_p_sds_nm,
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__fd__sleep__mid__24h_t,12229 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__raw__36h_chrono,38199 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__sd__sleep__mid__24h_t,41924 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__sd__sleep__mid__36h_t,40560 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__sd__sleep__onset__24h_t,40560 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__sd__sleep__onset__36h_t,40560 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__sd__sleep_dur,40560 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__sd__sleep_period,40560 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__sleep_dur,40497 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__sleep_loss,40327 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__sleep_period,40497 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__socjl_absl,40474 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq__socjl_rel,40559 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq_chrono,34240 cases
+ph_y_mctq,VALUES differ between 6.0 and 6.1,ph_y_mctq_outlier,423 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__alc__3mo__wknd_totdose,499 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__alc__3mo__wknd_ud,499 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__alc__3mo_maxdose,317 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__alc__3mo_mean,539 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__alc__3mo_totdose,675 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__alc__3mo_ud,675 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__alc__binge__3mo_mean,129 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__alc__binge__3mo_totdose,164 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__alc__binge__3mo_ud,164 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__cbd__3mo__wknd_totdose,22 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__cbd__3mo__wknd_ud,22 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__cbd__3mo_maxdose,16 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__cbd__3mo_mean,21 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__cbd__3mo_totdose,32 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__cbd__3mo_ud,32 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__coc__3mo__wknd_totdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__coc__3mo__wknd_ud,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__coc__3mo_maxdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__coc__3mo_mean,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__coc__3mo_totdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__coc__3mo_ud,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__dxm__3mo__wknd_totdose,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__dxm__3mo__wknd_ud,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__dxm__3mo_maxdose,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__dxm__3mo_mean,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__dxm__3mo_totdose,8 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__dxm__3mo_ud,8 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__ghb__3mo_maxdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__ghb__3mo_mean,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__ghb__3mo_totdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__ghb__3mo_ud,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__hall__3mo__wknd_totdose,14 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__hall__3mo__wknd_ud,14 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__hall__3mo_maxdose,16 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__hall__3mo_mean,16 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__hall__3mo_totdose,20 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__hall__3mo_ud,20 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__inh__3mo__wknd_totdose,6 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__inh__3mo__wknd_ud,6 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__inh__3mo_maxdose,10 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__inh__3mo_mean,10 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__inh__3mo_totdose,12 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__inh__3mo_ud,12 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mdma__3mo__wknd_totdose,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mdma__3mo__wknd_ud,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mdma__3mo_maxdose,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mdma__3mo_mean,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mdma__3mo_totdose,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mdma__3mo_ud,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__meth__3mo__wknd_totdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__meth__3mo__wknd_ud,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__meth__3mo_mean,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__meth__3mo_totdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__meth__3mo_ud,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__blunt__3mo__wknd_totdose,142 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__blunt__3mo__wknd_ud,142 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__blunt__3mo_maxdose,66 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__blunt__3mo_mean,99 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__blunt__3mo_totdose,183 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__blunt__3mo_ud,183 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__conc__3mo__wknd_totdose,65 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__conc__3mo__wknd_ud,65 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__conc__3mo_maxdose,33 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__conc__3mo_mean,46 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__conc__3mo_totdose,81 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__conc__3mo_ud,81 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__drink__3mo__wknd_totdose,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__drink__3mo__wknd_ud,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__drink__3mo_maxdose,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__drink__3mo_mean,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__drink__3mo_totdose,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__drink__3mo_ud,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__edbl__3mo__wknd_totdose,116 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__edbl__3mo__wknd_ud,116 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__edbl__3mo_maxdose,103 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__edbl__3mo_mean,116 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__edbl__3mo_totdose,180 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__edbl__3mo_ud,180 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__smoke__3mo__wknd_totdose,366 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__smoke__3mo__wknd_ud,366 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__smoke__3mo_maxdose,125 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__smoke__3mo_mean,261 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__smoke__3mo_totdose,463 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__smoke__3mo_ud,463 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__synth__3mo__wknd_totdose,2 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__synth__3mo__wknd_ud,2 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__synth__3mo_maxdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__synth__3mo_mean,2 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__synth__3mo_totdose,2 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__synth__3mo_ud,2 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__tinc__3mo__wknd_totdose,4 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__tinc__3mo__wknd_ud,4 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__tinc__3mo_maxdose,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__tinc__3mo_mean,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__tinc__3mo_totdose,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__tinc__3mo_ud,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__flwr__3mo__wknd_totdose,107 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__flwr__3mo__wknd_ud,107 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__flwr__3mo_maxdose,59 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__flwr__3mo_mean,85 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__flwr__3mo_totdose,155 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__flwr__3mo_ud,155 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__oil__3mo__wknd_totdose,284 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__oil__3mo__wknd_ud,284 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__oil__3mo_maxdose,116 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__oil__3mo_mean,192 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__oil__3mo_totdose,353 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__mj__vape__oil__3mo_ud,353 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__chew__3mo__wknd_totdose,4 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__chew__3mo__wknd_ud,4 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__chew__3mo_maxdose,6 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__chew__3mo_mean,6 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__chew__3mo_totdose,9 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__chew__3mo_ud,9 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cig__3mo__wknd_totdose,46 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cig__3mo__wknd_ud,46 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cig__3mo_maxdose,31 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cig__3mo_mean,41 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cig__3mo_totdose,67 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cig__3mo_ud,67 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cigar__3mo__wknd_totdose,23 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cigar__3mo__wknd_ud,23 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cigar__3mo_maxdose,21 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cigar__3mo_mean,22 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cigar__3mo_totdose,27 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__cigar__3mo_ud,27 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__hookah__3mo__wknd_totdose,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__hookah__3mo__wknd_ud,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__hookah__3mo_maxdose,6 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__hookah__3mo_mean,6 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__hookah__3mo_totdose,9 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__hookah__3mo_ud,9 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__pipe__3mo__wknd_totdose,4 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__pipe__3mo__wknd_ud,4 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__pipe__3mo_maxdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__pipe__3mo_mean,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__pipe__3mo_totdose,4 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__pipe__3mo_ud,4 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__rplc__3mo__wknd_totdose,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__rplc__3mo__wknd_ud,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__rplc__3mo_maxdose,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__rplc__3mo_mean,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__rplc__3mo_totdose,14 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__rplc__3mo_ud,14 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__vape__3mo__wknd_totdose,589 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__vape__3mo__wknd_ud,589 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__vape__3mo_maxdose,215 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__vape__3mo_mean,407 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__vape__3mo_totdose,726 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__nic__vape__3mo_ud,726 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__othdrg__3mo__wknd_totdose,8 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__othdrg__3mo__wknd_ud,8 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__othdrg__3mo_maxdose,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__othdrg__3mo_mean,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__othdrg__3mo_totdose,10 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__othdrg__3mo_ud,10 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxsed__3mo__wknd_totdose,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxsed__3mo__wknd_ud,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxsed__3mo_maxdose,3 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxsed__3mo_mean,4 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxsed__3mo_totdose,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxsed__3mo_ud,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxstim__3mo__wknd_totdose,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxstim__3mo__wknd_ud,5 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxstim__3mo_maxdose,7 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxstim__3mo_mean,8 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxstim__3mo_totdose,10 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__rxstim__3mo_ud,10 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__salv__3mo_maxdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__salv__3mo_mean,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__salv__3mo_totdose,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__salv__3mo_ud,1 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__shroom__3mo__wknd_totdose,24 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__shroom__3mo__wknd_ud,24 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__shroom__3mo_maxdose,26 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__shroom__3mo_mean,27 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__shroom__3mo_totdose,32 cases
+su_y_tlfb,VALUES differ between 6.0 and 6.1,su_y_tlfb__shroom__3mo_ud,32 cases

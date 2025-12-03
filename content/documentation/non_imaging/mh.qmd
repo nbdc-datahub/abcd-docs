@@ -16,7 +16,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'mh'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_0_mh.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_mh.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 For an overview of the Mental health domain see @barch2018 and @barch2021.
 
@@ -59,8 +59,14 @@ When writing about mental health symptoms or diagnoses, it is important to use p
 **Measure description:** Normed multi-informant monitoring of children's functioning. The BPM's Internalizing (`int`), Attention Problems (`att`), Externalizing (`ext`), and Total Problems scales comprise items from the ASEBA Youth Self-Report (`ysr`). The items, scales, and norms are based on decades of research and practical experience, as summarized in the BPM Manual (@achenbach2009).
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_y_bpm`"}
-[**BPM tables T-scores (6.0)**](../release_notes/6_0.qmd#brief-problem-monitor): 
-There was an issue in the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect mapping table being used. The raw scores are still correct and the mapping table will be corrected in ABCDscores and t-score data corrected with the 6.1 patch release.
+**6.1**
+
+-   [**BPM tables T-scores fixed**](../release_notes/6_1.qmd#brief-problem-monitor): 
+There was an issue in the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect mapping table being used in the 6.0 Data. The t-score data has been corrected with the 6.1 patch release.
+
+**6.0**
+ 
+-   [**BPM tables T-scores**](../release_notes/6_0.qmd#brief-problem-monitor)
 :::
 
 **Key reference:** `r full_cite("achenbach2009")`
@@ -162,13 +168,12 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 :::
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_y_kbi`"}
-[**KSADS 1.0 & 2.0 (6.0)**](../release_notes/6_0.qmd#ksads): As part of the 6.0 curation efforts, ABCD merged data from KSADS 1.0 and 2.0 in order to combine all equivalent symptoms and diagnoses across the two assessment versions into singular variables. However, we were unable to complete this process for the item-level KSADS data. 
-
-[**Eating disorders module (6.0)**](../release_notes/6_0.qmd#ksads-eating-disorders): The Mental Health Workgroup did an extensive review of the criteria used for all previously released eating disorder diagnoses in KSADS. The group agreed that the criterion were more restrictive than necessary, and thus underestimated the rates of eating disorder diagnoses. 
-
-[**Oppositional defiant disorder module (6.0)**](../release_notes/6_0.qmd#ksads-comp-updates-to-2.0): There was a diagnostic algorithm error detected in 2023 (update pending 7.0).
-
-[**Suicidality module (6.0)**](../release_notes/6_0.qmd#ksads-suicidality): There is some error in the past suicide data for Year 5 and beyond (update pending 6.1).
+ **6.0**
+ 
+-   [**KSADS 1.0 & 2.0**](../release_notes/6_0.qmd#ksads): As part of the 6.0 curation efforts, ABCD merged data from KSADS 1.0 and 2.0 in order to combine all equivalent symptoms and diagnoses across the two assessment versions into singular variables. However, we were unable to complete this process for the item-level KSADS data. 
+-   [**Eating disorders module**](../release_notes/6_0.qmd#ksads-eating-disorders): The Mental Health Workgroup did an extensive review of the criteria used for all previously released eating disorder diagnoses in KSADS. The group agreed that the criterion were more restrictive than necessary, and thus underestimated the rates of eating disorder diagnoses. 
+-   [**Oppositional defiant disorder module**](../release_notes/6_0.qmd#ksads-comp-updates-to-2.0): There was a diagnostic algorithm error detected in 2023 (update pending 7.0).
+-   [**Suicidality module**](../release_notes/6_0.qmd#ksads-suicidality): There is some error in the past suicide data for Year 5 and beyond (update pending 6.1).
 :::
 
 
@@ -177,7 +182,8 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 ```{r}
 render_table_info("domain_abbr == 'ksads_y'", remove_source = TRUE)
 ```
-<br>
+
+[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_ksads_y.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 **KSADS – Bipolar and Related Disorders (Youth)**  
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__bpd")`
@@ -359,7 +365,10 @@ Some cases are coded as 1 (Present) for lifetime suicidality, but these should a
 **Measure description:** This ASEBA instrument reports parent self-reported psychopathological syndromes.
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_p_asr`"}
-[**ASR T-Scores (6.0)**](../release_notes/6_0.qmd#asr): The table `mh_p_asr` does not currently have t-scores available in the dataset due to not having a caregiver sex variable available in the correct structure to compute the score. This issue will be resolved in a future release.
+
+**6.0**
+
+-   [**ASR T-Scores**](../release_notes/6_0.qmd#asr): The table `mh_p_asr` does not currently have t-scores available in the dataset due to not having a caregiver sex variable available in the correct structure to compute the score. This issue will be resolved in a future release.
 :::
 
 **Key reference:** `r full_cite("achenbach2009")`
@@ -416,6 +425,14 @@ Some cases are coded as 1 (Present) for lifetime suicidality, but these should a
 
 - The Research Assistant did not administer questions pertaining to all biological relatives because the participant or parent  had knowledge of the biological relatives,indicated that one or more relative had the problem, but was asked to respond only to questions about relatives they knew were affected, rather than indicating "no problems" for relatives not affected. For example, a respondent was asked about problems due to alcohol (e.g., marital separation or divorce) only for the affected relative. The respondent has knowledge of the youth's biological relatives, one or more relatives is believed to have a problem due to alcohol, but there is no endorsement of "no problems" for the father (`mh_p_famhx__alc__fath_001___0`), no endorsement of any specific problem (`mh_p_famhx__alc__fath_001___1` -- `mh_p_famhx__alc__fath_001___6`), and no endorsement of "don't know" (`mh_p_famhx__alc__fath_001___999`). In this example, one can presume the absence of a problem related to alcohol in the father.
 
+::: {.callout-caution collapse="true" title="Release notes: `mh_p_famhx`"}
+**6.1** 
+
+-   [**Table labels**](../release_notes/6_1.qmd#family-history): 
+Table labels were updated to be more accurate across a variety of items in the `mh_p_famhx` table.
+
+:::
+
 **Key references:**
 
 - `r full_cite("brown2015")`
@@ -450,11 +467,11 @@ We switched to the KSADS 2.0 at the 3-year follow-up for both parent and youth r
 
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_p_ksads`"}
-[**KSADS 1.0 & 2.0 (6.0)**](../release_notes/6_0.qmd#ksads): As part of the 6.0 curation efforts, ABCD merged data from KSADS 1.0 and 2.0 in order to combine all equivalent symptoms and diagnoses across the two assessment versions into singular variables. However, we were unable to complete this process for the item-level KSADS data.
+**6.0**
 
-[**Eating disorder module (6.0)**](../release_notes/6_0.qmd#ksads-eating-disorders):The Mental Health Workgroup did an extensive review of the criteria used for all previously released eating disorder diagnoses in KSADS. The group agreed that the criterion were more restrictive than necessary, and thus underestimated the rates of eating disorder diagnoses.
-
-[**Oppositional defiant disorder module (6.0)**](../release_notes/6_0.qmd#ksads-comp-updates-to-2.0): There was a diagnostic algorithm error detected in 2023 (update pending 7.0). 
+-   [**KSADS 1.0 & 2.0**](../release_notes/6_0.qmd#ksads): As part of the 6.0 curation efforts, ABCD merged data from KSADS 1.0 and 2.0 in order to combine all equivalent symptoms and diagnoses across the two assessment versions into singular variables. However, we were unable to complete this process for the item-level KSADS data.
+-   [**Eating disorder module**](../release_notes/6_0.qmd#ksads-eating-disorders):The Mental Health Workgroup did an extensive review of the criteria used for all previously released eating disorder diagnoses in KSADS. The group agreed that the criterion were more restrictive than necessary, and thus underestimated the rates of eating disorder diagnoses.
+-   [**Oppositional defiant disorder module**](../release_notes/6_0.qmd#ksads-comp-updates-to-2.0): There was a diagnostic algorithm error detected in 2023 (update pending 7.0). 
 :::
 
 ::: {.callout-note collapse="false" title="KSADS-COMP Changes 1.0 to 2.0"}
@@ -512,7 +529,8 @@ See the [youth section](#mh_y_ksads) for more details.
 ```{r}
 render_table_info("domain_abbr == 'ksads_p'", remove_source = TRUE)
 ```
-<br>
+
+[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_ksads_p.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 **KSADS – Agoraphobia Disorder (Parent)**  
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__agor")`
@@ -684,8 +702,14 @@ Note that autism levels 2 ("Requiring substantial support") and 3 ("Requiring ve
 **Measure description:** ASEBA measure of teacher-reported internalizing, externalizing, and attention problems in the youth participant.
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_t_bpm`"}
-[**BPM tables T-scores (6.0)**](../release_notes/6_0.qmd#brief-problem-monitor): 
-There was an issue in the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect mapping table being used. The raw scores are still correct and the mapping table will be corrected in ABCDscores and t-score data corrected with the 6.1 patch release.
+**6.1** 
+
+-   [**BPM tables T-scores fixed**](../release_notes/6_1.qmd#brief-problem-monitor): 
+There was an issue in the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect mapping table being used in the 6.0 Data. The t-score data has been corrected with the 6.1 patch release.
+
+**6.0**
+
+-   [**BPM tables T-scores**](../release_notes/6_0.qmd#brief-problem-monitor)
 :::
 
 **Key reference:** `r full_cite("achenbach2009")`

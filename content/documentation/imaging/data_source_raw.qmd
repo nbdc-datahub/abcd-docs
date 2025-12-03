@@ -3,7 +3,9 @@ title: "Source data / raw data"
 ---
 
 ::: {.callout-caution collapse="true" title="Release notes: Scanner serial number"}
-[**Mismatched data (6.0)**](../release_notes/6_0.qmd#mismatch-between-tabulated-and-bids-sourcedata-and-rawdata-in-anonymized-mri-scanner-serial-numbers): In the ABCD 6.0 release, there is a mismatch between the tabulated and BIDS (sourcedata and rawdata) in the anonymized MRI scanner serial numbers.
+**6.0**
+
+-    [**Mismatched data**](../release_notes/6_0.qmd#mismatch-between-tabulated-and-bids-sourcedata-and-rawdata-in-anonymized-mri-scanner-serial-numbers): In the ABCD 6.0 release, there is a mismatch between the tabulated and BIDS (sourcedata and rawdata) in the anonymized MRI scanner serial numbers.
 :::
 
 # Source data DICOM file sharing {#sourcedata}

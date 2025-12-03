@@ -20,7 +20,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'ab'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_0_ab.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_ab.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 "ABCD (General)" which provides standard variables, as well as demographic information and surveys. In this new domain we introduce two new tables: `ab_g_dyn` and `ab_g_stc`. These tables use a new source `g` (for General), introduced specifically for these summary and administrative fields. The data in these tables are often derived or computed from multiple sources, including REDCap timestamps, research administrator (RA) input, and participant responses (youth and parent). The variables in these tables are cohort descriptors & useful nesting variables–participant demographic information, visit characteristics (site, date, etc), relational variables (family ID, principal genetic ancestry), etc–that are useful for cohort characterization and modeling. We anticipate that these tables will be of great importance for most research questions using ABCD data. 
 
@@ -163,11 +163,17 @@ Pseudo school IDs for specific school settings can be excluded if needed.
 :::
 
 ::: {.callout-caution collapse="true" title="Release notes: `ab_g_dyn`"}
-[**New tables (6.0)**](../release_notes/6_0.qmd#standard-variables-tables): The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain.
+**6.1**
 
-[**Levels labelling error (6.0)**](../release_notes/6_0.qmd#household-income-scores-levels-labelling-error): A levels labeling error was identified in summary scores: `ab_g_dyn__cohort_income__hhold__3lvl` and `ab_g_dyn__cohort_income__hhold__6lvl`. Response labels were incorrectly assigned: `777 = Don't know` and `999 = Decline to answer`. They should have been assigned: `777 = Decline to answer` and `999 = Don’t know`. If you are using summary scores downloaded from the 6.0 data release, please reassign  labels accordingly. Please note that this error has been corrected in the [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#abcd-static-variables-general-) package and the levels table will be corrected in the upcoming 6.1 patch release.
+-   [**Levels labelling error fixed**](../release_notes/6_1.qmd#household-income-scores-levels-labelling-error-fixed): A levels labeling error was identified in summary scores in 6.0 for the items `ab_g_dyn__cohort_income__hhold__3lvl` and `ab_g_dyn__cohort_income__hhold__6lvl`. The levels table has been corrected in the 6.1 patch release.
+-   [**Site transfers**](../release_notes/6_1.qmd#site-transfers): Site transfers were updated for 2 participants that had been missed in 6.0 Data Release.
 
-[**Updated school IDs (6.0)**](../release_notes/6_0.qmd#school-and-district-ids): For the 6.0 release, school and district IDs were amended. These changes are specific to the pseudo school ID `ab_g_dyn__design_id__district` and `ab_g_dyn__design_id__school` and do not impact the linked SEDA data.
+**6.0**
+
+-   [**New tables**](../release_notes/6_0.qmd#standard-variables-tables): The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain.
+-   [**Updated school IDs**](../release_notes/6_0.qmd#school-and-district-ids): For the 6.0 release, school and district IDs were amended. These changes are specific to the pseudo school ID `ab_g_dyn__design_id__district` and `ab_g_dyn__design_id__school` and do not impact the linked SEDA data.
+-   [**Levels labelling error**](../release_notes/6_0.qmd#household-income-scores-levels-labelling-error)
+  
 :::
 
 ::: {.callout-important collapse="true" title="Responsible use warning: Household income summary scores" #use-cohort_income__hhold}
@@ -262,13 +268,12 @@ For additional documentation, see: [Genetics data documentation](gn.qmd).
 :::
 
 ::: {.callout-caution collapse="true" title="Release notes: `ab_g_stc`"}
-[**New tables (6.0)**](../release_notes/6_0.qmd#standard-variables-tables): The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain.
+**6.0** 
 
-[**Corrected sibling relationships (6.0)**](../release_notes/6_0.qmd#family-and-birth-ids): In the 6.0 release, we corrected a small number of errors in the `ab_g_stc__design_id__fam` and `ab_g_stc__design_id__birth` variables to more accurately reflect sibling relationships between participants.
-
-[**Ethno-racial summary scores (6.0)**](../release_notes/6_0.qmd#ethno-racial-identity): Several new ethno-racial identity summary score variables are available in the data release, capturing ethnicity and race based on baseline and longitudinal responses from youth and parents.
-
-[**Anonomized birth-dates (6.0)**](../release_notes/6_0.qmd#anonymized-date-of-birth): We changed the algorithm for how anonomized birth-dates are computed in the 6.0 release.
+-   [**New tables**](../release_notes/6_0.qmd#standard-variables-tables): The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain.
+-   [**Corrected sibling relationships**](../release_notes/6_0.qmd#family-and-birth-ids): In the 6.0 release, we corrected a small number of errors in the `ab_g_stc__design_id__fam` and `ab_g_stc__design_id__birth` variables to more accurately reflect sibling relationships between participants.
+-   [**Ethno-racial summary scores**](../release_notes/6_0.qmd#ethno-racial-identity): Several new ethno-racial identity summary score variables are available in the data release, capturing ethnicity and race based on baseline and longitudinal responses from youth and parents.
+-   [**Anonomized birth-dates**](../release_notes/6_0.qmd#anonymized-date-of-birth): We changed the algorithm for how anonomized birth-dates are computed in the 6.0 release.
 :::
 
 ::: {.callout-important collapse="true" title="Responsible use warning: Race & ethnicity" #use-race_ethnicity}

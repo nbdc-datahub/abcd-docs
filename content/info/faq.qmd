@@ -63,6 +63,11 @@ Exclusion criteria for participation in the ABCD Study included "a current diagn
 No, this is not permitted. Inputting ABCD data to generative AI tools, such as ChatGPT, is a violation of the terms of use outlined in the data use agreement.
 :::
 
+::: {.callout-tip collapse="true" title="Is there any guidance regarding suppression of cell count in data reporting?"}
+For ABCD study data, NIDA requires a threshold minimum n of 10 in public reporting of data, including scientific publications and presentations. Their recommendations can be found here. {{< downloadthis ../assets/files/NIDA_recommendations.docx
+dname="NIDA Recommendations" label="NIDA_recommendations.docx" type="light" >}}
+:::
+
 # Imaging Data
 
 ::: {.callout-tip collapse="true" title="Why is the cerebellum sometimes cutoff in fMRI and dMRI?"}

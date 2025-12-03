@@ -15,7 +15,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'nc'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_0_nc.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_nc.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 The neurocognition domain encompasses approximately 30 different neurocognitive task variables derived from 17 separate tasks and 1 parent-reported questionnaire-based probe of daily-life executive functioning. These tasks, and their software platforms of delivery and variable descriptions, are systematically described below.
 
@@ -48,7 +48,9 @@ Some adjustments in testing procedures were required for remote testing.
 :::
 
 ::: {.callout-caution collapse="true" title="Release notes: `nc`"}
-[**Administrative variables**](../release_notes/6_0.qmd#neurocognition): In the 6.0 data release we removed the neurocognition administration table and added all relevant variables specific to a task’s administration to the tables themselves.
+**6.0**
+
+- [**Administrative variables**](../release_notes/6_0.qmd#neurocognition): In the 6.0 data release we removed the neurocognition administration table and added all relevant variables specific to a task’s administration to the tables themselves.
 :::
 
 ::: {.callout-important collapse="true" title="Responsible use warning: Neurocognition domain general" #use-nc}
@@ -114,6 +116,14 @@ Users should consider restricting data analysis to participants for whom `values
 
 **Measure description:** The emotional Stroop task [@stroop1935] measures cognitive control under conditions of emotional salience [@banich2019; @basgoze2015]. The task-relevant dimension is an emotional word that participants categorized as either a "good" feeling (happy, joyful) or a "bad" feeling (angry, upset). The task-irrelevant dimension is an image, which is of a teenager's face with either a happy or an angry facial expression. Trials are of two types. On congruent trials, the word and facial emotion are of the same valence (e.g. a happy face paired with word "joyful"). The location of the word varies from trial-to-trial, presented either on the top of the image or at the bottom. On incongruent trials, the word and facial expression are of different valence (e.g., a happy face paired with word "angry"). Participants work through 2 test blocks: one block consists of 50% congruent and 50% incongruent trials; the other consists of 25% incongruent trials and 75% congruent trials. The composition of the former type of block helps individuals keep the task set in mind more so than the latter [@kane2003]. The 25% incongruent/75% congruent block is always administered first, followed by the 50% incongruent/50% congruent block. Accuracy and response times for congruent versus incongruent trials for the total task and within each emotion subtype (happy/joyful; angry/upset) are calculated. Relative difficulties with cognitive control are indexed by lower accuracy rates and longer reaction times for incongruent relative to congruent trials.
 
+::: {.callout-caution collapse="true" title="Release notes: `nc_y_est`"}
+**6.1** 
+
+-   [**Reaction time**](../release_notes/6_1.qmd#emotional-stroop-task): 
+Reaction time summary data were corrected based on the removal of two extreme outliers in the Emotional Stroop Task `nc_y_est` table.
+
+:::
+
 ::: {#data-est .callout-warning collapse="false" title="Reaction Time"}
 There may be aberrant data in the task with reaction times (RTs). We recommend that researchers should use cut-offs to omit RTs \< 200 ms and \> 2000 ms. The task's upper limit for issuing a response was 2000ms. End-users might consider downloading trial-wise data and selectively omitting certain outlier trials and recalculating mean RT values.
 :::
@@ -158,7 +168,9 @@ There may be aberrant data in the task with reaction times (RTs). We recommend t
 **Modifications since initial administration**: The Little Man Task used in the baseline assessment was administered using a customized program designed by ABCD, whereas the 2-year and 4-year follow-up assessments used a task presented in the *Inquisit* system from [*Millisecond*](https://www.millisecond.com). We recommend users consider this difference in analyses.
 
 ::: {.callout-caution collapse="true" title="Release notes: `nc_y_lmt`"}
-[**Known issues (6.0)**](../release_notes/6_0.qmd#neurocoginition-known-issues): Some data are incorrectly entered in percentage form and some data contain zero, which might seem implausible. 
+**6.0**
+
+-   [**Data errors**](../release_notes/6_0.qmd#neurocoginition-known-issues): Some data are incorrectly entered in percentage form and some data contain zero, which might seem implausible.
 :::
 
 **Key reference:** `r full_cite("acker1982")`
@@ -188,7 +200,14 @@ For longitudinal analyses, we recommend using either *uncorrected Scaled Scores*
 In cases with remote administration of Picture Vocabulary, the Crystallized Cognition Composite Score cannot be calculated.
 
 ::: {.callout-caution collapse="true" title="Release notes: `nc_y_nihtb`"}
-[**Known issues (6.0)**](../release_notes/6_0.qmd#neurocoginition-known-issues): There are some potential outliers in the `nc_y_nihtb__readr__uncor_score` data.  
+
+**6.1**
+
+-   [**Variables removed**](../release_notes/6_1.qmd#nih-toolbox): The `dtt` and `age` variables were removed for the `nc_y_nihtb__comp` subscales as those scales are not their own task, but rather combinations of other tasks in the NIH Toolbox and thus do not have their own unique time of administration.
+
+**6.0**
+
+-   [**Data outliers**](../release_notes/6_0.qmd#neurocoginition-known-issues): There are some potential outliers in the `nc_y_nihtb__readr__uncor_score` data.
 :::
 
 **Key reference:** `r full_cite("mcdonald2014")`

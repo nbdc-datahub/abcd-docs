@@ -15,7 +15,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'gn'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_0_gn.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_gn.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 This document contains information on zygosity, genetic, and genetic derived data that are available for the ABCD sample for the 6.0 data release. We describe both tabulated data that is available in release tables listed below, in addition to bulk genetic data that contains the following:
 
@@ -29,9 +29,14 @@ For comprehensive details of quality control steps performed and a description o
 **Key reference:** `r full_cite("fan2023")`
 
 ::: {.callout-caution collapse="true" title="Release notes: `gn`"}
-[**File naming & inclusion (6.0)**](../release_notes/6_0.qmd#genetics): Consistent with the rest of the 6.0 data release, the `NDAR_INV` prefix has been removed from all subject identifiers in files. Four individuals were also removed from files due to withdrawal of consent or familial genetic relatedness inconsistency.
+**6.1** 
 
-[**Variant call files (6.0)**](../release_notes/6_0.qmd#topmed-imputed-data-shared-as-vcfs): TOPMED imputed data is now shared as VCFs (Variant Call Files) instead of as PLINK files; this facilitates the inclusion of imputation INFO scores which indicate the quality of imputation and enables the inclusion of multiallelic variants.
+-   [**Genetic Relatedness Matrix**](../release_notes/6_1.qmd#genetic-relatedness-matrix): The Genetic Relatedness Matrix has been added to the file based data.
+
+**6.0**
+
+-   [**File naming & inclusion**](../release_notes/6_0.qmd#genetics): Consistent with the rest of the 6.0 data release, the `NDAR_INV` prefix has been removed from all subject identifiers in files. Four individuals were also removed from files due to withdrawal of consent or familial genetic relatedness inconsistency.
+-   [**Variant call files**](../release_notes/6_0.qmd#topmed-imputed-data-shared-as-vcfs): TOPMED imputed data is now shared as VCFs (Variant Call Files) instead of as PLINK files; this facilitates the inclusion of imputation INFO scores which indicate the quality of imputation and enables the inclusion of multiallelic variants.
 :::
 
 ::: {.callout-important collapse="true" title="Responsible use warning: Genetics" #use-genetics}
@@ -70,11 +75,11 @@ Outliers of the genetics principal components appear in the `gn_y_popstruct` tab
 
 
 ::: {.callout-caution collapse="true" title="Release notes: `gn_y_genrel`"}
-[**Missing genotypes (6.0)**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids): In the 6.0 data release, 200 individuals have still not been genotyped from the full enrolled sample and so `gn_y_genrel_id__fam` and `gn_y_genrel_id__birth` are not defined for these individuals.
+**6.0**
 
-[**Family relatedness (6.0)**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids): In previous data releases, family relatedness was captured by `rel_family_id`, this variable is now named `gn_y_genrel_id__fam` in the genetics table and crosslisted as `ab_g_stc__design_id__fam__gen` in the `ab_g_stc` table.
-::: 
-
+-   [**Missing genotypes**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids): In the 6.0 data release, 200 individuals have still not been genotyped from the full enrolled sample and so `gn_y_genrel_id__fam` and `gn_y_genrel_id__birth` are not defined for these individuals.
+-   [**Family relatedness**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids): In previous data releases, family relatedness was captured by `rel_family_id`, this variable is now named `gn_y_genrel_id__fam` in the genetics table and crosslisted as `ab_g_stc__design_id__fam__gen` in the `ab_g_stc` table.
+:::
 
 **Key references:**
 
@@ -147,7 +152,7 @@ The contents of each of these directories is described in sections below.
 - ...
 - `qcreport.html`
 
-**Measure description:** The curated genotype data was used for the imputation, using the bioinformatic pipelines and recommendations of TOPMED Server, with TOPMED reference panel. Post processing of these files included adding RSID numbers from dbSNP build 156 and using reference=GRCh38.p14 found here <https://ftp.ncbi.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz>.
+**Measure description:** “The curated genotype data was used for the imputation, using the bioinformatic pipelines and recommendations of TOPMED Server, with TOPMED reference panel. We input unphased genotypes, performing eagle imputation, with the TOPMED r2 reference panel and population set to “all”. Post processing of these files included adding RSID numbers from dbSNP build 156 and using reference=GRCh38.p14 found here <https://ftp.ncbi.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz>.
 
 The TOPMED imputation scores and post-imputation quality report can be found at cqcreport.html in this folder. In addition to estimated allele dosages, an R2 field in vcf files contains an estimated imputation accuracy which can be used to filter high quality imputed variants.
 
@@ -168,15 +173,16 @@ The TOPMED imputation scores and post-imputation quality report can be found at 
 
 **Files:** ..`/genesis/`..
 
-- `pcair_weights.tsv`
-- `pcrelate_relatedness.tsv`
-- `unrelateds_individuals.txt`
+-   `pcair_weights.tsv`
+-   `pcrelate_relatedness.tsv`
+-   `pcrelate_relatedness_grm.mat`
+-   `unrelateds_individuals.txt`
 
 **Measure description:** Accounting for genetic principal components (PCs) in genetic studies (both GWAS and Polygenic Score analysis) is considered best practice to account for effects of population stratification that can lead to spurious results. Traditional approaches for calculating PCs (e.g., [FlashPCA](https://urldefense.com/v3/__https://github.com/gabraham/flashpca__;!!Mih3wA!DAFS_uCCsIWrhd3A4uGdRJiQ4SrqyL14ZV_WBgqqzzjfu3LS0J9iFF96XtoQdR53IAnzpfFNMlqG1m8Ve29Z$)), although considered best practice for many genetic studies, may not be suited for samples with large known or cryptic relatedness, as is observed in ABCD. As such, we have replaced these genetic PCs with ones calculated using PC-AiR, a method developed and validated for samples with large family structure. PC-AiR captures ancestry information not confounded by relatedness by finding a set of unrelated individuals in the sample that have the highest divergent ancestry, and computing PCs in this set. The remaining related individuals are then projected into this space. This method is used by the Population Architecture through Genomics and Environment (PAGE) Consortium, which is principally concerned with genetic studies in diverse ancestry populations.
 
 PC-AiR was run using default suggested settings from the GENESIS package. We used non-imputed SNPs passing QCs from the 6.0 data release (\~500k variants and 11,664 individuals). PC-AiR takes in kinship estimates for defining its unrelated set of individuals with divergent ancestry; this was computed using `snpgdsIBDKING` as suggested by GENESIS authors. SNPs were LD pruned using snpgdsLDpruning with parameters: `method=“corr”`, `slide.max.bp=10e6` and `ld.threshold=sqrt(0.1)`. This resulted in 114,707 SNPs remaining after pruning. Using the computed kinship matrix PC-Air was then run on this pruned set of SNPs. This resulted in 8,177 unrelated individuals from which PCs were derived -- leaving 3,391 related individuals being projected onto this space. Subsequent analysis indicated a sample mix of 2 samples which were then removed from other genetic data.This is why the sum of unrelated and related individuals is more than the number of individuals in PLINK files (8,177+3,391\>1,668). The weights, which can be used to project other samples into the same PC space, can be found in `pcair_weights.tsv`, with the file /smokescreen/merged_chroms.bim indicating allele codings. The list of 8,177 unrelated individuals used for deriving PC's is available in unrelateds_individuals.txt.
 
-After Computing PCs from PC-AiR, we then computed a genetic relatedness matrix (GRM) using PC-Relate. PC-Relate aims to compute a GRM that is independent from ancestry effects as derived from PC-AiR. PC-Relate was run on the same pruned set of SNPs described above using the first two PCs computed from PC-Air. Identity by descent probabilities between individuals i and j were calculated as $\hat{\pi}_{ij}= \hat{k}_{ij}^{(2)}+0.5× \hat{k}_{ij}^{(1)}$, where $\hat{k}_{ij}^{(2)}$ and $\hat{k}_{ij}^{(1)}$ represent the probabilities that individuals i and j share 2 or 1 alleles at a locus -- calculated from PC-Relate. For all off-diagonal elements of the GRM we provide estimates of $\hat{k}_{ij}^{(0)}$, $\hat{k}_{ij}^{(1)}$, $\hat{k}_{ij}^{(2)}$, $\hat{\pi}_{ij}$ and genetic relatedness in pcrelate_relatedness.tsv. For a subset of related individuals ($\hat{\pi}$\>0.35) we include estimates in tabulated data in the gen_y_genrel instrument described above. Code used to perform the processes described in this section can be found here: [**https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness**](https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness).
+After Computing PCs from PC-AiR, we then computed a genetic relatedness matrix (GRM) using PC-Relate. PC-Relate aims to compute a GRM that is independent from ancestry effects as derived from PC-AiR. PC-Relate was run on the same pruned set of SNPs described above using the first two PCs computed from PC-Air. Identity by descent probabilities between individuals i and j were calculated as $\hat{\pi}_{ij}= \hat{k}_{ij}^{(2)}+0.5× \hat{k}_{ij}^{(1)}$, where $\hat{k}_{ij}^{(2)}$ and $\hat{k}_{ij}^{(1)}$ represent the probabilities that individuals i and j share 2 or 1 alleles at a locus -- calculated from PC-Relate. For all off-diagonal elements of the GRM we provide estimates of $\hat{k}_{ij}^{(0)}$, $\hat{k}_{ij}^{(1)}$, $\hat{k}_{ij}^{(2)}$, $\hat{\pi}_{ij}$ and genetic relatedness in `pcrelate_relatedness.tsv`. A MATLAB version of the full GRM is represented in the `pcrelate_relatedness_grm.mat` file. The range of $\hat{\pi}$ is between 0 and 1. In most other genetic relatedness models GRM values should be bounded by 1, however, due to high inbreeding coefficients of some subjects and minor allele frequencies close to zero, a small subset of GRM values estimated by PC-Relate in ABCD exceed 1. If you are concerned with how this may affect downstream modeling we recommend clipping these values to 1. For a subset of related individuals ($\hat{\pi}>0.35$) we include estimates in tabulated data in the `gen_y_genrel` instrument described above.. Code used to perform the processes described in this section can be found here: [**https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness**](https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness).
 
 **Number of individuals:** 11,664
 

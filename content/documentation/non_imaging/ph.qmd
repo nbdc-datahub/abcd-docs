@@ -14,7 +14,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'ph'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_0_ph.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_ph.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 Learn about the Physical Health domain by reviewing the below references: 
 
@@ -115,6 +115,14 @@ Participants responding "Evening" or "Nighttime" may be in error or highly unusu
    - `0`: I don't regularly travel to school/ I am homeschooled
 
 Participants responding "Evening" or "Nighttime" may be in error or highly unusual. Therefore, for some analyses, excluding participants responding `3` or `4` to this item may be appropriate. For participants responding `0`, the response to this item should be excluded from time-based "time to leave for school" analyses.
+
+::: {.callout-caution collapse="true" title="Release notes: `ph_y_mctq`"}
+**6.1** 
+
+-   [**Algorithm updated**](../release_notes/6_1.qmd#munich-chronotype-questionnaire): 
+The algorithm in ABCDscores for the `ph_y_mctq` scores ending with `__sleep__mid__24_t` was updated.
+
+:::
 
 **Key reference:** `r full_cite("zavada2005")`
 
@@ -246,7 +254,9 @@ Some items in the Youth Sexual Behavior Survey have parent-reported counterparts
 Youth sexual orientation is assessed within the Youth KSADS Background Items (see Measure description below), noted in the data dictionary by the keyword `kbi_`. Refer to Mental Health Data Documentation for the complete youth KSADS background survey.
 
 ::: {.callout-caution collapse="true" title="Release notes: `ph_y_sex`"}
-[**New domain classification (6.0)**](../release_notes/6_0.qmd#sexual-behavior-orientation-and-communication): Variables related to sexual behavior, orientation, and communication are now available in the `Physical Health` domain, under the `Sex` subdomain.
+**6.0**
+
+-   [**New domain classification**](../release_notes/6_0.qmd#sexual-behavior-orientation-and-communication): Variables related to sexual behavior, orientation, and communication are now available in the `Physical Health` domain, under the `Sex` subdomain.
 :::
 
 
@@ -289,6 +299,14 @@ Recommendation on how to calculate a summary score is below:
 When tracking change in weight status over time, consider which calculated variable is most appropriate/valid for this purpose. See linked manuscript (which was also referenced above) for a discussion regarding use of BMI z-score, BMI percentiles, and BMI controlling for sex and age [@adise2024]
 
 **Notes and special considerations:** Starting in March 2020, for **remote visits,** self-reported estimates of height and weight were obtained from the participant or parent/caregiver. Estimates for waist circumference were not obtained. Variable name `ab_g_dyn__visit_type` can indicate if the visit was "remote" or "hybrid" (some components of the visit were completed in person with RA measurement and some remotely). All height and weight data from "remote" visits were estimated values provided by the parent or participant. Hybrid visits should have included measured heights and weights, but this cannot be confirmed. Some height and weight data provided during a  hybrid visit might have been self-reported. Given the variability of estimated heights and weights, data from a remote or hybrid visit should be used judiciously.
+
+::: {.callout-caution collapse="true" title="Release notes: `ph_p_anthr__height`"}
+**6.1** 
+
+-   [**Height**](../release_notes/6_1.qmd#anthropometrics): 
+The levels values in the `ph_p_anthr__height` were remapped such that if a participant selected the response option "5 feet" that value is now coded as a `5` in the dataset whereas in 6.0 the values did not match.
+
+:::
 
 **Key references:**
 
@@ -347,7 +365,9 @@ Information on genetics results from blood can be found in the [Genetics documen
 As of April 2023, only 2 consecutive Blood Pressure (BP) and Heart Rate (HR) measurements were taken with a 1-minute interval between readings. If any of these measurements were outside the normal ranges for age, a repeat set of measurements were taken which included 2 consecutive BP and HR measures. If these measurements were still outside the range of normal, they were still entered into the database. Mean calculations were done with the last 2 measurements, whether they were the first round or second round (i.e., if only one round of measurements were taken, the average was derived from those measurements; if a second round of measurements were taken, the average was only derived from those measurements (ignoring the first round of measurements).
 
 ::: {.callout-caution collapse="true" title="Release notes: `ph_y_bp`"}
-[**Known issues (6.0)**](../release_notes/6_0.qmd#neurocoginition-known-issues): There are some errors with the summary scores counting invalid inputs like 0, and there are some outliers in the data. 
+**6.0**
+
+- [**Data outliers**](../release_notes/6_0.qmd#neurocoginition-known-issues): There are some errors with the summary scores counting invalid inputs like 0, and there are some outliers in the data. 
 :::
 
 ## Saliva Analysis---Hormones {#ph_y_phs}
@@ -459,6 +479,16 @@ The birth weight data were parent-reported so there are outliers, and should be 
 **Measure description:** Medications youth participants have taken in the last two weeks. The medication questionnaire was drawn from the [PhenX Toolkit](https://www.phenxtoolkit.org/search/results?searchTerm=medications&searchtype=smartsearch). Drug names, dosage, etc. used the [RxNorm](https://www.nlm.nih.gov/research/umls/rxnorm/index.html) database available from the NIH National Library of Medicine.
 **Modifications since initial administration:** Starting in 3-year follow-up, questions asked about medications in the past year. Also, questions about the use of cannabidiol (CBD) for medical purposes were added starting at the 3-year follow-up.
 
+::: {.callout-caution collapse="true" title="Release notes: `ph_p_meds`"}
+**6.1** 
+
+-   [**Medications inventory**](../release_notes/6_1.qmd#medications-inventory): The variables `ph_p_meds_001__v01` and `ph_p_meds_001__v02` were collapsed into a single variable in the dataset due to congruency of the items.
+
+:::
+
+
+
+
 ## Medical History (Parent)  {#ph_p_mhx}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ph_p_mhx")`
@@ -534,7 +564,13 @@ The history of questions asked in this instrument, and the parent version of thi
 
 
 ::: {.callout-caution collapse="true" title="Release notes: `ph_p_sds`"}
-[**SDS summary score (6.0)**](../release_notes/6_0.qmd#sleep-disturbance-scale-for-children-sds-summary-scores): All summary scores were re-calculated for the 6.0 data release. However, SDS summary scores were not included in the development plan and were therefore not ready in time for this release.
+**6.1**
+
+-   [**SDS summary scores added**](../release_notes/6_1.qmd#sleep-disturbance-scale-for-children): Sleep Disturbance Scale for Children (SDS) summary scores have been added to the `ph_p_sds` table.
+
+**6.0**
+
+-   [**SDS summary score**](../release_notes/6_0.qmd#sleep-disturbance-scale-for-children-sds-summary-scores)
 :::
 
 
@@ -571,7 +607,9 @@ Multi-Informant analysis - some items in the Parent KSADS Background Survey have
 | `ph_y_sex__so_kbi_001__02` | `ph_p_sex__so_kbi_001__01` |
 
 ::: {.callout-caution collapse="true" title="Release notes: `ph_p_sex`"}
-[**New domain classification (6.0)**](../release_notes/6_0.qmd#sexual-behavior-orientation-and-communication): In the 6.0 data release, variables related to sexual behavior, orientation and communication are available in the `Physical Health` domain, under the `Sex` subdomain.
+**6.0**
+
+- [**New domain classification**](../release_notes/6_0.qmd#sexual-behavior-orientation-and-communication): In the 6.0 data release, variables related to sexual behavior, orientation and communication are available in the `Physical Health` domain, under the `Sex` subdomain.
 :::
 
 **Key reference:** `r full_cite("sales2008")`

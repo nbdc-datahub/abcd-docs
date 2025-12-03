@@ -15,7 +15,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'nt'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_0_nt.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_nt.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 ::: {.callout-important collapse="true" title="Responsible use warning: Novel Technologies domain general" #use-nt}
 Wearable devices, including Fitbit, use optical technology to detect blood volume changes to indicate pulse rate, which is important for the heart rate, sleep, and some of the physical activity output measures derived from Fitbit. Some studies (e.g. @colvonen2020) suggest this is less accurate for darker skin tones and accuracy may be influenced by higher body mass index and tattoos in the location of sensor placement. ABCD collects height and weight, from which BMI can be derived. ABCD does not collect information about skin tone. These potential limitations should be considered.
@@ -64,7 +64,9 @@ Ksana Health provided the following data lineage diagrams to detail their proces
 **Modifications since initial administration:** iPhone keyboard data collection was collected through 10/19/22, with cessation of keystrokes data collection due to participant burden with the third-party keyboard on iPhones. Beginning 4/10/23, ABCD-EARS resumed collecting iPhone screen on/off data; keystroke data did not resume collection at this time. Future data releases will include iPhone app use information.
 
 ::: {.callout-caution collapse="true" title="Release notes: `nt_y_ears`"}
-[**Improved algorithms (6.0)**](../release_notes/6_0.qmd#ears): For ABCD Release 6.0, Ksana Health reprocessed all participant features using improved algorithms.
+**6.0** 
+
+-   [**Improved algorithms**](../release_notes/6_0.qmd#ears): For ABCD Release 6.0, Ksana Health reprocessed all participant features using improved algorithms.
 :::
 
 
@@ -163,7 +165,9 @@ Includes variables: `nt_y_stq__screen__wkdy__hr_001__01`, `nt_y_stq__screen__wkd
 *Asked only for weekend days.
 
 ::: {.callout-caution collapse="true" title="Release notes: `nt_y_stq`"}
-[**Non-integer value codes (6.0)**](../release_notes/6_0.qmd#screen-time-questionnaire): There are variables that contain non-integer value codes for categorical levels. These non-integers prevents these variables to be exported to Stata files when exporting data from [DEAP](https://abcd.deapscience.com).
+**6.0** 
+
+-    [**Non-integer value codes**](../release_notes/6_0.qmd#screen-time-questionnaire): There are variables that contain non-integer value codes for categorical levels. These non-integers prevents these variables to be exported to Stata files when exporting data from [DEAP](https://abcd.deapscience.com).
 :::
 
 **Key reference:** `r full_cite("andreassen2012")`
@@ -256,9 +260,10 @@ The description of Fitbit Physical Activity (Daily) are [here](#fitbit-physical-
 
 
 ::: {.callout-caution collapse="true" title="Release notes: `Fitbit raw data`"}
-[**Summary scores (6.0)**](../release_notes/6_0.qmd#fitbit-summary-scores): Fitbit summary scores will not be released with the 6.0 data due to calculation errors.
+**6.0**
 
-[**File data errors (6.0)**](../release_notes/6_0.qmd#fitbit-raw-data-files): Please note that the raw Fitbit data files being released as individual-level csv files in the file-based data contain some known issues.
+-   [**Summary scores**](../release_notes/6_0.qmd#fitbit-summary-scores): Fitbit summary scores will not be released with the 6.0 data due to calculation errors.
+-   [**File data errors**](../release_notes/6_0.qmd#fitbit-raw-data-files): Please note that the raw Fitbit data files being released as individual-level csv files in the file-based data contain some known issues.
 :::
 
 ### Details of data in Physical Activity raw data files

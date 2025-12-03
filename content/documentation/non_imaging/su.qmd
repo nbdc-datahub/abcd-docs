@@ -14,7 +14,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'su'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_0_su.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_su.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 For additional information about 1-year to 3-year follow-up substance use methods and Baseline to 3-year follow-up substance use base rates, see @sullivan2022
 
@@ -719,9 +719,9 @@ For additional information about 1-year to 3-year follow-up substance use method
 
 **Follow-up (Longitudinal) sessions:**
 
-- The web-based TLFB calendar interview was used to measure *"detailed"* patterns of use (*past 12 months* *from their most recent annual visit*) and *"estimated"* (`est`) patterns of use for remaining months since the youth's last session for each substance category (in standard units; see above for list). Due to variability in length between sessions, each youth will have a different period the TLFB covers.
-- **Detailed TLFB** interview methods go through the 12 month calendar week by week and yield summary variables that include total standard dose, total days substance used, max dose (in standard units in a single day), average standard doses on use days, total standard doses on weekend, total standard doses on weekdays, and last date of use. It is recommended that scientists primarily utilize the detailed TLFB data when examining dose-dependent relationships, as reliability and validity data for the TLFB generally does not go beyond a 12-month period. For 6.0 data release, 3-month and 1-month data is also available; this may be most closely linked in time with other endophenotype data.
-- The **estimated TLFB** period is based on their average monthly pattern and summary variables for each substance include total standard doses.
+- The web-based TLFB calendar interview was used to measure *"detailed"* patterns of use (*past 12 months from their most recent annual visit* ***or*** *less if last annual visit was less than 12 months*) and *"estimated"* (`est`) patterns of use for remaining months beyond 12 months since the youth's last session for each substance category (in standard units; see above for list). Due to variability in length between sessions, each youth will have a different period the TLFB covers.
+- **Detailed TLFB** interview methods go through the 12 month calendar since their last annual visit week by week and yield summary variables that include total standard dose, total days substance used, max dose (in standard units in a single day), average standard doses on use days, total standard doses on weekend, total standard doses on weekdays, and last date of use. It is recommended that scientists primarily utilize the detailed TLFB data when examining dose-dependent relationships, as reliability and validity data for the TLFB generally does not go beyond a 12-month period. For 6.0 data release, 3-month and 1-month data is also available; this may be most closely linked in time with other endophenotype data.
+- The **estimated TLFB** is for periods beyond the past year for times when their last annual visit occurred longer than 12 months prior and is based on their average monthly pattern and summary variables for each substance including total standard doses.
 - **Cumulative TLFB** variables (`cum`) for total dose are calculated across the detailed and estimated (`est`) variables for total standard dose for each drug category.
 - Use of estimated and cumulative data is to account for cumulative effects and to ensure proper grouping of use (i.e., full cumulative use between sessions, and lifetime use); due to time constraints and reliability concerns, detailed dose per occasion, co-use days, max dose, and average dose per occasion were not measured so this remote substance use pattern data is more limited.
 - There is a grand summary variable, `su_y_tlfb_ud` that denotes the number of events per day across all substances pooled together. Users are not encouraged to use this, unless a very raw summary variable reflecting any substance use is needed as a covariate. 
@@ -798,12 +798,17 @@ For additional information about 1-year to 3-year follow-up substance use method
 - Note: Inhalants were initially capped at 24, but extended to a max of 96 on 7/16/24.
 
 ::: {.callout-caution collapse="true" title="Release notes: `su_y_tlfb`"}
-[**Misc corrections (6.0)**](../release_notes/6_0.qmd#tlfb-corrections): There were a few corrections that have been made ahead of the 6.0 release.
+**6.1** 
 
-- Repeat use mis-scoring
-- Occasions as a dose
-- Estimate vs detailed use periods
-- Max daily units
+-   [**3 month score correction**](../release_notes/6_1.qmd#timeline-followback): All scores in the `su_y_tlfb` table using the "past 3 months" (`__3mo`) time frame were corrected to properly account for 90 days from the time of administration rather than the 60 used in 6.0 data.
+
+**6.0**
+
+-   [**Misc corrections**](../release_notes/6_0.qmd#tlfb-corrections): There were a few corrections that have been made ahead of the 6.0 release.
+    -   Repeat use mis-scoring
+    -   Occasions as a dose
+    -   Estimate vs detailed use periods
+    -   Max daily units
 :::
 
 

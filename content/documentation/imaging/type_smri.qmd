@@ -14,7 +14,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("sub_domain == 'Structural MRI'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/imaging/6_0_mr_y_smri.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+[Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_smri.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 The Structural MRI (SMRI) data conatins T~1~-weighted (T~1~w) 3D structural images and T~2~-weighted (T~2~w) 3D structural images.
 

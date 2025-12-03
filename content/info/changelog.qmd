@@ -4,6 +4,24 @@ order: 3
 ---
 
 
+# 6.1.0
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2025-12-03<br>
+**URL:** [https://docs.abcdstudy.org/v/6_1_0](https://docs.abcdstudy.org/v/6_1_0)
+</span>
+
+-   **General Changes**
+    -   Updated 6.1 pdfs for download below the domain tables
+-   **Release Notes**
+    -   Added the 6.1 Release Notes pertaining to the 6.1 data release
+-   **FAQ**
+    -   Added question/answer regarding the recommendations for cell size in the FAQ section
+-   **ABCC**
+    -   Updated ABCC with the changes pertaining to 6.1 data release
+
+
+
+
 # 6.0.3
 <span style="font-size: 0.85em; color: gray;">
 **Date:** 2025-10-16<br>

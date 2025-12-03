@@ -1,14 +1,8 @@
 -   **General Changes**
-    -   All domain overview tables are now available to download as a pdf
--   **Tools**
-    -   CMIG Pipeline documentation has been added
--   **Curation & Structure**
-    -   Updated the curation standard's session/event identifier table to now include mapping to prior release naming where applicable
+    -   Updated 6.1 pdfs for download below the domain tables
 -   **Release Notes**
-    -   A downloadable curation brochure pdf is available for users
-    -   Added release note regarding `ab_g_dyn__cohort_income__hhold` summary scores levels
-    -   Added release note regarding time point mapping errors in the Domain Overview tables
-    -   Added release note regarding known issues in Neurocognition (`nc_y_lmt` and `nc_y_nihtb`)
-    -   Added release note with regard to `ph_y_bp` summary scores
-    -   Added release note with regard to error in `mh_y_bpm` and `mh_t_bpm` tables
-    -   Added release note with regard to `mh_p_asr` table
+    -   Added the 6.1 Release Notes pertaining to the 6.1 data release
+-   **FAQ**
+    -   Added question/answer regarding the recommendations for cell size in the FAQ section
+-   **ABCC**
+    -   Updated ABCC with the changes pertaining to 6.1 data release

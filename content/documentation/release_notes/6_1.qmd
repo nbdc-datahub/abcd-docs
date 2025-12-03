@@ -1,0 +1,211 @@
+---
+title: "6.1 data release"
+lightbox: true
+order: 1
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+
+metadata_diff <- readr::read_csv(
+  "../../assets/tbl/documentation/release_notes/diff_metadata_6_1.csv"
+)
+
+data_diff_overview <- readr::read_csv(
+  "../../assets/tbl/documentation/release_notes/diff_data_overview_6_1.csv"
+)
+```
+
+# Overview
+
+The 6.1 data release addresses data-related and other minor issues from the 6.0 data release. All [6.0 data release notes](https://docs.abcdstudy.org/latest/documentation/release_notes/6_0.html) remain available, and researchers working with 6.1 data should review both the 6.0 and 6.1 notes to ensure they have all relevant information, as this page only covers updates specific to the 6.1 data release. Although the sample is the same across both releases, several updates were made to the data and data dictionary. Below are diff files showing all metadata changes as well as an overview of the data changes made in the 6.1 release. Detailed information about data level changes made in the 6.1 data release are available in the [internal release notes](https://abcd-docs-private.lassoinformatics.com/), which are available to authenticated users on the [NBDC Data Hub](https://www.nbdc-datahub.org).
+
+::: {.callout-note collapse="true" title="6.1 Metadata Diff File"}
+```{r}
+metadata_diff |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+
+::: {.callout-note collapse="true" title="6.1 Data Diff Overview"}
+```{r}
+data_diff_overview |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+
+For details about the dataset's curation and structure, which were updated ahead of the 6.0 data release, please refer to the  [Curation & structure](https://docs.abcdstudy.org/latest/documentation/curation/structure.html) documentation page. A general overview of the curation, structure, and release dataset is available below.
+
+::::: {layout-ncol="2"}
+::: {style="display: flex; justify-content: center;"}
+![](../../assets/img/documentation/release_notes/release_6_brochure_1){width="110%" style="border: 2px solid black; border-radius: 5px;" data-lightbox="img"}
+:::
+
+::: {style="text-align: center;"}
+![](../../assets/img/documentation/release_notes/release_6_brochure_2){width="110%" style="border: 2px solid black; border-radius: 5px;" data-lightbox="img"}
+:::
+:::::
+
+[Download: Linear format (above)](../../assets/files/documentation/release_notes/release_6_curation_brochure.pdf){style="display: block; text-align: right; margin-top: 4px; color: ##0000FF;"} [Download: Trifold brochure format](../../assets/files/documentation/release_notes/release_6_curation_trifold.pdf){style="display: block; text-align: right; margin-top: 4px; color: ##0000FF;"}
+
+# Sample
+
+The 6.1 data release includes the same sample of participants and events as the 6.0 data release.
+
+The 6.1 data release includes data from *11,868 participants*, representing the full ABCD cohort (N = 11,880) except for 12 participants who withdrew consent to share their data, and *13 events*. Data are considered complete through the 4-year follow-up and nearly complete for the 5-year follow-up, with varying numbers of missed visits per event. The 5.5-year and 6-year follow-up events were still ongoing when the data were frozen (cutoff date: January 15, 2024), so these events include only participants who had assented by the cutoff date. No data are included from events after the 6-year follow-up to ensure sufficient event completion.
+
+The following table shows the number of participants per *core study* event[^1]:
+
+[^1]: Please note that the event identifier has been changed to be compatible with the BIDS standard; read more [here](../curation/standards.qmd#identifier-columns).
+
+| **Session/event ID** | **Session/event label** | **n** |
+|----------------------|-------------------------|-------|
+| ses-00S              | Screener                | 11868 |
+| ses-00A              | Baseline                | 11868 |
+| ses-00M              | 0.5 Year                | 11389 |
+| ses-01A              | 1 Year                  | 11219 |
+| ses-01M              | 1.5 Year                | 11084 |
+| ses-02A              | 2 Year                  | 10973 |
+| ses-02M              | 2.5 Year                | 10256 |
+| ses-03A              | 3 Year                  | 10450 |
+| ses-03M              | 3.5 Year                | 9574  |
+| ses-04A              | 4 Year                  | 9739  |
+| ses-04M              | 4.5 Year                | 7164  |
+| ses-05A              | 5 Year                  | 8885  |
+| ses-05M              | 5.5 Year                | 6323  |
+| ses-06A              | 6 Year                  | 5056  |
+
+The ABCD 6.1 data release also includes data from associated substudies—Social Development, Endocannabinoids, Hurricane Irma, COVID-19, and MR Spectroscopy. Some of these substudy assessments are done during the same visits as the main study, others have their own, independent event structure.
+
+The following table shows the number of participants with data per *substudy* event:
+
+| **Substudy**       | **Session/event ID** | **Session/event label** | **n** |
+|--------------------|----------------------|-------------------------|-------|
+| COVID-19           | ses-C01              | COVID Wave 1            | 11187 |
+| COVID-19           | ses-C02              | COVID Wave 2            | 11208 |
+| COVID-19           | ses-C03              | COVID Wave 3            | 11153 |
+| COVID-19           | ses-C04              | COVID Wave 4            | 11107 |
+| COVID-19           | ses-C05              | COVID Wave 5            | 11051 |
+| COVID-19           | ses-C06              | COVID Wave 6            | 10842 |
+| COVID-19           | ses-C07              | COVID Wave 7            | 10854 |
+| Social Development | ses-S01              | SDev Wave 1             | 2426  |
+| Social Development | ses-S02              | SDev Wave 2             | 2129  |
+| Social Development | ses-S03              | SDev Wave 3             | 1942  |
+| Social Development | ses-S04              | SDev Wave 4             | 1842  |
+| Social Development | ses-S05              | SDev Wave 5             | 1384  |
+
+::: {#event-id .callout-note title="Event identifier mapping"}
+Mapping to the event identifiers used in previous releases can be found in [Curation standards](../curation/standards.qmd#event-id)
+:::
+
+# Core domains
+
+## ABCD (General)
+
+### Household income scores levels labelling error fixed
+
+A levels labeling error was identified in summary scores in 6.0 data. This error has been corrected in the [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#abcd-static-variables-general-) package and the levels table is now corrected in the 6.1 data release.
+
+-   `ab_g_dyn__cohort_income__hhold__3lvl`\
+-   `ab_g_dyn__cohort_income__hhold__6lvl`
+
+Response labels were incorrectly assigned:\
+- `777 = Don't know`\
+- `999 = Decline to answer`
+
+They should have been assigned, and are now correctly assigned in the 6.1 data:\
+- `777 = Decline to answer`\
+- `999 = Don’t know`
+
+If you are using summary score data downloaded from the 6.0 data release, please reassign levels labels accordingly. 
+
+### ABCD Dynamic Variable Labels
+
+Variable labels were updated to be more accurate across a variety of items in the `ab_g_dyn` tables.
+
+### Site Transfers
+
+Site ID, `ab_g_dyn__design_site`, was corrected for 2 participants with site transfers that had been missed in the 6.0 data release.
+
+## Friends, Family, & Community
+
+### Values Scale Summary Scores
+
+The `familism` subscale scores were missing in the 6.0 data release and have been added to the `fc_y_vs` and `fc_p_vs` tables.
+
+## Genetics
+
+### Genetic Relatedness Matrix
+
+The genetic relatedness matrix has been added to the file-based data. The corresponding changes have also been documented on the [Genetics](../non_imaging/gn.qmd) documentation page.
+
+## Mental Health
+
+### Brief Problem Monitor
+
+There was an issue with the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect mapping table being used in the 6.0 data release. The mapping table and t-score data have been corrected in the 6.1 data release.
+
+### Family History
+
+Variable labels were updated to be more accurate in the `mh_p_famhx__halluc` subscale to reflect the inclusion of both hallucinations and delusions in these items.
+
+## Neurocognition
+
+### Emotional Stroop Task
+
+Reaction time summary data were corrected based on the removal of two extreme outliers in the Emotional Stroop Task `nc_y_est` table.
+
+### NIH Toolbox
+
+The `dtt` and `age` variables were removed for the `nc_y_nihtb__comp` subscales as those scales are not their own task, but rather combination scores of other tasks in the NIH Toolbox and thus do not have their own unique time of administration.
+
+## Physical Health
+
+### Medications Inventory
+
+The variables `ph_p_meds_001__v01` and `ph_p_meds_001__v02` were collapsed into a single variable in the dataset due to congruency of the items.
+
+### Anthropometrics
+
+The levels values in the `ph_p_anthr__height` were remapped such that if a participant selected the response option "5 feet" that value is now coded as a `5` in the dataset whereas in 6.0 the values did not directly correspond in this way.
+
+### Munich Chronotype Questionnaire
+
+The algorithm in [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#abcd-static-variables-general-) for the `ph_y_mctq` summary score items ending with `__sleep__mid__24_t` was updated. Subsequently Relative Social Jet Lag, Absolute Jet Lag, and Chronotype scores were affected by these changes and were re-calculated with the updated values of the corrected scores.
+
+### Sleep Disturbance Scale for Children
+
+Sleep Disturbance Scale for Children (SDS) summary scores have been added to the `ph_p_sds` table.
+
+## Substance Use
+
+### Timeline Followback
+
+All scores in the `su_y_tlfb` table using the "past 3 months" `__3mo` time frame were corrected to properly account for 90 days from the time of administration rather than the 60 incorrectly used in 6.0 data.
+
+## Imaging Data
+
+### Changes to task fMRI behavioral performance and inclusion flags for SST (stop signal task)
+
+The behavioral performance flag for SST (`mr_y_tfmri__sst__beh__qc_indicator`) has been changed from `0` (fail) to `1` (pass) for 3524 participant-events. The criteria for acceptable behavioral performance for SST were adjusted to allow for as few as 280 "Go" trials instead of the previously required 300 Go trials. This change was made to allow for the inclusion of participant-events in which the SST runs contained "Stop too early" (STE) trials, which are defined as trials in which the participant made their button press response during a stop trial before the stop signal would have been presented. In the version of the SST task used since August 2021, when STE trials occurred, the stop signal was then not presented on that trial, and the subsequent trial was replaced by another "Stop" trial, thus reducing the number of Go trials. Of all participant-events with SST behavioral results in the 6.1 release, \~85% of participant-events have exactly 300 Go trials and over \~96% have at least 295 Go trails. For time series modeling, STE trials are currently modeled as a separate condition of no interest. In the upcoming 7.0 release, STE trials will be recoded as Go trials.
+
+As a consequence of the change to the behavioral performance flag noted above, the imaging inclusion flag for SST (`mr_y_qc__incl__tfmri__sst_indicator`) has also been changed from `0` (exclude) to `1` (include) for 3152 participant-events. Note that this number is less than the number of participant-events with changed performance flag due to additional reasons for exclusion.
+
+### ABCD-BIDS Community Collection (ABCC)
+
+The ABCD-BIDS Community Collection (ABCC) has been updated as well. To learn more, see the [ABCC documentation](../imaging/abcc_start_page.qmd).

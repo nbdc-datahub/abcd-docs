@@ -7,6 +7,12 @@ execute:
   echo: false
 
 website:
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: The ABCD 6.1 Data has been released, and the Data Documentation has been updated with the 6.1 Data Release Notes.
+    type: primary
+    position: below-navbar
   reader-mode: false
   google-analytics: "G-SB9F54HS16"
   favicon: "assets/img/favicon/favicon.ico"
@@ -33,7 +39,7 @@ website:
         - text: "Substudies"
           file: documentation/substudies/covid.qmd
         - text: "Release notes"
-          file: documentation/release_notes/6_0.qmd
+          file: documentation/release_notes/6_1.qmd
       - sidebar:tools
       
     right:
@@ -83,7 +89,7 @@ website:
               contents: documentation/imaging/data_*.qmd
               
             - section: "Scan types"
-              contents: documentation/imaging/type_*.qmd  
+              contents: documentation/imaging/type_[!q]*.qmd
               
             - section: "ABCD BIDS Community Collection (ABCC)"
               contents: documentation/imaging/abcc_*.qmd

@@ -14,7 +14,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("sub_domain == 'Quality Control'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/imaging/6_0_mr_y_qc.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+[Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_qc.pdf){style="display: block; text-align: right; margin-top: 4px;"}
 
 ::: {.callout-important collapse="true" title="Responsible Use Warning: Quality Control"#use-qc }
 
@@ -134,21 +134,27 @@ nBack tfMRI series meets all criteria for inclusion (`mr_y_qc__incl__tfmri__nbac
 
 SST tfMRI series meets all criteria for inclusion (`mr_y_qc__incl__tfmri__sst_indicator = 1`).
 
-| **SST Criteria**                                       | **Instrument**                                  | **Element value**                                                                                                         |
-|--------------------------------------------------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| *SST tfMRI series passed rawQC*                        | `r link_table("mr_y_qc__raw__tfmri__sst")`      | `mr_y_qc__raw__tfmri__sst__pass__qc__comp_count > 0`                                                                      |
-| *T~1~ series passed rawQC*                             | `r link_table("mr_y_qc__raw__smri__t1")`        | `mr_y_qc__raw__smri__t1__pass__qc__comp_count > 0`                                                                        |
-| *SST behavior passed*                                  | `r link_table("mr_y_tfmri__sst__beh")`          | `mr_y_tfmri__sst__beh__qc_indicator = 1`                                                                                  |
-| *SST task had no glitch*                               | `r link_table("mr_y_tfmri__sst__beh")`          | `mr_y_tfmri__sst__beh__coderr_indicator = 0`                                                                              |
-| *SST degrees of freedom \> 200*                        | `r link_table("mr_y_qc__mot")`                  | `mr_y_qc__mot__tfmri__sst_dof > 200`                                                                                      |
-| *SST E-prime timing match OR ignore E- prime mismatch* | `r link_table("mr_y_qc__raw__tfmri__sst")`      | `mr_y_qc__raw__tfmri__sst__eprime__match_indicator = 1` *OR* `mr_y_qc__raw__tfmri__sst__eprime__tdiff__ign_indicator = 1` |
-| *fMRI B0 unwarp available*                             | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__b0__unwarp_indicator = 1`                                                                      |
-| *FreeSurfer QC not failed*                             | `r link_table("mr_y_qc__post__man__fsurf")`     | `mr_y_qc__post__man__fsurf_score != 0`                                                                                    |
-| *fMRI manual post-processing QC not failed*            | `r link_table("mr_y_qc__post__man__fmri")`      | `mr_y_qc__post__man__fmri_score != 0`                                                                                     |
-| *fMRI registration to T~1~w*                           | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__rigid_score < 19`                                                                              |
-| *fMRI dorsal cutoff score*                             | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__fov__cutoff__dorsal_max < 65`                                                                  |
-| *fMRI ventral cutoff score*                            | `r link_table("mr_y_qc__post__aut")`            | `mr_y_qc__post__aut__fmri__fov__cutoff__ventral_max <= 60`                                                                |
-| *Derived results exist*                                | `r link_table("mr_y_tfmri__sst__cgvfx__aseg")`  | `mr_y_tfmri__sst__cgvfx__aseg__cwm__lh_beta != NA`                                                                        |
+::: {.callout-caution collapse="true" title="Release notes: `mr_y_tfmri__sst`"}
+**6.1**
+
+-   [**Stop Signal Task**](../release_notes/6_1.qmd#changes-to-task-fmri-behavioral-performance-and-inclusion-flags-for-sst-stop-signal-task): The behavioral performance flag for SST (`mr_y_tfmri__sst__beh__qc_indicator`) has been changed from 0 (fail) to 1 (pass) for some participant-events. Consequently, the imaging inclusion flag for SST (`mr_y_qc__incl__tfmri__sst_indicator`) has also been changed from 0 (exclude) to 1 (include) for some participant-events.
+:::
+
+| **SST Criteria** | **Instrument** | **Element value** |
+|----|----|----|
+| *SST tfMRI series passed rawQC* | `r link_table("mr_y_qc__raw__tfmri__sst")` | `mr_y_qc__raw__tfmri__sst__pass__qc__comp_count > 0` |
+| *T~1~ series passed rawQC* | `r link_table("mr_y_qc__raw__smri__t1")` | `mr_y_qc__raw__smri__t1__pass__qc__comp_count > 0` |
+| *SST behavior passed* | `r link_table("mr_y_tfmri__sst__beh")` | `mr_y_tfmri__sst__beh__qc_indicator = 1` |
+| *SST task had no glitch* | `r link_table("mr_y_tfmri__sst__beh")` | `mr_y_tfmri__sst__beh__coderr_indicator = 0` |
+| *SST degrees of freedom \> 200* | `r link_table("mr_y_qc__mot")` | `mr_y_qc__mot__tfmri__sst_dof > 200` |
+| *SST E-prime timing match OR ignore E- prime mismatch* | `r link_table("mr_y_qc__raw__tfmri__sst")` | `mr_y_qc__raw__tfmri__sst__eprime__match_indicator = 1` *OR* `mr_y_qc__raw__tfmri__sst__eprime__tdiff__ign_indicator = 1` |
+| *fMRI B0 unwarp available* | `r link_table("mr_y_qc__post__aut")` | `mr_y_qc__post__aut__fmri__b0__unwarp_indicator = 1` |
+| *FreeSurfer QC not failed* | `r link_table("mr_y_qc__post__man__fsurf")` | `mr_y_qc__post__man__fsurf_score != 0` |
+| *fMRI manual post-processing QC not failed* | `r link_table("mr_y_qc__post__man__fmri")` | `mr_y_qc__post__man__fmri_score != 0` |
+| *fMRI registration to T~1~w* | `r link_table("mr_y_qc__post__aut")` | `mr_y_qc__post__aut__fmri__rigid_score < 19` |
+| *fMRI dorsal cutoff score* | `r link_table("mr_y_qc__post__aut")` | `mr_y_qc__post__aut__fmri__fov__cutoff__dorsal_max < 65` |
+| *fMRI ventral cutoff score* | `r link_table("mr_y_qc__post__aut")` | `mr_y_qc__post__aut__fmri__fov__cutoff__ventral_max <= 60` |
+| *Derived results exist* | `r link_table("mr_y_tfmri__sst__cgvfx__aseg")` | `mr_y_tfmri__sst__cgvfx__aseg__cwm__lh_beta != NA` |
 
 Automated post-processing QC metrics were statistically characterized in association with manual QC variables from ABCD Release 3.0. The statistical association between manual and automated QC variables was used to guide the identification of automated QC variables that were predictive of manual QC scores. The pairwise analysis of manual-vs-auto QC scores lead to automated QC variable thresholds needed to identify anomalous scans with desired false alarm ratings. For the variables listed below, the thresholds are listed to achieve conservatively low false alarm ratings of 0.05%.
 

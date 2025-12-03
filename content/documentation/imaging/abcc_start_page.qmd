@@ -38,7 +38,7 @@ ABCC data has already powered impactful neuroscience research, including:
 
 Over 90 studies have been published referencing the ABCC. You can find a list of them and formatted reference files [here](https://drive.google.com/drive/folders/1OrN2IAAQIIgLVx_D_qmABoHuW_yqppZf?usp=sharing). 
 
-## 📦 What’s in Release 3.0.0 (2025-06-26)?
+## 📦 What’s in Release 3.1.0 (2025-12-01)?
 
 ### Core Data
 
@@ -46,6 +46,8 @@ Over 90 studies have been published referencing the ABCC. You can find a list of
 - **[abcd-hcp-pipeline (v0.1.4)]((https://doi.org/10.5281/zenodo.2587210)) derivatives** (volume + surface data, [HCP-style processing](https://doi.org/10.1016/j.neuroimage.2013.04.127) with BIDS formatted derivatives)
 - **FreeSurfer 5.3.0-HCP** segmentation statistics + surface morphometrics
 - **[QSIPrep](https://qsiprep.readthedocs.io/en/latest/index.html)**-processed diffusion-weighted MRI
+- **[QSIRecon](https://qsirecon.readthedocs.io/en/latest/)**-reconstruction derivatives generated from preprocessed diffusion-weighted MRI
+- **[QSIRecon-ModelArray](https://github.com/PennLINC/ModelArray)**-Mean Diffusivity .h5 and .csv files for voxelwise modeling
 
 ### At-A-Glance: Data Availability
 
@@ -60,18 +62,23 @@ Over 90 studies have been published referencing the ABCC. You can find a list of
 
 ### New Data
 
-- Additional inputs and derivatives for **Years 2, 4, and 6**
-- Expanded **QSIPrep** diffusion derivatives
-- New `sessions.tsv` files within subject directories with:
-    - Session demographics & acquisition timestamps
-    - Updated scanner software metadata
-    - Inclusion of QC columns described in [Automated QA section](type_qc.qmd)
+- **QSIRecon** reconstruction derivatives generated from preprocessed diffusion MRI data using the following reconstruction specifications:
+    - **Diffusion tensor modeling**: DSI Studio (all b-values), TORTOISE (b < 1200), DIPY (as part of DKI)
+    - **Diffusion kurtosis modeling**: DIPY
+    - **Q-space imaging**: DSI Studio 
+    - **NODDI models**: AMICO
+    - **Tractography**: DSI Studio AutoTrack on MSMT FODs (from MRtrix3)
+
+- **QSIRecon-ModelArray** - A single HDF5 (.h5) file and corresponding CSV file containing Mean Diffusivity (MD) values from all subjects in the current QSIRecon output. These files enable efficient voxelwise model fitting in R using the **[ModelArray package](https://github.com/PennLINC/ModelArray)**, allowing users to compute and write model-fitted parameters, p-values, and R² maps back into NIfTI files.
 
 ### 🔧 Key Revisions
 
-- Updated **abcd-hcp-pipeline v0.1.4** (see changes [here](https://github.com/DCAN-Labs/abcd-hcp-pipeline/releases/tag/v0.1.4)): More BIDS-compliant outputs, cleaner directory structure, an updated ExecutiveSummary for QC, and improved BOLD bandpass filtering in DCANBoldProc.
-- Fixed incorrect AP/PA labeling in subset of GE dv26 subjects. 
-- Updated **[QSIPrep v0.21.4](https://qsiprep.readthedocs.io/en/stable/)** (see changes [here](https://github.com/PennLINC/qsiprep/releases/tag/0.21.4)): Critical fixes to distortion correction and QC metric calculation.
+- Resolved critical issues in abcd-hcp-pipeline derivatives:
+    - **Missing Volume-Based Resting-State Data (Runs 3–8)**: Restored missing data by re-executing the file-mapper across all participants
+    - **Missing nBack Filtered Concatenated dtseries**: Generated missing files using the using [abcc_concat_filtered_dtseries_generator tool](https://github.com/DCAN-Labs/abcc_concat_filtered_dtseries_generator) for all participants.
+    - **Timepoint Mismatch Resolution**: Resolved timepoint mismatches between filtered dtseries ( `*_task-*_bold_desc-filtered_timeseries.dtseries.nii`)and motion mask files ( `*_task-*_desc-filtered_motion_mask.mat`)( N ~ 746 ) [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/release_notes/imaging/6.0_imaging_abcc.html)
+    - **Duplicate Functional Runs**: Reprocessed 861 cases through complete BIDS conversion and abcd-hcp-pipeline re-execution [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/release_notes/imaging/6.0_imaging_abcc.html)
+
 
 **Important Note: Users of earlier QSIPrep derivatives are encouraged to reprocess analyses to account for the distortion correction fix.**
 
@@ -85,25 +92,44 @@ All ABCC processing pipelines have undergone independent peer review under the [
 
 - **Structural & functional MRI** processed through **[fMRIPrep](https://fmriprep.org)** and **[XCP-D](https://xcp-d.readthedocs.io)**
 - **Task fMRI pipeline results**
-- **[QSIRecon](https://qsirecon.readthedocs.io)** derivatives for DWI
 - **Individualized network maps** [@hermosillo2024]
 
 ## Known Issues (Temporary)
 
-::: {.callout-caution title="Missing Volume-Based Resting-State Run Files (Runs 3–8)"}
-Due to a transfer issue, some minimally processed, volume-based resting-state data are missing for runs 3–8 (mainly affecting data from Years 4 and 6). **Surface-based CIFTI data — used by most researchers — are fully available and unaffected.** Affected files include:
-
-- `*_task-rest_run-{3-8}_motion.tsv`
-- `*_task-rest_run-{3-8}_space-MNI_bold.nii.gz`
-- `*_task-rest_run-{3-8}_desc-filteredincludingFD_motion.tsv`
-
-These files will be restored in the next release. In the meantime, users who require these files can regenerate them from the concatenated motion files using the [abcd-abcc_motion_reg_generator](https://github.com/nbdc-datahub/abcd-abcc_motion_reg_generator) utility (see its documentation for details).
+::: {.callout-caution title="Missing Cases from Duplicate Run Reprocessing"}
+During reprocessing of duplicate functional runs, four cases failed due to out-of-memory errors and are not included in the current release. Derivatives for these cases remain available in previous releases and can be accessed if needed. [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/release_notes/imaging/6.0_imaging_abcc.html)
 :::
 
 ## Release History
 
 ::: {.callout-caution title="Release 3.0 changes"}
 The below release history reflects releases previously available through the [NIMH Data Archive (NDA)](https://nda.nih.gov/). Starting with Release 3.0.0 (2025-06-26), the ABCC is made available through the [NBDC Data Hub](https://www.nbdc-datahub.org/) and does not reflect revisions made to the NDA repository. The release history for versions 2.0.0 and below are provided below for legacy purposes. Please visit the [ABCC Archival Data Release Documentation](https://nda-abcd-collection-3165.readthedocs.io) for the archived release documentation associated wih the data available for prior releases via the NDA.  
+:::
+
+::: {.callout-note collapse="true" title="Release 3.0.0 (2025-06-26)"}
+**REVISIONS**
+
+1. **Updated abcd-hcp-pipeline v0.1.4:**: Enhanced BIDS compliance, streamlined directory structure, updated ExecutiveSummary QC, and improved BOLD bandpass filtering. (see changes [here](https://github.com/DCAN-Labs/abcd-hcp-pipeline/releases/tag/v0.1.4)) 
+1. **Fixed incorrect AP/PA labeling** in subset of GE dv26 subjects.
+1. **Updated QSIPrep v0.21.4** (see changes [here](https://github.com/PennLINC/qsiprep/releases/tag/0.21.4)): Critical fixes to distortion correction and QC metric calculation.
+
+**Important Note**: Users of earlier QSIPrep derivatives are encouraged to reprocess analyses to account for the distortion correction fix. In the prior release, TOPUP was given a denoised b=0 image from the DWI series and a raw b=0 image in the opposite phase encoding direction, resulting in inaccurate distortion correction for a subset of subjects. The updated version uses unprocessed b=0 images in both phase encoding directions.
+
+**NEW ADDITIONS**
+
+1. Additional inputs and derivatives for **Years 2, 4, and 6**
+1. Expanded **QSIPrep** diffusion derivatives
+1. New `sessions.tsv` files with session demographics, acquisition timestamps, scanner metadata, and automated QC metrics. Structural QA columns include BOLD brain coverage Pass/Fail indicators (`bc_(task)_run-(run_num)`) based on 10% threshold, coverage percentages (`bc_(task)_run-(run_num)_perc_vox`), and outlier counts for subcortical segmentation volumes (n=22) and cortical morphometry (n=333). Functional QA columns include Pass/Fail indicators for 5- and 10-minute connectivity matrix generation (`5min_pconn_<atlas>`, `10min_pconn_<atlas>`) and corresponding outlier counts (n=61776) across five parcellation schemes: Gordon2014, HCP2016, Markov2012, Power2011, and Yeo2011 (all with FreeSurferSubcortical). Values of 888 indicate missing or ungenerated files, except for pconn Pass/Fail columns.
+
+**KNOWN ISSUES**
+
+1. **Missing Volume-Based Resting-State Run Files (Runs 3–8):** Due to a transfer issue, some minimally processed, volume-based resting-state data are missing for runs 3–8 (mainly affecting data from Years 4 and 6). **Surface-based CIFTI data — used by most researchers — are fully available and unaffected.** Affected files include:
+
+    - `*_task-rest_run-{3-8}_motion.tsv`
+    - `*_task-rest_run-{3-8}_space-MNI_bold.nii.gz`
+    - `*_task-rest_run-{3-8}_desc-filteredincludingFD_motion.tsv`
+
+    These files were restored in v3.1.0 patch release. Users who required these files could also regenerate them from the concatenated motion files using the [abcd-abcc_motion_reg_generator](https://github.com/nbdc-datahub/abcd-abcc_motion_reg_generator) utility (see its documentation for details).
 :::
 
 ::: {.callout-note collapse="true" title="Release 2.0.0 (2022-06-22)"}
