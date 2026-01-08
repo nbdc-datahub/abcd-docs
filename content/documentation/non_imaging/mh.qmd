@@ -46,6 +46,13 @@ When writing about mental health symptoms or diagnoses, it is important to use p
 
 **Measure description:** A self-report questionnaire designed to measure two motivational systems: the behavioral inhibition system (BIS), which corresponds to motivation to avoid aversive outcomes, and the behavioral activation system (BAS), which corresponds to motivation to approach goal-oriented outcomes. The scale has four subscales that were derived via factor analysis. One subscale corresponds to the BIS and has seven items that contribute to this score (e.g., "Criticism or scolding hurts me quite a bit"). The remaining three subscales correspond to three components of BAS (Drive, Reward Responsiveness, and Fun Seeking). BAS Drive measures the motivation to follow one's goals and has four items that contribute to this score (e.g., "When I want something I usually go all-out to get it"). BAS Reward Responsiveness measures the sensitivity to pleasant reinforcers in the environment and has four items that contribute to this score (e.g., "It would excite me to win a contest"). BAS Fun Seeking measures the  motivation to find novel rewards spontaneously has five items that contribute to this score (e.g., "I crave excitement and new sensations"). Participants respond to each item using a 4-point Likert scale: 1 (very true for me), 2 (somewhat true for me), 3 (somewhat false for me), and 4 (very false for me). 
 
+::: {.callout-caution collapse="true" title="Release notes: `mh_y_bisbas`"}
+**6.0**
+
+-   [**BIS/BAS Data Error**](../release_notes/6_0.qmd#behavioral-inhibition-behavioral-approach-system-scales): 
+There is an error with the summary score `mh_y_bisbas__bis_sum` computation as well as data for the variable `mh_y_bisbas__bis_005`.
+:::
+
 **Key references:** 
 
 - `r full_cite("carver1994")`
@@ -285,7 +292,37 @@ Some cases are coded as 1 (Present) for lifetime suicidality, but these should a
 
 **Measure description:** The Adverse Life Events Scale is a self- or proxy-administered, 25-item questionnaire that reports events experienced during the previous year over which the child had little or no control. The respondent reviews the list of items and indicates which events have occurred. If endorsed, follow-up questions are shown for additional details about the event.
 
-**Modifications since initial administration:** Some of the items in the Life Events Scale (e.g., school shooter, not having a home, hospitalization of parent, foster care, seeing or hearing people being shot, hit, etc. in the neighborhood) were added at later waves and are not available at earlier waves. 6 items were added at the 3 year follow-up (`026` to `031` ),  2 more items were added at the 4 year follow-up (`032`, 034), and 1 more item was added at the 6 year follow-up (`033`).   Items added at various years were continued in subsequent years. We provide multiple summary scores for life events that reflect these differing numbers of items.
+**Modifications since initial administration:** Some of the items in the Life Events Scale (e.g., school shooter, not having a home, hospitalization of parent, foster care, seeing or hearing people being shot, hit, etc. in the neighborhood) were added at later waves and are not available at earlier waves. We provide multiple summary scores for life events that reflect these differing numbers of items. Below is the bulleted description of changes in the Youth protocol from Year 1 to Year 9.
+
+Youth 1-year: first administration of measure
+
+Youth 3-year, the following six questions were added
+
+-   In your life time - Parent or caregiver deported?
+-   In your life time - Parent or caregiver hospitalized?
+-   In your life time - You were placed in foster care?
+-   In your life time - Saw or heard someone getting hit, slapped, punched, or beaten up in your school or neighborhood?
+-   In your life time - Saw or heard someone being shot at (but not actually wounded) in your school or neighborhood?
+-   In your life time - Had a lockdown at your school due to concerns about a school shooting or violence?
+
+Youth 4-year, one question was added
+
+-   In your life time - Do you know anyone who has attempted suicide
+
+Youth 6-year, one question was added
+
+-   In your life time - You were thrown out of your house
+
+[Download tables of changes (youth and parent)](../../assets/tbl/documentation/non_imaging/Parent_and_Youth_LEQ_tables_1YR_to_9YR_10.30.25.xlsx)
+
+::: {.callout-caution collapse="true" title="Release notes: `mh_y_ple`"}
+**6.0**
+
+-   [**Life events summary score error**](../release_notes/6_0.qmd#life-events-summary-scores): The Life Events summary scores should not be used, because there was an issue with the validation algorithm with missing data.
+
+-   [**Life events item coding error**](../release_notes/6_0.qmd#life-events-item-coding-error): The levels for the item `mh_y_ple__severity_032` were incorrectly coded as values 1-4 instead of 0-3 causing an inflation of values in all summary scores that item is included in.
+
+:::
 
 **Key references:**
 
@@ -402,6 +439,14 @@ Some cases are coded as 1 (Present) for lifetime suicidality, but these should a
 `r r_link_table("mh_p_eatq")`
 
 **Measure description:** The Early Adolescent Temperament Questionnaire (EATQ-R; parent version), completed by a caregiver on the youth, assesses children and adolescents (9-15 years old) on 8 basic dimensions of temperament (Activation, Affiliation, Attention, Fear, Frustration, Surgency, Inhibitory Control, , and Shyness), 2 dimensions of behavior (Aggression and Depressive Mood), and three higher-order scales based responses to these primary scales (Effort Control, Surgency, and Negative Affect).
+
+::: {.callout-caution collapse="true" title="Release notes: `mh_p_eatq`"}
+**6.0** 
+
+-   [**Summary score errors**](../release_notes/6_0.qmd#early-adolescent-temperament-questionnaire): 
+Summary scores for some subscales (Activation, Aggression, Attention, Depressive Mood, Inhibitory Control, Shyness, and Surgency) of the `mh_p_eatq` measure were mistakenly reverse coded in the score algorithm despite already being reverse coded at the item level.
+
+:::
 
 **Key reference:** `r full_cite("latham2020")`
 
@@ -651,7 +696,75 @@ render_table_info("domain_abbr == 'ksads_p'", remove_source = TRUE)
 
 **Measure description:** Parent assessment that reports events experienced by the youth during the previous year over which the youth participant had little or no control. The parent reviews the list of items and indicates which events have occurred. If endorsed, follow-up questions are shown for additional details about the event.
 
-**Modifications since initial administration:** Some of the items in the Life Events Scale (e.g., school shooter, not having a home, hospitalization of parent, foster care, seeing or hearing people being shot, hit, etc. in the neighborhood) were added at later waves and are not available at earlier waves. We provide multiple summary scores for life events that reflect these differing numbers of items. The specific items included in each summary score can be found in the [R package](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#life-events-parent-). 
+**Modifications since initial administration:** Some of the items in the Life Events Scale (e.g., school shooter, not having a home, hospitalization of parent, foster care, seeing or hearing people being shot, hit, etc. in the neighborhood) were added at later waves and are not available at earlier waves. We provide multiple summary scores for life events that reflect these differing numbers of items. The specific items included in each summary score can be found in the [R package](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#life-events-parent-). Below is the bulleted description of changes in the Parent protocol from Year 1 to Year 9.
+
+Parent 1-year: first administration of measure
+
+Parent 3-year, the following six questions were added
+
+-   One of the parents/caregivers was deported
+-   One of the parents/caregivers was hospitalized
+-   Child placed in foster care
+-   Saw or heard someone getting hit, slapped, punched, or beaten up in their school or neighborhood
+-   Saw or heard someone being shot at (but not actually wounded) in their school or in their neighborhood
+-   Had a lockdown at their school due to concerns about a school shooting or violence
+
+Parent 5-year, the specifier "Was this when your child was age 5 or younger?" was added to six items
+
+-   Family member had drug and/or alcohol problem
+-   Family member had mental/emotional problem
+-   Parents separated or divorced
+-   One of the parents/caregivers went to jail
+-   Child placed in foster care
+-   Your family was without a home or place to stay/live
+
+Parent 6-year, the following question was added
+
+-   Your child was thrown out of their house?
+
+Parent 6-year, the following follow-up questions were added to the item "Your family was without a home or place to stay/live?"
+
+-   Did this happen in the past year?
+-   Was this a good or bad experience?
+-   How much did the event affect your child?
+
+Parent 6-year, the follow-up question "Was this when your child was age 5 or younger?" was removed from the following six items
+
+-   Family member had drug and/or alcohol problem
+-   Family member had mental/emotional problem
+-   Parents separated or divorced
+-   One of the parents/caregivers went to jail
+-   Child placed in foster care
+-   Your family was without a home or place to stay/live
+
+Parent 7-year, the following 13 questions were removed
+
+-   Saw crime or accident
+-   Close friend died
+-   Lost a close friend
+-   Close friend was seriously sick/injured
+-   Child was seriously sick
+-   Child was seriously injured
+-   Sibling left home
+-   Was a victim of crime/violence/assault
+-   Attended a new school
+-   Got new sibling
+-   Saw or heard someone getting hit, slapped, punched, or beaten up in their school or neighborhood
+-   Saw or heard someone being shot at (but not actually wounded) in their school or in their neighborhood
+-   Had a lockdown at their school due to concerns about a school shooting or violence
+
+Parent 9-year, LEQ is not administered
+
+[Download tables of changes (youth and parent)](../../assets/tbl/documentation/non_imaging/Parent_and_Youth_LEQ_tables_1YR_to_9YR_10.30.25.xlsx)
+
+::: {.callout-caution collapse="true" title="Release notes: `mh_p_ple`"}
+**6.0**
+
+-   [**Life events summary score error**](../release_notes/6_0.qmd#life-events): The Life Events summary scores should not be used, because there was an issue with the validation algorithm with missing data.
+
+-   [**Life events item coding error**](../release_notes/6_0.qmd#life-events-item-coding-error): The levels for the item `mh_p_ple__severity_032` were incorrectly coded as values 1-4 instead of 0-3 causing an inflation of values in all summary scores that item is included in.
+
+:::
 
 **Key references:**
 

@@ -374,6 +374,67 @@ For each manual post-processing QU score, automated metrics (including automated
 
 A retrospective review of prior, post-processing QC failures was undertaken to ensure that usable data were not inappropriately or mistakenly marked for exclusion. This was done on a limited basis for particular causes of QC failure when we found reason to doubt some of the reviews of a given type; e.g., white matter underestimation, T1 or T2 intensity inhomogeneity. In this re-review, scores were changed in some but not most cases selected for re-review.
 
+# Methods
+
+Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in @hagler2019. Changes to image processing and analysis methods in prior releases are documented in the relevant release notes below. No significant changes were made to the processing pipeline for Release 5.0 or Release 6.0.
+
+## Changes to 4.0
+
+### MRI raw QC
+
+The MRI raw QC NDA data structures `mriqcp103` and `mriqcp203` were updated to reflect a remapping of the names and abbreviations used to categorize MRI raw QC issues. This was done to remove redundancy in the categories used previously. Also, QC issue variables were removed where inappropriate for a given scan type, such as the dMRI-specific “fa” (fractional anisotropy map issues) for sMRI or fMRI (e.g., `iqc_mid_fa_qc`).
+
+| QC issue names                  | Previously used names     |
+|---------------------------------|---------------------------|
+| *field of view (fov)*           | dorsal cutoff (dco)       |
+|                                 | ventral cutoff (vco)      |
+|                                 | wrap around (wr)          |
+| *susceptibility artifact (sus)* | distortion (dis)          |
+|                                 | signal dropout (sd)       |
+|                                 | signal inhomogeneity (si) |
+| *horizontal banding (hb)*       | slice                     |
+|                                 | horizontal banding (hb)   |
+| *other*                         | flag                      |
+|                                 | other                     |
+
+### Post processing QC and inclusion criteria
+
+We extended the sampling approach used in Release 3.0 to include FreeSurfer, dMRI, fMRI, and sMRI T2w post-processing QC. Approximately 2-7% of all participant-events were manually reviewed for post-processing QC for each modality. We selected participant-events for review based on post-processing QC failure in Release 3.0, multivariate outlier detection, Bayesian classifiers based on automated QC metrics, and random-sampling (\~5% of total selected for review). Multivariate outlier detection was implemented using Mahalanobis distance calculated from the tabulated data (ROI averages) for a given imaging modality. Recommended inclusion criteria were updated to include manual post-processing QC for T~2~w. A new manual post-processing QC NDA data structures was created for sMRI T~2~w: `abcd_t2wqc01`.
+
+The following manual post-processing QC NDA data structures were renamed:
+
+-   `freesqc01` to `abcd_fsurfqc01`
+-   `dmriqc01` to `abcd_dmriqc01`
+-   `fmriqc01` to `abcd_fmriqc01`
+
+### Changes to data dictionaries
+
+-   Raw MRI QC
+    -   new versions of NDA data structures `mriqcrp103` and `mriqcrp203` based on mriqcrp102 and `mriqcrp202`
+        -   added new elements related to types of QC issues
+        -   removed other elements related to unused or deprecated QC issues
+        -   changes to DataType and Size for some elements
+-   Manual post-processing QC
+    -   new NDA data structure `abcd_t2wqc01`
+    -   new NDA data structure `abcd_fmriqc01` based on `fmriqc01`
+        -   added deap alias `fmri_man_postqc_notes`
+        -   removed alias `fmri_postqc_visitid`
+    -   new NDA data structure `abcd_dmriqc01` based on `dmriqc01`
+        -   added deap aliases (with `dmri_manu_postqc_...`)
+    -   new NDA data structure `abcd_fsurfqc01` based on `freesqc01`
+        -   removed alias `fsqc_visit_id`
+        -   added DEAP aliases (with `fsurf_manu_postqc_...`)
+
+## Changes to 3.0
+
+### Post processing QC and inclusion criteria
+
+As in ABCD Release 2.0.1, FreeSurfer cortical surface reconstructions were reviewed for all participant-events that successfully completed FreeSurfer processing. New for Release 3.0, we used a sampling approach for dMRI and fMRI, wherein approximately 20% of the dMRI/fMRI sessions were manually reviewed for postprocessing dMRI/fMRI QC. We selected participant-events for review based on random-sampling, Bayesian classifiers based on automated QC metrics, and multivariate outlier detection. Recommended inclusion criteria were updated to include manual post-processing QC, new automated post-processing QC metrics, and additional variables (e.g., E-Prime timing match to imaging series). Modality-specific imaging inclusion flags are included in a new NDA data structure, `abcd_imgincl01`.
+
+### Protocol compliance
+
+The determination of protocol compliance for scans from GE scanners (reflected for example in elements `iqc_sst_1_pc_score` or `iqc_sst_total_passpc` in NDA data structure `mriqcrp202`) was changed to use the “ImagesInAcquistion” DICOM header attribute rather than the number of DICOM files. Imaging series with missing files, i.e., fewer files than the ImagesInAcquisition, are marked as incomplete. For Siemens and Philips scans, the same DICOM header field recording the number of images collected is not available, and so series with fewer files than expected for the given series type are marked as incomplete.
+
 **Key references:**
 
 - `r full_cite("cardenas-iniguez2024")`

@@ -171,6 +171,12 @@ To address this limitation, the LED Environment and Policy WG has been actively 
 
 **Measure description:** Measures of ozone (O3) were computed for all participants' primary, secondary, and tertiary addresses, when available. Air pollution estimates used a hybrid spatio-temporal model that provides daily estimates of air pollution levels at 1km x 1km resolution (@requia2020). Measures in the current release include mean, minimum, and maximum O3 from 2016.
 
+::: {.callout-caution collapse="true" title="Release notes: `le_l_lo3`"}
+ **6.0**
+ 
+- [**Incorrectly mapped variable names**](../release_notes/6_0.qmd#satellite-based-o3-measures): There was an error during curation of the `le_l_lo3` table, in which the new variable names for three average ozone variables (`le_l_03__addr1__03_mean__2016`, `le_l_03__addr2__03_mean__2016` and `le_l_03__addr2__03_mean__2016`) were incorrectly mapped to the old variable names. 
+:::
+
 **Key reference:**  `r full_cite("requia2020")`
 
 ### Satellite-based Particulate Measures {#le_l_particulat}

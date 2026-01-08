@@ -31,7 +31,7 @@ For comprehensive details of quality control steps performed and a description o
 ::: {.callout-caution collapse="true" title="Release notes: `gn`"}
 **6.1** 
 
--   [**Genetic Relatedness Matrix**](../release_notes/6_1.qmd#genetic-relatedness-matrix): The Genetic Relatedness Matrix has been added to the file based data.
+-   [**Genetic Relatedness Matrix**](../release_notes/6_1.qmd#genetic-relatedness-matrix): A square, MATLAB file formatted (.mat) version of the Genetic Relatedness Matrix has been added to the file based data.
 
 **6.0**
 

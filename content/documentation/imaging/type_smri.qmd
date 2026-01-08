@@ -53,7 +53,7 @@ The Structural MRI (SMRI) data conatins T~1~-weighted (T~1~w) 3D structural imag
 
 # Methods
 
-Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in Hagler et al., 2019, NeuroImage. Image processing and analysis methods for the Adolescent Brain Cognitive Development Study (doi: [10.1016/j.neuroimage.2019.116091](https://doi.org/10.1016/j.neuroimage.2019.116091)). Changes to image processing and analysis methods in Release 4.0 are documented in Structural MRI release notes. No significant changes were made to the processing pipeline for Release 3.0, 5.0, or 6.0.
+Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in @hagler2019. Changes to image processing and analysis methods in prior releases are documented in [Imaging Overview Data Documentation](index.qmd). No significant changes were made to the processing pipeline for Release 3.0, 5.0, or 6.0. Changes to image processing and analysis methods in Release 4.0 are documented in [Imaging Overview Data Documentation](index.qmd). 
 
 # Notes
 

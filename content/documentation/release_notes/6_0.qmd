@@ -93,6 +93,23 @@ As part of the BIDS standardization, we implemented the following changes to the
   - Use BIDS-specific prefixes (`sub-` for participant and `ses-` for session/event identifiers).
   - `participant_id` values no longer include the `NDAR_INV` prefix (e.g., `sub-ABCD1234` instead of `NDAR_INVABCD1234`).
   - `session_id` values are BIDS-compliant (e.g., without underscores) and standardized (see [here](../curation/standards.qmd#identifier-columns) for more details).
+  
+::: {#participant-id-code .callout-note title="Participant identifier mapping"}
+The following code can be used to convert the `participant_id`s used in previous releases:
+
+```r
+data <- tibble(
+  participant_id = c("sub-001", "sub-002", "sub-003")
+)
+
+data |>
+  mutate(
+    participant_id_old = participant_id |>
+      stringr::str_replace("sub-", "NDAR_INV")
+  )
+```
+:::  
+
 
 ## Naming convention
 
@@ -190,7 +207,7 @@ There are a few errors in the Domain overview tables with regard to what time po
 
 The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain. Examples of these variables include visit-level information, design/nesting variables, and variables useful for describing the cohort.
 
-### Household income scores levels labelling error
+### Household income scores
 
 A levels labeling error was identified in summary scores: 
 
@@ -321,6 +338,10 @@ When state-level linkage variables were created, data were inadvertantly linked 
 
 Users should refer to the private data documentation [here](LINK) for a list of `participant_id`s that should be excluded from analysis, because their residential address and study site do not coincide, leading to misclassification.
 :::
+
+### Satellite-based O3 Measures
+
+Due to an error during curation of the `le_l_lo3` table, the new variable names for three average ozone variables (`le_l_03__addr1__03_mean__2016`, `le_l_03__addr2__03_mean__2016` and `le_l_03__addr2__03_mean__2016`) were incorrectly mapped to the old variable names. Therefore the released data do not map properly to the address number indicated in their 6.0 release variable names. Users should use the `name_nda` column to identify which variables currently contain the desired address based data. The issue will be corrected in release 7.0.
 
 ## Mental Health
 
@@ -466,6 +487,23 @@ The table `mh_p_asr` does not currently have t-scores available in the dataset d
 
 There was an issue in the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect mapping table being used. The raw scores are still correct and the mapping table will be corrected in ABCDscores and t-score data corrected with the 6.1 patch release.
 
+### Life Events Summary Scores
+
+The Life Events summary scores should not be used, because there was an issue with the validation algorithm with missing data. Users would need to use the R Packages to compute the summary scores [https://software.nbdc-datahub.org/ABCDscores/](https://software.nbdc-datahub.org/ABCDscores/reference/index.html). This issue will be fixed for the 7.0 Release.
+
+### Life Events Item Coding Error
+
+The levels for the items `mh_y_ple__severity_032` and `mh_p_ple__severity_032` were incorrectly coded as values 1-4 instead of 0-3 causing an inflation of values in all summary scores that item is included in. Data users should consult [ABCDscores documentation](https://software.nbdc-datahub.org/ABCDscores/reference/index.html) for all scores using this item and recode the item and recompute the score. The item coding and summary score data will be corrected in the 7.0 release.
+
+### Behavioral Inhibition / Behavioral Approach System Scales
+
+There is an error with the summary score `mh_y_bisbas__bis_sum` computation as well as data for the variable `mh_y_bisbas__bis_005`. The item should be reverse-coded, but internal data collection methods varied so not all data are correctly coded and are therefore unreliable in their current state. Additionally, the summary score computation will be incorrect due to this issue. The data and score algorithm will be corrected and updated for the 7.0 release.
+
+### Early Adolescent Temperament Questionnaire
+
+Summary scores for some subscales (Activation, Aggression, Attention, Depressive Mood, Inhibitory Control, Shyness, and Surgency) of the `mh_p_eatq` measure were mistakenly reverse coded in the score algorithm despite already being reverse coded at the item level. Users should compute their own means when using 6.0 data and the issue will be fully corrected for the 7.0 release.
+
+
 ## Neurocognition
 
 In the 6.0 data release we removed the neurocognition administration table and added all relevant variables specific to a task's administration to the tables themselves. All such variables related to administration (e.g., visit type, device information, etc.) are indicated by their variable names, in accordance with our new variable [naming convention](/documentation/curation/naming.qmd) (e.g. <code>[dm_s_tab]{style="color: black"}[_adm]{style="color: #BF0000"}</code>, <code>[dm_s_tab]{style="color: black"}[_dev]{style="color: #BF0000"}</code>, etc.)
@@ -538,6 +576,13 @@ The [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores) R package will 
 
 There are some errors with the summary scores counting invalid inputs like 0, and there are some outliers in the data. These issues are being looked into and will be addressed in future release. 
 
+### Life Events
+
+The Life Events summary scores should not be used, because there was an issue with the validation algorithm with missing data. Users would need to use the R Packages to compute the summary scores [https://software.nbdc-datahub.org/ABCDscores/](https://software.nbdc-datahub.org/ABCDscores/reference/index.html). This issue will be fixed for the 7.0 Release.
+
+### Variable Naming Error for Pain Questionnaire
+
+Variable names were swapped for four items in the `ph_y_pq` table. The left and right variable names, but not labels, were reversed for the palm `ph_y_pq__hand__plml_001`/`ph_y_pq__hand__plmr_001` and top of foot `ph_y_pq__foot__topl_001`/`ph_y_pq__foot__topr_001` items in this measure. Users should refer to the labels to differentiate left and right for these items. This issue will be corrected in the 7.0 release.
 
 ## Substance Use
 
@@ -655,9 +700,21 @@ readr::read_csv(
 
 In the ABCD 6.0 release, there is a mismatch between the tabulated and BIDS (sourcedata and rawdata) in the anonymized MRI scanner serial numbers. In the BIDS data, the sidecar json files contain a field `DeviceSerialNumber` of the form "anon12da", which differs from the corresponding variable in the tabulated data, `ab_g_dyn__design_mr__serial`, which has the form "HASHd7cb4c6d". Within each datatype (BIDS and tabulated), the values used are internally consistent. In future releases, the form of the serial number anonymization will be standardized across these data types.
 
+### Indicator Variables
+
+In the mr domain, all `_indicator` variables should be considered `yes/no` items, despite some levels being labeled as `pass/fail` currently. The level labels for all such items will be updated in the 7.0 release.
+
+### Missing values in tabulated imaging data
+
+There are 8 participant-sessions with missing values in the tabulated imaging data (e.g., null value for `ab_g_dyn__design_mr__serial` and imaging-derived measures) but have imaging inclusion flags (e.g., `mr_y_qc__incl__smri__t1_indicator`) that indicate usable data. Those participant-sessions do have valid imaging data but the derived values were inadvertently omitted from the tabulated data compiled for the data release. Users should be aware of this and exclude missing values from statistical analyses.
+
+### Mismatched rows in concatenated vertexwise DTI data
+
+A subset of the concatenated data files, specifically vertexwise DTI measures in peri-cortical white matter, have a different number of observations (i.e., participant-session rows) for the left hemisphere and the right hemisphere (30392 rows in left hemisphere and 30393 rows in right hemisphere). Because of the inadvertently mismatch rows, these data files should not be used. Concatenated vertexwise DTI data files with the following file stems were affected: "fa_wm", "ld_wm", "md_wm", "td_wm".
+
 # Substudies
 
-## Social Development 
+## Social Development
 
 A data integrity issue was identified in the `r link_table("sdev_p_vict", dest = "docs", name = "label")` measure, affecting 273 item instances in which questions were presented out of order and improperly labeled, making item data for these instances therefore unreliable in the dataset.
 
@@ -665,18 +722,18 @@ The error occurred only in select instances after the first assessment wave (`se
 
 We therefore excluded any of these follow up items from the release data, creating some missingness in the dataset where an individual may have responded "yes" to the gating question, but have no follow up responses. The specific follow up variables affected and excluded are listed below:
 
-- `sdev_p_vict_018__l`
-- `sdev_p_vict_019__l`
-- `sdev_p_vict_020__l`
-- `sdev_p_vict_021__l`
-- `sdev_p_vict_022__l`
-- `sdev_p_vict_023__l`
-- `sdev_p_vict_024__l`
-- `sdev_p_vict_025__l`
-- `sdev_p_vict_026__l`
-- `sdev_p_vict_027__l`
+-   `sdev_p_vict_018__l`
+-   `sdev_p_vict_019__l`
+-   `sdev_p_vict_020__l`
+-   `sdev_p_vict_021__l`
+-   `sdev_p_vict_022__l`
+-   `sdev_p_vict_023__l`
+-   `sdev_p_vict_024__l`
+-   `sdev_p_vict_025__l`
+-   `sdev_p_vict_026__l`
+-   `sdev_p_vict_027__l`
 
-Please contact ABCD-SD with any questions about this issue or other data analysis suggestions: PI Lia Ahonen [ahonenl@upmc.edu](mailto:ahonenl@upmc.edu)
+Please contact ABCD-SD with any questions about this issue or other data analysis suggestions: PI Lia Ahonen [ahonenl\@upmc.edu](mailto:ahonenl@upmc.edu)
 
 ## Magnetic Resonance Spectroscopy (MRS)
 

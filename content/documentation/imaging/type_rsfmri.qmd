@@ -88,7 +88,7 @@ Note: not included in "minimal processing"
 
 # Methods
 
-Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in @hagler2019. Changes to image processing and analysis methods in Release 3.0 and Release 4.0 are documented in [Resting-State fMRI Data Documentation](type_rsfmri.qmd). No significant changes were made to the processing pipeline for Release 5.0 or Release 6.0.
+Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in @hagler2019. Changes to image processing and analysis methods in prior releases are documented in [Imaging Overview Data Documentation](index.qmd). No significant changes were made to the processing pipeline for Release 5.0 or Release 6.0.
 
 # Notes
 

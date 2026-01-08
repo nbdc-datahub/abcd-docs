@@ -1,8 +1,11 @@
--   **General Changes**
-    -   Updated 6.1 pdfs for download below the domain tables
+-   **Non-imaging**
+    -   Mental Health: Updated KSADS tables with the correct administration of modules at each year
+    -   Mental Health: Updated Life Events content with the item changes for events
+-   **Imaging**
+    -   Added in prior changes to the Imaging Methods
 -   **Release Notes**
-    -   Added the 6.1 Release Notes pertaining to the 6.1 data release
--   **FAQ**
-    -   Added question/answer regarding the recommendations for cell size in the FAQ section
--   **ABCC**
-    -   Updated ABCC with the changes pertaining to 6.1 data release
+    -   Added Linked External Data 6.0 release notes regarding `le_l_o3`
+    -   Updated Genetics 6.1 release notes regarding genetics relatedness matrix
+    -   Added Physical Health 6.0 release notes regarding `ph_y_pq` variable naming error
+    -   Added Mental Health 6.0 release notes regarding Life events summary scores, Life events item coding error, BIS/BAS summary score error, and EATQ summary score error
+    -   Added Imaging 6.0 release notes regarding indicator variables, missing values in tabulated imaging data, and mismatched rows in concatenated data

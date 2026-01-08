@@ -2,7 +2,7 @@
 project: "abcd"
 
 permissions:
-  - name: "abcd-docs-dev-next"
+  - name: "abcd-docs-next"
     display-name: "ABCD Study data documentation - next"
     any-authenticated-user: false
     template-group: website

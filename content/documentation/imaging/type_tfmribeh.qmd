@@ -127,4 +127,5 @@ Some participants were unable to complete one or more of the fMRI behavioral tas
 
 # Methods
 
-Image processing and analysis methods corresponding to ABCD Release 2.0.1, including the calculation of task fMRI-related behavioral performance metrics, are described in @hagler2019. No significant changes were made for Release 5.0 or 6.0. Matlab code for extracting event times and behavioral performance from the event timing and behavioral performance files exported from the E-prime stimulus presentation program for ABCD (<https://github.com/ABCD-STUDY/abcd_extract_eprime>).
+Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in @hagler2019. Changes to image processing and analysis methods in prior releases are documented in [Imaging Overview Data Documentation](index.qmd). No significant changes were made to the processing pipeline for Release 5.0 or Release 6.0. Matlab code for extracting event times and behavioral performance from the event timing and behavioral performance files exported from the E-prime stimulus presentation program for ABCD (<https://github.com/ABCD-STUDY/abcd_extract_eprime>).
+

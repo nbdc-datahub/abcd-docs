@@ -2,7 +2,7 @@
 project: "abcd"
 
 permissions:
-  - name: "abcd-docs-dev-current"
+  - name: "abcd-docs-current"
     display-name: "ABCD Study data documentation - current"
     any-authenticated-user: false
     template-group: website

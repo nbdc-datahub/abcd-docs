@@ -136,7 +136,7 @@ By downloading these stimuli, you agree to use them solely for approved institut
 
 # Methods
 
-Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in [@hagler2019]. Image processing and analysis methods for the Adolescent Brain Cognitive Development Study (doi: [10.1016/j.neuroimage.2019.116091](https://doi.org/10.1016/j.neuroimage.2019.116091)). Changes to image processing and analysis methods in Release 3.0 and Release 4.0 are documented in Task-based fMRI Release Notes. No significant changes were made to the processing pipeline for Release 5.0. Changes to time series analysis methods in Release 6.0 are documented in Task-based fMRI release notes.
+Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in @hagler2019. Changes to image processing and analysis methods in prior releases are documented in [Imaging Overview Data Documentation](index.qmd). No significant changes were made to the processing pipeline for Release 5.0. Changes to time series analysis methods in Release 6.0 are documented in Task-based fMRI release notes.
 
 # Notes
 

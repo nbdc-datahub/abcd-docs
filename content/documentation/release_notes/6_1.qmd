@@ -117,7 +117,7 @@ Mapping to the event identifiers used in previous releases can be found in [Cura
 
 ## ABCD (General)
 
-### Household income scores levels labelling error fixed
+### Household income scores
 
 A levels labeling error was identified in summary scores in 6.0 data. This error has been corrected in the [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#abcd-static-variables-general-) package and the levels table is now corrected in the 6.1 data release.
 
@@ -152,7 +152,7 @@ The `familism` subscale scores were missing in the 6.0 data release and have bee
 
 ### Genetic Relatedness Matrix
 
-The genetic relatedness matrix has been added to the file-based data. The corresponding changes have also been documented on the [Genetics](../non_imaging/gn.qmd) documentation page.
+A square, MATLAB file formatted (.mat) version of the genetic relatedness matrix has been added to the file-based data. The corresponding changes have also been documented on the [Genetics](../non_imaging/gn.qmd) documentation page.
 
 ## Mental Health
 

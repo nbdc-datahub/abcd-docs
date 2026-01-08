@@ -175,6 +175,12 @@ In 2023, as the year-6 follow-up of the study was underway, it was brought to ou
 
 **Measure description:** The CAPQ is based on the Seattle's Children's "Child and Adolescent Pain Questionnaire" and conforms to the NRS-11 standard for examining pain intensity over the past month, which is the recommended time-frame. The participant is first asked about pain and pain levels, and then asked to identify pain sites on a body map.
 
+::: {.callout-caution collapse="true" title="Release notes: `ph_y_pq`"}
+**6.0**
+
+-   [**Variable naming error**](../release_notes/6_0.qmd#variable-naming-error-for-pain-questionnaire): Variable names were swapped for four items in the `ph_y_pq` table. The left and right variable names, but not labels, were reversed for the palm `ph_y_pq__hand__plml_001`/`ph_y_pq__hand__plmr_001` and top of foot `ph_y_pq__foot__topl_001`/`ph_y_pq__foot__topr_001` items in this measure.
+:::
+
 **Key reference:** `r full_cite("luntamo2012")`
 
 ## Respiratory Functioning {#ph_y_rq}

@@ -32,6 +32,7 @@ The Diffusion MRI (DTI) data contains imaging field maps, non-diffusion weighted
 - Resampled into a standard orientation with 1.7 mm isotropic resolution
     
 ## Diffusion tensor imaging (DTI) analysis {#mr_y_dti}
+
 ![](/assets/img/documentation/deap_icon.svg){width="30"} [mr_y_dti](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Imaging%22%2C%22Diffusion+MRI+%28DTI%29%22%5D%5D#/my-datasets/create-dataset)
 
 - Conventional DTI methods [@basser1994; @lebihan2001; @pierpaoli1996]
@@ -80,8 +81,20 @@ The Diffusion MRI (DTI) data contains imaging field maps, non-diffusion weighted
   - Voxels containing primarily gray matter or cerebral spinal fluid excluded from analysis
 - Atlas files and additional AtlasTrack documentation available [here](https://www.nitrc.org/projects/atlastrack).
 
-# Notes
+-   Subcortical structures labeled with atlas-based segmentation [@fischl2002]
+-   Cortical regions labeled with the Desikan atlas-based classification [@desikan2006]
+-   Cortical regions labeled with the Destrieux atlas-based classification [@destrieux2010]
+-   White and gray matter values sampled near gray/white boundary [@elman2017]
+-   Major white matter tracts labelled using AtlasTrack [@hagler2009]
+    -   Voxels containing primarily gray matter or cerebral spinal fluid excluded from analysis
+-   Atlas files and additional AtlasTrack documentation available [here](https://www.nitrc.org/projects/atlastrack).
 
+# Methods
+
+Image processing and analysis methods corresponding to ABCD Release 2.0.1 are described in @hagler2019. Changes to image processing and analysis methods in prior releases are documented in [Imaging Overview Data Documentation](index.qmd). No significant changes were made to the processing pipeline for Release 5.0 or Release 6.0.
+
+
+# Notes
 
 ## Effects of scanner instance and software version
 

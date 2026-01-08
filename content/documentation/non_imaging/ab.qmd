@@ -165,14 +165,14 @@ Pseudo school IDs for specific school settings can be excluded if needed.
 ::: {.callout-caution collapse="true" title="Release notes: `ab_g_dyn`"}
 **6.1**
 
--   [**Levels labelling error fixed**](../release_notes/6_1.qmd#household-income-scores-levels-labelling-error-fixed): A levels labeling error was identified in summary scores in 6.0 for the items `ab_g_dyn__cohort_income__hhold__3lvl` and `ab_g_dyn__cohort_income__hhold__6lvl`. The levels table has been corrected in the 6.1 patch release.
+-   [**Levels labelling error fixed**](../release_notes/6_1.qmd#household-income-scores): A levels labeling error was identified in summary scores in 6.0 for the items `ab_g_dyn__cohort_income__hhold__3lvl` and `ab_g_dyn__cohort_income__hhold__6lvl`. The levels table has been corrected in the 6.1 patch release.
 -   [**Site transfers**](../release_notes/6_1.qmd#site-transfers): Site transfers were updated for 2 participants that had been missed in 6.0 Data Release.
 
 **6.0**
 
 -   [**New tables**](../release_notes/6_0.qmd#standard-variables-tables): The 6.0 release includes [two new tables](https://abcd-internal.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Standard+Variables%22%2C%22General%22%5D%5D#/my-datasets/create-dataset) that contain important variables likely to be of interest for a wide range of analyses. These tables include static variables (`r link_table("ab_g_stc", dest = "docs")`) and dynamic/longitudinal variables (`r link_table("ab_g_dyn", dest = "docs")`) that are not specific to any particular domain.
 -   [**Updated school IDs**](../release_notes/6_0.qmd#school-and-district-ids): For the 6.0 release, school and district IDs were amended. These changes are specific to the pseudo school ID `ab_g_dyn__design_id__district` and `ab_g_dyn__design_id__school` and do not impact the linked SEDA data.
--   [**Levels labelling error**](../release_notes/6_0.qmd#household-income-scores-levels-labelling-error)
+-   [**Levels labelling error**](../release_notes/6_0.qmd#household-income-scores)
   
 :::
 
