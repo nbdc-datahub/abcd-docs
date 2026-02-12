@@ -576,6 +576,8 @@ The history of questions asked in this instrument, and the parent version of thi
 
 **6.0**
 
+-   [**Missing dates**](../release_notes/6_0.qmd#missing-dates-for-sleep-disturbance-scale-for-children): Some dates are missing for the `ph_p_sds` data (mostly at baseline and 1 year followup). 
+
 -   [**SDS summary score**](../release_notes/6_0.qmd#sleep-disturbance-scale-for-children-sds-summary-scores)
 :::
 

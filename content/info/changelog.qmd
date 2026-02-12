@@ -4,6 +4,22 @@ order: 3
 ---
 
 
+# 6.1.2
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2026-02-12<br>
+**URL:** [https://docs.abcdstudy.org/v/6_1_2](https://docs.abcdstudy.org/v/6_1_2)
+</span>
+
+-   **Release Notes**
+    -   Added Imaging 6.0 release notes regarding scanner issue for site 15
+    -   Added Physical Health 6.0 release notes regarding `ph_p_sds` missing `dtt` variable
+    -   Added Mental Health 6.1 release notes regarding `mh_y_ksads__suic`
+    -   Added Mental Health 6.0 release notes regarding `mh_p_ksads_bpd` and `mh_y_ksads_bpd`
+    -   Added Social Development 6.0 release notes regarding integer fields with non-response data and age fields with outlier data
+
+
+
+
 # 6.1.1
 <span style="font-size: 0.85em; color: gray;">
 **Date:** 2026-01-08<br>

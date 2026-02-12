@@ -164,6 +164,10 @@ There was an issue with the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorre
 
 Variable labels were updated to be more accurate in the `mh_p_famhx__halluc` subscale to reflect the inclusion of both hallucinations and delusions in these items.
 
+### KSADS – Suicidality (Youth)
+
+Starting at the 5-year follow up event (sess-05a), ABCD made the choice to no longer ask youth participants about previous/lifetime suicidal ideation or behavior and only ask about current ideation/behavior. This was based on feedback from participants that it was distressing to be asked repeatedly about previously reported experiences. However, the KSADs interview requires an answer to these questions to continue with the module administration, and thus, research assistants were instructed to enter "no" for these past questions. ABCD had planned to replace these 'skipped' item responses with a missingness code indicating that the questions were deliberately not administered (555) in the 6.1 patch release. Unfortunately, this was not done, though it will be implemented for the 7.0 release. As such, researchers should not use any items about past suicidal ideation/behavior reports (any items starting with the prefix `mh_y_ksads__suic__past`) from the `mh_y_ksads__suic` table from the 5-year follow up event and after in either the 6.0 or 6.1 release data.
+
 ## Neurocognition
 
 ### Emotional Stroop Task

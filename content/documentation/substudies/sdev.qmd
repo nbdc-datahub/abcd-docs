@@ -79,6 +79,12 @@ Due to the different time frame and wording of the `ses-S01` and follow-up quest
 
 Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of measurement bias across demographic groups in this measure and thus discontinued use/sharing of this measure. Unlike the main study, the ABCD-SD uses the full Self-Reported Delinquency Scale. We recommend conducting differential item functioning for this measure to determine whether there are biases before including it in your analyses as was done in @brislin2024.
 
+::: {.callout-caution collapse="true" title="Release notes: `sdev_y_rd`"}
+[**Age items error (6.0)**](../release_notes/6_0.qmd#known-issue-age-items): Age items in the Social Development substudy currently contain implausible values. Users should filter out unreasonably large values in these fields and can also compare the data to the _age variable provided for the table.
+
+[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data): Some items were created in a way that asked participants to enter `98` or `99` to indicate either “Don’t know” or “Decline to answer.” Data users should recode `98` = “I don’t know” and `99` = “Decline to answer” for all integer variables in the substudy.
+:::
+
 **Key references:**
 
 - `r full_cite("shaw2012")`
@@ -90,6 +96,12 @@ Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of
 
 **Measure description:** Firearm access, safety, and storage is measured with items from the Youth Risk Behavior Surveillance System (YRBSS). YRBSS is an established measure used in national surveys. The youth are asked about carrying a firearm, and how easy or difficult it is for them to get access to, load, and fire a gun.
 
+::: {.callout-caution collapse="true" title="Release notes: `sdev_y_fa`"}
+[**Age items error (6.0)**](../release_notes/6_0.qmd#known-issue-age-items): Age items in the Social Development substudy currently contain implausible values. Users should filter out unreasonably large values in these fields and can also compare the data to the _age variable provided for the table.
+
+[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data): Some items were created in a way that asked participants to enter `98` or `99` to indicate either “Don’t know” or “Decline to answer.” Data users should recode `98` = “I don’t know” and `99` = “Decline to answer” for all integer variables in the substudy.
+:::
+
 **Key references:**
 
 - `r full_cite("kann2016")`
@@ -100,6 +112,12 @@ Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_vict")`  
 
 **Measure description:** Victimization is measured using the Juvenile Victimization Questionnaire (JVQ). The ABCD-SD version includes the following sub scales: Conventional crime, Peer and sibling victimization, Peer aggression (including social aggression), Witnessing (exposure) and indirect victimization, Gun violence (including exposure), School violence and threat, and Internet victimization. The JVQ includes detailed follow-up questions to determine the circumstances and the context where any victimization occurred. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
+
+::: {.callout-caution collapse="true" title="Release notes: `sdev_y_vict`"}
+[**Age items error (6.0)**](../release_notes/6_0.qmd#known-issue-age-items): Age items in the Social Development substudy currently contain implausible values. Users should filter out unreasonably large values in these fields and can also compare the data to the _age variable provided for the table.
+
+[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data): Some items were created in a way that asked participants to enter `98` or `99` to indicate either “Don’t know” or “Decline to answer.” Data users should recode `98` = “I don’t know” and `99` = “Decline to answer” for all integer variables in the substudy.
+:::
 
 **Key reference:** `r full_cite("finkelhor2005")`
 
@@ -246,6 +264,12 @@ Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of
 
 Scales: vandalism; theft; violence; police contact
 
+::: {.callout-caution collapse="true" title="Release notes: `sdev_p_rd`"}
+[**Age items error (6.0)**](../release_notes/6_0.qmd#known-issue-age-items): Age items in the Social Development substudy currently contain implausible values. Users should filter out unreasonably large values in these fields and can also compare the data to the _age variable provided for the table.
+
+[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data): Some items were created in a way that asked participants to enter `98` or `99` to indicate either “Don’t know” or “Decline to answer.” Data users should recode `98` = “I don’t know” and `99` = “Decline to answer” for all integer variables in the substudy.
+:::
+
 **Key references:**
 
 - `r full_cite("shaw2012")`
@@ -258,10 +282,6 @@ Scales: vandalism; theft; violence; police contact
 **Measure description:** Victimization is measured using the Juvenile Victimization Questionnaire (JVQ). The ABCD-SD version includes the following sub scales: Conventional crime, Peer and sibling victimization, Peer aggression (including social aggression), Witnessing (exposure) and indirect victimization, Gun violence (including exposure), School violence and threat, and Internet victimization. The JVQ includes detailed follow-up questions to determine the circumstances and the context where any victimization occurred. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment. There is some missingness as some data have been removed due to erroneous data.
 
 Scales: conventional crime; peer physical; peer social; witnessing indirect; gun; school threats; internet
-
-::: {.callout-caution collapse="true" title="Release notes: `sdev_p_vict`"}
-[**Item order error (6.0)**](../release_notes/6_0.qmd#social-development): A data integrity issue was identified in the `r link_table("sdev_p_vict", dest = "docs", name = "label")` measure, affecting 273 item instances in which questions were presented out of order and improperly labeled, making item data for these instances therefore unreliable in the dataset.
-:::
 
 ::: {.callout-caution collapse="true" title="Release notes: `sdev_p_vict`"}
 [**Item order error (6.0)**](../release_notes/6_0.qmd#social-development): A data integrity issue was identified in the `r link_table("sdev_p_vict", dest = "docs", name = "label")` measure, affecting 273 item instances in which questions were presented out of order and improperly labeled, making item data for these instances therefore unreliable in the dataset.

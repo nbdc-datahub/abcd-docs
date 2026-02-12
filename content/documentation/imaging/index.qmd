@@ -27,6 +27,14 @@ Download a pdf of all imaging tables (mr) [here](../../assets/files/documentatio
 -   [**Missing values**](../release_notes/6_0.qmd#missing-values-in-tabulated-imaging-data): There are 8 participant-sessions with missing values in the tabulated imaging data (e.g., null value for `ab_g_dyn__design_mr__serial` and imaging-derived measures) but have imaging inclusion flags (e.g., `mr_y_qc__incl__smri__t1_indicator`) that indicate usable data. Those participant-sessions do have valid imaging data but the derived values were inadvertently omitted from the tabulated data compiled for the data release. Users should be aware of this and exclude missing values from statistical analyses.
 
 -   [**Mismatched rows**](../release_notes/6_0.qmd#mismatched-rows-in-concatenated-vertexwise-dti-data): A subset of the concatenated data files, specifically vertexwise DTI measures in peri-cortical white matter, have a different number of observations (i.e., participant-session rows) for the left hemisphere and the right hemisphere (30392 rows in left hemisphere and 30393 rows in right hemisphere). Because of the inadvertently mismatch rows, these data files should not be used. Concatenated vertexwise DTI data files with the following file stems were affected: "fa_wm", "ld_wm", "md_wm", "td_wm".
+
+-   [**Scanner issue**](../release_notes/6_0.qmd#known-issue-scanner-issue-for-site15):There was a scanner service issue that affects dMRI and fMRI data acquired prior to August 2018 at one of the ABCD sites: site15.
+:::
+
+::: {.callout-warning collapse="true" title="Data warning: Scanner issue" #scanner-issue}
+There was a scanner service issue that affects dMRI and fMRI data acquired prior to August 2018 at one of the ABCD sites (Site ID: site15, DeviceSerialNumber: d06b7afa24778649d21924836f3816031db95e5c7a5db0e475f640bb805cdf9f). It is suggested that users should consider excluding dMRI and fMRI data from that scanner collected prior to August 2018.
+
+There was an intermittent spiking problem, thought to be caused by a hardware malfunction, visible as white pixel noise in some scans. The scanner was serviced and the problem fixed in July 2018. The issue was not detected via visual review, but some dMRI- and fMRI-derived measures from scans acquired prior to August 2018 exhibited an offset in group mean values, resulting, for example, in biased estimates of age-related change.
 :::
 
 ## Nomenclature

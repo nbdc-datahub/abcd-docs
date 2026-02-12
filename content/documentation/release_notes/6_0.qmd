@@ -464,6 +464,10 @@ In the meantime, the Mental Health Workgroup is working with KSADS to create mor
 
 For the Youth items, note that at 5-year follow-up and beyond, items ask about current suicidality only (not lifetime). Some cases are coded as `1` (Present) for lifetime suicidality, but these should all be coded as `555` (Not Administered). This correction will be implemented in the 6.1 patch release.
 
+#### KSADS Borderline Personality Disorder
+
+The variable `mh_p/y_ksads__bpd__irrit__expl__pres_sx__v01` is a duplicate used for indicating branching logic within the KSADS module. It is not a true symptom score and thus should be ignored. Data users interested in this symptom data should only use the `mh_p/y_ksads__bpd__irrit__expl__pres_sx` variable and the duplicate item will be removed in the 7.0 release.
+
 #### KSADS-COMP Updates to 2.0
 
 There was a diagnostic algorithm error detected in 2023 (update pending 7.0):
@@ -583,6 +587,10 @@ The Life Events summary scores should not be used, because there was an issue wi
 ### Variable Naming Error for Pain Questionnaire
 
 Variable names were swapped for four items in the `ph_y_pq` table. The left and right variable names, but not labels, were reversed for the palm `ph_y_pq__hand__plml_001`/`ph_y_pq__hand__plmr_001` and top of foot `ph_y_pq__foot__topl_001`/`ph_y_pq__foot__topr_001` items in this measure. Users should refer to the labels to differentiate left and right for these items. This issue will be corrected in the 7.0 release.
+
+### Missing dates for Sleep Disturbance Scale for Children
+
+Some dates are missing for the `ph_p_sds` data (mostly at baseline and 1 year followup). Please use the visit date `ab_g_dyn__visit_dtt` instead of the sds specific dtt for the missing data.
 
 ## Substance Use
 
@@ -712,9 +720,17 @@ There are 8 participant-sessions with missing values in the tabulated imaging da
 
 A subset of the concatenated data files, specifically vertexwise DTI measures in peri-cortical white matter, have a different number of observations (i.e., participant-session rows) for the left hemisphere and the right hemisphere (30392 rows in left hemisphere and 30393 rows in right hemisphere). Because of the inadvertently mismatch rows, these data files should not be used. Concatenated vertexwise DTI data files with the following file stems were affected: "fa_wm", "ld_wm", "md_wm", "td_wm".
 
+### Known issue: scanner issue for site15
+
+There was a scanner service issue that affects dMRI and fMRI data acquired prior to August 2018 at one of the ABCD sites (Site ID: site15, DeviceSerialNumber: d06b7afa24778649d21924836f3816031db95e5c7a5db0e475f640bb805cdf9f). It is suggested that users should consider excluding dMRI and fMRI data from that scanner collected prior to August 2018.
+
+There was an intermittent spiking problem, thought to be caused by a hardware malfunction, visible as white pixel noise in some scans. The scanner was serviced and the problem fixed in July 2018. The issue was not detected via visual review, but some dMRI- and fMRI-derived measures from scans acquired prior to August 2018 exhibited an offset in group mean values, resulting, for example, in biased estimates of age-related change.
+
 # Substudies
 
 ## Social Development
+
+### `sdev_p_vict` items data issue
 
 A data integrity issue was identified in the `r link_table("sdev_p_vict", dest = "docs", name = "label")` measure, affecting 273 item instances in which questions were presented out of order and improperly labeled, making item data for these instances therefore unreliable in the dataset.
 
@@ -734,6 +750,14 @@ We therefore excluded any of these follow up items from the release data, creati
 -   `sdev_p_vict_027__l`
 
 Please contact ABCD-SD with any questions about this issue or other data analysis suggestions: PI Lia Ahonen [ahonenl\@upmc.edu](mailto:ahonenl@upmc.edu)
+
+### Known Issue: Age items
+
+Age items in the Social Development substudy currently contain implausible values, such as participants entering the year an event occurred rather than the participant’s age at the time, that have not been filtered out. Users should filter out unreasonably large values in these fields and can also compare the data to the _age variable provided for each table to ensure only data matching the participant’s current age or lower are used. This issue affects all questions asking “How old” in the following tables (`sdev_p_rd`, `sdev_y_fa`, `sdev_y_rd`, `sdev_y_vict`) and will be corrected for the 7.0 data release.
+
+### Known Issue: Integer fields with non-response data
+
+In the Social Development substudy, some items were originally created in a way that asked participants to enter `98` or `99` in certain integer response fields to indicate either “Don’t know” or “Decline to answer” as the form did not have separate fields to indicate those responses. In the 6.0 release, many of these cases were found and recoded such that the non-response data was moved into corresponding fields ending with `__dk` but a subset of these items were not identified or recoded correctly. Due to this, items in the following tables (`sdev_p_rd`, `sdev_y_fa`, `sdev_y_rd`, `sdev_y_vict`) that asked “How old” the participant was at the time of certain events contain `98` and `99` values that should not be used as true integer responses. Data users should recode `98` = “I don’t know” and `99` = “Decline to answer” for all integer variables in the substudy. This recoding issue will be corrected in 7.0 such that all `98` and `99` values will be recoded into new non-response fields and all integer values will be able to be used reliably.
 
 ## Magnetic Resonance Spectroscopy (MRS)
 
