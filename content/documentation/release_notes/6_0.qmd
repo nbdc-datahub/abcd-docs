@@ -487,6 +487,10 @@ Documentation on youth scores can be found here: [Life Events (Youth)](https://s
 
 The table `mh_p_asr` does not currently have t-scores available in the dataset due to not having a caregiver sex variable available in the correct structure to compute the score. This issue will be resolved in a future release.
 
+### Youth Self Report 
+
+Two syndrome scales (Anxious-Depressed `mh_y_ysr__synd__anxdep` and Thought Problems `mh_y_ysr__synd__tho`) and one DSM-oriented scale (Depressive Problems `mh_y_ysr__dsm__dep`) are missing because 2 “suicidal thoughts” items from these scales were not administered and the scores were not computed. This issue will be resolved in a future release.
+
 ### Brief Problem Monitor
 
 There was an issue in the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect mapping table being used. The raw scores are still correct and the mapping table will be corrected in ABCDscores and t-score data corrected with the 6.1 patch release.
@@ -579,10 +583,6 @@ The [`ABCDscores`](https://software.nbdc-datahub.org/ABCDscores) R package will 
 ### Blood Pressure
 
 There are some errors with the summary scores counting invalid inputs like 0, and there are some outliers in the data. These issues are being looked into and will be addressed in future release. 
-
-### Life Events
-
-The Life Events summary scores should not be used, because there was an issue with the validation algorithm with missing data. Users would need to use the R Packages to compute the summary scores [https://software.nbdc-datahub.org/ABCDscores/](https://software.nbdc-datahub.org/ABCDscores/reference/index.html). This issue will be fixed for the 7.0 Release.
 
 ### Variable Naming Error for Pain Questionnaire
 

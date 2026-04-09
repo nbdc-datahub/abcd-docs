@@ -1,6 +1,17 @@
+-   **Non-Imaging**
+    -   Mental Health: Updated Youth Self Report content regarding removed items
+    -   Neurocognition: Updated Flanker and NIH Toolbox content regarding remote administration
+    -   Novel Technologies: Updated EARS pilot content regarding the year of administration
+    -   Substance Use: Updated TLFB content regarding time period in interview
+    -   Substance Use: Updated Toxicology content regarding the protocols
+    -   Substance Use: Updated Parental Rule for ENDS Use content regarding missing data
+
+-   **Imaging**
+    -   Updated content regarding ABCD3 atlas 
+    -   Updated ABCC content
+
 -   **Release Notes**
-    -   Added Imaging 6.0 release notes regarding scanner issue for site 15
-    -   Added Physical Health 6.0 release notes regarding `ph_p_sds` missing `dtt` variable
-    -   Added Mental Health 6.1 release notes regarding `mh_y_ksads__suic`
-    -   Added Mental Health 6.0 release notes regarding `mh_p_ksads_bpd` and `mh_y_ksads_bpd`
-    -   Added Social Development 6.0 release notes regarding integer fields with non-response data and age fields with outlier data
+    -   Add 6.0 Mental Health release notes regarding Youth Self Report missing scales
+
+-   **Access and Download Data**
+    -   Removed requirement regarding holding an active FWA

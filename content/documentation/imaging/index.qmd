@@ -432,3 +432,33 @@ The FreeSurfer version was updated from 5.3.0 to 7.1.1. Changes to FreeSurfer pr
 -   split data structures to separate FreeSurfer-derived morphometry, T~1~w intensities, and T~2~w intensities
 
 -   removed unused aliases
+
+## Changes to 6.0
+
+### Task-based fMRI
+
+#### Event timing offset for GE scanners
+
+There was previously a discrepancy in how stimulus times were modeled relative to the end of the calibration/dummy volumes in the image acquisition that affects GE scanners. The issue is related to how the E-prime tasks were programmed for GE scanners that resulted in an unexpected timing offset of 800 msec or less.
+
+We modified our code for extracting event timing information from ABCD E-prime files (https://github.com/ABCD-STUDY/abcd_extract_eprime.git). Rather than rely on the first fixation event (e.g., CueFix.OnsetTime) the modified code now uses the timing data from the initial and or final trigger events (e.g., GetReady.RTTime) to determine the reference time that represents the start of the first non-dummy image volume. We also modified the number of initial volumes discarded prior to task fMRI time series analysis for GE scanners, with 4 volumes removed for GE DV26 and 15 volumes removed for GE DV26 and later.
+
+#### E-Prime timing errors for GE scanners
+
+In a relatively small, though substantial, subset of task fMRI acquisitions collected on GE scanners (~9% of runs), the time between the 1st and 16th trigger pulse sent from the scanner does not match the expected 12 seconds.
+
+We modified our task fMRI analysis pipeline to calculate trigger pulse timing discrepancies to identify E-prime runs for which the delay between the first trigger pulse and last recorded trigger pulse does not match the expectation (12 seconds for GE scanners). In cases where the discrepancy was either 0.8, 1.6, or 2.4 seconds (or within 0.01 seconds of those values), indicating missed (undetected) trigger pulses (~3% of runs), we adjusted the start time (used as the reference for subsequent events) by subtracting the discrepancy. We further modified the task fMRI analysis pipeline to exclude from processing any other runs that had a start time discrepancy (absolute difference from expectation relative to initial trigger pulse) larger than 0.5 seconds (~6% of runs), as such cases reflect irregular trigger timing and make it difficult or impossible to be sure when the stimulus run started relative to the imaging scan. For imaging visits with no valid task fMRI runs due to timing discrepancies, no derived results will be produced, and the imaging inclusion flags for the corresponding task will be set to 0. See [Data Documentation](type_tfmri.qmd).
+
+We also sought to identify runs for which the delay between the start of the run and the onset of the first fixation does not match the expectation (500 msec for 1st nBack run on GE scanners, 0 msec otherwise). Runs with an onset time delay greater than 5 seconds were excluded from processing. Smaller discrepancies (i.e., up to 5 seconds) were allowed for this type of delay, because they do not introduce an error in the time series analysis, like an unknown delay between the start of the scan and the start of the run would. Instead, there is merely a shift in the timing of events relative to the start of the run, which can be correctly modeled.
+
+### Column misnaming in rsfMRI network to subcortical ROI correlation tabulated data
+
+The column names in the table [`mr_y_rsfmri__corr__gpnet__aseg`](https://abcd.deapscience.com/?hierarchyOrder=%5B%22study%22%2C%22domain%22%2C%22subDomain%22%2C%22source%22%2C%22metric%22%2C%22atlas%22%5D&hierarchy=%5B%5B%22Youth%22%2C%22MRS+%28HERMES%29+%5BYouth%5D%22%5D%2C%5B%22Correlation%22%2C%22Resting+State+fMRI+-+Correlations+%28Gordon+network+to+Subcortical%29+%5BYouth%5D%22%5D%5D#/my-datasets/create-dataset), which contains the tabulated imaging data for rsfMRI correlations between networks and subcortical ROIs, were corrected in the current release. In previous releases, columns were systematically misnamed. That is, the ordering of the column names did not match the ordering of the values of the columns. This problem was caused by swapping the inner and outer loops when iterating over networks and subcortical ROIs while constructing the column names. For example, to correctly match the data, instead of all ROIs for the first network having been listed first, all networks for the first ROI should have been listed first.
+
+## Changes to 6.1
+
+### Changes to task fMRI behavioral performance and inclusion flags for SST (stop signal task)
+
+The behavioral performance flag for SST (`mr_y_tfmri__sst__beh__qc_indicator`) has been changed from `0` (fail) to `1` (pass) for 3524 participant-events. The criteria for acceptable behavioral performance for SST were adjusted to allow for as few as 280 "Go" trials instead of the previously required 300 Go trials. This change was made to allow for the inclusion of participant-events in which the SST runs contained "Stop too early" (STE) trials, which are defined as trials in which the participant made their button press response during a stop trial before the stop signal would have been presented. In the version of the SST task used since August 2021, when STE trials occurred, the stop signal was then not presented on that trial, and the subsequent trial was replaced by another "Stop" trial, thus reducing the number of Go trials. Of all participant-events with SST behavioral results in the 6.1 release, \~85% of participant-events have exactly 300 Go trials and over \~96% have at least 295 Go trails. For time series modeling, STE trials are currently modeled as a separate condition of no interest. In the upcoming 7.0 release, STE trials will be recoded as Go trials.
+
+As a consequence of the change to the behavioral performance flag noted above, the imaging inclusion flag for SST (`mr_y_qc__incl__tfmri__sst_indicator`) has also been changed from `0` (exclude) to `1` (include) for 3152 participant-events. Note that this number is less than the number of participant-events with changed performance flag due to additional reasons for exclusion.

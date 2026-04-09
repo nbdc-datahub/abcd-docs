@@ -14,7 +14,6 @@ Access to ABCD Study data is managed through the [NIH Brain Development Cohorts]
 
 - You must have a legitimate research purpose for using the data.
 - You must be affiliated with an NIH-recognized research institution and obtain approval from an institutional signing official. 
-- Your institution must hold an active [Federal Wide Assurance (FWA)](https://www.hhs.gov/ohrp/register-irbs-and-obtain-fwas/fwas/fwa-protection-of-human-subjecct/index.html) for the Protection of Human Subjects.
 
 For complete details on the dataset access process, visit the [NBDC website](https://www.nbdc-datahub.org/data-access-process). Frequently asked questions about data access are covered [here](https://nbdc-splash-beta.lassoinformatics.com/faqs).
 

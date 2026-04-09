@@ -389,6 +389,14 @@ Youth 6-year, one question was added
 
 **Measure description:** Youth's Self-Report [(ASEBA)](https://store.aseba.org/YOUTH-SELF-REPORT_11-18-50-per-Package/productinfo/501/) (of behavioral problems).
 
+::: {.callout-caution collapse="true" title="Release notes: `mh_y_ysr`"}
+
+**6.0**
+
+-   [**Missing summary scores**](../release_notes/6_0.qmd#youth-self-report): Two syndrome scales (Anxious-Depressed `mh_y_ysr__synd__anxdep` and Thought Problems `mh_y_ysr__synd__tho`) and one DSM-oriented scale (Depressive Problems `mh_y_ysr__dsm__dep`) are missing because 2 “suicidal thoughts” items from these scales were not administered and the scores were not computed. This issue will be resolved in a future release.
+:::
+
+
 # Parent tables
 
 ## Adult Behavior Checklist on Other Parent {#mh_p_abcl}

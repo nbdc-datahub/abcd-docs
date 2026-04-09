@@ -10,7 +10,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: true
-    content: The ABCD 6.1 Data has been released, and the Data Documentation has been updated with the 6.1 Data Release Notes.
+    content: ABCD 7.0 Data Release will be available in May.
     type: primary
     position: below-navbar
   reader-mode: false

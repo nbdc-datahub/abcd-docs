@@ -10,7 +10,7 @@ body main {
 }
 </style>
 
-## ABCD-BIDS Pipeline
+## ABCD-BIDS Pipeline Derivatives {#abcd-bids-pipeline}
 
 Derivatives generated from the DCAN Labs ABCD-BIDS MRI (version 0.1.4) processing pipeline [@sturgeon2023] are provided, including Human Connectome Project (HCP) Minimal Preprocessing Pipelines-style data in both volume and surface spaces as well as freesurfer-5.3.0-HCP segmentation statistics and surface morphometrics [@glasser2013].
 

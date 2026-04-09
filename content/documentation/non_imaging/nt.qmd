@@ -98,9 +98,9 @@ Ksana Health provided the following data lineage diagrams to detail their proces
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_y_earsp")`
 `r r_link_table("nt_y_earsp")`
 
-**Measure description:** Pre- and post-questionnaires of weekday and weekend time on devices (e.g., "screen time") for non-school activities and household rules for device and app usage. Youth and parents completed independent questionnaires with parents reporting on their youth. These data were collected during a pilot study of methods and compatibility of different software platforms for Device Usage Statistics.
+**Measure description:** Pre- and post-questionnaires of weekday and weekend time on devices (e.g., "screen time") for non-school activities and household rules for device and app usage. Youth and parents completed independent questionnaires with parents reporting on their youth. These data were collected during a pilot study of methods and compatibility of different software platforms for Device Usage Statistics. These data were only collected at the Year 2 Follow-Up at select study sites.
 
-**Notes and special considerations:** As a pilot study, these data were collected at a subset of ABCD sites.
+**Notes and special considerations:** These data were collected as pilot data prior to the full study launch of EARS. They were collected at several study sites at Year 2 only on a small number of participants.
 
 ## Screen Time Questionnaire {#nt_y_stq data-link="Screen Time Questionnaire"}
 
@@ -210,9 +210,9 @@ Includes variables: `nt_y_stq__screen__wkdy__hr_001__01`, `nt_y_stq__screen__wkd
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nt_p_earsp")`
 `r r_link_table("nt_p_earsp")`
 
-**Measure description:** Pre- and post-questionnaires of weekday and weekend time on devices (e.g., "screen time") for non-school activities and household rules for device and app usage. Youth and parents completed independent questionnaires with parents reporting on their youth. These data were collected during a pilot study of methods and compatibility of different software platforms for Device Usage Statistics.
+**Measure description:** Pre- and post-questionnaires of weekday and weekend time on devices (e.g., "screen time") for non-school activities and household rules for device and app usage. Youth and parents completed independent questionnaires with parents reporting on their youth. These data were collected during a pilot study of methods and compatibility of different software platforms for Device Usage Statistics. These data were only collected at the Year 2 Follow-Up at select study sites.
 
-**Notes and special considerations:** As a pilot study, these data were collected at a subset of ABCD sites.
+**Notes and special considerations:** These data were collected as pilot data prior to the full study launch of EARS. They were collected at several study sites at Year 2 only on a small number of participants.
 
 ## Parent Screen Time Questionnaire {#nt_p_stq}
 

@@ -29,6 +29,10 @@ For more information:
 
 ## Toxicology 
 
+Given the early first age of ABCD data collection, administration of toxicological assessments was randomized to small portions of the cohort, with the percentage tested growing over time, or those who endorsed substance use. Randomized oral fluid testing occurred at Baseline-Year 3, while Year 4 and 5 used urinalysis for all participants. Hair was collected at all timepoints from all participants who were willing and whose hairstyle would not be disrupted by collection, but only select samples underwent toxicological testing.
+
+Beginning on 9/1/2024 (part of Year 6, Year 7, and all of Year 8), administration of toxicological matrices was changed to ensure testing of both acute substance use and a longer window of use. To achieve this, oral fluid testing was administered to all participants, as it gives a 12-48 hour window of detection for substances. Hair collection was also required, as it measures up to 3 months of substance use (excepting the first 8 days, as the hair takes >7 days to emerge from the scalp). If either oral fluid or hair samples were not able to be collected for any reason (e.g., missing supplies; too short of hair), urinalysis was required. This is because urine can detect recent use, as well as longer-term use (up to 1 month) in some drug classes in those who regularly use the drug.
+
 ### Alcohol Toxicology {#su_y_alctox}
 
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alctox")`
@@ -912,7 +916,11 @@ reactable(tlfb_substance_doses)
 
 **Measure description:** Parental substance use approval and rules for youth.
 
-**Modifications since initial administration:** Rules about ENDS use were added at the 3-year follow-up.
+**Modifications since initial administration:** Rules about ENDS use were added at the 3-year follow-up. 
+
+::: {.callout-warning collapse="true" title="Data warning: Parental Rules for ENDS use" #data-ends}
+Parental Rules for ENDS use was not collected at Year 4 for a portion of participants due to a branching logic error. That branching error was caught and corrected halfway through Year 4 data collection.
+:::
 
 **Key references:**
 

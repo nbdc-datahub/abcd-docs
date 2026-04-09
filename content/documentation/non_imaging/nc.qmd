@@ -69,7 +69,7 @@ American Academy of Clinical Neuropsychology (AACN) Position Statement on Use of
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_bird")`
 `r r_link_table("nc_y_bird")`
 
-**Measure description:** The Behavioral Indicator of Resilience to Distress (BIRD) task measures a participant's ability to persist despite distress. The paradigm shows a bird in a cage with 10 number boxes arranged in a circle around it; a green dot moves at random from box to box. The participant must reach the green dot before it moves or else an unpleasant sound is delivered. In level 1 (2 minutes), the participant completes an adaptive training level to estimate RTs; in level 2 (3 minutes) the dot moves faster than the participant's RT at random (distress component); in level 3 (5 minutes) the participant is allowed to quit at any time (with longer level 3 durations indicating higher tolerance for distress; a binary quit \[1: high distress\] and no quit \[0: low distress\] variable is also computed); affective scales are given prior to the task and after level 2.
+**Measure description:** The Behavioral Indicator of Resilience to Distress (BIRD) task measures a participant's ability to persist despite distress. The paradigm shows a bird in a cage with 10 number boxes arranged in a circle around it; a green dot moves at random from box to box. The participant must reach the green dot before it moves or else an unpleasant sound is delivered. In level 1 (2 minutes), the participant completes an adaptive training level to estimate RTs; in level 2 (3 minutes) the dot moves faster than the participant's RT at random (distress component); in level 3 (5 minutes) the participant is allowed to quit at any time (with longer level 3 durations indicating higher tolerance for distress; a binary quit \[1: high distress\] and no quit \[0: low distress\] variable is also computed); affective scales are given prior to the task and after level 2. The remote Millisecond version can be found [here](https://www.millisecond.com/library/bird/abcdbird).
 
 **Key references:**
 
@@ -105,7 +105,7 @@ Per @johnson2008, `values.Consistent_per_JBcriterion2` (yes,no) essentially indi
 
 **Notes and special considerations:**
 
-Users should consider restricting data analysis to participants for whom `values.Consistent per_JBcriterion1` and `values.Consistent per_JBcriterion2` are both "yes."
+Users should consider restricting data analysis to participants for whom `values.Consistent per_JBcriterion1` and `values.Consistent per_JBcriterion2` are both "yes." The remote Millisecond version can be found [here](https://www.millisecond.com/library/delaydiscountingtask/abcddelaydiscounting).
 
 **Key reference:** `r full_cite("johnson2008")`
 
@@ -140,7 +140,7 @@ There may be aberrant data in the task with reaction times (RTs). We recommend t
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_flnkr")`
 `r r_link_table("nc_y_flnkr")`
 
-**Measure description:** This task measures attention, cognitive control, executive function, and inhibition of automatic response similarly to the NIH Toolbox Flanker task of the [NIH Toolbox (Cognition)](#nc_y_nihtb) battery. Because the NIH Toolbox version of the Flanker could not be administered remotely, this task was designed to mimic the NIH Toolbox Flanker task as closely as possible.
+**Measure description:** This task measures attention, cognitive control, executive function, and inhibition of automatic response similarly to the NIH Toolbox Flanker task of the [NIH Toolbox (Cognition)](#nc_y_nihtb) battery. Starting at ses-02A, the Millisecond task was used for remote administration of the Flanker task ([smart phone version](https://www.millisecond.com/library/v7/flankertask/abcdarrowflankertest/abcdarrowflankertest_smartphone/abcdarrowflankertest_smartphone.manual), [tablet version](https://www.millisecond.com/library/v7/flankertask/abcdarrowflankertest/abcdarrowflankertest_tablet/abcdarrowflankertest_tablet.manual)), as the NIH Toolbox version could not be completed remotely. This task was designed to mimic the NIH Toolbox Flanker task as closely as possible. 
 
 **Notes and special considerations:** We recommend that users carefully consider the administration differences between the NIH Toolbox Flanker task and the Millisecond Flanker task in their analyses.
 
@@ -149,7 +149,7 @@ There may be aberrant data in the task with reaction times (RTs). We recommend t
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_gdt")`
 `r r_link_table("nc_y_gdt")`
 
-**Measure description:** The Game of Dice Task (GDT) (@brand2005) assesses decision-making under conditions of specified risk and has been successfully used with adolescent samples (@duperrouzel2019; @drechsler2008; @ross2016). Risk taking is assessed by having participants attempt to predict the outcome of a dice roll by choosing among different options that vary on their outcome probability and pay-off across 18 trials. Specific rules and probabilities for monetary gains and losses are evident throughout the task (@brand2005). On each trial, participants predict the outcome of a die roll by choosing from four different options (e.g., one number vs. multiple numbers). Options with more numbers (i.e. higher probability of winning) are associated with a lesser reward compared to those with one or two possible numbers (i.e. lower probability of winning). The two options with the lowest probability of winning are considered 'risky choices.' The total number of risky choices is often used to quantify performance.
+**Measure description:** The Game of Dice Task (GDT) (@brand2005) assesses decision-making under conditions of specified risk and has been successfully used with adolescent samples (@duperrouzel2019; @drechsler2008; @ross2016). Risk taking is assessed by having participants attempt to predict the outcome of a dice roll by choosing among different options that vary on their outcome probability and pay-off across 18 trials. Specific rules and probabilities for monetary gains and losses are evident throughout the task (@brand2005). On each trial, participants predict the outcome of a die roll by choosing from four different options (e.g., one number vs. multiple numbers). Options with more numbers (i.e. higher probability of winning) are associated with a lesser reward compared to those with one or two possible numbers (i.e. lower probability of winning). The two options with the lowest probability of winning are considered 'risky choices.' The total number of risky choices is often used to quantify performance. The [Millisecond task](https://www.millisecond.com/library/gameofdicetask/abcdgameofdicetask) was used for remote administration of the task, as the NIH Toolbox version could not be completed remotely.
 
 **Key references:**
 
@@ -165,7 +165,7 @@ There may be aberrant data in the task with reaction times (RTs). We recommend t
 
 **Measure description:** The Little Man Task evaluates visuospatial processing flexibility and attention. Participants view pictures of a figure (little man) presented in different orientations and holding a suitcase and must use mental rotation skills to assess which hand (left or right) is holding the suitcase. Accuracy and latency scores are provided for each trial.
 
-**Modifications since initial administration**: The Little Man Task used in the baseline assessment was administered using a customized program designed by ABCD, whereas the 2-year and 4-year follow-up assessments used a task presented in the *Inquisit* system from [*Millisecond*](https://www.millisecond.com). We recommend users consider this difference in analyses.
+**Modifications since initial administration**: The Little Man Task used in the baseline assessment was administered using a customized program designed by ABCD, whereas the 2-year and 4-year follow-up assessments used a [task](https://www.millisecond.com/library/mentalrotation/abcdlittlemantest) presented in the *Inquisit* system from [*Millisecond*](https://www.millisecond.com). We recommend users consider this difference in analyses.
 
 ::: {.callout-caution collapse="true" title="Release notes: `nc_y_lmt`"}
 **6.0**
@@ -184,14 +184,14 @@ There may be aberrant data in the task with reaction times (RTs). We recommend t
 **Measure description:** The NIH Cognition Toolbox comprises seven tasks administered via iPad ([Scoring & Interpretation Guide](https://nihtoolbox.my.salesforce.com/sfc/p/2E000001H4ee/a/2E0000004yR3/Ckb_AKw1oFUC56tgf6tdxcGDYaYbu8rsmBSFOX2Ec4g); [Composite Score Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Cognition_Battery_Composite_Scores_Technical_Manual.pdf)). For each task, raw scores, and uncorrected and age corrected scores are available. At Baseline (all 7 tasks administered); subset of 5 tasks administered in 2-year follow-up; 4-year follow-up; 6 tasks administered in 4-year follow-up. The following tasks are included in the battery:
 
 - *Picture Vocabulary*: Language vocabulary knowledge. A component of the *Crystallized Composite Score*. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Picture_Vocabulary_Test_Technical_Manual.pdf)
-- *Flanker Inhibitory Control & Attention*: Attention, cognitive control, executive function, inhibition of automatic response. A component of the *Fluid Composite Score.* [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Flanker_Inhibitory_Control_and_Attention_Test_Technical_Manual.pdf) Note, remote assessments used a replicated Flanker task administered using the Inquisit platform, because the NIH Toolbox version could not be administered remotely.
+- *Flanker Inhibitory Control & Attention*: Attention, cognitive control, executive function, inhibition of automatic response. A component of the *Fluid Composite Score.* [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Flanker_Inhibitory_Control_and_Attention_Test_Technical_Manual.pdf). Note: Starting at ses-02A remote assessments used a replicated Flanker task administered using the Inquisit Millisecond platform, because the NIH Toolbox version could not be administered remotely.
 - *Picture Sequence Memory*: Episodic memory; sequencing. A component of the *Fluid Composite Score*. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Picture_Sequence_Memory_Test_Technical_Manual.pdf)
 - *Dimensional Change Card Sort*: Executive function: set shifting, flexible thinking, concept formation. A component of the *Fluid Composite Score*. Administered in Baseline assessment only. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Auditory_Verbal_Learning_Test_Rey_Technical_Manual.pdf)
 - *Pattern Comparison Processing Speed*: Information processing, processing speed. A component of the *Fluid Composite Score*. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Pattern_Comparison_Processing_Speed_Test_Technical_Manual.pdf)
 - *Oral Reading Recognition*: Language, oral reading (decoding) skills, academic achievement. A component of the *Crystallized Composite Score*. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_Oral_Reading_Recognition_Test_Technical_Manual.pdf)
 - *List Sorting Working Memory*: Working memory, information processing. A component of the *Fluid Composite Score*. Administered in Baseline assessment and 4-year follow-up. [Technical Manual](https://www.healthmeasures.net/images/nihtoolbox/Technical_Manuals/Cognition/Toolbox_List_Sorting_Working_Memory_Test_Technical_Manual.pdf)
 
-**Modifications since initial administration**: Remote assessments in the 2-year and 4-year follow-up protocols used a Flanker task using the *Inquisit* system from [Millisecond](https://www.millisecond.com/). This task was designed to mimic the NIH Toolbox Flanker task as closely as possible. We encourage users to consider this change in their analyses.
+**Modifications since initial administration**: Remote assessments in the starting at ses-02A completed a Flanker task using the *Inquisit* system from [Millisecond](https://www.millisecond.com/). This task was designed to mimic the NIH Toolbox Flanker task as closely as possible. We encourage users to consider this change in their analyses. 
 
 **Notes and special considerations:** In the 2-year follow-up, five of the seven NIH Toolbox tasks were administered. The Dimensional Change Card Sort was administered in the baseline and 6-year follow-up only, and List Sorting Working Memory was administered in the baseline and 4-year follow-up assessments. Because of this, the NIH Toolbox Fluid and Total Composite Scores could not be calculated for follow-up assessments.
 
@@ -246,7 +246,7 @@ This task was administered at year 4 but discontinued 9/14/2021 based on partici
 ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("nc_y_smarte")`
 `r r_link_table("nc_y_smarte")`
 
-**Measure description:** The Stanford Mental Arithmetic Response Time Evaluation (SMARTE) is a youth measure that assesses dot enumeration, math fluency, and single- and double-digit arithmetic operations via an iPad or smartphone app. Multiple accuracy and reaction time summary scores are calculated (@starkey2014).
+**Measure description:** The [Stanford Mental Arithmetic Response Time Evaluation (SMARTE)](https://edneuroinitiative.stanford.edu/smarte#:~:text=The%20Stanford%20Mental%20Arithmetic%20Response,and%20will%20be%20sharing%20soon.) is a youth measure that assesses dot enumeration, math fluency, and single- and double-digit arithmetic operations via an iPad or smartphone app. Multiple accuracy and reaction time summary scores are calculated (@starkey2014). 
 
 **Key reference:** `r full_cite("starkey2014")`
 

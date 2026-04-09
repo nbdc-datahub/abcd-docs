@@ -10,6 +10,8 @@ An iterative procedure was used to generate a registration target and the final 
 
 All available scans from all observations included in Data Release 6.0 were registered to the final group average, the ABCD atlas. The warps were applied to numerous imaging measures across dMRI, sMRI and tfMRI. This produced 3D volumes which were anatomically aligned across observations and modalities.
 
+A detailed description of how the ABCD3 atlas was generated and registration steps can be found in @pecheva2022. The ABCD3 atlas files are available to download from https://zenodo.org/records/17258390.
+
 # Concatenation and data storage
 
 To reduce the total data size and facilitate data sharing, a brain mask was applied to the 3D volumes for each imaging measure and only voxels within the mask were stored as a 2D vector. The masked vector data were concatenated across observations and according to each measure. For each imaging measure (FA, MD, RNI etc) .mat files of the concatenated data contain a variable volmat that is a matrix of size N x P, where N = number of observations and P=number of voxels within the mask. Please see the Concatenated Imaging Data Documentation for details. Imaging measures are located in modality specific directories along with a `vol_info.mat` file which contains participant and session IDs and high and low resolution 3D volumes of the ABCD atlas mask. The ABCD atlas masks can be used to convert the 2D vectors into 3D volumes. The following Matlab code provides an example of how to do this using the `fullvol.m` function provided by the Fast and Efficient Mixed-effects Algorithm (FEMA) available from <https://github.com/cmig-research-group/cmig_tools>. 
