@@ -1,0 +1,42 @@
+color:
+  palette:
+      navbarcol: "#FFFFFF"
+      navtxtcol: "#3E415B"
+      primarycol: "#263582"
+      primarylight: "#2635821A"
+      txt-light: "#FFFFFF"
+      txt-black: "#040922"
+      txt-dark: "#2B2D42"
+      txt-gray-dark: "#3E415B"
+      txt-gray-light: "#6D6F8A"
+      mono-gray: "#535675"
+      mono-code: "#3E415B"
+      gray-light: "#aaa"
+      gray-superlight: "#ccc"
+      blockquote: "#263582"
+  primary: primarycol
+  secondary: "#FDBF6F"
+  success: "#33A02C"
+  info: "#DEEBF7"
+  warning: "#FF7F00"
+  danger: "#E31A1C"
+
+typography:
+  base: "Lato"
+  headings: "Lato"
+  monospace: "Roboto Mono"
+
+logo:
+  images:
+    logo-dark: "../assets/img/logos/abcd_logo_grey_no_text.png"
+    # logo-white: "../assets/img/logos/logo-abcd.png"
+
+    logo-brain: "../assets/img/logos/abcd-brain.svg"
+    # logo-brain: "../assets/img/logos/hbcd-brain.svg"
+    # logo-brain: "../assets/img/logos/indp-brain.svg"
+    back-brain-left: "../assets/img/logos/background-brain-left.svg"
+    back-brain-right: "../assets/img/logos/background-brain-right.svg"
+
+  small: logo-dark
+  medium: logo-dark
+  large: logo-dark

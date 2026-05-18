@@ -14,11 +14,11 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("atlas == 'Behavior'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_tfmri_beh.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_tfmri_beh.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 The above table lists instruments with summary scores for participants' behavioral performance in the different task-based fMRI paradigms. Besides these curated tabulated data, users can also download the raw (trial-level) behavioral data that the summary scores are computed from (see [Trial Level Behavioral Performance Data Documentation](type_trial.qmd)). The tasks and stimuli listed in this document are also available at <https://abcdstudy.org/scientists/abcd-fmri-tasks-and-tools>. The behavioral performance review is part of the ABCD Study QC procedures and imaging inclusion criteria. For additional information please refer to the [MRI Quality Control & Recommended Image Inclusion Criteria](type_qc.qmd) release note.
 
-::: {#use-taskfMRI .callout-important title="Responsible Use Warning: Performance" collapse="true"}
+::: {#use-taskfMRI .callout-important title="Responsible use consideration: Performance" collapse="true"}
 
 Using open-access datasets like ABCD requires responsible conceptualization and use of the data, including being mindful of variations in experience that impact performance. Below are specific considerations:
 
@@ -28,7 +28,7 @@ Using open-access datasets like ABCD requires responsible conceptualization and 
 
 # Monetary Incentive Delay (MID) Task {#mr_y_tfmri__mid__beh}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_tfmri__mid__beh")`
+`r table_header("mr_y_tfmri__mid__beh")`
 
 **Measure description:** The fMRI Monetary Incentive Delay (MID) task measures domains of reward processing, including anticipation and receipt of reward and losses, and trial-by-trial motivation in speeded responses to win or avoid loss. Each trial of the MID task begins with an incentive cue of five possible trial types (Win \$20, Win \$5, Lose \$20, Lose \$5, \$0-no money at stake), a delay, a target during which the participant responds to either win money or avoid losing money and feedback.
 
@@ -41,13 +41,13 @@ In the initial version of the MID task used for ABCD, only reaction time (RT) fo
 
 ## Monetary Incentive Delay Post Scan Questionnaire {#mr_y_tfmri__mid__qtn}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_tfmri__mid__qtn")`
+`r table_header("mr_y_tfmri__mid__qtn")`
 
 **Measure description:** After completion of the in-scanner task, participants are asked to rate how they felt when viewing the different cues and receiving the different outcomes during the MID task to determine the effectiveness and value of wins and losses.
 
 # Stop Signal Task (SST) {#mr_y_tfmri__sst__beh}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_tfmri__sst__beh")`
+`r table_header("mr_y_tfmri__sst__beh")`
 
 **Measure description:** The fMRI Stop Signal Task (SST) measures impulse control and impulsivity. The task requires participants to withhold or interrupt a motor response to a "Go" stimulus when it is followed unpredictably by a signal to stop. To ensure approximately 50% successful and 50% unsuccessful Stop trials, a tracking algorithm varies the interval between the onset of the Go stimulus and the onset of the Stop Signal (the Stop Signal Delay) based on individual performance. When possible, participants who were unable to complete the task in the scanner completed the task outside the scanner.
 
@@ -99,7 +99,7 @@ A small number of trial outcomes are mislabeled in the Stop task's E-Prime outpu
 
 # Emotional nBack Working Memory Task {#mr_y_tfmri__nback__beh}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_tfmri__nback__beh")`
+`r table_header("mr_y_tfmri__nback__beh")`
 
 **Measure description:** The fMRI Emotional nBack task assesses memory, emotion and face and place perceptual processes. The task is a block design working memory task using four categories of stimuli (places, positive faces, negative faces and neutral faces) and two memory load conditions (0 and 2 back). The task includes 80 trials for each of the two memory load conditions, 20 trials for each stimulus type in each of the two memory load conditions and 40 trials of each stimulus type.
 
@@ -109,7 +109,7 @@ Poor performance in the nBack task is indicated if the overall response accuracy
 
 ## nBack Recognition Memory (RECMEM) Task {#mr_y_tfmri__nback__rec}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_tfmri__nback__rec")`
+`r table_header("mr_y_tfmri__nback__rec")`
 
 **Measure description:** The Emotional nBack Recognition Memory task engages short-term memory for items presented during the fMRI Emotional nBack task. This task was performed outside the scanner after the completion of the fMRI nBack task. Both HitRate (HR) and False Alarms (FA) are provided for each condition along with key dependent variables of response bias, corrected accuracy, and d-prime.
 

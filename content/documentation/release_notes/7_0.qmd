@@ -1,0 +1,458 @@
+---
+title: "7.0 data release"
+lightbox: true
+order: 1
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+
+metadata_diff <- readr::read_csv(
+  "../../assets/tbl/documentation/release_notes/diff_metadata_7_0.csv"
+)
+
+data_diff_overview <- readr::read_csv(
+  "../../assets/tbl/documentation/release_notes/7_0_diff_data_overview.csv"
+)
+
+renames_7_0 <- readr::read_csv(
+  "../../assets/tbl/documentation/release_notes/7_0_renames.csv"
+)
+
+ksads_mapping <- readr::read_csv(
+  "../../assets/tbl/documentation/non_imaging/ksads_item_mapping.csv"
+)
+```
+
+# Overview
+
+The 7.0 data release (on 5/13/2026) includes new data from events and sessions newly completed since the 6.0 release; Baby Teeth, RECOVER, and SIP substudies data; as well as updates to the data and data dictionary to address known issues and other found errors since the 6.1 release. Below are diff files showing all metadata changes as well as an overview of the data changes made in the 7.0 release. Detailed information about data level changes made in the 7.0 data release are available in the [internal release notes](https://abcd-docs-private.lassoinformatics.com/#dnldts46399), which are available to authenticated users on the [NBDC Data Hub](https://www.nbdc-datahub.org).
+
+::: {.callout-note collapse="true" title="7.0 Metadata Diff File"}
+```{r}
+metadata_diff |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+
+::: {.callout-note collapse="true" title="7.0 Data Diff Overview"}
+```{r}
+data_diff_overview |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+
+# Sample
+
+The 7.0 data release (on 5/13/2026) includes data from *11,860 participants*, representing the full ABCD cohort (N = 11,880), except for participants who withdrew consent to share their data, and *16 events*. Data are considered complete through the 5-year follow-up and nearly complete for the 6-year follow-up. Data from the 7-year and 7.5-year follow-up events are also included; however, data collection for events at and beyond the 6-year follow-up was still ongoing at the time of the data freeze (cutoff date: August 1, 2025). As a result, these events include only participants who had assented by the cutoff date. No data are included from events after the 7.5-year follow-up to ensure sufficient event completion.
+
+The following table shows the number of participants per *core study* event:
+
+| **Session/event ID** | **Session/event label** | **n** |
+|----------------------|-------------------------|-------|
+| ses-00S              | Screener                | 11859 |
+| ses-00A              | Baseline                | 11860 |
+| ses-00M              | 0.5 Year                | 11371 |
+| ses-01A              | 1 Year                  | 11220 |
+| ses-01M              | 1.5 Year                | 11076 |
+| ses-02A              | 2 Year                  | 10989 |
+| ses-02M              | 2.5 Year                | 10255 |
+| ses-03A              | 3 Year                  | 10516 |
+| ses-03M              | 3.5 Year                | 9584  |
+| ses-04A              | 4 Year                  | 9792  |
+| ses-04M              | 4.5 Year                | 7219  |
+| ses-05A              | 5 Year                  | 9050  |
+| ses-05M              | 5.5 Year                | 7149  |
+| ses-06A              | 6 Year                  | 9539  |
+| ses-07A              | 7 Year                  | 8564  |
+| ses-07M              | 7.5 Year                | 4871  |
+
+The ABCD 7.0 data release also includes data from associated substudies, including Social Development, COVID-19, and newly added RECOVER and SIPS substudies. Some of these substudy assessments are conducted during the same visits as the main study, while others have independent event structures.
+
+RECOVER (ses-REC) and SIPS (ses-SIP) are newly added substudy events introduced in the 7.0 data release.
+
+The following table shows the number of participants with data per *substudy* event:
+
+| **Substudy**       | **Session/event ID** | **Session/event label** | **n** |
+|--------------------|----------------------|-------------------------|-------|
+| COVID-19           | ses-C01              | COVID Wave 1            | 10380 |
+| COVID-19           | ses-C02              | COVID Wave 2            | 10377 |
+| COVID-19           | ses-C03              | COVID Wave 3            | 10367 |
+| COVID-19           | ses-C04              | COVID Wave 4            | 10357 |
+| COVID-19           | ses-C05              | COVID Wave 5            | 10347 |
+| COVID-19           | ses-C06              | COVID Wave 6            | 10009 |
+| COVID-19           | ses-C07              | COVID Wave 7            | 10006 |
+| Social Development | ses-S01              | SDev Wave 1             | 2424  |
+| Social Development | ses-S02              | SDev Wave 2             | 2128  |
+| Social Development | ses-S03              | SDev Wave 3             | 1942  |
+| Social Development | ses-S04              | SDev Wave 4             | 1907  |
+| Social Development | ses-S05              | SDev Wave 5             | 1896  |
+| Social Development | ses-S06              | SDev Wave 6             | 1684  |
+| Social Development | ses-S07              | SDev Wave 7             | 822   |
+| RECOVER            | ses-REC              | RECOVER                 | 6009  |
+| SIPS               | ses-SIP              | SIPS                    | 559   |
+
+# Curation & Structure
+
+## Curation
+
+Some variables were renamed for the 7.0 release to correct errors from prior releases and to better align keyword usage within and across domains. The full list of renamed variables is provided in the mapping table below.
+
+::: {.callout-note collapse="true" title="7.0 Variable Rename Mapping File"}
+```{r}
+renames_7_0 |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50)
+  )
+```
+:::
+
+## Structure
+
+Data in the 7.0 release are provided in both tabulated and file-based structures (see [Tabulated Data](/documentation/curation/structure.qmd#tabulated) and [File-Based Data](/documentation/curation/structure.qmd#file-based).
+
+The file-based directory structure has been updated: the `concat` directory has been renamed `concatenated`. All corresponding file paths reflect this change.
+
+# Core Study
+
+## ABCD (General)
+
+### Demographics 
+
+NAA mean scores were added in the `ab_p_demo` where the Native American Acculturation items were asked to parents, the new item is `ab_p_demo__ntvam_mean`.
+
+## Friends, Family, & Community
+
+### New FC tables
+
+There were new tables included in the 7.0 Data release
+
+`r link_table("fc_y_ag", dest = "docs", name = "label", type = "md")` `r table_header("fc_y_ag")`
+`r link_table("fc_y_ev", dest = "docs", name = "label", type = "md")`  `r table_header("fc_y_ev")`
+`r link_table("fc_y_lone", dest = "docs", name = "label", type = "md")` `r table_header("fc_y_lone")`
+
+### New NAA summary score
+
+There is a new summary score `fc_y_naa_mean` for the Native-American Acculturation Scale (NAAS).
+
+### Youth Education & Vocation school type level mislabeling
+
+There is a level labeling issue for item `fc_y_ev__edu_002__v01` asking about the specific type of school program in which the youth is enrolled in the `fc_y_ev` table such that the label for response option `3` displays as "Certificate, credential, or licensing program (including occupational, technical, or vocational) 18, Military Service Academy (USMA, USNA, USAFA, USCGA, USMMA)". This issue only exists in the release dictionary, participants were only shown the correct label ("Certificate, credential, or licensing program (including occupational, technical, or vocational)") for option `3` and the label and option for `18` were displayed separately.
+
+## Genetics
+
+ABCD 7.0 introduces whole genome sequencing data for 8,710 individuals (8,877 samples including technical replicates), generated via Illumina NovaSeq at 30x coverage. See the [WGS documentation](../non_imaging/gn.qmd#wgs) for methodological details and quality control procedures.
+
+For microarray data, we have adapted the procedure for calculating the genetic relatedness matrix to reduce inflated values exceeding 1. This was achieved by using 7 (rather than 2) principal components and truncating minor allele frequencies to X when calculating ancestry corrected allele frequencies in PC-AiR. Imputation of microarray data is now performed on the r3 rather than r2 reference panel. A further 6 individuals were included as part of the microarray data resource.
+
+The most significant update for the ABCD genetics 7.0 data release is the inclusion of 8,877 samples of Illumina short read 30x whole genome covering 8,710 individuals. A brief overview of the key methodological steps is provided below. Blood and saliva samples were collected across participants roughly equally, with blood preferred for sequencing where available. DNA extraction and biospecimen storage were carried out at RUCDR (later rebranded as SAMPLED). Sequencing was performed on Illumina NovaSeq instruments at 30x coverage, with reads aligned to the hg38 reference genome. Per-sample variant calling was performed following GATK best-practices, and population-level VCF files were generated by joint genotyping across all samples for single nucleotide variants and small indels. Variant quality was assessed using Variant Quality Score Recalibration (VQSR), and all released files include a FILTER field where 'PASS' denotes high-confidence variant calls. Sample-level quality control was anchored by cross-validating WGS data against existing microarray genotype data on the same individuals, with discordant samples flagged for resequencing. A total of 95 samples were removed on this basis, yielding the final set of 8,877 samples covering 8,710 individuals (including 168 technical replicates). Full methodological details — including library preparation, alignment parameters, joint genotyping strategy, and QC thresholds — will be provided in an upcoming data resource paper.
+
+## Linked External Data
+
+### SEDA Data
+
+Beginning with the 7.0 ABCD release, SEDA data are provided longitudinally across waves, rather than at baseline only, and are available in multiple formats (e.g., by assessment wave, school year, and month) to support different analytic approaches. Data linked by assessment wave can be downloaded within the tabulated datasets, whereas data linked by school year and month must be downloaded as file-based data through the NBDC Data Hub.
+
+### Satellite-based O3 Measures
+
+There was an error during curation of the `le_l_lo3` table for the 6.0 release, in which the new variable names for three average ozone variables (`le_l_03__addr1__03_mean__2016`, `le_l_03__addr2__03_mean__2016` and `le_l_03__addr2__03_mean__2016`) were incorrectly mapped. This naming issue has now been corrected for the 7.0 release.
+
+## Mental Health
+
+### Behavioral Inhibition / Behavioral Approach System Scales
+
+There was a previous error with the summary score `mh_y_bisbas__bis_sum` computation as the variable `mh_y_bisbas__bis_005` was not reverse-coded. The data and score algorithm have been corrected and updated for the 7.0 Release.
+
+### Early Adolescent Temperament Questionnaire
+
+Summary scores for some subscales (Activation, Aggression, Attention, Depressive Mood, Inhibitory Control, Shyness, and Surgency) of the `mh_p_eatq` measure were mistakenly reverse coded in the score algorithm despite already being reverse coded at the item level. Users should compute their own means when using 6.0 data and the issue has been fully corrected for the 7.0 Release.
+
+### Family History summary scores
+
+New summary scores and derived items were added to the `mh_p_famhx` table. The `_indicator` items summarize over checkbox items in the `alc` and `drg` subscales to create binary items indicating if any problem in those subscales were endorsed for each family member. This is intended to allow easier data use across all subscales as most other scales use binary items in the original questions for each family member. Additionally, `_indicator` and `_score` items were added for each subscale to give summary information across both parents. Details on these scores can be found in the [ABCDscores documentation](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#family-history-parent-)
+
+### KSADS
+
+#### KSADS Item-level Data
+
+The item-level KSADS data have been processed and included in the 7.0 Release. Item level data refers to the answers to each question asked in the KSADs interview. In some cases questions map one-to-one with specific symptoms, but in other cases several questions might map to the same symptom or there may be a combination of questions that need to be answered in a certain way to indicate the presence of a symptom. Users should use these data with caution, recognizing that we have not been able to fully QC all of the item/question data. In releasing these data, we attempted to harmonize the items between KSADS 1.0 and 2.0, a considerable amount of work. We have done our best to match questions across versions, but there are still items about which we have questions and we will work with KSADS over the upcoming year to address these remaining questions. Please see here for a file that lists the question numbers that we matched across versions. We can only provide question numbers and not the questions themselves due to copyright protections, but interested people could reach out to KSADS directly to request further information.
+
+::: {.callout-note collapse="true" title="KSADS Item Level Mapping"}
+
+Item level data was curated and made available for the KSADS tables starting at the 7.0 release. This combined KSADS1 and KSADS2 items into single variables in the release dataset wherever 1:1 relationships existed across the two versions. Mapping from release names to KSADS questions IDs is available below. Data users will need to request data dictionary information from KSADS directly for more information on question details for each question ID number.
+
+```{r}
+ksads_mapping |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+
+#### KSADS Diagnosis and Symptom Data
+
+The KSADS diagnosis and symptom score data were re-ingested and cleaned for the 7.0 release. Cases of accidental participant swaps and incorrect time point assignments were addressed, though some cases were not resolvable for 7.0 and thus are not included. Further corrections will be made for the 7.1 release update. Additionally, missingness coding was updated so score data in modules that were not given will be coded as `555` and any scores that a participant did not branch into based on item-level responses are coded as `0`.
+
+#### KSADS Symptom Mean Summary Scores
+
+A new set of summary scores was added for all KSADS modules. The experts selected the relevant KSADS symptoms to include an overall symptom mean measure. Documentation of the algorithms for these scores can be found in the [ABCDscores documentation](https://software.nbdc-datahub.org/ABCDscores/).
+
+#### KSADS – Suicidality
+
+Previously, there was an issue with skipped item responses about past suicidal ideation/behavior reports (any items starting with the prefix `mh_y_ksads__suic__past`) from the `mh_y_ksads__suic` table. This was addressed for the 7.0 Release. Starting at the 5-year follow-up event, youth were no longer supposed to be asked about past suicidality and RAs were told to input “no” in order to allow the program to move forward, but there were some cases that had data entered. All data for these events and items have now been updated to `555` "not administered" to reflect this protocol change. Do not use past suicidality data from the 5-year visit and beyond.
+
+#### KSADS – Bipolar Disorders
+
+The duplicate variable `mh_p/y_ksads__bpd__irrit__expl__pres_sx__v01` was removed as this item only indicated branching logic within the KSADS module and did not represent a true symptom score.
+
+### Life Events
+
+#### Life Events Summary Scores
+
+Previously, there was an issue with the Life Events summary scores due to the validation algorithm with missing data. This issue is fixed for the 7.0 Release.
+
+#### Life Events Item Coding
+
+The levels for the items `mh_y_ple__severity_032` and `mh_p_ple__severity_032` were previously incorrectly coded as values `1-4` instead of `0-3` causing an inflation of values in all summary scores that item is included in. The item coding has been corrected in the 7.0 Release.
+
+### Prodromal Psychosis Scale
+
+Two new summary scores were added to the `mh_y_pps` table: `mh_y_pps__dist__pers_score`, `mh_y_pps__dist__curr_score`. These scores relate to the scores in the new table `mh_y_ppsss` table and are used in the inclusion criteria for the SIPS substudy.
+
+### Static Prodromal Psychosis Scale Summary Scores
+
+There was a new [table](../non_imaging/mh.qmd#static-prodromal-psychosis-scale) Static Prodromal Psychosis Scale Summary Scores (`mh_y_ppsss`) included in the 7.0 Release.
+
+### Youth Self Report Summary Scores
+
+The ABCD Study removed 7 items (YSR items 18, 88, 91, 98, 106, 109, and 110) from the youth administration to reduce participant burden and alleviate redundancy in the overall protocol. Only 3 of the items removed (18, 91, and 110) are problem items included in the YSR scales Anxious/Depressed, Thought Problems, and Other Problems, respectively. Starting with the 7.0 release, ABCD has decided to compute summary scores for these scales as sum of the remaining items, which is in agreement with ASEBA guidance of ensuring no more than 8 problem items are missing to still be able to compute summary and T-scores. No imputation of the missing items was performed because these 3 items have typically very low base rates of response and imputation could be inaccurate. Since summary scores for these three scales may underestimated, caution is recommended in interpretation of group means, particularly in analyses involving a combination of ABCD data and other datasets with YSR data.
+
+ABCD has also updated the overall approach to scoring with regards to missingness. Missingness across all problem items is evaluated and if more than 5 additional problem items, beyond the 3 intentionally skipped by ABCD, are missing, any subscale with 1 or more items missing will not be scored, but any complete subscales will still be scored. Additionally, even if less than 8 problem items are missing, any scales with more than 20% missingness of expected items within the scale will not have computed scores. Please be aware of this during analyses and comparisons to other studies using the YSR.
+
+## Neurocognition
+
+### Little Man Task
+
+For `nc_y_lmt`, the previous data were incorrectly entered in percentage form and some data contain zero, which might seem implausible. These have been fixed in 7.0.
+
+### NIH Toolbox
+
+During the generation of the file-based data for neurocognitive tasks, there was an issue that caused some file-based data not to be generated. This issue primarily affected the `ses-06A` timepoint and NIH Toolbox tasks. About 1500 participant sessions are thus missing the file-based data but do have tabulated data. It is planned to restore these participants’ file-based data for the 7.1 release.
+
+## Novel Technologies
+
+### Fitbit raw data files
+
+The known issues from 6.0 have been fixed for 7.0 Release. 
+
+The qc_300min quality control flag in the sleep daily output was computed using min_total_slp > 299 rather than min_total_slp >= 300. Because min_total_slp is a floating-point value, the > 299 condition passes any value strictly greater than 299, meaning days with fewer than 300 valid sleep minutes (e.g., 299.5) may incorrectly pass QC. Users relying on this flag to enforce a 300-minute minimum should be aware that affected records may be present in their data.
+
+Sleep daily and weekly summary outputs were not filtered to exclude pre-session records which can be identified by day = 0 and wk = 0. Users should apply filter(day != 0) before using daily data and apply filter(wk != 0) before using corresponding weekly summaries.
+
+Records in fitbit_raw_metrics belonging to `session_id` ses-08A were incorrectly labeled with `session_id = 08A`.
+
+### Fitbit summary scores
+
+Fitbit summary scores have been included in the 7.0 Release.
+
+## Physical Health
+
+### Blood Pressure
+
+Previously, there were some errors with the summary scores counting invalid inputs like 0, and there were some outliers in the data. These issues have been addressed in 7.0 Release data
+
+### Blood Results
+
+Data errors in the blood results were discovered in the 6.0 dataset. Most outliers or errors were due to duplicate values being stored for a single sample, leading to unusually high values. All values that were correctable for 7.0 were fixed, but some outliers still remain. ABCD will continue to work to correct the remaining issues in a future release.
+
+### COVID Survey
+
+In the table `ph_p_covid` it was discovered that there were many date entries throughout the form that were implausible, such as dates from before or after the COVID pandemic. Experts worked to fix data where correctable, e.g. 2002 being corrected to 2022, but dates that were not resolvable were removed from the dataset.
+
+### Munich Chronotype Questionnaire Score update
+
+The algorithm for the Munich Chronotype Questionnaire (MCTQ) free day and school day count items has been updated such that if participants endorse they no longer go to school or work, the free day count will = `7` and the school/work day count will = `0` rather than missing as they were in prior releases. This should help improve missingness in other scores that were dependent on these fields having values.
+
+### Medications Inventory & Developmental History Summary Scores
+
+Summary scores have been developed for the Medications Inventory (`ph_p_meds` & `ph_y_meds`) and Developmental History (`ph_p_dhx`) tables. These include National Library of Medicine (NLM) API mapped fields from RxNorm codes, estimated use category mappings (estuse), and summarized true/false indicators to support ease of analysis. Estimated use category mappings derived from the parent-reported data were applied to youth-reported medications, with approximately 2% of medications currently unmapped. Future updates to the mapping framework may be incorporated in future releases.
+
+### Pain Questionnaire
+
+Previously, variable names were swapped for four items in the `ph_y_pq` table. The left and right variable names, but not labels, were reversed for the palm and top of foot items in this measure. This has been fixed in 7.0 Release data.
+
+### New derived items
+
+#### New derived birthweight item
+
+A new derived item was added to `ph_p_dhx` to combine pounds and ounces into a single birthweight item.
+
+#### New derived height scores
+
+New derived items were added to the `ph_p_anthr` table to combine feet and inches into a single height item for both mother and father.
+
+## Substance Use
+
+### Hair Toxicology Results Coding Fix
+
+In the 6.0 and 6.1 release, some hair toxicology results were incorrectly coded as `1/2` instead of `0/1` for negative/positive, respectively. All results coding has been updated in the 7.0 release and users of 6.0 data should be aware of this issue.
+
+### KSADS
+
+#### KSADS Items
+
+The KSADS Alcohol Use Disorder (`su_p_ksads__aud`) and Drug Use Disorder (`su_p_ksads__dud`) item level data and symptom means have been included in the 7.0 Release.
+
+::: {.callout-note collapse="true" title="KSADS Item Level Mapping"}
+
+Item level data was curated and made available for the KSADS tables starting at the 7.0 release. This combined KSADS1 and KSADS2 items into single variables in the release dataset wherever 1:1 relationships existed across the two versions. Mapping from release names to KSADS questions IDs is available below. Data users will need to request data dictionary information from KSADS directly for more information on question details for each question ID number.
+
+```{r}
+ksads_mapping |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+
+#### KSADS Diagnosis and Symptom Data
+
+The KSADS diagnosis and symptom score data was re-ingested and cleaned for the 7.0 release. Cases of accidental participant swaps and incorrect time point assignments were addressed, though some cases were not resolvable for 7.0 and thus are not included. Further corrections will be made for the 7.1 release update. Additionally, missingness coding was updated so score data in modules that were not given will be coded as `555` and any scores that a participant did not branch into based on item-level responses are coded as `0`.
+
+#### KSADS Symptom Mean Summary Scores
+
+A new set of summary scores was added for all KSADS modules. The experts selected the relevant KSADS symptoms to include an overall symptom mean measure. Documentation of the algorithms for these scores can be found in the [ABCDscores documentation](https://software.nbdc-datahub.org/ABCDscores/).
+
+### Substance Use Density, Storage, and Exposure
+
+Substance use density items were previously open response which allowed for entries that fell outside of the expected range (i.e., greater than 7 days a week or more than 24 hours a day). The response option was changed to dropdown response on 9/1/2023 and responses that fell above that range were removed.
+
+In the table `su_p_des` there were outliers found in the follow-up questions ending in `__01` and `__02` asking "How many hours per day" or "How many days a week" that were above 24 or 7, respectively. These outliers have been removed from the dataset for the 7.0 release.
+
+### Substance Use Summary Scores
+
+New dynamic and static substance use (SU) summary scores have been introduced in the 7.0 Release to harmonize substance use indicators across multiple measures (Substance Use Interview, TLFB, and Mid-Year Phone Interview; @lisdahl2018). Harmonizing across multiple measures has been shown to more comprehensively capture substance rates across the ABCD sample (@sullivan2022; Sullivan et al., Under Review). Dynamic scores (`su_y_dyn__`) summarize participant-by-event indicators of lifetime use across substances, while static scores (`su_y_stc__`) summarize onset information, including age and visit of first reported use. These scores integrate information across instruments to generate consistent indicators of reported use and onset. Alcohol, Cannabis, and Nicotine use variables include composite variables of low-level use (i.e., sipping or puff), full standard use, or combined low and full use for each substance. Full substance use variables including low level use are indicated within the variable name (i.e., “lowuse”). Further, composite variables across all substance use are computed (i.e., `__su__`) as well as substance use other than alcohol, nicotine, or cannabis (i.e., `__su__oth__`).
+
+-   `r full_cite("lisdahl2018")`
+-   `r full_cite("sullivan2022")`
+-   `r full_cite("sullivan2026")`
+
+## Imaging Data
+
+### MRI info
+
+#### Device Serial Number
+
+-   New hash values to replace original DeviceSerialNumber values to be consistent for BIDS and tabulated data
+-   Previously used a different replacement values for BIDS and tabulated data
+-   In the ABCD 6.0 release, there was a mismatch between the tabulated and BIDS (sourcedata and rawdata) in the anonymized MRI scanner serial numbers. In the BIDS data, the sidecar json files contain a field "DeviceSerialNumber" of the form 'anon12da', which differs from the corresponding variable in the tabulated data, `ab_g_dyn__design_mr__serial`, which has the form "HASHd7cb4c6d". Within each datatype (BIDS and tabulated), the values used are internally consistent. In the ABCD 7.0 release, the form of the serial number anonymization has been standardized across these data types.
+
+#### Software Version
+
+-   New categorical variable `mr_y_adm__info__dev__sftw__maj_ver` reduced number of categories limited to major version changes and minor bug fixes that may affect the data
+
+### All imaging
+
+-   \~50 visits that differ for across all modalities related to recovery of previous processing failures and some re-evaluation of raw QC
+
+### rsfMRI
+
+-   Tabulated data now based on concatenated data
+    -   Most important difference:
+        -   Previously for tabulated data, minimally processed voxelwise data were additionally processed (i.e., motion and global signal regression, interpolation of censored frames, bandpass filter) followed by calculation of average ROI timeseries and ROI-ROI correlations
+        -   For concatenated data, average ROI timeseries were calculated from minimally processed data, followed by additional timeseries processing (regression, interpolation, bandpass), and calculation of ROI-ROI correlations
+    -   Relatively minor difference:
+        -   Previously for tabulated data, correlations were calculated for each scan and then averaged
+        -   For concatenated data, processed timeseries data were concatenated across scans prior to calculation of ROI-ROI correlations
+-   Preprocessing for concatenated timeseries data
+    -   Eliminated additional application of respiratory filter to motion time series affects motion metrics (e.g., mean FD) and censoring resulted in relatively small differences to ROI-ROI correlations
+    -   In 6.0, respiratory filter was applied to motion tseries before concatenation of time series data, and the respiratory filter was being applied again as part of the pre-processing of the time series before calculation of ROI-ROI correlations. This second application of the respiratory filter tended to reduce the estimated mean motion and reduce the number of censored frames. In 7.0, this was changed so that there was no second application of the respiratory filter. This has a small effect on the calculated correlations.
+    -   Calculation of mean FD (uncensored) now includes all scans even those that do not have enough valid time points after censoring to be included in the calculation of ROI-ROI correlations matches how uncensored mean motion was previously calculated for tabulated data
+-   Concatenated data now includes additional motion-related variables e.g., mean FD censored, mean dx, dy, dz, rx, ry, rz
+
+### dMRI
+
+-   In 6.0, concatenated white matter (wm) right hemisphere (rh) matrices had wrong number of rows mismatched to vol_info, so visit IDs scrambled
+-   A subset of the concatenated data files, specifically vertexwise DTI measures in peri-cortical white matter, have a different number of observations (i.e., participant-session rows) for the left hemisphere and the right hemisphere (30392 rows in left hemisphere and 30393 rows in right hemisphere). Because of the inadvertently mismatch rows, these data files should not be used. Concatenated vertexwise DTI data files with the following file stems were affected: "fa_wm", "ld_wm", "md_wm", "td_wm". This has been fixed in 7.0
+
+### SST
+
+-   "Stop too early" trials now reclassified as go affects a large subset of visits
+-   SST runs contained “Stop too early” (STE) trials are defined as trials in which the participant made their button press response during a stop trial before the stop signal would have been presented. In the version of the SST task used since August 2021, when STE trials occurred, the stop signal was then not presented on that trial, and the subsequent trial was replaced by another “Stop” trial, thus reducing the number of Go trials. For time series modeling, STE trials are now modeled as Go trials.
+
+### MID
+
+-   There were minor changes to the ROI beta weights in tabulated data, especially dsk average of runs.
+-   These are the changes between the tabulated data prepared for 6.0 vs 7.0: corrected event timing offset for GE scanners, modified event timing variables, corrected or excluded E-Prime timing errors for GE scanners.
+-   There was previously a discrepancy in how stimulus times were modeled relative to the end of the calibration/dummy volumes in the image acquisition that affects GE scanners. The issue is related to how the E-prime tasks were programmed for GE scanners that resulted in an unexpected timing offset of 800 msec or less.
+-   We modified our code for extracting event timing information from ABCD E-prime files (https://github.com/ABCD-STUDY/abcd_extract_eprime.git). Rather than rely on the first fixation event (e.g., CueFix.OnsetTime) the modified code now uses the timing data from the initial and or final trigger events (e.g., GetReady.RTTime) to determine the reference time that represents the start of the first non-dummy image volume. We also modified the number of initial volumes discarded prior to task fMRI time series analysis for GE scanners, with 4 volumes removed for GE DV26 and 15 volumes removed for GE DV26 and later.
+
+### Post QC
+
+-   \~100-900 visits with differences, depending on modality
+-   Revisions to previous scores, mostly for FreeSurfer QC
+
+### Missing data on Siemens `XA30`
+
+In the ABCD 7.0 data release, anatomical scans (T1w and T2w) and field map scans (for both dMRI and fMRI) were inadvertently excluded from the sourcedata and rawdata BIDS datasets for the 889 scan sessions collected on Siemens scanners with software version `XA30`. Derivatives (mmps_mproc and freesurfer), concatenated data, and tabulated data are not affected. The missing scans will be added to the sourcedata and rawdata for the 7.1 patch release.
+
+# Substudies
+
+## Baby Teeth
+
+Beginning at the initial (baseline) appointment of ABCD, researchers collected naturally shed deciduous (“baby”) teeth from participants, the rationale, procedure, and analysis of which have been described in detail (@uban2018). Accordingly, our goals were to analyze various environmental neurotoxicant exposures in a sample of these teeth via laser ablation–inductively coupled plasma mass spectrometry (LA-ICPMS). The data from 448 teeth are provided in the 7.0 Release data and documentation is provided [here](../substudies/baby_teeth.qmd).
+
+## RECOVER
+
+The [RECOVER data](../substudies/recover.qmd) have been processed and included in the 7.0 Release. All survey questions were completed by the parent or caregiver. This includes surveys marked as “youth”. As such, the table information in the data documentation is all listed under “parent”/`_p_`, as the caregiver completed both the surveys about themselves and the surveys about the youth. For measures that are asked about both the youth and caregiver, the caregiver directed table ends with the suffix `cg` in the table name. The antibody test was completed by the youth directly, which is why it is marked as a youth table.
+
+## Social Development
+
+### New tables
+
+Social Development substudy has the following new tables: 
+
+`r link_table("sdev_p_incar", dest = "docs", name = "label", type = "md")` `r table_header("sdev_p_incar")`
+`r link_table("sdev_y_gma", dest = "docs", name = "label", type = "md")` `r table_header("sdev_y_gma")`
+`r link_table("sdev_y_incar", dest = "docs", name = "label", type = "md")` `r table_header("sdev_y_incar")`
+`r link_table("sdev_y_pol", dest = "docs", name = "label", type = "md")` `r table_header("sdev_y_pol")`
+
+### Age item outliers
+
+Age items in the Social Development substudy previously contained implausible values, such as participants entering the year an event occurred rather than the participant’s age at the time, that have not been filtered out. This issue affected all questions asking “How old” in the following tables (`sdev_p_rd`, `sdev_y_fa`, `sdev_y_rd`, `sdev_y_vict`). These issues were corrected for the 7.0 release by creating new `__dk` fields to capture all `98` and `99` non-missing responses, such as "Don't know" and "Decline to answer", and all other impossible age values were removed.
+
+## Structured Interview for Psychosis Risk Syndromes (SIPS)
+
+The [SIPS data](../substudies/sips.qmd) have been processed and included in the 7.0 Release. This single-timepoint study collected separate interviews from youth and caregivers. The substudy includes a clinician-administered interview, the Structured Interview for Psychosis Risk Syndromes (SIPS), administered independently to caregivers and youth. Ratings reflect clinician determinations, finalized through consensus during supervision. The substudy contains the following modules: Unusual Thought Content, Suspiciousness, Grandiose Ideas, Perceptual Abnormalities, Disorganized Communication, Dysphoric Mood, Global Assessment of Functioning, as well as modules assessing whether youth met criteria for Schizotypal Personality Disorder and whether the youth met criteria for any psychotic disorder or psychosis risk syndromes. Users should consult the data dictionary for details on coding conventions. Data were collected with funding from NIMH grants `K23MH121792` and `R01MH139880`.
+
+**Key references:**
+
+-   `r full_cite("miller2003")`
+-   `r full_cite("aas2011")`

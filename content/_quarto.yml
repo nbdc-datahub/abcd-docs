@@ -5,112 +5,135 @@ project:
 execute:
   freeze: auto
   echo: false
+  cache: false
+
+brand: branding/abcd_brand.yml
+# brand: branding/hbcd_brand.yml
+# brand: branding/indp_brand.yml
+
+# To preview DEAP info site use:
+# quarto::quarto_preview("content")
+
+# Stop preview with:
+# quarto::quarto_preview_stop()
+
+# To build DEAP info site use:
+# quarto::quarto_render("content")
+
+# rendered output will go into the ../docs
+# directory as specified by `output-dir` in
+# project configuration
 
 website:
-  announcement: 
+  announcement:
     icon: info-circle
     dismissable: true
-    content: ABCD 7.0 Data Release will be available in May.
+    content: The ABCD 7.0 data has been released, and the Data Documentation has been updated with the 7.0 data release notes.
     type: primary
     position: below-navbar
   reader-mode: false
   google-analytics: "G-SB9F54HS16"
   favicon: "assets/img/favicon/favicon.ico"
-  page-footer: <i>ABCD Study</i>®, <i>Teen Brains. Today’s Science. Brighter Future.</i>® and the ABCD Study Logo are registered marks of the U.S. Department of Health & Human Services (HHS). Adolescent Brain Cognitive Development℠ Study is a service mark of the U.S. Department of Health & Human Services (HHS).
+  page-footer:
+    center: " "
+  search:
+    location: navbar
+    type: overlay
   navbar:
-    background: primary
-    logo: "assets/img/logo-abcd.png"
     search: true
     collapse: true
     left:
       - file: index.qmd
-        text: "{{< fa home >}}"
+        text: '<span class="home-icon"><i class="fa-solid fa-house"></i></span>'
       - file: study/index.qmd
         text: "Study"
       - sidebar:usage
       - text: "Documentation"
-        menu: 
-        - text: "Curation & structure"
-          file: documentation/curation/structure.qmd
-        - text: "Non-imaging"
-          file: documentation/non_imaging/ab.qmd
-        - text: "Imaging"
-          file: documentation/imaging/index.qmd
-        - text: "Substudies"
-          file: documentation/substudies/covid.qmd
-        - text: "Release notes"
-          file: documentation/release_notes/6_1.qmd
+        menu:
+          - text: "Curation & structure"
+            file: documentation/curation/structure.qmd
+          - text: "Non-imaging"
+            file: documentation/non_imaging/ab.qmd
+          - text: "Imaging"
+            file: documentation/imaging/index.qmd
+          - text: "Substudies"
+            file: documentation/substudies/covid.qmd
+          - text: "Release notes"
+            file: documentation/release_notes/index.qmd
       - sidebar:tools
-      
+
     right:
       - sidebar:info
-      - text: Version
-        id: versions
-        menu: 
+      - text: "Version"
+        menu:
           - text: "empty"
 
   sidebar:
     - id: study
       title: "Study"
-      style: "floating"
+      header: |
+        <div class="sidebar-search-container">
+          <button class="btn btn-outline-primary w-100 sidebar-search">
+            <i class="fa-solid fa-search me-2"></i> Search
+          </button>
+        </div>
+      style: "docked"
       pinned: true
       collapse-level: 1
       contents: study/index.qmd
 
     - id: usage
       title: "Data use"
-      style: "floating"
+      style: "docked"
       pinned: true
       collapse-level: 1
       contents: usage/*.qmd
 
     - id: documentation
       title: "Documentation"
-      style: "floating"
+      style: "docked"
       pinned: true
       collapse-level: 1
       contents:
-
         - section: "Curation & structure"
           contents: documentation/curation/*.qmd
 
         - section: "Non-imaging data"
-          contents: documentation/non_imaging/*.qmd 
+          contents: documentation/non_imaging/*.qmd
 
         - text: "Imaging data"
           href: documentation/imaging/index.qmd
           contents:
             - section: "Administrative & QC tables"
-              contents: 
+              contents:
                 - file: documentation/imaging/admin.qmd
                 - file: documentation/imaging/type_qc.qmd
 
             - section: "Data types"
               contents: documentation/imaging/data_*.qmd
-              
+
             - section: "Scan types"
               contents: documentation/imaging/type_[!q]*.qmd
-              
+
             - section: "ABCD BIDS Community Collection (ABCC)"
               contents: documentation/imaging/abcc_*.qmd
 
         - section: "Substudy data"
           contents: documentation/substudies/*.qmd
-          
+
         - section: "Release notes"
           contents: documentation/release_notes/*.qmd
 
-
     - id: tools
       title: "Tools"
-      style: "floating"
+      style: "docked"
       pinned: true
       collapse-level: 1
       contents: tools/*.qmd
 
     - id: info
-      title: "{{< fa circle-info >}} Info"
-      style: "floating"
+      title: "Info"
+      style: "docked"
       pinned: true
       collapse-level: 1
       contents: info/*.qmd
@@ -124,13 +147,21 @@ format:
     csl: assets/ref/apa.csl
     suppress-bibliography: false
     page-layout: full
+    lightbox: true
+    code-copy: true
     toc: true
     toc-depth: 4
     toc-expand: 1
+    grid:
+      sidebar-width: 260px
+      margin-width: 260px
+      body-width: 1200px
     filters:
-      - custom_citation
+      - _extensions/custom_citation/custom_citation.lua
     include-in-header:
       - text: |
+          <style>@font-face{font-family:"Font Awesome 7 Pro";font-style:normal;font-weight:900;font-display:block;src:url("/assets/fontawesome/fa-solid-900.woff2") format("woff2");}</style>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
           <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
           <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
           <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
@@ -139,11 +170,31 @@ format:
           <script type="module" src="/assets/js/left_menu.min.js"></script>
           <script type="module" src="/assets/js/version.min.js"></script>
           <script type="module" src="/assets/js/callout_expand.min.js"></script>
+          <script type="module" src="/assets/js/additional_search.js"></script>
+          <script src="/assets/js/footer.js"></script>
+          <script src="/assets/js/toc_pills.js"></script>
+          <script>
+            (function () {
+              function syncScrollOffset() {
+                var h = document.querySelector("header.fixed-top");
+                if (h) document.documentElement.style.setProperty("--scroll-top-offset", h.clientHeight + "px");
+              }
+              document.addEventListener("DOMContentLoaded", function () {
+                syncScrollOffset();
+                var h = document.querySelector("header.fixed-top");
+                if (h && window.ResizeObserver) new ResizeObserver(syncScrollOffset).observe(h);
+                window.addEventListener("quarto-hrChanged", syncScrollOffset);
+              });
+            })();
+          </script>
 format-links: []
 resources:
   - CNAME
   - .nojekyll
+  - assets/fontawesome/fa-solid-900.woff2
   - assets/js/left_menu.min.js
   - assets/js/url-handler.min.js
   - assets/js/version.min.js
   - assets/js/callout_expand.min.js
+  - assets/js/additional_search.js
+  - assets/js/toc_pills.js

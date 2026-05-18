@@ -1,0 +1,9 @@
+name,label,type_data,type_level
+participant_id,Participant identifier,text,nominal
+session_id,Event associated with Fitbit wear,character,nominal
+day,Sequential protocol day (0–21). Day 0 denotes the initial night; all nights are assigned to the day they precede.,integer,ratio
+main_slp,Flag if considered primary/main sleep,logical,nominal
+dtt,date time in 30 second epochs,timestamp,interval
+res,Indicates whether data comes from 30s or 60s epochs sleep data,character,nominal
+stage,Sleep stage,character,nominal
+hrate,Heart rate,integer,ratio

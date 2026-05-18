@@ -39,8 +39,12 @@ The identifier columns adhere to the [BIDS (Brain Imaging Data Structure)](https
   - A letter indicating the substudy (e.g., `C` for the COVID substudy)
   - Two digits to indicate the assessment wave
 
-::: {#event-id .callout-note collapse="true" title="List of session/event identifiers"}
-The table below shows the session identifiers and their corresponding labels for data included in the ABCD 6.0 data release.
+::: {.callout-note collapse="true" title="Participant ID"}
+`participant_id` is a randomized string of letters and numbers originally defined by the NIMH Data Archive. All participant identifiers start with the string `ses-` followed by a string of 8 letters and numbers. `participant_id` is not associated with any identifiable participant characteristics. 
+:::
+
+::: {#event-id .callout-note collapse="true" title="List of recurated session/event identifiers"}
+The table below shows the recurated session identifiers and their corresponding labels for data included in the ABCD data release.
 
 | Study     | Session/event ID | Session/event label        | Past release event ID      |
 |-----------|------------------|----------------------------|----------------------------|
@@ -54,10 +58,6 @@ The table below shows the session identifiers and their corresponding labels for
 | Core      | ses-03A          | 3 Year                     | 3_year_follow_up_y_arm_1   |
 | Core      | ses-03M          | 3.5 Year                   | 42_month_follow_up_arm_1   |
 | Core      | ses-04A          | 4 Year                     | 4_year_follow_up_y_arm_1   |
-| Core      | ses-04M          | 4.5 Year                   | N/A: New to 6.0 release    |
-| Core      | ses-05A          | 5 Year                     | N/A: New to 6.0 release    |
-| Core      | ses-05M          | 5.5 Year                   | N/A: New to 6.0 release    |
-| Core      | ses-06A          | 6 Year                     | N/A: New to 6.0 release    |
 | Substudy  | ses-C01          | COVID Wave 1               | covid19_cv1_arm_2          |
 | Substudy  | ses-C02          | COVID Wave 2               | covid19_cv2_arm_2          |
 | Substudy  | ses-C03          | COVID Wave 3               | covid19_cv3_arm_2          |
@@ -68,8 +68,6 @@ The table below shows the session identifiers and their corresponding labels for
 | Substudy  | ses-S01          | SDev Wave 1                | sd_wave1_arm_3             |
 | Substudy  | ses-S02          | SDev Wave 2                | sd_wave2_arm_3             |
 | Substudy  | ses-S03          | SDev Wave 3                | sd_wave3_arm_3             |
-| Substudy  | ses-S04          | SDev Wave 4                | N/A: New to 6.0 release    |
-| Substudy  | ses-S05          | SDev Wave 5                | N/A: New to 6.0 release    |
 :::
 
 ## Date timestamps and participant age at administration {#dtt-age}
@@ -83,10 +81,10 @@ All tables with assessment data include a timestamp indicating when data collect
 
 The `{table_name}_dtt` and `{table_name}_age` variables are based on the actual date and time when the data was collected, when available. These variables allow for more precise temporal alignment and age-related analyses.
 
-::: {.callout-important collapse="false" title="Issue with timestamps and ages"}
-Please be aware of the following issues with the timestamps and ages reported for each table:
+::: {.callout-important collapse="false" title="Issue with time stamps and ages"}
+Please be aware of the following issues with the time stamps and ages reported for each table:
 
-1. Timestamps were not always collected for all measures and tables, especially in earlier events. In those cases, `{table_name}_dtt` has a missing value and `{table_name}_age` is computed using the timestamp indicating the start of the event, `ab_g_dyn__visit_dtt`.
+1. Timestamps were not always collected for all measures and tables, especially in earlier events. In those cases, `{table_name}_dtt` has a missing value and `{table_name}_age` is computed using the time stamp indicating the start of the event, `ab_g_dyn__visit_dtt`.
 2. Timestamps, especially those collected in earlier events, are sometimes not precise. We corrected or removed extreme outliers and are working on a more thorough QC process for these values but please use these values with caution.
 :::
 
@@ -112,7 +110,7 @@ To differentiate between variables in the dataset that serve different purposes,
 
 ### Summary score standards
 
-The code for all summary scores computed by the DAIRC^[Other summary scores, such as proprietary scores or summary scores imported from external sources, are not included in the `ABCDscores` R package.] is available in the `ABCDscores` R package on [GitHub](https://github.com/nbdc-datahub/ABCDscores), along with accompanying online [documentation](https://software.nbdc-datahub.org/ABCDscores). The R package aims to support transparency and reproducibility of ABCD release data by providing the exact algorithms and code used to compute the released summary scores, allowing users to tie a specific data release version to a corresponding version of the codebase (see also [here](../../tools/r_packages.qmd#ABCDscores) for the rationale behind creating this R package).
+The code for all summary scores computed by the DAIRC^[Other summary scores, such as proprietary scores or summary scores imported from external sources, are not included in the `ABCDscores` R package.] is available in the `ABCDscores` R package on [GitHub](https://github.com/nbdc-datahub/ABCDscores), along with accompanying online [documentation](https://software.nbdc-datahub.org/ABCDscores). The R package aims to support transparency and reproducibility of ABCD release data by providing the exact algorithms and code used to compute the released summary scores, allowing users to tie a specific data release version to a corresponding version of the codebase (see also [here](../../tools/packages.qmd#ABCDscores) for the rationale behind creating this R package).
 
 For standardized or normed scales, the computation follows the published algorithms. For internal scores, unless otherwise specified by domain experts, the following standards are applied:
 
@@ -160,6 +158,7 @@ Variable labels are standardized and made unique throughout the data dictionary 
 - Multi-select variable labels include the root question at the beginning of the label, followed by `[Multi-select]:` and the specific multi-select response option.
 - Non-response variables that indicate that the participant did not want to or could not respond to a question, have the same label as the corresponding question, followed by `[Non-response]` at the end of the label.
 - Variables that have changed over time, creating longitudinal or multiple versions, include `Longitudinal` or `Version #` in square brackets `[]` at the end of the label.
+- Summary score items follow a standardized label format of `Table Name [Respondant] (Subscale): Score type [Validation:]` with additional, score specific information added when applicable. 
 
 **Examples**
 
@@ -167,6 +166,7 @@ Variable labels are standardized and made unique throughout the data dictionary 
 - `Breathalyzer (Day 4; Test 2): Result`
 - `What is the biological father's current height?: [Non-response]`
 - `Detentions or suspensions: For what? [Multi-select]: Talking Back to a Teacher`
+- `Peer Network Health [Youth]: Sum [Validation: No more than 0 missing or declined]`
 
 ## Other improvements
 

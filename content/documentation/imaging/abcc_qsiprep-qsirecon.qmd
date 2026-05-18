@@ -1,0 +1,185 @@
+---
+title: "QSIPrep & QSIRecon"
+order: 4
+---
+
+<style>
+.nmind-badge-link {
+  margin-top: 0;
+  font-size: 1.1em;
+}
+.nmind-badge-link a {
+  text-decoration: none;
+}
+.nmind-badge-link a:hover {
+  text-decoration: underline;
+}
+.nmind-badge-link i {
+  margin-right: 0.2em;
+}
+</style>
+
+## QSIPrep
+
+<p class="nmind-badge-link">
+<a href="https://www.nmind.org/proceedings/qsiprep/" target="_blank">
+<i class="fa-solid fa-shield-halved"></i> NMIND Badge Rating</a>
+</p>
+
+The [QSIPrep](https://qsiprep.readthedocs.io/en/latest/) pipeline performs diffusion MRI (dMRI) data preprocessing, including head motion correction, susceptibility distortion correction, MP-PCA denoising, coregistration to T1w images, ANTS spatial normalization, and tissue segmentation [@cieslak2021].  
+
+::: {.callout-note collapse="true" title="QSIPrep Processing Parameters"}
+The following pipeline parameters were used to process ABCD study data (see [Usage](https://qsiprep.readthedocs.io/en/latest/usage.html#usage-notes)):
+
+- `--unringing-method mrdegibbs`  
+  Apply Marchenko-Pastur PCA-based Gibbs ringing removal
+- `--output-resolution 1.7`  
+  Resample preprocessed DWI data to 1.7 mm isotropic resolution
+- `--eddy-config eddy_params.json`  
+  Use a custom configuration file for [FSL eddy](https://fsl.fmrib.ox.ac.uk/fsl/docs/diffusion/eddy/index.html) ([`eddy_params.json`](abcc/eddy_params.json))
+- `--n_cpus 8`  
+  Use 8 CPUs for parallel processing
+- `--stop-on-first-crash`  
+  Halt the pipeline on the first encountered error
+:::
+
+### Derivatives
+
+See the pipeline documentation on [Outputs of QSIPrep](https://qsiprep.readthedocs.io/en/latest/preprocessing.html#outputs-of-qsiprep) for an overview of derivatives.
+
+Automated quality control (QC) metrics are provided in `*_desc-ImageQC_dwi.csv`, which includes a variety of QC metrics derived primarily from DSI Studio’s QC calculations, as described in @yeh2019. See the [QSIPrep documentation](https://qsiprep.readthedocs.io/en/latest/preprocessing.html#quality-control-data) for details. These metrics provide a comprehensive summary of image quality and preprocessing accuracy, facilitating informed inclusion/exclusion decisions for downstream analyses.
+
+```default
+abcc-qsiprep_v0.21.4/
+└── sub-<label>/
+    └── ses-<label>/
+        ├── anat/
+        │   ├── *_from-T1wACPC_to-T1wNative_mode-image_xfm.mat
+        │   ├── *_from-T1wNative_to-T1wACPC_mode-image_xfm.mat
+        │   ├── *_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5
+        │   ├── *_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+        │   ├── *_from-orig_to-T1w_mode-image_xfm.txt
+        │   ├── *_run-*_from-orig_to-T1w_mode-image_xfm.mat
+        │   ├── *_rec-normalized_from-orig_to-T1w_mode-image_xfm.{txt|mat}
+        │   ├── *_rec-normalized_run-*_from-orig_to-T1w_mode-image_xfm.mat
+        │   ├── *_dseg.nii.gz
+        │   ├── *_desc-brain_mask.nii.gz
+        │   ├── *_desc-preproc_T1w.nii.gz
+        │   └── *_desc-aseg_dseg.nii.gz
+        │
+        ├── dwi/
+        │   ├── *_confounds.tsv
+        │   ├── *_desc-ImageQC_dwi.csv
+        │   ├── *_desc-SliceQC_dwi.json
+        │   ├── *_dwiqc.json
+        │   ├── *_space-T1w_desc-brain_mask.nii.gz
+        │   ├── *_space-T1w_desc-eddy_cnr.nii.gz
+        │   ├── *_space-T1w_desc-preproc_dwi.{b|bval|bvec|nii.gz|txt}
+        │   └── *_space-T1w_dwiref.nii.gz
+        │
+        ├── figures/
+        └── *.html
+```
+
+<!-- 
+- **Raw data metrics** (prefixed with `raw_`):
+    - Quality metrics computed on the diffusion data before preprocessing.
+- **Preprocessed data metrics**:
+    - `t1_`-prefixed columns: QC metrics calculated in the subject’s T1w (native anatomical) space.
+    - `mni_`-prefixed columns: QC metrics calculated in standard MNI space.
+- **Motion summary metrics**:
+    - `mean_fd`: Mean framewise displacement.
+    - `max_fd`: Maximum framewise displacement.
+    - `max_translation`: Maximum absolute translation.
+    - `max_rotation`: Maximum absolute rotation.
+    - `max_rel_translation`: Maximum of the derivative of translation (i.e., frame-to-frame change).
+    - `max_rel_rotation`: Maximum of the derivative of rotation.
+- **Registration quality metrics**:
+    - `t1_dice_distance`: Dice distance between the anatomical brain mask and the DWI brain mask in T1w space.
+    - `mni_dice_distance`: Dice distance in MNI space. -->
+
+---
+
+## QSIRecon
+
+<p class="nmind-badge-link">
+<a href="https://www.nmind.org/proceedings/qsirecon/" target="_blank">
+<i class="fa-solid fa-shield-halved"></i> NMIND Badge Rating</a>
+</p>
+
+[QSIRecon](https://qsirecon.readthedocs.io/en/latest/) applies various reconstruction algorithms to generate microstructural tissue maps, tractography, and connectivity matrices from the preprocessed QSIPrep diffusion data. QSIRecon derivatives were generated using five reconstruction specifications, each providing different modeling approaches and outputs:
+
+* **DIPYDKI** - Diffusion kurtosis imaging (DKI) using DIPY, providing metrics such as mean kurtosis, radial kurtosis, and axial kurtosis. Diffusion tensor metrics derived as part of the DKI fit are also included here
+* **DSIStudioGQI** - Q-space imaging using DSI Studio’s Generalized Q-sampling Imaging (GQI) for orientation distribution functions and quantitative anisotropy. Diffusion tensor metrics computed across all b-values are included within this specification
+* **MSMTAutoTrack** - Multi-shell multi-tissue tractography using DSI Studio’s AutoTrack algorithm on MSMT FODs generated by MRtrix3
+* **TORTOISE_model-MAPMRI** - Mean Apparent Propagator MRI (MAP-MRI) modeling using TORTOISE for non-Gaussian diffusion characterization. Diffusion tensor metrics computed for b-values below 1200 are also included within this specification.
+* **wmNODDI** - White matter neurite orientation dispersion and density imaging (NODDI) modeled using AMICO for white matter microstructure analysis
+
+::: {.callout-note collapse="true" title="QSIRecon Processing Parameters & Recon Specifications"}
+Pipeline parameters used for ABCD study data processing include the following (see [Usage Notes](https://qsirecon.readthedocs.io/en/latest/quickstart.html)):
+
+- `--recon-spec ABCD_Recon.yml`  
+  Custom YAML file defining reconstruction nodes and algorithms ([`ABCD_Recon.yml`](abcc/ABCD_Recon.yml))
+- `--report-output-level session`  
+  Generate one HTML report per session rather than per subject
+- `--stop-on-first-crash`  
+  Halt the pipeline on the first encountered error
+
+**The following reconstruction specifications & modeling approaches are applied sequentially:** 
+
+| Spec | Software | Approach | Key Outputs |
+|------|----------|----------|-------------|
+| **wmNODDI** | AMICO | NODDI with white matter parameters (`dPar=0.0017`) | NDI, ODI, ISOVF |
+| **DIPYDKI** | DIPY | Diffusion kurtosis imaging | MK, RK, AK + DTI metrics |
+| **DSIStudioGQI** | DSI Studio | Generalized Q-sampling Imaging | QA, ISO, ODF + DTI metrics |
+| **TORTOISE_model-MAPMRI** | TORTOISE | MAP-MRI (b < 1200 for tensor) | RTOP, RTAP, RTPP + DTI metrics |
+| **MSMTAutoTrack** | MRtrix3 + DSI Studio | MSMT-CSD FODs → AutoTrack tractography | Bundle scalar statistics |
+
+:::
+
+### Derivatives
+
+See [Outputs of QSIRecon](https://qsirecon.readthedocs.io/en/latest/outputs.html) in the pipeline documentation for a detailed explanation of the pipeline derivatives and reconstruction specifications.
+
+```default
+abcc-qsirecon-<RECON_SPEC>/
+└─ sub-<label>/
+   └─ ses-<label>/
+      ├─ dwi/
+      # MNI152NLin2009cAsym space outputs
+      │   ├── *_space-MNI152NLin2009cAsym_model-<MOD>_param-<PAR>_dwimap.nii.gz
+      │   ├── ...
+      # T1w space outputs
+      │  ├─ *_space-T1w_model-<MODEL>_param-<PARAM>_dwimap.nii.gz
+      │  ├─ *_space-T1w_bundles-<TRACTOGRAPHY_METHOD>_scalarstats.tsv
+      │  ├─ ...
+      │  └─ # Other diffusion models, scalar maps, or tractography,
+      │       depending on RECON_SPEC
+      │
+      ├─ figures/
+      │  ├─ *_desc-about_T1w.html
+      │  └─ *_desc-summary_T1w.html
+      │
+      └─ *.html
+```
+
+
+<!-- 
+```default
+abcd/
+└── derivatives/
+    ├── abcc-qsiprep_v0.21.4/
+    │   └── sub-<label>/
+    │       └── ses-<label>/
+    │           ├── anat/
+    │           ├── dwi/
+    │           ├── figures/
+    │           └── *.html
+    │
+    └── abcc-qsirecon-<RECON_SPEC>/
+        └── sub-<label>/
+            └── ses-<label>/
+                ├── dwi/
+                ├─ figures/
+                └─ *.html
+``` -->

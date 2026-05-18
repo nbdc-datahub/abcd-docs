@@ -1,0 +1,37 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+wk,Week number starting from first day of 21 day protocol period,integer,ratio
+wk_type,"Indicates type of week, determined by days included",character,nominal
+n_day,Number of days included for averages,integer,ratio
+n_wkdy,Number of weekdays included in averages,integer,ratio
+n_wknd,Number of weekend days included in averages,integer,ratio
+mean_t_start_bed,Circular mean first minute that the participant was identified as being in-bed (but not necessarily asleep) across all included days,time,interval
+mean_t_end_bed,Circular mean first minute that the participant was identified as being out-bed (but may have woken up prior to this) across all included days,time,interval
+mean_t_start_slp,Circular mean first minute that the participant was identified as being asleep across all included days,time,interval
+mean_t_end_slp,Circular mean first minute that the participant was identified as being awake across all included days,time,interval
+sum_min_total_slp,Sum of daily minutes classified as sleep (including staged and wake periods) during main sleep period,double,ratio
+sum_min_asleep_slp,Sum of daily minutes classified as being asleep (60s stage) across all included days,double,ratio
+sum_min_restless_slp,Sum of daily minutes classified as being restless across all included days,double,ratio
+sum_min_light_slp,Sum of minutes classified as being light sleep staging through all sleep periods across all included days,double,ratio
+sum_min_deep_slp,Sum of minutes classified as being deep sleep staging through all sleep periods across all included days,double,ratio
+sum_min_rem_slp,Sum of minutes classified as being REM sleep staging through all sleep periods across all included days,double,ratio
+sum_min_wake_slp,Sum of minutes identified as being awake during the sleep window (all wake/awake) across all included days,double,ratio
+sum_min_waso,Sum of minutes classified as being awake through all sleep periods across all included days (excludes first and final awakening),double,ratio
+sum_n_waso,Sum of unique awakenings during the sleep period across all included days,integer,ratio
+mean_min_slp_total,mean minute sleep (all stages),double,ratio
+mean_min_asleep_slp,Mean of minutes classified as being asleep (60s stage) across all included days,double,ratio
+mean_min_restless_slp,Mean of  minutes classified as being restless across all included days,double,ratio
+mean_min_light_slp,Mean of minutes classified as light stage sleep through all sleep periods across all included days,double,ratio
+mean_min_deep_slp,Mean of minutes classified as deep stage sleep through all sleep periods across all included days,double,ratio
+mean_min_rem_slp,Mean of minutes classified as REM stage sleep through all sleep periods across all included days,double,ratio
+mean_min_wake,Mean of minutes identified as being awake during the sleep window (all wake/awake) across all included days,double,ratio
+mean_min_waso,Mean of minutes classified as being awake through all sleep periods across all included days (excludes first and last wake),double,ratio
+mean_n_waso,Mean of number of unique awakenings during the sleep period across all included days,double,ratio
+mean_hrate_awake_slp,Mean of heart rate average during minutes that were classified as awake across all included days,double,ratio
+mean_hrate_asleep_slp,"Mean of heart rate average during minutes that were classified as ""asleep"" using classic (60 second)  across all included days",double,ratio
+mean_hrate_restless_slp,"Mean of heart rate average during minutes that were classified as ""restless"" using classic (60 second)  across all included days",double,ratio
+mean_hrate_light_slp,Mean of heart rate average during minutes that were classified as light sleep stage across all included days,double,ratio
+mean_hrate_deep_slp,Mean of heart rate average during minutes that were classified as deep sleep stage across all included days,double,ratio
+mean_hrate_rem_slp,Mean of heart rate average during minutes that were classified as REM sleep stage across all included days,double,ratio
+qc_wk,"Week includes a minimum of 4 days of data, including at least one weekend day",logical,nominal

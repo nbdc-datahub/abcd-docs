@@ -15,11 +15,11 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'ecb'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/substudies/6_1_ecb.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/substudies/6_1_ecb.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 # Youth table {#ecb_y_ecb}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ecb_y_ecb")`  
+`r table_header("ecb_y_ecb")`  
 
 The Endocannabinoid (eCB) substudy consists of a short questionnaire and a blood draw completed in conjunction with the [core protocol blood draw](../non_imaging/ph.qmd#ph_y_bld).
 

@@ -8,6 +8,39 @@ title: "Source data / raw data"
 -    [**Mismatched data**](../release_notes/6_0.qmd#mismatch-between-tabulated-and-bids-sourcedata-and-rawdata-in-anonymized-mri-scanner-serial-numbers): In the ABCD 6.0 release, there is a mismatch between the tabulated and BIDS (sourcedata and rawdata) in the anonymized MRI scanner serial numbers.
 :::
 
+## Overview
+
+The sourcedata and rawdata datasets in the data release utilizes the [Brain Imaging Data Structure (BIDS) standard](https://bids-specification.readthedocs.io/en/stable/) for data organization. We provide BIDS formatted anatomical MRI images (T1w and T2w), functional MRI images with spin-echo field maps, and diffusion-weighted images with field maps, organized within the following folder structure. The BIDS directories includes separate folders for each modality:
+
+``` default
+|__ rawdata/ 
+    |__ participants.tsv
+    |__ participants.json 
+    |__ sessions.json 
+    |__ sub-<label>/
+        |__ sessions.tsv/
+        |__ ses-<label>/
+            |__ anat/
+            |__ dwi/
+            |__ fmap/
+            |__ func/
+```
+
+### Dataset, Session & Scan-Level Data
+
+#### Dataset-Level
+
+For rawdata, the `participants.tsv` file includes all participant IDs and their sex.
+
+#### Scan-Level
+
+For both sourcedata and rawdata, session-level information is included in the `scans.tsv` files located within the subject folders and includes filename, acquisition time, type, usable, complete, and QC values like quality (0/1), compliant (0/1) and notes.
+
+#### Session-Level
+
+For both sourcedata and rawdata, session-level information is included in the `sessions.tsv` files located within the subject folders and includes session ID and acquisition time.
+
+
 # Source data DICOM file sharing {#sourcedata}
 
 Unprocessed imaging data are made publicly available in DICOM format in a "source data" BIDS directory structure. DICOM files are packaged in individual archive files (.dicom, .tgz) for each series and arranged in BIDS-compliant directory trees. Metadata are provided in JSON-format text files. For task-fMRI series, also included are the files containing stimulus and behavioral response timing information exported from the stimulus program (E-Prime). Source DICOM data may be shared prior to quality control or curation.
@@ -38,8 +71,67 @@ Additional notes related to diffusion gradient tables:
 
 Some Siemens fMRI data have been reported to have negative values for the Siemens CSA slice timing parameter which can prevent the conversion of DICOMs files in some software. This issue has been overcome in some software (e.g. current version of dcm2niix available for download at <https://github.com/rordenlab/dcm2niix>).
 
+
 # Raw data NIfTI file sharing {#rawdata}
 
 Unprocessed imaging data are also made publicly available in NIfTI format in a "raw data" BIDS directory structure. Metadata are included in JSON-format text files. For task-fMRI series, also included are BIDS-compliant events.tsv files containing stimulus and behavioral response timing information extracted from the source data event timing files (i.e., exported from E-prime). For dMRI series, also included are bvecs and bvals files for use in diffusion modeling.
 
+### Structural MRI
 
+Anatomical files include T1- and T2-weighted MRI images organized under the `anat/` folder of each subject and session. In the event that normalized files were not present, files that had not undergone normalization (e.g. `sub-<label>_ses-<label>_T1w.nii.gz`) were used instead.
+
+``` default
+...
+|__ anat/
+|   |__ sub-<label>_ses-<label>_(rec-norm_)_run-<label>_T1w.nii.gz 
+|   |__ sub-<label>_ses-<label>_(rec-norm_)_run-<label>_T1w.json
+|   |__ sub-<label>_ses-<label>_(rec-norm_)_run-<label>_T2w.nii.gz
+|   |__ sub-<label>_ses-<label>_(rec-norm_)_run-<label>_T2w.json
+```
+
+### Functional MRI
+
+Functional files include BOLD functional runs acquired for each task under the `func/` folder (including `task-` `MID`, `nback`, `SST`, and `rest`, as available) as well as corresponding EPI fieldmaps acquired in AP (`dir-AP`) and PA (`dir-PA`) phase encoding directions under `fmap/`. The functional fieldmaps can be distinguished from DWI fieldmaps via the `acq-func` tag in the filenames.
+
+``` default
+...
+|__ func/
+|   |__ sub-<label>_ses-<label>_task-<mid|nback|sst|rest>_run-<label>_bold.nii.gz
+|   |__ sub-<label>_ses-<label>_task-<mid|nback|sst|rest>_run-<label>_bold.json
+|
+|__ fmap/
+|   |__ sub-<label>_ses-<label>_acq-func_dir-<AP/PA>_run-<label>_epi.nii.gz
+|   |__ sub-<label>_ses-<label>_acq-func_dir-<AP/PA>_run-<label>_epi.json
+```
+
+For Siemens and GE scan sessions there will be a preference for normalized scans (if present) and non-normalized scans are removed, else non-normalized scans (if present) are preferred. This may cause either normalized or non-normalized scans to be removed from the `anat/` folder.
+
+
+#### Field Map Selection
+
+Fieldmaps are utilized during image preprocesing to correct for distortions in the phase encoding direction of each fMRI volume using [FSL's topup](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/topup) for details). Fieldmaps are linked to functional (`func/` folder) or diffusion (`dwi` folder) scans based on which one is closer chronologically (i.e., the fieldmap closest in time before a functional or diffusion scan). Only field maps that are marked as usable (i.e., with the "scan_usable" QC flag set to 1) in their related scans.tsv file are used when linking to functional or diffusion scans. Since fieldmaps can be linked to more than one scan, the `IntendedFor` and `B0FieldIdentifier` fields are set in their sidecar JSONs.
+
+### Diffusion-Weighted Imaging
+
+Diffusion files include DWI (`*_dwi.nii.gz`) as well as associated `bval` and `bvec` files with information about the strength of the diffusion gradient applied during each volume and diffusion gradients directions, respectively. The diffusion acquisitions also have corresponding fieldmaps, located under `fmap/`, that can be distinguished from the functional fieldmaps by the `acq-dwi` tag in their filenames. 
+
+``` default
+...
+|__ dwi/
+|   |__ sub-<label>_ses-<label>_run-<label>_dwi.bval
+|   |__ sub-<label>_ses-<label>_run-<label>_dwi.bvec
+|   |__ sub-<label>_ses-<label>_run-<label>_dwi.nii.gz
+|   |__ sub-<label>_ses-<label>_run-<label>_dwi.json
+|
+|__ fmap/
+|   |__ sub-<label>_ses-<label>_acq-dwi_dir-<AP/PA>_run-<label>_epi.nii.gz
+|   |__ sub-<label>_ses-<label>_acq-dwi_dir-<AP/PA>_run-<label>_epi.json
+```
+
+#### Values for bval/bvec
+
+During BIDS conversion, the `bval` and `bvec` file values associated with the DWI data are typically extracted directly from the DICOMs, as was the case for conversion of data from Siemens and Philips scanner vendors. For GE, these values were provided by the [DAIRC](https://abcdstudy.org/study-sites/daic/).
+
+### BIDS Conversion & Validation
+
+DICOMs are converted to BIDS NIfTIs using [Chris Rorden Lab dcm2niix](https://github.com/rordenlab/dcm2niix). BIDS validation is performed using [the official BIDS validator](https://github.com/bids-standard/bids-validator).

@@ -6,7 +6,7 @@ order: 1
 # Data access
 
 ::: {.callout-tip collapse="true" title="How do I access the data?"}
-Our data are publicly shared with eligible researchers with a valid research use of the data at a research institution. Please visit [How to Access Data](../usage/access.qmd) or the [NBDC datahub](https://www.nbdc-datahub.org/data-access-process) for more information on how to access and download the data.
+Our data are publicly shared with eligible researchers with a valid research use of the data at a research institution. Please visit [How to Access Data](../usage/access.qmd) or the [NBDC Data Hub](https://www.nbdc-datahub.org/data-access-process) for more information on how to access and download the data.
 :::
 
 ::: {.callout-tip collapse="true" title="I'm from a non-US institution - can I access the data?"}
@@ -46,7 +46,7 @@ Additional details/resources are available on this site in documentation provide
 
 You can read more about the ABCD protocol development in a special issue of Developmental Cognitive Neuroscience here: [https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32](https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32).
 
-General information about the studies data dictionary & release variables can explored via DEAP and the NBDC Data Access Platform [(see details)](../tools/tools.qmd). 
+General information about the studies data dictionary & release variables can explored via DEAP and the NBDC Hub [(see details)](../tools/tools.qmd).
 :::
 
 ::: {.callout-tip collapse="true" title="Can I propose a new assay for collected biospecimens?"}
@@ -130,7 +130,7 @@ fMRI-specific information includes estimated motion time courses and a rigid-bod
 
 Information about this is included in the release notes, which also describe the processing steps included in the “minimally processed” data.
 
-There is currently no script available to run the ABCD minimal processing. There is a Docker container and Singularity image that runs the complete processing and analysis pipeline that will be made available in the near future. Another useful software package is available here: <https://github.com/ABCD-STUDY/abcd-hcp-pipeline>.
+There is currently no script available to run the ABCD minimal processing. There is a Docker container and Singularity image that runs the complete processing and analysis pipeline that is available here: <https://www.nitrc.org/projects/cmig_pipeline>.
 :::
 
 ::: {.callout-tip collapse="true" title="Which imaging data are recommended for use in analyses?"}
@@ -145,7 +145,11 @@ As described in the [documentation](../documentation/imaging/type_qc.qmd), not a
 Please refer to the [Data Documentation](../documentation/imaging/data_derivatives.qmd)
 :::
 
----
+::: {.callout-tip collapse="true" title="Does processing for minimally processed fMRI data include slice timing correction?"}
+No, the TR is relatively short so slice timing correction is unlikely to matter in the context of the slow hemodynamic response. The information about the slice timing for different platforms is in the attached [document](../assets/files/documentation/faq/ABCD_slice_timing.docx).
+:::
+
+------------------------------------------------------------------------
 
 # Other Resources
 
@@ -160,6 +164,7 @@ reactable::reactable(
   searchable = TRUE,
   pagination = FALSE,
   resizable = TRUE,
+  width = "100%",
   defaultColDef = colDef(minWidth = 120),
   bordered = TRUE,
   highlight = TRUE,
@@ -186,4 +191,4 @@ reactable::reactable(
 )
 ```
 
----
+------------------------------------------------------------------------

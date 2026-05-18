@@ -1,0 +1,38 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+wk,Week number starting from first day of 21 day protocol period,integer,ratio
+day,Day number starting from first day of 21 day protocol period,integer,ratio
+dt,Date of the night (PM portion of sleep period) of sleep being considered,date,interval
+dt_day,Day of the week,character,ordinal
+dt_wknd,Is this day a weekend (Saturday or Sunday),logical,nominal
+dtt_start_bed,First minute that the participant was identified as being in-bed (but not necessarily asleep) during main sleep period,timestamp,interval
+dtt_end_bed,First minute that the participant was identified as being out-bed (but may have woken up prior to this) during main sleep period,timestamp,interval
+dtt_start_slp,First minute that the participant was identified as being asleep during main sleep period,timestamp,interval
+dtt_end_slp,First minute that the participant was identified as being awake during main sleep period,timestamp,interval
+min_total_slp,Total time in sleep (including staged and wake periods) during main sleep period,double,ratio
+min_asleep_slp,"Minutes identified as ""asleep"" using classic (60 second) during main sleep period",double,ratio
+min_restless_slp,"Minutes identified as ""restless"" using classic (60 second) during main sleep period",double,ratio
+min_light_slp,Total number of minutes identified as being in light sleep stage during main sleep period,double,ratio
+min_deep_slp,Total number of minutes identified as being in deep sleep stage during the main sleep period,double,ratio
+min_rem_slp,Total number of minutes identified as being in REM sleep stage during the main sleep period,double,ratio
+min_nap_slp,"All sleep minutes, regardless of staging during non-main sleep period(s)",double,ratio
+min_wake,Total number of minutes identified as being awake during the sleep window (all wake/awake),double,ratio
+min_waso,Total number of minutes identified as being awake during the sleep window (excludes first and final awakening),double,ratio
+n_waso,Total number of unique awakenings during the sleep period (excludes first and final awakening),integer,ratio
+hrate_awake_slp,Mean heart rate during minutes that were classified as wake or awake  during the main sleep window,double,ratio
+hrate_restless_slp,Mean heart rate during minutes that were classified as restless during the main sleep window,double,ratio
+hrate_asleep_slp,Mean heart rate during minutes that were classified as asleep during the main sleep window,double,ratio
+hrate_light_slp,Mean heart rate during minutes that were classified as light sleep stage  during the main sleep window,double,ratio
+hrate_deep_slp,Mean heart rate during minutes that were classified as deep sleep stage  during the main sleep window,double,ratio
+hrate_rem_slp,Mean heart rate during minutes that were classified as REM sleep stage  during the main sleep window,double,ratio
+hrate_nap_slp,Mean heart rate during minutes outside the main sleep window regardless of sleep stage classification,double,ratio
+hrate_rest_fitb,Number resting heart rate for the day provided by Fitbit,integer,ratio
+excl_min_total_slp,Number of minutes from the first minute of sleep on the day in question to the first minute of awake on the next day excluded for any reason (these data cross midnight),integer,ratio
+excl_min_lowhrate_slp,Number of minutes from the first minute of sleep on the day in question to the first minute of awake on the next day excluded because heart rate was lower than 50 bpm (these data cross midnight),integer,ratio
+excl_min_nohrate_slp,Number of minutes from the first minute of sleep on the day in question to the first minute of awake on the next day excluded because there was no heart rate value for the given minute (these data cross midnight),integer,ratio
+excl_min_repeathrate_slp,Number of minutes from the first minute of sleep on the day in question to the first minute of awake on the next day excluded because there were identical heart rate values repeated for 10+ instances (these data cross midnight),integer,ratio
+min_extra_nohrate_slp,Number of sleep minutes excluded due to possible data capture errors,integer,ratio
+qc_300min,"Does this day have >299 minutes of sleep wear (based on 60 second data) after all exclusions (see Wing et al., 2022)",logical,nominal
+flg_slp,"Flags days where device-recorded sleep is immediately followed by ≥30 minutes of missing or repeated heart rate data, suggesting inconsistent or unreliable sensor measurement.",logical,nominal
+flg_any,Are there any minutes with valid activity data in this day,logical,nominal

@@ -7,6 +7,10 @@ title: "Substance Use"
 #| include: false 
 
 for (file in list.files("../../../R", full.names = TRUE)) source(file)
+
+ksads_mapping <- readr::read_csv(
+  "../../assets/tbl/documentation/non_imaging/ksads_item_mapping.csv"
+)
 ```
 
 # Domain overview
@@ -14,11 +18,17 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'su'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_su.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_su.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 For additional information about 1-year to 3-year follow-up substance use methods and Baseline to 3-year follow-up substance use base rates, see @sullivan2022
 
-::: {.callout-important collapse="true" title="Responsible use warning: Word choice- drug use and addiction" #use-su}
+::: {.callout-caution collapse="true" title="Release notes: Substance use summary scores"}
+**7.0** 
+
+-   [**Substance use summary scores**](../release_notes/6_1.qmd#substance-use-summary-scores): New dynamic and static substance use (SU) summary scores have been introduced in the 7.0 Release to harmonize substance use indicators across multiple measures 
+:::
+
+::: {.callout-important collapse="true" title="Responsible use consideration: Word choice- drug use and addiction" #use-su}
 [NIDA guidelines](https://nida.nih.gov/research-topics/addiction-science/words-matter-preferred-language-talking-about-addiction) are recommended when referring to individuals who use substances. Rather than terms such as "drug user" or "addict" we recommend saying "person with a substance use disorder" or "person who uses drugs" [@alinsky2022; @saitz2021] to minimize harm and prevent conflating problems related to substance use behaviors with the individuals themselves [@yang2017].
 
 For more information: 
@@ -35,8 +45,7 @@ Beginning on 9/1/2024 (part of Year 6, Year 7, and all of Year 8), administratio
 
 ### Alcohol Toxicology {#su_y_alctox}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alctox")`
-`r r_link_table("su_y_alctox")`
+`r table_header("su_y_alctox")`
 
 **Measure description:** Toxicology assessment of past day use of alcohol measured by breathalyzer.
 
@@ -44,8 +53,7 @@ Beginning on 9/1/2024 (part of Year 6, Year 7, and all of Year 8), administratio
 
 ### Hair Drug Toxicology {#su_y_hairtox}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_hairtox")`
-`r r_link_table("su_y_hairtox")`
+`r table_header("su_y_hairtox")`
 
 **Measure description:** Hair toxicology results for drugs and metabolites indicating substance use in the past month or longer (up to 3-months; beginning at \~8 days after consumption when hair with drug grows from the scalp) and information collected at the time of collection such as hair length, color, and collection date.
 
@@ -135,6 +143,12 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 | Delta 10 THC | thc initial test | 40 | 16 | 8 |
 | CBD | thc initial test | 40 | 16 | 8 |
 
+::: {.callout-caution collapse="true" title="Release notes: `Hair Toxicology Results`"}
+**7.0** 
+
+-   [**Coding fix**](../release_notes/7_0.qmd#hair-toxicology-results-coding-fix): In the 6.0 and 6.1 release, some hair toxicology results were incorrectly coded as 1/2 instead of 0/1 for negative/positive, respectively. All results coding has been updated in the 7.0 release and users of 6.0 data should be aware of this issue.
+:::
+
 **Key references:**
 
 - `r full_cite("wade2022")`
@@ -143,8 +157,7 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### Nicotine Toxicology {#su_y_nictox}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nictox")`
-`r r_link_table("su_y_nictox")`
+`r table_header("su_y_nictox")`
 
 **Measure description:** Urine toxicology assessment of recent use of nicotine.
 
@@ -152,8 +165,7 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### Oral Fluid Toxicology {#su_y_oftox}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_oftox")`
-`r r_link_table("su_y_oftox")`
+`r table_header("su_y_oftox")`
 
 **Measure description:** Saliva measure of recent drug use.
 
@@ -161,8 +173,7 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### Urine Drug Toxicology {#su_y_udstox}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_udstox")`
-`r r_link_table("su_y_udstox")`
+`r table_header("su_y_udstox")`
 
 **Measure description:** Urine test for recent drug use.
 
@@ -172,8 +183,7 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### Alcohol Expectancies - Brief Adolescent {#su_y_alcexp}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcexp")`
-`r r_link_table("su_y_alcexp")`
+`r table_header("su_y_alcexp")`
 
 **Measure description:** Measures thoughts, feelings and beliefs about effects of alcohol use. Asked if participant endorses "heard of" alcohol questions. The AEQ-AB was designed as a brief version of Alcohol Expectancy Questionnaire-Adolescent (@brown1987; @greenbaum1995). This 7-item instrument is intended for use among clinicians to assess and test alcohol expectancy effects (@stein2007).
 
@@ -187,8 +197,7 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### Alcohol Hangover Symptoms {#su_y_alchss}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alchss")`
-`r r_link_table("su_y_alchss")`
+`r table_header("su_y_alchss")`
 
 **Measure description:** Measures frequency of hangover symptoms over the last 6 months. The HSS queries 13 hangover symptoms that are manifestations of toxic neurologic effects, measured on a scale ranging from 0% (never) to 100% of drinking occasions (Slutske, Piasecki, & Hunt-Carter, 2003).
 
@@ -196,8 +205,7 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### Alcohol Motives {#su_y_alcmot}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcmot")`
-`r r_link_table("su_y_alcmot")`
+`r table_header("su_y_alcmot")`
 
 **Measure description:** The coping and enhancement subscales from the Drinking Motives Questionnaire Revised (DMQ-R) consists of 20 questions about the respondent's coping and enhancement motives (reasons) for drinking alcohol. The respondent is asked to respond to each question via a five-item scale ranging from 1 for "almost never/never" to 5 for "almost always/always." This is a PhenX measure. [Find here](https://www.phenxtoolkit.org/protocols/view/520501)
 
@@ -209,8 +217,7 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### Alcohol Problems {#su_y_alcprob}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcprob")`
-`r r_link_table("su_y_alcprob")`
+`r table_header("su_y_alcprob")`
 
 **Measure description:** Symptom frequency checklist of alcohol-related problems over the past 6 months. The RAPI queries how many times in the last year the participant has felt a certain consequence for drinking alcohol (@white1989).
 
@@ -218,8 +225,7 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### Alcohol Subjective Effects {#su_y_alcsre}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_alcsre")`
-`r r_link_table("su_y_alcsre")`
+`r table_header("su_y_alcsre")`
 
 **Measure description:** Sensitivity to alcohol effects. This is a modification of the PhenX instrument found [here](https://www.phenxtoolkit.org/protocols/view/520202).
 
@@ -227,15 +233,13 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### Caffeine Use Questionnaire {#su_y_caff}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_caff")`
-`r r_link_table("su_y_caff")`
+`r table_header("su_y_caff")`
 
 **Measure description:** Measures youth's use of caffeine
 
 ### Cigarette Expectancies {#su_y_cigexp}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_cigexp")`
-`r r_link_table("su_y_cigexp")`
+`r table_header("su_y_cigexp")`
 
 **Measure description:** Measure of thoughts, feelings, and beliefs about effects of smoking nicotine.
 
@@ -243,23 +247,23 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 **Key reference:** `r full_cite("lewisesquerre2005")`
 
-### Tobacco Motives {#su_y_cigmot data-link="Tobacco Motives"}
+### Cigarette Use Motives {#su_y_cigmot data-link="Tobacco Motives"}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_cigmot")`
-`r r_link_table("su_y_cigmot")`
+`r table_header("su_y_cigmot")`
 
-**Measure description:** Motives for using tobacco products.
+**Measure description:** Motives for using cigarette products.
 
 **Key reference:** `r full_cite("smith2010")`
 
 ### Community Risk and Protective Factors (Youth) {#su_y_crpf}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_crpf")`
-`r r_link_table("su_y_crpf")`
+`r table_header("su_y_crpf")`
 
 **Measure description:** Perceived access to substances of abuse.
 
 **Modifications since initial administration:** A definition of neighborhood (\~1m mile, 20 min walk) was added to the original instrument on September 7, 2022.
+
+**Notes and special considerations:** Starting in Year 9, only availability of alcohol, nicotine (cigarettes and vaping), and cannabis were asked to reduce participant burden.
 
 **Key references:**
 
@@ -268,8 +272,7 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### Drug Problems {#su_y_drgprob}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_drgprob")`
-`r r_link_table("su_y_drgprob")`
+`r table_header("su_y_drgprob")`
 
 **Measure description:** Symptom frequency checklist of "other" drug-related problems over past 6 months
 
@@ -282,8 +285,7 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 ### PATH Intention to Use {#su_y_itu}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_itu")`
-`r r_link_table("su_y_itu")`
+`r table_header("su_y_itu")`
 
 **Measure description:** Measures youth's intention to use alcohol, nicotine and cannabis.
 
@@ -384,33 +386,65 @@ was split into:
 
 ### KSADS---Alcohol Use Disorder (Youth) {#su_y_ksads__aud}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_ksads__aud")`
-`r r_link_table("su_y_ksads__aud")`
+`r table_header("su_y_ksads__aud")`
 
 **Measure description:** DSM-5 based symptoms and diagnoses (although not clinician administered; therefore, not official psychiatric diagnoses) of alcohol use disorder based on the responses to individual questions using the computer administered version of the Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children (KSADS-COMP). Learn more in our [mental health documentation](mh.qmd#ksads).
+
+**Notes and special considerations:** Youth KSADS was initiated after youth reported at least two alcohol use days. Gating was changed for Year 8 from two to at least five alcohol use days based on participant data and to lessen participant burden.
+
+::: {.callout-note collapse="true" title="KSADS Item Level Mapping"}
+
+Item level data was curated and made available for the KSADS tables starting at the 7.0 release. This combined KSADS1 and KSADS2 items into single variables in the release dataset wherever 1:1 relationships existed across the two versions. Mapping from release names to KSADS questions IDs is available below. Data users will need to request data dictionary information from KSADS directly for more information on question details for each question ID number.
+
+```{r}
+ksads_mapping |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
 
 **Key reference:** `r full_cite("kaufman2021")`
 
 ### KSADS---Drug Use Disorder (Youth) {#su_y_ksads__dud}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_ksads__dud")`
-`r r_link_table("su_y_ksads__dud")`
+`r table_header("su_y_ksads__dud")`
 
 **Measure description:** DSM-5 based symptoms and diagnoses (although not clinician administered; therefore, not official psychiatric diagnoses) of drug use disorder based on the responses to individual questions using the computer administered version of the Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children ([KSADS-COMP](https://www.ksadslogin.net/ksads-comp/aboutKC.aspx)).
+
+**Notes and special considerations:** Youth KSADS was initiated after youth reported at least two use days of any drug use. Gating was changed for Year 8 from two to at least five drug use days based on participant data and to lessen participant burden.
+
+::: {.callout-note collapse="true" title="KSADS Item Level Mapping"}
+
+Item level data was curated and made available for the KSADS tables starting at the 7.0 release. This combined KSADS1 and KSADS2 items into single variables in the release dataset wherever 1:1 relationships existed across the two versions. Mapping from release names to KSADS questions IDs is available below. Data users will need to request data dictionary information from KSADS directly for more information on question details for each question ID number.
+
+```{r}
+ksads_mapping |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
 
 **Key reference:** `r full_cite("kaufman2021")`
 
 ### Low Level Use Questionnaire {#su_y_lowuse}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_lowuse")`
-`r r_link_table("su_y_lowuse")`
+`r table_header("su_y_lowuse")`
 
 **Measure description:** Measures youth's low level use of substances
 
 ### Marijuana Expectancies {#su_y_mjexp}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjexp")`
-`r r_link_table("su_y_mjexp")`
+`r table_header("su_y_mjexp")`
 
 **Measure description:** Measures thoughts, feelings, and beliefs about effects of marijuana. Asked if "heard of" marijuana question was answered positively.
 
@@ -418,7 +452,7 @@ was split into:
 
 **Key reference:** `r full_cite("torrealday2008")`
 
-::: {.callout-important collapse="true" title="Responsible use warning: Marijuana expectancies (MEEQ-B)" #use-su_y_can_exp}
+::: {.callout-important collapse="true" title="Responsible use consideration: Marijuana expectancies (MEEQ-B)" #use-su_y_can_exp}
 The Substance Use Interview and Timeline FollowBack use the word "marijuana" due to familiarity for adolescents and vernacular connected to THC products in particular, however, cannabis is considered more scientific. Data users should consider historical context and contemporary terminology preferences when publishing findings. When using cannabis measures in analyses, specifying the cannabinoid content and product types improves specificity of findings.
 
 - `r full_cite("nccih2025")`
@@ -427,8 +461,7 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 ### Marijuana Motives {#su_y_mjmot}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjmot")`
-`r r_link_table("su_y_mjmot")`
+`r table_header("su_y_mjmot")`
 
 **Measure description:** This is a modified version of the PhenX Marijuana Motives Questionnaire. It consists of 25 questions about the respondent's coping and enhancement motives (reasons) for using marijuana. The respondent is asked to respond to each question via a five-item scale ranging from 1 for "almost never/never" to 5 for "almost always/always."
 
@@ -439,8 +472,7 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 ### Marijuana Problems {#su_y_mjprob}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjprob")`
-`r r_link_table("su_y_mjprob")`
+`r table_header("su_y_mjprob")`
 
 **Measure description:** Symptom frequency checklist of cannabis-related problems over the past 6 months. MAPI (adapted from the RAPI; see above) queries the frequency of physiological and psychological consequences of marijuana use.
 
@@ -452,8 +484,7 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 ### Marijuana Subjective Effects {#su_y_mjsre data-link="Marijuana Subjective Effects"}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjsre")`
-`r r_link_table("su_y_mjsre")`
+`r table_header("su_y_mjsre")`
 
 **Measure description:** Sensitivity to cannabis effects in early use experiences.
 
@@ -464,8 +495,7 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 ### Marijuana Withdrawal {#su_y_mjws}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mjws")`
-`r r_link_table("su_y_mjws")`
+`r table_header("su_y_mjws")`
 
 **Measure description:** Past 24-hr experience of cannabis withdrawal symptoms.
 
@@ -473,8 +503,7 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 ### PATH Nicotine Dependence {#su_y_nicdpnd}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicdpnd")`
-`r r_link_table("su_y_nicdpnd")`
+`r table_header("su_y_nicdpnd")`
 
 **Measure description:** Symptom frequency checklist of nicotine-related problems over the past 6 months.
 
@@ -485,8 +514,7 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 ### Nicotine Subjective Response {#su_y_nicsre}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicsre")`
-`r r_link_table("su_y_nicsre")`
+`r table_header("su_y_nicsre")`
 
 **Measure description:** Assesses early response to using a nicotine product, including pleasant and unpleasant experiences and asks respondents if they encountered various effects while using a nicotine product for the first time (@pomerleau1998).
 
@@ -500,8 +528,7 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 ### ENDS Expectancies {#su_y_nicvapeexp}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicvapeexp")`
-`r r_link_table("su_y_nicvapeexp")`
+`r table_header("su_y_nicvapeexp")`
 
 **Measure description:** Measure of thoughts, feelings and beliefs about effects of using electronic nicotine delivery systems (ENDS).
 
@@ -509,8 +536,7 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 ### Reasons for ENDS Use {#su_y_nicvapereas data-link="Reasons for ENDS Use"}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_nicvapereas")`
-`r r_link_table("su_y_nicvapereas")`
+`r table_header("su_y_nicvapereas")`
 
 **Measure description:** Reasons for using electronic nicotine delivery systems (ENDS).
 
@@ -521,15 +547,13 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 ### Opportunity to Use {#su_y_otu}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_otu")`
-`r r_link_table("su_y_otu")`
+`r table_header("su_y_otu")`
 
 **Measure description:** Measures youth's opportunity to use substances
 
 ### Perceived Harm {#su_y_perc}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_perc")`
-`r r_link_table("su_y_perc")`
+`r table_header("su_y_perc")`
 
 **Measure description:** Measure of youth's opinion regarding how much people risk harming themselves (physically or in other ways) if they engage in various substance use behaviors, including drinking, smoking, using e-cigarettes, marijuana use, nonmedical use of prescription drugs, and "other drug" use. Modified from *Monitoring the Future* PhenX form ([Find here](https://www.phenxtoolkit.org/protocols/view/550401?origin=search)).
 
@@ -541,21 +565,19 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 ### Peer Deviance {#su_y_pgd}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_pgd")`
-`r r_link_table("su_y_pgd")`
+`r table_header("su_y_pgd")`
 
 **Measure description:** Measures friends' use of alcohol, nicotine, marijuana, inhalants, and "other" drugs.
 
 **Key reference:** `r full_cite("freedman1988")`
 
-::: {.callout-important collapse="true" title="Responsible use warning: Peer deviant behavior" #use-su_y_peerdevia}
+::: {.callout-important collapse="true" title="Responsible use consideration: Peer deviant behavior" #use-su_y_peerdevia}
 Although historically referred to as 'Peer Deviant Behavior,' 'peer substance use' or 'peer involvement in illegal activities' is more precise terminology without unintended negative implications (@torrente2012; @freedman1988).
 :::
 
 ### Participant Last Use Survey (Youth; Day 1/2/3/4) {#su_y_plus}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_plus")`
-`r r_link_table("su_y_plus")`
+`r table_header("su_y_plus")`
 
 **Measure description:** Measures recent over-the-counter (OTC) or prescription medications, nicotine, and caffeine use prior to neurocognitive tasks or MRI. May be used to control for withdrawal or acute effects of nicotine, caffeine, OTC or prescription medications.
 
@@ -563,8 +585,7 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 
 ### Peer Tolerance {#su_y_ptu}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_ptu")`
-`r r_link_table("su_y_ptu")`
+`r table_header("su_y_ptu")`
 
 **Measure description:** Measure of how youth believes their close friends would feel about them engaging in substance use behaviors, including drinking, smoking, using e-cigarettes, cannabis use, nonmedical use of prescription drugs, and "other drug" use. Modified from *Monitoring the Future* PhenX form ([Find here](https://www.phenxtoolkit.org/protocols/view/540402?origin=search)).
 
@@ -575,8 +596,7 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 
 ### Sibling Use {#su_y_sibu}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_sibu")`
-`r r_link_table("su_y_sibu")`
+`r table_header("su_y_sibu")`
 
 **Measure description:** Sibling use of alcohol, cannabis, tobacco, and other substances.
 
@@ -586,21 +606,31 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 
 ### Vaping Expectancies {#su_y_vapeexp}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_vapeexp")`
-`r r_link_table("su_y_vapeexp")`
+`r table_header("su_y_vapeexp")`
 
 **Measure description:** Measures thoughts, feelings and beliefs about effects of vaping. This was adapted from the Marijuana Expectancies measure described above [here](#Marijuana%20Expectancies%20(MEEQ-B)).
 
-**Notes and special considerations:** Because this measure was introduced midway through the 3-year follow-up assessment, a proportion of participants did not receive the measure and appear as missing data.
+**Notes and special considerations:** Because this measure was introduced midway through the 3-year follow-up assessment, a proportion of participants did not receive the measure and appear as missing data. This measure was given at the 3-year and 5-year follow up assessments; it was then converted to a vaping marijuana specific measure (see Marijuana Vaping Expectancies).
 
 **Key reference:** `r full_cite("torrealday2008")`
 
-### Vaping & ENDS Motives {#su_y_vapemot}
+### Marijuana Vaping Expectancies {su_y_vapeexp_mj}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_vapemot")`
-`r r_link_table("su_y_vapemot")`
+`r table_header("su_y_vapeexp_mj")`
 
-**Measure description:** Reasons for vaping. This inventory was created by a subgroup on the ABCD Substance Use workgroup, including Drs. Krista Lisdahl, Mary Heitzeg, Marsha Lopez, Susan Tapert, and Gaya Dowling. The instructions were modified from the Monitoring the Future Study 2020 interview and Tobacco Motive Inventory and items were modified from the Reasons for ENDS Use, PATH Study, Tobacco Motive Inventory with additional items created by the subgroup.
+**Measure description:** Measures thoughts, feelings and beliefs about effects of vaping marijuana. This was adapted from the Vaping Expectancies measure described above.The questions are the same as those in Vaping Expectancies, but specific to marijuana.
+
+**Notes and special considerations:** This measure started at the 7-year follow up assessment.
+
+**Key references:** 
+
+- `r full_cite("torrealday2008")`
+
+### Vaping Motives {#su_y_vapemot}
+
+`r table_header("su_y_vapemot")`
+
+**Measure description:** Reasons for vaping, which may include vaping nicotine or marijuana. This inventory was created by a subgroup on the ABCD Substance Use workgroup, including Drs. Krista Lisdahl, Mary Heitzeg, Marsha Lopez, Susan Tapert, and Gaya Dowling. The instructions were modified from the Monitoring the Future Study 2020 interview and Tobacco Motive Inventory and items were modified from the Reasons for ENDS Use, PATH Study, Tobacco Motive Inventory with additional items created by the subgroup.
 
 **Notes and special considerations:** The Vaping Motives questionnaire was administered midway through the 2-year follow-up. Thus, a proportion of participants in this assessment wave were not administered the questionnaire and will appear as missing.
 
@@ -615,8 +645,7 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 
 ### Substance Use Interview {#su_y_sui}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_sui")`
-`r r_link_table("su_y_sui")`
+`r table_header("su_y_sui")`
 
 **Measure description:** Data from this module will provide information in the following domains:
 
@@ -686,8 +715,7 @@ Participants were asked how much of a standard unit of caffeine (coffee (8oz); e
 
 ### Substance Use Phone Interview (Mid Year) - Introduction {#su_y_mypi}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mypi")`
-`r r_link_table("su_y_mypi")`
+`r table_header("su_y_mypi")`
 
 **Measure description:** At mid-year interviews (e.g., 6-month, 18-month follow-ups), youth are asked a series of Yes/No questions over the phone about their substance use over the past 6 months.
 
@@ -699,8 +727,7 @@ For additional information about 1-year to 3-year follow-up substance use method
 
 ### Substance Use Phone Interview (Mid Year) {#su_y_mysu}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_mysu")`
-`r r_link_table("su_y_mysu")`
+`r table_header("su_y_mysu")`
 
 **Measure description:** At mid-year interviews (e.g., 6-month, 18-month follow-ups), youth are asked a series of Yes/No questions over the phone about their substance use over the past 6 months.
 
@@ -712,8 +739,7 @@ For additional information about 1-year to 3-year follow-up substance use method
 
 ### Timeline Followback Interview {#su_y_tlfb}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_y_tlfb")`
-`r r_link_table("su_y_tlfb")`
+`r table_header("su_y_tlfb")`
 
 **Measure description:**
 
@@ -858,8 +884,7 @@ reactable(tlfb_substance_doses)
 
 ### Community Risk and Protective Factors (Parent) {#su_p_crpf}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_crpf")`
-`r r_link_table("su_p_crpf")`
+`r table_header("su_p_crpf")`
 
 **Measure description:** Parent reported perceived access to substances of abuse.
 
@@ -870,10 +895,17 @@ reactable(tlfb_substance_doses)
 
 ### Substance Use Density, Storage, and Exposure {#su_p_des}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_des")`
-`r r_link_table("su_p_des")`
+`r table_header("su_p_des")`
 
-**Measure description:** Parent reported inventory that measures three household substance use issues: household density, second-hand exposure, and storage. Household density was developed by the ABCD Substance Use workgroup. The survey is based on semi-structured household substance use interviews. It measures household substance use density (i.e., number of adults or youth who use each substance) in up to three households where the youth spends regular time. Second-hand cigarette, electronic nicotine delivery systems (ENDS) or smoked cannabis exposure in these households is also measured (modified from PhenX [*Current Environmental Tobacco Exposure*](https://www.phenxtoolkit.org/protocols/view/60701) assessing total days and hours per day in a typical week for each substance. It also asks parents how each household stores alcohol and drugs (visible/unlocked, hidden/unlocked, or locked) (Bartels et al, 2016; Friese, Grube & Moore, 2012).
+**Measure description:** Parent reported inventory that measures three household substance use issues: household density, second-hand exposure, and storage. Household density was developed by the ABCD Substance Use workgroup. The survey is based on semi-structured household substance use interviews. It measures household substance use density (i.e., number of adults or youth who use each substance) in up to three households where the youth spends regular time. Second-hand cigarette, electronic nicotine delivery systems (ENDS) or smoked cannabis exposure in these households is also measured (modified from PhenX [*Current Environmental Tobacco Exposure*](https://www.phenxtoolkit.org/protocols/view/60701) assessing total days and hours per day in a typical week for each substance. It also asks parents how each household stores alcohol and drugs (visible/unlocked, hidden/unlocked, or locked) (@bartels2016; @friese2012).
+
+::: {.callout-caution collapse="true" title="Release notes: `Substance use density items`"}
+**7.0** 
+
+-   [**Substance use density items**](../release_notes/7_0.qmd#substance-use-density-storage-and-exposure): Substance use density items were previously open response which allowed for entries that fell outside of the expected range. The response option was changed to dropdown response on 9/1/2023 and responses that fell above that range were removed.
+
+In the table `su_p_des` there were outliers found in the follow-up questions ending in `__01` and `__02` asking "How many hours per day" or "How many days a week" that were above 24 or 7, respectively. These outliers have been removed from the dataset for the 7.0 release.
+::: 
 
 **Key references:**
 
@@ -882,28 +914,80 @@ reactable(tlfb_substance_doses)
 
 ### KSADS---Alcohol Use Disorder (Parent) {#su_p_ksads__aud}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_ksads__aud")`
-`r r_link_table("su_p_ksads__aud")`
+`r table_header("su_p_ksads__aud")`
 
 
 **Measure description:** Parent reported on youth DSM-5 based symptoms and diagnoses (although not clinician administered; therefore, not official psychiatric diagnoses) of alcohol use disorder based on the responses to individual questions using the computer administered version of the Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children ([KSADS-COMP](https://www.ksadslogin.net/ksads-comp/aboutKC.aspx)).
+
+Parent KSADS module for Alcohol Use Disorder was not administered starting at Year 7.
+
+::: {.callout-note collapse="true" title="KSADS Item Level Mapping"}
+
+Item level data was curated and made available for the KSADS tables starting at the 7.0 release. This combined KSADS1 and KSADS2 items into single variables in the release dataset wherever 1:1 relationships existed across the two versions. Mapping from release names to KSADS questions IDs is available below. Data users will need to request data dictionary information from KSADS directly for more information on question details for each question ID number.
+
+```{r}
+ksads_mapping |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+
+::: {.callout-caution collapse="true" title="Release notes: KSADS items"}
+**7.0** 
+
+-   [**KSADS items**](../release_notes/7_0.qmd#ksads-items): The KSADS Alcohol Use Disorder (su_p_ksads__aud) item level data and symptom means have been included in the 7.0 Release. 
+
+-   [**KSADS Diagnosis and Symptom Data**](../release_notes/7_0.qmd#ksads-diagnosis-and-symptom-data): The KSADS diagnosis and symptom score data were re-ingested and cleaned for the 7.0 release.
+
+-   [**KSADS Symptom Mean Summary Scores**](../release_notes/7_0.qmd#ksads-symptom-mean-summary-scores): A new set of summary scores was added for all KSADS modules. 
+:::
 
 **Key reference:** `r full_cite("kaufman2021")`
 
 ### KSADS---Drug Use Disorder (Parent) {#su_p_ksads__dud}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_ksads__dud")`
-`r r_link_table("su_p_ksads__dud")`
+`r table_header("su_p_ksads__dud")`
 
 **Measure description:** Parent reported on youth DSM-5 based symptoms and diagnoses (although not clinician administered; therefore, not official psychiatric diagnoses) of drug use disorder based on the responses to individual questions using the computer administered version of the Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children ([KSADS-COMP](https://www.ksadslogin.net/ksads-comp/aboutKC.aspx)).
 
+Parent KSADS module for Drug Use Disorder was not administered starting at Year 7.
+
+::: {.callout-note collapse="true" title="KSADS Item Level Mapping"}
+
+Item level data was curated and made available for the KSADS tables starting at the 7.0 release. This combined KSADS1 and KSADS2 items into single variables in the release dataset wherever 1:1 relationships existed across the two versions. Mapping from release names to KSADS questions IDs is available below. Data users will need to request data dictionary information from KSADS directly for more information on question details for each question ID number.
+
+```{r}
+ksads_mapping |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+
+::: {.callout-caution collapse="true" title="Release notes: KSADS items"}
+**7.0** 
+
+-   [**KSADS items**](../release_notes/7_0.qmd#ksads-items): The KSADS Drug Use Disorder (su_p_ksads__dud) item level data and symptom means have been included in the 7.0 Release. 
+
+-   [**KSADS Diagnosis and Symptom Data**](../release_notes/7_0.qmd#ksads-diagnosis-and-symptom-data): The KSADS diagnosis and symptom score data were re-ingested and cleaned for the 7.0 release.
+
+-   [**KSADS Symptom Mean Summary Scores**](../release_notes/7_0.qmd#ksads-symptom-mean-summary-scores): A new set of summary scores was added for all KSADS modules. 
+:::
 
 **Key reference:** `r full_cite("kaufman2021")`
 
 ### Participant Last Use Survey (Parent; Day 1/2/3/4) {#su_p_plus}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_plus")`
-`r r_link_table("su_p_plus")`
+`r table_header("su_p_plus")`
 
 **Measure description:** Parent reported measures of recent over--the-counter (OTC) and prescription medications, nicotine, and caffeine use prior to neurocognitive tasks or MRI. May be used to control for withdrawal or acute effects of nicotine, caffeine, OTC or prescription medications.
 
@@ -911,14 +995,13 @@ reactable(tlfb_substance_doses)
 
 ### Parental Rules on Substance Use {#su_p_rule data-link="Parental Rules on Substance Use"}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("su_p_rule")`
-`r r_link_table("su_p_rule")`
+`r table_header("su_p_rule")`
 
 **Measure description:** Parental substance use approval and rules for youth.
 
 **Modifications since initial administration:** Rules about ENDS use were added at the 3-year follow-up. 
 
-::: {.callout-warning collapse="true" title="Data warning: Parental Rules for ENDS use" #data-ends}
+::: {.callout-warning collapse="true" title="Data consideration: Parental Rules for ENDS use" #data-ends}
 Parental Rules for ENDS use was not collected at Year 4 for a portion of participants due to a branching logic error. That branching error was caught and corrected halfway through Year 4 data collection.
 :::
 

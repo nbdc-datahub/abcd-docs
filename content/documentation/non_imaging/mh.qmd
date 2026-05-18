@@ -7,6 +7,10 @@ title: "Mental Health"
 #| include: false 
 
 for (file in list.files("../../../R", full.names = TRUE)) source(file)
+
+ksads_mapping <- readr::read_csv(
+  "../../assets/tbl/documentation/non_imaging/ksads_item_mapping.csv"
+)
 ```
 
 # Domain overview
@@ -16,11 +20,11 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'mh'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_mh.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_mh.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 For an overview of the Mental health domain see @barch2018 and @barch2021.
 
-::: {.callout-important collapse="true" title="Responsible use warning: Mental Health domain general" #use-mh}
+::: {.callout-important collapse="true" title="Responsible use consideration: Mental Health domain general" #use-mh}
 Diagnoses derived from the KSADS reflect reports by parents or youth (with research assistant support) and are not derived from clinician-administered interviews. Thus, they should not be considered a "clinical diagnosis."
 
 Mental health diagnoses and experiences with mental health care can be influenced by myriad factors (e.g., culture, background) that could impact the interpretation of items (symptoms) It is important to understand whether scales and individual mental health measures function similarly across groups by examining measurement invariance, and explicitly acknowledging potential sources of invariance, their impact on measure performance,  and/or any interpretation limitations that may stem from the use of a given measure.
@@ -41,16 +45,19 @@ When writing about mental health symptoms or diagnoses, it is important to use p
 
 ## Behavioral Inhibition / Behavioral Approach System Scales {#mh_y_bisbas}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_bisbas")`
-`r r_link_table("mh_y_bisbas")`
+`r table_header("mh_y_bisbas")`
 
 **Measure description:** A self-report questionnaire designed to measure two motivational systems: the behavioral inhibition system (BIS), which corresponds to motivation to avoid aversive outcomes, and the behavioral activation system (BAS), which corresponds to motivation to approach goal-oriented outcomes. The scale has four subscales that were derived via factor analysis. One subscale corresponds to the BIS and has seven items that contribute to this score (e.g., "Criticism or scolding hurts me quite a bit"). The remaining three subscales correspond to three components of BAS (Drive, Reward Responsiveness, and Fun Seeking). BAS Drive measures the motivation to follow one's goals and has four items that contribute to this score (e.g., "When I want something I usually go all-out to get it"). BAS Reward Responsiveness measures the sensitivity to pleasant reinforcers in the environment and has four items that contribute to this score (e.g., "It would excite me to win a contest"). BAS Fun Seeking measures the  motivation to find novel rewards spontaneously has five items that contribute to this score (e.g., "I crave excitement and new sensations"). Participants respond to each item using a 4-point Likert scale: 1 (very true for me), 2 (somewhat true for me), 3 (somewhat false for me), and 4 (very false for me). 
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_y_bisbas`"}
+**7.0**
+
+-   [**BIS/BAS Data Error**](../release_notes/7_0.qmd#behavioral-inhibition-behavioral-approach-system-scales)
+There was a previous error with the summary score mh_y_bisbas__bis_sum computation as the variable mh_y_bisbas__bis_005 was not reverse-coded. The data and score algorithm have been corrected and updated for the 7.0 Release.
+
 **6.0**
 
--   [**BIS/BAS Data Error**](../release_notes/6_0.qmd#behavioral-inhibition-behavioral-approach-system-scales): 
-There is an error with the summary score `mh_y_bisbas__bis_sum` computation as well as data for the variable `mh_y_bisbas__bis_005`.
+-   [**BIS/BAS Data Error**](../release_notes/6_0.qmd#behavioral-inhibition-behavioral-approach-system-scales)
 :::
 
 **Key references:** 
@@ -60,8 +67,7 @@ There is an error with the summary score `mh_y_bisbas__bis_sum` computation as w
 
 ## Brief Problem Monitor {#mh_y_bpm}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_bpm")`
-`r r_link_table("mh_y_bpm")`
+`r table_header("mh_y_bpm")`
 
 **Measure description:** Normed multi-informant monitoring of children's functioning. The BPM's Internalizing (`int`), Attention Problems (`att`), Externalizing (`ext`), and Total Problems scales comprise items from the ASEBA Youth Self-Report (`ysr`). The items, scales, and norms are based on decades of research and practical experience, as summarized in the BPM Manual (@achenbach2009).
 
@@ -80,8 +86,7 @@ There was an issue in the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect
 
 ## Cyberbullying {#mh_y_cb}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_cb")`
-`r r_link_table("mh_y_cb")`
+`r table_header("mh_y_cb")`
 
 **Measure description:** This instrument assesses whether a youth has experienced or perpetrated cyberbullying, including information about whether it occurred in the past year and the frequency.
 
@@ -89,8 +94,7 @@ There was an issue in the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect
 
 ## Emotion Regulation Questionnaire {#mh_y_erq}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_erq")`
-`r r_link_table("mh_y_erq")`
+`r table_header("mh_y_erq")`
 
 **Measure description:** The ERQ uses items with a 5-point Likert scale to measure children's tendencies to engage in two specific emotion regulation strategies: reappraisal (reframing the meaning of a situation; a prototypically adaptive strategy) and suppression (inhibiting emotional expression; a prototypically maladaptive strategy).
 
@@ -101,8 +105,7 @@ There was an issue in the `mh_y_bpm` and `mh_t_bpm` t-scores due to an incorrect
 
 ## KSADS – Background Items (Youth) {#mh_y_kbi}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_kbi")`
-`r r_link_table("mh_y_kbi")`  
+`r table_header("mh_y_kbi")`  
 
 **Measure description:** Assesses school, family, and social relations.  
 
@@ -138,7 +141,7 @@ The Conduct Disorder module of the KSADS was modified such that all youth are as
 
 - Information was added to the diagnostic algorithms to determine if a child was on medication for that diagnosis (e.g., ADHD).  Diagnostic classifications were added to reflect this, e.g., current diagnosis, asymptomatic on medication, or partial remission on medication.
 
-- The probe for the hallucinations item was made more rigorous and requires hallucinatory-like experiences to occur during the day while the youth is going about their daily activities. The majority of false positive self-administered KSADS-COMP psychotic disorder screenscame from youth who only had these experiences at nighttime before going to bed, with these cases ruled out in the clinician-administered KSADS-COMP. 
+- The probe for the hallucinations item was made more rigorous and requires hallucinatory-like experiences to occur during the day while the youth is going about their daily activities. The majority of false positive self-administered KSADS-COMP psychotic disorder screens came from youth who only had these experiences at nighttime before going to bed, with these cases ruled out in the clinician-administered KSADS-COMP. 
 
 - Additional false positive screens into the psychotic disorders supplement came from youth who reported paranoid ideation. This item has been moved from the screen to the supplement to avoid children with bullying experiences or youth who live in dangerous neighborhoods from unnecessarily screening into the psychotic disorders section. 
 
@@ -174,19 +177,47 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 - `r full_cite("kaufman2021")`
 :::
 
+::: {.callout-note collapse="true" title="KSADS Item Level Mapping"}
+
+Item level data was curated and made available for the KSADS tables starting at the 7.0 release. This combined KSADS1 and KSADS2 items into single variables in the release dataset wherever 1:1 relationships existed across the two versions. Mapping from release names to KSADS questions IDs is available below. Data users will need to request data dictionary information from KSADS directly for more information on question details for each question ID number.
+
+```{r}
+ksads_mapping |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+
 ::: {.callout-caution collapse="true" title="Release notes: `mh_y_ksads`"}
+**7.0**
  
- **6.1**
+-   [**KSADS item-level data**](../release_notes/7_0.qmd#ksads-item-level-data): The item-level KSADS data have been processed and included in the 7.0 Release.
+  
+-   [**KSADS diagnosis and symptom-level Data**](../release_notes/7_0.qmd#ksads-diagnonsis-and-symptom-level-data): The KSADS diagnosis and symptom score data were re-ingested and cleaned for the 7.0 release.
  
- -   [**Suicidality module**](../release_notes/6_1.qmd#ksads-suicidality-youth): Researchers should not use any items about past suicidal ideation/behavior reports (any items starting with the prefix `mh_y_ksads__suic__past`) from the `mh_y_ksads__suic` table from the 5-year follow up event and after.
+-   [**KSADS symptom mean summary scores**](../release_notes/7_0.qmd#ksads-symptom-mean-summary-scores): A new set of summary scores was added for all KSADS modules.
+
+-   [**KSADS suicidality**](../release_notes/7_0.qmd#ksads-suicidality): Previously, there was an issue with skipped item responses about past suicidal ideation/behavior reports. This was addressed for the 7.0 Release. 
+
+-   [**KSADS bipoloar disorders**](../release_notes/7_0.qmd#ksads-bipolar-disorders): The duplicate variable `mh_p/y_ksads__bpd__irrit__expl__pres_sx__v01` was removed as this item only indicated branching logic within the KSADS module and did not represent a true symptom score.
+
+**6.1**
  
- **6.0**
+-   [**Suicidality module**](../release_notes/6_1.qmd#ksads-suicidality-youth)
  
--   [**KSADS 1.0 & 2.0**](../release_notes/6_0.qmd#ksads): As part of the 6.0 curation efforts, ABCD merged data from KSADS 1.0 and 2.0 in order to combine all equivalent symptoms and diagnoses across the two assessment versions into singular variables. However, we were unable to complete this process for the item-level KSADS data. 
+**6.0**
+ 
+-   [**KSADS 1.0 & 2.0**](../release_notes/6_0.qmd#ksads)
+
 -   [**Eating disorders module**](../release_notes/6_0.qmd#ksads-eating-disorders): The Mental Health Workgroup did an extensive review of the criteria used for all previously released eating disorder diagnoses in KSADS. The group agreed that the criterion were more restrictive than necessary, and thus underestimated the rates of eating disorder diagnoses. 
 -   [**Oppositional defiant disorder module**](../release_notes/6_0.qmd#ksads-comp-updates-to-2.0): There was a diagnostic algorithm error detected in 2023 (update pending 7.0).
 -   [**Suicidality module**](../release_notes/6_0.qmd#ksads-suicidality)
--   [**Borderline personality disorder**](../release_notes/6_0.qmd#ksads-borderline-personality-disorder): The variable `mh_y_ksads__bpd__irrit__expl__pres_sx__v01` is not a true symptom score and thus should be ignored. Data users interested in this symptom data should only use the `mh_y_ksads__bpd__irrit__expl__pres_sx` variable.
+-   [**Borderline personality disorder**](../release_notes/6_0.qmd#ksads-borderline-personality-disorder)
 :::
 
 
@@ -196,16 +227,14 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 render_table_info("domain_abbr == 'ksads_y'", remove_source = TRUE)
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_ksads_y.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_ksads_y.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 **KSADS – Bipolar and Related Disorders (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__bpd")`
-`r r_link_table("mh_y_ksads__bpd")`  
+`r table_header("mh_y_ksads__bpd")`  
 *Measure description:* Assesses Bipolar I Disorder, Bipolar II Disorder, Other Specified Bipolar and Related Disorder, Substance/Medication-Induced Bipolar and Related Disorder.
 
 **KSADS – Conduct Disorders (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__cond")`
-`r r_link_table("mh_y_ksads__cond")`  
+`r table_header("mh_y_ksads__cond")`  
 *Measure description:* Assesses Oppositional Defiant Disorder and Conduct Disorder.  
 
 *Modifications since initial administration:* All youth are asked about behavioral indicators (except the sexual conduct symptom). Callous and Unemotional trait questions are asked if any indicators are endorsed. 
@@ -213,64 +242,53 @@ render_table_info("domain_abbr == 'ksads_y'", remove_source = TRUE)
 *Notes and special considerations:* Items assessing callous and unemotional traits will be available in ABCD Data Release 7.0.
 
 **KSADS – Depressive Disorders (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__dep")`
-`r r_link_table("mh_y_ksads__dep")`  
+`r table_header("mh_y_ksads__dep")`  
 *Measure description:* Assesses Major Depressive Disorder, Persistent Depressive Disorder (Dysthymia), and Other Specified Depressive Disorder.
 
 **KSADS – Disruptive Mood Dysregulation Disorder (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__dmdd")`
-`r r_link_table("mh_y_ksads__dmdd")`  
+`r table_header("mh_y_ksads__dmdd")`  
 *Measure description:* Assesses non-episodic irritability and frequent severe temper outbursts.
 
 **KSADS – Eating Disorders (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__ed")`
-`r r_link_table("mh_y_ksads__ed")`  
+`r table_header("mh_y_ksads__ed")`  
 *Measure description:* Assesses Anorexia Nervosa, Bulimia Nervosa, Binge Eating Disorder, and Other Specified Feeding or Eating Disorder.
 
 **KSADS – Generalized Anxiety Disorder (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__gad")`
-`r r_link_table("mh_y_ksads__gad")`  
+`r table_header("mh_y_ksads__gad")`  
 *Measure description:* Assesses Generalized Anxiety Disorder.
 
 **KSADS – Obsessive Compulsive Disorder (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__ocd")`
-`r r_link_table("mh_y_ksads__ocd")`  
+`r table_header("mh_y_ksads__ocd")`  
 *Measure description:* Assesses  Obsessive Compulsive Disorder and Other Specified Obsessive-Compulsive and Related Disorder.
 
 **KSADS – Panic Disorder (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__panic")`
-`r r_link_table("mh_y_ksads__panic")`  
+`r table_header("mh_y_ksads__panic")`  
 *Measure description:* Assesses Panic Disorder.
 
 **KSADS – Post-Traumatic Stress Disorder (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__ptsd")`
-`r r_link_table("mh_y_ksads__ptsd")`  
+`r table_header("mh_y_ksads__ptsd")`  
 *Measure description:* Assesses Post-Traumatic Stress Disorder, Other Specified Trauma-and Stressor-Related Disorder, and the various Adjustment Disorders.
 
 **KSADS – Sleep Problems (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__sleep")`
-`r r_link_table("mh_y_ksads__sleep")`  
+`r table_header("mh_y_ksads__sleep")`  
 *Measure description:* Assesses Sleep Problems.
 
 **KSADS – Social Anxiety Disorder (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__socanx")`
-`r r_link_table("mh_y_ksads__socanx")`  
+`r table_header("mh_y_ksads__socanx")`  
 *Measure description:* Assesses Panic Disorder, Agoraphobia, Separation Anxiety Disorder, Specific Phobia, Social Anxiety Disorder, and Other Specified Anxiety Disorder.
 
 **KSADS – Suicidality (Youth)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ksads__suic")`
-`r r_link_table("mh_y_ksads__suic")`  
+`r table_header("mh_y_ksads__suic")`  
 *Measure description:* Assesses Suicidality.  
 
 *Modifications since initial administration:* At 5-year follow-up and beyond, items ask about current suicidality only (not lifetime). 
 
 *Notes and special considerations:*
-Some cases are coded as 1 (Present) for lifetime suicidality, but these should all be coded as 555 (Not Administered). This correction will be implemented in the 6.1 patch release.
+Some cases are coded as 1 (Present) for lifetime suicidality, but these should all be coded as 555 (Not Administered). This correction was implemented in the 6.1 patch release.
 
 ## NIH Toolbox Positive Affect {#mh_y_pai}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_pai")`
-`r r_link_table("mh_y_pai")`
+`r table_header("mh_y_pai")`
 
 **Measure description:** This measure evaluates feelings of contentment, happiness, enthusiasm, joy, and excitement in the past week.
 
@@ -281,8 +299,7 @@ Some cases are coded as 1 (Present) for lifetime suicidality, but these should a
 
 ## Peer Experience Questionnaire {#mh_y_peq}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_peq")`
-`r r_link_table("mh_y_peq")`
+`r table_header("mh_y_peq")`
 
 **Measure description:** Assesses whether the youth has either experienced overt, relational, or reputational victimization from peers or perpetrated overt, relational, or reputational aggression towards peers.
 
@@ -293,8 +310,7 @@ Some cases are coded as 1 (Present) for lifetime suicidality, but these should a
 
 ## Life Events (Youth) {#mh_y_ple}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ple")`
-`r r_link_table("mh_y_ple")`
+`r table_header("mh_y_ple")`
 
 **Measure description:** The Adverse Life Events Scale is a self- or proxy-administered, 25-item questionnaire that reports events experienced during the previous year over which the child had little or no control. The respondent reviews the list of items and indicates which events have occurred. If endorsed, follow-up questions are shown for additional details about the event.
 
@@ -322,12 +338,19 @@ Youth 6-year, one question was added
 [Download tables of changes (youth and parent)](../../assets/tbl/documentation/non_imaging/Parent_and_Youth_LEQ_tables_1YR_to_9YR_10.30.25.xlsx)
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_y_ple`"}
+
+### Life Events
+**7.0**
+
+-   [**Life events summary scores**](../release_notes/7_0.qmd#life-events-summary-scores): Previously, there was an issue with the Life Events summary scores due to the validation algorithm with missing data. This issue is fixed for the 7.0 Release.
+
+-   [**Life events item coding**](../release_notes/7_0.qmd#life-events-item-coding): The levels for the item `mh_y_ple__severity_032` were previously incorrectly coded. The item coding has been corrected in the 7.0 Release.
+
 **6.0**
 
--   [**Life events summary score error**](../release_notes/6_0.qmd#life-events-summary-scores): The Life Events summary scores should not be used, because there was an issue with the validation algorithm with missing data.
+-   [**Life events summary score error**](../release_notes/6_0.qmd#life-events-summary-scores)
 
--   [**Life events item coding error**](../release_notes/6_0.qmd#life-events-item-coding-error): The levels for the item `mh_y_ple__severity_032` were incorrectly coded as values 1-4 instead of 0-3 causing an inflation of values in all summary scores that item is included in.
-
+-   [**Life events item coding error**](../release_notes/6_0.qmd#life-events-item-coding-error)
 :::
 
 **Key references:**
@@ -337,22 +360,44 @@ Youth 6-year, one question was added
 
 ## Prodromal Psychosis Scale {#mh_y_pps}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_pps")`
-`r r_link_table("mh_y_pps")`
+`r table_header("mh_y_pps")`
 
-**Measure description:** The Prodromal Questionnaire--Brief Child Version may be a useful measure of early risk for psychotic disorders and is associated with several familial, cognitive, and emotional factors related to psychotic symptoms in older populations.
+**Measure description:** The Prodromal Questionnaire–Brief Child Version (PQ-BC) is a self-report measure containing 21 items designed to assess psychotic-like experiences (PLEs) in youth. For each endorsed experience, participants are asked to indicate whether the experience is associated with distress. The PQ-BC may be a useful measure of early risk for psychotic disorders and is associated with several familial, cognitive, and emotional factors related to psychotic symptoms in older populations. At each assessment wave, participants are classified as meeting criteria for Current Distress at a given timepoint if their distress severity score (`mh_y_pps__severity_score`) is greater than or equal to 1.96, reflecting a standardized threshold for elevated distress relative to the sample distribution. Persistent Distress is defined as meeting this threshold at two of the last three assessment waves. The Persistent Distress Score requires data from three assessment waves and therefore cannot be evaluated for assessment waves with insufficient longitudinal data (e.g., at baseline or 1-year follow-up).
+
+::: {.callout-caution collapse="true" title="Release notes: `mh_y_pps`"}
+**7.0**
+
+-   [**New summary scores**](../release_notes/7_0.qmd#prodromal-psychosis-scale): Two new summary scores were added to the `mh_y_pps` table: `mh_y_pps__dist__pers_score`, `mh_y_pps__dist__curr_score`. These scores relate to the scores in the new table `mh_y_ppsss` table and are used in the inclusion criteria for the SIPS substudy.
+:::
 
 **Key references:** 
 
 - `r full_cite("karcher2018")`
+- `r full_cite("karcher2022")`
+- `r full_cite("karcher2025")`
 - `r full_cite("loewy2005")`
-- `r full_cite("ising2012")`
-- `r full_cite("therman2014")`
+
+## Static Prodromal Psychosis Scale Summary Scores {#mh_y_ppsss}
+
+`r table_header("mh_y_ppsss")`
+
+::: {.callout-caution collapse="true" title="Release notes: `mh_y_ppsss`"}
+
+**7.0**
+
+-   [**New table**](../release_notes/7_0.qmd#static-prodromal-psychosis-scale-summary-scores): This is a new table Static Prodromal Psychosis Scale Summary Scores (`mh_y_ppsss`) included in the 7.0 Release.
+:::
+
+**Measure description:** This data table provides derived indicators of distress and persistence of distress associated with psychotic-like experiences (PLEs) in youth. These variables are based on self-reported Prodromal Questionnaire-Brief Child Version (PQ-BC) data. In the mh_y_pps data table, at each assessment wave, participants are classified as meeting criteria for Current Distress at a given timepoint if their distress severity score (`mh_y_pps__severity_score`) is greater than or equal to 1.96, reflecting a standardized threshold for elevated distress relative to the sample distribution. Persistent Distress is defined as meeting this threshold at two of the last three assessment waves. This data table includes indicators of whether participants ever met criteria for Current Distress or Persistent Distress across all available assessment waves, as well as, for individuals that have met criteria for at least one timepoint, variables capturing the first assessment wave at which the criteria was met. In addition, frequency variables summarize the number of waves at which Current Distress criteria was met and the number of instances the Persistent Distress threshold was met.
+
+**Key references:** 
+
+- `r full_cite("karcher2022")`
+- `r full_cite("karcher2025")`
 
 ## Other Resilience {#mh_y_resil}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_resil")`
-`r r_link_table("mh_y_resil")`
+`r table_header("mh_y_resil")`
 
 **Measure description:** A short survey on the number of friends.
 
@@ -360,8 +405,7 @@ Youth 6-year, one question was added
 
 ## 7-Up Mania Inventory {#mh_y_sup}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_sup")`
-`r r_link_table("mh_y_sup")`
+`r table_header("mh_y_sup")`
 
 **Measure description:** Assesses youth mania symptoms.
 
@@ -369,8 +413,7 @@ Youth 6-year, one question was added
 
 ## Modified Urgency, Premeditation, Perseverance, Sensation Seeking, Positive Urgency, Impulsive Behavior Scale for Children {#mh_y_upps}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_upps")`
-`r r_link_table("mh_y_upps")`
+`r table_header("mh_y_upps")`
 
 **Measure description:** The UPPS contains 20 self-administered questions that are scored on multiple subscales (urgency, premeditation, perseverance, sensation seeking, and positive urgency).
 
@@ -384,16 +427,20 @@ Youth 6-year, one question was added
 
 ## Youth Self-Report {#mh_y_ysr}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_y_ysr")`
-`r r_link_table("mh_y_ysr")`
+`r table_header("mh_y_ysr")`
 
 **Measure description:** Youth's Self-Report [(ASEBA)](https://store.aseba.org/YOUTH-SELF-REPORT_11-18-50-per-Package/productinfo/501/) (of behavioral problems).
 
-::: {.callout-caution collapse="true" title="Release notes: `mh_y_ysr`"}
+**Notes and special considerations:** The ABCD Study removed 7 items (YSR items 18, 88, 91, 98, 106, 109, and 110) from the youth administration to reduce participant burden and alleviate redundancy in the overall protocol. Only 3 of the items removed (18, 91, and 110) are problem items included in the YSR scales Anxious/Depressed, Thought Problems, and Other Problems, respectively. ABCD has decided to compute summary scores for these scales as sum of the remaining items, which is in agreement with ASEBA guidance of ensuring no more than 8 problem items are missing to still be able to compute summary and T-scores. No imputation of the missing items was performed because these 3 items have typically very low base rates of response and imputation could be inaccurate. Since summary scores for these three scales may underestimated, caution is recommended in interpretation of group means, particularly in analyses involving a combination of ABCD data and other datasets with YSR data.
 
+::: {.callout-warning collapse="true" title="Data consideration: Youth Self-Report Summary Scores" #data-mh_y_ysr}
+Starting at the 7.0 release, ABCD has taken a slightly different approach to scoring with regards to missingness compared to the ASEBA standards. Missingness across all problem items is evaluated and if more than 5 additional problem items, beyond the 3 intentionally skipped by ABCD, are missing, any subscale with 1 or more items missing will not be scored, but any complete subscales will still be scored. Additionally, even if less than 8 problem items are missing, any scales with more than 20% missingness of expected items within the scale will not have computed scores. Please be aware of this during analyses and comparisons to other studies using the YSR.
+:::
+
+::: {.callout-caution collapse="true" title="Release notes: `mh_y_ysr`"}
 **6.0**
 
--   [**Missing summary scores**](../release_notes/6_0.qmd#youth-self-report): Two syndrome scales (Anxious-Depressed `mh_y_ysr__synd__anxdep` and Thought Problems `mh_y_ysr__synd__tho`) and one DSM-oriented scale (Depressive Problems `mh_y_ysr__dsm__dep`) are missing because 2 “suicidal thoughts” items from these scales were not administered and the scores were not computed. This issue will be resolved in a future release.
+-   [**Missing summary scores**](../release_notes/6_0.qmd#youth-self-report)
 :::
 
 
@@ -401,8 +448,7 @@ Youth 6-year, one question was added
 
 ## Adult Behavior Checklist on Other Parent {#mh_p_abcl}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_abcl")`
-`r r_link_table("mh_p_abcl")`
+`r table_header("mh_p_abcl")`
 
 **Measure description:** This ASEBA instrument is completed by the primary parent about the other parent (if applicable) and provides dimensional measures of parental psychopathology.
 
@@ -410,8 +456,7 @@ Youth 6-year, one question was added
 
 ## Adult Self Report (Parent) {#mh_p_asr}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_asr")`
-`r r_link_table("mh_p_asr")`
+`r table_header("mh_p_asr")`
 
 **Measure description:** This ASEBA instrument reports parent self-reported psychopathological syndromes.
 
@@ -426,8 +471,7 @@ Youth 6-year, one question was added
 
 ## Child Behavior Checklist {#mh_p_cbcl}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_cbcl")`
-`r r_link_table("mh_p_cbcl")`
+`r table_header("mh_p_cbcl")`
 
 **Measure description:** This parent-report ASEBA instrument assess youth dimensional psychopathological syndromes, dimensional and adaptive functioning.
 
@@ -437,8 +481,7 @@ Youth 6-year, one question was added
 
 ## Difficulty in Emotion Regulation {#mh_p_ders}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ders")`
-`r r_link_table("mh_p_ders")`
+`r table_header("mh_p_ders")`
 
 **Measure description:** Assesses the youth participant’s emotion regulation across multiple domains, including awareness and acceptance of emotions, ability to engage in goal-directed behavior and refrain from impulsive behavior, and access to effective emotion regulation strategies.
 
@@ -449,17 +492,18 @@ Youth 6-year, one question was added
 
 ## Early Adolescent Temperament Questionnaire (Parent) {#mh_p_eatq}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_eatq")`
-`r r_link_table("mh_p_eatq")`
+`r table_header("mh_p_eatq")`
 
-**Measure description:** The Early Adolescent Temperament Questionnaire (EATQ-R; parent version), completed by a caregiver on the youth, assesses children and adolescents (9-15 years old) on 8 basic dimensions of temperament (Activation, Affiliation, Attention, Fear, Frustration, Surgency, Inhibitory Control, , and Shyness), 2 dimensions of behavior (Aggression and Depressive Mood), and three higher-order scales based responses to these primary scales (Effort Control, Surgency, and Negative Affect).
+**Measure description:** The Early Adolescent Temperament Questionnaire (EATQ-R; parent version), completed by a caregiver on the youth, assesses children and adolescents (9-15 years old) on 8 basic dimensions of temperament (Activation, Affiliation, Attention, Fear, Frustration, Surgency, Inhibitory Control, and Shyness), 2 dimensions of behavior (Aggression and Depressive Mood), and three higher-order scales based responses to these primary scales (Effort Control, Surgency, and Negative Affect).
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_p_eatq`"}
+**7.0** 
+
+-   [**Summary score errors**](../release_notes/6_0.qmd#early-adolescent-temperament-questionnaire): Summary scores for some subscales (Activation, Aggression, Attention, Depressive Mood, Inhibitory Control, Shyness, and Surgency) of the mh_p_eatq measure were mistakenly reverse coded in the score algorithm despite already being reverse coded at the item level. Users should compute their own means when using 6.0 data and the issue has been fully corrected for the 7.0 Release.
+
 **6.0** 
 
--   [**Summary score errors**](../release_notes/6_0.qmd#early-adolescent-temperament-questionnaire): 
-Summary scores for some subscales (Activation, Aggression, Attention, Depressive Mood, Inhibitory Control, Shyness, and Surgency) of the `mh_p_eatq` measure were mistakenly reverse coded in the score algorithm despite already being reverse coded at the item level.
-
+-   [**Summary score errors**](../release_notes/6_0.qmd#early-adolescent-temperament-questionnaire)
 :::
 
 **Key reference:** `r full_cite("latham2020")`
@@ -467,8 +511,7 @@ Summary scores for some subscales (Activation, Aggression, Attention, Depressive
 
 ## Family History {#mh_p_famhx}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_famhx")`
-`r r_link_table("mh_p_famhx")`
+`r table_header("mh_p_famhx")`
 
 **Measure description:** Family history of psychopathology and substance use.
 
@@ -485,6 +528,11 @@ Summary scores for some subscales (Activation, Aggression, Attention, Depressive
 - The Research Assistant did not administer questions pertaining to all biological relatives because the participant or parent  had knowledge of the biological relatives,indicated that one or more relative had the problem, but was asked to respond only to questions about relatives they knew were affected, rather than indicating "no problems" for relatives not affected. For example, a respondent was asked about problems due to alcohol (e.g., marital separation or divorce) only for the affected relative. The respondent has knowledge of the youth's biological relatives, one or more relatives is believed to have a problem due to alcohol, but there is no endorsement of "no problems" for the father (`mh_p_famhx__alc__fath_001___0`), no endorsement of any specific problem (`mh_p_famhx__alc__fath_001___1` -- `mh_p_famhx__alc__fath_001___6`), and no endorsement of "don't know" (`mh_p_famhx__alc__fath_001___999`). In this example, one can presume the absence of a problem related to alcohol in the father.
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_p_famhx`"}
+**7.0**
+
+-   [**New summary scores**](../release_notes/7_0.qmd#family-history-summary-scores): 
+New summary scores and derived items were added to the `mh_p_famhx` table.
+
 **6.1** 
 
 -   [**Table labels**](../release_notes/6_1.qmd#family-history): 
@@ -499,21 +547,19 @@ Table labels were updated to be more accurate across a variety of items in the `
 
 ## General Behavior Inventory - Mania {#mh_p_gbi}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_gbi")`
-`r r_link_table("mh_p_gbi")`
+`r table_header("mh_p_gbi")`
 
 **Measure description:** Parent assessment of mania symptoms in their youth participant.
 
 **Key reference:** `r full_cite("youngstrom2008")`
 
 ## KSADS – Background Items (Parent) 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_kbi")`
-`r r_link_table("mh_p_kbi")`  
-*Measure description:* Parent assessment of their youth participant's school, family, and social relations.  
+`r table_header("mh_p_kbi")`  
+**Measure description:** Parent assessment of their youth participant's school, family, and social relations.  
 
-*Modifications since initial administration:* Some of the `mh_p_kbi__school` items were dropped from year 4 and on (`002`, `005`, `006`).  
+**Modifications since initial administration:** Some of the `mh_p_kbi__school` items were dropped from year 4 and on (`002`, `005`, `006`).  
 
-*Notes and special considerations:* Two tables are provided for the Background Items; one for Baseline and one for longitudinal assessments. Multi-Informant analysis – some items in the Parent KSADS Background Survey have youth-reported counterparts.
+**Notes and special considerations:** Two tables are provided for the Background Items; one for Baseline and one for longitudinal assessments. Multi-Informant analysis – some items in the Parent KSADS Background Survey have youth-reported counterparts.
 
 ## Kiddie Schedule for Affective Disorders and Schizophrenia for School-Aged Children ([KSADS-COMP](https://www.ksadslogin.net/ksads-comp/aboutKC.aspx))
 
@@ -547,7 +593,7 @@ We switched to the KSADS 2.0 at the 3-year follow-up for both parent and youth r
 
 In May of 2021, the KSADS-COMP originators did a review of diagnostic criteria used in the programming algorithms and found several errors that likely led to overestimates of diagnoses for several disorders. The needed modifications are: a) include impairment in the diagnostic criteria for Major Depression and Persistent Depressive Disorder; b) include onset before age 10 in the diagnostic criteria for Disruptive Mood Dysregulation Disorders; c) require impairment in two domains, not just one, for Attention Deficit Hyperactivity Disorder; d) require an illness duration of 6 months or more for Agoraphobia; e) include an illness duration of three months or longer for Anorexia; and f) include the presence of all three criterion A symptoms for Autism (relevant to the 2.0 version). Prior releases of ABCD Study data in these diagnostic domains were impacted by these issues (i.e. Release 4.0 and before). KSADS-COMP completed these modifications and the corrected diagnostic data from these categories is included in Release 5.0 and beyond.
 
-The Conduct Disorder module of the KSADS was modified such that all youth are asked all the potential behavioral indicators of Conduct Disorder (except the sexual conduct symptom), and the Callous and Unemotional trait questions are asked of any youth who endorse one or more Conduct Disorder indicators.
+- The Conduct Disorder module of the KSADS was modified such that all youth are asked all the potential behavioral indicators of Conduct Disorder (except the sexual conduct symptom), and the Callous and Unemotional trait questions are asked of any youth who endorse one or more Conduct Disorder indicators.
 
 - Branching algorithm for the screen interview and supplement items changed, so that if a threshold level response is provided to a given symptom, the interview moves to the next item. The past item is only queried if subthreshold responses are given to the current item. This streamlines the assessment for participants.
 
@@ -591,6 +637,22 @@ Diagnostic Algorithm Errors Detected and Updated in 2021:
 - `r full_cite("kaufman2021")`
 :::
 
+::: {.callout-note collapse="true" title="KSADS Item Level Mapping"}
+
+Item level data was curated and made available for the KSADS tables starting at the 7.0 release. This combined KSADS1 and KSADS2 items into single variables in the release dataset wherever 1:1 relationships existed across the two versions. Mapping from release names to KSADS questions IDs is available below. Data users will need to request data dictionary information from KSADS directly for more information on question details for each question ID number.
+
+```{r}
+ksads_mapping |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+
 ### KSADS Modules (Parent) {#mh_p_ksads}
 
 See the [youth section](#mh_y_ksads) for more details.
@@ -599,115 +661,94 @@ See the [youth section](#mh_y_ksads) for more details.
 render_table_info("domain_abbr == 'ksads_p'", remove_source = TRUE)
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_ksads_p.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_ksads_p.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 **KSADS – Agoraphobia Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__agor")`
-`r r_link_table("mh_p_ksads__agor")`  
+`r table_header("mh_p_ksads__agor")`  
 *Measure description:* Parent assessment of Agoraphobia Disorder for their youth participants.
 
 **KSADS – Attention Deficit Hyperactivity Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__adhd")`
-`r r_link_table("mh_p_ksads__adhd")`  
+`r table_header("mh_p_ksads__adhd")`  
 *Measure description:* Parent assessment of Attention-Deficit/Hyperactivity Disorder and Other Specified Unspecified Attention-Deficit/Hyperactivity Disorder for their youth participant.
 
 **KSADS – Autism Spectrum Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__asd")`
-`r r_link_table("mh_p_ksads__asd")`  
+`r table_header("mh_p_ksads__asd")`  
 *Measure description:* Parent assessment of Autism Spectrum Disorder for their youth participant.
 
 **KSADS – Bipolar and Related Disorders (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__bpd")`
-`r r_link_table("mh_p_ksads__bpd")`  
+`r table_header("mh_p_ksads__bpd")`  
 *Measure description:* Parent assessment of Bipolar I Disorder, Bipolar II Disorder, Other Specified Bipolar and Related Disorder, Substance/Medication-Inducted Bipolar and Related Disorder for their youth participant.
 
 **KSADS – Conduct Disorders (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__cond")`
-`r r_link_table("mh_p_ksads__cond")`  
+`r table_header("mh_p_ksads__cond")`  
 *Measure description:* Parent assessment of Conduct Disorder for their youth participant.  
 
 *Notes and special considerations:* If a behavior is endorsed, the participant is asked what grade they were in when the behavior began. The grades offered as response options are branched off the age. However, response options were limited to fairly typical grade levels for each age, so participants who are quite ahead or behind typical grades for their age are not offered all response options. For example, for age, response options are 8th grade and lower grades. For age 18, response options are K–12. Very few respondents did not see their grade as a response option; those who did not see their grade were instructed to select the closest grade.
 
 **KSADS – Depressive Disorders (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__dep")`
-`r r_link_table("mh_p_ksads__dep")`  
+`r table_header("mh_p_ksads__dep")`  
 *Measure description:* Parent assessment of Major Depressive Disorder, Persistent Depressive Disorder (Dysthymia), and Other Specified Depressive Disorder for their youth participant.
 
 **KSADS – Disruptive Mood Dysregulation Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__dmdd")`
-`r r_link_table("mh_p_ksads__dmdd")`  
+`r table_header("mh_p_ksads__dmdd")`  
 *Measure description:* Parent assessment of non-episodic irritability and frequent severe temper outbursts for their youth participant.
 
 **KSADS – Eating Disorders (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__ed")`
-`r r_link_table("mh_p_ksads__ed")`  
+`r table_header("mh_p_ksads__ed")`  
 *Measure description:* Parent assessment of Anorexia Nervosa, Bulimia Nervosa, Binge Eating Disorder, and Other Specified Feeding or Eating Disorder for their youth participant.
 
 **KSADS – Generalized Anxiety Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__gad")`
-`r r_link_table("mh_p_ksads__gad")`  
+`r table_header("mh_p_ksads__gad")`  
 *Measure description:* Parent assessment of Generalized Anxiety Disorder for their youth participant.
 
 **KSADS – Homicidality (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__hom")`
-`r r_link_table("mh_p_ksads__hom")`  
+`r table_header("mh_p_ksads__hom")`  
 *Measure description:* Parent assessment of Homicidality for their youth participant.
 
 **KSADS – Obsessive Compulsive Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__ocd")`
-`r r_link_table("mh_p_ksads__ocd")`  
+`r table_header("mh_p_ksads__ocd")`  
 *Measure description:* Parent assessment of Obsessive Compulsive Disorder and Other Specified Obsessive-Compulsive and Related Disorder for their youth participant.
 
 **KSADS – Oppositional Defiant Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__odd")`
-`r r_link_table("mh_p_ksads__odd")`  
+`r table_header("mh_p_ksads__odd")`  
 *Measure description:* Parent assessment of Oppositional Defiant Disorder for their youth participant.
 
 **KSADS – Panic Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__panic")`
-`r r_link_table("mh_p_ksads__panic")`  
+`r table_header("mh_p_ksads__panic")`  
 *Measure description:* Parent assessment of Panic Disorder for their youth participant.
 
 **KSADS – Post-Traumatic Stress Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__ptsd")`
-`r r_link_table("mh_p_ksads__ptsd")`  
+`r table_header("mh_p_ksads__ptsd")`  
 *Measure description:* Parent assessment of Post-Traumatic Stress Disorder, Other Specified Trauma-and Stressor-Related Disorder, and the various Adjustment Disorders for their youth participant.
 
 **KSADS – Psychotic Disorders (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__psych")`
-`r r_link_table("mh_p_ksads__psych")`  
+`r table_header("mh_p_ksads__psych")`  
 *Measure description:* Parent assessment of Schizophrenia, Other Schizophrenia Spectrum and Other Psychotic Disorder, Hallucinations, and Delusions for their youth participant.
 
 **KSADS – Separation Anxiety Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__sepanx")`
-`r r_link_table("mh_p_ksads__sepanx")`  
+`r table_header("mh_p_ksads__sepanx")`  
 *Measure description:* Parent assessment of Separation Anxiety Disorder for their youth participant.
 
 **KSADS – Sleep Problems (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__sleep")`
-`r r_link_table("mh_p_ksads__sleep")`  
+`r table_header("mh_p_ksads__sleep")`  
 *Measure description:* Parent assessment of Sleep Problems for their youth participant.
 
 **KSADS – Social Anxiety Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__socanx")`
-`r r_link_table("mh_p_ksads__socanx")`  
+`r table_header("mh_p_ksads__socanx")`  
 *Measure description:* Parent assessment of Social Anxiety Disorder and Other Specified Anxiety Disorder for their youth participant.
 
 **KSADS – Specific Phobia Disorder (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__phobia")`
-`r r_link_table("mh_p_ksads__phobia")`  
+`r table_header("mh_p_ksads__phobia")`  
 *Measure description:* Parent assessment of Specific Phobia Disorder for their youth participant.
 
 **KSADS – Suicidality (Parent)**  
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ksads__suic")`
-`r r_link_table("mh_p_ksads__suic")`  
+`r table_header("mh_p_ksads__suic")`  
 *Measure description:* Parent assessment of Suicidality for their youth participant.  
 
 
 ## Life Events (Parent) {#mh_p_ple}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ple")`
-`r r_link_table("mh_p_ple")`
+`r table_header("mh_p_ple")`
 
 **Measure description:** Parent assessment that reports events experienced by the youth during the previous year over which the youth participant had little or no control. The parent reviews the list of items and indicates which events have occurred. If endorsed, follow-up questions are shown for additional details about the event.
 
@@ -773,11 +814,17 @@ Parent 9-year, LEQ is not administered
 [Download tables of changes (youth and parent)](../../assets/tbl/documentation/non_imaging/Parent_and_Youth_LEQ_tables_1YR_to_9YR_10.30.25.xlsx)
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_p_ple`"}
+**7.0**
+
+-   [**Life events summary scores**](../release_notes/7_0.qmd#life-events-summary-scores): Previously, there was an issue with the Life Events summary scores due to the validation algorithm with missing data. This issue is fixed for the 7.0 Release.
+
+-   [**Life events item coding**](../release_notes/7_0.qmd#life-events-item-coding): The levels for the item `mh_y_ple__severity_032` were previously incorrectly coded. The item coding has been corrected in the 7.0 Release.
+
 **6.0**
 
--   [**Life events summary score error**](../release_notes/6_0.qmd#life-events): The Life Events summary scores should not be used, because there was an issue with the validation algorithm with missing data.
+-   [**Life events summary score error**](../release_notes/6_0.qmd#life-events)
 
--   [**Life events item coding error**](../release_notes/6_0.qmd#life-events-item-coding-error): The levels for the item `mh_p_ple__severity_032` were incorrectly coded as values 1-4 instead of 0-3 causing an inflation of values in all summary scores that item is included in.
+-   [**Life events item coding error**](../release_notes/6_0.qmd#life-events-item-coding-error)
 
 :::
 
@@ -788,8 +835,7 @@ Parent 9-year, LEQ is not administered
 
 ## Perceived Stress Scale {#mh_p_pss}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_pss")`
-`r r_link_table("mh_p_pss")`
+`r table_header("mh_p_pss")`
 
 **Measure description:** A 10-item parent report of the parent's perception of stress feelings and thoughts over the past month.
 
@@ -797,8 +843,7 @@ Parent 9-year, LEQ is not administered
 
 ## Short Social Responsiveness Scale {#mh_p_ssrs}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_p_ssrs")`
-`r r_link_table("mh_p_ssrs")`
+`r table_header("mh_p_ssrs")`
 
 **Measure description:** Identifies the presence and severity of social impairment within the autism spectrum.
 
@@ -824,8 +869,7 @@ Note that autism levels 2 ("Requiring substantial support") and 3 ("Requiring ve
 
 ## Brief Problem Monitor {#mh_t_bpm}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mh_t_bpm")`
-`r r_link_table("mh_t_bpm")`
+`r table_header("mh_t_bpm")`
 
 **Measure description:** ASEBA measure of teacher-reported internalizing, externalizing, and attention problems in the youth participant.
 

@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Study Overview"
 lightbox: true
 ---
 
@@ -29,3 +29,7 @@ The ABCD Consortium is made up of a Coordinating Center (CC), Data Analysis, Inf
 ![High level overview of domains in the ABCD Study](../assets/img/study/domains)
 
 The ABCD protocol is a comprehensive set of physical, cognitive, social, emotional, environmental, behavioral, and academic assessments, as well as multimodal neuroimaging and biospecimen collection for hormonal, genetic, epigenetic, environmental exposure, and substance use analysis. These assessments are anticipated to be done annually (non-imaging) or biannually (imaging and bioassays) for 10 years. Participants also undergo a brief, mid-year phone interview. For more information on data releases & resources, visit the [study data sharing page](https://abcdstudy.org/scientists/data-sharing/).
+
+## Inclusion/Exclusion Criteria
+
+ABCD enrollment inclusion criteria consisted of participants being in the age range of 9-10 years at baseline assessment. The recruitment strategy consisted of probability sampling of public and private elementary schools within the catchment areas of the research sites, covering over 20% of the entire US population of 9–10 year olds. School selection was based on gender, race, ethnicity, and socioeconomic status. Exclusion criteria included not being fluent in English language for the child (as cognitive testing and other materials were in English); severe sensory, intellectual, medical or neurological issues that would impact the child’s ability to comfortably and validly complete the protocol and contraindications to MRI scanning. Parent/guardian exclusionary criteria were non fluency either English or Spanish.

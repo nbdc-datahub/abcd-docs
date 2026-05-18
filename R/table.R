@@ -728,24 +728,24 @@ abcd_reactable_theme <- function() {
       display = "flex",
       flexDirection = "column",
       justifyContent = "center",
-      fontSize = "0.8em"
+      fontSize = "0.9rem"
     ),
     groupHeaderStyle = list(
-      fontFamily = "Inter",
+      fontFamily = "Lato",
       fontWeight = "600",
-      fontSize = "0.9em"
+      fontSize = "0.9rem"
     ),
     headerStyle = list(
-      fontFamily = "Inter",
+      fontFamily = "Lato",
       fontWeight = "600",
-      fontSize = "0.8em"
+      fontSize = "0.875rem"
     ),
     tableBodyStyle = list(
-      fontFamily = "Inter"
+      fontFamily = "Lato"
     ),
     searchInputStyle = list(
-      fontFamily = "Inter",
-      fontSize = "0.8em"
+      fontFamily = "Lato",
+      fontSize = "0.875rem"
     )
   )
 }

@@ -1,0 +1,12 @@
+name,value,order_level,label
+tooth,CI,1,Central incisor
+tooth,LI,2,Lateral incisor
+tooth,3,3,Canine
+tooth,1M,4,First molar
+tooth,2M,5,Second molar
+attrition,Low,1,<20%
+attrition,Medium,2,20-70%
+attrition,High,3,>70%
+resorption,Low,1,<20%
+resorption,Medium,2,20-70%
+resorption,High,3,>70%

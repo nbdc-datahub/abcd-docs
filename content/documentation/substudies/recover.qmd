@@ -1,0 +1,229 @@
+---
+title: "RECOVER"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+```{r}
+render_table_info("domain_abbr == 'recover'")
+```
+
+# Domain overview
+
+The RECOVER substudy was introduced in the ABCD 7.0 data release to capture information related to COVID-19 infection, recovery, and longer-term health outcomes. Data were collected at a dedicated RECOVER event (`ses-REC`) with an independent event structure.
+
+Caregivers completed separate questionnaires about the youth and themselves assessing COVID-19 infection history, symptoms, physical and mental health, health care utilization, and social determinants of health. In addition, antibody testing was conducted using at-home collection kits.
+
+::: {.callout-important collapse="false" title="RECOVER Data and Documentation Note"}
+Data included in this section originate from the [RECOVER study](https://recovercovid.org/data) (Researching COVID to Enhance Recovery), a national initiative focused on understanding, diagnosing, preventing, and treating Long COVID.
+
+Thorough documentation for the RECOVER study is available [here](https://recovercovid.org/data#resources) and should be considered the primary reference for study design, measures, and interpretation. The documentation provided here is specific to ABCD implementation and is intended to support integration with ABCD data structures and workflows.
+
+During data collection, RECOVER variable names were used in REDCap so `name_redcap` field names, provided in the data dictionary align with the RECOVER data dictionary. In the released ABCD data, variables have been renamed according to ABCD naming conventions (see [Variable Naming Conventions](../curation/naming.qmd).
+:::
+
+
+---
+
+# Youth tables {#recover_y}
+
+## Antibody Test Results [Youth] {#recover_y_atr}
+
+`r table_header("recover_y_atr")`
+
+The results of SARS-CoV-2 antibody testing. A small sample of capillary blood was drawn at home using the Tasso device on the upper arm (or thigh, if necessary) and sent to the RECOVER central lab for testing.
+
+**Notes and special considerations:** There may be discrepancies between test results and survey answers due to staggered timing of administration. Participants received the survey link immediately upon consent, whereas the Tasso order was placed at that time and arrived at a later date. Additionally, the participant may have delayed taking the Tasso test for a period of time. Some Tasso devices malfunctioned, leading to the administration of second, and on occasion third, tests. Initial Tasso devices received hemolyzed by the lab were indicated for retesting. However, later on in the study, the lab determined hemolyzed tests were suitable for testing and resulting. As such, some participants may have more than one result.
+
+---
+
+# Parent tables {#recover_p}
+
+## Antibody Test Results [Parent] {#recover_p_atr}
+
+`r table_header("recover_p_atr")`
+
+Provides relevant information regarding antibody test process and results using the Tasso m20 device.
+
+**Notes and special considerations:** The data differentiates between antibody types. “S-type antibody” refers to antibodies typically generated in response to the COVID vaccine, whereas “N-type antibody” typically refers to antibodies generated in response to COVID infection. However, there are instances in which the self-report data and antibody data are not in alignment.
+
+## Pediatric Survey
+
+### Child Birth History [Parent] {#recover_p_cbh}
+
+`r table_header("recover_p_cbh")`
+
+Measures describing the child’s birth history. Includes prenatal, birth and postnatal health data.
+
+### Child Current Health Status [Parent] {#recover_p_cchs}
+
+`r table_header("recover_p_cchs")`
+
+Provides information about the youth’s current health status, including anthropometrics (height, weight) of both the youth and their biological parents. Questions include certain disabilities and difficulties with activities of daily living.
+
+**Notes and special considerations:** Height and weight were provided as a free-text box. As such, some information may not be accurate or implausible due to data entry error by the informant.
+
+### Youth COVID Family Infection [Parent] {#recover_p_cfi}
+
+`r table_header("recover_p_cfi")`
+
+Details information on household and family’s history of COVID infections and severity.
+
+### Youth COVID Testing History [Parent] {#recover_p_cth}
+
+`r table_header("recover_p_cth")`
+
+Perceptions of COVID testing accessibility.
+
+### Youth Demographics [Parent] {#recover_p_demo}
+
+`r table_header("recover_p_demo")`
+
+Provides information on informant’s relationship to participant, as well as youth demographic questions. Questions include birth location, sex assigned at birth, ethnicity, and primary language.
+
+### Youth First COVID Infection History [Parent] {#recover_p_fcih}
+
+`r table_header("recover_p_fcih")`
+
+Provides information regarding youth’s first COVID infection, including date, test confirmation and presence of symptoms.
+
+**Notes and special considerations:** Year of COVID infection was provided as a free-text box. As such, some dates may not be possible due to data entry error by the informant.
+
+### Youth Special Health Care Needs Screener [Parent] {#recover_p_hcn}
+
+`r table_header("recover_p_hcn")`
+
+Measures medication use by the youth as well as medical and mental health conditions. Additional information includes therapeutic services (mental, physical, occupational, speech).
+
+**Notes and special considerations:** Informants were provided free-text box to list any conditions that were not listed above. Data was not reviewed for accuracy.
+
+### Youth COVID Health Consequences [Parent] {#recover_p_hcq}
+
+`r table_header("recover_p_hcq")`
+
+Measures items related to nutrition, physical activity and sleep before and during the pandemic. Includes questions on school type and academic performance.
+
+### Youth Multisystem Inflammatory Syndrome in Children (MIS-C) and Postural Orthostatic Tachycardia Syndrome (POTS) [Parent] {#recover_p_miscpots}
+
+`r table_header("recover_p_miscpots")`
+
+Provides information as to whether the youth has ever been diagnosed with Long COVID, POTS, or MIS-C.
+
+### Youth Most Recent COVID Infection History [Parent] {#recover_p_mrci}
+
+`r table_header("recover_p_mrci")`
+
+Branched survey that provides details of most recent COVID infection if number of infections is greater than 1. Includes details regarding diagnosis and treatment methods.
+
+### Youth Patient-Reported Outcomes Measurement Information System (PROMIS) [Parent] {#recover_p_promis}
+
+`r table_header("recover_p_promis")`
+
+General questions related to the youth’s overall physical and mental health.
+
+### Youth COVID Symptoms [Parent] {#recover_p_ps}
+
+`r table_header("recover_p_ps")`
+
+Comprehensive questionnaire of physical and behavioral symptoms experienced by youth before, during and after COVID infection. The questionnaire is split into sections for different body systems.
+
+### Child Social Determinents of Health [Parent] {#recover_p_sdoh}
+
+`r table_header("recover_p_sdoh")`
+
+Measures social determinants of health for the youth.
+
+### Youth COVID Vaccine History [Parent] {#recover_p_vacc}
+
+`r table_header("recover_p_vacc")`
+
+Describes youth’s COVID vaccination history. If informant indicates youth received 1 or more COVID vaccinations, branching questions detail vaccine type, date, and symptoms of each vaccine dose.
+
+## Caregiver Survey
+
+### Caregiver Administrative Information [Parent] {#recover_p_adm}
+
+`r table_header("recover_p_adm")`
+
+Administrative information collected for the caregiver component of the RECOVER substudy.
+
+### Caregiver Current Health Status [Parent] {#recover_p_chscg}
+
+`r table_header("recover_p_chscg")`
+
+Provides information about the caregiver’s current health status. Questions include certain disabilities and difficulties with activities of daily living.
+
+### Caregiver COVID Testing History [Parent] {#recover_p_cthcg}
+
+`r table_header("recover_p_cthcg")`
+
+Overview of caregiver’s most recent COVID testing history.
+
+### Caregiver Demographics [Parent] {#recover_p_democg}
+
+`r table_header("recover_p_democg")`
+
+Provides information demographic questions regarding caregiver. Questions include date of birth, sex, ethnicity, race, educational attainment and language.
+
+### Caregiver First COVID Infection History [Parent] {#recover_p_fcihcg}
+
+`r table_header("recover_p_fcihcg")`
+
+Provides information regarding caregiver’s first COVID infection, including date, test confirmation, symptom severity, and treatment.
+
+**Notes and special considerations:** Year of COVID infection was provided as a free-text box. As such, some dates may not be possible due to data entry error by the informant.
+
+### Caregiver COVID Health Consequences [Parent] {#recover_p_hcqcg}
+
+`r table_header("recover_p_hcqcg")`
+
+Measures items related to nutrition, physical activity and sleep before and during the pandemic.
+
+### Caregiver Most Recent COVID Infection History [Parent] {#recover_p_mrcicg}
+
+`r table_header("recover_p_mrcicg")`
+
+Provides information regarding caregiver’s most recent COVID infection if more than one infection reported, including date, test confirmation, symptom severity, and treatment.
+
+**Notes and special considerations:** Year of COVID infection was provided as a free-text box. As such, some dates may not be possible due to data entry error by the informant.
+
+### Caregiver Patient-Reported Outcomes Measurement Information System (PROMIS) [Parent] {#recover_p_promiscg}
+
+`r table_header("recover_p_promiscg")`
+
+General questions related to the caregiver’s overall physical and mental health.
+
+### Caregiver COVID Symptoms [Parent] {#recover_p_pscg}
+
+`r table_header("recover_p_pscg")`
+
+Comprehensive questionnaire of physical and behavioral symptoms experienced by caregiver before, during and after COVID infection. The questionnaire is split into sections for different body systems.
+
+### Caregiver Social Determinents of Health [Parent] {#recover_p_sdohcg}
+
+`r table_header("recover_p_sdohcg")`
+
+Measures social determinants of health for the caregiver.
+
+### Household Social Determinents of Health [Parent] {#recover_p_sdohhh}
+
+`r table_header("recover_p_sdohhh")`
+
+Measures social determinants of health for the entire household.
+
+### Caregiver COVID Vaccine History [Parent] {#recover_p_vacccg}
+
+`r table_header("recover_p_vacccg")`
+
+Describes caregiver’s COVID vaccination history. If caregiver received 1 or more COVID vaccinations, branching questions detail vaccine type, date, and symptoms of each vaccine dose.
+
+### Caregiver Wellbeing [Parent] {#recover_p_wbcg}
+
+`r table_header("recover_p_wbcg")`
+
+Describes overall caregiver wellbeing and mental health by symptom frequency.

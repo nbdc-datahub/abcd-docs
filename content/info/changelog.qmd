@@ -4,6 +4,38 @@ order: 3
 ---
 
 
+# 7.0.0
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2026-05-18<br>
+**URL:** [https://docs.abcdstudy.org/v/7_0_0](https://docs.abcdstudy.org/v/7_0_0)
+</span>
+
+-   **General**
+    -   Updated new design layout for the website
+    -   Updated 7.0 domain tables
+    -   Updated 7.0 overview and sample
+    -   Added new datasets and summary scores
+
+-   **Non-Imaging**
+    -   Updated relevant content, see the 7.0 release notes
+
+-   **Imaging**
+    -   Updated relevant content, see the 7.0 release notes
+    
+-   **ABCC**
+    -   Updated ABCC with the changes pertaining to 7.0 data release
+
+-   **Tools**
+    -   Added documentation regarding R/Python Packages for NBDCtools
+    
+-   **Substudies**
+    -   Added documentation for Baby Teeth, RECOVER, and Structured Interview for Psychosis Risk Syndromes (SIPS) 
+    
+-   **FAQ**
+    -   Added question/answer regarding slice timing correction in the processing of minimally processed fMRI data
+
+
+
 # 6.1.3
 <span style="font-size: 0.85em; color: gray;">
 **Date:** 2026-04-09<br>

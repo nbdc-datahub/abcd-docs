@@ -1,0 +1,23 @@
+name,label,type_data,type_level
+participant_id,Unique participant identifier,text,nominal
+utc_first_001,Have you felt that you are not in control of your own ideas or thoughts? [Youth]: Coded qualitative data,character,nominal
+utc_first_002,Do you ever feel as if somehow thoughts are put into your head or taken away from you? Do you ever feel that some person or force may be controlling or interfering with your thinking? [Youth]: Coded qualitative data,character,nominal
+utc_first_003,Do you ever feel as if your thoughts are being said out loud so that other people can hear them? [Youth]: Coded qualitative data,character,nominal
+utc_first_004,Do you ever think that people might be able to read your mind? [Youth]: Coded qualitative data,character,nominal
+utc_first_005,Do you ever think that you can read other people's mind? [Youth]: Coded qualitative data,character,nominal
+utc_first_006,Do you ever feel the radio or TV is communicating directly to you? [Youth]: Coded qualitative data,character,nominal
+utc_oth_001,Somatic Ideas: Do you ever worry that something might be wrong with your body or your health? [Youth]: Coded qualitative data,character,nominal
+utc_oth_002,Nihilistic Ideas: Have you ever felt that you might not actually exist? Do you ever think that the world might not exist? [Youth]: Coded qualitative data,character,nominal
+utc_oth_003,Ideas of Guilt: Do you ever find yourself thinking a lot about how to be good or begin to believe that you deserve to be punished in some way? [Youth]: Coded qualitative data,character,nominal
+utc_ovb_001,"Do you have strong feelings or beliefs that are very important to you, about such things as religion, philosophy, or politics? [Youth]: Coded qualitative data",character,nominal
+utc_ovb_002,"Do you daydream a lot or find yourself preoccupied with stories, fantasies, or ideas? Do you ever feel confused about whether something is your imagination or real? [Youth]: Coded qualitative data",character,nominal
+utc_ovb_003,Do you know what it means to be superstitious? Are you superstitious? Does it affect your behavior? [Youth]: Coded qualitative data,character,nominal
+utc_ovb_004,"Do other people tell you that your ideas or beliefs are unusual or bizarre? If so, what are these ideas or beliefs? [Youth]: Coded qualitative data",character,nominal
+utc_ovb_005,Do you ever feel you can predict the future? [Youth]: Coded qualitative data,character,nominal
+utc_perp_001,Have you had the feeling that something odd is going on or that something is wrong that you can't explain? [Youth]: Coded qualitative data,character,nominal
+utc_perp_002,Have you ever been confused at times whether something you have experienced is real or imaginary? [Youth]: Coded qualitative data,character,nominal
+utc_perp_003,Do familiar people or surroundings ever seem strange? Confusing? Unreal? Not a part of the living world? Alien? Inhuman? Evil? [Youth]: Coded qualitative data,character,nominal
+utc_perp_004,"Does your experience of time seem to have changed? Unnaturally faster, unnaturally slower? [Youth]: Coded qualitative data",character,nominal
+utc_perp_005,Do you ever seem to live through events exactly as you have experienced them before? [Youth]: Coded qualitative data,character,nominal
+utc_npir_001,Have you felt that things happening around you have a special meaning for just you? [Youth]: Coded qualitative data,character,nominal
+utc_npir_002,Have you had the sense that you are often the center of people's attention? Do you feel they have hostile or negative intentions? [Youth]: Coded qualitative data,character,nominal

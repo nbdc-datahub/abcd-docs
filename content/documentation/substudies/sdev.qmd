@@ -15,7 +15,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'sdev'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/substudies/6_1_sdev.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/substudies/6_1_sdev.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 Data for the ABCD Social Development Substudy (SD) were collected approximately annually. Participation in `ses-S01` data collection was offered to families who had completed either a `1`- or `2-year` ABCD follow up assessment. Each successive follow up assessment was conducted in a window of 12 months ±3 months from the last SD assessment. The timing of the SD data collection in relation to ABCD visits was left up to the research staff and the participating family. In some cases, SD assessments were completed concurrently with ABCD assessments, while in others they were completed independently on separate days. Thus, SD and core protocol data collection dates may or may not correspond directly to those of ABCD. The researcher should be mindful of these assessment date differences, if analyzing SD data with ABCD measures.
 
@@ -69,20 +69,35 @@ Due to the different time frame and wording of the `ses-S01` and follow-up quest
 
 **Key reference:** `r full_cite("brislin2024")`
 
+::: {.callout-caution collapse="true" title="Release notes: `Social Development`"}
+**7.0**
+
+[**New tables**](../release_notes/7_0.qmd#new-tables): Social Development substudy has the following new tables: Parental Incarceration [Parent], Gang Membership and Activity [Youth], Parental Incarceration [Youth], Police Interaction [Youth]
+:::
+
+
 # Youth tables {#sdev_y}
 
 ## Reported Delinquency (Youth) {#sdev_y_rd}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_rd")`  
+`r table_header("sdev_y_rd")`  
 
 **Measure description:** ABCD-SD uses a contemporary version of the Self-Reported Delinquency Scale (SRD) with co-offending added, and substance use, and sexual items removed to avoid duplication with the ABCD measures. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02` on, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
-Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of measurement bias across demographic groups in this measure and thus discontinued use/sharing of this measure. Unlike the main study, the ABCD-SD uses the full Self-Reported Delinquency Scale. We recommend conducting differential item functioning for this measure to determine whether there are biases before including it in your analyses as was done in @brislin2024.
+::: {#use-sdev_y_rd .callout-important collapse="true" title="Responsible use consideration: Reported delinquency"}
+Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of significant measurement bias across demographic groups and thus discontinued use/sharing of this measure. Unlike the main study, the ABCD-SD uses the full Self-Reported Delinquency Scale. We recommend conducting differential item functioning for this measure to determine whether there are biases before including it in your analyses as was done in @brislin2024.
+::: 
 
 ::: {.callout-caution collapse="true" title="Release notes: `sdev_y_rd`"}
-[**Age items error (6.0)**](../release_notes/6_0.qmd#known-issue-age-items): Age items in the Social Development substudy currently contain implausible values. Users should filter out unreasonably large values in these fields and can also compare the data to the _age variable provided for the table.
+**7.0**
 
-[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data): Some items were created in a way that asked participants to enter `98` or `99` to indicate either “Don’t know” or “Decline to answer.” Data users should recode `98` = “I don’t know” and `99` = “Decline to answer” for all integer variables in the substudy.
+[**Age item outliers**](../release_notes/7_0.qmd#age-item-outliers) Age items in the Social Development substudy previously contained implausible values. These issues were corrected for the 7.0 release. New `__dk` items were created to store any non-missing responses to these items.
+
+**6.0**
+
+[**Age items error**](../release_notes/6_0.qmd#known-issue-age-items)
+
+[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data)
 :::
 
 **Key references:**
@@ -92,14 +107,20 @@ Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of
 
 ## Firearms {#youth-firearms}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_fa")`  
+`r table_header("sdev_y_fa")`  
 
 **Measure description:** Firearm access, safety, and storage is measured with items from the Youth Risk Behavior Surveillance System (YRBSS). YRBSS is an established measure used in national surveys. The youth are asked about carrying a firearm, and how easy or difficult it is for them to get access to, load, and fire a gun.
 
 ::: {.callout-caution collapse="true" title="Release notes: `sdev_y_fa`"}
-[**Age items error (6.0)**](../release_notes/6_0.qmd#known-issue-age-items): Age items in the Social Development substudy currently contain implausible values. Users should filter out unreasonably large values in these fields and can also compare the data to the _age variable provided for the table.
+**7.0**
 
-[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data): Some items were created in a way that asked participants to enter `98` or `99` to indicate either “Don’t know” or “Decline to answer.” Data users should recode `98` = “I don’t know” and `99` = “Decline to answer” for all integer variables in the substudy.
+[**Age item outliers**](../release_notes/7_0.qmd#age-item-outliers) Age items in the Social Development substudy previously contained implausible values. These issues were corrected for the 7.0 release. New `__dk` items were created to store any non-missing responses to these items.
+
+**6.0**
+
+[**Age items error**](../release_notes/6_0.qmd#known-issue-age-items)
+
+[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data)
 :::
 
 **Key references:**
@@ -107,23 +128,67 @@ Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of
 - `r full_cite("kann2016")`
 - `r full_cite("xu2014")`
 
+## Gang Membership and Activity \[Youth\] {#sdev_y_gma}
+
+`r table_header("sdev_y_gma")`
+
+**Measure description:** The proposed items will address lifetime and current gang membership, age of onset, length of membership, and whether the participant took part in a variety of delinquent/criminal activities during that time. We are also in a unique position to investigate sex differences. Thus, we will also investigate whether participants have been involved in romantic relationships with a gang member and, as a consequence, been involved in gang criminal activity. 
+
+**Key references:** 
+
+- `r full_cite("melde2011")`
+- `r full_cite("moore2001")`
+
+
+## Parental Incarceration \[Youth\] {#sdev_y_incar}
+
+`r table_header("sdev_y_incar")`
+
+**Measure description:** Parental incarceration can have serious long-term consequences for children (@aaron2010). Over and above the direct risk that parental incarceration poses for increased delinquent behavior, there are also indirect risks such as economic and health consequences, and deterioration of family relationships (@arditti2015). Disrupted sleep patterns and unhealthy eating habits have been associated with both maternal and paternal incarceration (@jackson2017). Other results show direct associations between parental incarceration and three dimensions of health: general health behaviors, substance use, and other risky behaviors (@heard-garris2018; @wildeman2018). We have developed a short questionnaire adapted to the ABCD-SD study sample and added follow up questions about the circumstances around the incarceration and arrest. 
+
+**Key references:** 
+
+- `r full_cite("aaron2010")`
+- `r full_cite("arditti2015")`
+- `r full_cite("jackson2017")`
+- `r full_cite("heard-garris2018")`
+- `r full_cite("wildeman2018")`
+
+## Police Interaction \[Youth\] {#sdev_y_pol}
+
+`r table_header("sdev_y_pol")`
+
+**Measure description:** Despite mixed evidence, early interactions with police and juvenile justice systems are risk factors for future delinquency or persistent behavior problems. Police interactions have been found to predict increased delinquency (@wiley2016) and violent behavior, especially for low-rate violent offenders (@ward2014). By measuring these interactions prospectively, we will investigate pathways to increasing involvement in and sanctions by the juvenile and criminal justice systems. Police and juvenile justice contacts will be measured using an adapted version of the Police Contact Questionnaire, developed by the Pittsburgh Youth Study team (@loeber2008). 
+
+**Key references:** 
+
+- `r full_cite("wiley2016")`
+- `r full_cite("ward2014")`
+- `r full_cite("loeber2008")`
+
 ## Victimization {#sdev_y_vict}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_vict")`  
+`r table_header("sdev_y_vict")`  
 
 **Measure description:** Victimization is measured using the Juvenile Victimization Questionnaire (JVQ). The ABCD-SD version includes the following sub scales: Conventional crime, Peer and sibling victimization, Peer aggression (including social aggression), Witnessing (exposure) and indirect victimization, Gun violence (including exposure), School violence and threat, and Internet victimization. The JVQ includes detailed follow-up questions to determine the circumstances and the context where any victimization occurred. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
 ::: {.callout-caution collapse="true" title="Release notes: `sdev_y_vict`"}
-[**Age items error (6.0)**](../release_notes/6_0.qmd#known-issue-age-items): Age items in the Social Development substudy currently contain implausible values. Users should filter out unreasonably large values in these fields and can also compare the data to the _age variable provided for the table.
+**7.0**
 
-[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data): Some items were created in a way that asked participants to enter `98` or `99` to indicate either “Don’t know” or “Decline to answer.” Data users should recode `98` = “I don’t know” and `99` = “Decline to answer” for all integer variables in the substudy.
+[**Age item outliers**](../release_notes/7_0.qmd#age-item-outliers) Age items in the Social Development substudy previously contained implausible values. These issues were corrected for the 7.0 release. New `__dk` items were created to store any non-missing responses to these items.
+
+**6.0**
+
+[**Age items error**](../release_notes/6_0.qmd#known-issue-age-items)
+
+[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data)
 :::
 
 **Key reference:** `r full_cite("finkelhor2005")`
 
 ## Personality Disposition {#sdev_y_pd}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_pd")`  
+`r table_header("sdev_y_pd")`  
 
 **Measure description:** Personality disposition includes measures of psychopathy, fearlessness, prosociality, and aggression. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
@@ -147,7 +212,7 @@ Scales: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibility
 
 ## Peer Behavior {#sdev_y_pb}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_pb")`
+`r table_header("sdev_y_pb")`
 
 **Measure description:** The Peer Delinquent Behavior items from the Rochester Youth Study will provide the basis for the examination of the influence of variations in peer characteristics on early adolescence in relation to the development of delinquency and victimization. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
@@ -155,7 +220,7 @@ Scales: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibility
 
 ## Difficulties in Emotion Regulation {#sdev_y_ders}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_ders")`
+`r table_header("sdev_y_ders")`
 
 **Measure description:** Emotion regulation is related to juvenile arrest, aggression, and conduct problems. Emotional awareness and insight advance during early adolescence and are measurable in this developmental period (@vasilev2009). The Difficulties in Emotion Regulation Scale (DERS) has good psychometric properties and has been tested in children as young as 11 years old. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
@@ -170,7 +235,7 @@ Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibi
 
 ## Alabama Parenting Questionnaire {#sdev_y_apq}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_y_apq")`
+`r table_header("sdev_y_apq")`
 
 **Measure description:** Parenting strategies are measured by the Alabama Parenting Questionnaire (APQ). APQ assesses five constructs: Positive involvement with children, Supervision and monitoring, Use of positive discipline techniques, Consistency in the use of such discipline, and Use of corporal punishment. Parenting practices have been consistently associated with behavioral outcomes, including delinquency. All measures were administered in all waves to date. At `ses-S01` all question were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time in between the `ses-S01` assessment and the follow-up assessment.
 
@@ -182,13 +247,13 @@ Scales: parental involvement; positive parenting; poor monitoring/supervision; i
 
 ## Visit Type {#sdev_p_vt}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_vt")`
+`r table_header("sdev_p_vt")`
 
 **Measure description:** The visit type table includes information about the date of assessment, and whether the visit is completed in person or remotely. In addition, it shows if the visit was completed on the same day as any ABCD visit, or separately. Can't schedule = Scheduled but doesn't show up until out of the assessment window. Declined = Can't or won't come this year, but does not withdraw from the SD study. Opted out = Still in ABCD but formally withdraws from the SD study. Ineligible = Withdraws from the main ABCD study, and can no longer participate in the SD study even if they wish to do so. All measures were administered in all waves to date.
 
 ## Alabama Parenting Questionnaire {#sdev_p_apq}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_apq")`
+`r table_header("sdev_p_apq")`
 
 **Measure description:** Parenting strategies are measured by the Alabama Parenting Questionnaire (APQ). APQ assesses five constructs: Positive involvement with children, Supervision and monitoring, Use of positive discipline techniques, Consistency in the use of such discipline, and Use of corporal punishment. Parenting practices have been consistently associated with behavioral outcomes, including delinquency. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
@@ -198,7 +263,7 @@ Scales: parental involvement; positive parenting; poor monitoring/supervision; i
 
 ## Difficulties in Emotion Regulation {#sdev_p_ders}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_ders")`
+`r table_header("sdev_p_ders")`
 
 **Measure description:** Emotion regulation is related to juvenile arrest, aggression, and conduct problems. Emotional awareness and insight advance during early adolescence and are measurable in this developmental period (@vasilev2009). The Difficulties in Emotion Regulation Scale (DERS) has good psychometric properties and has been tested in children as young as 11 years old. The DERS consists of 6 subscales: Lack of emotional awareness, Lack of emotional clarity, Difficulties controlling impulsive behaviors when distressed, Difficulties in goal-directed behaviors when distressed, Non-acceptance of negative emotional responses, and Limited access to ER strategies. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
@@ -210,7 +275,7 @@ Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibi
 
 ## Firearms {#sdev_p_fa}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_fa")`
+`r table_header("sdev_p_fa")`
 
 **Measure description:** Firearm access, safety, and storage is measured with items from the Behavioral Risk Behavior Surveillance System (BRFSS). BRFSS is an established measure used in national surveys. The caregiver is asked whether there are firearms in the household, and how they are stored and secured. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
@@ -219,9 +284,23 @@ Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibi
 - `r full_cite("kann2016")`
 - `r full_cite("xu2014")`
 
+## Parental Incarceration \[Youth\] {#sdev_y_incar}
+
+`r table_header("sdev_y_incar")`
+
+**Measure description:** Parental incarceration can have serious long-term consequences for children (@aaron2010). Over and above the direct risk that parental incarceration poses for increased delinquent behavior, there are also indirect risks such as economic and health consequences, and deterioration of family relationships (@arditti2015). Disrupted sleep patterns and unhealthy eating habits have been associated with both maternal and paternal incarceration (@jackson2017). Other results show direct associations between parental incarceration and three dimensions of health: general health behaviors, substance use, and other risky behaviors (@heard-garris2018; @wildeman2018). We have developed a short questionnaire adapted to the ABCD-SD study sample and added follow up questions about the circumstances around the incarceration and arrest. 
+
+**Key references:** 
+
+- `r full_cite("aaron2010")`
+- `r full_cite("arditti2015")`
+- `r full_cite("jackson2017")`
+- `r full_cite("heard-garris2018")`
+- `r full_cite("wildeman2018")`
+
 ## Perception of Neighborhood {#sdev_p_nbh}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_nbh")`
+`r table_header("sdev_p_nbh")`
 
 **Measure description:** Caregiver report on the Collective Efficacy- Social Conscious scale and Perception of Neighborhood Disorder scale about their neighborhood. Neighborhood influences and perceptions have been found to be related to adolescent delinquency. The constructs measured include perceptions of safety, police resources, social cohesion, and cleanliness of the neighborhood. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
@@ -234,7 +313,7 @@ Scales: lack of efficacy and disorder
 
 ## Personality Disposition {#sdev_p_pd}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_pd")`
+`r table_header("sdev_p_pd")`
 
 All measures were administered in all waves so far. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
@@ -256,18 +335,26 @@ Scales: proactive aggression for child, for parent; reactive aggression for chil
 
 ## Reported Delinquency (Parent) {#sdev_p_rd}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_rd")`
+`r table_header("sdev_p_rd")`
 
 **Measure description:** ABCD-SD uses a contemporary version of the Self-Reported Delinquency Scale (SRD) with co-offending added, and substance use, and sexual items. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment.
 
-Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of significant measurement bias across demographic groups and thus discontinued use/sharing of this measure. Unlike the main study, the ABCD-SD uses the full Self-Reported Delinquency Scale. We recommend conducting differential item functioning for this measure to determine whether there are biases before including it in your analyses as was done in @brislin2024.
-
 Scales: vandalism; theft; violence; police contact
 
-::: {.callout-caution collapse="true" title="Release notes: `sdev_p_rd`"}
-[**Age items error (6.0)**](../release_notes/6_0.qmd#known-issue-age-items): Age items in the Social Development substudy currently contain implausible values. Users should filter out unreasonably large values in these fields and can also compare the data to the _age variable provided for the table.
+::: {#use-sdev_p_rd .callout-important collapse="true" title="Responsible use consideration: Reported delinquency"}
+Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of significant measurement bias across demographic groups and thus discontinued use/sharing of this measure. Unlike the main study, the ABCD-SD uses the full Self-Reported Delinquency Scale. We recommend conducting differential item functioning for this measure to determine whether there are biases before including it in your analyses as was done in @brislin2024.
+::: 
 
-[**Non-response data error (6.0)**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data): Some items were created in a way that asked participants to enter `98` or `99` to indicate either “Don’t know” or “Decline to answer.” Data users should recode `98` = “I don’t know” and `99` = “Decline to answer” for all integer variables in the substudy.
+::: {.callout-caution collapse="true" title="Release notes: `sdev_p_rd`"}
+**7.0**
+
+[**Age item outliers**](../release_notes/7_0.qmd#age-item-outliers) Age items in the Social Development substudy previously contained implausible values. These issues were corrected for the 7.0 release. New `__dk` items were created to store any non-missing responses to these items.
+
+**6.0**
+
+[**Age items error**](../release_notes/6_0.qmd#known-issue-age-items)
+
+[**Non-response data error**](../release_notes/6_0.qmd#known-issue-integer-fields-with-non-response-data)
 :::
 
 **Key references:**
@@ -277,7 +364,7 @@ Scales: vandalism; theft; violence; police contact
 
 ## Victimization {#sdev_p_vict}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("sdev_p_vict")`
+`r table_header("sdev_p_vict")`
 
 **Measure description:** Victimization is measured using the Juvenile Victimization Questionnaire (JVQ). The ABCD-SD version includes the following sub scales: Conventional crime, Peer and sibling victimization, Peer aggression (including social aggression), Witnessing (exposure) and indirect victimization, Gun violence (including exposure), School violence and threat, and Internet victimization. The JVQ includes detailed follow-up questions to determine the circumstances and the context where any victimization occurred. All measures were administered in all waves to date. At `ses-S01` all questions were asked from a lifetime perspective. From `ses-S02`, all relevant items were modified to reflect the time between the `ses-S01` assessment and the follow-up assessment. There is some missingness as some data have been removed due to erroneous data.
 

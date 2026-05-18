@@ -1,0 +1,62 @@
+---
+title: "Baby Teeth"
+format: html
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+# Domain Overview
+
+Beginning at the initial (baseline) appointment of ABCD, researchers collected naturally shed deciduous (“baby”) teeth from participants, the rationale, procedure, and analysis of which have been described in detail (@uban2018). So far 448 teeth have been analyzed and details on this data are provided below. Accordingly, our goals were to analyze various environmental neurotoxicant exposures in a sample of these teeth via laser ablation–inductively coupled plasma mass spectrometry (LA-ICPMS). The data from 448 teeth are available in our file-based data.
+
+Specifically, each tooth was subjected to laser ablation and microdissection techniques, leveraging the physiology of tooth development to provide time-resolved assessments of exposure starting during the 2nd trimester in utero. Deciduous teeth grow in incremental patterns, forming rings and layers that can be used to date deposition in much the same way as rings of a tree identify environmental conditions. Organic compounds and neurotoxicants circulating in the fetal blood stream are captured in the layers, such that the amounts in these layers provide information about the dose and timing of exposure. These methods have been extensively validated (@arora2013, @arora2014, @arora2012, @arora2006, @hare2011, @johnston2019, @lin2025)
+
+**Key references:** 
+
+- `r full_cite("arora2013")`
+- `r full_cite("arora2014")`
+- `r full_cite("arora2012")`
+- `r full_cite("arora2006")`
+- `r full_cite("hare2011")`
+- `r full_cite("johnston2019")`
+- `r full_cite("lin2025")`
+
+# File-based data
+
+## Exposure data
+
+`r table_header(tabulated = FALSE, file_based = TRUE, concatenated = TRUE)`
+
+```default
+abcd
+└── concatenated
+    └── substudies
+        └── baby_teeth
+            └── baby_teeth.<csv|parquet>
+```
+
+Here, exposure levels are provided for 16 metals, per values of elemental isotopes: aluminum-27 (^27^Al), barium-138 (^138^Ba), cadmium-111 (^111^Cd), calcium-43 (^43^Ca), chromium-52 (^52^Cr), cobalt-59 (^59^Co), copper-63 (^63^Cu), lead-208 (^208^Pb), lithium-7 (^7^Li), magnesium-25 (^25^Mg), manganese-55 (^55^Mn), molybdenum-95 (^95^Mo), nickel-60 (^60^Ni), strontium-88 (^88^Sr), tin-118 (^118^Sn), and zinc-66 (^66^Zn). All elemental values are background subtracted. Except for ^43^Ca, all elemental values are normalized to calcium (Ca), which serves as an internal standard. All values, including ^43^Ca, are corrected to NIST610. These values are reported by week-since-birth (WSB). Individual differences in the amount of WSBs with data are due to differences in tooth type (also provided in the data release) and sample integrity. Attrition refers to the estimated amount of tooth cusp worn away, and resorption refers to the amount of enamel resorbed at the cervical end; these values have been categorized into “low”, “medium”, and “high” levels.
+
+::: {.callout-note title="File formats"}
+The baby teeth file-based data are made available as both `csv` and `parquet` files to support a range of tools and user preferences. However, since the `parquet` format ensures that data is imported with correctly specified data types and facilitates faster loading speeds, we recommend using `parquet` files over `csv` files whenever possible (see [here](../curation/structure.qmd#file-formats)).
+:::
+
+## Metadata information
+
+The metadata (data dictionary and categorical levels tables) for the baby teeth data are provided below. The `Data Dictionary` tab provides detailed information about the variables included in the file, including variable names, labels, units, and data types; the `Categorical Levels` table provides the mapping between values provided in the data and corresponding labels for categorical variables. Users are encouraged to consult the metadata to understand the structure and content of the data before working with it.
+
+```{r}
+#| results: asis
+#| echo: false
+make_nested_tabsets(
+  c(
+    "baby_teeth"
+  ),
+  base_path = "../../assets/tbl/documentation/substudies/"
+)
+```

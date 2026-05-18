@@ -13,3 +13,6 @@ _freeze/
 trackdown/
 
 /.luarc.json
+.positai
+/dev/brand-transition-kit
+/dev

@@ -1,0 +1,11 @@
+name,label,type_data,type_level
+participant_id,Participant identifier,text,nominal
+session_id,Event associated with Fitbit wear,character,nominal
+day,Protocol day (1–21),integer,ratio
+dt,Date,date,interval
+steps_fitb,Total number of steps during the day,integer,ratio
+min_intsnt_sed_fitb,Total sedentary minutes,integer,ratio
+min_intnst_light_fitb,Total light physical activity minutes,integer,ratio
+min_intnst_mod_fitb,Total moderate physical activity minutes,integer,ratio
+min_intnst_vigor_fitb,Total vigorous physical activity minutes,integer,ratio
+hrate_rest_fitb,Estimated resting heart rate (beats for minute),integer,ratio

@@ -1,0 +1,11 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+dt,Date of application use,date,interval
+dt_day,Day of the week for date of application use,character,ordinal
+dt_wknd,Whether date of application use was on a weekend day (Sat/Sun) or not,logical,nominal
+dtt_screenshot,Date/time when screenshot of this page of the Screen Time report was taken,timestamp,interval
+category,Apple App Store application category,character,nominal
+app,"Application ID; in the case of web usage, the application ID for the corresponding application is used",text,nominal
+n_pickups,Number of pickups that were followed by using this application or website,integer,ratio
+min_usage,"Duration this application or website was used (in minutes, rounded to the nearest minute, or rounded up to 1 minute for nonzero durations <60 sec). Note that browser usage includes the usage of specific websites",integer,ratio

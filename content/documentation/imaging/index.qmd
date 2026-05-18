@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "Imaging Overview"
 ---
 
 ```{r}
@@ -17,21 +17,37 @@ expect_series <- readr::read_csv(
 
 This document details how to obtain information, metrics, and imaging files from the magnetic resonance imaging (MRI) components of the ABCD Study. An in-depth discussion and reference resource on the ABCD processing pipeline is available at <https://doi.org/10.1016/j.neuroimage.2019.116091>.
 
-Download a pdf of all imaging tables (mr) [here](../../assets/files/documentation/imaging/6_0_mr.pdf).
-
 ::: {.callout-caution collapse="true" title="Imaging Release Notes"}
+**7.0**
+
+-   [**MRI info**](../release_notes/7_0.qmd#mri-info): The form of the serial number anonymization has been standardized across these data types and a new categorical variable is used to reduce number of software version.
+
+-   [**All imaging**](../release_notes/7_0.qmd#all-imaging): ~50 visits that differ for across all modalities, related to recovery of previous processing failures and some re-evaluation of raw QC.
+
+-   [**rsfMRI**](../release_notes/7_0.qmd#rsfrmi): Tabulated data now is based on concatenated data. There are also some changes regarding the processing of data. 
+
+-   [**dMRI**](../release_notes/7_0.qmd#dmri): Previously, there was a mismatch of rows in the DTI data files. This has been fixed in 7.0.
+
+-   [**SST**](../release_notes/7_0.qmd#sst): "Stop too early" trials are now reclassified as "go", affecting a large subset of visits.
+
+-   [**MID**](../release_notes/7_0.qmd#mid): There are changes between how the tabulated data was prepared for 7.0 vs. 6.0 data release.
+
+-   [**Post QC**](../release_notes/7_0.qmd#post-qc): ~100-900 visits with differences, depending on modality revisions to previous scores, mostly for FreeSurfer QC.
+
+-   [**Missing data on Siemens `XA30`**](../release_notes/7_0.qmd#missing-data-on-siemens-xa30): Anatomical scans (T1w and T2w) and field map scans (for both dMRI and fMRI) were inadvertently excluded from the sourcedata and rawdata BIDS datasets for the 889 scan sessions collected on Siemens scanners with software version `XA30`.
+
 **6.0**
 
--   [**Indicator variables**](../release_notes/6_0.qmd#indicator-variables): In the mr domain, all `_indicator` variables should be considered `yes/no` items, despite some levels being labeled as `pass/fail` currently. The level labels for all such items will be updated in the 7.0 release.
+-   [**Indicator variables**](../release_notes/6_0.qmd#indicator-variables)
 
--   [**Missing values**](../release_notes/6_0.qmd#missing-values-in-tabulated-imaging-data): There are 8 participant-sessions with missing values in the tabulated imaging data (e.g., null value for `ab_g_dyn__design_mr__serial` and imaging-derived measures) but have imaging inclusion flags (e.g., `mr_y_qc__incl__smri__t1_indicator`) that indicate usable data. Those participant-sessions do have valid imaging data but the derived values were inadvertently omitted from the tabulated data compiled for the data release. Users should be aware of this and exclude missing values from statistical analyses.
+-   [**Missing values**](../release_notes/6_0.qmd#missing-values-in-tabulated-imaging-data)
 
--   [**Mismatched rows**](../release_notes/6_0.qmd#mismatched-rows-in-concatenated-vertexwise-dti-data): A subset of the concatenated data files, specifically vertexwise DTI measures in peri-cortical white matter, have a different number of observations (i.e., participant-session rows) for the left hemisphere and the right hemisphere (30392 rows in left hemisphere and 30393 rows in right hemisphere). Because of the inadvertently mismatch rows, these data files should not be used. Concatenated vertexwise DTI data files with the following file stems were affected: "fa_wm", "ld_wm", "md_wm", "td_wm".
+-   [**Mismatched rows**](../release_notes/6_0.qmd#mismatched-rows-in-concatenated-vertexwise-dti-data)
 
--   [**Scanner issue**](../release_notes/6_0.qmd#known-issue-scanner-issue-for-site15):There was a scanner service issue that affects dMRI and fMRI data acquired prior to August 2018 at one of the ABCD sites: site15.
+-   [**Scanner issue**](../release_notes/6_0.qmd#known-issue-scanner-issue-for-site15)
 :::
 
-::: {.callout-warning collapse="true" title="Data warning: Scanner issue" #scanner-issue}
+::: {.callout-warning collapse="true" title="Data consideration: Scanner issue" #scanner-issue}
 There was a scanner service issue that affects dMRI and fMRI data acquired prior to August 2018 at one of the ABCD sites (Site ID: site15, DeviceSerialNumber: d06b7afa24778649d21924836f3816031db95e5c7a5db0e475f640bb805cdf9f). It is suggested that users should consider excluding dMRI and fMRI data from that scanner collected prior to August 2018.
 
 There was an intermittent spiking problem, thought to be caused by a hardware malfunction, visible as white pixel noise in some scans. The scanner was serviced and the problem fixed in July 2018. The issue was not detected via visual review, but some dMRI- and fMRI-derived measures from scans acquired prior to August 2018 exhibited an offset in group mean values, resulting, for example, in biased estimates of age-related change.
@@ -110,7 +126,7 @@ Every table in the Imaging domain has the prefix `mr_y_` (`mr`: domain = "imagin
   - Destrieux: `dst`
   - Subcortical: `aseg`
 
-Within the different imaging modalities, variables are grouped into tables using additional criteria. The resulting tables are listed in more detail in the data documentations pages for each specific imaging modalities. Users can use [DEAP (Data Exploration and Analysis Portal)](https://nbdc.deapscience.com) to explore what variables a given instrument contains and how instruments are hierarchically organized within the ABCD ontology. Abbreviations of anatomical locations for the ROI-based tabulated imaging tables are detailed in [*Supplementary Imaging Tables*](data_suppl.qmd).
+Within the different imaging modalities, variables are grouped into tables using additional criteria. The resulting tables are listed in more detail in the data documentations pages for each specific imaging modality. Users can use [DEAP (Data Exploration and Analysis Portal)](https://nbdc.deapscience.com) to explore what variables a given instrument contains and how instruments are hierarchically organized within the ABCD ontology. Abbreviations of anatomical locations for the ROI-based tabulated imaging tables are detailed in [*Supplementary Imaging Tables*](data_suppl.qmd).
 
 ## Expected MRI Series
 
@@ -120,6 +136,12 @@ Below is a guide to the expected number of series per modality/scanner manufactu
 
 ```{r}
 expect_series |>
+  tidyr::separate(
+    Siemens,
+    into = c("Siemens", "Siemens (series)"),
+    sep = " (?=\\()",
+    fill = "right"
+  ) |>
   reactable(
     defaultPageSize = 25,
     resizable = TRUE
@@ -134,11 +156,11 @@ See <https://abcdstudy.org/images/Protocol_Imaging_Sequences.pdf> for more infor
 
 ## MRI unprocessed data sharing
 
-Unprocessed MRI data are shared as DICOM files in a BIDS source data format as well as NIfTI files in the standard BIDS raw data format. See ABCD MRI Unprocessed Data Sharing section for more information about ABCD MRI Raw Data Sharing.
+Unprocessed MRI data are shared as DICOM files in a BIDS source data format as well as NIfTI files in the standard BIDS raw data format. See [ABCD MRI Unprocessed Data Sharing](../imaging/data_source_raw.qmd) for more information about ABCD MRI Raw Data Sharing.
 
 ## MRI derivatives data sharing
 
-Processed MRI data volumes are shared as NIfTI files in a BIDS derivatives format. FreeSurfer outputs are shared in their standard form, also within a BIDS derivatives format. See ABCD MRI Derivatives Data Sharing section for more information about ABCD MRI Derivatives Data Sharing.
+Processed MRI data volumes are shared as NIfTI files in a BIDS derivatives format. FreeSurfer outputs are shared in their standard form, also within a BIDS derivatives format. See [ABCD MRI Derivatives Data Sharing](../imaging/data_derivatives.qmd) section for more information about ABCD MRI Derivatives Data Sharing.
 
 # Tabulated ROI-based Analysis
 
@@ -164,7 +186,126 @@ The Recommended Imaging Inclusion instrument (`r link_table("mr_y_qc__incl")`) p
 
 ## Incidental Findings
 
-T1w and T2w images, if available, were screened for incidental findings by a board-certified neuroradiologist. Any findings requiring clinical investigation were relayed to appropriate site personnel via the ABCD Coordinating Center (CC). These MR findings (see instrument `r link_table("mr_y_qc__clfind")`) are not included in our recommended inclusion criteria but are noted here because some investigators may find them to be relevant inclusion criteria for their analyses.
+Neuroradiologic Review, AI-Assisted Labeling, and Findings Dictionary
+
+### Background and Neuroradiologic Review
+
+Structural MRI data from ABCD study participants have been centrally reviewed for incidental findings (IFs) — potentially important anatomic variants and abnormalities — by board-certified/eligible neuroradiologists under the supervision of a senior neuroradiologist with over 10 years of experience and subspecialized training in pediatric neuroradiology. All T1- and T2-weighted sequences were reformatted in three planes and accessed by reviewers via a dedicated image-review and report-generation web portal. Reporting was not constrained to a prespecified finding list; all detected anatomic variants and structural abnormalities were documented. To promote consistency, reviewers conferred regularly on the clinical significance of specific findings.
+
+Each scan was assigned to one of four mutually exclusive significance categories:
+
+-   **Category 1** — No abnormal findings.
+-   **Category 2** — Normal anatomic variant or common incidental finding unlikely to be of clinical significance in a healthy individual; no referral necessary.
+-   **Category 3** — Consider referral.
+-   **Category 4** — Consider immediate referral.
+
+A free-text field allowed the reviewing radiologist to elaborate on findings and provide guidance on recommended clinical or imaging follow-up. The categorical score and report were automatically transmitted to the responsible investigator at each enrollment site, enabling timely follow-up when warranted.
+
+The baseline neuroradiologic review encompassed 11,687 participants with interpretable MRI scans. Follow-up scans collected at 2-, 4-, 6-, and 8-year intervals have continued to be categorized using the same system. Full details of the baseline review methodology and prevalence findings are reported in @li2021.
+
+### Longitudinal Reporting: "Difference from Prior" Flags
+
+For longitudinal imaging events, the reporting system was updated to include "Difference from Prior" (yes/no) checkboxes alongside each reported finding. These flags indicate whether a described finding represents a change relative to the participant's prior imaging. This distinction is important for two scenarios that the overall categorical score alone cannot capture:
+
+-   **New category 3 or 4 score, Difference from Prior = No:** A finding newly documented at this imaging event that was not detected or reported on prior scans, but is unchanged in appearance.
+-   **Unchanged score, Difference from Prior = Yes:** A new finding in a participant who already had an existing finding, such that the overall category score may not change even though there is a new, potentially actionable abnormality.
+
+### AI-Assisted Labeling of Incidental Findings
+
+To date, only the categorical scores derived from the neuroradiologic reports (variable: `mrif_score`) have been made available in released ABCD data. Beginning with release 7.0, a dictionary of finding-level labels is also included. These labels identify the specific anatomic variants or abnormalities described in each report, providing structured information about the identity and location of findings at each imaging event.
+
+Neuroradiologic reports from baseline and longitudinal timepoints were processed using an AI-assisted labeling pipeline to extract and classify specific incidental findings described in free-text report narratives.
+
+#### Platform
+
+Labeling was performed using UCSF Versa, a secure generative AI platform developed by UCSF and approved for use with all UCSF institutional data. Versa operates within a protected environment in which prompts and model responses are transmitted securely and are not retained beyond the active user session.
+
+#### Prompt Development and Application
+
+A structured prompt was engineered to recreate the finding-level labels that had been manually assigned to IFs in the baseline imaging for the 2021 JAMA Neurology publication. The model was prompted to act as a board-certified pediatric neuroradiologist and, for each report, to identify incidental findings by matching report language against a structured finding dictionary containing canonical finding labels and associated keywords and synonyms. Key behavioral rules embedded in the prompt included:
+
+-   Findings mentioned in a negated context (e.g., "no hydrocephalus") were excluded from output.
+-   Findings described as benign or normal variants were still labeled if structurally present (e.g., a cavum septum pellucidum noted as a normal variant was still labeled as such).
+-   When a report offered a differential, the most likely classification was used.
+-   Findings outside the dictionary were captured as free-text under an "Other" label.
+-   Output was ordered by descending clinical significance and limited to a maximum of four findings per report.
+
+The prompt was developed iteratively, tested against existing neuroradiologist-assigned labels from the baseline dataset at progressively larger sample sizes (n = 10, 100, 500, and 1,000), with refinements at each stage to improve accuracy. Once validated, the final prompt was applied to the complete baseline dataset and subsequently to all longitudinal reports.
+
+#### Neuroradiologist Review and Dictionary Finalization
+
+Following AI-assisted labeling, all approximately 15,000 generated labels were reviewed by a board-certified neuroradiologist for accuracy. Labels that were redundant or described closely related findings were merged where appropriate. This review process produced the final, curated dictionary of 85 finding labels included in this data release.
+
+### Data Structure and Interpretation
+
+#### Variable Structure
+
+Because up to four labels may apply to a single participant at a given imaging event, the labels are structured as a set of binary indicator variables — one column per finding category — rather than as a single multi-valued field. Variables follow the naming convention `mr_y_qc__clfind_label___N` (e.g., `mr_y_qc__clfind_label___1`, `mr_y_qc__clfind_label___2`), where N corresponds to the finding's alphabetical position in the dictionary. Full variable labels follow the format "Clinical findings: Label \[Finding Name\]" (e.g., "Clinical findings: Label \[Arachnoid Cyst\]").
+
+Values are coded as follows, with one row per participant per imaging event:
+
+-   1 (TRUE): The finding was identified in the report for this imaging event.
+
+-   0 (FALSE): The finding was not identified (applies to all label columns for participants with an MRIF score, including those with no findings).
+
+-   NA / NULL: The participant does not have an MRIF score for this imaging event (i.e., no radiology report was generated).
+
+![](../../assets/img/documentation/imaging/mrif.jpg)
+
+*Figure 1. Distribution of the number of labels per imaging session, stratified by MRIF score category. The majority of sessions (55.9%) have exactly one label. Sessions with MRIF score 1 (no findings) by definition have zero labels; sessions with scores 3 or 4 tend to carry more labels per session.*
+
+#### Event-Specific Labels and Longitudinal Interpretation
+
+Labels reflect the findings documented in the radiology report for each specific imaging event and were not revised retroactively based on findings at later timepoints. However, because prior imaging and reports were generally available to the reviewing radiologist at each subsequent visit, the interpretation of a given finding — and therefore the label assigned — may evolve over the course of the study. For example, an area of signal abnormality initially labeled as a possible glial neoplasm may be relabeled at later timepoints (e.g., as a white matter abnormality) if the finding remains stable or decreases in prominence, reflecting reduced clinical concern. Labels should therefore be interpreted in the context of the full longitudinal record.
+
+#### Nature of the Labels
+
+The finding labels in this dictionary are heterogeneous in what they describe. Some refer to specific suspected diagnoses (e.g., Syrinx, Chiari I/Tonsillar Ectopia, Craniopharyngioma), others identify the anatomic location of a finding without implying a specific etiology (e.g., Head and Neck Finding, Bone Lesion, Optic Nerve/Chiasm/Tract), and others indicate the presence or suspicion of an underlying process or consequence (e.g., Mass Effect, Intracranial Hypertension, Infection/Inflammation/Demyelination). Users should be aware of this heterogeneity when selecting or combining labels for analysis.
+
+#### Important Limitations
+
+These radiology reports were generated primarily to ensure participant safety, not to provide comprehensive clinical diagnoses. Findings were described without any knowledge of participants' history (medical or otherwise) and using only the limited T1- and T2-weighted anatomic MRI sequences acquired as part of the study protocol. The labels should therefore be considered neither final nor definitive clinical diagnoses. They represent the radiologist's interpretation of isolated structural imaging at the time of review and should be understood as structured summaries of those free-text reports and not confirmed medical findings.
+
+### Incidental Finding Dictionary
+
+The finding dictionary defines the 85 controlled-vocabulary labels used in this data release. Labels are listed alphabetically below and are numbered accordingly for variable construction (`mr_y_qc__clfind_label___1` through `mr_y_qc__clfind_label___85`). Figure 2 shows the 30 most frequently observed findings across all subjects and timepoints.
+
+![](../../assets/img/documentation/imaging/findings.jpg)
+
+*Figure 2. The 30 most common incidental finding labels by unique subject count across all imaging timepoints. Pineal cysts are by far the most prevalent finding, followed by sinonasal findings, developmental venous anomalies, and white matter abnormalities.*
+
+|  |  |  |
+|--------------------------|--------------------|-------------------------|
+| **Finding Label** | **Finding Label** | **Finding Label** |
+| Absence of the Septum Pellucidum | Empty/Partially Empty Sella | Optic Nerve/Chiasm/Tract |
+| Aqueductal Stenosis/Web | Encephalocele | Parotid/Lymphoepithelial Cyst(s) |
+| Arachnoid Cyst | Evidence of Surgery | Pars Intermedia/Rathke's Cleft Cyst |
+| Arachnoid Granulation(s) | Fibrous Dysplasia | Perineural Cyst(s) |
+| Asymmetric Ventricles | Fluid in Pneumatized Skull Base | Peripheral Nerve Sheath Tumor(s) |
+| Bone Lesion | Head and Neck Finding | Perivascular Space(s) |
+| Bone Remodeling | Hippocampal Cyst/Abnormality | Periventricular Nodular Heterotopia |
+| Brainstem Abnormality/Variant | Hydrocephalus | Pineal Cyst(s) |
+| Cavum Septum Pellucidum +/- Verge | Infection/Inflammation/Demyelination | Pituitary Abnormality |
+| Cavum Vellum Interpositum +/- Cyst | Injury/Encephalomalacia | Polymicrogyria |
+| Cerebellar Volume Loss/Hypoplasia/Signal Abnormality | Intracranial Hemorrhage/Blood Products | Possible Glial Neoplasm |
+| Cerebral Volume Loss | Intracranial Hypertension | Posterior Fossa Arachnoid Cyst/Mega Cisterna Magna |
+| Cervical Spine Finding | Intracranial Hypotension | Prominent Subarachnoid Spaces |
+| Chiari I/Tonsillar Ectopia | Intraosseous Venous Malformation | Signal Artifact |
+| Cholesterol Granuloma | Intraventricular/Periventricular Cyst | Sinonasal Finding/Sinusitis |
+| Choroid Plexus Cyst | Lipoma | Sinus Mucous Retention Cyst |
+| Choroidal Fissure Cyst | Lymph Node(s) | Skull/Mandible Finding |
+| Cord Signal Abnormality | Mass Effect | Suprasellar |
+| Corpus Callosum Agenesis/Hypogenesis/Dysgenesis | Mass/Possible Neoplasm | Suspected Cavernous Malformation |
+| Corpus Callosum Volume Loss/Signal Abnormality | Mastoid Effusion(s) | Syrinx |
+| Cortical Malformation/Dysplasia | Meckel's Cave | Terminal Myelination Zone(s) |
+| Craniopharyngioma | Microhemorrhage(s) vs. Calcification(s) | Toxic/Metabolic |
+| Cyst (Unspecified) | Mucosal Cyst | Variant Sulcal/Gyral Morphology |
+| Deep Gray Nuclei Abnormality | Mucous Retention Cyst | Vascular Abnormality/Variant |
+| Dermoid Cyst | Nasopharyngeal/Tornwald Cyst(s) | Venous Hypertension |
+| Developmental Venous Anomaly | Neurenteric Cyst | Ventriculomegaly |
+| Dilated Central Canal | Neuroglial Cyst(s) | White Matter Abnormality |
+| Dura/Dural Sinus | Notochordal Remnant |  |
+| Dysplasia/Hamartoma | Odontogenic Cyst(s) |  |
 
 ## Protocol Compliance and Quality Control
 
@@ -178,7 +319,7 @@ For task fMRI, series were also excluded due to E-Prime problems including missi
 
 Behavioral measures calculated from participant button presses during task fMRI acquisition are also included (see [Behavioral Performance During Task-Based fMRI](type_tfmribeh.qmd) release note). Based on those measures, behavioral performance flags are provided, indicating whether a subject's performance for each task was within acceptable standards. It is suggested that users exclude subjects from group analysis based on sub-optimal performance and possibly additional criteria such as the number of degrees of freedom (reduced by motion censoring) in the individual subject task-fMRI analysis and/or based on outlier detection on the ROI-averages themselves. Users should choose inclusion/exclusion performance criteria that are appropriate for their analyses.
 
-::: {.callout-important collapse="true" title="Responsible Use Warning: Head motion" #use-head}
+::: {.callout-important collapse="true" title="Responsible use consideration: Head motion" #use-head}
 
 Head motion is a serious issue for neuroimaging, and especially for resting state fMRI. It creates brain-wide artifactual effects including elevated short-distance connectivity and attenuated long-distance connectivity [@power2012]. In order to guard against artifactual effects due to head motion, researchers typically implement a variety of strategies that operate at multiple points of the data collection and processing pipeline, with guidance regularly evolving over time [@power2014; @power2015; @satterthwaite2013; @siegel2017; @gratton2020]. Some of these strategies include discarding entire runs of data that exceed certain motion thresholds and discarding individual functional imaging frames that are proximal to motion events (i.e., "motion censoring"). These strategies in particular typically lead to the exclusion of some participants from further analysis for lack of sufficient data. Levels of head motion differ according to demographic factors such as sex, race/ethnicity, and SES [@cosgrove2022]. Therefore, strategies to deal with head motion may lead to differential exclusions across demographic groups. In addition, data quality procedures cause sessions to vary by the amount of data remaining. Such variability may continue to inflate findings especially in the presence of conditions that may correlate with the motion artifact like autism or ADHD [@eggebrecht2017]. One strategy that avoids this confound is to strictly control the degrees of freedom, where functional connectivity measures are calculated with the exact same amount of data. To aid researchers in exploring this impact further, the ABCD study has released 5 minute- and 10 minute-trimmed and untrimmed functional connectivity datasets. Researchers interested in examining brain-behavior associations or multivariate predictions should follow strategies such as those in @eggebrecht2017: 1) assess how missing data impacts dependent, independent variables and covariates, 2) examine the association between the degrees of freedom and non-FC variables, 3) use trimmed FC measures when needed to mitigate artifacts due to data quality.
 
@@ -225,7 +366,7 @@ Moderate to severe residual B0 distortion was noted in manual post-processing QC
 
 #### Philips fMRI data
 
-In Release 2.0.1 and earlier, all task and resting-state fMRI data obtained on Phillips scanners were incorrectly processed. The field map direction for these data was mistakenly flipped, which led to increased distortion in processed fMRI images. 1512 participants were affected by this issue, which is 13% of baseline MRI visits. This has been corrected in Release 3.0.
+In Release 2.0.1 and earlier, all task and resting-state fMRI data obtained on Phillips scanners were incorrectly processed. The field map direction for these data was mistakenly flipped, which led to increased distortion in processed fMRI images. 1512 participants were affected by this issue, which is 13% of baseline MRI visits. This was corrected in Release 3.0.
 
 #### fMRI B0 distortion correction
 
@@ -296,10 +437,10 @@ Measures derived from this RSI model fit included restricted normalized isotropi
 
 #### Changes to data dictionaries
 
--   new NDA data structures `abcd_drsip101`, `abcd_drsip201`, `abcd_drsip301`, `abcd_drsip401`, `abcd_drsip501`, `abcd_drsip601`, and `abcd_drsip701` replacing `mri_rsi_p102`, `mri_rsi_p202`, `abcd_drsidp101`, `abcd_drsidp201`, and `abcd_drsidp301`
--   new element names, descriptions, and DEAP aliases
--   variables grouped into instruments by measure
--   new free normalized isotropic (FNI) measures in NDA data structure `abcd_drsip701`
+-   New NDA data structures `abcd_drsip101`, `abcd_drsip201`, `abcd_drsip301`, `abcd_drsip401`, `abcd_drsip501`, `abcd_drsip601`, and `abcd_drsip701` replacing `mri_rsi_p102`, `mri_rsi_p202`, `abcd_drsidp101`, `abcd_drsidp201`, and `abcd_drsidp301`
+-   New element names, descriptions, and DEAP aliases
+-   Variables grouped into instruments by measure
+-   New free normalized isotropic (FNI) measures in NDA data structure `abcd_drsip701`
 
 ### rsfMRI
 
@@ -395,11 +536,11 @@ In the initial version of the MID task used for ABCD, only reaction time (RT) fo
 
 #### Changes to data dictionaries
 
--   modified NDA data structure `abcd_mid02`
+-   Modified NDA data structure `abcd_mid02`
 
-    -   added element `tfmri_mid_beh_feedbackflag`
+    -   Added element `tfmri_mid_beh_feedbackflag`
 
-    -   changed description for element `tfmri_mid_beh_performflag`
+    -   Changed description for element `tfmri_mid_beh_performflag`
 
 ### sMRI
 
@@ -421,17 +562,17 @@ The FreeSurfer version was updated from 5.3.0 to 7.1.1. Changes to FreeSurfer pr
 
 #### Changes to data dictionaries
 
--   new versions of NDA data structures `abcd_smrip102`, `abcd_smrip202`, and `abcd_smrip302` based on `abcd_smrip101` and `abcd_smrip201`
+-   New versions of NDA data structures `abcd_smrip102`, `abcd_smrip202`, and `abcd_smrip302` based on `abcd_smrip101` and `abcd_smrip201`
 
--   split data structures to separate FreeSurfer-derived morphometry, T~1~w intensities, and T~2~w intensities
+-   Split data structures to separate FreeSurfer-derived morphometry, T~1~w intensities, and T~2~w intensities
 
--   removed unused aliases
+-   Removed unused aliases
 
--   new versions of NDA data structures `abcd_mrisdp102`, `abcd_mrisdp202`, and `abcd_mrisdp302` based on `abcd_mrisdp101` and `abcd_mrisdp201`
+-   New versions of NDA data structures `abcd_mrisdp102`, `abcd_mrisdp202`, and `abcd_mrisdp302` based on `abcd_mrisdp101` and `abcd_mrisdp201`
 
--   split data structures to separate FreeSurfer-derived morphometry, T~1~w intensities, and T~2~w intensities
+-   Split data structures to separate FreeSurfer-derived morphometry, T~1~w intensities, and T~2~w intensities
 
--   removed unused aliases
+-   Removed unused aliases
 
 ## Changes to 6.0
 

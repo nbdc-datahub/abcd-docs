@@ -1,0 +1,226 @@
+---
+title: "XCP-D"
+order: 3
+---
+
+<style>
+.nmind-badge-link {
+  margin-top: 0;
+  font-size: 1.1em;
+}
+.nmind-badge-link a {
+  text-decoration: none;
+}
+.nmind-badge-link a:hover {
+  text-decoration: underline;
+}
+.nmind-badge-link i {
+  margin-right: 0.2em;
+}
+</style>
+
+<p class="nmind-badge-link">
+<a href="https://www.nmind.org/proceedings/xcpd/" target="_blank">
+<i class="fa-solid fa-shield-halved"></i> NMIND Badge Rating</a>
+</p>
+
+## Overview & Processing
+
+[XCP-D](https://xcp-d.readthedocs.io/en/latest/) ingests minimally preprocessed fMRIPrep outputs to generate denoised BOLD images, parcellated time series, functional connectivity matrices, and quality assessment reports [@mehta2024].
+
+::: {.callout-note collapse="true" title="Processing Description"}
+ABCC data were processed using XCP-D v0.13.0 with the following parameters:
+
+ - `--mode abcd`  
+  Applies the ABCD-specific preprocessing workflow, including ABCD-tailored default settings for denoising, censoring, and quality control.
+
+ - `--motion-filter-type notch`  
+  Applies a notch filter to the motion parameters to remove respiratory-frequency artifacts from head motion estimates prior to framewise displacement (FD) calculation.
+
+ - `--create-matrices 300 600 all`  
+  Generates functional connectivity matrices (correlation matrices) using only time points with at least 300 seconds, 600 seconds, or all available uncensored data retained after motion censoring.
+
+ - `--atlases Gordon HCP MIDB`  
+  Parcellates the BOLD signal using three atlases:
+    - `Gordon` — Gordon's 333-ROI cortical parcellation derived using boundary detection on resting-state fMRI data [@gordon2016]
+    - `MIDB` — MIDB's 80-ROI precision brain atlas derived from ABCD data, thresholded at 75% probability [@hermosillo2024]
+    - `HCP` — HCP's 19-ROI CIFTI subcortical parcellation as defined in the HCP minimal preprocessing pipelines [@glasser2013]
+
+ - `--band-stop-min ${band_stop_min}`  / `--band-stop-max ${band_stop_max}`  
+  The following `min` / `max` filter frequencies were applied to address respiratory artifacts present in ABCD multiband acquisitions, which can distort framewise alignment estimates and impact motion censoring [@fair2020]:
+
+    - **ses-00A**: `18.582` / `25.726`
+    - **ses-02A**: `15` / `25`
+    - **ses-04A** & **ses-06A**: `14.4` / `24`
+:::
+
+## Derivatives
+
+As with fMRIPrep, XCP-D derivatives are organized under `anat/` and `func/` subfolders. The derivative file contents are explained below - also see the main [XCP-D documentation](https://xcp-d.readthedocs.io/en/latest/outputs.html).
+
+```default
+abcd/
+└── derivatives/
+    └── abcc-xcp_d_v0.13.0/
+        └── sub-<SUBJECT_ID>/
+            └── ses-<SESSION_ID>/
+                ├── anat/ 
+                ├── func/
+                ├── figures/
+                ├── sub-<LABEL>_ses-<LABEL>.html 
+                └── sub-<LABEL>_ses-<LABEL>_executive_summary.html
+```
+
+::: {.callout-tip collapse="false" title="AT A GLANCE"}
+- **Denoised BOLD timeseries**    
+  Surface-based (fsLR 91k), in CIFTI format, generated per task and run
+- **Parcellated timeseries**      
+  Atlas-based (Gordon, HCP, MIDB), in TSV and CIFTI formats
+- **Functional connectivity matrices**    
+  Pearson correlation matrices for Gordon, HCP, and MIDB atlases, in TSV and CIFTI formats
+- **ALFF and ReHo maps**      
+  Amplitude of low-frequency fluctuations (ALFF) and regional homogeneity (ReHo), in CIFTI format
+- **Anatomical surfaces**     
+  fsLR 32k meshes and morphometry maps (curvature, sulcal depth, thickness)
+- **Quality control**     
+  Motion parameters, outlier detection, ABCC QC metrics (HDF5), and visual reports
+:::
+
+### Structural Outputs
+
+Structural derivative files are stored under `anat/` as displayed below. 
+
+*Note: The standard BIDS file prefix `sub-<label>_ses-<label>` is replaced with `*` below for readability. See further annotated notes following the file tree.*
+
+```default
+anat/
+
+# Preprocessed T1w and T2w images in MNI152NLin2009cAsym standard space
+├── *_space-MNI152NLin2009cAsym_desc-preproc_<T1w|T2w>.nii.gz
+
+# fsLR 32k cortical surfaces for L/R hemispheres [1]
+├── *_hemi-<L|R>_space-fsLR_den-32k_desc-hcp_inflated.surf.gii
+├── *_hemi-<L|R>_space-fsLR_den-32k_desc-hcp_midthickness.surf.gii
+├── *_hemi-<L|R>_space-fsLR_den-32k_desc-hcp_vinflated.surf.gii
+├── *_hemi-<L|R>_space-fsLR_den-32k_pial.surf.gii
+├── *_hemi-<L|R>_space-fsLR_den-32k_white.surf.gii
+
+# Dense scalar maps (fsLR 91k grayordinate space) [2]
+├── *_space-fsLR_den-91k_curv.dscalar.nii
+├── *_space-fsLR_den-91k_sulc.dscalar.nii
+├── *_space-fsLR_den-91k_thickness.dscalar.nii
+
+# Atlas-based summary statistics [3]
+├── *_space-fsLR_seg-<ATLAS>_stat-mean_desc-curv_morph.tsv
+├── *_space-fsLR_seg-<ATLAS>_stat-mean_desc-sulc_morph.tsv
+└── *_space-fsLR_seg-<ATLAS>_stat-mean_desc-thickness_morph.tsv 
+```
+**[1]** Cortical surfaces include *inflated, very-inflated, midthickness, pial, white*\    
+**[2]** Dense scalar maps include cortical *curvature, sulcal depth, thickness*\       
+**[3]** Atlas values (`<ATLAS>`) include `MIDB` and `Gordon`
+
+### Functional Outputs
+
+Functional derivative files are stored under `func/` as shown below. 
+
+::: {.callout-note collapse="true" title="General Notes"}
+Values for `<TASK>` in the filetrees below include:
+
+  - `mid`: Monetary Incentive Delay task
+  - `sst`: Stop Signal task
+  - `nback`: N-Back working memory task
+  - `rest`: Resting-state fMRI
+
+Also note that most outputs are provided both per-run and concatenated across runs. Run-specific files include `run-<LABEL>` in the filename and are omitted below for readability.
+:::
+
+#### Dense Timeseries & Confounds
+
+*Primary denoised BOLD outputs in fsLR grayordinate space (`.dtseries.nii`) accompanied by confound files (`motion.tsv`, `outliers.tsv`).*
+
+```default
+func/
+├── *_task-<TASK>_space-fsLR_den-91k_desc-denoised_bold.dtseries.nii
+├── *_task-<TASK>_space-fsLR_den-91k_desc-denoisedSmoothed_bold.dtseries.nii
+
+├── *_task-<TASK>_motion.tsv
+├── *_task-<TASK>_outliers.tsv
+├── *_task-<TASK>_run-<label>_design.tsv
+```
+
+- **Primary input for most analyses** 
+- Includes nuisance regression, bandpass filtering, and motion censoring
+- Provided with and without surface-based spatial smoothing
+- Available as both per-run and concatenated outputs
+- Accompanied by run-level nuisance regressors and motion metrics used during denoising, including:
+    - Motion parameters and framewise displacement (`motion.tsv`)
+    - Censored timepoints (`outliers.tsv`)
+    - Nuisance regressor design matrices (`design.tsv`)
+
+#### Dense Scalar Maps
+
+*Voxel-wise (grayordinate-level) functional metrics derived from the denoised timeseries.*
+
+```default
+├── *_task-<TASK>_space-fsLR_den-91k_stat-alff_boldmap.dscalar.nii
+├── *_task-<TASK>_space-fsLR_den-91k_stat-alff_desc-smooth_boldmap.dscalar.nii
+├── *_task-<TASK>_space-fsLR_den-91k_stat-reho_boldmap.dscalar.nii
+```
+
+- **ALFF**: Amplitude of low-frequency fluctuations (unsmoothed and smoothed variants)
+- **ReHo**: Regional Homogeneity, reflecting local BOLD synchrony across neighboring grayordinates
+
+#### Parcellated Outputs
+
+*Atlas-based summaries derived from dense grayordinate data.*
+
+```default
+├── *_task-<TASK>_space-fsLR_seg-<ATLAS>_den-91k_stat-mean_timeseries.ptseries.nii
+├── *_task-<TASK>_space-fsLR_seg-<ATLAS>_stat-mean_timeseries.tsv
+
+├── *_task-<TASK>_space-fsLR_seg-<ATLAS>_stat-pearsoncorrelation_relmat.tsv     
+├── *_task-<TASK>_space-fsLR_seg-<ATLAS>_den-91k_stat-pearsoncorrelation_boldmap.pconn.nii
+
+├── *_task-<TASK>_space-fsLR_seg-<ATLAS>_den-91k_stat-coverage_boldmap.pscalar.nii
+├── *_task-<TASK>_space-fsLR_seg-<ATLAS>_stat-coverage_bold.tsv
+
+├── *_task-<TASK>_space-fsLR_seg-<ATLAS>_stat-alff_bold.tsv
+├── *_task-<TASK>_space-fsLR_seg-<ATLAS>_stat-reho_bold.tsv   
+```
+
+**Includes:**
+
+- Mean parcel timeseries (`.ptseries.nii`, `.tsv`)
+- Functional connectivity (Pearson correlation matrices; `.pconn.nii`, `.tsv`)
+- Parcel-wise coverage metrics (`.pscalar.nii`, `.tsv`)
+- Parcel-averaged ALFF and ReHo summaries
+
+Parcellated timeseries are extracted from dense grayordinate data using standard atlas templates. All parcellations include subcortical regions from the standard HCP 91k-grayordinate template. Available parcellations (and corresponding `atlas-<ATLAS>` labels) include:
+
+  - `Gordon` — Gordon's 333-ROI cortical parcellation, derived using boundary detection on resting-state fMRI data from 120 young adults [@gordon2016]
+  - `MIDB` — MIDB's 80-ROI precision brain atlas from ABCD data and thresholded at 75% probability [@hermosillo2024]
+  - `HCP` — HCP's 19-ROI CIFTI subcortical parcellation, as defined in the HCP minimal preprocessing pipelines [@glasser2013]
+
+#### Quality Control Metrics
+
+*Summary metrics for assessing data quality and inclusion.*
+
+```default
+├── *_task-<TASK>_space-fsLR_den-91k_desc-linc_qc.tsv
+└── *_task-<TASK>_desc-abcc_qc.hdf5
+```
+
+- **LINC QC** (`.tsv`): Run-level metrics (e.g., retained frames, mean FD, DVARS)
+- **ABCC QC** (`.hdf5`): Aggregated metrics across tasks, including motion summaries and atlas coverage, for downstream filtering and participant exclusion
+
+### HTML QC Reports
+
+The `.html` files provide subject-level visual summaries designed for rapid, systematic quality control (QC) review (source image files stored in `figures/`).
+
+- **`sub-<LABEL>_ses-<LABEL>.html`**    
+  - Standard XCP-D subject-level report, structured similarly to the fMRIPrep report
+  - Includes registration figures, BOLD carpet plots, motion summaries, and connectivity outputs
+
+- **`sub-<LABEL>_ses-<LABEL>_executive_summary.html`**
+  - ABCC-specific executive summary report that provides a streamlined review of the most critical QC checkpoints
+  - Includes anatomical normalization quality, per-task BOLD pre/post-processing summaries, and motion censoring profiles

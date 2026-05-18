@@ -1,0 +1,11 @@
+name,label,type_data,type_level
+participant_id,Participant identifier,text,nominal
+session_id,Event associated with Fitbit wear,character,nominal
+day,Protocol day (1–21),integer,ratio
+main_slp,Flag if minute is associated with primary/main sleep,logical,nominal
+is_slp,Flag if minute is associated with sleep,logical,nominal
+dtt,date time in 60 second epochs,timestamp,interval
+steps,Number of steps recorded,integer,ratio
+hrate,Heart rate (beats per minute),integer,ratio
+mets,Metabolic Equivalent of Task (energy intensity),integer,ratio
+intnst,Categorical activity intensity level,character,ordinal

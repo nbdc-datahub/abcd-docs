@@ -14,10 +14,15 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("sub_domain == 'Quality Control'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_qc.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_qc.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
-::: {.callout-important collapse="true" title="Responsible Use Warning: Quality Control"#use-qc }
+::: {.callout-caution collapse="true" title="Imaging Release Notes"}
+**7.0**
 
+-   [**New variables**](../release_notes/7_0.qmd#rsfmri): There are new and renamed variables in tabulated data (`mr_y_qc__mot`). The list of variables can be found [here](../../assets/files/documentation/imaging/rsfmri_tabulated_variable_changes_7.0.pdf).
+:::
+
+::: {#use-qc .callout-important collapse="true" title="Responsible use consideration: Quality Control"}
 Researchers analyzing neuroimaging data should ensure responsible and thoughtful use of demographic and participant-related variables. Analyses comparing groups based solely on demographic categories may lead to misinterpretations about neurobiological differences and unintended implications regarding participants' abilities or outcomes. To avoid potential misinterpretation or misuse of research findings, data users must carefully consider all variables included in their analyses, and ensure results are presented with appropriate scientific context.
 
 Any group comparisons should incorporate comprehensive, contextual factors beyond single demographic categories, such as environmental or behavioral variables, to enhance scientific rigor and interpretation accuracy. Researchers are encouraged to proactively mitigate the risk of results being misconstrued or used in ways that could negatively affect individuals or groups participating in or impacted by their research.
@@ -30,7 +35,7 @@ Factors associated with missing or unusable data can correlate with participant 
 :::
 
 # Recommended imaging inclusion {#mr_y_qc__incl}
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__incl")` 
+`r table_header("mr_y_qc__incl")` 
 
 Users of the imaging data are advised to choose inclusion criteria that are appropriate for their analyses. We provide a set of recommended inclusion criteria for each modality that take into account factors such as imaging QC, task performance, etc., and for convenience, we provide an instrument `r link_table("mr_y_qc__incl")` with modality-specific imaging inclusion flags based on those criteria. Each modality (T~1~w, T~2~w, DTI/RSI, rsfMRI, SST, nBack, and MID tfMRI) is scored as 1=include, 0=exclude.
 
@@ -172,7 +177,7 @@ Automated post-processing QC metrics were statistically characterized in associa
 -   For task fMRI, the average degrees of freedom is set at an arbitrary 200; this can be increased for a more restrictive selection criteria. For single runs, the required degrees of freedom are halved (i.e., dof \> 100).
 
 # MRI clinical findings {#mr_y_qc__clfind}
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__clfind")`
+`r table_header("mr_y_qc__clfind")`
 
 T~1~w and T~2~w-weighted images, if available, were screened for incidental findings by a Board Certified Neuroradiologist. Any findings requiring clinical investigation were relayed to appropriate site personnel via the ABCD Coordinating Center (CC).
 
@@ -229,7 +234,7 @@ Relative QC failure probabilities given a particular automated QC metric value w
 # Manual post processing QC
 
 ## FreeSurfer QC {#mr_y_qc__post__man__fsurf}
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__post__man__fsurf")`
+`r table_header("mr_y_qc__post__man__fsurf")`
 
 - Manual review of FreeSurfer cortical surface reconstruction
  - Reviewers assigned binary QC score
@@ -251,7 +256,7 @@ Relative QC failure probabilities given a particular automated QC metric value w
 Note: Imaging-derived results are included in shared tabulated data regardless of post-processing QC. QC variables (derived from procedures described above) are included in shared tabulated data. The overall, binary QC score described above indicates whether inclusion or exclusion is recommended based on this criterion alone (see above [Recommended Imaging Inclusion](#mr_y_qc__incl)). FreeSurfer QC was performed for \~7% of participant-events with T1w imaging data.
 
 ## sMRI T~2~w post processing QC {#mr_y_qc__post__man__t2}
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__post__man__t2")`
+`r table_header("mr_y_qc__post__man__t2")`
 
 - Manual review of DTI reconstruction
   - Reviewers assigned binary QC score
@@ -272,7 +277,7 @@ Note: Imaging-derived results are included in shared tabulated data regardless o
 Note: The T~2~w Post Processing QC was performed for \~7% of participant-events with T2w imaging data.
 
 ## dMRI post processing QC {#mr_y_qc__post__man__dmri}
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__post__man__dmri")`
+`r table_header("mr_y_qc__post__man__dmri")`
 
 - Manual review of processed dMRI data
   - Reviewers assigned binary QC score
@@ -294,7 +299,7 @@ Note: The T~2~w Post Processing QC was performed for \~7% of participant-events 
 Note: The dMRI Post Processing QC was performed for \~13% of participant-events with dMRI data.
 
 ## fMRI post processing QC {#mr_y_qc__post__man__fmri}
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__post__man__fmri")`
+`r table_header("mr_y_qc__post__man__fmri")`
 
 - Manual review of processed fMRI data
   - Reviewers assigned binary QC score
@@ -315,7 +320,7 @@ Note: The dMRI Post Processing QC was performed for \~13% of participant-events 
 Note: The fMRI Post Processing QC was performed for \~18% of participant-events with fMRI data.
 
 # Automated post processing QC {#mr_y_qc__post__aut}
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__post__aut")`
+`r table_header("mr_y_qc__post__aut")`
 
 Automated QC measures were defined and calculated based on processed imaging data.
 

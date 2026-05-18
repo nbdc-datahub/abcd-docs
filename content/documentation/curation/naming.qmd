@@ -13,6 +13,8 @@ source("../../../R/table.R")
 glossary <- readr::read_csv(
   "../../assets/tbl/documentation/curation/glossary.csv"
 )
+
+
 ```
 
 ::: {.callout-caution title="Release 6.0 changes"}
@@ -112,6 +114,10 @@ render_glossary(
 
 
 [*Subitem:*]{.underline} A *two-digit, zero-padded number*, e.g., `01`, is used to indicate a subitem's relationship to the main item. This is used to indicate items that are dependent on previous questions through branching logic or to indicate another direct relationship between two questions (e.g. `ab_p_demo__empl__prtnr_001`, *"Does your partner work?"*, has the follow up question `ab_p_demo__empl__prtnr_001__01`, *"Full or part-time?"*; `001__01` is only presented if `001` is endorsed). Sometimes, variables have more than two levels of dependencies, in which case more than one level of subitems are used, e.g., `001__01__01`.
+
+<code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_item]{style="color: #FF8080"}[a]{style="color: #BF0000"}</span></code>
+
+[*Score subitems:*]{.underline} A *three-digit, zero-padded number*, e.g., `__002`, is used to indicate a summary score or derived item's relationship to the main item(s) used in the calculation. This is used in forms where scores are repeated over multiple cases of similar information so that each repeating score can be mapped back to the original content questions (e.g. `mh_p_famhx__alc__mat__unc_indicator__002`, *"Family History [Parent] (Alcohol) Endorsed: Maternal uncle 2"*, is the alcohol endorsement summary score for the youth's second reported maternal uncle and synthesizes data from all items beginning with `mh_p_famhx__alc__mat__unc_002` in the table.).
 
 <code><span style="font-size: 24px">[dm_s_tab]{style="color: black"}[_item]{style="color: #FF8080"}[a]{style="color: #BF0000"}</span></code>
 

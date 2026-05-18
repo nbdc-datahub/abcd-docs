@@ -1,0 +1,5 @@
+name,value,label
+intsnt,0,sedentary activity
+intsnt,1,light activity
+intsnt,2,moderate activity
+intsnt,3,vigorous activity

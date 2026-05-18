@@ -1,33 +1,29 @@
 ---
-title: "ABCD-BIDS community collection"
+title: "About the ABCC"
 order: 1
 ---
 
-## <i class="fa-solid fa-brain"></i>&nbsp; About ABCC
+<style>
+.icon-heading {
+  color: #08519c;
+  font-size: 0.9em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.1em;
+  margin-right: 0.2em;
+}
+</style>
 
-The **ABCD-BIDS Community Collection (ABCC)** is a curated MRI dataset derived from the ABCD Study. It uses the [Brain Imaging Data Structure (BIDS)]((https://bids-specification.readthedocs.io/)) and [NMIND](https://www.nmind.org/about) reproducibility framework to provide **standardized, ready-to-use raw and derivative data** for rapid and reproducible scientific discovery.
+## <i class="fa-solid fa-brain icon-heading"></i> Introduction
 
-All data included in ABCC have passed **[DAIRC](https://abcdstudy.org/study-sites/daic/) quality control**. Data are processed using **peer-reviewed, open-source pipelines developed within the [NMIND](https://www.nmind.org/about) framework**, ensuring consistent and reproducible neuroimaging outputs (see [Processing & Analytic Standards](abcc_pipeline.qmd#processing-analytic-standards)). Derivative quality control is performed using [BrainSwipes](https://brainswipes.us/), a community-driven visual QC platform (*learn more and contribute [here](abcc_qualitycontrol.qmd#brainswipes)*).
+The ABCD-BIDS Community Collection (**ABCC**) provides processed, analysis-ready neuroimaging derivatives from the ABCD Study, updated alongside central ABCD data releases. The collection leverages state-of-the-art, community-standard pipelines, including fMRIPrep, XCP-D, and QSIPrep/QSIRecon, to generate harmonized structural, functional, and diffusion MRI derivatives, along with downstream outputs for connectivity and advanced analyses.
 
-::: {.callout-note title="See @feczko2021 for details."}
-:::
+<!-- The ABCC is designed to support robust, reproducible neuroimaging research by reducing preprocessing variability and lowering barriers to analysis. The collection evolves alongside advances in image processing methods and in response to the needs of the research community.  -->
 
-### <i class="fa-solid fa-caret-right"></i> Key Features
+::: {.callout-note collapse="true" title="High-Impact Studies Using ABCC Data"}
+To date, ABCC has supported over 100 publications spanning brain development, cognition, mental health, and methodological innovation. A full list of publications and formatted citation files are available [here](https://drive.google.com/drive/folders/1OrN2IAAQIIgLVx_D_qmABoHuW_yqppZf?usp=sharing). Highlights include:
 
-<ul class="fa-ul">
-<li><span class="fa-li"><i class="fa-regular fa-star"></i></span> <strong>BIDS-Standardized</strong>: Follows <a href="https://bids-specification.readthedocs.io/">BIDS</a> standard for reproducible, cross-study analyses.</li>
-<li><span class="fa-li"><i class="fa-regular fa-star"></i></span> <strong>NMIND-Reviewed Pipelines</strong>: Peer-reviewed processing pipelines via <a href="https://www.nmind.org/about">NMIND</a>.</li>
-<li><span class="fa-li"><i class="fa-regular fa-star"></i></span> <strong>Surface + Volume Outputs</strong>: Includes CIFTI, NIfTI, and GIFTI derivatives.</li>
-<li><span class="fa-li"><i class="fa-regular fa-star"></i></span> <strong>Quality Control</strong>: Visual QC of both raw (<a href="https://abcdstudy.org/study-sites/daic/">DAIRC</a> QC) and processed (<a href="https://brainswipes.us/">BrainSwipes</a>) data.</li>
-<li><span class="fa-li"><i class="fa-regular fa-star"></i></span> <strong>Versioned Releases</strong>: Each release includes detailed version tracking and change logs.</li>
-<li><span class="fa-li"><i class="fa-regular fa-star"></i></span> <strong>Continuously Updated</strong>: Updated alongside new ABCD data releases.</li>
-</ul>   
-
-### <i class="fa-solid fa-caret-right"></i> High-Impact Studies
-
-**ABCC data has powered a variety of impactful neuroscience research, with more than 90 published studies referencing the collection.** A full list of publications and formatted citation files are available [here](https://drive.google.com/...).
-
-::: {.callout-note collapse="false" title="Highlights"}
+- **Meisler et al. ([2026](https://www.biorxiv.org/content/10.64898/2026.04.18.719321v1))**: Highly replicable multisite patterns of adolescent white matter maturation
 - **@marek2019**: Identifying reproducible individual differences in childhood functional brain networks: An ABCD study (*Developmental Cognitive Neuroscience*)
 - **@chaarani2021**: Task activation patterns in 9-10 year old youths 
 - **@cieslak2021**: QSIPrep: an integrative platform for preprocessing and reconstructing diffusion MRI data (*Nature Methods*)
@@ -40,75 +36,163 @@ All data included in ABCC have passed **[DAIRC](https://abcdstudy.org/study-site
 - **@mehta2024**: XCP-D: an extensible pipeline for rs-fMRI connectivity preprocessing
 :::
 
-## <i class="fa-regular fa-note-sticky"></i>&nbsp; Release Notes (v3.1.0) {#release-notes-v310}
+---
 
-::: {.callout-note title="Release Date: 2025-06-26"}
+### Key Features
+
+- Data are compliant with the Brain Imaging Data Structure ([BIDS](https://bids-specification.readthedocs.io/)) standard for reproducible, cross-study analyses.
+- Data are processed using state-of-the-art, publicly available pipelines developed within the [NMIND](https://www.nmind.org/about) framework for reproducible neuroimaging software *([see details](#processing-analytic-standards))*.
+- All ABCC release data have passed [DAIRC](https://abcdstudy.org/study-sites/daic/) raw MR data quality control (QC). In addition, QC is performed post-processing via [BrainSwipes](https://brainswipes.us/), a community-driven visual QC platform (*to be available in a future release*).
+- Each release includes detailed version tracking and change logs.
+
+---
+
+### Processing & Data Standards
+
+Processing pipelines used to generate the ABCC derivatives follow community standards for reproducible neuroimaging software laid out by the [NMIND](https://www.nmind.org/about) consortium [@kiar2023]. Pipelines must be publicly available, containerized, and published with a DOI. Pipelines are peer-reviewed via the [NMIND Coding Standards Checklist](https://www.nmind.org/standards-checklist/) to ensure they meet community-driven scientific software standards for documentation, infrastructure, and testability. This process assigns badge ratings to reviewed tools, which are published on the NMIND website under [Evaluated Tools](https://www.nmind.org/proceedings/). 
+
+---
+
+## <i class="fa-regular fa-note-sticky icon-heading"></i> Release Notes (v4.0.0)
+
+::: {.callout-note title="Release Date: 2026-05-13"}
 :::
 
-### <i class="fa-solid fa-caret-right"></i> Core Data
+### Core Data
 
-ABCC includes **BIDS input data** converted from raw DICOM format and **derivatives** generated from multiple processing pipelines. See the [Data processing](abcc_pipeline.qmd) page for pipeline processing details and [Derivatives](abcc_derivatives.qmd) page for a detailed list of derivatives included in this release for each of the following pipelines.
+The ABCC includes data processed through the following pipelines:
 
-| Pipeline    | Description |
-| ---------------- | ----------- |
-| [ABCD-HCP BIDS v0.1.4](https://abcd-hcp-pipeline.readthedocs.io/) | HCP-style MRI processing pipeline in volume & surface space | 
-| FreeSurfer 5.3.0-HCP | Segmentation statistics & surface morphometrics | 
-| [QSIPrep](https://qsiprep.readthedocs.io/) | Pre-processed diffusion-weighted MRI | 
-| [QSIRecon](https://qsirecon.readthedocs.io/) | Reconstruction of pre-processed dMRI data | 
-| [QSIRecon-ModelArray](https://pennlinc.github.io/ModelArray/) | Mean Diffusivity .h5 and .csv files for voxel-wise modeling | 
+- **Structural & Functional MRI** <span style="color: red; font-style: italic; font-weight: 600;">[NEW]</span>
+    - [fMRIPrep v25.1.4](https://fmriprep.org/): Minimal functional pre-processing
+    - [XCP-D v0.13.0](https://xcp-d.readthedocs.io/): Functional post-processing, including denoising & connectivity 
+    - [ReproTM](https://github.com/KateJGodfrey/ReproTM): Individualized functional network maps via template matching
+- **Diffusion MRI**
+    - [QSIPrep](https://qsiprep.readthedocs.io/): Pre-processing 
+    - [QSIRecon](https://qsirecon.readthedocs.io/): Reconstruction workflows
+- **ModelArrayIO** <span style="color: red; font-style: italic; font-weight: 600;">[NEW]</span>
+    - <a href="https://modelarrayio.readthedocs.io/">ModelArrayIO</a> outputs (HDF/CSV) for efficient voxel- and/or vertex-wise statistical modeling with the [ModelArray R package](https://github.com/ModelArray/ModelArray), including:
+        - QSIRecon-ModelArray multi-model diffusion metrics
+        - XCP-D-ModelArray connectivity, ALFF, ReHo, and morphometrics 
 
-### <i class="fa-solid fa-caret-right"></i> Data Availability
+::: {.callout-caution title="ABCD-HCP BIDS Pipeline Deprecation"}
+ABCC no longer includes [ABCD-HCP BIDS](https://abcd-hcp-pipeline.readthedocs.io/) derivatives: *see [release notes](#abcd-hcp-pipeline-deprecation) for details*.
+:::
 
-*Number of participants with ABCD-HCP and QSIPrep derivatives by study year. Values in brackets indicate raw BIDS counts.*
+::: {.callout-important title="NOTE: fMRIPrep Minimally Processed Derivatives"}
+This minimal release excludes preprocessed BOLD timeseries, confounds, and surface-projected functional data. Users who require full outputs can follow the instructions provided under [How to Generate Full Derivatives](abcc_fmriprep.qmd#overview-processing).
+:::
 
-| Year     | ABCD-HCP: *Derivatives [raw BIDS]* | QSIPrep: *Derivatives [raw BIDS]* |
-|:---------|:----------------------------------|:--------------------------------|
-| Baseline | 11,751 [11,753]                  | 8,852 [9,564]                  |
-| 2        | 8,086 [8,085]                    | 7,273 [7,669]                  |
-| 4        | 6,351 [6,355]                    | 6,066 [6,207]                  |
-| 6        | 3,820 [3,820]                    | 3,676 [3,748]                  |
+### Participant Counts
 
-### <i class="fa-solid fa-caret-right"></i> New Data
+| Year     | fMRIPrep | XCP-D  | QSIPrep | ReproTM |
+| -------- | -------- | ------ | ------- | ------- |
+| Baseline | 11,685   | 10,396 | 9,163   | 6,035   |
+| 2        | 8,043    | 7,654  | 7,276   | 5,767   |
+| 4        | 6,303    | 6,147  | 6,063   | 5,380   |
+| 6        | 3,797    | 3,756  | 3,675   | 3,492   |
 
-- **QSIRecon** reconstruction derivatives generated from preprocessed diffusion MRI data using the following reconstruction specifications:
+::: {.callout-note collapse="true" title="Processing Success Rates"}
+Available raw BIDS counts are shown below for each pipeline by study year. Differences reflect modality requirements (sMRI, sMRI+fMRI, or dMRI). Overall processing success rates were high across pipelines (96.6–99.8%).
+
+| Year     | fMRIPrep | XCP-D  | QSIPrep |
+| -------- | -------- | ------ | ------- |
+|     | *sMRI present* | *sMRI+fMRI present*  | *dMRI present* |
+| Baseline | 11,706   | 10,416 | 9,561   |
+| 2        | 8,061    | 7,672  | 7,666   |
+| 4        | 6,325    | 6,166  | 6,203   |
+| 6        | 3,806    | 3,765  | 3,747   |
+:::
+
+<!-- ::: {.callout-note collapse="true" title="QSIRecon-ModelArray"}
+<p style="color: gray; margin-top: 0em; font-size: 0.95em; font-style: italic;">
+Mass-univariate statistical modeling for large neuroimaging datasets<br>
+SEE <a href="https://github.com/PennLINC/ModelArray">ModelArray package</a> documentation for details
+</p>
+QSIRecon-ModelArray provides diffusion metrics from multiple reconstruction models in HDF5 (.h5) and CSV formats for voxel-wise statistical modeling with the [ModelArray package](https://github.com/PennLINC/ModelArray). Model outputs (e.g., fitted parameters, p-values, R² maps) can be written back to NIfTI images.
+
+- **DIPY-DKI**: AD, AK, KFA, MD, MK, MKT, RD, RK
+- **DSI Studio-GQI**: GFA, ISO, QA
+- **DSI Studio-RDI**: RD1, RD2
+- **DSI Studio-Tensor**: AD, FA, HA, MD, RD
+- **TORTOISE-MAPMRI**: NG, NGpar, NGperp, PA, PATH, RTAP, RTOP, RTPP
+- **TORTOISE-Tensor**: AD, AM, FA, LI, RD
+- **wmNODDI**: ICVF, ISOVF, OD
+
+XCP-D-ModelArray provides functional and morphometric measures in HDF5 (.h5) and CSV formats for efficient voxel-wise and vertex-wise statistical modeling.
+
+- **Functional connectivity**: Pearson correlation matrices from Gordon, HCP, and MIDB atlases
+- **Functional metrics**: ALFF, ReHo
+- **Cortical morphometry**: Thickness, curvature, sulcal depth
+::: -->
+
+### Key Revisions
+
+Starting with Release 7.0, ABCC distributions include the following updates. Documentation for prior releases remains available via the **Version** dropdown menu located in the upper right-hand corner of the ABCD Data Documentation site.
+
+#### Raw BIDS Consolidation 
+
+In Releases 6.0–6.1, BIDS raw data were distributed separately under `dairc/` and `abcc/`. As of Release 7.0, all raw BIDS data are consolidated under a single `dairc/` collection.    
+  *Legacy documentation: [Raw BIDS](https://docs.abcdstudy.org/v/6_1_3/documentation/imaging/abcc_inputs.html)*
+
+#### ABCD-HCP Pipeline Deprecation
+
+Beginning with Release 7.0, ABCD-HCP pipeline derivatives are no longer included in ABCC releases. Moving forward, ABCC will focus on fMRIPrep- and XCP-D–based derivatives for structural and functional MRI to align with current community standards. Legacy ABCD-HCP outputs remain available in Release 6.1 via the NBDC Data Hub, including:
+
+ - **ABCD-HCP BIDS v0.1.4**: HCP-style MRI processing pipeline in volume & surface space
+ - **FreeSurfer 5.3.0-HCP**: Segmentation statistics & surface morphometrics 
+
+Associated documentation is available in the 6.1.3 legacy documentation: see [Processing](https://docs.abcdstudy.org/v/6_1_3/documentation/imaging/abcc_pipeline.html) and [Derivatives](https://docs.abcdstudy.org/v/6_1_3/documentation/imaging/abcc_derivatives.html).
+
+### Known Issues
+
+::: {.callout-warning title="Missing Cases from Duplicate Run Reprocessing"}
+During reprocessing of duplicate functional runs, four cases failed due to out-of-memory errors and are not included in the current release. Derivatives for these cases remain available in previous releases and can be accessed if needed. [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/release_notes/imaging/6.0_imaging_abcc.html)
+:::
+
+---
+
+## <i class="fa-solid fa-bullhorn icon-heading"></i> Coming Soon
+
+- **Imaging derivatives for remaining subjects**: [fMRIPrep v25.1.4](https://fmriprep.org) minimal preprocessing outputs, along with confound estimates for all processed subjects, and [XCP-D v0.13.0](https://xcp-d.readthedocs.io) post-processing outputs
+- **ReproTM** individualized functional network maps for all functional tasks ( MID, SST, nBack)
+- **Task fMRI analysis results**
+- **BrainSwipes Quality Control**: structural/functional QC of XCP-D outputs generated via BrainSwipes, a gamified crowdsourcing platform for high-volume manual QC 
+
+::: {.callout-caution title="BrainSwipes Quality Control Results"}
+BrainSwipes is a community-driven effort and we encourage all ABCC users to participate! **No prior experience with visual QC is required.** To get started, create a free account on [BrainSwipes](https://brainswipes.us/). You will then be guided through a simple [tutorial](https://brainswipes.us/tutorial-select) that demonstrates how to evaluate derivative images and classify them as pass or fail.
+:::
+
+---
+
+## <i class="fa-solid fa-history icon-heading"></i> Release History
+
+<!-- RELEASE 3.1.0 -->
+::: {.callout-note collapse="true" title="Release 3.1.0 (2025-12-03)"}
+**NEW ADDITIONS**
+
+1. **QSIRecon** reconstruction derivatives generated from preprocessed diffusion MRI data using the following reconstruction specifications:
     - **Diffusion tensor modeling**: DSI Studio (all b-values), TORTOISE (b < 1200), DIPY (as part of DKI)
     - **Diffusion kurtosis modeling**: DIPY
     - **Q-space imaging**: DSI Studio 
     - **NODDI models**: AMICO
     - **Tractography**: DSI Studio AutoTrack on MSMT FODs (from MRtrix3)
 
-- **QSIRecon-ModelArray** - A single HDF5 (.h5) file and corresponding CSV file containing Mean Diffusivity (MD) values from all subjects in the current QSIRecon output. These files enable efficient voxelwise model fitting in R using the **[ModelArray package](https://github.com/PennLINC/ModelArray)**, allowing users to compute and write model-fitted parameters, p-values, and R² maps back into NIfTI files.
+2. **QSIRecon-ModelArray** - A single HDF5 (.h5) file and corresponding CSV file containing Mean Diffusivity (MD) values from all subjects in the current QSIRecon output. These files enable efficient voxelwise model fitting in R using the **[ModelArray package](https://github.com/PennLINC/ModelArray)**, allowing users to compute and write model-fitted parameters, p-values, and R² maps back into NIfTI files.
 
-### <i class="fa-solid fa-caret-right"></i> Key Revisions
+**REVISIONS**
 
 Resolved critical issues in abcd-hcp-pipeline derivatives:
 
-- **Missing Volume-Based Resting-State Data (Runs 3–8)**: Restored missing data by re-executing the file-mapper across all participants
-- **Missing nBack Filtered Concatenated dtseries**: Generated missing files using the using [abcc_concat_filtered_dtseries_generator tool](https://github.com/DCAN-Labs/abcc_concat_filtered_dtseries_generator) for all participants.
-- **Timepoint Mismatch Resolution**: Resolved timepoint mismatches between filtered dtseries ( `*_task-*_bold_desc-filtered_timeseries.dtseries.nii`)and motion mask files ( `*_task-*_desc-filtered_motion_mask.mat`)( N ~ 746 ) [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/release_notes/imaging/6.0_imaging_abcc.html)
-- **Duplicate Functional Runs**: Reprocessed 861 cases through complete BIDS conversion and abcd-hcp-pipeline re-execution [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/release_notes/imaging/6.0_imaging_abcc.html)
+1. **Missing Volume-Based Resting-State Data (Runs 3–8)**: Restored missing data by re-executing the file-mapper across all participants
+2. **Missing nBack Filtered Concatenated dtseries**: Generated missing files using the using [abcc_concat_filtered_dtseries_generator tool](https://github.com/DCAN-Labs/abcc_concat_filtered_dtseries_generator) for all participants.
+3. **Timepoint Mismatch Resolution**: Resolved timepoint mismatches between filtered dtseries ( `*_task-*_bold_desc-filtered_timeseries.dtseries.nii`)and motion mask files ( `*_task-*_desc-filtered_motion_mask.mat`)( N ~ 746 ) [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/release_notes/imaging/6.0_imaging_abcc.html)
+4. **Duplicate Functional Runs**: Reprocessed 861 cases through complete BIDS conversion and abcd-hcp-pipeline re-execution [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/release_notes/imaging/6.0_imaging_abcc.html)
 
-::: {.callout-important title="NOTE: QSIPrep Distortion Correction Fix"}
-**Users of earlier QSIPrep derivatives are encouraged to reprocess analyses to account for the distortion correction fix.** In the prior release. TOPUP being given a denoised b=0 image from the DWI series and a raw b=0 image in the opposite phase encoding direction, resulted in inaccurate distortion correction results for a subset of subjects. The updated version uses unprocessed b=0 images in both phase encoding directions.
+**KNOWN ISSUE**        
+**Missing Cases from Duplicate Run Reprocessing**: During reprocessing of duplicate functional runs, four cases failed due to out-of-memory errors and are not included in the current release. Derivatives for these cases remain available in previous releases and can be accessed if needed. [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/release_notes/imaging/6.0_imaging_abcc.html)
 :::
 
-### <i class="fa-solid fa-caret-right"></i> Known Issues
-
-::: {.callout-warning title="Missing Cases from Duplicate Run Reprocessing"}
-During reprocessing of duplicate functional runs, four cases failed due to out-of-memory errors and are not included in the current release. Derivatives for these cases remain available in previous releases and can be accessed if needed. [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/release_notes/imaging/6.0_imaging_abcc.html)
-:::
-
-## <i class="fa-solid fa-hourglass-half"></i>&nbsp; Coming Soon
-
-- **Structural & functional MRI** processed through **[fMRIPrep](https://fmriprep.org)** and **[XCP-D](https://xcp-d.readthedocs.io)**
-- **Task fMRI pipeline results**
-- **Individualized network maps** [@hermosillo2024]
-
-## <i class="fa-solid fa-clock-rotate-left"></i>&nbsp; Release History
-
-::: {.callout-important title="Release 3.0 changes"}
-The below release history reflects releases previously available through the [NIMH Data Archive (NDA)](https://nda.nih.gov/). Starting with Release 3.0.0 (2025-06-26), the ABCC is made available through the [NBDC Data Hub](https://www.nbdc-datahub.org/) and does not reflect revisions made to the NDA repository. The release history for versions 2.0.0 and below are provided below for legacy purposes. Please visit the [ABCC Archival Data Release Documentation](https://nda-abcd-collection-3165.readthedocs.io) for the archived release documentation associated wih the data available for prior releases via the NDA.  
-:::
+<!-- RELEASE 3.0.0 -->
 
 ::: {.callout-note collapse="true" title="Release 3.0.0 (2025-06-26)"}
 **REVISIONS**
@@ -125,9 +209,8 @@ The below release history reflects releases previously available through the [NI
 1. Expanded **QSIPrep** diffusion derivatives
 1. New `sessions.tsv` files with session demographics, acquisition timestamps, scanner metadata, and automated QC metrics. Structural QA columns include BOLD brain coverage Pass/Fail indicators (`bc_(task)_run-(run_num)`) based on 10% threshold, coverage percentages (`bc_(task)_run-(run_num)_perc_vox`), and outlier counts for subcortical segmentation volumes (n=22) and cortical morphometry (n=333). Functional QA columns include Pass/Fail indicators for 5- and 10-minute connectivity matrix generation (`5min_pconn_<atlas>`, `10min_pconn_<atlas>`) and corresponding outlier counts (n=61776) across five parcellation schemes: Gordon2014, HCP2016, Markov2012, Power2011, and Yeo2011 (all with FreeSurferSubcortical). Values of 888 indicate missing or ungenerated files, except for pconn Pass/Fail columns.
 
-**KNOWN ISSUES**
-
-1. **Missing Volume-Based Resting-State Run Files (Runs 3–8):** Due to a transfer issue, some minimally processed, volume-based resting-state data are missing for runs 3–8 (mainly affecting data from Years 4 and 6). **Surface-based CIFTI data — used by most researchers — are fully available and unaffected.** Affected files include:
+**KNOWN ISSUE**     
+**Missing Volume-Based Resting-State Run Files (Runs 3–8):** Due to a transfer issue, some minimally processed, volume-based resting-state data are missing for runs 3–8 (mainly affecting data from Years 4 and 6). **Surface-based CIFTI data — used by most researchers — are fully available and unaffected.** Affected files include:
 
     - `*_task-rest_run-{3-8}_motion.tsv`
     - `*_task-rest_run-{3-8}_space-MNI_bold.nii.gz`
@@ -136,64 +219,44 @@ The below release history reflects releases previously available through the [NI
     These files were restored in v3.1.0 patch release. Users who required these files could also regenerate them from the concatenated motion files using the [abcd-abcc_motion_reg_generator](https://github.com/nbdc-datahub/abcd-abcc_motion_reg_generator) utility (see its documentation for details).
 :::
 
-::: {.callout-note collapse="true" title="Release 2.0.0 (2022-06-22)"}
-**REVISIONS**
+<!-- RELEASE 1.0-2.0 -->
 
-1. **Uploading 144 participants with new data due to revised fast track QC**: The initial release was processed prior to new updates to the fast track QC spreadsheet that affected the original inputs for 144 participants. This led to discrepancies in the number of timepoints reported for connectivity matrices (see below) relative to the inputs. The 144 participants were re-processed through the ABCD-BIDS pipeline at the Minnesota Supercomputing Institute (MSI). The `participants.tsv` file indicates which subjects were reprocessed. These subjects have new Gordon 10 and 5 minute connectivity matrices generated and replaced on the NDA. The old matrices remain valid, but may use different frames from the new matrices. The labels for the updated connectivity matrices were defined in @gordon2016 and generated using the [DCAN Labs cifti connectivity wrapper](https://github.com/DCAN-Labs/cifti-connectivity/) at a frame displacement (FD) threshold of 0.2 mm to filter out high-motion frames. An outlier detection procedure was used to exclude remaining frames 2 STD from the mean.
-1. **Providing Connectivity matrices** for those participants with discrepancies in the number of timepoints used
-1. **Uploading JSONs for the diffusion inputs** in some participants.
-1. **Updated version of the participants.tsv to v1.0.2** includes correction to site and sex designation for a small subset of subjects based on new information from the DAIRC.
-
-**NEW ADDITIONS**
-
-1. **Individualized Network Maps Generated with Infomap and Template Matching (*Submission ID: 36448*)**
-1. **Derivatives for the fmriprep pipeline:** fMRIPrep v20.2.0 was run on all 10,038 participants whose visit one data was successfully converted to BIDS. The limited fMRIPrep processing errors were due to subjects that did not have any valid fMRI runs, but we did not do any manual quality control of outputs. 9,484 participants have at least one output. The data is available in 18 submissions (a summary, including number of files and submission size can be found [here](https://docs.google.com/spreadsheets/d/1NbZ28vBvGVJb9miivgsJ695VVoFBSBuBQmWigN5pg_c/edit#gid=678992105)). Detailed information about the files included in each submission are on the second tab of that spreadsheet. Files with no submission name listed have not yet been uploaded.
-1. **DWI sidecar JSON patch (Diffusion inputs) (*Submission IDs: 36449 - 36452*)**: The DWI acquisition parameters from subjects scanned on Philips and GE with MR Software release versions 5.3.0_5.3.0.0 and DV25.0_R02_1549.b respectively (n=423) are missing the required field, PhaseEncodingDirection. This omission is because they reported the axis and not direction; therefore we did a manual check of these images to check the phase encoding direction, so that these JSON inputs are BIDS compatible and can be processed by pipelines like QSIprep. These JSONs have been updated and uploaded.
-1. **Level-2 task files from the ABCD-task-fMRI pipeline (*Submission IDs: 36458 - 36630*)**
+::: {.callout-note collapse="true" title="Release 1.0–2.0 Archive"}
+ABCC releases through version 2.0.0 were distributed through the [NIMH Data Archive (NDA)](https://nda.nih.gov/). Starting with Release 3.0.0 (2025), ABCC data transitioned to the [NBDC Data Hub](https://www.nbdc-datahub.org/), and release notes no longer reflect NDA repository revisions. Release notes and documentation for NDA-based releases are available in the [ABCC Archival Data Release Documentation](https://nda-abcd-collection-3165.readthedocs.io).
 :::
 
-::: {.callout-note collapse="true" title="Release 2.0.0 (2022-06-22)"}
-**REVISIONS**
+<!-- 
 
-1. **Uploading 144 participants with new data due to revised fast track QC**: The initial release was processed prior to new updates to the fast track QC spreadsheet that affected the original inputs for 144 participants. This led to discrepancies in the number of timepoints reported for connectivity matrices (see below) relative to the inputs. The 144 participants were re-processed through the ABCD-BIDS pipeline at the Minnesota Supercomputing Institute (MSI). The `participants.tsv` file indicates which subjects were reprocessed. These subjects have new Gordon 10 and 5 minute connectivity matrices generated and replaced on the NDA. The old matrices remain valid, but may use different frames from the new matrices. The labels for the updated connectivity matrices were defined in @gordon2016 and generated using the [DCAN Labs cifti connectivity wrapper](https://github.com/DCAN-Labs/cifti-connectivity/) at a frame displacement (FD) threshold of 0.2 mm to filter out high-motion frames. An outlier detection procedure was used to exclude remaining frames 2 STD from the mean.
-1. **Providing Connectivity matrices** for those participants with discrepancies in the number of timepoints used
-1. **Uploading JSONs for the diffusion inputs** in some participants.
-1. **Updated version of the participants.tsv to v1.0.2** includes correction to site and sex designation for a small subset of subjects based on new information from the DAIC.
+BRAINSWIPES INFORMATION
 
-**NEW ADDITIONS**
+### BrainSwipes Quality Control
 
-1. **Individualized Network Maps Generated with Infomap and Template Matching (*Submission ID: 36448*)**
-1. **Derivatives for the fmriprep pipeline:** fMRIPrep v20.2.0 was run on all 10,038 participants whose visit one data was successfully converted to BIDS. The limited fMRIPrep processing errors were due to subjects that did not have any valid fMRI runs, but we did not do any manual quality control of outputs. 9,484 participants have at least one output. The data is available in 18 submissions (a summary, including number of files and submission size can be found [here](https://docs.google.com/spreadsheets/d/1NbZ28vBvGVJb9miivgsJ695VVoFBSBuBQmWigN5pg_c/edit#gid=678992105)). Detailed information about the files included in each submission are on the second tab of that spreadsheet. Files with no submission name listed have not yet been uploaded.
-1. **DWI sidecar JSON patch (Diffusion inputs) (*Submission IDs: 36449 - 36452*)**: The DWI acquisition parameters from subjects scanned on Philips and GE with MR Software release versions 5.3.0_5.3.0.0 and DV25.0_R02_1549.b respectively (n=423) are missing the required field, PhaseEncodingDirection. This omission is because they reported the axis and not direction; therefore we did a manual check of these images to check the phase encoding direction, so that these JSON inputs are BIDS compatible and can be processed by pipelines like QSIprep. These JSONs have been updated and uploaded.
-1. **Level-2 task files from the ABCD-task-fMRI pipeline (*Submission IDs: 36458 - 36630*)**
+::: {.callout-caution title="BrainSwipes Results Provided in Data Release - Coming Soon!"}
+BrainSwipes results will be provided in a dynamic fashion independent of releases so that users always have the most up-to-date results. It is a community-driven effort and we encourage all users of ABCC data to get involved! Please create a free account on [BrainSwipes](https://brainswipes.us/) to get started. 
+
+**Prior experience with visual QC is not required!** After creating an account, users are guided through a brief [tutorial](https://brainswipes.us/tutorial-select) that teaches them how to assess derivative images and classify them as pass or fail.
 :::
 
-::: {.callout-note collapse="true" title="Release 1.1.1 (2020-10-07)"}
-This was a small version 1.0.0 release of the `derivatives_qc.(json|tsv)` with additional BIDS derivatives quality control data including a "brain coverage score" for the `derivatives.func.runs_task-(MID|nback|rest|SST)_volume` data subsets.
-:::
+QC is performed on processed structural and functional MRI data via manual review of XCP-D visual reports. Though manual inspection remains the gold standard for QC, it is highly resource-intensive. Manual visual review was therefore performed using [BrainSwipes](https://brainswipes.us/about), a gamified crowdsourcing platform where users classify images as Pass or Fail by swiping right or left after completing a brief visual QC tutorial.
 
-::: {.callout-note collapse="true" title="Release 1.1.0 (2020-07-27)"}
-**NEW ADDITIONS**
+*Built on the open-source [Swipes For Science](https://swipesforscience.org/) framework*
 
-- 157 additional subjects due to updated fast track QC spreadsheet
-- `participants.(json|tsv)` version 1.0.0: BIDS standard participants files with matched groups
-- `sourcedata.func.task_events`: Task-based fMRI E-Prime files
-- `inputs.dwi.dwi`: DWI BIDS input data
-- `derivatives.anat.stats`: FreeSurfer stats files
-- `derivatives.anat.(T1w|T2w)`: T1 and T2 volumes
-- `derivatives.anat.wmparc`: white-matter volume ROIs
-- `derivatives.func.updated_motion_task-(MID|nback|SST|rest)`: Improved motion files (including outlier calculation)
-- `derivatives.func.pconns`: Curated parcellated connectivity files
-- `derivatives.func.runs_task-(MID|nback|SST|rest)_volume`: Minimally-processed fMRI volumes
-:::
+::: {.callout-note collapse="true" title="BrainSwipes QC Procedures"}
+*Example quality assessment of surface delineation on BrainSwipes platform (displaying brain in axial plane at level of basal ganglia/putamen):*
 
-::: {.callout-note collapse="true" title="Release 1.0.0 (2020-02-17)"}
-This was the initial release of DCAN Labs ABCD-BIDS inputs and derivatives containing **10,038 MRI sessions worth of NDA imagingcollection01 data** and **9,647 MRI sessions worth of NDA fmriresults01 data**.
+![](../../assets/img/documentation/imaging/brainswipes.png)
 
-**KNOWN ISSUES**
+**Surface Delineation:**\
+For structural QA, swipers are presented with image slices in coronal, axial, and sagittal planes to assess the accuracy of T1w and T2w surface delineations in differentiating gray and white matter. Images are derived from XCP-D visual reports.
 
-- `sourcedata`: Event Related Information `sourcedata` files can be csv files as well as txt files, but this release only includes the txt files
-- `task-rest_bold.json`: Discovered in the middle of June 2020, the modality-specific BIDS inherited `task-rest_bold.json` file at the top of the directory tree which is nested in almost every `task-rest` associated record in the NDA database has a typo in it. The `"TaskDescription"` key has a value of `"See http://www.cognitiveatlas.org/task/id/tsk_4a57abb949e1a/"`. However, this link goes to the stop signal task page on the Cognitive Atlas website. Instead you should refer to [the Cognitive Atlas website for "rest eyes open"](http://www.cognitiveatlas.org/task/id/trm_4c8a834779883/). This website describes the task as: "Subjects rest passively with their eyes open. Often used as a baseline for comparison for other tasks."
-- `derivatives.func.runs_task-rest_volume`: This data subset was originally uploaded in Release 1.1.0, but was missing all runs chronologically numbered 3 and up. We are uploading these missing data in Release 1.1.2.
-- `updated_dwi_input_json`: The DWI acquisition parameters from all subjects scanned on GE with MR Software release DV25.0_R02_1549.b (n=281) are missing the required field, PhaseEncodingDirection. This omission is because they reported the axis and not direction.
-:::
+**Atlas Registration:**\        
+In addition to surface delineation, structural QA also includes atlas registration quality, evaluated by overlaying delineations of the subject’s image onto the atlas, and vice versa. Swipes display nine T1w slices for visual inspection, with three slices per anatomical plane. Quality is assessed based on the alignment of the outer boundaries of the overlaid contours with those of the underlying image, ensuring minimal gaps or misalignments. Images are derived from XCP-D visual reports.
+
+**Functional Registration:**\
+Functional registration is evaluated by overlaying outlines of functional images onto structural images and vice versa. Swipes display nine slices of the same functional image for visual inspection, with three slices per anatomical plane. Quality is assessed similarly to structural atlas registration, focusing on the alignment of the overlaid contours. Additional evaluation includes checking for artifacts such as signal dropout. Images are derived from XCP-D visual reports.
+
+**Diffusion Direction Encoding:**\
+Swipes display GIFs of full-resolution T2w images as a grayscale background, with the "Direction Encoded Color" (DEC) map overlaid. These GIFs sweep through a portion of the brain across the three anatomical planes. High-quality processed DWI images exhibit bands of color that closely follow the folds and contours of the grayscale background. These visuals are derived from the QSIPrep report.
+
+**Each visual report for a given modality is independently reviewed and rated as a pass or fail, which in the outputs are scored as values of 1 and 0 respectively. BrainSwipes generates a summary of these results that includes the average score as well as number of reviewers for each visual report of each modality.**
+::: -->

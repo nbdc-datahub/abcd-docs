@@ -15,7 +15,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'irma'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/substudies/6_1_irma.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/substudies/6_1_irma.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 The ABCD Hurricane Irma Substudy was supported by a grant from the National Science Foundation.
 
@@ -31,7 +31,7 @@ In the year before Hurricane Irma’s landfall, a large sample of children in Fl
 
 # Youth table {#irma_y_qtn}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("irma_y_qtn")`
+`r table_header("irma_y_qtn")`
 
 **Hurricane exposure:** Youth participants completed the Hurricane Related Traumatic Experiences–II (HURTE-II), an updated iteration of the HURTE-R (@vernberg1996; @lagreca2010), which has been used extensively in hurricane research to assess hurricane exposure and postdisaster stressors. The HURTE-II assesses stressors before (e.g., evacuation experiences), during (e.g., perceived life threat, actual life threat, immediate loss/disruption), and ongoing stress, loss, and disruption after the storm. An Irma-related media exposure questionnaire was also developed. We also included items assessing parental regulation of children’s Irma-related media exposure, as well as patterns of household discussions surrounding the hurricane. The latter items were drawn from previous research on the differential effects of varied household discussions in the aftermath of disasters (@carpenter2017).
 
@@ -49,7 +49,7 @@ In the year before Hurricane Irma’s landfall, a large sample of children in Fl
 
 # Parent table {#irma_p_qtn}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("irma_p_qtn")`
+`r table_header("irma_p_qtn")`
 
 **Hurricane exposure:** Parents completed the Hurricane Related Traumatic Experiences–II (HURTE-II), an updated iteration of the HURTE-R (@vernberg1996; @lagreca2010), which has been used extensively in hurricane research to assess hurricane exposure and postdisaster stressors. The HURTE-II assesses stressors before (e.g., evacuation experiences), during (e.g., perceived life threat, actual life threat, immediate loss/disruption), and ongoing stress, loss, and disruption after the storm. An Irma-related media exposure questionnaire was also developed. We also included items assessing parental regulation of children’s Irma-related media exposure, as well as patterns of household discussions surrounding the hurricane. The latter items were drawn from previous research on the differential effects of varied household discussions in the aftermath of disasters (@carpenter2017).
 

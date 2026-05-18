@@ -14,7 +14,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'covid'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/substudies/6_1_covid.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/substudies/6_1_covid.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 For the COVID Rapid Response Research (RRR) Survey there were seven roundes of surveys (denoted `waves 1-7`). At each wave, the youth and parents completed separate surveys.
 
@@ -42,7 +42,7 @@ reactable(tbl_covid)
 
 ## COVID Rapid Response Research (RRR) Survey (Youth){#covid_y_qtn}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_y_qtn")`  
+`r table_header("covid_y_qtn")`  
 
 Information about the dates of survey completion in the COVID Substudy is recorded in  `covid_y_qtn_dt`. 
 
@@ -283,11 +283,13 @@ Youth were asked about their exposure to news about COVID-19, whether they sough
 
 ### Fitbit - Post-Assessment Survey {#covid_y_fitbqtn}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_y_fitbqtn")`
+`r table_header("covid_y_fitbqtn")`
 
 Following their Fitbit use period, youth were asked questions about their use of the Fitbit, including whether they wore it consistently, when they wore it, had technical issues, whether it changed their sleep/activity behavior, and how the pandemic changed their sleep/activity patterns.
 
 ### Fitbit raw data
+
+`r table_header(tabulated = FALSE, file_based = TRUE)`
 
 To download COVID Fitbit Raw Data raw data, follow the instructions at the [NBDC page](https://www.nbdc-datahub.org/).
 
@@ -297,7 +299,7 @@ To download COVID Fitbit Raw Data raw data, follow the instructions at the [NBDC
 
 ## COVID Rapid Response Research (RRR) Survey (Parent) {#covid_p_qtn}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_p_qtn")`  
+`r table_header("covid_p_qtn")`  
 
 Information about the dates of survey completion in the COVID Substudy is recorded in  `covid_p_qtn_dt`. 
 
@@ -371,7 +373,7 @@ Parents were asked about the youth's COVID symptoms, diagnosis and testing, or a
 
 ## Administrative information {#covid_l_geoadm}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geoadm")`  
+`r table_header("covid_l_geoadm")`  
 
 This table includes the reported percent of time spent at each of five addresses and an error variable if participants had additional addresses that could not be used for data linkage.
 
@@ -383,7 +385,7 @@ These issues are being actively addressed to improve the temporal and geographic
 
 ## US Bureau of Labor Statistics (BLS) {#covid_l_geobls}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geobls")`  
+`r table_header("covid_l_geobls")`  
 
 Unemployment rates are provided at the county level at monthly rate by the [U.S. Bureau of Labor Statistics](https://www.bls.gov/lau/). The rates are not seasonally adjusted. These county-level unemployment data are also available for 2019 (i.e., pre-pandemic) for comparison to 2020/2021.
 
@@ -391,11 +393,11 @@ BLS fields have the following prefix: `covid_l_geobls`
 
 ## US Census 2019 Population Data {#covid_l_geocen}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geocen")`  
+`r table_header("covid_l_geocen")`  
 
 ## Johns Hopkins University COVID-19 Prevalence {#covid_l_geocount}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geocount")`  
+`r table_header("covid_l_geocount")`  
 
 COVID-19 prevalence (i.e., case and death counts) were obtained from a publicly available Github repository maintained by the Center of Systems Science and Engineering at Johns Hopkins University. Data sources are cited in the [README.md here](https://github.com/CSSEGISandData/COVID-19). These data have county-level resolution.
 
@@ -407,7 +409,7 @@ For additional notes, see [Geocoded Data - Administrative information](#covid_l_
 
 ## SafeGraph Social Distancing Metrics (SafeGraph) {#covid_l_geosg}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geosg")`  
+`r table_header("covid_l_geosg")`  
 
 Daily metrics for mobile device behaviors were made publicly available by [SafeGraph](https://docs.safegraph.com/docs/welcome) at the census block level from 2019 through Dec 2020. Their [website](https://docs.safegraph.com/docs/social-distancing-metrics) provides the following description:
 
@@ -421,7 +423,7 @@ For additional notes, see [Geocoded Data - Administrative information](#covid_l_
 
 ## CDC Policy Surveillance Data {#covid_l_geopolicy}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("covid_l_geopolicy")`  
+`r table_header("covid_l_geopolicy")`  
 
 Policy data related to COVID-19 restrictions were compiled from the [Centers for Disease Control and Prevention](https://data.cdc.gov/) using the following datasets:
 

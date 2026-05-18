@@ -1,0 +1,16 @@
+File name,File type,Description,Temporal resolution,File size (parquet),File size (csv),In memory size
+`ears_appusage_raw`,raw,Detection of applications used per day (Duplicate information will be present as each data query collects last 7 days of usage),collection window (duplicate entries across windows),558.3 MB,6.3 GB,~2.6 GB
+`ears_appusage_dt`,feature,Detection of applications used and their duration in the device foreground per calendar date,date,10.6 MB,105.2 MB,~63.0 MB
+`ears_appusage_logs`,feature,Detection of applications used and their duration in the device foreground during short collection windows,collection window,166.9 MB,915.7 MB,~404.1 MB
+`ears_appusage2_raw`,raw,Detection of application events,timestamp,338.0 MB,6.4 GB,~2.5 GB
+`ears_appusage2_dt`,feature,Detection of applications used and their duration in the device foreground per calendar date ,date,2.5 MB,24.6 MB,~14.7 MB
+`ears_appusage2_logs`,feature,Detection of application usage sessions in the device foreground,timestamp,129.5 MB,955.7 MB,~489.5 MB
+`ears_keyinput_raw`,raw,"Keyboard data is captured letter by letter, deletion by deletion, and in the case of swipe and autocomplete keyboards, keystroke by keystroke. Keystrokes are not collected when they occur in text fields that are designated as ""secure fields,"" which may contain sensitive information. Keyboard content is not collected in this datastream",timestamp,662.4 MB,10.1 GB,~5.7 GB
+`ears_keyinput_dt`,feature,Duration of keyboard usage per application and calendar date,date,3.2 MB,32.8 MB,~25.5 MB
+`ears_keyinput_sess`,feature,"Sessions of continuous keyboard use within apps, identified by temporal patterns of keystrokes.",session,40.6 MB,270.4 MB,~158.4 MB
+`ears_notification_raw`,raw,Detection of notification events,timestamp,60.9 MB,946.0 MB,~426.8 MB
+`ears_screenon_raw`,raw,"Screen lock state, used for inferring screen on time",timestamp,167.4 MB,1.8 GB,~979.3 MB
+`ears_screenon_dt`,feature,Screen-on time metrics per calendar date,date,1.5 MB,8.0 MB,~7.5 MB
+`ears_screenon_hr`,feature,Screen-on time metrics per calendar date and hour,hour,10.9 MB,109.2 MB,~106.2 MB
+`ears_stappusage_raw`,raw,iOS Screen Time: Detection of application and web usage (for websites corresponding to an application) per usage window,date,1.3 MB,15.2 MB,~9.1 MB
+`ears_stdevusage_raw`,raw,iOS Screen Time: Detection of overall device usage per usage window,date,552.3 KB,2.3 MB,~1.5 MB

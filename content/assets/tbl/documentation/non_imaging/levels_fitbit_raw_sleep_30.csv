@@ -1,0 +1,5 @@
+name,value,label
+stage,wake,wake
+stage,light,light
+stage,deep,deep
+stage,rem,rem

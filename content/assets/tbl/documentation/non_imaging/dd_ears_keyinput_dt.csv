@@ -1,0 +1,12 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+dt,Date of keyboard use,date,interval
+dt_day,Day of the week for date of keyboard use,character,ordinal
+dt_wknd,Whether date of keyboard use was on a weekend day (Sat/Sun) or not,logical,nominal
+os,Mobile operating system,character,nominal
+category,Google Play Store / Apple App Store application category,character,nominal
+app,Application ID,text,nominal
+n_keystrokes,Number of keystrokes for application,integer,ratio
+n_sessions,Number of sessions for application,integer,ratio
+sec_keyboard,Duration of keyboard use for application (in seconds),integer,ratio

@@ -1,0 +1,24 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+wk,Week number starting from first day of 21 day protocol period,integer,ratio
+wk_type,"Indicates type of week, determined by days included",character,nominal
+n_day,Number of days included for averages,integer,ratio
+n_wkdy,Number of weekdays included in averages,integer,ratio
+n_wknd,Number of weekend days included in averages,integer,ratio
+mean_min_actv,Mean number of minutes of wear not excluded or considered sleep (by 60 second sleep record) across all included days,double,ratio
+mean_min_slp,Mean number of minutes of wear considered sleep (by 60 second sleep record) not excluded due to heart rate quality checks across all included days,double,ratio
+sum_steps_actv,Sum of steps during non-sleep valid minutes across all included days,integer,ratio
+mean_steps_actv,Mean number of daily steps during non-sleep (night) valid minutes during included days,double,ratio
+mean_steps_fitb,Mean number of daily steps across all included days provided by Fitbit,double,ratio
+mean_mets_actv,Mean METS/min during non-sleep valid minutes across all included days,double,ratio
+sum_min_intnst_sed_actv,Sum of minutes spent in sedentary (intensity = 0) activity during non-sleep valid minutes across all included days,integer,ratio
+sum_min_intnst_light_actv,Sum of minutes spent in light (intensity = 1) activity during non-sleep valid minutes across all included days,integer,ratio
+sum_min_intnst_mod_actv,Sum of minutes spent in moderate (intensity = 2) activity during non-sleep valid minutes across all included days,integer,ratio
+sum_min_intnst_vigor_actv,Sum of of minutes spent in vigorous (intensity = 3) activity during non-sleep valid minutes across all included days,integer,ratio
+mean_min_intnst_sed_actv,Mean minutes spent in sedentary (intensity = 0) activity during non-sleep (night) valid minutes across all included days,double,ratio
+mean_min_intnst_light_actv,Mean minutes spent in light (intensity = 1) activity during non-sleep valid minutes across all included days,double,ratio
+mean_min_intnst_mod_actv,Mean minutes spent in moderate (intensity = 2) activity during non-sleep valid minutes across all included days,double,ratio
+mean_min_intnst_vigor_actv,Mean minutes spent in vigorous (intensity = 3) activity during non-sleep valid minutes across all included days,double,ratio
+mean_rest_hrate_fitb,Mean resting heart rate across all included days provided by Fitbit,double,ratio
+qc_wk,"Week includes a minimum of 4 days of data, including at least one weekend day respective of week type.",logical,nominal

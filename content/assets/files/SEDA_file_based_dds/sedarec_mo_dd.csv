@@ -1,0 +1,394 @@
+﻿name_filebased,label,type_var,type_data,type_level
+participant_id,Participant ID,administrative,text,nominal
+dt,Month residential history reported (adjusted to 1st of month) tied to session_id,administrative,date,interval
+distr_id,pseudo district ID,administrative,text,nominal
+grade,"Grade reported (3= third grade, 12= 12th grade)",administrative,integer,ratio
+homeschl_indicator,Homeschooled indicator,administrative,character,nominal
+ols_all_mean_2019,"Administrative District Average Test Score, Math & RLA, OL, CS for all students in 2019",summary score,double,ratio
+ols_fem_mean_2019,"Administrative District Average Test Score, Math & RLA, OL, CS for female students in 2019",summary score,double,ratio
+ols_mal_mean_2019,"Administrative District Average Test Score, Math & RLA, OL, CS for male students in 2019",summary score,double,ratio
+ols_ecd_mean_2019,"Administrative District Average Test Score, Math & RLA, OL, CS for econonomically disadvantaged students in 2019",summary score,double,ratio
+ols_nec_mean_2019,"Administrative District Average Test Score, Math & RLA, OL, CS for not economically disadvantaged students in 2019",summary score,double,ratio
+ols_all_mean_2022,"Administrative District Average Test Score, Math & RLA, OL, CS for all students in 2022",summary score,double,ratio
+ols_fem_mean_2022,"Administrative District Average Test Score, Math & RLA, OL, CS for female students in 2022",summary score,double,ratio
+ols_mal_mean_2022,"Administrative District Average Test Score, Math & RLA, OL, CS for male students in 2022",summary score,double,ratio
+ols_ecd_mean_2022,"Administrative District Average Test Score, Math & RLA, OL, CS for econonomically disadvantaged students in 2022",summary score,double,ratio
+ols_nec_mean_2022,"Administrative District Average Test Score, Math & RLA, OL, CS for not economically disadvantaged students in 2022",summary score,double,ratio
+ols_all_mean_2023,"Administrative District Average Test Score, Math & RLA, OL, CS for all students in 2023",summary score,double,ratio
+ols_fem_mean_2023,"Administrative District Average Test Score, Math & RLA, OL, CS for female students in 2023",summary score,double,ratio
+ols_mal_mean_2023,"Administrative District Average Test Score, Math & RLA, OL, CS for male students in 2023",summary score,double,ratio
+ols_ecd_mean_2023,"Administrative District Average Test Score, Math & RLA, OL, CS for econonomically disadvantaged students in 2023",summary score,double,ratio
+ols_nec_mean_2023,"Administrative District Average Test Score, Math & RLA, OL, CS for not economically disadvantaged students in 2023",summary score,double,ratio
+ols_all_mean_2024,"Administrative District Average Test Score, Math & RLA, OL, CS for all students in 2024",summary score,double,ratio
+ols_fem_mean_2024,"Administrative District Average Test Score, Math & RLA, OL, CS for female students in 2024",summary score,double,ratio
+ols_mal_mean_2024,"Administrative District Average Test Score, Math & RLA, OL, CS for male students in 2024",summary score,double,ratio
+ols_ecd_mean_2024,"Administrative District Average Test Score, Math & RLA, OL, CS for econonomically disadvantaged students in 2024",summary score,double,ratio
+ols_nec_mean_2024,"Administrative District Average Test Score, Math & RLA, OL, CS for not economically disadvantaged students in 2024",summary score,double,ratio
+eb_all_mean_2019,"Administrative District Average Test Score, Math & RLA, EB, CS for all students in 2019",summary score,double,ratio
+eb_fem_mean_2019,"Administrative District Average Test Score, Math & RLA, EB, CS for female students in 2019",summary score,double,ratio
+eb_mal_mean_2019,"Administrative District Average Test Score, Math & RLA, EB, CS for male students in 2019",summary score,double,ratio
+eb_ecd_mean_2019,"Administrative District Average Test Score, Math & RLA, EB, CS for econonomically disadvantaged students in 2019",summary score,double,ratio
+eb_nec_mean_2019,"Administrative District Average Test Score, Math & RLA, EB, CS for not economically disadvantaged students in 2019",summary score,double,ratio
+eb_all_mean_2022,"Administrative District Average Test Score, Math & RLA, EB, CS for all students in 2022",summary score,double,ratio
+eb_fem_mean_2022,"Administrative District Average Test Score, Math & RLA, EB, CS for female students in 2022",summary score,double,ratio
+eb_mal_mean_2022,"Administrative District Average Test Score, Math & RLA, EB, CS for male students in 2022",summary score,double,ratio
+eb_ecd_mean_2022,"Administrative District Average Test Score, Math & RLA, EB, CS for econonomically disadvantaged students in 2022",summary score,double,ratio
+eb_nec_mean_2022,"Administrative District Average Test Score, Math & RLA, EB, CS for not economically disadvantaged students in 2022",summary score,double,ratio
+eb_all_mean_2023,"Administrative District Average Test Score, Math & RLA, EB, CS for all students in 2023",summary score,double,ratio
+eb_fem_mean_2023,"Administrative District Average Test Score, Math & RLA, EB, CS for female students in 2023",summary score,double,ratio
+eb_mal_mean_2023,"Administrative District Average Test Score, Math & RLA, EB, CS for male students in 2023",summary score,double,ratio
+eb_ecd_mean_2023,"Administrative District Average Test Score, Math & RLA, EB, CS for econonomically disadvantaged students in 2023",summary score,double,ratio
+eb_nec_mean_2023,"Administrative District Average Test Score, Math & RLA, EB, CS for not economically disadvantaged students in 2023",summary score,double,ratio
+eb_all_mean_2024,"Administrative District Average Test Score, Math & RLA, EB, CS for all students in 2024",summary score,double,ratio
+eb_fem_mean_2024,"Administrative District Average Test Score, Math & RLA, EB, CS for female students in 2024",summary score,double,ratio
+eb_mal_mean_2024,"Administrative District Average Test Score, Math & RLA, EB, CS for male students in 2024",summary score,double,ratio
+eb_ecd_mean_2024,"Administrative District Average Test Score, Math & RLA, EB, CS for econonomically disadvantaged students in 2024",summary score,double,ratio
+eb_nec_mean_2024,"Administrative District Average Test Score, Math & RLA, EB, CS for not economically disadvantaged students in 2024",summary score,double,ratio
+ols_all_avg_impact_2019_2022,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2019 and 2022 for all students",summary score,double,ratio
+ols_fem_avg_impact_2019_2022,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2019 and 2022 for female students",summary score,double,ratio
+ols_mal_avg_impact_2019_2022,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2019 and 2022 for male students",summary score,double,ratio
+ols_ecd_avg_impact_2019_2022,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2019 and 2022 for econonomically disadvantaged students",summary score,double,ratio
+ols_nec_avg_impact_2019_2022,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2019 and 2022 for not economically disadvantaged",summary score,double,ratio
+ols_all_diff_impact_2019_2022,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2019 and 2022 for all students",summary score,double,ratio
+ols_fem_diff_impact_2019_2022,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2019 and 2022 for female students",summary score,double,ratio
+ols_mal_diff_impact_2019_2022,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2019 and 2022 for male students",summary score,double,ratio
+ols_ecd_diff_impact_2019_2022,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2019 and 2022 for econonomically disadvantaged students",summary score,double,ratio
+ols_nec_diff_impact_2019_2022,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2019 and 2022 for not economically disadvantaged",summary score,double,ratio
+eb_all_avg_impact_2019_2022,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2019 and 2022 for all students",summary score,double,ratio
+eb_fem_avg_impact_2019_2022,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2019 and 2022 for female students",summary score,double,ratio
+eb_mal_avg_impact_2019_2022,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2019 and 2022 for male students",summary score,double,ratio
+eb_ecd_avg_impact_2019_2022,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2019 and 2022 for econonomically disadvantaged students",summary score,double,ratio
+eb_nec_avg_impact_2019_2022,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2019 and 2022 for not economically disadvantaged",summary score,double,ratio
+eb_all_diff_impact_2019_2022,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2019 and 2022 for all students",summary score,double,ratio
+eb_fem_diff_impact_2019_2022,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2019 and 2022 for female students",summary score,double,ratio
+eb_mal_diff_impact_2019_2022,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2019 and 2022 for male students",summary score,double,ratio
+eb_ecd_diff_impact_2019_2022,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2019 and 2022 for econonomically disadvantaged students",summary score,double,ratio
+eb_nec_diff_impact_2019_2022,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2019 and 2022 for not economically disadvantaged",summary score,double,ratio
+ols_all_avg_impact_2022_2024,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2022 and 2024 for all students",summary score,double,ratio
+ols_fem_avg_impact_2022_2024,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2022 and 2024 for female students",summary score,double,ratio
+ols_mal_avg_impact_2022_2024,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2022 and 2024 for male students",summary score,double,ratio
+ols_ecd_avg_impact_2022_2024,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2022 and 2024 for econonomically disadvantaged students",summary score,double,ratio
+ols_nec_avg_impact_2022_2024,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2022 and 2024 for not economically disadvantaged",summary score,double,ratio
+ols_all_diff_impact_2022_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2022 and 2024 for all students",summary score,double,ratio
+ols_fem_diff_impact_2022_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2022 and 2024 for female students",summary score,double,ratio
+ols_mal_diff_impact_2022_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2022 and 2024 for male students",summary score,double,ratio
+ols_ecd_diff_impact_2022_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2022 and 2024 for econonomically disadvantaged students",summary score,double,ratio
+ols_nec_diff_impact_2022_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2022 and 2024 for not economically disadvantaged",summary score,double,ratio
+eb_all_avg_impact_2022_2024,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2022 and 2024 for all students",summary score,double,ratio
+eb_fem_avg_impact_2022_2024,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2022 and 2024 for female students",summary score,double,ratio
+eb_mal_avg_impact_2022_2024,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2022 and 2024 for male students",summary score,double,ratio
+eb_ecd_avg_impact_2022_2024,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2022 and 2024 for econonomically disadvantaged students",summary score,double,ratio
+eb_nec_avg_impact_2022_2024,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2022 and 2024 for not economically disadvantaged",summary score,double,ratio
+eb_all_diff_impact_2022_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2022 and 2024 for all students",summary score,double,ratio
+eb_fem_diff_impact_2022_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2022 and 2024 for female students",summary score,double,ratio
+eb_mal_diff_impact_2022_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2022 and 2024 for male students",summary score,double,ratio
+eb_ecd_diff_impact_2022_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2022 and 2024 for econonomically disadvantaged students",summary score,double,ratio
+eb_nec_diff_impact_2022_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2022 and 2024 for not economically disadvantaged",summary score,double,ratio
+ols_all_avg_impact_2019_2024,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2019 and 2024 for all students",summary score,double,ratio
+ols_fem_avg_impact_2019_2024,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2019 and 2024 for female students",summary score,double,ratio
+ols_mal_avg_impact_2019_2024,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2019 and 2024 for male students",summary score,double,ratio
+ols_ecd_avg_impact_2019_2024,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2019 and 2024 for econonomically disadvantaged students",summary score,double,ratio
+ols_nec_avg_impact_2019_2024,"Difference in Administrative District Average Test Score, Math & RLA, OL, CS between 2019 and 2024 for not economically disadvantaged",summary score,double,ratio
+ols_all_diff_impact_2019_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2019 and 2024 for all students",summary score,double,ratio
+ols_fem_diff_impact_2019_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2019 and 2024 for female students",summary score,double,ratio
+ols_mal_diff_impact_2019_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2019 and 2024 for male students",summary score,double,ratio
+ols_ecd_diff_impact_2019_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2019 and 2024 for econonomically disadvantaged students",summary score,double,ratio
+ols_nec_diff_impact_2019_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, OL, CS between 2019 and 2024 for not economically disadvantaged",summary score,double,ratio
+eb_all_avg_impact_2019_2024,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2019 and 2024 for all students",summary score,double,ratio
+eb_fem_avg_impact_2019_2024,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2019 and 2024 for female students",summary score,double,ratio
+eb_mal_avg_impact_2019_2024,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2019 and 2024 for male students",summary score,double,ratio
+eb_ecd_avg_impact_2019_2024,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2019 and 2024 for econonomically disadvantaged students",summary score,double,ratio
+eb_nec_avg_impact_2019_2024,"Difference in Administrative District Average Test Score, Math & RLA, EB, CS between 2019 and 2024 for not economically disadvantaged",summary score,double,ratio
+eb_all_diff_impact_2019_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2019 and 2024 for all students",summary score,double,ratio
+eb_fem_diff_impact_2019_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2019 and 2024 for female students",summary score,double,ratio
+eb_mal_diff_impact_2019_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2019 and 2024 for male students",summary score,double,ratio
+eb_ecd_diff_impact_2019_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2019 and 2024 for econonomically disadvantaged students",summary score,double,ratio
+eb_nec_diff_impact_2019_2024,"Difference in Administrative District Math-RLA Difference, Math & RLA, EB, CS between 2019 and 2024 for not economically disadvantaged",summary score,double,ratio
+all_center_grade_2019,Grade Used for Centering in Pooling for all students in 2019,summary score,integer,ratio
+ecd_center_grade_2019,Grade Used for Centering in Pooling for econonomically disadvantaged students in 2019,summary score,integer,ratio
+fem_center_grade_2019,Grade Used for Centering in Pooling for female students in 2019,summary score,integer,ratio
+mal_center_grade_2019,Grade Used for Centering in Pooling for male students in 2019,summary score,integer,ratio
+nec_center_grade_2019,Grade Used for Centering in Pooling for not economically disadvantaged students in 2019,summary score,integer,ratio
+all_center_grade_2022,Grade Used for Centering in Pooling for all students in 2022,summary score,integer,ratio
+ecd_center_grade_2022,Grade Used for Centering in Pooling for econonomically disadvantaged students in 2022,summary score,integer,ratio
+fem_center_grade_2022,Grade Used for Centering in Pooling for female students in 2022,summary score,integer,ratio
+mal_center_grade_2022,Grade Used for Centering in Pooling for male students in 2022,summary score,integer,ratio
+nec_center_grade_2022,Grade Used for Centering in Pooling for not economically disadvantaged students in 2022,summary score,integer,ratio
+all_center_grade_2023,Grade Used for Centering in Pooling for all students in 2023,summary score,integer,ratio
+ecd_center_grade_2023,Grade Used for Centering in Pooling for econonomically disadvantaged students in 2023,summary score,integer,ratio
+fem_center_grade_2023,Grade Used for Centering in Pooling for female students in 2023,summary score,integer,ratio
+mal_center_grade_2023,Grade Used for Centering in Pooling for male students in 2023,summary score,integer,ratio
+nec_center_grade_2023,Grade Used for Centering in Pooling for not economically disadvantaged students in 2023,summary score,integer,ratio
+all_center_grade_2024,Grade Used for Centering in Pooling for all students in 2024,summary score,integer,ratio
+ecd_center_grade_2024,Grade Used for Centering in Pooling for econonomically disadvantaged students in 2024,summary score,integer,ratio
+fem_center_grade_2024,Grade Used for Centering in Pooling for female students in 2024,summary score,integer,ratio
+mal_center_grade_2024,Grade Used for Centering in Pooling for male students in 2024,summary score,integer,ratio
+nec_center_grade_2024,Grade Used for Centering in Pooling for not economically disadvantaged students in 2024,summary score,integer,ratio
+all_asmts_count_2019,Total Number of Math & RLA Tests for all students in 2019,summary score,integer,ratio
+ecd_asmts_count_2019,Total Number of Math & RLA Tests for econonomically disadvantaged in 2019,summary score,integer,ratio
+fem_asmts_count_2019,Total Number of Math & RLA Tests for female students in 2019,summary score,integer,ratio
+mal_asmts_count_2019,Total Number of Math & RLA Tests for male students in 2019,summary score,integer,ratio
+nec_asmts_count_2019,Total Number of Math & RLA Tests for not economically disadvantaged students in 2019,summary score,integer,ratio
+all_asmts_count_2022,Total Number of Math & RLA Tests for all students in 2022,summary score,integer,ratio
+ecd_asmts_count_2022,Total Number of Math & RLA Tests for econonomically disadvantaged in 2022,summary score,integer,ratio
+fem_asmts_count_2022,Total Number of Math & RLA Tests for female students in 2022,summary score,integer,ratio
+mal_asmts_count_2022,Total Number of Math & RLA Tests for male students in 2022,summary score,integer,ratio
+nec_asmts_count_2022,Total Number of Math & RLA Tests for not economically disadvantaged students in 2022,summary score,integer,ratio
+all_asmts_count_2023,Total Number of Math & RLA Tests for all students in 2023,summary score,integer,ratio
+ecd_asmts_count_2023,Total Number of Math & RLA Tests for econonomically disadvantaged in 2023,summary score,integer,ratio
+fem_asmts_count_2023,Total Number of Math & RLA Tests for female students in 2023,summary score,integer,ratio
+mal_asmts_count_2023,Total Number of Math & RLA Tests for male students in 2023,summary score,integer,ratio
+nec_asmts_count_2023,Total Number of Math & RLA Tests for not economically disadvantaged students in 2023,summary score,integer,ratio
+all_asmts_count_2024,Total Number of Math & RLA Tests for all students in 2024,summary score,integer,ratio
+ecd_asmts_count_2024,Total Number of Math & RLA Tests for econonomically disadvantaged in 2024,summary score,integer,ratio
+fem_asmts_count_2024,Total Number of Math & RLA Tests for female students in 2024,summary score,integer,ratio
+mal_asmts_count_2024,Total Number of Math & RLA Tests for male students in 2024,summary score,integer,ratio
+nec_asmts_count_2024,Total Number of Math & RLA Tests for not economically disadvantaged students in 2024,summary score,integer,ratio
+all_asmts_mean_2019,Average Number of Math + RLA Tests (tot_asmts/cellcount) for all students\in 2019,summary score,double,ratio
+ecd_asmts_mean_2019,Average Number of Math + RLA Tests (tot_asmts/cellcount) for econonomically disadvantaged in 2019,summary score,double,ratio
+fem_asmts_mean_2019,Average Number of Math + RLA Tests (tot_asmts/cellcount) for female students in 2019,summary score,double,ratio
+mal_asmts_mean_2019,Average Number of Math + RLA Tests (tot_asmts/cellcount) for male students in 2019,summary score,double,ratio
+nec_asmts_mean_2019,Average Number of Math + RLA Tests (tot_asmts/cellcount) for not economically disadvantaged students in 2019,summary score,double,ratio
+all_asmts_mean_2022,Average Number of Math + RLA Tests (tot_asmts/cellcount) for all students in 2022,summary score,double,ratio
+ecd_asmts_mean_2022,Average Number of Math + RLA Tests (tot_asmts/cellcount) for econonomically disadvantaged in 2022,summary score,double,ratio
+fem_asmts_mean_2022,Average Number of Math + RLA Tests (tot_asmts/cellcount) for female students 2022,summary score,double,ratio
+mal_asmts_mean_2022,Average Number of Math + RLA Tests (tot_asmts/cellcount) for male students in 2022,summary score,double,ratio
+nec_asmts_mean_2022,Average Number of Math + RLA Tests (tot_asmts/cellcount) for not economically disadvantaged students in 2022,summary score,double,ratio
+all_asmts_mean_2023,Average Number of Math + RLA Tests (tot_asmts/cellcount) for all students in 2023,summary score,double,ratio
+ecd_asmts_mean_2023,Average Number of Math + RLA Tests (tot_asmts/cellcount) for econonomically disadvantaged in 2023,summary score,double,ratio
+fem_asmts_mean_2023,Average Number of Math + RLA Tests (tot_asmts/cellcount) for female students in 2023,summary score,double,ratio
+mal_asmts_mean_2023,Average Number of Math + RLA Tests (tot_asmts/cellcount) for male students in 2023,summary score,double,ratio
+nec_asmts_mean_2023,Average Number of Math + RLA Tests (tot_asmts/cellcount) for not economically disadvantaged students in 2023,summary score,double,ratio
+all_asmts_mean_2024,Average Number of Math + RLA Tests (tot_asmts/cellcount) for all students in 2024,summary score,double,ratio
+ecd_asmts_mean_2024,Average Number of Math + RLA Tests (tot_asmts/cellcount) for econonomically disadvantaged in 2024,summary score,double,ratio
+fem_asmts_mean_2024,Average Number of Math + RLA Tests (tot_asmts/cellcount) for female students in 2024,summary score,double,ratio
+mal_asmts_mean_2024,Average Number of Math + RLA Tests (tot_asmts/cellcount) for male students in 2024,summary score,double,ratio
+nec_asmts_mean_2024,Average Number of Math + RLA Tests (tot_asmts/cellcount) for not economically disadvantaged students in 2024,summary score,double,ratio
+all_est_asmts_count_2019,Number of tests was estimated for all students in 2019,summary score,integer,ratio
+ecd_est_asmts_count_2019,Number of tests was estimated for econonomically disadvantaged students in 2019,summary score,integer,ratio
+fem_est_asmts_count_2019,Number of tests was estimated for female students in 2019,summary score,integer,ratio
+mal_est_asmts_count_2019,Number of tests was estimated for male students in 2019,summary score,integer,ratio
+nec_est_asmts_count_2019,Number of tests was estimated for not economically disadvantaged students in 2019,summary score,integer,ratio
+all_est_asmts_count_2022,Number of tests was estimated for all students in 2022,summary score,integer,ratio
+ecd_est_asmts_count_2022,Number of tests was estimated for econonomically disadvantaged students in 2022,summary score,integer,ratio
+fem_est_asmts_count_2022,Number of tests was estimated for female students in 2022,summary score,integer,ratio
+mal_est_asmts_count_2022,Number of tests was estimated for male students in 2022,summary score,integer,ratio
+nec_est_asmts_count_2022,Number of tests was estimated for not economically disadvantaged students in 2022,summary score,integer,ratio
+all_est_asmts_count_2023,Number of tests was estimated for all students in 2023,summary score,integer,ratio
+ecd_est_asmts_count_2023,Number of tests was estimated for econonomically disadvantaged students in 2023,summary score,integer,ratio
+fem_est_asmts_count_2023,Number of tests was estimated for female students in 2023,summary score,integer,ratio
+mal_est_asmts_count_2023,Number of tests was estimated for male students in 2023,summary score,integer,ratio
+nec_est_asmts_count_2023,Number of tests was estimated for not economically disadvantaged students in 2023,summary score,integer,ratio
+all_est_asmts_count_2024,Number of tests was estimated for all students in 2024,summary score,integer,ratio
+ecd_est_asmts_count_2024,Number of tests was estimated for econonomically disadvantaged students in 2024,summary score,integer,ratio
+fem_est_asmts_count_2024,Number of tests was estimated for female students in 2024,summary score,integer,ratio
+mal_est_asmts_count_2024,Number of tests was estimated for male students in 2024,summary score,integer,ratio
+nec_est_asmts_count_2024,Number of tests was estimated for not economically disadvantaged students in 2024,summary score,integer,ratio
+enrl_count_2019,grade 3-8 enrollment in 2019,summary score,integer,ratio
+enrl_count_2020,grade 3-8 enrollment in 2020,summary score,integer,ratio
+enrl_count_2021,grade 3-8 enrollment in 2021,summary score,integer,ratio
+enrl_count_2022,grade 3-8 enrollment in 2022,summary score,integer,ratio
+enrl_count_2023,grade 3-8 enrollment in 2023,summary score,integer,ratio
+enrl_count_2024,grade 3-8 enrollment in 2024,summary score,integer,ratio
+enrl_mean_2019,"average per grade enrollment, for grades 3-8 in 2019",summary score,double,ratio
+enrl_mean_2020,"average per grade enrollment, for grades 3-8 in 2020",summary score,double,ratio
+enrl_mean_2021,"average per grade enrollment, for grades 3-8 in 2021",summary score,double,ratio
+enrl_mean_2022,"average per grade enrollment, for grades 3-8 in 2022",summary score,double,ratio
+enrl_mean_2023,"average per grade enrollment, for grades 3-8 in 2023",summary score,double,ratio
+enrl_mean_2024,"average per grade enrollment, for grades 3-8 in 2024",summary score,double,ratio
+fl_prop_2019,proportion f/r lunch in 2019,summary score,double,ratio
+fl_prop_2020,proportion f/r lunch in 2020,summary score,double,ratio
+fl_prop_2021,proportion f/r lunch in 2021,summary score,double,ratio
+fl_prop_2022,proportion f/r lunch in 2022,summary score,double,ratio
+fl_prop_2023,proportion f/r lunch in 2023,summary score,double,ratio
+fl_prop_2024,proportion f/r lunch in 2024,summary score,double,ratio
+black_prop_2019,proportion black in 2019,summary score,double,ratio
+black_prop_2020,proportion black in 2020,summary score,double,ratio
+black_prop_2021,proportion black in 2021,summary score,double,ratio
+black_prop_2022,proportion black in 2022,summary score,double,ratio
+black_prop_2023,proportion black in 2023,summary score,double,ratio
+black_prop_2024,proportion black in 2024,summary score,double,ratio
+hisp_prop_2019,proportion hispanic in 2019,summary score,double,ratio
+hisp_prop_2020,proportion hispanic in 2020,summary score,double,ratio
+hisp_prop_2021,proportion hispanic in 2021,summary score,double,ratio
+hisp_prop_2022,proportion hispanic in 2022,summary score,double,ratio
+hisp_prop_2023,proportion hispanic in 2023,summary score,double,ratio
+hisp_prop_2024,proportion hispanic in 2024,summary score,double,ratio
+asian_prop_2019,proportion asian/PI in 2019,summary score,double,ratio
+asian_prop_2020,proportion asian/PI in 2020,summary score,double,ratio
+asian_prop_2021,proportion asian/PI in 2021,summary score,double,ratio
+asian_prop_2022,proportion asian/PI in 2022,summary score,double,ratio
+asian_prop_2023,proportion asian/PI in 2023,summary score,double,ratio
+asian_prop_2024,proportion asian/PI in 2024,summary score,double,ratio
+ntvam_prop_2019,proportion Native American in 2019,summary score,double,ratio
+ntvam_prop_2020,proportion Native American in 2020,summary score,double,ratio
+ntvam_prop_2021,proportion Native American in 2021,summary score,double,ratio
+ntvam_prop_2022,proportion Native American in 2022,summary score,double,ratio
+ntvam_prop_2023,proportion Native American in 2023,summary score,double,ratio
+ntvam_prop_2024,proportion Native American in 2024,summary score,double,ratio
+multi_prop_2019,proportion two+ races in 2019,summary score,double,ratio
+multi_prop_2020,proportion two+ races in 2020,summary score,double,ratio
+multi_prop_2021,proportion two+ races in 2021,summary score,double,ratio
+multi_prop_2022,proportion two+ races in 2022,summary score,double,ratio
+multi_prop_2023,proportion two+ races in 2023,summary score,double,ratio
+multi_prop_2024,proportion two+ races in 2024,summary score,double,ratio
+white_prop_2019,proportion white in 2019,summary score,double,ratio
+white_prop_2020,proportion white in 2020,summary score,double,ratio
+white_prop_2021,proportion white in 2021,summary score,double,ratio
+white_prop_2022,proportion white in 2022,summary score,double,ratio
+white_prop_2023,proportion white in 2023,summary score,double,ratio
+white_prop_2024,proportion white in 2024,summary score,double,ratio
+enrol_count_2019,total enrollment in 2019,summary score,integer,ratio
+enrol_count_2020,total enrollment in 2020,summary score,integer,ratio
+enrol_count_2021,total enrollment in 2021,summary score,integer,ratio
+enrol_count_2022,total enrollment in 2022,summary score,integer,ratio
+enrol_count_2023,total enrollment in 2023,summary score,integer,ratio
+enrol_count_2024,total enrollment in 2024,summary score,integer,ratio
+eb_all_ses_2019,"ses composite, eb estimate, all families, time-varying in 2019",summary score,double,ratio
+eb_all_lminc_2019,"log of median income, eb estimate, all families, time-varying in 2019",summary score,double,ratio
+eb_all_college_prop_2019,"ba+ rate, eb estimate, all families, time-varying in 2019",summary score,double,ratio
+eb_all_poverty_rate_2019,"poverty rate, eb estimate, all families, time-varying in 2019",summary score,double,ratio
+eb_all_unemp_rate_2019,"unemployment rate, eb estimate, all families, time-varying in 2019",summary score,double,ratio
+eb_all_snap_rate_2019,"snap receipt rate, eb estimate, all families, time-varying in 2019",summary score,double,ratio
+eb_all_singlmoth_rate_2019,"single mother HH rate, eb estimate, all families, time-varying in 2019",summary score,double,ratio
+eb_all_avg_ses_2019,"ses composite, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2019",summary score,double,ratio
+eb_all_avg_ses_2020,"ses composite, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2020",summary score,double,ratio
+eb_all_avg_ses_2021,"ses composite, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2021",summary score,double,ratio
+eb_all_avg_ses_2022,"ses composite, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2022",summary score,double,ratio
+eb_all_avg_ses_2023,"ses composite, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2023",summary score,double,ratio
+eb_all_avg_ses_2024,"ses composite, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2024",summary score,double,ratio
+eb_all_lminc_avg_2019,"log of median income, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2019",summary score,double,ratio
+eb_all_lminc_avg_2020,"log of median income, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2020",summary score,double,ratio
+eb_all_lminc_avg_2021,"log of median income, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2021",summary score,double,ratio
+eb_all_lminc_avg_2022,"log of median income, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2022",summary score,double,ratio
+eb_all_lminc_avg_2023,"log of median income, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2023",summary score,double,ratio
+eb_all_lminc_avg_2024,"log of median income, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2024",summary score,double,ratio
+eb_all_college_avg_rate_2019,"ba+ rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2019",summary score,double,ratio
+eb_all_college_avg_rate_2020,"ba+ rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2020",summary score,double,ratio
+eb_all_college_avg_rate_2021,"ba+ rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2021",summary score,double,ratio
+eb_all_college_avg_rate_2022,"ba+ rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2022",summary score,double,ratio
+eb_all_college_avg_rate_2023,"ba+ rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2023",summary score,double,ratio
+eb_all_college_avg_rate_2024,"ba+ rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2024",summary score,double,ratio
+eb_all_unemp_avg_rate_2019,"unemployment rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2019",summary score,double,ratio
+eb_all_unemp_avg_rate_2020,"unemployment rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2020",summary score,double,ratio
+eb_all_unemp_avg_rate_2021,"unemployment rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2021",summary score,double,ratio
+eb_all_unemp_avg_rate_2022,"unemployment rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2022",summary score,double,ratio
+eb_all_unemp_avg_rate_2023,"unemployment rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2023",summary score,double,ratio
+eb_all_unemp_avg_rate_2024,"unemployment rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2024",summary score,double,ratio
+eb_all_snap_avg_rate_2019,"snap receipt rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2019",summary score,double,ratio
+eb_all_snap_avg_rate_2020,"snap receipt rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2020",summary score,double,ratio
+eb_all_snap_avg_rate_2021,"snap receipt rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2021",summary score,double,ratio
+eb_all_snap_avg_rate_2022,"snap receipt rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2022",summary score,double,ratio
+eb_all_snap_avg_rate_2023,"snap receipt rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2023",summary score,double,ratio
+eb_all_snap_avg_rate_2024,"snap receipt rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2024",summary score,double,ratio
+eb_all_poverty_avg_rate_2019,"poverty rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2019",summary score,double,ratio
+eb_all_poverty_avg_rate_2020,"poverty rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2020",summary score,double,ratio
+eb_all_poverty_avg_rate_2021,"poverty rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2021",summary score,double,ratio
+eb_all_poverty_avg_rate_2022,"poverty rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2022",summary score,double,ratio
+eb_all_poverty_avg_rate_2023,"poverty rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2023",summary score,double,ratio
+eb_all_poverty_avg_rate_2024,"poverty rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2024",summary score,double,ratio
+eb_all_singlmoth_avg_rate_2019,"single mother HH rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2019",summary score,double,ratio
+eb_all_singlmoth_avg_rate_2020,"single mother HH rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2020",summary score,double,ratio
+eb_all_singlmoth_avg_rate_2021,"single mother HH rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2021",summary score,double,ratio
+eb_all_singlmoth_avg_rate_2022,"single mother HH rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2022",summary score,double,ratio
+eb_all_singlmoth_avg_rate_2023,"single mother HH rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2023",summary score,double,ratio
+eb_all_singlmoth_avg_rate_2024,"single mother HH rate, eb estimate, all families, 2005-09, 2010-14 & 2015-19 avg in 2024",summary score,double,ratio
+urban_indicator_2019,urban locale in 2019,summary score,character,nominal
+urban_indicator_2020,urban locale in 2020,summary score,character,nominal
+urban_indicator_2021,urban locale in 2021,summary score,character,nominal
+urban_indicator_2022,urban locale in 2022,summary score,character,nominal
+urban_indicator_2023,urban locale in 2023,summary score,character,nominal
+urban_indicator_2024,urban locale in 2024,summary score,character,nominal
+suburb_indicator_2019,suburban locale in 2019,summary score,character,nominal
+suburb_indicator_2020,suburban locale in 2020,summary score,character,nominal
+suburb_indicator_2021,suburban locale in 2021,summary score,character,nominal
+suburb_indicator_2022,suburban locale in 2022,summary score,character,nominal
+suburb_indicator_2023,suburban locale in 2023,summary score,character,nominal
+suburb_indicator_2024,suburban locale in 2024,summary score,character,nominal
+town_indicator_2019,town locale in 2019,summary score,character,nominal
+town_indicator_2020,town locale in 2020,summary score,character,nominal
+town_indicator_2021,town locale in 2021,summary score,character,nominal
+town_indicator_2022,town locale in 2022,summary score,character,nominal
+town_indicator_2023,town locale in 2023,summary score,character,nominal
+town_indicator_2024,town locale in 2024,summary score,character,nominal
+rural_indicator_2019,rural locale in 2019,summary score,character,nominal
+rural_indicator_2020,rural locale in 2020,summary score,character,nominal
+rural_indicator_2021,rural locale in 2021,summary score,character,nominal
+rural_indicator_2022,rural locale in 2022,summary score,character,nominal
+rural_indicator_2023,rural locale in 2023,summary score,character,nominal
+rural_indicator_2024,rural locale in 2024,summary score,character,nominal
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,

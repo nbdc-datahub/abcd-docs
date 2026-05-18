@@ -15,13 +15,26 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'gn'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_gn.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_gn.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
-This document contains information on zygosity, genetic, and genetic derived data that are available for the ABCD sample for the 6.0 data release. We describe both tabulated data that is available in release tables listed below, in addition to bulk genetic data that contains the following:
+This document contains information on zygosity, genetic, and genetically derived data that are available for the ABCD sample for the 7.0 data release. We describe both tabulated data that is available in release tables listed below, in addition to bulk genetic data that includes the following:
 
-1.  Curated genotyping data from Smokescreen array - set of PLINK files containing 11,664 unique subjects at \~500k variants
-2.  Imputed data based on TOPMED reference panel - set of vcf files containing all imputed genotype data for 11,664 unique subjects at \~260 million variants
+Illumina Short Read Whole Genome Sequencing (WGS) data:
+
+1.  Population-level Variant Call Files (VCF) covering 8,710 individuals at \~169 million genetic variants.
+
+2.  Gene burden matrices covering 21k genes at 5 variant effect/impact categories
+
+3.  Sample level Picard variant calling summary metrics for single nucleotide polymorphisms (SNPs) and insertions/deletions (INDELs).
+
+Single Nucleotide Polymorphism Micro-array data:
+
+1.  Curated genotyping data from Smokescreen array - set of PLINK files containing 11,670 unique subjects at \~515k variants
+
+2.  Imputed data based on TOPMED r3 reference panel - set of vcf files containing all imputed genotype data for 11,670 unique subjects at \~260 million variants
+
 3.  Genetic relatedness and $\hat{\pi}$ estimates across the full sample using methods correcting ancestry background
+
 4.  Genetic principal component weights to enable projection of other samples to ABCD genetic PC space
 
 For comprehensive details of quality control steps performed and a description of the genetic data within the ABCD sample please refer to and cite the following work:
@@ -29,17 +42,22 @@ For comprehensive details of quality control steps performed and a description o
 **Key reference:** `r full_cite("fan2023")`
 
 ::: {.callout-caution collapse="true" title="Release notes: `gn`"}
-**6.1** 
+**7.0**
 
--   [**Genetic Relatedness Matrix**](../release_notes/6_1.qmd#genetic-relatedness-matrix): A square, MATLAB file formatted (.mat) version of the Genetic Relatedness Matrix has been added to the file based data.
+-   [**New Data**](../release_notes/7_0.qmd#genetics): Inclusion of Illumina short read whole genome sequencing data on 8,710 individuals
+-   [**Genetic Relatedness Matrix**](../release_notes/7_0.qmd#genetics): Now as GCTA-style formatted GRM fileset: .grm.bin + .grm.N.bin + .grm.id
+
+**6.1**
+
+-   [**Genetic Relatedness Matrix**](../release_notes/6_1.qmd#genetic-relatedness-matrix)
 
 **6.0**
 
--   [**File naming & inclusion**](../release_notes/6_0.qmd#genetics): Consistent with the rest of the 6.0 data release, the `NDAR_INV` prefix has been removed from all subject identifiers in files. Four individuals were also removed from files due to withdrawal of consent or familial genetic relatedness inconsistency.
--   [**Variant call files**](../release_notes/6_0.qmd#topmed-imputed-data-shared-as-vcfs): TOPMED imputed data is now shared as VCFs (Variant Call Files) instead of as PLINK files; this facilitates the inclusion of imputation INFO scores which indicate the quality of imputation and enables the inclusion of multiallelic variants.
+-   [**File naming & inclusion**](../release_notes/6_0.qmd#genetics)
+-   [**Variant call files**](../release_notes/6_0.qmd#topmed-imputed-data-shared-as-vcfs)
 :::
 
-::: {.callout-important collapse="true" title="Responsible use warning: Genetics" #use-genetics}
+::: {#use-genetics .callout-important collapse="true" title="Responsible use consideration: Genetics"}
 **Balanced Research Practices**
 
 Researchers must adhere to ethical guidelines and ensure that genetic data are analyzed and interpreted responsibly. Research should aim to advance scientific understanding and avoid misinterpretation or misuse of genetic findings. Evidence of users engaging in stigmatizing research will result in termination of data access.
@@ -53,7 +71,7 @@ To ensure genetic analyses are conducted with scientific rigor and precision, th
 **Key reference:** `r full_cite("creapdgr2023")`
 :::
 
-::: {.callout-warning collapse="true" title="Data warning: Genetics principal components" #data-genetics}
+::: {#data-genetics .callout-warning collapse="true" title="Data consideration: Genetics principal components"}
 Outliers of the genetics principal components appear in the `gn_y_popstruct` table should be noted and analyzed as such.
 :::
 
@@ -63,7 +81,7 @@ Outliers of the genetics principal components appear in the `gn_y_popstruct` tab
 
 ## Genetic relatedness {#gn_y_genrel}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("gn_y_genrel")`
+`r table_header("gn_y_genrel")`
 
 **Measure description:** Data in this instrument indicate genetic and related similarity. `gn_y_genrel_id__fam` contains a unique number for each set of individuals who appear genetically related (genetic relatedness\>0.35). We include `gn_y_genrel_id__birth` which, for individuals in the same (genetic) family, indicates those whose birthdays are within three months of each other (i.e., twins or triplets). These fields are cross listed in the "ABCD (general)" domain (**`ab_g_stc__design_id__fam__gen`** and **`ab_g_stc__design_id__birth__gen`**).
 
@@ -77,8 +95,8 @@ Outliers of the genetics principal components appear in the `gn_y_popstruct` tab
 ::: {.callout-caution collapse="true" title="Release notes: `gn_y_genrel`"}
 **6.0**
 
--   [**Missing genotypes**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids): In the 6.0 data release, 200 individuals have still not been genotyped from the full enrolled sample and so `gn_y_genrel_id__fam` and `gn_y_genrel_id__birth` are not defined for these individuals.
--   [**Family relatedness**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids): In previous data releases, family relatedness was captured by `rel_family_id`, this variable is now named `gn_y_genrel_id__fam` in the genetics table and crosslisted as `ab_g_stc__design_id__fam__gen` in the `ab_g_stc` table.
+-   [**Missing genotypes**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids)
+-   [**Family relatedness**](../release_notes/6_0.qmd#genetically-derived-family-and-birth-ids)
 :::
 
 **Key references:**
@@ -89,21 +107,140 @@ Outliers of the genetics principal components appear in the `gn_y_popstruct` tab
 
 ## Population structure {#gn_y_popstruct}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("gn_y_popstruct")`
+`r table_header("gn_y_popstruct")`
 
 **Measure description:** Genetic principal components (PC), computed using GENESIS (Gogarten et. al., Bioinformatics, 2019), are provided under fields `gn_y_popstruct_pc__{N}`. For details of this procedure, including details of where to find PC weights to enable projection of other samples onto this PC space, please see section GENESIS Derived Principal Component Weights and Relatedness Estimates below. 
 
-**Modifications since initial administration:** Genetic ancestry factors had been previously released with ABCD 4.0 data release and earlier releases. See "Non-tabuled Genetic Data" section of this document to find some resources for computing these measures if necessary. From the 5.0 data release forward, population structure is captured by genetic principal components described below in "GENESIS..." section.
+**Modifications since initial administration:** Genetic ancestry factors had been previously released with ABCD 4.0 data release and earlier releases. See "Non-tabulated Genetic Data" section of this document to find some resources for computing these measures if necessary. From the 5.0 data release forward, population structure is captured by genetic principal components described below in "GENESIS..." section.
 
 ## Twin zygosity rating {#gn_e_zygrat data-link="Twin Zygosity Rating"}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("gn_e_zygrat")`
+`r table_header("gn_e_zygrat")`
 
-**Measure description:** The Twin Zygosity Rating study characterized photos of twins on physical characteristics to estimate zygosity. Research assistants assessed similarities between twin pairs based on the photos. Please note, as described above, genetic-based zygosity is provided as part of the `gn_y_genrel` table.
+**Measure description:** The Twin Zygosity Rating study used in-person ratings by two research assistants (RAs) on degree of similarity for a range of physical characteristics (such as hair color, hair texture, and eye color) in twin siblings to estimate zygosity. Photographs taken of each twin were available to help resolve discrepancies in the ratings taken by the RAs. Please note, as described above, genetic-based zygosity is provided as part of the `gn_y_genrel` table.
+
+Key reference:
+
+-   `r full_cite("nichols1966")`
 
 # File-based data {#file-based}
 
-For extraction of single genetic variants, users can use tools like [bed-reader](https://github.com/fastlmm/bed-reader) for python and [snpStats](https://rdrr.io/bioc/snpStats/man/read.plink.html) for R to parse plink bed files described below. Methods such as [PRS-csx](https://github.com/getian107/PRScsx) have been developed  to generate polygenic scores in samples with the high degree of genetic diversity found in ABCD. I[PRScs](https://github.com/getian107/PRScs) can show comparable performance with PRS-csx in ABCD data, whilst requiring fewer analysis steps (e.g. cross validation)(Ahern, J et. al., Behavior Genetics, 2023).  The performance of polygenic scores varies as genomic distance from the training sample increases (Ding et. al., 2023) . Due to this known issue, conducting stratified analysis of individuals that share similar continental ancestry is currently considered best practice, although this is an evolving field with new approaches constantly being developed. Tools such as [ADMIXTURE](https://dalexander.github.io/admixture/) can generate genetic factors to enable this type of analysis.
+## Whole Genome Sequencing (WGS) {#wgs}
+
+Genome Build: GRCh38
+
+Number of variants: \~169 million variants
+
+Number of individuals: 8,710
+
+Read depth: 30x
+
+Sequencing was performed on Illumina NovaSeq instruments at 30x coverage, with reads aligned to the GRCh38 reference genome. Blood and saliva samples were collected across participants roughly equally, with blood preferred for sequencing where available. DNA extraction and biospecimen storage were carried out by SAMPLED. Sentieon (versions 202112.06, 202112.01 and 202010.02) were used to map reads and perform sample-level variant calling. Sample level variant calling metrics were calculated using picard and GATK (Genome Analysis Toolkit).
+
+Sample-level quality control was anchored by cross-validating WGS data against existing microarray genotype data on the same individuals, with discordant samples flagged for resequencing. A total of 95 samples were removed on this basis, yielding the final set of 8,877 samples covering 8,710 individuals (including 168 technical replicates). All sample IDs within files correspond to participant IDs of the ABCD study, for technical replicates a suffix is used to mark if it is a different samples type (e.g. `_saliva` or `_wholeblood`) or the same sample type (e.g. `_wholeblood_replicate`).
+
+Full methodological details - including library preparation, alignment parameters, joint genotyping strategy, and QC thresholds - will be provided in an upcoming data resource paper. Data related to whole genome sequencing can be found under the following directory `/concatenated/genetics/sequencing/` and all file paths in this section are relative to that root path.
+
+### SNP and INDEL Population Level VCF’s
+
+Population-level VCF files were generated by joint genotyping across all samples GATK (v4.4.0). Files are released separated by chromosomes and chunked into 977 separate files in the following format:
+
+`./snv_indel/population_vcf/abcd_cohort_chr1_block0.vcf.gz`
+
+`./snv_indel/population_vcf/abcd_cohort_chr1_block0.vcf.gz.tbi`
+
+`./snv_indel/population_vcf/abcd_cohort_chr1_block1.vcf.gz`
+
+`./snv_indel/population_vcf/abcd_cohort_chr1_block1.vcf.gz.tbi`
+
+`./snv_indel/population_vcf/abcd_cohort_chr1_block2.vcf.gz`
+
+`./snv_indel/population_vcf/abcd_cohort_chr1_block2.vcf.gz.tbi`
+
+…
+
+Due to poor identifiability and computational tractability, we also remove low complexity regions (these regions correspond to major repetitive elements such as centromeres and large segmental duplications). Both low complexity region files and chunking scheme files are described in the support file sections below.
+
+For variant level QC we used excess heterozygosity (\>54.69) filtering and VQSR with GATK (v4.6.2) to attach a flag to FILTER field of VCF files which indicates the following:
+
+|  |  |
+|----|----|
+| `Filter` | Interpretation |
+| `PASS` | High-confidence variants |
+| `VQSRTrancheSNP99.80to99.90` | Borderline quality SNPs |
+| `VQSRTrancheSNP99.90to99.95` | Lower confidence SNPs |
+| `VQSRTrancheSNP99.95to100.00` | Near-certain false positive SNPs |
+| `VQSRTrancheINDEL99.80to99.90` | Borderline quality INDELs |
+| `VQSRTrancheINDEL99.90to99.95` | Lower confidence INDELs |
+| `VQSRTrancheINDEL99.95to100.00` | Near-certain false positive INDELs |
+| `ExcessHet` | Filtered pre-VQSR (likely non-diploid sites)  |
+
+For the majority of users we recommend using high-confidence sites, which can be filtered with [bcftools](https://samtools.github.io/bcftools/bcftools.html) as follows:
+
+`bcftools view -f PASS input.vcf.gz -o output.vcf.gz -O z`
+
+Each genomic block VCF is normalised by splitting multiallelic sites with `bcftools norm`, then annotated using Ensembl VEP (version 112.0, GRCh38, offline cache) to append functional consequence predictions, gene symbols, regulatory context, canonical transcript flags, and existing variant information to each variant record. The resulting annotated VCFs are indexed and retained in compressed format for downstream filtering.
+
+### Gene Burden Matrix
+
+Following VEP annotation, functional variants are extracted by filtering on a configurable set of VEP consequences restricted to PASS -filtered sites. Variants are categorised into five masks of increasing breadth based on their predicted consequence and VEP impact rating (see table below), then grouped per gene to construct a burden feature matrix per genomic block. Each cell records the aggregate count of qualifying rare variants (MAF 0–1%) carried by a given sample for a given gene–mask combination. Block-level matrices are concatenated into a single genome-wide sparse matrix (`.mtx` format) with one feature per gene–mask pair (named `GENESYMBOL.MaskName`) and one row per sample, ready for downstream association or machine-learning analyses.
+
+|  |  |  |
+|------------------------|------------------------|------------------------|
+| Mask | Included VEP Consequences | Description |
+| LoF | `stop_gained`, `stop_lost`, `start_lost`, `splice_donor_variant`, `splice_acceptor_variant`, `frameshift_variant`, `transcript_ablation` | Loss-of-function variants predicted to disrupt or eliminate the protein product |
+| Missense | missense_variant, inframe_deletion, inframe_insertion, protein_altering_variant | Non-synonymous variants that alter the amino acid sequence while preserving the reading frame |
+| HIGH | Any variant with `VEP IMPACT = HIGH` | VEP's own high-impact tier (largely overlaps LoF but assigned directly by VEP) |
+| MODERATE | Any variant with `VEP IMPACT = MODERATE` | VEP's moderate-impact tier (largely overlaps Missense) |
+| Functional | Union of all above | Catch-all mask containing every variant assigned to at least one other mask |
+
+The genome-wide output consists of the following three files (which can be found at `./snv_indel/gene_burden_mat`:
+
+|  |  |
+|------------------------------------|------------------------------------|
+| **File** | **Contents** |
+| `genome_wide_gene_burden_matrix.mtx` | Sparse Matrix Market format — rows = samples, cols = gene-masks |
+| `genome_wide_gene_burden_matrix.samples.txt` | Ordered sample IDs (one per line) |
+| `genome_wide_gene_burden_matrix.genemasks.txt` | Ordered gene-mask labels, e.g. BRCA2.LoF (one per line) |
+
+Scipy in python could be used to read in these files with the following code:
+
+``` python
+import scipy.io
+import scipy.sparse as sp
+import pandas as pd
+
+# ── paths ────────────────────────────────────────────────────────────────────
+base = "results/gene_burden/genome_wide_gene_burden_matrix"
+
+# ── load labels ──────────────────────────────────────────────────────────────
+samples = pd.read_csv(f"{base}.samples.txt", header=None, names=["sample_id"])["sample_id"].tolist()
+genemasks = pd.read_csv(f"{base}.genemasks.txt", header=None, names=["gene_mask"])["gene_mask"].tolist()
+
+# ── load sparse matrix ───────────────────────────────────────────────────────
+sparse_mat = scipy.io.mmread(f"{base}.mtx").tocsr()  # shape: (n_samples, n_gene_masks)
+burden_df = pd.DataFrame.sparse.from_spmatrix(sparse_mat, index=samples, columns=genemasks)
+```
+
+### Metadata and Metrics
+
+Although the same GATK version and VEP versions were used for this release, different senteion versions were used across samples. Additionally, approximately 40% of samples were saliva while the rest were wholeblood samples. We recommend using both senteion version and sample type as covariates for downstream analyses using the WGS data. This data can be found at `./snv_indel/metadata/sample_info.tsv`
+
+Variant callsets are evaluated using two Picard tools: 1) `CollectVariantCallingMetrics` was run on the VQSR-filtered VCF(s) against a dbSNP reference VCF, restricted to a target interval list. It produces per-callset detail and summary metrics files (.variant_calling_detail_metrics, .variant_calling_summary_metrics) capturing statistics such as SNP/indel counts, novelty rates, Ti/Tv ratios, and dbSNP concordance. 2) `AccumulateVariantCallingMetrics` was used to aggregate the per-shard detail and summary metrics files from the sharded collection step into a single combined output, enabling cohort-level reporting across scattered VCF chunks. The output from this can be found at `./snv_indel/metadata/picard_metrics.tsv`.
+
+### Support Files
+
+`./snv_indel/supportfiles` contain the following files
+
+-   `GRCh38.no_alt_analysis_set.fa / .fa.fai`: The GRCh38 human reference genome (no-alt analysis set) used for alignment and variant calling, with accompanying samtools FASTA index.
+
+-   `low_complexity_regions.tsv`: A TSV file listing genomic regions excluded from haplotype calling and VCF output due to low sequence complexity. Regions were identified by scanning the GRCh38 reference genome using a sliding-window k-mer uniqueness approach (10 kb windows, 25-mer complexity score \< 0.6), retaining only contiguous low-complexity blocks ≥ 1 Mb. These regions correspond to major repetitive elements such as centromeres and large segmental duplications.
+
+-   `pvcf_blocks.txt`: Defines the chromosome-level genomic block partitioning used to split the callset into population VCF (pVCF) shards. The blocking scheme follows the UK Biobank convention, enabling compatibility with downstream tools and pipelines designed around that standard.
+
+## Micro Array Based Data
+
+For extraction of single genetic variants, users can use tools like [bed-reader](https://github.com/fastlmm/bed-reader) for python and [snpStats](https://rdrr.io/bioc/snpStats/man/read.plink.html) for R to parse plink bed files described below. Methods such as [PRS-csx](https://github.com/getian107/PRScsx) have been developed to generate polygenic scores in samples with the high degree of genetic diversity found in ABCD. [PRScs](https://github.com/getian107/PRScs) shows comparable performance with PRS-csx in ABCD data, whilst requiring fewer analysis steps (e.g. cross validation)(Ahern, J et. al., Behavior Genetics, 2023). The performance of polygenic scores varies as genomic distance from the training sample increases (Ding et. al., 2023) . Due to this known issue, conducting stratified analysis of individuals that share similar continental ancestry is currently considered best practice, although this is an evolving field with new approaches constantly being developed. Tools such as [ADMIXTURE](https://dalexander.github.io/admixture/) can generate genetic factors to enable this type of analysis.
 
 **Key references:**
 
@@ -113,7 +250,7 @@ For extraction of single genetic variants, users can use tools like [bed-reader]
 Plink files described do not contain family relatedness or sex information. For family relatedness please refer to "GENESIS Derived Genetic Principal Component Weights and Relatedness Estimates" section below or "Genetic Relatedness" above. For sex, refer to `ab_g_stc__cohort_sex` in `ab_g_stc`. 
 
 Non tabulated genetic data is split into three directories as follows:
-`../dairc/concat/genetics/genotype_microarray/..`
+`../dairc/concatenated/genetics/genotype_microarray/..`
 
 - `/smokescreen/` smokescreen genotype array data (non-imputed)
 - `/imputed/` TOPMED imputed array data - derived from smokescreen
@@ -131,15 +268,15 @@ The contents of each of these directories is described in sections below.
 - `batch.info`
 - `removed_individuals.txt`
 
-**Measure description:** After dish quality control and profile checks, genotypes were called using Axiom Analysis Suite (apt version 2.11) on raw intensities from the Affymetrix Smokescreen array. Based on the best practices analysis workflow by Thermo Fisher, classifications that passed the final SNP quality controls were recommended, resulting in ~515K recommended probe sets in each genotyping batch. Blood and Saliva DNA samples were genotyped separately. We include one genotype result for each subject, using whichever sample has the best QC metrics (call rates and missingness). There were nine genotyping batches in Data Release 6.0, spanning 147 plates (See `batch.info` in downloaded files). After obtaining the genotype batch, we mapped the probesets to SNPs using annotations derived from genome build hg19. After the mapping, we merged all nine batches into one study cohort and then performed additional study level QC to include missingness less than 10% in the SNP level, and less than 20% in the sample level. 515,279 variants and 11,664 people passed filters and QC. The subsequent imputation and relatedness inferences were based on the final curated genotype data. The batch information can be found in `batch.info`. Removed_individuals.txt indicates individuals that have been removed from 5.0 to 6.0 data release due to either withdrawn consent or indications of sample mixup (e.g. mismatching of genetic relatedness with known family members).
+**Measure description:** After dish quality control and profile checks, genotypes were called using Axiom Analysis Suite (apt version 2.11) on raw intensities from the Affymetrix Smokescreen array. Based on the best practices analysis workflow by Thermo Fisher, classifications that passed the final SNP quality controls were recommended, resulting in \~515K recommended probe sets in each genotyping batch. Blood and Saliva DNA samples were genotyped separately. We include one genotype result for each subject, using whichever sample has the best QC metrics (call rates and missingness). There were nine genotyping batches in Data Release 6.0, spanning 147 plates (See `batch.info` in downloaded files). After obtaining the genotype batch, we mapped the probesets to SNPs using annotations derived from genome build hg19. After the mapping, we merged all nine batches into one study cohort and then performed additional study level QC to include missingness less than 10% in the SNP level, and less than 20% in the sample level. 515,279 variants and 11,670 people passed filters and QC. The subsequent imputation and relatedness inferences were based on the final curated genotype data. The batch information can be found in `batch.info`. Removed_individuals.txt indicates individuals that have been removed from 6.0 to 7.0 data release due to either withdrawn consent or indications of sample mixup (e.g. mismatching of genetic relatedness with known family members).
 
 **Genome Build:** hg19
 
 **Number of variants:** \~515k
 
-**Number of individuals:** 11,664
+**Number of individuals:** 11,670
 
-**Modifications since initial release:** Genotyping of missing individuals from previous data releases due to sample mix up or failing quality control measures.
+**Modifications since initial release:** Includes genotyping of missing individuals from previous data releases due to sample mix up or failing quality control measures.
 
 **Key reference:** `r full_cite("baurley2016")`
 
@@ -152,9 +289,9 @@ The contents of each of these directories is described in sections below.
 - ...
 - `qcreport.html`
 
-**Measure description:** “The curated genotype data was used for the imputation, using the bioinformatic pipelines and recommendations of TOPMED Server, with TOPMED reference panel. We input unphased genotypes, performing eagle imputation, with the TOPMED r2 reference panel and population set to “all”. Post processing of these files included adding RSID numbers from dbSNP build 156 and using reference=GRCh38.p14 found here <https://ftp.ncbi.nih.gov/snp/latest_release/VCF/GCF_000001405.40.gz>.
+**Measure description:** “The curated genotype data was used for the imputation, using the bioinformatic pipelines and recommendations of TOPMED Server, with TOPMED r3 reference panel. We input unphased genotypes, performing eagle imputation, with the TOPMED r2 reference panel and population set to “all”. TOPMED includes rsID numbers automatically in the output files.
 
-The TOPMED imputation scores and post-imputation quality report can be found at cqcreport.html in this folder. In addition to estimated allele dosages, an R2 field in vcf files contains an estimated imputation accuracy which can be used to filter high quality imputed variants.
+The TOPMED imputation scores and post-imputation quality report can be found at qcreport.html in this folder. In addition to estimated allele dosages, an R2 field in vcf files contains an estimated imputation accuracy which can be used to filter high quality imputed variants.
 
 **ABCD Classification:** Genetic
 
@@ -162,7 +299,7 @@ The TOPMED imputation scores and post-imputation quality report can be found at 
 
 **Number of variants:** \~260 million
 
-**Number of individuals:** 11,664
+**Number of individuals:** 11,670
 
 **Key references:**
 
@@ -175,18 +312,20 @@ The TOPMED imputation scores and post-imputation quality report can be found at 
 
 -   `pcair_weights.tsv`
 -   `pcrelate_relatedness.tsv`
--   `pcrelate_relatedness_grm.mat`
+-   `pcrelate_relatedness_grm.bin`
+-   `pcrelate_relatedness_grm.id`
+-   `pcrelate_relatedness_grm.N.bin`
 -   `unrelateds_individuals.txt`
 
 **Measure description:** Accounting for genetic principal components (PCs) in genetic studies (both GWAS and Polygenic Score analysis) is considered best practice to account for effects of population stratification that can lead to spurious results. Traditional approaches for calculating PCs (e.g., [FlashPCA](https://urldefense.com/v3/__https://github.com/gabraham/flashpca__;!!Mih3wA!DAFS_uCCsIWrhd3A4uGdRJiQ4SrqyL14ZV_WBgqqzzjfu3LS0J9iFF96XtoQdR53IAnzpfFNMlqG1m8Ve29Z$)), although considered best practice for many genetic studies, may not be suited for samples with large known or cryptic relatedness, as is observed in ABCD. As such, we have replaced these genetic PCs with ones calculated using PC-AiR, a method developed and validated for samples with large family structure. PC-AiR captures ancestry information not confounded by relatedness by finding a set of unrelated individuals in the sample that have the highest divergent ancestry, and computing PCs in this set. The remaining related individuals are then projected into this space. This method is used by the Population Architecture through Genomics and Environment (PAGE) Consortium, which is principally concerned with genetic studies in diverse ancestry populations.
 
-PC-AiR was run using default suggested settings from the GENESIS package. We used non-imputed SNPs passing QCs from the 6.0 data release (\~500k variants and 11,664 individuals). PC-AiR takes in kinship estimates for defining its unrelated set of individuals with divergent ancestry; this was computed using `snpgdsIBDKING` as suggested by GENESIS authors. SNPs were LD pruned using snpgdsLDpruning with parameters: `method=“corr”`, `slide.max.bp=10e6` and `ld.threshold=sqrt(0.1)`. This resulted in 114,707 SNPs remaining after pruning. Using the computed kinship matrix PC-Air was then run on this pruned set of SNPs. This resulted in 8,177 unrelated individuals from which PCs were derived -- leaving 3,391 related individuals being projected onto this space. Subsequent analysis indicated a sample mix of 2 samples which were then removed from other genetic data.This is why the sum of unrelated and related individuals is more than the number of individuals in PLINK files (8,177+3,391\>1,668). The weights, which can be used to project other samples into the same PC space, can be found in `pcair_weights.tsv`, with the file /smokescreen/merged_chroms.bim indicating allele codings. The list of 8,177 unrelated individuals used for deriving PC's is available in unrelateds_individuals.txt.
+PC-AiR was run using default suggested settings from the GENESIS package. We used non-imputed SNPs passing QCs from the 6.0 data release (\~500k variants and 11,670 individuals). PC-AiR takes in kinship estimates for defining its unrelated set of individuals with divergent ancestry; this was computed using `snpgdsIBDKING` as suggested by GENESIS authors. SNPs were LD pruned using snpgdsLDpruning with parameters: `method=“corr”`, `slide.max.bp=10e6` and `ld.threshold=sqrt(0.1)`. This resulted in 137,980 SNPs remaining after pruning. Using the computed kinship matrix PC-AiR was then run on this pruned set of SNPs. This resulted in 8,180 unrelated individuals from which PCs were derived -- leaving 3,493 related individuals being projected onto this space. Subsequent analysis indicated a sample mix of 3 samples which were then removed from other genetic data.This is why the sum of unrelated and related individuals is more than the number of individuals in PLINK files (8,180+3,493\>11,670). The weights, which can be used to project other samples into the same PC space, can be found in `pcair_weights.tsv`, with the file /smokescreen/merged_chroms.bim indicating allele codings. The list of 8,180 unrelated individuals used for deriving PC's is available in unrelateds_individuals.txt.
 
-After Computing PCs from PC-AiR, we then computed a genetic relatedness matrix (GRM) using PC-Relate. PC-Relate aims to compute a GRM that is independent from ancestry effects as derived from PC-AiR. PC-Relate was run on the same pruned set of SNPs described above using the first two PCs computed from PC-Air. Identity by descent probabilities between individuals i and j were calculated as $\hat{\pi}_{ij}= \hat{k}_{ij}^{(2)}+0.5× \hat{k}_{ij}^{(1)}$, where $\hat{k}_{ij}^{(2)}$ and $\hat{k}_{ij}^{(1)}$ represent the probabilities that individuals i and j share 2 or 1 alleles at a locus -- calculated from PC-Relate. For all off-diagonal elements of the GRM we provide estimates of $\hat{k}_{ij}^{(0)}$, $\hat{k}_{ij}^{(1)}$, $\hat{k}_{ij}^{(2)}$, $\hat{\pi}_{ij}$ and genetic relatedness in `pcrelate_relatedness.tsv`. A MATLAB version of the full GRM is represented in the `pcrelate_relatedness_grm.mat` file. The range of $\hat{\pi}$ is between 0 and 1. In most other genetic relatedness models GRM values should be bounded by 1, however, due to high inbreeding coefficients of some subjects and minor allele frequencies close to zero, a small subset of GRM values estimated by PC-Relate in ABCD exceed 1. If you are concerned with how this may affect downstream modeling we recommend clipping these values to 1. For a subset of related individuals ($\hat{\pi}>0.35$) we include estimates in tabulated data in the `gen_y_genrel` instrument described above.. Code used to perform the processes described in this section can be found here: [**https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness**](https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness).
+After Computing PCs from PC-AiR, we then computed a genetic relatedness matrix (GRM) using PC-Relate. PC-Relate aims to compute a GRM that is independent from ancestry effects as derived from PC-AiR. PC-Relate was run on the same pruned set of SNPs described above using the first two PCs computed from PC-Air. Identity by descent probabilities between individuals i and j were calculated as $\hat{\pi}_{ij}= \hat{k}_{ij}^{(2)}+0.5× \hat{k}_{ij}^{(1)}$, where $\hat{k}_{ij}^{(2)}$ and $\hat{k}_{ij}^{(1)}$ represent the probabilities that individuals i and j share 2 or 1 alleles at a locus -- calculated from PC-Relate. For all off-diagonal elements of the GRM we provide estimates of $\hat{k}_{ij}^{(0)}$, $\hat{k}_{ij}^{(1)}$, $\hat{k}_{ij}^{(2)}$, $\hat{\pi}_{ij}$ and genetic relatedness in `pcrelate_relatedness.tsv`. A GCTA-style R version of the full GRM is represented in the `pcrelate_relatedness_grm.*` fileset. The range of $\hat{\pi}$ is between 0 and 1. In most other genetic relatedness models GRM values should be bounded by 1, however, due to high inbreeding coefficients of some subjects and minor allele frequencies close to zero, a small subset of GRM values estimated by PC-Relate in ABCD exceed 1. If you are concerned with how this may affect downstream modeling we recommend clipping these values to 1. For a subset of related individuals ($\hat{\pi}>0.35$) we include estimates in tabulated data in the `gn_y_genrel` instrument described above.. Code used to perform the processes described in this section can be found here: [**https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness**](https://github.com/robloughnan/ABCD_GeneticPCs_and_Relatedness).
 
-**Number of individuals:** 11,664
+**Number of individuals:** 11,670
 
-**Modifications since initial release:** Genotyping of missing individuals from previous data releases due to sample mix up or failing quality control measures. Use of PC-Relate for relatedness computation, previous data releases used `PLINK --genome` for this calculation.
+**Modifications since initial release:** The number of principal components used for ancestry-adjusted allele frequency estimation has increased from 2 to 7 to better capture population structure. Includes genotyping of missing individuals from previous data releases due to sample mix up or failing quality control measures. Use of PC-Relate for relatedness computation, previous data releases used `PLINK --genome` for this calculation.
 
 **Key references:**
 

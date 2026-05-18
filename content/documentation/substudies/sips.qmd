@@ -1,0 +1,214 @@
+---
+title: "SIPS"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+```
+
+```{r}
+render_table_info("domain_abbr == 'sips'")
+```
+
+# Domain overview
+
+The SIPS data have been processed and included in the 7.0 Release. This single-timepoint study collected separate interviews from youth and caregivers. The substudy includes a clinician-administered interview, the Structured Interview for Psychosis Risk Syndromes (SIPS), administered independently to caregivers and youth. Ratings reflect clinician determinations, finalized through consensus during supervision. The substudy contains the following modules: Unusual Thought Content, Suspiciousness, Grandiose Ideas, Perceptual Abnormalities, Disorganized Communication, Dysphoric Mood, Global Assessment of Functioning, as well as modules assessing whether youth met criteria for Schizotypal Personality Disorder and whether the youth met criteria for any psychotic disorder or psychosis risk syndromes. Users should consult the data dictionary for details on coding conventions. Data were collected with funding from NIMH grants `K23MH121792` and `R01MH139880`.
+
+# Youth tables
+
+## SOPS P1-P5 Criteria (Youth) {#sips_y_criter}
+
+`r table_header("sips_y_criter")`
+
+**Measure description:** This module assesses whether the youth meets criteria for Presence of Psychotic Syndrome (POPS), or Psychosis-Risk Syndromes (i.e., Brief Intermittent Psychotic Symptoms (BIPS), Attenuated Psychosis Symptom Syndromes (APSS), or Genetic Risk and Deterioration Syndrome (GRDS)). Items determine whether, according to youth report, criteria are met for any syndrome and, if so, the date of onset for the syndrome.
+
+## Disorganized Communication (Youth) {#sips_y_discomm}
+
+`r table_header("sips_y_discomm")`
+
+**Measure description:** This module includes three items assessing youth-reported disorganized communication. Each item assesses endorsement, and when endorsed, onset (month, year), duration, frequency, distress (`0-10`), functional interference (`0-10`), and conviction (`0-100`). Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). For Disorganized Communication, the conviction rating was often not applicable and therefore entered as `0`. The module also includes current and lifetime severity ratings of Disorganized Communication (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe but Not Psychotic, `6`=Severe and Psychotic). Ratings are based on youth report and interviewer observation. For ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) and the most recent date of an increase of ≥1 point for symptoms currently rated `3-6` (date of symptom worsening) are provided, along with frequency of rated symptom(s) and whether the clinician judges that symptoms are better accounted for by another Axis I disorder. If the date of onset equals the date of symptom worsening, the symptom has not worsened since onset.
+
+## General Symptoms - Dysphoric Mood (Youth) {#sips_y_dysmood}
+
+`r table_header("sips_y_dysmood")`
+
+**Measure description:** This module includes seven items assessing youth-reported dysphoric mood, with items assessing depressive mood, suicidal ideation, homicidal ideation, irritability, and anxiety. Each item assesses endorsement, and when endorsed, onset (month, year) and duration. Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the paritcipant chose not to answer the item). The module also includes current and lifetime severity ratings of Dysphoric Mood (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe, `6`=Extreme). For ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) is provided.
+
+## Global Assessment of Functioning (Youth) {#sips_y_gaf}
+
+`r table_header("sips_y_gaf")`
+
+**Measure description:** This module includes two items assessing youth-reported functioning that the interviewer completes by integrating information gathered throughout the interview. The Global Assessment of Functioning (GAF) evaluates overall functioning across social, familial, and school/occupational domains on a scale from `0-100` (`100`=highest functioning, `0`=lowest functioning). The module includes current functioning and highest functioning in the past year.
+
+## Grandiose Ideas (Youth) {#sips_y_grand}
+
+`r table_header("sips_y_grand")`
+
+**Measure description:** This module includes five items assessing youth-reported grandiosity. Each item assesses endorsement, and when endorsed, onset (month, year), duration, frequency, distress (`0-10`), functional interference (`0-10`), and conviction (`0-100`). Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). The module also includes current and lifetime severity ratings of Grandiose Ideas (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe but Not Psychotic, 6=Severe and Psychotic). For ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) and the most recent date of an increase of ≥1 point for symptoms currently rated `3-6` (date of symptom worsening) are provided, along with frequency of rated symptom(s) and whether the clinician judges that symptoms are better accounted for by another Axis I disorder. If the date of onset equals the date of symptom worsening, the symptom has not worsened since onset.
+
+## SIPS Introduction (Youth) {#sips_y_intro}
+
+`r table_header("sips_y_intro")`
+
+**Measure description:** This module assesses first-degree family history of psychotic disorders according to youth report. Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). The module also includes participant group membership.
+
+## Perceptual Abnormalities (Youth) {#sips_y_percabn}
+
+`r table_header("sips_y_percabn")`
+
+**Measure description:** This module includes 14 items assessing youth-reported perceptual abnormalities (auditory, visual, and somatic distortions, illusions, and hallucinations). Each item assesses endorsement, and when endorsed, onset (month, year), duration, frequency, distress (`0-10`), functional interference (`0-10`), and conviction (`0-100`). Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). The module also includes current and lifetime severity ratings of Perceptual Abnormalities/Hallucinations (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe but Not Psychotic, `6`=Severe and Psychotic). For ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) and the most recent date of an increase of ≥1 point for symptoms currently rated `3-6` (date of symptom worsening) are provided, along with frequency of rated symptom(s) and whether the clinician judges that symptoms are better accounted for by another Axis I disorder. If the date of onset equals the date of symptom worsening, the symptom has not worsened since onset.
+
+## Schizotypal Personality Disorder Criteria (Youth) {#sips_y_spd}
+
+`r table_header("sips_y_spd")`
+
+**Measure description:** This module includes nine items assessing whether the youth meets criteria for Schizotypal Personality Disorder, completed by the interviewer after the assessment. Several items are based on information obtained in the Unusual Thought Content (i.e., ideas of reference, odd beliefs or magical thinking), Perceptual Abnormalities (i.e., unusual perceptual experiences), Disorganized Communication (i.e., odd thinking and speech), Suspiciousness (i.e., suspiciousness), and Dysphoric Mood (i.e., excessive social anxiety) modules. Remaining items (inappropriate or constricted affect, odd behavior or appearance, and lack of close friends) are based on information obtained over the course of the interview and clinician judgment.
+
+## Suspiciousness & Persecutory Ideas (Youth) {#sips_y_susp}
+
+`r table_header("sips_y_susp")`
+
+**Measure description:** This module includes five items assessing youth-reported suspiciousness and persecutory ideas. Each item assesses endorsement, and when endorsed, onset (month, year), duration, frequency, distress (`0-10`), functional interference (`0-10`), and conviction (`0-100`). Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). The module also includes current and lifetime severity ratings of Suspiciousness and Persecutory Ideas (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe but Not Psychotic, `6`=Severe and Psychotic). Ratings are based on youth report and interviewer observation. For ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) and the most recent date of an increase of ≥1 point for symptoms currently rated `3-6` (date of symptom worsening) are provided, along with frequency of rated symptom(s) and whether the clinician judges that symptoms are better accounted for by another Axis I disorder. If the date of onset equals the date of symptom worsening, the symptom has not worsened since onset.
+
+## Unusual Thought Content (Youth) {#sips_y_utc}
+
+`r table_header("sips_y_utc")`
+
+**Measure description:** This module includes 21 items assessing youth-reported perplexity and delusional mood, first-rank symptoms, overvalued beliefs, unusual ideas about the body, guilt, nihilism, jealousy, and religion, and non-persecutory ideas of reference. Each item assesses endorsement, and when endorsed, onset (month, year), duration, frequency, distress (`0-10`), functional interference (`0-10`), and conviction (`0-100`). Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). The module also includes current and lifetime severity ratings of Unusual Thought Content (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe but Not Psychotic, `6`=Severe and Psychotic). For ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) and the most recent date of an increase of ≥1 point for symptoms currently rated `3-6` (date of symptom worsening) are provided, along with frequency of rated symptom(s) and whether the clinician judges that symptoms are better accounted for by another Axis I disorder. If the date of onset equals the date of symptom worsening, the symptom has not worsened since onset. 
+
+**Notes:**
+
+Some qualitative response data has been re-coded into categorical items which are available in the [SIPS file-based data](#sips_file_recode).
+
+# Parent tables
+
+## SOPS P1-P5 Criteria (Parent) {#sips_p_criter}
+
+`r table_header("sips_p_criter")`
+
+**Measure description:** This module assesses whether according to caregiver report the youth meets criteria for Presence of Psychotic Syndrome (POP) or Psychosis-Risk Syndromes (i.e., Brief Intermittent Psychotic Symptoms, Attenuated Psychosis Symptom Syndromes, or Genetic Risk and Deterioration Syndrome). Items determine whether, according to caregiver report, criteria are met for any syndrome and, if so, the date of onset for the syndrome.
+
+## Disorganized Communication (Parent) {#sips_p_discomm}
+
+`r table_header("sips_p_discomm")`
+
+**Measure description:** This module includes three items assessing caregiver-reported youth disorganized communication. Each item assesses endorsement, and when endorsed, onset (month, year), duration, frequency, distress (`0-10`), and functional interference (`0-10`) according to caregiver report. Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). For Disorganized Communication, the conviction rating was often not applicable and therefore entered as `0`. The module also includes current and lifetime severity ratings of youth Disorganized Communication based on caregiver report (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe but Not Psychotic, `6`=Severe and Psychotic). For caregiver-reported ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) and the most recent date of an increase of ≥1 point for symptoms currently rated `3-6` (date of symptom worsening) are provided, along with frequency of rated symptom(s) and whether the clinician judges that symptoms are better accounted for by another Axis I disorder. If the caregiver-reported date of onset equals the date of symptom worsening, the symptom has not worsened since onset. Caregivers may have limited information about conviction and subjective distress; accordingly, caregiver-based ratings may be lower than youth-reported ratings.
+
+## General Symptoms - Dysphoric Mood (Parent) {#sips_p_dysmood}
+
+`r table_header("sips_p_dysmood")`
+
+**Measure description:** This module includes seven items assessing caregiver-reported youth dysphoric mood, with items assessing depressive mood, suicidal ideation, homicidal ideation, irritability, and anxiety. Each item assesses endorsement, and when endorsed, onset (month, year), and duration according to caregiver report. Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). The module also includes current and lifetime severity ratings of youth Dysphoric Mood based on caregiver report (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe, `6`=Extreme). For caregiver-reported ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) is provided. Caregivers may have limited information about symptom severity; accordingly, caregiver-based ratings may be lower than youth-reported ratings.
+
+## Global Assessment of Functioning (Parent) {#sips_p_gaf}
+
+`r table_header("sips_p_gaf")`
+
+**Measure description:** This module includes two items assessing caregiver-reported youth functioning that the interviewer completes by integrating information gathered throughout the interview. The Global Assessment of Functioning (GAF) evaluates overall functioning across social, familial, and school/occupational domains on a scale from `0-100` (`100`=highest functioning, `0`=lowest functioning). The module includes caregiver report of youth current functioning and highest functioning in the past year.
+
+## Grandiose Ideas (Parent) {#sips_p_grand}
+
+`r table_header("sips_p_grand")`
+
+**Measure description:** This module includes five items assessing caregiver-reported youth grandiosity. Each item assesses endorsement, and when endorsed, onset (month, year), duration, frequency, distress (`0-10`), functional interference (`0-10`), and conviction (`0-100`) according to caregiver. Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the paritcipant chose not to answer the item). The module also includes current and lifetime severity ratings of youth Grandiose Ideas based on caregiver report (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe but Not Psychotic, `6`=Severe and Psychotic). For caregiver-reported ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) and the most recent date of an increase of ≥1 point for symptoms currently rated `3-6` (date of symptom worsening) are provided, along with frequency of rated symptom(s) and whether the clinician judges that symptoms are better accounted for by another Axis I disorder. If the caregiver-reported date of onset equals the date of symptom worsening, the symptom has not worsened since onset. Caregivers may have limited information about conviction and subjective distress; accordingly, caregiver-based ratings may be lower than youth-reported ratings.
+
+## SIPS Introduction (Parent) {#sips_p_intro}
+
+`r table_header("sips_p_intro")`
+
+**Measure description:** This module assesses caregiver report of youth’s first-degree family history of psychotic disorders. Response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item).
+
+## Perceptual Abnormalities (Parent) {#sips_p_percabn}
+
+`r table_header("sips_p_percabn")`
+
+**Measure description:** This module includes 14 items assessing caregiver-reported youth perceptual abnormalities (auditory, visual, and somatic distortions, illusions, and hallucinations). Each item assesses endorsement, and when endorsed, onset (month, year), duration, frequency, distress (`0-10`), functional interference (`0-10`), and conviction (`0-100`) according to caregiver. Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). The module also includes current and lifetime severity ratings of youth Perceptual Abnormalities/Hallucinations based on caregiver report (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe but Not Psychotic, `6`=Severe and Psychotic). For caregiver-reported ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) and the most recent date of an increase of ≥1 point for symptoms currently rated `3-6` (date of symptom worsening) are provided, along with frequency of rated symptom(s) and whether the clinician judges that symptoms are better accounted for by another Axis I disorder. If the caregiver-reported date of onset equals the date of symptom worsening, the symptom has not worsened since onset. Caregivers may have limited information about conviction and subjective distress; accordingly, caregiver-based ratings may be lower than youth-reported ratings.
+
+## Schizotypal Personality Disorder Criteria (Parent) {#sips_p_spd}
+
+`r table_header("sips_p_spd")`
+
+**Measure description:** This module includes nine items assessing whether the youth meets criteria for Schizotypal Personality Disorder according to caregiver report, completed by the interviewer after the assessment. Several items are based on information obtained in the Unusual Thought Content (i.e., ideas of reference, odd beliefs or magical thinking), Perceptual Abnormalities (i.e., unusual perceptual experiences), Disorganized Communication (i.e., odd thinking and speech), Suspiciousness (i.e., suspiciousness), and Dysphoric Mood (i.e., excessive social anxiety) modules. Remaining items (inappropriate or constricted affect, odd behavior or appearance, and lack of close friends) are based on information obtained from caregiver over the course of the interview.
+
+## Suspiciousness & Persecutory Ideas (Parent) {#sips_p_susp}
+
+`r table_header("sips_p_susp")`
+
+**Measure description:** This module includes five items assessing caregiver-reported suspiciousness and persecutory ideas. Each item assesses endorsement, and when endorsed, onset (month, year), duration, frequency, distress (`0-10`), functional interference (`0-10`), and conviction (`0-100`) according to caregiver. Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). The module also includes current and lifetime severity ratings of youth Suspiciousness and Persecutory Ideas based on caregiver report (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe but Not Psychotic, `6`=Severe and Psychotic). For caregiver-reported ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) and the most recent date of an increase of ≥1 point for symptoms currently rated `3-6` (date of symptom worsening) are provided, along with frequency of rated symptom(s) and whether the clinician judges that symptoms are better accounted for by another Axis I disorder. If the caregiver-reported date of onset equals the date of symptom worsening, the symptom has not worsened since onset. Caregivers may have limited information about conviction and subjective distress; accordingly, caregiver-based ratings may be lower than youth-reported ratings.
+
+## Unusual Thought Content (Parent) {#sips_p_utc}
+
+`r table_header("sips_p_utc")`
+
+**Measure description:** This module includes 21 items assessing caregiver-reported youth perplexity and delusional mood, first-rank symptoms, overvalued beliefs, unusual ideas about the body, guilt, nihilism, jealousy, and religion, and non-persecutory ideas of reference. Each item assesses endorsement, and when endorsed, onset (month, year), duration, frequency, distress (`0-10`), functional interference (`0-10`), and conviction (`0-100`) according to caregiver. Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the paritcipant chose not to answer the item). The module also includes current and lifetime severity ratings of youth Unusual Thought Content based on caregiver report (`0`=Absent, `1`=Questionably Present, `2`=Mild, `3`=Moderate, `4`=Moderately Severe, `5`=Severe but Not Psychotic, `6`=Severe and Psychotic). For caregiver-reported ratings ≥`3`, the date when the symptom first reached a rating of `3` (date of onset) and the most recent date of an increase of ≥1 point for symptoms currently rated `3-6` (date of symptom worsening) are provided, along with frequency of rated symptom(s) and whether the clinician judges that symptoms are better accounted for by another Axis I disorder. If the caregiver-reported date of onset equals the date of symptom worsening, the symptom has not worsened since onset. Caregivers may have limited information about conviction and subjective distress; accordingly, caregiver-based ratings may be lower than youth-reported ratings. 
+
+**Notes:**
+
+Some qualitative response data has been re-coded into categorical items which are available in the [SIPS file-based data](#sips_file_recode).
+
+# File-based data
+
+## SIPS Qualitative Recoded Data {#sips_file_recode}
+
+`r table_header(tabulated = FALSE, file_based = TRUE, concatenated = TRUE)`
+
+```default
+abcd
+└── concatenated
+    └── substudies
+        └── sips
+            ├── sips_p_qual.<csv|parquet>
+            └── sips_y_qual.<csv|parquet>
+```
+
+**Description:** The data contains variables derived from a qualitative analysis of interviewer notes on youth and parent responses to open-ended questions about unusual thought content, derived from the SIPS substudy. The Unusual Thought Content module includes 21 items assessing youth-reported youth perplexity and delusional mood, first-rank symptoms, overvalued beliefs, unusual ideas about the body, guilt, nihilism, jealousy, and religion, and non-persecutory ideas of reference. For each item, the interviewer asked from semi-structured open-ended prompts about the description of the experience, whether the experience bothered the youth, whether the experience interfered with the youth’s life (e.g., does the youth act on the experience or do anything differently because of the experience), and about the conviction associated with the experience (e.g., how does the youth account for this experience?) leading to open text data that are not able to be included in the release dataset in their raw form. These raw text notes were then recoded into categorical items to be included in the release. As part of this approach, interviewer notes were coded, then these codes were used to develop themes. For each item, all themes endorsed by the respondent are included. Each theme was generated using an inductive qualitative approach. These themes can be further sorted into more general "hierarchy" and "domain" categories based on the mapping tables below.
+
+::: {.panel-tabset}
+# Youth theme mapping
+
+```{r}
+reactable::reactable(
+  readr::read_csv(
+    "../../assets/tbl/documentation/substudies/sips_y_utc_mapping.csv",
+    show_col_types = FALSE
+  ),
+  showPageSizeOptions = TRUE
+)
+```
+
+# Caregiver theme mapping
+
+```{r}
+reactable::reactable(
+  readr::read_csv(
+    "../../assets/tbl/documentation/substudies/sips_p_utc_mapping.csv",
+    show_col_types = FALSE
+  ),
+  showPageSizeOptions = TRUE
+)
+```
+:::
+
+::: {.callout-note title="File formats"}
+The SIPS file-based data are made available as both `csv` and `parquet` files to support a range of tools and user preferences. However, since the `parquet` format ensures that data is imported with correctly specified data types and facilitates faster loading speeds, we recommend using `parquet` files over `csv` files whenever possible (see [here](../curation/structure.qmd#file-formats)).
+:::
+
+## Metadata information
+
+The data dictionaries for the SIPS file-based data are provided below. The `Data Dictionary` tab provides detailed information about the variables included in each file, including variable names, labels, and data types; the categorical values are the themes listed in the tables above.
+
+```{r}
+#| results: asis
+#| echo: false
+make_nested_tabsets(
+  c(
+    "sips_p_qual",
+    "sips_y_qual"
+  ),
+  base_path = "../../assets/tbl/documentation/substudies/"
+)
+```
+

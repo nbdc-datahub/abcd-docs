@@ -1,7 +1,7 @@
 ---
 title: "6.0 data release"
 lightbox: true
-order: 2
+order: 3
 ---
 
 ```{r}
@@ -32,7 +32,7 @@ levels_recode <- readr::read_csv(
 
 # Sample
 
-The 6.0 data release includes data from *11,868 participants*, representing the full ABCD cohort (N = 11,880) except for 12 participants who withdrew consent to share their data, and *13 events*. Data is considered complete through the 4-year follow-up and nearly complete for the 5-year follow-up, with varying numbers of missed visits per event. The 5.5-year and 6-year follow-up events were still ongoing when the data were frozen (cutoff date: January 15, 2024), so these events include only participants who had assented by the cutoff date. No data are included from events after the 6-year follow-up to ensure sufficient event completion.
+The 6.0 data release (on 6/26/2025) includes data from *11,868 participants*, representing the full ABCD cohort (N = 11,880) except for 12 participants who withdrew consent to share their data, and *13 events*. Data is considered complete through the 4-year follow-up and nearly complete for the 5-year follow-up, with varying numbers of missed visits per event. The 5.5-year and 6-year follow-up events were still ongoing when the data were frozen (cutoff date: January 15, 2024), so these events include only participants who had assented by the cutoff date. No data are included from events after the 6-year follow-up to ensure sufficient event completion.
 
 The following table shows the number of participants per *core study* event^[Please note that the event identifier has been changed to be compatible with the BIDS standard; read more [here](../curation/standards.qmd#identifier-columns).]:
 
@@ -182,7 +182,7 @@ For the 6.0 release, we introduced table-specific administration timepoint varia
 
 In an effort to correct errors, improve algorithms based on advancements in the relevant fields, increase consistency across measures and domains, and enhance transparency for users, all summary scores computed by the DAIRC^[The dataset includes other summary scores, such as proprietary scores or summary scores imported from external sources.] were re-developed for the 6.0 release. This includes both previously released summary scores and new scores developed since the last release.
 
-The code to compute the various scores has been published as an R package called `ABCDscores` on [GitHub](https://github.com/nbdc-datahub/ABCDscores) and is accompanied by a [documentation website](https://software.nbdc-datahub.org/ABCDscores). The goal of making the package public is to support transparency and reproducibility of ABCD release data by providing the exact algorithms and code used to compute the released summary scores. This allows users to tie a specific data release version to the corresponding version of the codebase (see also [here](../../tools/r_packages.qmd#ABCDscores) for the rationale behind creating this R package).
+The code to compute the various scores has been published as an R package called `ABCDscores` on [GitHub](https://github.com/nbdc-datahub/ABCDscores) and is accompanied by a [documentation website](https://software.nbdc-datahub.org/ABCDscores). The goal of making the package public is to support transparency and reproducibility of ABCD release data by providing the exact algorithms and code used to compute the released summary scores. This allows users to tie a specific data release version to the corresponding version of the codebase (see also [here](../../tools/packages.qmd#ABCDscores) for the rationale behind creating this R package).
 
 The re-development aimed to implement consistent standards across domains. For example, a maximum of 20% missing ingoing items was established, and wherever possible, (prorated) sums were replaced with means. Additionally, variables reporting the total number of items in a score were removed, as they represent redundant information that does not vary between participants.
 

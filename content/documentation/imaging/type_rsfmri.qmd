@@ -14,12 +14,42 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("sub_domain == 'Resting State fMRI'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_rsfmri.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_rsfmri.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 The Resting State fMRI (rsfMRI) data contains field maps, spin echo images with opposite phase encode polarity, and multi-frame, gradient echo, echo-planar imaging.
 
+::: {.callout-caution collapse="true" title="Release notes: rsfMRI Updates"}
+**7.0**
 
-::: {.callout-important collapse="true" title="Responsible Use Warning: Head motion" #use-rsfmri}
+-   [**rsfMRI updates**](../release_notes/7_0.qmd#rsfMRI):
+
+*Tabulated data now based on concatenated data*
+
+-   Most important difference:
+
+    -   Previously for tabulated data, minimally processed voxelwise data were additionally processed (i.e., motion and global signal regression, interpolation of censored frames, bandpass filter) followed by calculation of average ROI timeseries and ROI-ROI correlations
+
+    -   For concatenated data, average ROI timeseries were calculated from minimally processed data, followed by additional timeseries processing (regression, interpolation, bandpass), and calculation of ROI-ROI correlations
+
+-   Relatively minor difference:
+
+    -   Previously for tabulated data, correlations were calculated for each scan and then averaged
+
+    -   For concatenated data, processed timeseries data were concatenated across scans prior to calculation of ROI-ROI correlations
+
+*Concatenated data*
+
+-   Concatenated data now includes additional motion-related variables e.g., mean FD censored, mean dx, dy, dz, rx, ry, rz
+
+*Preprocessing for concatenated data differences between 6.0 and 7.0*
+
+-   Eliminated additional application of respiratory filter to motion time series affects motion metrics (e.g., mean FD) and censoring resulted in relatively small differences to ROI-ROI correlations
+
+-   Calculation of mean FD (uncensored) now includes all scans even those that do not have enough valid time points after censoring to be included in the calculation of ROI-ROI correlations matches how uncensored mean motion was previously calculated for tabulated data
+:::
+
+
+::: {.callout-important collapse="true" title="Responsible use consideration: Head motion" #use-rsfmri}
 
 Head motion is a serious issue for neuroimaging, and especially for resting state fMRI. It creates brain-wide artifactual effects including elevated short-distance connectivity and attenuated long-distance connectivity [@power2012]. In order to guard against artifactual effects due to head motion, researchers typically implement a variety of strategies that operate at multiple points of the data collection and processing pipeline, with guidance regularly evolving over time [@power2014; @power2015; @satterthwaite2013; @siegel2017; @gratton2020]. Some of these strategies include discarding entire runs of data that exceed certain motion thresholds and discarding individual functional imaging frames that are proximal to motion events (i.e., "motion censoring"). These strategies in particular typically lead to the exclusion of some participants from further analysis for lack of sufficient data. Levels of head motion differ according to demographic factors such as sex, race/ethnicity, and SES [@cosgrove2022]. Therefore, strategies to deal with head motion may lead to differential exclusions across demographic groups. In addition, data quality procedures cause sessions to vary by the amount of data remaining. Such variability may continue to inflate findings especially in the presence of conditions that may correlate with the motion artifact like autism or ADHD [@eggebrecht2017]. One strategy that avoids this confound is to strictly control the degrees of freedom, where functional connectivity measures are calculated with the exact same amount of data. To aid researchers in exploring this impact further, the ABCD study has released 5 minute- and 10 minute-trimmed and untrimmed functional connectivity datasets. Researchers interested in examining brain-behavior associations or multivariate predictions should follow strategies such as those in @eggebrecht2017: 
 

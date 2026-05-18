@@ -8,7 +8,7 @@ The ABCD Study® provides a rich multimodal dataset that includes a variety of d
 
 At a high level, the ABCD release data can be categorized into two main types—*tabulated data* and *file-based data*—which are described below.
 
-# Tabulated data {#tabulated}
+# Tabulated data <span class="pill-tabulated">tabulated</span> {#tabulated}
 
 ABCD's tabulated data resource consists of a set of tables that represent the main database of the study. Data from all assessment domains undergo a rigorous [curation process](standards.qmd) while being prepared for inclusion in the tabulated data resource, ensuring that they are standardized, consistent, and ready for analysis.
 
@@ -16,7 +16,7 @@ The data are organized into tables, each containing a set of related variables (
 
 The tabulated data resource can be queried and accessed using different [tools](/tools/tools.qmd) available through the NBDC Datahub. Additionally, it is provided as a set of flat files, one for each database table, as part of the file-based data resource (see [below](#rawdata)).
 
-# File-based data {#file-based}
+# File-based data <span class="pill-file-based">file-based</span> {#file-based}
 
 ABCD's file-based data resource consists of raw and processed data files generated from various instruments and modalities, including magnetic resonance imaging (MRI), genetic analyses, wearable sensors, neurocognitive experiments, and other assessments. The resulting data are provided either as individual-level files (one file, or collection of files, per participant/event) or in a concatenated format (one file per instrument or modality, containing data for all participants/events).
 
@@ -27,56 +27,62 @@ Where possible, the file-based data are organized in accordance with the [Brain 
 The top-level directory structure of the file-based data resource is organized as follows:
 
 ```default
-├── abcc
-│   ├── derivatives
-│   └── rawdata
-└── dairc
-    ├── concat
-    ├── derivatives
-    ├── rawdata
-    └── sourcedata
+abcd
+├── concatenated
+├── derivatives
+├── rawdata
+└── sourcedata
 ```
 
-- The `dairc/` directory contains the full file-based dataset prepared by the data core of the ABCD Study, the [Data Analysis, Informatics & Resource Center (DAIRC)](https://abcdstudy.org/study-sites/daic/), which is described in more detail below and in the domain-specific documentation pages.
-- The `abcc/` directory contains imaging raw data and derivatives from the ABCD-BIDS Community Collection (ABCC), which is described in more detail [here](../imaging/abcc_start_page.qmd).
-
-## Concatenated data
+## Concatenated data <span class="pill-concatenated">concatenated</span>
 
 ```default
-dairc
-└── concat
+abcd
+└── concatenated
     ├── genetics
-    │   └── genotype_microarray
+    │   ├── genotype_microarray
+    │   └── sequencing
     ├── imaging
     │   ├── corrmat
     │   ├── vertexwise
     │   └── voxelwise
+    ├── linked_external
+    │   └── seda
     ├── novel_technologies
-    │   └── ears
-    └── substance_use
-        └── tlfb
+    │   ├── ears
+    │   └── fitbit
+    ├── substance_use
+    │   └── tlfb
+    └── substudies
+        ├── baby_teeth
+        └── sips
 ```
 
-The `concat/` directory contains concatenated data files for various instruments and modalities, organized into subdirectories based on the type of data. The 6.0 release includes the following concatenated data:
+The `concatenated/` directory contains concatenated data files for various instruments and modalities, organized into subdirectories based on the type of data:
 
-- `concat/genetics/`: Genotype microarray data (see [here](../non_imaging/gn.qmd#file-based)).
-- `concat/imaging/`: Concatenated imaging data for different modalities (see [here](../imaging/data_concat.qmd)).
-- `concat/novel_technologies/`: Raw data for screentime assessment (see [here](../non_imaging/nt.qmd#ears-raw-data)).
-- `concat/substance_use/`: Raw data for Timeline Followback interviews (see [here](../non_imaging/su.qmd#tlfb-raw-data)).
+- `concatenated/genetics/`: Genotype microarray (see [here](../non_imaging/gn.qmd#micro-array-based-data)) and sequencing data (see [here](../non_imaging/gn.qmd#wgs)).
+- `concatenated/imaging/`: Concatenated imaging data for different modalities (see [here](../imaging/data_concat.qmd)).
+- `concatenated/linked_external/`: Stanford Education Data Archive (SEDA) data in month- and school year-based resolution (see [here](../non_imaging/le.qmd#SEDA)).
+- `concatenated/novel_technologies/`: Raw data for screentime assessment (see [here](../non_imaging/nt.qmd#ears-file-based)) and wearables (see [here](../non_imaging/nt.qmd#fitbit-file-based)).
+- `concatenated/substance_use/`: Raw data for Timeline Followback interviews (see [here](../non_imaging/su.qmd#tlfb-raw-data)).
+- `concatenated/substudies/`: Concatenated data from the baby teeth (see [here](../substudies/baby_teeth.qmd#file-based-data)) and SIPS substudies (see [here](../substudies/sips.qmd#file-based-data)).
 
 ::: {.callout-note title="Notes"}
-The BIDS specification does not account for concatenated data (besides the tabulated data, which is organized as one file per table in the `rawdata/phenotype/` directory; see [below](#rawdata)). As such, the `concat/` directory is not part of the BIDS structure but is an ABCD-specific addition to the file-based data resource.
+The BIDS specification does not account for concatenated data (besides the tabulated data, which is organized as one file per table in the `rawdata/phenotype/` directory; see [below](#rawdata)). As such, the `concatenated/` directory is not part of the BIDS structure but is an ABCD-specific addition to the file-based data resource.
 
-Files in the `concat/` directory are provided in a variety of formats, depending on the data type and intended use. The data in the `novel_technologies/ears/` and `substance_use/tlfb/` directories are available in both `csv` (plain-text) format and `parquet` format (see [below](#file-formats) for more information about these formats).
+Files in the `concatenated/` directory are provided in a variety of formats, depending on the data type and intended use. In the `linked_external/`, `novel_technologies/`, `substance_use/`, and `substudies/` directories, the same data are made available in both `csv` (plain-text) format and `parquet` format (see [below](#file-formats) for more information about these formats).
 :::
 
 ## Derivatives
 
 ```default
-dairc
+abcd
 └── derivatives
+    ├── abcc-<pipeline_name>
+    │   └── ...
+    ├── ...
     ├── freesurfer
-    │   ├── sub-<participant>_ses-<event>
+    │   ├── sub-<participant>_ses-<event>.zip
     │   ├── ...
     │   └── dataset_description.json
     └── mmps_mproc
@@ -87,15 +93,16 @@ dairc
         └── dataset_description.json
 ```
 
-The `derivatives/` directory contains processed file-based data that are outputs from imaging processing pipelines, organized into subdirectories by derivative. The 6.0 release includes the following derivatives:
+The `derivatives/` directory contains processed file-based data that are outputs from imaging processing pipelines, organized into subdirectories by derivative:
 
-- `derivatives/freesurfer/`: Freesurfer data, with one directory per participant/event (see [here](../imaging/data_derivatives.qmd#freesurfer)).
+- `derivatives/abcc-<pipeline>/`: Several derivatives from the ABCD-BIDS Community Collection (ABCC) (see [here](../imaging/abcc_start_page.qmd)).
+- `derivatives/freesurfer/`: Freesurfer data, with one zip archive per participant/event (see [here](../imaging/data_derivatives.qmd#freesurfer)).
 - `derivatives/mmps_mproc/`: Minimally processed imaging data, with one directory per participant and, nested within each participant, one directory per event (see [here](../imaging/data_derivatives.qmd#mproc)).
 
 ## Rawdata {#rawdata}
 
 ```default
-dairc
+abcd
 └── rawdata
     ├── phenotype
     │   ├── <table_name>.json
@@ -115,7 +122,7 @@ dairc
     └── ...
 ```
 
-The `rawdata/` directory contains raw data from MR imaging, neurocognitive experiments, and wearable sensors, as well as a copy of the tabulated data resource. The raw data for the 6.0 release is organized as follows:
+The `rawdata/` directory contains raw data from MR imaging, neurocognitive experiments, and wearable sensors, as well as a copy of the tabulated data resource and is organized as follows:
 
 - `rawdata/phenotype/`: Tabulated data, with one file per database table provided in both `tsv` (plain-text) and `parquet` formats, along with a [BIDS sidecar](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files.html#phenotypic-and-assessment-data) `json` file that provides metadata for each table (see the domain-specific documentation pages).
 - `rawdata/sub-<participant>/`: Raw imaging data (in `NIfTI` format), neurocognitive data, and wearable data, with one directory per participant and, nested within each participant, one directory per event (see [here](../imaging/data_source_raw.qmd#rawdata) for imaging raw data and the domain-specific documentation pages for raw data from other domains).
@@ -127,7 +134,7 @@ The BIDS specification currently does not officially support `parquet` files. To
 ## Sourcedata
 
 ```default
-dairc
+abcd
 └── sourcedata
     ├── sub-<participant>
     │   ├── ses-<event>
@@ -138,7 +145,7 @@ dairc
     └── sessions.json
 ```
 
-The `sourcedata/` directory contains the MR imaging source data. The source data for the 6.0 release is organized as follows:
+The `sourcedata/` directory contains the MR imaging source data and is organized as follows:
 
 - `sourcedata/sub-<participant>/`: Imaging source data (in `DICOM` format), with one directory per participant and, nested within each participant, one directory per event (see [here](../imaging/data_source_raw.qmd#sourcedata)).
 
@@ -146,7 +153,7 @@ The `sourcedata/` directory contains the MR imaging source data. The source data
 
 Data from several assessment types and domains are made available in both delimiter-separated (CSV/TSV) plain-text format and [Apache Parquet](https://parquet.apache.org/) format in the file-based data resource.
 
-**Delimiter-separated formats (TSV/CSV)** are widely compatible and easy to inspect, but they are less efficient for large datasets. These formats do not support selective column loading and cannot embed metadata, such as data type specifications. As a result, programming languages like Python or R must guess the data types during import, which can lead to errors. For example, categorical values provided as numbers that are formatted as strings (e.g., `"0"`/`"1"` to represent "Yes"/"No"; see [data type standards](standards.qmd#data-types) for more details) may be interpreted as numeric, and columns with mostly missing values may be treated as empty if the first few rows lack data. To avoid these issues, users need to manually specify column types using the accompanying metadata upon import. The `NBDCtools` R package offers a helper function, `read_dsv_formatted()`, to automate this process (see the [R packages](../../tools/r_packages.qmd#NBDCtools) page for details).
+**Delimiter-separated formats (TSV/CSV)** are widely compatible and easy to inspect, but they are less efficient for large datasets. These formats do not support selective column loading and cannot embed metadata, such as data type specifications. As a result, programming languages like Python or R must guess the data types during import, which can lead to errors. For example, categorical values provided as numbers that are formatted as strings (e.g., `"0"`/`"1"` to represent "Yes"/"No"; see [data type standards](standards.qmd#data-types) for more details) may be interpreted as numeric, and columns with mostly missing values may be treated as empty if the first few rows lack data. To avoid these issues, users need to manually specify column types using the accompanying metadata upon import. The `NBDCtools` R package offers a helper function, `read_dsv_formatted()`, to automate this process (see the [R packages](../../tools/packages.qmd#NBDCtools) page for details).
 
 **Apache Parquet** is a modern, compressed, columnar format optimized for large datasets and commonly used in the data science community. In contrast to plain-text files, Parquet supports selective column loading and results in smaller file sizes. This improves loading speed and memory usage, enhancing performance for analytical workflows. Crucially, `parquet` files can embed metadata (including column types, variable/value labels, and categorical coding), allowing for reliable and reproducible import of data without any manual steps.
 

@@ -1,0 +1,5 @@
+name,value,label
+stage,awake,awake
+stage,restless,restless
+stage,asleep,asleep
+stage,unknown,unknown

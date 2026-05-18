@@ -1,0 +1,10 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+dt,Date of application use,date,interval
+dt_day,Day of the week for date of application use,character,ordinal
+dt_wknd,Whether date of application use was on a weekend day (Sat/Sun) or not,logical,nominal
+dtt_screenshot,Date/time when screenshot of this page of the Screen Time report was taken,timestamp,interval
+dtt_pickup_first,Date/time for the first time the device was picked up,timestamp,interval
+n_pickups,Number of times the device was picked up (opened),integer,ratio
+min_usage,"Duration the device was used (in minutes, rounded to the nearest minute)",integer,ratio

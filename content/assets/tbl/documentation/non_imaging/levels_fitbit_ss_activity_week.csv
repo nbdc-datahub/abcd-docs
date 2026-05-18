@@ -1,0 +1,4 @@
+name,value,label
+wk_type,0,weekdays only
+wk_type,1,weekend only
+wk_type,2,weekday and weekend

@@ -13,7 +13,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 
 To facilitate use of trial-level behavioral performance data from the different task-based fMRI a set of pre-processing steps that can be applied to the stimulus event timing and behavioral performance files was developed for ABCD.The code used to implement these pre-processing steps has been made publicly available on the ABCD Study’s [GitHub page](https://github.com/ABCD-STUDY). The input E-prime files are available in the sourcedata BIDS structure (see MRI Raw Data File Sharing Data Documentation). The E-prime task files used for ABCD are available at <https://abcdstudy.org/scientists/abcd-fmri-tasks-and-tools>. The tasks and the summary behavioral performance measures extracted from the E-prime files and included in the tabulated data are described in the Behavioral Performance Data Documentation. The processing and analysis of the associated fMRI data is described in Task-Based fMRI Data Documentation. The behavioral performance review is part of the ABCD Study QC procedures and recommended imaging inclusion criteria (see MRI Quality Control Data Documentation).
 
-::: {#use-trial .callout-important title="Responsible Use Warning: Trial-Level Data" collapse="true"}
+::: {#use-trial .callout-important title="Responsible use consideration: Trial-Level Data" collapse="true"}
 
 Using open-access datasets like ABCD requires responsible conceptualization and use of the data, including being mindful of variations in experience that impact performance. Below are specific considerations:
 

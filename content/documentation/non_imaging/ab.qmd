@@ -20,26 +20,28 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("domain_abbr == 'ab'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_ab.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/non_imaging/6_1_ab.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
-"ABCD (General)" which provides standard variables, as well as demographic information and surveys. In this new domain we introduce two new tables: `ab_g_dyn` and `ab_g_stc`. These tables use a new source `g` (for General), introduced specifically for these summary and administrative fields. The data in these tables are often derived or computed from multiple sources, including REDCap timestamps, research administrator (RA) input, and participant responses (youth and parent). The variables in these tables are cohort descriptors & useful nesting variables–participant demographic information, visit characteristics (site, date, etc), relational variables (family ID, principal genetic ancestry), etc–that are useful for cohort characterization and modeling. We anticipate that these tables will be of great importance for most research questions using ABCD data. 
+"ABCD (General)" provides standard variables, as well as demographic information and surveys. In this new domain we introduce two new tables: `ab_g_dyn` and `ab_g_stc`. These tables use a new source `g` (for General), introduced specifically for these summary and administrative fields. The data in these tables are often derived or computed from multiple sources, including REDCap timestamps, research assistant (RA) input, and participant responses (youth and parent). The variables in these tables are cohort descriptors & useful nesting variables–participant demographic information, visit characteristics (site, date, etc), relational variables (family ID, principal genetic ancestry), etc–that are useful for cohort characterization and modeling. We anticipate that these tables will be of great importance for most research questions using ABCD data. 
 
 # Parent tables
 
 ## Demographics {#ab_p_demo}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ab_p_demo")`
-`r r_link_table("ab_p_demo")`
+`r table_header("ab_p_demo")`
 
-**Measure description:** Extensive lists of parent-reported demographics about the youth, themselves, and family. Note that this table includes the American Community Survey (ACS) Ranked Propensity score that imputed ranked propensity weight. The ranked propensity weight merges the ACS and ABCD data (with missing data imputed), estimates the propensity model, computes and scales/trims the propensity weights and finally rakes the scaled weights to final ACS control totals by age, sex, and race/ethnicity.
+::: {.callout-caution collapse="true" title="Release notes: `ab_p_demo`"}
+**7.0**
 
+-   [**New item**](../release_notes/7_0.qmd#demographics): There were NAA mean scores added in the `ab_p_demo` where the Native American Acculturation items were asked to parents, the new item is `ab_p_demo__ntvam_mean`
+:::
 
-::: {.callout-important collapse="true" title="Responsible use warning: Household income" #use-income}
+::: {.callout-important collapse="true" title="Responsible use consideration: Household income" #use-income}
 **`ab_p_demo__income__hhold_001`, `ab_p_demo__income__hhold_001__v01`**
 
 Researchers should carefully evaluate whether `"Do Not Know"` or `"Decline to Answer"` responses (coded as `777` and `999`) are ignorable or informative when deciding how to handle them in analyses, as they correlate with other key demographic variables across study visits (see Table below).
 
-Current evidence suggests **not** treating these responses as simply missing. Researchers are encouraged to explore how these response types relate to other variables and consider potential impacts on findings. Not accounting for these responses appropriately could introduce bias and compromise validity of results.
+Researchers are encouraged to explore how these response types relate to other variables and consider potential impacts on findings. Not accounting for these responses appropriately could introduce bias and compromise validity of results.
 
 The table below shows that these response types correlate with other important demographic variables across the first four full study visits (Baseline through Three year follow-up) and the partial four year follow-up visit. For instance, participants from households that responded "Do not know" were disproportionately Hispanic and from households with less than some college education. Participants from households that responded "Decline to answer" were disproportionately White and from households with at least a bachelor's degree. These responses may reflect contextual, cultural, or social factors, such as who manages household finances or potential language barriers, rather than lack of financial knowledge.
 
@@ -77,7 +79,7 @@ Note: Values in parentheses are percentages calculated within each study visit u
 *Race/ethnicity of the child was parent-reported
 :::
 
-::: {.callout-warning collapse="true" title="Data warning: Household income" #data-income}
+::: {.callout-warning collapse="true" title="Data consideration: Household income" #data-income}
 
 The total household income measure in ABCD refers to the **"total combined family income for the past 12 months."** The non-summary variable includes the following response options:
 
@@ -115,27 +117,32 @@ These practices help minimize bias and enhance the transparency and validity of 
 :::
 ## Occupation Survey {#ab_p_ocp data-link="Occupation Survey"}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ab_p_ocp")`
-`r r_link_table("ab_p_ocp")`
+`r table_header("ab_p_ocp")`
 
 **Measure description:** Asks caregivers about their own and their partner's occupation and job category according to the ACS job classifications.
 
 ## Screener (Study eligibility) {#ab_p_screen}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ab_p_screen")`
-`r r_link_table("ab_p_screen")`
+`r table_header("ab_p_screen")`
 
 **Measure description:** Data from the Screener Instrument that was used to determine study eligibility prior to enrollment. This also includes estimates of twin participants' physical similarity.
+
+The inclusion/exclusion criteria can be found [here](../../study/index.qmd#inclusionexclusion-criteria).
+
 
 # General tables {#general_tables}
 
 ## ABCD Dynamic variables {#ab_g_dyn}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ab_g_dyn")`
-`r r_link_table("ab_g_dyn")`
+`r table_header("ab_g_dyn")`
 
 **Measure description:** The ABCD Dynamic Variables table includes **dynamic**
 (`dyn`), i.e., longitudinally changing variables. This table contains important visit-level (e.g., event dates, visit types, participant age), design/nesting (e.g., school identifiers, MRI scanner details), and cohort description variables  (e.g., school grade, caregiver education, household income). The table includes several variables that should be considered when accounting for clustering of participants into different groups in statistical analyses:
+
+
+::: {.callout-warning collapse="true" title="Data consideration: `ab_g_dyn__visit_age` outliers"}
+There are 4 participants who are more than 0.1 less than 9, or over 11 years old in the baseline event (`ab_g_dyn__visit_age`). Users can find these participants' ID in the private release notes and decide how to incorporate these data. The inclusion/exclusion criteria can be found [here](../../study/index.qmd#inclusionexclusion-criteria).
+:::
 
 ::: {.callout-note collapse="false" title="Sites"}
 The `ab_g_dyn__design_site` variable describes the site at which a participant completed a given event.
@@ -146,13 +153,6 @@ Using data from the National Center for Education Statistics (NCES), pseudo-iden
 
 - `ab_g_dyn__design_id__district`: Pseudo ID for clustering participants by school district
 - `ab_g_dyn__design_id__school`: Pseudo ID for clustering participants by school
-
-**School Assignment Process:**
-
-1. **Primary Method**: Match visit completion date with school calendar dates to identify the school
-2. **Secondary Method**: If no match, compare reported grade with school grade ranges
-3. **Fallback Method**: Use event name (e.g., `ses-01A`) to infer attendance
-4. **No ID Assigned**: If no NCES ID is found, no school or district ID is assigned
 
 **Notes:** NCES IDs may correspond to educational environments beyond public or public charter schools. Researchers may want to distinguish among them (e.g., public vs. homeschool). Additional information can be found in:
 
@@ -176,21 +176,21 @@ Pseudo school IDs for specific school settings can be excluded if needed.
   
 :::
 
-::: {.callout-important collapse="true" title="Responsible use warning: Household income summary scores" #use-cohort_income__hhold}
+::: {.callout-important collapse="true" title="Responsible use consideration: Household income summary scores" #use-cohort_income__hhold}
 **`ab_g_dyn__cohort_income__hhold__3lvl`, `ab_g_dyn__cohort_income__hhold__6lvl`**
 
-[See warning related to input variables](#use-income)
+[See consideration related to input variables](#use-income)
 :::
 
-::: {.callout-warning collapse="true" title="Data warning: Household income summary scores" #data-cohort_income__hhold}
+::: {.callout-warning collapse="true" title="Data consideration: Household income summary scores" #data-cohort_income__hhold}
 
 **`ab_g_dyn__cohort_income__hhold__3lvl`, `ab_g_dyn__cohort_income__hhold__6lvl`**
 
-[See warning related to input variables](#data-income)
+[See consideration related to input variables](#data-income)
 
 :::
 
-::: {.callout-warning collapse="true" title="Data warning: Marital/partner and labor force participation variable" #data-ab_g_dyn__cohort_prtnrshp__employ}
+::: {.callout-warning collapse="true" title="Data consideration: Marital/partner and labor force participation variable" #data-ab_g_dyn__cohort_prtnrshp__employ}
 
 **`ab_g_dyn__cohort_prtnrshp__employ`**
 
@@ -246,8 +246,7 @@ A variant of this variable was used in baseline propensity score modeling to bal
 
 ## ABCD Static variables {#ab_g_stc}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("ab_g_stc")`
-`r r_link_table("ab_g_stc")`
+`r table_header("ab_g_stc")`
 
 **Measure description:** The ABCD Static table includes static (`stc`) variables that do not change over time (as such, this and other static tables do not contain a `session_id` column which leads to their values being duplicated to every event when they are joined with "dynamic"/longitudinal tables). This table contains participant-level descriptors such as derived family IDs, birth event groupings, ethno-racial identity variables, participant sex, imputed propensity weights, and principal components of genetic ancestry.
 
@@ -276,7 +275,7 @@ For additional documentation, see: [Genetics data documentation](gn.qmd).
 -   [**Anonomized birth-dates**](../release_notes/6_0.qmd#anonymized-date-of-birth): We changed the algorithm for how anonomized birth-dates are computed in the 6.0 release.
 :::
 
-::: {.callout-important collapse="true" title="Responsible use warning: Race & ethnicity" #use-race_ethnicity}
+::: {.callout-important collapse="true" title="Responsible use consideration: Race & ethnicity" #use-race_ethnicity}
 **`ab_g_stc__cohort_ethn`, `ab_g_stc__cohort_ethnrace__leg`,
 `ab_g_stc__cohort_ethnrace__mblack`, `ab_g_stc__cohort_ethnrace__meim`,
 `ab_g_stc__cohort_ethnrace__mhisp`, `ab_g_stc__cohort_race__nih`**
@@ -301,11 +300,10 @@ Using a large-population dataset like ABCD requires careful consideration of rac
 - In one paper using ABCD data, race/ethnicity categories included White, Black, Hispanic, Asian, and Other, with racial subgroups identified within the "Other" category [@fadus2021].
 - Another study used non-Hispanic White, non-Hispanic Black, Hispanic, Asian, Native American/Alaska Native, Multi-racial, and additional race groups [@barch2021].
 
-For guidance on appropriate use of race/ethnicity data, see
-[@cardenas-iniguez2024].
+For recommendations on use of race/ethnicity data, see [@cardenas-iniguez2024].
 :::
 
-::: {.callout-important collapse="true" title="Responsible use warning: Family relationship" #use-family_relationship}
+::: {.callout-important collapse="true" title="Data use consideration: Family relationship" #use-family_relationship}
 
 
 **`ab_g_stc__design_id__fam__gen`**
@@ -319,7 +317,7 @@ Recommended uses:
 2. Maintain independence across test and replication sets by assigning all members of a family to the same set.
 :::
 
-::: {.callout-important collapse="true" title="Responsible use warning: Genetics" #use-genetics}
+::: {.callout-important collapse="true" title="Responsible use consideration: Genetics" #use-genetics}
 
 Variables with stems that include: `ab_g_stc__gen_pc`
 
@@ -327,5 +325,5 @@ We encourage users to consult the NASEM report for guidance on selecting appropr
 
 The data release includes genetic principal components (PCs) of ancestry, which are unlabeled variables that capture genetic variation. It does **not** include genetic ancestry factors, which label variation in terms of continental groupings (e.g., European, African, Asian).
 
-`r full_cite("bates2022")
+`r full_cite("bates2022")`
 :::

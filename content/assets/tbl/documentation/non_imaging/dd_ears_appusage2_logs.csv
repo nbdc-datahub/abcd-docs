@@ -1,0 +1,12 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+dt,Date of application use,date,interval
+dt_day,Day of the week for date of application use,character,ordinal
+dt_wknd,Whether date of application use was on a weekend day (Sat/Sun) or not,logical,nominal
+dtt_start,Start date/time of application use session,timestamp,interval
+dtt_end,End date/time of application use session,timestamp,interval
+category,Google Play Store application category,character,nominal
+app,Application ID,text,nominal
+ver_api,Android API version used to retrieve data,character,nominal
+sec_foreground,Duration that the application was in foreground during the application use window (in seconds),integer,ratio

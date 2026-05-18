@@ -1,0 +1,383 @@
+name,value,label
+distr_urbanicity_2009,1,City
+distr_urbanicity_2009,2,Suburb
+distr_urbanicity_2009,3,Rural
+distr_urbanicity_2009,4,Town
+distr_urbanicity_2010,1,City
+distr_urbanicity_2010,2,Suburb
+distr_urbanicity_2010,3,Rural
+distr_urbanicity_2010,4,Town
+distr_urbanicity_2011,1,City
+distr_urbanicity_2011,2,Suburb
+distr_urbanicity_2011,3,Rural
+distr_urbanicity_2011,4,Town
+distr_urbanicity_2012,1,City
+distr_urbanicity_2012,2,Suburb
+distr_urbanicity_2012,3,Rural
+distr_urbanicity_2012,4,Town
+distr_urbanicity_2013,1,City
+distr_urbanicity_2013,2,Suburb
+distr_urbanicity_2013,3,Rural
+distr_urbanicity_2013,4,Town
+distr_urbanicity_2014,1,City
+distr_urbanicity_2014,2,Suburb
+distr_urbanicity_2014,3,Rural
+distr_urbanicity_2014,4,Town
+distr_urbanicity_2015,1,City
+distr_urbanicity_2015,2,Suburb
+distr_urbanicity_2015,3,Rural
+distr_urbanicity_2015,4,Town
+distr_urbanicity_2016,1,City
+distr_urbanicity_2016,2,Suburb
+distr_urbanicity_2016,3,Rural
+distr_urbanicity_2016,4,Town
+distr_urbanicity_2017,1,City
+distr_urbanicity_2017,2,Suburb
+distr_urbanicity_2017,3,Rural
+distr_urbanicity_2017,4,Town
+distr_urbanicity_2018,1,City
+distr_urbanicity_2018,2,Suburb
+distr_urbanicity_2018,3,Rural
+distr_urbanicity_2018,4,Town
+distr_urbanicity_2019,1,City
+distr_urbanicity_2019,2,Suburb
+distr_urbanicity_2019,3,Rural
+distr_urbanicity_2019,4,Town
+schl_urban_code_2009,1,City Large
+schl_urban_code_2009,2,City Midsize
+schl_urban_code_2009,3,City Small
+schl_urban_code_2009,4,Suburb Large
+schl_urban_code_2009,5,Suburb Midsize
+schl_urban_code_2009,6,Suburb Small
+schl_urban_code_2009,7,Town Fringe
+schl_urban_code_2009,8,Town Distant
+schl_urban_code_2009,9,Town Remote
+schl_urban_code_2009,10,Rural Fringe
+schl_urban_code_2009,11,Rural Distant
+schl_urban_code_2009,12,Rural Remote
+schl_urban_code_2010,1,City Large
+schl_urban_code_2010,2,City Midsize
+schl_urban_code_2010,3,City Small
+schl_urban_code_2010,4,Suburb Large
+schl_urban_code_2010,5,Suburb Midsize
+schl_urban_code_2010,6,Suburb Small
+schl_urban_code_2010,7,Town Fringe
+schl_urban_code_2010,8,Town Distant
+schl_urban_code_2010,9,Town Remote
+schl_urban_code_2010,10,Rural Fringe
+schl_urban_code_2010,11,Rural Distant
+schl_urban_code_2010,12,Rural Remote
+schl_urban_code_2011,1,City Large
+schl_urban_code_2011,2,City Midsize
+schl_urban_code_2011,3,City Small
+schl_urban_code_2011,4,Suburb Large
+schl_urban_code_2011,5,Suburb Midsize
+schl_urban_code_2011,6,Suburb Small
+schl_urban_code_2011,7,Town Fringe
+schl_urban_code_2011,8,Town Distant
+schl_urban_code_2011,9,Town Remote
+schl_urban_code_2011,10,Rural Fringe
+schl_urban_code_2011,11,Rural Distant
+schl_urban_code_2011,12,Rural Remote
+schl_urban_code_2012,1,City Large
+schl_urban_code_2012,2,City Midsize
+schl_urban_code_2012,3,City Small
+schl_urban_code_2012,4,Suburb Large
+schl_urban_code_2012,5,Suburb Midsize
+schl_urban_code_2012,6,Suburb Small
+schl_urban_code_2012,7,Town Fringe
+schl_urban_code_2012,8,Town Distant
+schl_urban_code_2012,9,Town Remote
+schl_urban_code_2012,10,Rural Fringe
+schl_urban_code_2012,11,Rural Distant
+schl_urban_code_2012,12,Rural Remote
+schl_urban_code_2013,1,City Large
+schl_urban_code_2013,2,City Midsize
+schl_urban_code_2013,3,City Small
+schl_urban_code_2013,4,Suburb Large
+schl_urban_code_2013,5,Suburb Midsize
+schl_urban_code_2013,6,Suburb Small
+schl_urban_code_2013,7,Town Fringe
+schl_urban_code_2013,8,Town Distant
+schl_urban_code_2013,9,Town Remote
+schl_urban_code_2013,10,Rural Fringe
+schl_urban_code_2013,11,Rural Distant
+schl_urban_code_2013,12,Rural Remote
+schl_urban_code_2014,1,City Large
+schl_urban_code_2014,2,City Midsize
+schl_urban_code_2014,3,City Small
+schl_urban_code_2014,4,Suburb Large
+schl_urban_code_2014,5,Suburb Midsize
+schl_urban_code_2014,6,Suburb Small
+schl_urban_code_2014,7,Town Fringe
+schl_urban_code_2014,8,Town Distant
+schl_urban_code_2014,9,Town Remote
+schl_urban_code_2014,10,Rural Fringe
+schl_urban_code_2014,11,Rural Distant
+schl_urban_code_2014,12,Rural Remote
+schl_urban_code_2015,1,City Large
+schl_urban_code_2015,2,City Midsize
+schl_urban_code_2015,3,City Small
+schl_urban_code_2015,4,Suburb Large
+schl_urban_code_2015,5,Suburb Midsize
+schl_urban_code_2015,6,Suburb Small
+schl_urban_code_2015,7,Town Fringe
+schl_urban_code_2015,8,Town Distant
+schl_urban_code_2015,9,Town Remote
+schl_urban_code_2015,10,Rural Fringe
+schl_urban_code_2015,11,Rural Distant
+schl_urban_code_2015,12,Rural Remote
+schl_urban_code_2016,1,City Large
+schl_urban_code_2016,2,City Midsize
+schl_urban_code_2016,3,City Small
+schl_urban_code_2016,4,Suburb Large
+schl_urban_code_2016,5,Suburb Midsize
+schl_urban_code_2016,6,Suburb Small
+schl_urban_code_2016,7,Town Fringe
+schl_urban_code_2016,8,Town Distant
+schl_urban_code_2016,9,Town Remote
+schl_urban_code_2016,10,Rural Fringe
+schl_urban_code_2016,11,Rural Distant
+schl_urban_code_2016,12,Rural Remote
+schl_urban_code_2017,1,City Large
+schl_urban_code_2017,2,City Midsize
+schl_urban_code_2017,3,City Small
+schl_urban_code_2017,4,Suburb Large
+schl_urban_code_2017,5,Suburb Midsize
+schl_urban_code_2017,6,Suburb Small
+schl_urban_code_2017,7,Town Fringe
+schl_urban_code_2017,8,Town Distant
+schl_urban_code_2017,9,Town Remote
+schl_urban_code_2017,10,Rural Fringe
+schl_urban_code_2017,11,Rural Distant
+schl_urban_code_2017,12,Rural Remote
+schl_urban_code_2018,1,City Large
+schl_urban_code_2018,2,City Midsize
+schl_urban_code_2018,3,City Small
+schl_urban_code_2018,4,Suburb Large
+schl_urban_code_2018,5,Suburb Midsize
+schl_urban_code_2018,6,Suburb Small
+schl_urban_code_2018,7,Town Fringe
+schl_urban_code_2018,8,Town Distant
+schl_urban_code_2018,9,Town Remote
+schl_urban_code_2018,10,Rural Fringe
+schl_urban_code_2018,11,Rural Distant
+schl_urban_code_2018,12,Rural Remote
+schl_urban_code_2019,1,City Large
+schl_urban_code_2019,2,City Midsize
+schl_urban_code_2019,3,City Small
+schl_urban_code_2019,4,Suburb Large
+schl_urban_code_2019,5,Suburb Midsize
+schl_urban_code_2019,6,Suburb Small
+schl_urban_code_2019,7,Town Fringe
+schl_urban_code_2019,8,Town Distant
+schl_urban_code_2019,9,Town Remote
+schl_urban_code_2019,10,Rural Fringe
+schl_urban_code_2019,11,Rural Distant
+schl_urban_code_2019,12,Rural Remote
+schl_urbanicity_2009,1,City
+schl_urbanicity_2009,2,Suburb
+schl_urbanicity_2009,3,Rural
+schl_urbanicity_2009,4,Town
+schl_urbanicity_2010,1,City
+schl_urbanicity_2010,2,Suburb
+schl_urbanicity_2010,3,Rural
+schl_urbanicity_2010,4,Town
+schl_urbanicity_2011,1,City
+schl_urbanicity_2011,2,Suburb
+schl_urbanicity_2011,3,Rural
+schl_urbanicity_2011,4,Town
+schl_urbanicity_2012,1,City
+schl_urbanicity_2012,2,Suburb
+schl_urbanicity_2012,3,Rural
+schl_urbanicity_2012,4,Town
+schl_urbanicity_2013,1,City
+schl_urbanicity_2013,2,Suburb
+schl_urbanicity_2013,3,Rural
+schl_urbanicity_2013,4,Town
+schl_urbanicity_2014,1,City
+schl_urbanicity_2014,2,Suburb
+schl_urbanicity_2014,3,Rural
+schl_urbanicity_2014,4,Town
+schl_urbanicity_2015,1,City
+schl_urbanicity_2015,2,Suburb
+schl_urbanicity_2015,3,Rural
+schl_urbanicity_2015,4,Town
+schl_urbanicity_2016,1,City
+schl_urbanicity_2016,2,Suburb
+schl_urbanicity_2016,3,Rural
+schl_urbanicity_2016,4,Town
+schl_urbanicity_2017,1,City
+schl_urbanicity_2017,2,Suburb
+schl_urbanicity_2017,3,Rural
+schl_urbanicity_2017,4,Town
+schl_urbanicity_2018,1,City
+schl_urbanicity_2018,2,Suburb
+schl_urbanicity_2018,3,Rural
+schl_urbanicity_2018,4,Town
+schl_urbanicity_2019,1,City
+schl_urbanicity_2019,2,Suburb
+schl_urbanicity_2019,3,Rural
+schl_urbanicity_2019,4,Town
+schl_level_2009,1,Elementary/Primary
+schl_level_2009,2,Middle
+schl_level_2009,3,High/Secondary
+schl_level_2009,4,Other/Ungraded
+schl_level_2009,444,Not Applicable
+schl_level_2010,1,Elementary/Primary
+schl_level_2010,2,Middle
+schl_level_2010,3,High/Secondary
+schl_level_2010,4,Other/Ungraded
+schl_level_2010,444,Not Applicable
+schl_level_2011,1,Elementary/Primary
+schl_level_2011,2,Middle
+schl_level_2011,3,High/Secondary
+schl_level_2011,4,Other/Ungraded
+schl_level_2011,444,Not Applicable
+schl_level_2012,1,Elementary/Primary
+schl_level_2012,2,Middle
+schl_level_2012,3,High/Secondary
+schl_level_2012,4,Other/Ungraded
+schl_level_2012,444,Not Applicable
+schl_level_2013,1,Elementary/Primary
+schl_level_2013,2,Middle
+schl_level_2013,3,High/Secondary
+schl_level_2013,4,Other/Ungraded
+schl_level_2013,444,Not Applicable
+schl_level_2014,1,Elementary/Primary
+schl_level_2014,2,Middle
+schl_level_2014,3,High/Secondary
+schl_level_2014,4,Other/Ungraded
+schl_level_2014,444,Not Applicable
+schl_level_2015,1,Elementary/Primary
+schl_level_2015,2,Middle
+schl_level_2015,3,High/Secondary
+schl_level_2015,4,Other/Ungraded
+schl_level_2015,444,Not Applicable
+schl_level_2016,1,Elementary/Primary
+schl_level_2016,2,Middle
+schl_level_2016,3,High/Secondary
+schl_level_2016,4,Other/Ungraded
+schl_level_2016,444,Not Applicable
+schl_level_2017,1,Elementary/Primary
+schl_level_2017,2,Middle
+schl_level_2017,3,High/Secondary
+schl_level_2017,4,Other/Ungraded
+schl_level_2017,444,Not Applicable
+schl_level_2018,1,Elementary/Primary
+schl_level_2018,2,Middle
+schl_level_2018,3,High/Secondary
+schl_level_2018,4,Other/Ungraded
+schl_level_2018,444,Not Applicable
+schl_level_2019,1,Elementary/Primary
+schl_level_2019,2,Middle
+schl_level_2019,3,High/Secondary
+schl_level_2019,4,Other/Ungraded
+schl_level_2019,444,Not Applicable
+schl_charter_indicator_2009,1,True
+schl_charter_indicator_2009,0,False
+schl_charter_indicator_2010,1,True
+schl_charter_indicator_2010,0,False
+schl_charter_indicator_2011,1,True
+schl_charter_indicator_2011,0,False
+schl_charter_indicator_2012,1,True
+schl_charter_indicator_2012,0,False
+schl_charter_indicator_2013,1,True
+schl_charter_indicator_2013,0,False
+schl_charter_indicator_2014,1,True
+schl_charter_indicator_2014,0,False
+schl_charter_indicator_2015,1,True
+schl_charter_indicator_2015,0,False
+schl_charter_indicator_2016,1,True
+schl_charter_indicator_2016,0,False
+schl_charter_indicator_2017,1,True
+schl_charter_indicator_2017,0,False
+schl_charter_indicator_2018,1,True
+schl_charter_indicator_2018,0,False
+schl_charter_indicator_2019,1,True
+schl_charter_indicator_2019,0,False
+schl_magnet_indicator_2009,1,True
+schl_magnet_indicator_2009,0,False
+schl_magnet_indicator_2010,1,True
+schl_magnet_indicator_2010,0,False
+schl_magnet_indicator_2011,1,True
+schl_magnet_indicator_2011,0,False
+schl_magnet_indicator_2012,1,True
+schl_magnet_indicator_2012,0,False
+schl_magnet_indicator_2013,1,True
+schl_magnet_indicator_2013,0,False
+schl_magnet_indicator_2014,1,True
+schl_magnet_indicator_2014,0,False
+schl_magnet_indicator_2015,1,True
+schl_magnet_indicator_2015,0,False
+schl_magnet_indicator_2016,1,True
+schl_magnet_indicator_2016,0,False
+schl_magnet_indicator_2017,1,True
+schl_magnet_indicator_2017,0,False
+schl_magnet_indicator_2018,1,True
+schl_magnet_indicator_2018,0,False
+schl_magnet_indicator_2019,1,True
+schl_magnet_indicator_2019,0,False
+schl_speced_indicator_2012,1,True
+schl_speced_indicator_2012,0,False
+schl_speced_indicator_2014,1,True
+schl_speced_indicator_2014,0,False
+schl_speced_indicator_2016,1,True
+schl_speced_indicator_2016,0,False
+schl_speced_indicator_2018,1,True
+schl_speced_indicator_2018,0,False
+schl_type_2009,1,Regular school
+schl_type_2009,2,Special education school
+schl_type_2009,3,Vocational school
+schl_type_2009,4,Other/alternative school
+schl_type_2009,5,Reportable program (new code starting in 2007–08)
+schl_type_2010,1,Regular school
+schl_type_2010,2,Special education school
+schl_type_2010,3,Vocational school
+schl_type_2010,4,Other/alternative school
+schl_type_2010,5,Reportable program (new code starting in 2007–08)
+schl_type_2011,1,Regular school
+schl_type_2011,2,Special education school
+schl_type_2011,3,Vocational school
+schl_type_2011,4,Other/alternative school
+schl_type_2011,5,Reportable program (new code starting in 2007–08)
+schl_type_2012,1,Regular school
+schl_type_2012,2,Special education school
+schl_type_2012,3,Vocational school
+schl_type_2012,4,Other/alternative school
+schl_type_2012,5,Reportable program (new code starting in 2007–08)
+schl_type_2013,1,Regular school
+schl_type_2013,2,Special education school
+schl_type_2013,3,Vocational school
+schl_type_2013,4,Other/alternative school
+schl_type_2013,5,Reportable program (new code starting in 2007–08)
+schl_type_2014,1,Regular school
+schl_type_2014,2,Special education school
+schl_type_2014,3,Vocational school
+schl_type_2014,4,Other/alternative school
+schl_type_2014,5,Reportable program (new code starting in 2007–08)
+schl_type_2015,1,Regular school
+schl_type_2015,2,Special education school
+schl_type_2015,3,Vocational school
+schl_type_2015,4,Other/alternative school
+schl_type_2015,5,Reportable program (new code starting in 2007–08)
+schl_type_2016,1,Regular school
+schl_type_2016,2,Special education school
+schl_type_2016,3,Vocational school
+schl_type_2016,4,Other/alternative school
+schl_type_2016,5,Reportable program (new code starting in 2007–08)
+schl_type_2017,1,Regular school
+schl_type_2017,2,Special education school
+schl_type_2017,3,Vocational school
+schl_type_2017,4,Other/alternative school
+schl_type_2017,5,Reportable program (new code starting in 2007–08)
+schl_type_2018,1,Regular school
+schl_type_2018,2,Special education school
+schl_type_2018,3,Vocational school
+schl_type_2018,4,Other/alternative school
+schl_type_2018,5,Reportable program (new code starting in 2007–08)
+schl_type_2019,1,Regular school
+schl_type_2019,2,Special education school
+schl_type_2019,3,Vocational school
+schl_type_2019,4,Other/alternative school
+schl_type_2019,5,Reportable program (new code starting in 2007–08)

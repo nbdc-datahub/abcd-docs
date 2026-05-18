@@ -1,0 +1,12 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+dt,Date of screen use,date,interval
+dt_day,Day of the week for date of screen use,character,ordinal
+dt_wknd,Whether date of screen use was on a weekend day (Sat/Sun) or not,logical,nominal
+hr,Hour of screen use,integer,interval
+os,Mobile operating system,character,nominal
+n_sessions,Number of screen-on sessions,integer,ratio
+min_max_session,Maximum screen-on session duration (in minutes),double,ratio
+min_mean_session,Mean screen-on session duration (in minutes),double,ratio
+min_total,Total screen-on session duration (in minutes),double,ratio

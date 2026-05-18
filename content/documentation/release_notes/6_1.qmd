@@ -1,7 +1,7 @@
 ---
 title: "6.1 data release"
 lightbox: true
-order: 1
+order: 2
 ---
 
 ```{r}
@@ -21,7 +21,7 @@ data_diff_overview <- readr::read_csv(
 
 # Overview
 
-The 6.1 data release addresses data-related and other minor issues from the 6.0 data release. All [6.0 data release notes](https://docs.abcdstudy.org/latest/documentation/release_notes/6_0.html) remain available, and researchers working with 6.1 data should review both the 6.0 and 6.1 notes to ensure they have all relevant information, as this page only covers updates specific to the 6.1 data release. Although the sample is the same across both releases, several updates were made to the data and data dictionary. Below are diff files showing all metadata changes as well as an overview of the data changes made in the 6.1 release. Detailed information about data level changes made in the 6.1 data release are available in the [internal release notes](https://abcd-docs-private.lassoinformatics.com/), which are available to authenticated users on the [NBDC Data Hub](https://www.nbdc-datahub.org).
+The 6.1 data release (on 12/3/2025) addresses data-related and other minor issues from the 6.0 data release. All [6.0 data release notes](https://docs.abcdstudy.org/latest/documentation/release_notes/6_0.html) remain available, and researchers working with 6.1 data should review both the 6.0 and 6.1 notes to ensure they have all relevant information, as this page only covers updates specific to the 6.1 data release. Although the sample is the same across both releases, several updates were made to the data and data dictionary. Below are diff files showing all metadata changes as well as an overview of the data changes made in the 6.1 release. Detailed information about data level changes made in the 6.1 data release are available in the [internal release notes](https://abcd-docs-private.lassoinformatics.com/), which are available to authenticated users on the [NBDC Data Hub](https://www.nbdc-datahub.org).
 
 ::: {.callout-note collapse="true" title="6.1 Metadata Diff File"}
 ```{r}

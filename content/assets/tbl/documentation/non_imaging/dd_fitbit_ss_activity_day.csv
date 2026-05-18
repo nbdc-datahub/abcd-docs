@@ -1,0 +1,40 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+wk,Week number starting from first day of 21 day protocol period,integer,ratio
+day,Day number starting from first day of 21 day protocol period,integer,ratio
+dt,Date of participant wear,date,interval
+dt_day,Day of the week,character,ordinal
+dt_wknd,Is this day a weekend day (Saturday or Sunday)?,logical,nominal
+min_total,Total number of valid minutes after all exclusions from midnight (00:00) to 11:59 PM (23:59) regardless of sleep status,integer,ratio
+min_actv,Total number of valid minutes after all exclusions from midnight (00:00) to 11:59 PM (23:59) identified as non-sleep,integer,ratio
+min_slp,Total number of valid minutes after all exclusions from midnight (00:00) to 11:59 PM (23:59) identified as main sleep,integer,ratio
+min_nap_slp,Total number of valid minutes after all exclusions from midnight (00:00) to 11:59 PM (23:59) identified as non-main sleep,integer,ratio
+steps_total,Total number of steps observed after all exclusions from midnight (00:00) to 11:59 PM (23:59) regardless of sleep status,integer,ratio
+steps_actv,Total number of steps observed after all exclusions during non-sleep minutes,integer,ratio
+steps,Total number of steps observed in all minutes (no exclusions) from midnight (00:00) to 11:59PM (23:59) regardless of sleep categorization,integer,ratio
+steps_fitb,fitbit provided daily step count,integer,ratio
+mets,Mean METS/minute of all valid minutes after all exclusions from midnight (00:00) to 11:59 PM (23:59) regardless of sleep status,double,ratio
+mets_actv,Mean METS/minute during non-sleep valid minutes,double,ratio
+min_intnst_sed_total,Number of minutes of sedentary (intensity = 0) time observed in all valid minutes after all exclusions from midnight (00:00) to 11:59 PM (23:59) regardless of sleep status,integer,ratio
+min_intnst_light_total,Number of minutes of lightly active time (intensity = 1) observed in all valid minutes after all exclusions from midnight (00:00) to 11:59 PM (23:59) regardless of sleep status,integer,ratio
+min_intnst_mod_total,Number of minutes of moderately active (intensity = 2) time observed in all valid minutes after all exclusions from midnight (00:00) to 11:59 PM (23:59) regardless of sleep status,integer,ratio
+min_intnst_vigor_total,Number of minutes of vigorously active (intensity = 3) time observed in all valid minutes after all exclusions from midnight (00:00) to 11:59 PM (23:59) regardless of sleep status,integer,ratio
+min_intnst_sed_actv,Number of minutes of sedentary (intensity = 0) time observed during non-sleep valid minutes,integer,ratio
+min_intnst_light_actv,Number of minutes of lightly active time (intensity = 1) observed during non-sleep valid minutes,integer,ratio
+min_intnst_mod_actv,Number of minutes of moderately active (intensity = 2) time observed during non-sleep valid minutes,integer,ratio
+min_intnst_vigor_actv,Number of minutes of vigorously active (intensity = 3) time observed during non-sleep valid minutes,integer,ratio
+excl_min_total_actv,Number of minutes from midnight (00:00) to 11:59PM (23:59) not identified as sleep; excluded for any reason,integer,ratio
+excl_min_lowhrate_actv,Number of minutes from midnight (00:00) to 11:59PM (23:59) not identified as sleep; excluded because heart rate was lower than 50 bpm,integer,ratio
+excl_min_nohrate_actv,Number of minutes from midnight (00:00) to 11:59PM (23:59) not identified as sleep; excluded because no heart rate was recorded,integer,ratio
+excl_min_repeathrate_actv,Number of minutes from midnight (00:00) to 11:59PM (23:59) not identified as sleep;  excluded because repetative heartrate recorded for 10+ minutes,integer,ratio
+excl_min_total_slp,Number of minutes from midnight (00:00) to 11:59PM (23:59) identified as sleep excluded for any reason,integer,ratio
+excl_min_lowhrate_slp,Number of minutes from midnight (00:00) to 11:59PM (23:59) identified as sleep excluded because heart rate was lower than 50 bpm,integer,ratio
+excl_min_nohrate_slp,Number of minutes from midnight (00:00) to 11:59PM (23:59) identified as sleep excluded because there was no heart rate value for the given minute,integer,ratio
+excl_min_repeathrate_slp,Number of minutes from midnight (00:00) to 11:59PM (23:59) identified as sleep excluded because there were identical heart rate values repeated for 10+ instances,integer,ratio
+hrate_rest_fitb,Resting heart rate for the day provided by Fitbit,integer,ratio
+qc_600min,Does this day have >599 minutes of non-sleep wear (based on 60 second data) after all exclusions,logical,nominal
+qc_steps,Step value (steps_actv) is 80% in accordance the steps count (steps_fitb) provided by Fitbit,logical,nominal
+pcnt_steps_fitb,Percentage of agreement between steps_actv and steps_fitb,double,ratio
+flg_30sec,Does 30 second sleep data exist for this day,logical,nominal
+flg_any,Are there any minutes with valid activity data in this day,logical,nominal

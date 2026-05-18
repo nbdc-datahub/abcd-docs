@@ -1,0 +1,19 @@
+name,value,label
+dt_day,Sun,Sunday
+dt_day,Mon,Monday
+dt_day,Tue,Tuesday
+dt_day,Wed,Wednesday
+dt_day,Thu,Thursday
+dt_day,Fri,Friday
+dt_day,Sat,Saturday
+category,See app category table,See app category table
+event,ACTIVITY_PAUSED,Activity paused
+event,ACTIVITY_RESUMED,Activity resumed
+event,ACTIVITY_STOPPED,Activity stopped
+event,DEVICE_SHUTDOWN,Device shutdown
+event,DEVICE_STARTUP,Device startup
+event,FOREGROUND_SERVICE_START,Foreground service start
+event,FOREGROUND_SERVICE_STOP,Foreground service stop
+event,SCREEN_INTERACTIVE,Screen interactive
+event,SCREEN_NON_INTERACTIVE,Screen non-interactive
+event,USER_INTERACTION,User interaction

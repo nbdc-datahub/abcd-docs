@@ -1,0 +1,22 @@
+name,label,unit,type_data,type_level
+participant_id,Unique participant identifier,,text,nominal
+age_wk,Age in weeks before/after birth (0 weeks = birth; negative numbers refer to the prenatal period; positive numbers refer to the postnatal period),weeks,integer,interval
+tooth,Tooth type,,character,nominal
+attrition,Estimate of amount of tooth cusp worn away,,character,ordinal
+resorption,Estimate of amount of enamel resorbed at cervical end,,character,ordinal
+al27,"Al27 (Aluminum) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 27Al:43Ca]",,double,ratio
+ba138,"Ba138 (Barium) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 138Ba:43Ca]",,double,ratio
+ca43,Ca43 (Calcium) - Background subtracted and corrected to NIST610 [Report as 43Ca],,double,interval
+cd111,"Cd111 (Cadmium) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 111Cd:43Ca]",,double,ratio
+co59,"Co59 (Cobalt) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 59Co:43Ca]",,double,ratio
+cr52,"Cr52 (Chromium) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 52Cr:43Ca]",,double,ratio
+cu63,"Cu63 (Copper) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 63Cu:43Ca]",,double,ratio
+li7,"Li7 (Lithium) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 7Li:43Ca]",,double,ratio
+mg25,"Mg25 (Magnesium) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 25Mg:43Ca]",,double,ratio
+mn55,"Mn55 (Manganese) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 55Mn:43Ca]",,double,ratio
+mo95,"Mo95 (Molybdenum) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 95Mo:43Ca]",,double,ratio
+ni60,"Ni60 (Nickel) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 60Ni:43Ca]",,double,ratio
+pb208,"Pb208 (Lead)  - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 208Pb:43Ca]",,double,ratio
+sn118,"Sn118 (Tin) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 118Sn:43Ca]",,double,ratio
+sr88,"Sr88 (Strontium) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 88Sr:43Ca]",,double,ratio
+zn66,"Zn66 (Zinc) - Background subtracted, normalized to calcium (Ca), and corrected to NIST610 [Report as 66Zn:43Ca]",,double,ratio

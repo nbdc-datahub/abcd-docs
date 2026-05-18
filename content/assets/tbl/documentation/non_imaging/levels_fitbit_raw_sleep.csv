@@ -1,0 +1,9 @@
+name,value,label
+stage,awake,awake
+stage,wake,wake
+stage,restless,restless
+stage,asleep,asleep
+stage,light,light
+stage,deep,deep
+stage,rem,rem
+stage,unknown,unknown

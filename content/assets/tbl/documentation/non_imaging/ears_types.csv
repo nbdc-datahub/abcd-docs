@@ -1,0 +1,8 @@
+Sensor,Description,OS,Start date,End date,Raw data,Feature data
+`appusage`,App usage (based on internal APIs),{fa:android},Nov 2020,Current,{fa:check} ,{fa:check} 
+`appusage2`,App usage (based on internal APIs) Version 2,{fa:android},Aug 2024,Current,{fa:check} ,{fa:check} 
+`keyinput`,Keyboard usage events,{fa:android} / {fa:apple},Nov 2020,Aug 2023,{fa:check} ,{fa:check} 
+`notification`,Notification events,{fa:android},Aug 2024,Current,{fa:check} ,{fa:x} 
+`screenon`,Screen on/off events,{fa:android} / {fa:apple},{fa:apple} Mar 2023\n{fa:android} Aug 2024,Current,{fa:check} ({fa:apple} only),{fa:check} 
+`stappusage`,App usage (based on screenshots of iOS Screen Time report),{fa:apple},Jul 2024,Current,{fa:check} ,{fa:x} 
+`stdevusage`,Device usage (based on screenshots of iOS Screen Time report),{fa:apple},Jul 2024,Current,{fa:check} ,{fa:x} 

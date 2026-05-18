@@ -1,39 +1,302 @@
 ---
-title: "ABCD Data Documentation"
+title: "ABCD Study Data Documentation"
+title-block-style: none
+body-classes: "index-page"
 format:
   html:
     toc: false
 ---
 
-Welcome to the data documentation website of the Adolescent Brain Cognitive Development℠ (ABCD) Study!  
-Here you will find detailed information about the ABCD data resource, including
+::: {.hero-section}
 
-- How to access and use the data responsibly.
-- Information about released instruments and variables.
-- Release-specific notes and known issues.
-- Tools for exploring, downloading, and analyzing the data.
-- General help and support resources.
+::: {.hero-content}
+<h2>ABCD Study Data Documentation</h2>
 
-| | |
-|:-|:-|
-| [<span class="pill_blue_large">Study</span>](study/index.qmd) | Overview of the ABCD Study® and its goals. |
-| [<span class="pill_blue_large">Data usage</span>](usage/access.qmd) | How to request access, use the data responsibly, and cite the study. |
-| [<span class="pill_blue_large">Documentation</span>](documentation/curation/structure.qmd) | Curated information about data structure and contents. |
-| &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Curation</span>](documentation/curation/structure.qmd) | Data organization, curation standards, and release formats. |
-| &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Imaging</span>](documentation/imaging/index.qmd) | MRI data types, derived measures, and imaging protocols. |
-| &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Non-imaging</span>](documentation/non_imaging/ab.qmd) | Surveys, biospecimens, neurocognitive tasks, and wearable sensors. |
-| &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Sub-studies</span>](documentation/substudies/covid.qmd) | Information about ABCD's substudies (e.g., Social Development; COVID-19; etc.). |
-| &nbsp;&nbsp;&nbsp;&nbsp;[<span class="pill_blue_outline">Release notes</span>](documentation/release_notes/6_1.qmd) | Data quality notes and known issues by release. |
-| [<span class="pill_blue_large">Tools</span>](tools/tools.qmd) | Tools and platforms for data exploration and analysis: [DEAP](https://abcd.deapscience.com/), [NBDC Data Access Platform](https://nbdc-datashare.lassoinformatics.com/), [R packages](tools/r_packages.qmd). |
+Welcome to the data documentation website of the Adolescent Brain Cognitive Development℠ (ABCD) Study. Here you will find detailed information about the ABCD data resource, including how to access and use the data responsibly, documentation for released instruments and variables, and tools for exploring and analyzing the data.
+:::
 
-### Additional Resources
+::: {.hero-image .img-fluid}
+<img src="assets/img/logos/abcd-brain.svg" class="img-fluid">
+:::
 
-[**NBDC Data Hub**](https://nbdc-datahub.org): For accessing ABCD data and other datasets released through the NBDC platform.  
-[**ABCD Website**](https://abcdstudy.org): Official study website proving an overview of the design, aims, and updates.  
-[**ABCD-ReproNim**](https://www.abcd-repronim.org/materials.html): This course was designed to provide a comprehensive background to the ABCD dataset while and interactive instruction to enable rigorous and reproducible data analyses.  
-[**Visual release resource**](documentation/release_notes/6_0.qmd#overview): Printable graphic detailing curation standards, naming conventions, and sample details as well as other data resources.  
-[**Now I Know My ABCD**](https://now-i-know-my-abcd.github.io/docs/intro.html): A community-run discussion forum for ABCD data users.
-  
-::: {.callout-note}
-The *Now I Know My ABCD* forum is managed by the research community and is not officially moderated by ABCD. For background on this initiative, see this [article](https://www.sciencedirect.com/science/article/pii/S1878929324000495?via%3Dihub).
+:::
+
+::: {.landing-section}
+
+::: {.landing-content}
+:::
+
+::: {.gray-brain-1}
+<img src="assets/img/logos/background-brain-left.svg" class="img-fluid">
+:::
+
+::: {.gray-brain-2}
+<img src="assets/img/logos/background-brain-right.svg" class="img-fluid">
+:::
+
+::: {.index-links}
+
+```{=html}
+<div class="container-fluid px-0">
+
+<!-- Study Section -->
+<div class="section-wrapper mb-5">
+  <h2 class="section-header mb-4">Study</h2>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <a href="study/index.html" class="jump-link-card">
+        <div class="icon-wrapper study-icons">
+          <i class="fa-solid fa-earth-americas icon-svg"></i>
+        </div>
+        <div class="content">
+          <h3>Overview</h3>
+          <p>Overview of the ABCD Study® and its goals.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="study/index.html#study-design" class="jump-link-card">
+        <div class="icon-wrapper study-icons">
+          <i class="fa-solid fa-paintbrush icon-svg"></i>
+        </div>
+        <div class="content">
+          <h3>Design</h3>
+          <p>Study design, cohort structure, and longitudinal follow-up.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="study/index.html#open-science-model" class="jump-link-card">
+        <div class="icon-wrapper study-icons">
+          <i class="fa-solid fa-circle-nodes icon-svg"></i>
+        </div>
+        <div class="content">
+          <h3>Open Science</h3>
+          <p>ABCD's open science model, protocols, and data sharing policies.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Data Use Section -->
+<div class="section-wrapper mb-5">
+  <h2 class="section-header mb-4">Data Use</h2>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <a href="usage/access.html" class="jump-link-card">
+        <div class="icon-wrapper access-icons">
+          <img src="assets/img/logos/database-green.svg" alt="database" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>Data Access</h3>
+          <p>How to request access to ABCD data through the NBDC Data Hub.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="usage/access.html#data-download" class="jump-link-card">
+        <div class="icon-wrapper access-icons">
+          <img src="assets/img/logos/file-download-green.svg" alt="file-download" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>Data Download</h3>
+          <p>Download ABCD data from the NBDC Data Hub.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="usage/responsible_use.html" class="jump-link-card">
+        <div class="icon-wrapper access-icons">
+          <img src="assets/img/logos/user-shield-green.svg" alt="user-shield" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>Responsible Data Use</h3>
+          <p>How to use the data responsibly and ethically.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="usage/acknowledgement.html" class="jump-link-card">
+        <div class="icon-wrapper access-icons">
+          <i class="fa-solid fa-certificate icon-svg"></i>
+        </div>
+        <div class="content">
+          <h3>Acknowledgement</h3>
+          <p>How to acknowledge and cite the ABCD Study in your work.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Documentation Section -->
+<div class="section-wrapper mb-5">
+  <h2 class="section-header mb-4">Documentation</h2>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <a href="documentation/curation/structure.html" class="jump-link-card">
+        <div class="icon-wrapper documentation-icons">
+          <img src="assets/img/logos/books-blue.svg" alt="books" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>Curation &amp; Structure</h3>
+          <p>Data organization, curation standards, and release formats.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="documentation/non_imaging/ab.html" class="jump-link-card">
+        <div class="icon-wrapper documentation-icons">
+          <i class="fa-solid fa-table-list icon-svg"></i>
+        </div>
+        <div class="content">
+          <h3>Non-Imaging Data</h3>
+          <p>Surveys, biospecimens, neurocognitive tasks, and wearable sensors.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="documentation/imaging/index.html" class="jump-link-card">
+        <div class="icon-wrapper documentation-icons">
+          <i class="fa-solid fa-brain icon-svg"></i>
+        </div>
+        <div class="content">
+          <h3>Imaging Data</h3>
+          <p>MRI data types, derived measures, and imaging protocols.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="documentation/substudies/covid.html" class="jump-link-card">
+        <div class="icon-wrapper documentation-icons">
+          <img src="assets/img/logos/book-blue.svg" alt="book" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>Substudy Data</h3>
+          <p>Information about ABCD substudies (e.g., Social Development; COVID-19).</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="documentation/release_notes/6_1.html" class="jump-link-card">
+        <div class="icon-wrapper documentation-icons">
+          <img src="assets/img/logos/sticky-note-blue.svg" alt="sticky-note" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>Release Notes</h3>
+          <p>Data quality notes and known issues by release.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="documentation/release_notes/6_1.html#overview" class="jump-link-card">
+        <div class="icon-wrapper documentation-icons">
+          <i class="fa-solid fa-diagram-project icon-svg"></i>
+        </div>
+        <div class="content">
+          <h3>Visual Release Resource</h3>
+          <p>Printable graphic detailing curation standards, naming conventions, and sample details.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Tools Section -->
+<div class="section-wrapper mb-5">
+  <h2 class="section-header mb-4">Tools</h2>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <a href="tools/tools.html" class="jump-link-card">
+        <div class="icon-wrapper tools-icons">
+          <img src="assets/img/logos/brain-line-purple.svg" alt="brain" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>DEAP</h3>
+          <p>DEAP Exploration and Analysis Portal for interactive data exploration.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="tools/tools.html" class="jump-link-card">
+        <div class="icon-wrapper tools-icons">
+          <i class="fa-solid fa-server icon-svg"></i>
+        </div>
+        <div class="content">
+          <h3>NBDC Data Access Platform</h3>
+          <p>Download and manage ABCD data through the NBDC platform.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="tools/r_packages.html" class="jump-link-card">
+        <div class="icon-wrapper tools-icons">
+          <i class="fa-brands fa-r-project icon-svg"></i>
+        </div>
+        <div class="content">
+          <h3>R Packages</h3>
+          <p>R packages for accessing, processing, and analyzing ABCD data.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Help Section -->
+<div class="section-wrapper mb-5">
+  <h2 class="section-header mb-4">Help</h2>
+  <div class="row g-3">
+    <div class="col-md-4">
+      <a href="info/faq.html" class="jump-link-card">
+        <div class="icon-wrapper help-icons">
+          <img src="assets/img/logos/message-question-green.svg" alt="message" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>FAQ</h3>
+          <p>Frequently asked questions about the ABCD data and documentation.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="info/issues.html" class="jump-link-card">
+        <div class="icon-wrapper help-icons">
+          <img src="assets/img/logos/exclamation-circle-green.svg" alt="exclamation" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>Report Issues</h3>
+          <p>Report problems or known issues with the data or documentation.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="info/changelog.html" class="jump-link-card">
+        <div class="icon-wrapper help-icons">
+          <img src="assets/img/logos/list-dots-green.svg" alt="list" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>Change Log</h3>
+          <p>Track changes and updates across documentation versions.</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a href="info/citation.html" class="jump-link-card">
+        <div class="icon-wrapper help-icons">
+          <img src="assets/img/logos/comment-arrow-up-right-green.svg" alt="comment" class="icon-svg">
+        </div>
+        <div class="content">
+          <h3>Citation</h3>
+          <p>How to cite the ABCD Study and this documentation website.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+```
+
+:::
+
 :::

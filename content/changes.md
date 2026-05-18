@@ -1,17 +1,23 @@
+-   **General**
+    -   Updated new design layout for the website
+    -   Updated 7.0 domain tables
+    -   Updated 7.0 overview and sample
+    -   Added new datasets and summary scores
+
 -   **Non-Imaging**
-    -   Mental Health: Updated Youth Self Report content regarding removed items
-    -   Neurocognition: Updated Flanker and NIH Toolbox content regarding remote administration
-    -   Novel Technologies: Updated EARS pilot content regarding the year of administration
-    -   Substance Use: Updated TLFB content regarding time period in interview
-    -   Substance Use: Updated Toxicology content regarding the protocols
-    -   Substance Use: Updated Parental Rule for ENDS Use content regarding missing data
+    -   Updated relevant content, see the 7.0 release notes
 
 -   **Imaging**
-    -   Updated content regarding ABCD3 atlas 
-    -   Updated ABCC content
+    -   Updated relevant content, see the 7.0 release notes
+    
+-   **ABCC**
+    -   Updated ABCC with the changes pertaining to 7.0 data release
 
--   **Release Notes**
-    -   Add 6.0 Mental Health release notes regarding Youth Self Report missing scales
-
--   **Access and Download Data**
-    -   Removed requirement regarding holding an active FWA
+-   **Tools**
+    -   Added documentation regarding R/Python Packages for NBDCtools
+    
+-   **Substudies**
+    -   Added documentation for Baby Teeth, RECOVER, and Structured Interview for Psychosis Risk Syndromes (SIPS) 
+    
+-   **FAQ**
+    -   Added question/answer regarding slice timing correction in the processing of minimally processed fMRI data

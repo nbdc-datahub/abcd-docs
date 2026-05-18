@@ -1,0 +1,9 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+dtt_window_start,Start date/time of usage window,timestamp,interval
+dtt_window_end,End date/time of usage window,timestamp,interval
+dtt_window_lastused,Date/time when application was last used during the usage window,timestamp,interval
+category,Google Play Store application category,character,nominal
+app,Application ID,text,nominal
+sec_foreground,Duration that the application was in foreground during the usage window (in seconds),integer,ratio

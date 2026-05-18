@@ -9,32 +9,147 @@ The [NBDC Data Hub](https://nbdc-datahub.org) offers users two major application
 - [Data Exploration and Analysis Portal (DEAP)](https://nbdc.deapscience.com)
 - [NBDC Data Access Platform](https://nbdc-datashare.lassoinformatics.com)
 
-  While the applications can be used for similar tasks, they differ with regard to their user 
-  interface and offer distinct features. The table below gives an overview of current features 
-  as well as planned future directions of the two applications—we encourage users to explore 
-  both applications to see what best suits their needs.
-  
-<div style="float: right; margin-left: 150px; margin-right: 150px; text-align: center;">
-  <strong>NIH Brain Development Cohorts Data Hub</strong>
-</div>
+While the applications can be used for similar tasks, they differ with regard to their user interface and offer distinct features. The table below gives an overview of current features as well as planned future directions of the two applications—we encourage users to explore both applications to see what best suits their needs.
 
-| | | |
-|:-|:-:|:-:|
-| ![](../assets/img/tools/nbdc_logo){width="225"} |  <span style="white-space: nowrap;">Data Exploration and Analysis Portal</span> <br> [nbdc.deapscience.com](https://deapscience.com/#/home) <br> [docs.deapscience.com](https://docs.deapscience.com) | NBDC Data Access Platform <br> <span style="white-space: nowrap;">[nbdc-datashare.lassoinformatics.com](https://nbdc-datashare.lassoinformatics.com)</span> <br> [nbdc.lassoinformatics.com](https://nbdc.lassoinformatics.com/data-query-and-downloads) |
-| **ABCD & HBCD data** | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |
-| **Data dictionary explorer** | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> | 
-| **Access file-based data** <br> [Raw & derived MRI/EEG, wearables, etc]{style="color: #A9A9A9;"} | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" viewBox="0 0 24 24" aria-hidden="true" data-bs-toggle="tooltip" title="Close or error icon"> <path d="M18.364 5.636a1 1 0 00-1.414 0L12 10.586 7.05 5.636a1 1 0 10-1.414 1.414L10.586 12l-4.95 4.95a1 1 0 101.414 1.414L12 13.414l4.95 4.95a1 1 0 001.414-1.414L13.414 12l4.95-4.95a1 1 0 000-1.414z"/> </svg> | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Download (subsets of) files* <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Data download available in source format]{style="color: #A9A9A9;"} | N/A | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |
-| **Access tabulated data** <br> [Administrative tables, surveys, analytes, <br> computed scores (imaging & measures), etc]{style="color: #A9A9A9;"} | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Create & download custom datasets* | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Download pre-assembled datasets* <br> [<span style="white-space: nowrap;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Curated datasets with varying [subsets of data](https://docs.deapscience.com/download_use/download.html#pre_assembled)]{style="color: #A9A9A9;"}</span> | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" viewBox="0 0 24 24" aria-hidden="true" data-bs-toggle="tooltip" title="Close or error icon"> <path d="M18.364 5.636a1 1 0 00-1.414 0L12 10.586 7.05 5.636a1 1 0 10-1.414 1.414L10.586 12l-4.95 4.95a1 1 0 101.414 1.414L12 13.414l4.95 4.95a1 1 0 001.414-1.414L13.414 12l4.95-4.95a1 1 0 000-1.414z"/> </svg> |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Organize & share datasets* | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Data formats* |![](../assets/img/tools/csv_logo){width="30"} ![](../assets/img/tools/tsv_logo){width="30"} ![](../assets/img/tools/stata_logo){width="30"} ![](../assets/img/tools/spss_logo){width="30"} <br> ![](../assets/img/tools/rds_logo){width="30"} ![](../assets/img/tools/arrow_logo){width="30"} ![](../assets/img/tools/parquet_logo){width="30"} | <br> ![](../assets/img/tools/csv_logo){width="30"} |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Create a permanent record of datasets* | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> | <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/></svg> |
-| **In-situ data exploration & analysis** |  |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Secure computing environment* | <svg xmlns=http://www.w3.org/2000/svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.55 5.55 11 1v3.07C7.06 4.56 4 7.92 4 12s3.05 7.44 7 7.93v-2.02c-2.84-.48-5-2.94-5-5.91s2.16-5.43 5-5.91V10zM19.93 11c-.17-1.39-.72-2.73-1.62-3.89l-1.42 1.42c.54.75.88 1.6 1.02 2.47zM13 17.9v2.02c1.39-.17 2.74-.71 3.9-1.61l-1.44-1.44c-.75.54-1.59.89-2.46 1.03m3.89-2.42 1.42 1.41c.9-1.16 1.45-2.5 1.62-3.89h-2.02c-.14.87-.48 1.72-1.02 2.48"></path></svg> <br> Coming *winter 2025/2026* | <svg xmlns=http://www.w3.org/2000/svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.55 5.55 11 1v3.07C7.06 4.56 4 7.92 4 12s3.05 7.44 7 7.93v-2.02c-2.84-.48-5-2.94-5-5.91s2.16-5.43 5-5.91V10zM19.93 11c-.17-1.39-.72-2.73-1.62-3.89l-1.42 1.42c.54.75.88 1.6 1.02 2.47zM13 17.9v2.02c1.39-.17 2.74-.71 3.9-1.61l-1.44-1.44c-.75.54-1.59.89-2.46 1.03m3.89-2.42 1.42 1.41c.9-1.16 1.45-2.5 1.62-3.89h-2.02c-.14.87-.48 1.72-1.02 2.48"></path></svg> <br> Coming *soon* |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Data exploration/visualization (in app)* | <svg xmlns=http://www.w3.org/2000/svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.55 5.55 11 1v3.07C7.06 4.56 4 7.92 4 12s3.05 7.44 7 7.93v-2.02c-2.84-.48-5-2.94-5-5.91s2.16-5.43 5-5.91V10zM19.93 11c-.17-1.39-.72-2.73-1.62-3.89l-1.42 1.42c.54.75.88 1.6 1.02 2.47zM13 17.9v2.02c1.39-.17 2.74-.71 3.9-1.61l-1.44-1.44c-.75.54-1.59.89-2.46 1.03m3.89-2.42 1.42 1.41c.9-1.16 1.45-2.5 1.62-3.89h-2.02c-.14.87-.48 1.72-1.02 2.48"></path></svg> <br> Coming *fall 2025* | <svg xmlns=http://www.w3.org/2000/svg width="20" height="20" fill="red" viewBox="0 0 24 24" aria-hidden="true" data-bs-toggle="tooltip" title="Close or error icon"> <path d="M18.364 5.636a1 1 0 00-1.414 0L12 10.586 7.05 5.636a1 1 0 10-1.414 1.414L10.586 12l-4.95 4.95a1 1 0 101.414 1.414L12 13.414l4.95 4.95a1 1 0 001.414-1.414L13.414 12l4.95-4.95a1 1 0 000-1.414z"/> </svg> |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Data analysis (in app)* <br> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Including voxel and vertexwise imaging]{style="color: #A9A9A9;"} | <svg xmlns=http://www.w3.org/2000/svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.55 5.55 11 1v3.07C7.06 4.56 4 7.92 4 12s3.05 7.44 7 7.93v-2.02c-2.84-.48-5-2.94-5-5.91s2.16-5.43 5-5.91V10zM19.93 11c-.17-1.39-.72-2.73-1.62-3.89l-1.42 1.42c.54.75.88 1.6 1.02 2.47zM13 17.9v2.02c1.39-.17 2.74-.71 3.9-1.61l-1.44-1.44c-.75.54-1.59.89-2.46 1.03m3.89-2.42 1.42 1.41c.9-1.16 1.45-2.5 1.62-3.89h-2.02c-.14.87-.48 1.72-1.02 2.48"></path></svg> <br> Coming *winter 2025/2026* | <svg xmlns=http://www.w3.org/2000/svg width="20" height="20" fill="red" viewBox="0 0 24 24" aria-hidden="true" data-bs-toggle="tooltip" title="Close or error icon"> <path d="M18.364 5.636a1 1 0 00-1.414 0L12 10.586 7.05 5.636a1 1 0 10-1.414 1.414L10.586 12l-4.95 4.95a1 1 0 101.414 1.414L12 13.414l4.95 4.95a1 1 0 001.414-1.414L13.414 12l4.95-4.95a1 1 0 000-1.414z"/> </svg> |
+<svg style="display: none;">
+  <symbol id="icon-x" width="30" height="30" fill="red" viewBox="0 0 24 24">
+    <path d="M18.364 5.636a1 1 0 00-1.414 0L12 10.586 7.05 5.636a1 1 0 10-1.414 1.414L10.586 12l-4.95 4.95a1 1 0 101.414 1.414L12 13.414l4.95 4.95a1 1 0 001.414-1.414L13.414 12l4.95-4.95a1 1 0 000-1.414z"/>
+  </symbol>
+  <symbol id="icon-check" width="30" height="30" fill="green" viewBox="0 0 24 24">
+    <path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.207-4.242-4.243a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l9.848-9.96z"/>
+  </symbol>
+  <symbol id="icon-pending" width="30" height="30" fill="gray" viewBox="0 0 24 24">
+    <path d="M15.55 5.55 11 1v3.07C7.06 4.56 4 7.92 4 12s3.05 7.44 7 7.93v-2.02c-2.84-.48-5-2.94-5-5.91s2.16-5.43 5-5.91V10zM19.93 11c-.17-1.39-.72-2.73-1.62-3.89l-1.42 1.42c.54.75.88 1.6 1.02 2.47zM13 17.9v2.02c1.39-.17 2.74-.71 3.9-1.61l-1.44-1.44c-.75.54-1.59.89-2.46 1.03m3.89-2.42 1.42 1.41c.9-1.16 1.45-2.5 1.62-3.89h-2.02c-.14.87-.48 1.72-1.02 2.48"/>
+  </symbol>
+</svg>
+
+<table class="table nbdc-table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" class="center-cell">
+          <img src="../assets/img/tools/nbdc_icon.png" style="max-width: 90%; height: auto;">
+            </div>
+    </th>
+      <th scope="col" class="center-cell">Data Exploration & Analysis Portal <br> 
+        <a href="nbdc.deapscience.com">
+          nbdc.deapscience.com <br>
+        </a>
+        <a href="docs.deapscience.com">
+          docs.deapscience.com
+        </a>        
+      </th>
+      <th scope="col" class="center-cell">NBDC Data Access Platform <br>
+        <a href="nbdc-datashare.lassoinformatics.com">
+          nbdc-datashare.lassoinformatics.com <br>
+        </a>
+        <a href="nbdc.lassoinformatics.com">
+          nbdc.lassoinformatics.com
+        </a>          
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"> ABCD & HBCD data</th>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+    </tr>
+    <tr>
+      <th scope="row"> Data dictionary explorer</th>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+    </tr>
+    <tr>
+      <th scope="row">
+         Access file-based data <br>
+          <span class="subtext"> Raw & derived MRI/EEG, wearables, etc available in source formats</span>
+      </th>
+      <td><svg class="icon icon-x"><use href="#icon-x"></use></svg></td>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+    </tr>
+    <tr>
+      <th scope="row">
+        Access tabulated data <br>
+          <span class="subtext">Administrative tables, surveys, analytes, computed scores (imaging & measures), etc</span>
+      </th>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+    </tr>
+    <tr>
+      <th scope;"row">
+        <span class="subheader">Create & download custom datasets</span>
+      </th>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+    </tr>
+    <tr>
+      <th scope;"row">
+        <span class="subheader">Download pre-assembled datasets</span>
+          <span class="subtext">Curated datasets with varying subsets of data</span>
+      </th>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+      <td><svg class="icon icon-x"><use href="#icon-x"></use></svg></td>
+    </tr>
+    <tr>
+      <th scope;"row">
+        <span class="subheader">Organize & share datasets in platform</span>
+      </th>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+      <td><svg class="icon icon-x"><use href="#icon-x"></use></svg></td>
+    </tr>
+    <tr>
+      <th scope;"row">
+        <span class="subheader">Data formats</span>
+      </th>
+      <td>
+          <img src="../assets/img/tools/csv_logo.png" width="30">
+          <img src="../assets/img/tools/tsv_logo.png" width="30">
+          <img src="../assets/img/tools/stata_logo.png" width="30">
+          <img src="../assets/img/tools/spss_logo.png" width="30"> <br>
+          <img src="../assets/img/tools/rds_logo.png" width="30">
+          <img src="../assets/img/tools/arrow_logo.png" width="30">
+          <img src="../assets/img/tools/parquet_logo.png" width="30">
+      </td>
+      <td>
+          <img src="../assets/img/tools/csv_logo.png" width="30">
+      </td>
+    </tr>
+    <tr>
+      <th scope;"row">
+        <span class="subheader">Create a permanent record of datasets</span>
+      </th>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+    </tr>
+    <tr>
+      <th scope="row"> In-situ data exploration & analysis</th>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope;"row">
+        <span class="subheader">Secure computing environment</span>
+      </th>
+      <td><svg class="icon icon-pending"><use href="#icon-pending"></use></svg></td>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+    </tr>
+    <tr>
+      <th scope;"row">
+        <span class="subheader">Data exploration/visualization (in app)</span>
+      </th>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+      <td><svg class="icon icon-x"><use href="#icon-x"></use></svg></td>
+    </tr>
+    <tr>
+      <th scope;"row">
+        <span class="subheader">Data analysis (in app)</span>
+          <span class="subtext">Including voxel and vertexwise imaging</span>
+      </th>
+      <td><svg class="icon icon-check"><use href="#icon-check"></use></svg></td>
+      <td><svg class="icon icon-x"><use href="#icon-x"></use></svg></td>
+    </tr>
+  </tbody>
+</table>
 
 ::: {.callout-note title="Updates"}
 - An in-situ coding environment for analyses is in the works. Stay tuned for more details.

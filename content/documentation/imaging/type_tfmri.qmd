@@ -14,7 +14,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 render_table_info("sub_domain == 'Task fMRI'")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_tfmri.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_tfmri.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 The Task based Functional MRI (TfMRI) data conatins field maps, spin echo images with opposite phase encode polarity, and multi-frame, gradient echo, echo-planar imaging images.
 
@@ -157,20 +157,20 @@ In a relatively small, though substantial, subset of task fMRI acquisitions coll
 The task fMRI behavioral and stimulus timing files, which are exported from the E-Prime stimulus presentation program, have a date and time stamp recording when the stimulus program was started for a particular task run. E-Prime timing is compared to date and time derived from imaging DICOM metadata to identify events with potentially mismatched E-Prime file and imaging data. In some cases, these mismatches are due to clock offsets on stimulus computers relative to the MRI console computer; e.g., on days of transition to and from Daylight Saving Time (DST), or small, fixed differences in clock time. In other cases, imaging sites uploaded E-Prime files for one participant but assigned them to a different pGUID, which can result in very large timing differences. Participant-events with timing mismatches less than 12.5 minutes are identified by these variables:
 
 - `mr_y_qc__raw__tfmri__mid__eprime__match_indicator`: MID E-Prime timing match
-  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__mid")`
+  - `r table_header("mr_y_qc__raw__tfmri__mid")`
 - `mr_y_qc__raw__tfmri__nback__eprime__match_indicator`: N-Back E-Prime timing match
-  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__nback")`
+  - `r table_header("mr_y_qc__raw__tfmri__nback")`
 - `mr_y_qc__raw__tfmri__sst__eprime__match_indicator`: SST E-Prime timing match
-  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__sst")`
+  - `r table_header("mr_y_qc__raw__tfmri__sst")`
 
 Participant-events for which timing mismatches can be ignored, e.g., DST transitions or persistent clock offsets, are identified by these variables:
 
 - `mr_y_qc__raw__tfmri__mid__eprime__tdiff__ign_indicator`: MID ignore E-Prime mismatch
-  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__mid")`
+  - `r table_header("mr_y_qc__raw__tfmri__mid")`
 - `mr_y_qc__raw__tfmri__nback__eprime__tdiff__ign_indicator`: N-back ignore E-Prime mismatch
-  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__nback")`
+  - `r table_header("mr_y_qc__raw__tfmri__nback")`
 - `mr_y_qc__raw__tfmri__sst__eprime__tdiff__ign_indicator`: SST ignore E-Prime mismatch
-  - ![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_qc__raw__tfmri__sst")`
+  - `r table_header("mr_y_qc__raw__tfmri__sst")`
 
 These variables have been included in the recommended imaging inclusion criteria and the imaging inclusion flags. Refer to the [Imaging Overview](index.qmd) release note for more details.
 

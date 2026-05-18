@@ -16,13 +16,13 @@ library(stringr)
 render_table_info("str_detect(table_name, 'mr_y_adm')")
 ```
 
-[Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_adm.pdf){style="display: block; text-align: right; margin-top: 4px;"}
+<!-- [Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_adm.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
 
 # Youth tables 
 
 ## MRI Info {#mr_y_adm__info}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_adm__info")`
+`r table_header("mr_y_adm__info")`
 
 **Measure Description:** The MRI Info instrument provides information on the MRI scanner used at each visit such as scanner manufacturer, model, magnetic field strength, device software version and date of acquisition. It also provides the visit ID for a given participant/event.
 
@@ -36,13 +36,13 @@ render_table_info("str_detect(table_name, 'mr_y_adm')")
 
 ## Scanning Checklist and Notes {#mr_y_adm__nts}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_adm__nts")`
+`r table_header("mr_y_adm__nts")`
 
 **Measure Description:** The Scanning Checklist and Notes instrument is used by research assistants during the MRI session to record relevant information about the session. For example, it records the original randomized order of fMRI tasks and if there were deviations from that order. It also records whether task fMRI paradigms were completed in or outside of the scanner.
 
 ## Pre/Post Scan Questionnaires {#mr_y_adm__qtn}
 
-![](/assets/img/documentation/deap_icon.svg){width="30"} `r link_table("mr_y_adm__qtn")`
+`r table_header("mr_y_adm__qtn")`
 
 **Measure Description:** Participants are asked to fill in a pre-scan questionnaire immediately prior to scanning. The questionnaire asks about their current state of arousal (sleepy, happy, scared, awake, upset, angry, excited, tired, sleepy and sad) using a five-point Likert scale: Very slightly or not at all = `1`; A little = `2`; Moderately = `3`; Quite a bit = `4`; and Extremely = `5`. This questionnaire is administered again at the end of the scan.
 

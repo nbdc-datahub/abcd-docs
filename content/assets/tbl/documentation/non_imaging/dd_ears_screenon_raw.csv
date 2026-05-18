@@ -1,0 +1,8 @@
+name,label,type_data,type_level
+participant_id,Participant ID,text,nominal
+session_id,Session ID,character,nominal
+dt,Date of screen event,date,interval
+dt_day,Day of the week for date of screen event,character,ordinal
+dt_wknd,Whether date of screen event was on a weekend day (Sat/Sun) or not,logical,nominal
+dtt,Date/time of screen event,timestamp,interval
+event,Screen lock state,character,nominal
