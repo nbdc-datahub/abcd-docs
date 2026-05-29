@@ -77,7 +77,7 @@ The automated post-processing QC metrics include measures of superior and inferi
 :::
 
 ::: {.callout-tip collapse="true" title="Where are the dMRI gradient tables?"}
-Raw dMRI gradient tables can be found in the `raw/` folder containing raw data standardized to the [Brain Imaging Data Structure (BIDS)](../documentation/imaging/abcc_start_page.qmd). See here for an overview the [raw dMRI data](../documentation/imaging/type_dmri.qmd). Processed gradient tables, adjusted for head rotation, are additionally provided in the [QSIPrep derivatives](../documentation/imaging/abcc_derivatives.qmd#qsi_prep).
+Raw dMRI gradient tables can be found in the `raw/` folder containing raw data standardized to the [Brain Imaging Data Structure (BIDS)](../documentation/imaging/abcc_start_page.qmd). See here for an overview the [raw dMRI data](../documentation/imaging/type_dmri.qmd). Processed gradient tables, adjusted for head rotation, are additionally provided in the [QSIPrep derivatives](../documentation/imaging/abcc_qsiprep-qsirecon.qmd).
 :::
 
 ::: {.callout-tip collapse="true" title="When should I use field maps?"}

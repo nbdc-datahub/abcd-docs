@@ -82,11 +82,9 @@ The following table shows the number of participants per *core study* event:
 | ses-07A              | 7 Year                  | 8564  |
 | ses-07M              | 7.5 Year                | 4871  |
 
-The ABCD 7.0 data release also includes data from associated substudies, including Social Development, COVID-19, and newly added RECOVER and SIPS substudies. Some of these substudy assessments are conducted during the same visits as the main study, while others have independent event structures.
+The ABCD 7.0 data release also includes data from associated substudies: COVID-19, Endocannabinoid, Hurricane Irma, MR Spectroscopy, Social Development, and the newly added RECOVER, SIPS, and Baby Teeth substudies. Some of these substudy assessments are conducted during the same visits as the main study, while others have independent event structures.
 
-RECOVER (ses-REC) and SIPS (ses-SIP) are newly added substudy events introduced in the 7.0 data release.
-
-The following table shows the number of participants with data per *substudy* event:
+The following table shows the number of participants with data per substudy event (substudies that don’t have their own event structure are not listed):
 
 | **Substudy**       | **Session/event ID** | **Session/event label** | **n** |
 |--------------------|----------------------|-------------------------|-------|
@@ -358,11 +356,7 @@ In the table `su_p_des` there were outliers found in the follow-up questions end
 
 ### Substance Use Summary Scores
 
-New dynamic and static substance use (SU) summary scores have been introduced in the 7.0 Release to harmonize substance use indicators across multiple measures (Substance Use Interview, TLFB, and Mid-Year Phone Interview; @lisdahl2018). Harmonizing across multiple measures has been shown to more comprehensively capture substance rates across the ABCD sample (@sullivan2022; Sullivan et al., Under Review). Dynamic scores (`su_y_dyn__`) summarize participant-by-event indicators of lifetime use across substances, while static scores (`su_y_stc__`) summarize onset information, including age and visit of first reported use. These scores integrate information across instruments to generate consistent indicators of reported use and onset. Alcohol, Cannabis, and Nicotine use variables include composite variables of low-level use (i.e., sipping or puff), full standard use, or combined low and full use for each substance. Full substance use variables including low level use are indicated within the variable name (i.e., “lowuse”). Further, composite variables across all substance use are computed (i.e., `__su__`) as well as substance use other than alcohol, nicotine, or cannabis (i.e., `__su__oth__`).
-
--   `r full_cite("lisdahl2018")`
--   `r full_cite("sullivan2022")`
--   `r full_cite("sullivan2026")`
+New dynamic and static substance use (SU) summary scores (`su_y_dyn`, `su_y_stc`) have been introduced in the 7.0 Release to harmonize substance use indicators across multiple measures (Substance Use Interview, TLFB, and Mid-Year Phone Interview). Details on these new variables can be found in the SU domain documentation for both the `r link_table("su_y_dyn", dest = "docs", name = "label", type = "md")` and `r link_table("su_y_stc", dest = "docs", name = "label", type = "md")` tables.
 
 ## Imaging Data
 
@@ -432,6 +426,49 @@ Beginning at the initial (baseline) appointment of ABCD, researchers collected n
 ## RECOVER
 
 The [RECOVER data](../substudies/recover.qmd) have been processed and included in the 7.0 Release. All survey questions were completed by the parent or caregiver. This includes surveys marked as “youth”. As such, the table information in the data documentation is all listed under “parent”/`_p_`, as the caregiver completed both the surveys about themselves and the surveys about the youth. For measures that are asked about both the youth and caregiver, the caregiver directed table ends with the suffix `cg` in the table name. The antibody test was completed by the youth directly, which is why it is marked as a youth table.
+
+### COVID Symptoms Surveys: Known Variable Naming Issues
+
+During QC review of the COVID Symptoms survey tables (`recover_p_ps` youth-report and `recover_p_pscg` caregiver-report), a systematic variable naming error was identified affecting 346 variables. The underlying response data are unaffected. These will be corrected in the 7.1 patch release.
+
+The misnaming occurred in the same pattern in both surveys, users referencing these variables should apply the following rename mapping:
+
+| Current name (incorrect) | Correct name | Survey | n |
+|--------------------------|--------------|--------|:-:|
+| `recover_p_ps__infect__2wk_001–089` | `recover_p_ps__curr_001–089` | Youth-report | 89 |
+| `recover_p_ps__pia_001–089` | `recover_p_ps__infect__2wk_001–089` | Youth-report | 89 |
+| `recover_p_pscg__infect__ll_001–084` | `recover_p_pscg__curr_001–084` | Caregiver-report | 84 |
+| `recover_p_pscg__ilt_001–084` | `recover_p_pscg__infect__ll_001–084` | Caregiver-report | 84 |
+
+Researchers working in R can apply the corrections using the following code:
+
+```r
+rename_recover_covid_symptoms <- function(data) {
+  names(data) <- names(data) |>
+    stringr::str_replace(
+      "recover_p_ps__infect__2wk_",
+      "recover_p_ps__curr_"
+    ) |>
+    stringr::str_replace(
+      "recover_p_ps__pia_",
+      "recover_p_ps__infect__2wk_"
+    ) |>
+    stringr::str_replace(
+      "recover_p_pscg__infect__ll_",
+      "recover_p_pscg__curr_"
+    ) |>
+    stringr::str_replace(
+      "recover_p_pscg__ilt_",
+      "recover_p_pscg__infect__ll_"
+    )
+  data
+}
+
+# Apply to your data frame
+data <- rename_recover_covid_symptoms(data)
+```
+
+Additionally, variable labels for `recover_p_pscg__noinfect__ll_001–084` currently read "Not long-lasting: \<symptom\>" and will be corrected to "Intermediate/Long-lasting (No infection history): \<symptom\>" in the next data dictionary update.
 
 ## Social Development
 

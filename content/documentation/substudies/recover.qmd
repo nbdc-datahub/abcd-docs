@@ -27,7 +27,6 @@ Thorough documentation for the RECOVER study is available [here](https://recover
 During data collection, RECOVER variable names were used in REDCap so `name_redcap` field names, provided in the data dictionary align with the RECOVER data dictionary. In the released ABCD data, variables have been renamed according to ABCD naming conventions (see [Variable Naming Conventions](../curation/naming.qmd).
 :::
 
-
 ---
 
 # Youth tables {#recover_y}
@@ -132,6 +131,13 @@ General questions related to the youth’s overall physical and mental health.
 
 Comprehensive questionnaire of physical and behavioral symptoms experienced by youth before, during and after COVID infection. The questionnaire is split into sections for different body systems.
 
+::: {.callout-caution collapse="true" title="Release notes: COVID Symptoms Survey: Known Variable Naming Issues"}
+**7.0**
+
+-   [**COVID Symptoms Surveys: Known Variable Naming Issues**](../release_notes/7_0.qmd#recover) A systematic variable naming error was identified affecting 346 variables between the `recover_p_ps` and `recover_p_pscg` tables. The underlying response data are unaffected. See [release note](../release_notes/7_0.qmd#recover) a mapping table, code to correct the naming issues, and other important details.  
+
+:::
+
 ### Child Social Determinents of Health [Parent] {#recover_p_sdoh}
 
 `r table_header("recover_p_sdoh")`
@@ -203,6 +209,13 @@ General questions related to the caregiver’s overall physical and mental healt
 `r table_header("recover_p_pscg")`
 
 Comprehensive questionnaire of physical and behavioral symptoms experienced by caregiver before, during and after COVID infection. The questionnaire is split into sections for different body systems.
+
+::: {.callout-caution collapse="true" title="Release notes: COVID Symptoms Survey: Known Variable Naming Issues"}
+**7.0**
+
+-   [**COVID Symptoms Surveys: Known Variable Naming Issues**](../release_notes/7_0.qmd#recover) A systematic variable naming error was identified affecting 346 variables between the `recover_p_ps` and `recover_p_pscg` tables. The underlying response data are unaffected. See [release note](../release_notes/7_0.qmd#recover) for a mapping table, code to correct the naming issues, and other important details. 
+
+:::
 
 ### Caregiver Social Determinents of Health [Parent] {#recover_p_sdohcg}
 

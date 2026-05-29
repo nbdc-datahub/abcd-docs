@@ -151,9 +151,9 @@ The linked academic achievement variables have the following disaggregation: ave
 
 **Notes and special considerations:** School-level SEDA data were linked to participant individual data in multiple ways: by assessment wave within the tabulated data (school ID at the time of the assessment), as well as academic year (most common school ID each academic year), and monthly (most common school ID each month), which can be downloaded through the NBDC Data Access Platform. School-level SEDA data is only available if the participant is enrolled in 3rd through 8th grade.
 
-### School Academic Achievement Recovery - District (SEDA Recovery) {#le_l_sedarec}
+### School Academic Achievement Recovery - District (SEDA Recovery) {#le_l_sedarec__distr}
 
-`r table_header("le_l_sedarec")`
+`r table_header("le_l_sedarec__distr")`
 **Measure description:** Table includes SEDA Education Recovery Project dataset, which provides annual district-level achievement data from the 2018–2019 through 2023–2024 academic years. The table also provides pandemic-related learning loss and recovery scores, which are change scores between 2024 and 2019, 2024 and 2022, and 2022 and 2019. Positive scores indicate improved academic achievement across years, whereas negative scores indicate loss in academic achievement. 
 
 # Residential history-derived environmental measures {#residential}
@@ -532,7 +532,6 @@ It is important to note that the days preceding and the day of baseline intervie
 It is important to note that not all participants currently have vapor pressure deficit data as part of 6.0 for baseline visit dates. Investigators should consider any possible bias in who does and does not have maximum vapor pressure deficit values if using these data.
 
 Errors were identified in the 4.0 VPD linkages and should not be used given these issues. These errors were minimized for the provided data since the 5.0 release.
-:::
 
 **Key reference:** `r full_cite("spangler2019")`
 

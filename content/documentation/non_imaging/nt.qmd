@@ -759,6 +759,44 @@ appusage2_logs |>
 
 library(dplyr)
 
+# read in data
 appusage2_logs <- arrow::read_parquet("path/to/ears_appusage2_logs.parquet")
+
+#Simple check for raw EARS data
+length(unique(appusage2_logs$participant_id))
+table(appusage2_logs$session_id)
+
+#Pull out participants in sample file to cross-reference others
+v.subjects <- ears_appusage_dt %>%
+  select(participant_id) %>%
+  distinct() %>%
+  dplyr::pull(participant_id)
+
+#Which subjects are in the one file but not in app use file
+subjs_keys.features <- sampleFile %>%
+  filter(!participant_id %in% v.subjects) 
+
+#Date range of entire file
+ears_appusage_dt <- arrow::read_parquet("/../../ears_appusage_dt.parquet")
+min(appusage2_logs$dt)
+max(appusage2_logs$dt)
+
+#Check the data collection period of EARS data
+DataCollectionPeriod <- ears_appusage_dt %>%
+  group_by(participant_id,
+           session_id) %>%
+  summarise(
+    minimum = as.Date(min(dt)),
+    maximum = as.Date(max(dt)),
+    .groups = 'drop') %>% # Drops the grouping structure after summarizing
+  mutate(dataCollectionDays = maximum - minimum)
+
+##Turn difference into numeric instead of character
+DataCollectionPeriod$dataCollectionDays <- as.numeric(DataCollectionPeriod$dataCollectionDays)
+
+##Pull out the subjects with <6 days of data collection
+EARS_6daysData <- DataCollectionPeriod %>%
+  subset(select = c("participant_id", "session_id", "dataCollectionDays")) %>%
+  mutate(delete = case_when(dataCollectionDays <7 ~ 1, .default = 0))
 ```
 :::

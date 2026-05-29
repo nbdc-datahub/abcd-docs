@@ -31,18 +31,18 @@ While the applications can be used for similar tasks, they differ with regard to
             </div>
     </th>
       <th scope="col" class="center-cell">Data Exploration & Analysis Portal <br> 
-        <a href="nbdc.deapscience.com">
+        <a href="https://nbdc.deapscience.com">
           nbdc.deapscience.com <br>
         </a>
-        <a href="docs.deapscience.com">
+        <a href="https://docs.deapscience.com">
           docs.deapscience.com
         </a>        
       </th>
       <th scope="col" class="center-cell">NBDC Data Access Platform <br>
-        <a href="nbdc-datashare.lassoinformatics.com">
+        <a href="https://nbdc-datashare.lassoinformatics.com">
           nbdc-datashare.lassoinformatics.com <br>
         </a>
-        <a href="nbdc.lassoinformatics.com">
+        <a href="https://nbdc.lassoinformatics.com">
           nbdc.lassoinformatics.com
         </a>          
       </th>

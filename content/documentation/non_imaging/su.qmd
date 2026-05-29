@@ -276,12 +276,23 @@ Finally, to optimally use hair samples, a testing priority list was given to eac
 
 **Measure description:** Symptom frequency checklist of "other" drug-related problems over past 6 months
 
+**Key references:**
+
+-   `r full_cite("johnson1989")`
+-   `r full_cite("caldwell2002")`
+-   `r full_cite("kingston2011")`
+
+### Dynamic Substance Use Summary Scores {#su_y_dyn}
+
+`r table_header("su_y_dyn")`
+
+**Measure description:** Dynamic substance use (SU) summary scores were introduced starting in the 7.0 Release to harmonize substance use indicators across multiple measures (Substance Use Interview, TLFB, and Mid-Year Phone Interview; @lisdahl2018). Harmonizing across multiple measures has been shown to more comprehensively capture substance rates across the ABCD sample (@sullivan2022; Sullivan et al., Under Review). These dynamic scores (`su_y_dyn__`) summarize participant-by-event indicators of lifetime use across substances. These scores integrate information across instruments to generate consistent indicators of reported use and onset. Alcohol, Cannabis, and Nicotine use variables include composite variables of low-level use (i.e., sipping or puff), full standard use, or combined low and full use for each substance. Full substance use variables including low level use are indicated within the variable name (i.e., “lowuse”). Further, composite variables across all substance use are computed (i.e., `__su__`) as well as substance use other than alcohol, nicotine, or cannabis (i.e., `__su__oth__`).
 
 **Key references:**
 
-- `r full_cite("johnson1989")`
-- `r full_cite("caldwell2002")`
-- `r full_cite("kingston2011")`
+-   `r full_cite("lisdahl2018")`
+-   `r full_cite("sullivan2022")`
+-   `r full_cite("sullivan2026")`
 
 ### PATH Intention to Use {#su_y_itu}
 
@@ -525,7 +536,6 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 - `r full_cite("pomerleau1998")`
 - `r full_cite("rodriguez2004")`
 
-
 ### ENDS Expectancies {#su_y_nicvapeexp}
 
 `r table_header("su_y_nicvapeexp")`
@@ -561,7 +571,6 @@ The Substance Use Interview and Timeline FollowBack use the word "marijuana" due
 
 - `r full_cite("johnson2003")`
 - `r full_cite("johnston2016")`
-
 
 ### Peer Deviance {#su_y_pgd}
 
@@ -604,6 +613,18 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 
 **Key reference:** `r full_cite("samek2018")`
 
+### Static Substance Use Summary Scores {#su_y_stc}
+
+`r table_header("su_y_stc")`
+
+**Measure description:** Static substance use (SU) summary scores were introduced starting in the 7.0 Release to harmonize substance use indicators across multiple measures (Substance Use Interview, TLFB, and Mid-Year Phone Interview; @lisdahl2018). Harmonizing across multiple measures has been shown to more comprehensively capture substance rates across the ABCD sample (@sullivan2022; Sullivan et al., Under Review). These static scores (`su_y_stc__`) summarize onset information, including age and visit of first reported use. These scores integrate information across instruments to generate consistent indicators of reported use and onset. Alcohol, Cannabis, and Nicotine use variables include composite variables of low-level use (i.e., sipping or puff), full standard use, or combined low and full use for each substance. Full substance use variables including low level use are indicated within the variable name (i.e., “lowuse”). Further, composite variables across all substance use are computed (i.e., `__su__`) as well as substance use other than alcohol, nicotine, or cannabis (i.e., `__su__oth__`).
+
+**Key references:**
+
+-   `r full_cite("lisdahl2018")`
+-   `r full_cite("sullivan2022")`
+-   `r full_cite("sullivan2026")`
+
 ### Vaping Expectancies {#su_y_vapeexp}
 
 `r table_header("su_y_vapeexp")`
@@ -614,9 +635,9 @@ Although historically referred to as 'Peer Deviant Behavior,' 'peer substance us
 
 **Key reference:** `r full_cite("torrealday2008")`
 
-### Marijuana Vaping Expectancies {su_y_vapeexp_mj}
+### Marijuana Vaping Expectancies {#su_y_mjvapeexp}
 
-`r table_header("su_y_vapeexp_mj")`
+`r table_header("su_y_mjvapeexp")`
 
 **Measure description:** Measures thoughts, feelings and beliefs about effects of vaping marijuana. This was adapted from the Vaping Expectancies measure described above.The questions are the same as those in Vaping Expectancies, but specific to marijuana.
 

@@ -168,7 +168,7 @@ Welcome to the data documentation website of the Adolescent Brain Cognitive Deve
       </a>
     </div>
     <div class="col-md-4">
-      <a href="documentation/substudies/covid.html" class="jump-link-card">
+      <a href="documentation/substudies/baby_teeth.html" class="jump-link-card">
         <div class="icon-wrapper documentation-icons">
           <img src="assets/img/logos/book-blue.svg" alt="book" class="icon-svg">
         </div>
@@ -179,7 +179,7 @@ Welcome to the data documentation website of the Adolescent Brain Cognitive Deve
       </a>
     </div>
     <div class="col-md-4">
-      <a href="documentation/release_notes/6_1.html" class="jump-link-card">
+      <a href="documentation/release_notes/7_0.html" class="jump-link-card">
         <div class="icon-wrapper documentation-icons">
           <img src="assets/img/logos/sticky-note-blue.svg" alt="sticky-note" class="icon-svg">
         </div>
@@ -230,7 +230,7 @@ Welcome to the data documentation website of the Adolescent Brain Cognitive Deve
       </a>
     </div>
     <div class="col-md-4">
-      <a href="tools/r_packages.html" class="jump-link-card">
+      <a href="tools/packages.html" class="jump-link-card">
         <div class="icon-wrapper tools-icons">
           <i class="fa-brands fa-r-project icon-svg"></i>
         </div>

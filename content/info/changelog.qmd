@@ -4,6 +4,22 @@ order: 3
 ---
 
 
+# 7.0.1
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2026-05-29<br>
+**URL:** [https://docs.abcdstudy.org/v/7_0_1](https://docs.abcdstudy.org/v/7_0_1)
+</span>
+
+-   **Non-Imaging**
+    -   Novel Technologies: Updated EARS code for QC/filtering the data
+    -   Physical Health: Updated content regarding `ph_y_pds`
+    -   Substance Use: Added content regarding `su_y_dyn` and `su_y_stc`
+
+-   **Release Notes**
+    -   Updated RECOVER release notes regarding `recover_p_ps` and `recover_p_pscg`
+
+
+
 # 7.0.0
 <span style="font-size: 0.85em; color: gray;">
 **Date:** 2026-05-18<br>

@@ -57,7 +57,7 @@ website:
           - text: "Imaging"
             file: documentation/imaging/index.qmd
           - text: "Substudies"
-            file: documentation/substudies/covid.qmd
+            file: documentation/substudies/baby_teeth.qmd
           - text: "Release notes"
             file: documentation/release_notes/index.qmd
       - sidebar:tools

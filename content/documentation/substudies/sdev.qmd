@@ -105,7 +105,7 @@ Statistical analyses of the Youth 10 Item Delinquency Scale revealed evidence of
 - `r full_cite("shaw2012")`
 - `r full_cite("brislin2024")`
 
-## Firearms {#youth-firearms}
+## Firearms {#sdev_y_fa}
 
 `r table_header("sdev_y_fa")`  
 
@@ -284,9 +284,9 @@ Dimensions: impulsive irresponsible (thrill seeking, impulsiveness, irresponsibi
 - `r full_cite("kann2016")`
 - `r full_cite("xu2014")`
 
-## Parental Incarceration \[Youth\] {#sdev_y_incar}
+## Parental Incarceration \[Parent\] {#sdev_p_incar}
 
-`r table_header("sdev_y_incar")`
+`r table_header("sdev_p_incar")`
 
 **Measure description:** Parental incarceration can have serious long-term consequences for children (@aaron2010). Over and above the direct risk that parental incarceration poses for increased delinquent behavior, there are also indirect risks such as economic and health consequences, and deterioration of family relationships (@arditti2015). Disrupted sleep patterns and unhealthy eating habits have been associated with both maternal and paternal incarceration (@jackson2017). Other results show direct associations between parental incarceration and three dimensions of health: general health behaviors, substance use, and other risky behaviors (@heard-garris2018; @wildeman2018). We have developed a short questionnaire adapted to the ABCD-SD study sample and added follow up questions about the circumstances around the incarceration and arrest. 
 

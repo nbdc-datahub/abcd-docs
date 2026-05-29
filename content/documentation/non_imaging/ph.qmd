@@ -159,7 +159,12 @@ Participants responding "Evening" or "Nighttime" may be in error or highly unusu
 
 **Measure description:** Pubertal stage and menstrual phase (for postmenarcheal girls).
 
-**Modifications since initial administration:** Five items on hormonal contraception and menstrual pain were added at 3-year follow-up for girls.
+**Modifications since initial administration:** 
+
+Five items on hormonal contraception and menstrual pain were added at 3-year follow-up for girls.
+
+Due to a change in branching logic, some menstrual cycle items [`ph_y_pds__f_002__07`, `ph_y_pds__f_002__08`, `ph_y_pds__f_002__09`, `ph_y_pds__f_002__10`] were not administered in Year 4 until April 12, 2022, leading to missingness on these items for participants who completed Year 4 visit prior to this date.
+
 
 **Notes and special considerations:**
 

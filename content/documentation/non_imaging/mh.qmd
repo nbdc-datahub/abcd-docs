@@ -553,7 +553,7 @@ Table labels were updated to be more accurate across a variety of items in the `
 
 **Key reference:** `r full_cite("youngstrom2008")`
 
-## KSADS – Background Items (Parent) 
+## KSADS – Background Items (Parent) {#mh_p_kbi}
 `r table_header("mh_p_kbi")`  
 **Measure description:** Parent assessment of their youth participant's school, family, and social relations.  
 
