@@ -95,7 +95,7 @@ The ABCD Family, Friends, and Community (FC) data offer insights into contextual
 
 `r table_header("fc_y_eut")`
 
-**Measure description:** The initial set of items is from the 2006 Boston Youth Survey, and assesses experiences of unfair treatment over the past 12 months using a yes/no format. The remaining seven items are from the Measure of Perceived Discrimination assessing frequency of unfair or negative treatment due to ethnic background; responses are rated on a 5-point Likert scale from "Almost never" to "Very often" yielding a summary score reflecting mean responses across all items with higher scores indicating a greater degree of perceived unfair treatment.
+**Measure description:** The initial set of items is from the 2006 Boston Youth Survey, and assesses experiences of unfair treatment over the past 12 months using a yes/no format. The remaining seven items are from the Measure of Perceived Discrimination assessing frequency of unfair or negative treatment due to ethnic background; responses are rated on a 5-point Likert scale from "Almost never" to "Very often" yielding a summary score reflecting mean responses across all items with higher scores indicating a greater degree of perceived unfair treatment. Provided is a user-friendly [dictionary](../../assets/files/documentation/non_imaging/abcd_eut_full_table.pdf) for longitudinal analysis considerations.
 
 **Modifications since initial administration:** Starting at the 6-year follow-up, additional descriptors were added to some items for clarification. In addition, new questions were added to assess unfair treatment due to religious beliefs, social status, and accents. 
 

@@ -4,6 +4,20 @@ order: 3
 ---
 
 
+# 7.0.2
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2026-06-12<br>
+**URL:** [https://docs.abcdstudy.org/v/7_0_2](https://docs.abcdstudy.org/v/7_0_2)
+</span>
+
+-   **Non-Imaging**
+    -   Friends, Family, & Community: Added a user-friendly dictionary for the Experiences with Unfair Treatment measure
+
+-   **ABCC**
+    -   Updated ABCC with a historical context infobox and addressed known issues
+
+
+
 # 7.0.1
 <span style="font-size: 0.85em; color: gray;">
 **Date:** 2026-05-29<br>

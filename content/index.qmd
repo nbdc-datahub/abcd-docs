@@ -179,7 +179,7 @@ Welcome to the data documentation website of the Adolescent Brain Cognitive Deve
       </a>
     </div>
     <div class="col-md-4">
-      <a href="documentation/release_notes/7_0.html" class="jump-link-card">
+      <a href="documentation/release_notes/index.html" class="jump-link-card">
         <div class="icon-wrapper documentation-icons">
           <img src="assets/img/logos/sticky-note-blue.svg" alt="sticky-note" class="icon-svg">
         </div>

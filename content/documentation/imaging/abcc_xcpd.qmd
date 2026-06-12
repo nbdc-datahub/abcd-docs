@@ -188,6 +188,18 @@ func/
 ├── *_task-<TASK>_space-fsLR_seg-<ATLAS>_stat-reho_bold.tsv   
 ```
 
+::: {.callout-warning}
+The current release is affected by two known XCP-D issues:
+
+- Connectivity matrices generated with `--create-matrices 300 600 all` were not produced as intended. While the full-timeseries (`all`) matrix was generated from the concatenated low-motion timeseries across runs, the `300-` and `600-`frame matrices were incorrectly generated separately for individual BOLD runs rather than from the concatenated low-motion timeseries.
+- Timeseries data were not z-scored prior to concatenation across runs.
+
+These issues have been resolved in XCP-D v26.0.3 and will be corrected in a future ABCC release processed with XCP-D v26.0.3 or later.
+
+For additional details and information about affected outputs, see the [Known Issues section here](abcc_start_page.html#known-issues).
+:::
+
+
 **Includes:**
 
 - Mean parcel timeseries (`.ptseries.nii`, `.tsv`)

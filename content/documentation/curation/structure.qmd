@@ -159,6 +159,8 @@ Data from several assessment types and domains are made available in both delimi
 
 ::: {.callout-important}
 Both `csv`/`tsv` and `parquet` formats are provided to support a range of tools and user preferences. However, since the `parquet` format ensures that data is imported with correctly specified data types and facilitates faster loading speeds and lower memory usage, we recommend using `parquet` files over plain-text files whenever possible.
+
+Additionally, if loading data in Python we recommend using `polars` as it offers an efficient memory model and query sequence making it faster than alternative packages. Errors have also been observed when reading `date` type data using `pandas`. 
 :::
 
 ::: {.callout-tip collapse="false" title="Loading Parquet files with R and Python"}
