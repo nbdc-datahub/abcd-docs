@@ -704,7 +704,7 @@ render_table_info <- function(filter, remove_source = FALSE) {
             \u0064\u0061\u0074\u0061\u002D\u0063\u0068\u0061\u0072\u0067\u0065=
             "\u0074\u0068\u0069\u0073\u0020\u0069\u0073\u0020\u0061\u0020\u0035\u002D\u0064\u006F\u006C\u006C\u0061\u0072\u0020\u0074\u0069\u0070">
             </i>
-            to view the number of variables and events of administration for the displayed tables.</i>
+            to view the number of variables and events of administration for the displayed tables. You can also sort by clicking on the column headings.</i>
         </div>
         <script>
           tippy("#scroll_tip", {
@@ -749,5 +749,727 @@ abcd_reactable_theme <- function() {
     )
   )
 }
+
+
+# create index tables ------------------------------------------------------------
+
+create_table_info <- function(filter, remove_source = FALSE) {
+  path <- stringr::str_extract(getwd(), ".*?/content")
+  table_info <- readr::read_csv(
+    paste0(path, "/assets/tbl/documentation/table_info.csv"),
+    show_col_types = FALSE 
+  )
+  
+  table_info_domain <- table_info |>
+    dplyr::filter(
+      eval(rlang::parse_expr(filter))
+    ) |>
+    select(
+      where(~ !all(is.na(.x))),
+    ) |> 
+    mutate(
+      table_label = table_label |> 
+        stringr::str_remove(
+          "\\[[^\\]]*\\]$"
+        )
+    ) |> 
+    arrange(
+      match(
+        source,
+        c(
+          "Youth",
+          "Parent",
+          "Teacher",
+          "Experimenter",
+          "Linked Dataset",
+          "General"
+        )
+      ),
+      table_name
+    )
+  
+  cols_vars <- table_info_domain |>
+    select(
+      matches("^n_")
+    ) |>
+    names()
+  
+  
+  cols_events <- table_info_domain |>
+    select(
+      matches("d{2}$|^\\d{2}[A]$")
+    ) |>
+    names()
+  
+  col_defs_events <- purrr::map(
+    cols_events,
+    ~ reactable::colDef(
+      width = 50,
+      align = "center",
+      cell = function(value) {
+        if_else(
+          !is.na(value) & value,
+          "<span style='font-size: 13px; color: #145090;'>\U2B24</span>",
+          ""
+        )
+      }
+    )
+  ) |>
+    setNames(
+      cols_events
+    )
+  
+  col_defs_vars <- purrr::map(
+    cols_vars[cols_vars != "n_score"],
+    ~ {
+      col_label <- switch (.x,
+                           "n_total" = "TOTAL",
+                           "n_admin" = "admin",
+                           "n_item" = "item",
+                           "n_derived" = "deriv"
+      )
+      reactable::colDef(
+        name = col_label,
+        width = 60 
+      )
+    }
+  ) |>
+    setNames(
+      cols_vars[cols_vars != "n_score"]
+    )
+  
+  if (remove_source) {
+    col_def_source <- list(
+      source = reactable::colDef(
+        show = FALSE
+      )
+    )
+  } else {
+    col_def_source <- list(
+      source = reactable::colDef(
+        name = "Source",
+        width = 130,
+        cell = function(value) {
+          class <- paste0("tag source-", tolower(value))
+          div(class = class, value)
+        }
+      )
+    )
+  }
+  
+  table_info_reactable <- table_info_domain |>
+    select(
+      table_label,
+      table_name,
+      source,
+      type,
+      all_of(cols_events)
+    ) |>
+    reactable::reactable(
+      columns = c(
+        list(
+          table_label = reactable::colDef(
+            name = "Table label",
+            width = 210,
+            cell = function(value, index) {
+              create_link(
+                name = value,
+                url = table_info_domain[['url_docs']][index],
+                type = "html",
+                code = FALSE
+              )
+            },
+            sticky = "left",
+            style = list(
+              borderRight = "1px solid #ccc"
+            ),
+            headerStyle = list(
+              borderRight = "1px solid #ccc"
+            )
+          ),
+          table_name = reactable::colDef(
+            name = "Table name",
+            width = 180,
+            cell = function(value, index) {
+              link <-               create_link(
+                name = value,
+                url = table_info_domain$url_deap[index],
+                type = "html",
+                code = TRUE
+              )
+              
+              glue::glue(
+                "
+                <span>
+                  <img src='https://cdn.jsdelivr.net/gh/deap-science/web-resources@main/img/deap_icon.svg' style=\"width:1.2em; height:1.2em;\">
+                  {link}
+                </span>
+                "
+              )
+              
+            }
+          ),
+          type = reactable::colDef(
+            name = "Type",
+            align = "center",
+            header = tooltip_header(
+              value = "Type",
+              tooltip =  htmltools::div(
+                htmltools::span(
+                  htmltools::tags$i(class = "fa-solid fa-minus", style = "color: #a7a7a7;"),
+                  "static"
+                ),
+                htmltools::br(),
+                htmltools::span(
+                  htmltools::tags$i(class = "fa-solid fa-chart-line", style = "color: #a7a7a7;"),
+                  "longitudinal"
+                )
+              ) |> 
+                as.character() |> 
+                gsub(pattern = "\n  ", "", x = _) |> 
+                gsub(pattern = '"', replacement = "'", x = _)
+            ),
+            cell = function(value) {
+              switch(
+                as.character(value),
+                "static" = htmltools::HTML(
+                  '<i class="fa-solid fa-minus"></i>'
+                ),
+                "dynamic" = htmltools::HTML(
+                  '<i class="fa-solid fa-chart-line"></i>'
+                ),
+                value
+              )
+            },
+            style = list(
+              borderLeft = "1px solid #ccc"
+            ),
+            headerStyle = list(
+              borderLeft = "1px solid #ccc"
+            ),
+            width = 70
+          ),
+          n_total = reactable::colDef(
+            name = "TOTAL",
+            width = 65,
+            style = list(
+              fontWeight = "bold",
+              borderLeft = "1px solid #ccc"
+            ),
+            headerStyle = list(
+              borderLeft = "1px solid #ccc"
+            )
+          ),
+          n_score = reactable::colDef(
+            width = 80,
+            header = tooltip_header(
+              value = "score",
+              tooltip =  htmltools::div(
+                htmltools::span(
+                  '<i class="fa-brands fa-r-project" style="filter: grayscale(1);"></i>',
+                  " ABCDscores R package source code available"
+                ),
+              ) |> 
+                as.character() |> 
+                gsub(pattern = "\n  ", "", x = _) |> 
+                gsub(pattern = '"', replacement = "'", x = _)
+            ),
+            cell = function(value, index) {
+              if (is.null(table_info_domain$n_score[index]) ||
+                  is.na(table_info_domain$n_score[index])) {
+                return("")
+              }
+              
+              url <- table_info_domain[['url_score']][index]
+              if (is.null(url) || is.na(url) || url == "") {
+                return(value)
+              }
+              
+              HTML(glue::glue(
+                '<span class="info-total-rlogo">
+                  <a 
+                  href="{url}" 
+                  target="_blank" 
+                  rel="noopener noreferrer">
+                    <i class="fa-brands fa-r-project" style="filter: grayscale(1);"></i>
+                  </a>
+                  <span>{value}</span>
+                  <style>
+                  span.info-total-rlogo  > a > img {{
+                    width:1.2em;
+                    height:1.2em;
+                    vertical-align:top;
+                    opacity:0.7;
+                    cursor:pointer;
+                  }}
+                  span.info-total-rlogo {{
+                    display: flex;
+                    justify-content: space-between;
+                  }}
+                  span.info-total-rlogo a {{
+                    text-decoration:none;
+                    & > img {{
+                      filter: brightness(0.0);
+                    }}
+                  }}
+                  img.info-total-rlogo:hover {{
+                  opacity:1;
+                  }}
+                  </style>
+                </span>'
+              ))
+            }
+          )
+        ),
+        col_defs_events,
+        col_defs_vars,
+        col_def_source
+      ),
+      columnGroups = list(
+        reactable::colGroup(
+          name = "",
+          columns = c("table_label"),
+          align = "left",
+          sticky = "left",
+          headerStyle = list(
+            borderRight = "1px solid #ccc"
+          )
+        ),
+        reactable::colGroup(
+          name = "",
+          columns = c("table_name", "source")
+        ),
+        reactable::colGroup(
+          name = "Events",
+          columns = c("type", cols_events),
+          headerStyle = list(
+            borderLeft = "1px solid #ccc"
+          )
+        )
+      ),
+      defaultColDef = reactable::colDef(
+        html = TRUE
+      ),
+      bordered = TRUE,
+      striped = TRUE,
+      filterable = TRUE,
+      resizable = TRUE,
+      pagination = FALSE,
+      theme = abcd_reactable_theme()
+    )
+  
+  table_info_reactable <- table_info_reactable |>
+    htmlwidgets::appendContent(
+      p(
+        HTML(
+          '
+        <div style="text-align: center; font-size: 0.8em; color: gray;">
+            <i>Please <b>scroll horizontally</b> 
+            <i 
+            class="fa fa-info-circle" id="scroll_tip" 
+            data-tippy-content="Use touchpad gestures or hold shift and scroll with the mouse wheel or use the bottom scroll bar" 
+            style="color: #a7a7a7;"
+            \u0064\u0061\u0074\u0061\u002D\u0063\u0068\u0061\u0072\u0067\u0065=
+            "\u0074\u0068\u0069\u0073\u0020\u0069\u0073\u0020\u0061\u0020\u0035\u002D\u0064\u006F\u006C\u006C\u0061\u0072\u0020\u0074\u0069\u0070">
+            </i>
+            to view the number of variables and events of administration for the displayed tables. Sort by clicking on the column headings.</i>
+        </div>
+        <script>
+          tippy("#scroll_tip", {
+            allowHTML: true,
+            theme: "mytheme",
+            placement: "top",
+            delay: 100
+          });
+        </script>
+        '
+        )
+      )
+    )
+  
+  htmltools::browsable(tagList(css_styles, table_info_reactable))
+}
+
+# imaging instrument tables ------------------------------------------------------------
+
+render_table_info_imaging <- function(filter, remove_source = FALSE) {
+  path <- stringr::str_extract(getwd(), ".*?/content")
+  table_info <- readr::read_csv(
+    paste0(path, "/assets/tbl/documentation/table_info.csv"),
+    show_col_types = FALSE 
+  )
+  
+  table_info_domain <- table_info |>
+    dplyr::filter(
+      eval(rlang::parse_expr(filter))
+    ) |>
+    select(
+      where(~ !all(is.na(.x))),
+    ) |> 
+    mutate(
+      table_label = table_label |> 
+        stringr::str_remove(
+          "\\[[^\\]]*\\]$"
+        )
+    ) |> 
+    arrange(
+      match(
+        source,
+        c(
+          "Youth",
+          "Parent",
+          "Teacher",
+          "Experimenter",
+          "Linked Dataset",
+          "General"
+        )
+      ),
+      table_name
+    )
+  
+  cols_vars <- table_info_domain |>
+    select(
+      matches("^n_")
+    ) |>
+    names()
+
+  
+  cols_events <- table_info_domain |>
+    select(
+      matches("^[C|S]\\d{2}$|^\\d{2}[A|M|S]$")
+    ) |>
+    names()
+  
+  col_defs_events <- purrr::map(
+    cols_events,
+    ~ reactable::colDef(
+      width = 50,
+      align = "center",
+      cell = function(value) {
+        if_else(
+          !is.na(value) & value,
+          "<span style='font-size: 13px; color: #145090;'>\U2B24</span>",
+          ""
+        )
+      }
+    )
+  ) |>
+    setNames(
+      cols_events
+    )
+  
+  col_defs_vars <- purrr::map(
+    cols_vars[cols_vars != "n_score"],
+    ~ {
+      col_label <- switch (.x,
+                           "n_total" = "TOTAL",
+                           "n_admin" = "admin",
+                           "n_item" = "item",
+                           "n_derived" = "deriv"
+      )
+      reactable::colDef(
+        name = col_label,
+        width = 60 
+      )
+    }
+  ) |>
+    setNames(
+      cols_vars[cols_vars != "n_score"]
+    )
+  
+  if (remove_source) {
+    col_def_source <- list(
+      source = reactable::colDef(
+        show = FALSE
+      )
+    )
+  } else {
+    col_def_source <- list(
+      source = reactable::colDef(
+        name = "Source",
+        width = 130,
+        cell = function(value) {
+          class <- paste0("tag source-", tolower(value))
+          div(class = class, value)
+        }
+      )
+    )
+  }
+  
+  table_info_reactable <- table_info_domain |>
+    select(
+      table_label,
+      table_name,
+      source,
+      sub_domain,
+      all_of(cols_vars),
+      type,
+      all_of(cols_events)
+    ) |>
+    reactable::reactable(
+      columns = c(
+        list(
+          table_label = reactable::colDef(
+            name = "Table label",
+            width = 250,
+            sticky = "left",
+            style = list(
+              borderRight = "1px solid #ccc"
+            ),
+            headerStyle = list(
+              borderRight = "1px solid #ccc"
+            )
+          ),
+          table_name = reactable::colDef(
+            name = "Table name",
+            width = 180,
+            cell = function(value, index) {
+              link <-               create_link(
+                name = value,
+                url = table_info_domain$url_deap[index],
+                type = "html",
+                code = TRUE
+              )
+              
+              glue::glue(
+                "
+                <span>
+                  <img src='https://cdn.jsdelivr.net/gh/deap-science/web-resources@main/img/deap_icon.svg' style=\"width:1.2em; height:1.2em;\">
+                  {link}
+                </span>
+                "
+              )
+
+            }
+          ),
+          sub_domain = reactable::colDef(
+            name = "Subdomain",
+            width = 150
+          ),
+          type = reactable::colDef(
+            name = "Type",
+            align = "center",
+            header = tooltip_header(
+              value = "Type",
+              tooltip =  htmltools::div(
+                htmltools::span(
+                  htmltools::tags$i(class = "fa-solid fa-minus", style = "color: #a7a7a7;"),
+                  "static"
+                ),
+                htmltools::br(),
+                htmltools::span(
+                  htmltools::tags$i(class = "fa-solid fa-chart-line", style = "color: #a7a7a7;"),
+                  "longitudinal"
+                )
+              ) |> 
+                as.character() |> 
+                gsub(pattern = "\n  ", "", x = _) |> 
+                gsub(pattern = '"', replacement = "'", x = _)
+            ),
+            cell = function(value) {
+              switch(
+                as.character(value),
+                "static" = htmltools::HTML(
+                  '<i class="fa-solid fa-minus"></i>'
+                ),
+                "dynamic" = htmltools::HTML(
+                  '<i class="fa-solid fa-chart-line"></i>'
+                ),
+                value
+              )
+            },
+            style = list(
+              borderLeft = "1px solid #ccc"
+            ),
+            headerStyle = list(
+              borderLeft = "1px solid #ccc"
+            ),
+            width = 70
+          ),
+          n_total = reactable::colDef(
+            name = "TOTAL",
+            width = 65,
+            style = list(
+              fontWeight = "bold",
+              borderLeft = "1px solid #ccc"
+            ),
+            headerStyle = list(
+              borderLeft = "1px solid #ccc"
+            )
+          ),
+          n_score = reactable::colDef(
+            width = 80,
+            header = tooltip_header(
+              value = "score",
+              tooltip =  htmltools::div(
+                htmltools::span(
+                  '<i class="fa-brands fa-r-project" style="filter: grayscale(1);"></i>',
+                  " ABCDscores R package source code available"
+                ),
+              ) |> 
+                as.character() |> 
+                gsub(pattern = "\n  ", "", x = _) |> 
+                gsub(pattern = '"', replacement = "'", x = _)
+            ),
+            cell = function(value, index) {
+              if (is.null(table_info_domain$n_score[index]) ||
+                  is.na(table_info_domain$n_score[index])) {
+                return("")
+              }
+              
+              url <- table_info_domain[['url_score']][index]
+              if (is.null(url) || is.na(url) || url == "") {
+                return(value)
+              }
+              
+              HTML(glue::glue(
+                '<span class="info-total-rlogo">
+                  <a 
+                  href="{url}" 
+                  target="_blank" 
+                  rel="noopener noreferrer">
+                    <i class="fa-brands fa-r-project" style="filter: grayscale(1);"></i>
+                  </a>
+                  <span>{value}</span>
+                  <style>
+                  span.info-total-rlogo  > a > img {{
+                    width:1.2em;
+                    height:1.2em;
+                    vertical-align:top;
+                    opacity:0.7;
+                    cursor:pointer;
+                  }}
+                  span.info-total-rlogo {{
+                    display: flex;
+                    justify-content: space-between;
+                  }}
+                  span.info-total-rlogo a {{
+                    text-decoration:none;
+                    & > img {{
+                      filter: brightness(0.0);
+                    }}
+                  }}
+                  img.info-total-rlogo:hover {{
+                  opacity:1;
+                  }}
+                  </style>
+                </span>'
+              ))
+            }
+          )
+        ),
+        col_defs_events,
+        col_defs_vars,
+        col_def_source
+      ),
+      columnGroups = list(
+        reactable::colGroup(
+          name = "",
+          columns = c("table_label"),
+          align = "left",
+          sticky = "left",
+          headerStyle = list(
+            borderRight = "1px solid #ccc"
+          )
+        ),
+        reactable::colGroup(
+          name = "",
+          columns = c("table_name", "source", "sub_domain")
+        ),
+        reactable::colGroup(
+          name = "No. of variables",
+          columns = cols_vars,
+          headerStyle = list(
+            borderLeft = "1px solid #ccc"
+          )
+        ),
+        reactable::colGroup(
+          name = "Events",
+          columns = c("type", cols_events),
+          headerStyle = list(
+            borderLeft = "1px solid #ccc"
+          )
+        )
+      ),
+      defaultColDef = reactable::colDef(
+        html = TRUE
+      ),
+      bordered = TRUE,
+      striped = TRUE,
+      filterable = TRUE,
+      resizable = TRUE,
+      pagination = FALSE,
+      theme = abcd_reactable_theme()
+    )
+  
+  table_info_reactable <- table_info_reactable |>
+    htmlwidgets::appendContent(
+      p(
+        HTML(
+        '
+        <div style="text-align: center; font-size: 0.8em; color: gray;">
+            <i>Please <b>scroll horizontally</b> 
+            <i 
+            class="fa fa-info-circle" id="scroll_tip" 
+            data-tippy-content="Use touchpad gestures or hold shift and scroll with the mouse wheel or use the bottom scroll bar" 
+            style="color: #a7a7a7;"
+            \u0064\u0061\u0074\u0061\u002D\u0063\u0068\u0061\u0072\u0067\u0065=
+            "\u0074\u0068\u0069\u0073\u0020\u0069\u0073\u0020\u0061\u0020\u0035\u002D\u0064\u006F\u006C\u006C\u0061\u0072\u0020\u0074\u0069\u0070">
+            </i>
+            to view the number of variables and events of administration for the displayed tables. You can also sort by clicking on the column headings.</i>
+        </div>
+        <script>
+          tippy("#scroll_tip", {
+            allowHTML: true,
+            theme: "mytheme",
+            placement: "top",
+            delay: 100
+          });
+        </script>
+        '
+        )
+      )
+    )
+  
+  htmltools::browsable(tagList(css_styles, table_info_reactable))
+}
+
+# create release note tables--------------------------------------
+  
+  create_table_release_notes <- function(filter) {
+    release_notes <-
+      read.csv("../../assets/tbl/documentation/release_notes/previous_release_notes.csv",
+               colClasses = c(Release = "character"))
+    if (filter == "All"){release_notes <- release_notes} else
+    {release_notes <- filter(release_notes, Release == filter)}
+    reactable(
+      filterable = TRUE,
+      showPageSizeOptions = TRUE,
+      release_notes,
+      columns = list(
+        Download = colDef(
+          html = TRUE,
+          cell = function(value) {
+            if (grepl("pdf", value))
+            {
+            HTML(glue::glue(
+              '<a href= {value} target="_blank">
+<i class="fa-solid fa-file-pdf"></i>
+</a>'
+            ))
+            } else
+            {
+              HTML(glue::glue(
+                '<a href= {value} target="_blank">
+<i class="fa-solid fa-file-csv"></i>
+</a>'
+              ))
+            }
+          }
+        )
+      )
+    )
+ 
+  }
 
 

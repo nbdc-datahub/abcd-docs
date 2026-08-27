@@ -236,6 +236,10 @@ Previously, there was an issue with the Life Events summary scores due to the va
 
 The levels for the items `mh_y_ple__severity_032` and `mh_p_ple__severity_032` were previously incorrectly coded as values `1-4` instead of `0-3` causing an inflation of values in all summary scores that item is included in. The item coding has been corrected in the 7.0 Release.
 
+### Other Resilience
+
+A data compilation error in the 7.0 release caused `mh_y_resil` to only include data for ses-06A and ses-07A. Prior releases (6.1 and 6.0) have the prior timepoints. This issue is anticipated to be fixed in the 7.1 release.
+
 ### Prodromal Psychosis Scale
 
 Two new summary scores were added to the `mh_y_pps` table: `mh_y_pps__dist__pers_score`, `mh_y_pps__dist__curr_score`. These scores relate to the scores in the new table `mh_y_ppsss` table and are used in the inclusion criteria for the SIPS substudy.
@@ -416,6 +420,10 @@ New dynamic and static substance use (SU) summary scores (`su_y_dyn`, `su_y_stc`
 ### Missing data on Siemens `XA30`
 
 In the ABCD 7.0 data release, anatomical scans (T1w and T2w) and field map scans (for both dMRI and fMRI) were inadvertently excluded from the sourcedata and rawdata BIDS datasets for the 889 scan sessions collected on Siemens scanners with software version `XA30`. Derivatives (mmps_mproc and freesurfer), concatenated data, and tabulated data are not affected. The missing scans will be added to the sourcedata and rawdata for the 7.1 patch release.
+
+###  Registration quality issue for concatenated voxelwise data 
+
+A bug has been identified in the registration pipeline used to produce the ABCD 7.0 concatenated voxelwise data. An outdated version of the target image for the 11th channel of the ABCD3 atlas was used in the multimodal registration. The 11th channel in the multimodal registration is a grey matter segmentation mask. The outdated target image did not include cerebellar gray matter, while participants' input (moving) image did. This mismatch between the target and moving images resulted in systematically degrading alignment quality for that channel across all participants. Mean correlation between participant scan and atlas template for the 11th channel decreased by ~0.23 compared to release 6.0. Overall, mean correlation between participants' scans and the atlas (across all 11 channels) was reduced by 0.0108. Any QC filter based on mean correlation to atlas will exclude a greater proportion of participants comapred to release 6.0. 
 
 # Substudies
 

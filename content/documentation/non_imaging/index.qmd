@@ -1,0 +1,80 @@
+---
+title: "Non-Imaging (Overview)"
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+
+```
+
+<!-- Invisible reference to the R logo so the resource can be captured by quarto -->
+<div style="display: none;">
+[](/assets/img/documentation/rlogo.svg)
+</div>
+
+Following is a list of the ABCD non-imaging tables, across the domains. Users can also find the tables in a particular year via sorting by clicking on the specified Events column heading. For more detailed information, please refer to the respective domain sections.    
+
+:::{.callout-note title="Imaging data"}
+Corresponding imaging data are collected on even years. For more information, please refer to the [Imaging section](../imaging/index.qmd). 
+:::
+
+# Sort by Domain
+
+::: {.panel-tabset}
+
+### All
+```{r}
+create_table_info("domain_abbr == 'ab' | domain_abbr == 'fc' | domain_abbr == 'gn' | domain_abbr == 'le' | domain_abbr == 'mh' | domain_abbr == 'nc' | domain_abbr == 'nt' | domain_abbr == 'ph' | domain_abbr == 'su'")
+```
+
+### General
+```{r}
+create_table_info("domain_abbr == 'ab'")
+```
+
+### Friends, Family, & Community
+```{r}
+create_table_info("domain_abbr == 'fc'")
+```
+
+### Genetics
+```{r}
+create_table_info("domain_abbr == 'gn'")
+```
+
+### Linked External Data
+```{r}
+create_table_info("domain_abbr == 'le'")
+```
+
+### Mental Health
+```{r}
+create_table_info("domain_abbr == 'mh'")
+```
+
+### Neurocognition
+```{r}
+create_table_info("domain_abbr == 'nc'")
+```
+
+### Novel Technologies
+```{r}
+create_table_info("domain_abbr == 'nt'")
+```
+
+### Physical Health
+```{r}
+create_table_info("domain_abbr == 'ph'")
+```
+
+### Substance Use
+```{r}
+create_table_info("domain_abbr == 'su'")
+```
+
+:::
+
+

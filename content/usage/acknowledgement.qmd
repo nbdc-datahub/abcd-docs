@@ -21,7 +21,7 @@ Be sure to use the appropriate acknowledgment language to reference the ABCD Stu
 
 **Add the following sentence for a report that uses data from a versioned release:** 
 
->The ABCD data repository grows and changes over time. The ABCD data used in this report came from [NIMH Data Archive Digital Object Identifier (DOI)]. DOIs can be found at [DOI URL].
+>The ABCD data repository grows and changes over time. The ABCD data used in this report came from NBDC Digital Object Identifier (DOI). DOIs can be found at [https://www.nbdc-datahub.org/abcd-study](https://www.nbdc-datahub.org/abcd-study).
 
 **Add the following sentence for a report that uses linked external environmental data:**
 
@@ -31,6 +31,4 @@ Be sure to use the appropriate acknowledgment language to reference the ABCD Stu
 
 >This project was supported by Award Number 2017-MU-CX-0044, awarded by the National Institute of Justice, Office of Justice Programs, U.S. Department of Justice with additional funding from the Centers for Disease Control and Prevention, U.S. Department of Health and Human Services. The opinions, findings, and conclusions or recommendations expressed in this publication/program/exhibition are those of the author(s) and do not necessarily reflect those of the Department of Justice or the Department of Health and Human Services.
 
-:::{.callout-note title="Current 5.1 data users"}
-Users who are using data from the ABCD 5.1 release, should refer to the acknowledgement page on NDA: <https://nda.nih.gov/abcd/abcd-citing>.
-:::
+

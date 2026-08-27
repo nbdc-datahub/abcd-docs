@@ -1,0 +1,99 @@
+---
+title: "Previous data release"
+lightbox: true
+order: 5
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+
+```
+
+# Previous release notes
+
+ABCD Data prior to 6.0 were stored and managed by [The National Institute of Mental Health Data Archive (NDA)](https://nda.nih.gov/abcd/abcd-annual-releases). The release notes can be found and downloaded below.
+
+::: panel-tabset
+### All
+
+```{r}
+#| results: asis
+#| echo: false
+
+create_table_release_notes("All")
+```
+
+[Download 5.1 and previous release notes as zip
+file](https://pub-b7c7cae63bc24750af5a1f9ed7e788a7.r2.dev/previous_release_notes.zip)
+
+### 5.1
+
+```{r}
+#| results: asis
+#| echo: false
+create_table_release_notes("5.1")
+```
+
+[Download 5.1 release notes as zip
+file](https://pub-b7c7cae63bc24750af5a1f9ed7e788a7.r2.dev/5.1.zip)
+
+### 5.0
+
+```{r}
+#| results: asis
+#| echo: false
+create_table_release_notes("5.0")
+```
+
+[Download 5.0 release notes as zip
+file](https://pub-b7c7cae63bc24750af5a1f9ed7e788a7.r2.dev/5.0.zip)
+
+### 4.0
+
+```{r}
+#| results: asis
+#| echo: false
+create_table_release_notes("4.0")
+```
+
+[Download 4.0 release notes as zip
+file](https://pub-b7c7cae63bc24750af5a1f9ed7e788a7.r2.dev/4.0.zip)
+
+### 3.0
+
+```{r}
+#| results: asis
+#| echo: false
+create_table_release_notes("3.0")
+```
+
+[Download 3.0 release notes as zip
+file](https://pub-b7c7cae63bc24750af5a1f9ed7e788a7.r2.dev/3.0.zip)
+
+
+### 2.0
+
+```{r}
+#| results: asis
+#| echo: false
+create_table_release_notes("2.0")
+```
+
+[Download 2.0 release notes as zip
+file](https://pub-b7c7cae63bc24750af5a1f9ed7e788a7.r2.dev/2.0.zip)
+
+### 1.1
+
+```{r}
+#| results: asis
+#| echo: false
+create_table_release_notes("1.1")
+```
+
+[Download 1.1 release notes as zip
+file](https://pub-b7c7cae63bc24750af5a1f9ed7e788a7.r2.dev/1.1.zip)
+
+:::

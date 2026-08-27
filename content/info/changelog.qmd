@@ -4,6 +4,33 @@ order: 3
 ---
 
 
+# 7.0.3
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2026-08-27<br>
+**URL:** [https://docs.abcdstudy.org/v/7_0_3](https://docs.abcdstudy.org/v/7_0_3)
+</span>
+
+-   **Release Notes**
+    -   Previous release notes have been uploaded for users to view and download
+    -   Added Non-imaging 7.0 release notes regarding a data issue in `mh_y_resil`
+    -   Added Imaging 7.0 release notes regarding registration quality issue for concatenated voxelwise data 
+-   **Non-Imaging**
+    -   General: Added data warning regarding number of sites
+    -   Mental Health: Updated note on Behavioral Inhibition / Behavioral Approach System Scales coding
+    -   Neurocognition: Updated note regarding an Emotional Stroop Task randomization issue
+-   **Imaging**
+    -   Updated `mr_y_qc__mot__rsfmri__vol__censor_count` variable in `mr_y_qc__mot` table 
+-   **Acknowledgment**
+    -   Update language regarding reporting data from a versioned release
+    -   Removed section regarding 5.1 data users 
+-   **Curation & Structure**
+    -   Added note regarding updated stata naming convention
+    -   Updated content regarding structure for file-based data
+    -   Changed “neurocognitive experiments” to “neurocognitive assessments”
+
+
+
+
 # 7.0.2
 <span style="font-size: 0.85em; color: gray;">
 **Date:** 2026-06-12<br>

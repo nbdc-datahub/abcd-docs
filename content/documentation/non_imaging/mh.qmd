@@ -47,7 +47,7 @@ When writing about mental health symptoms or diagnoses, it is important to use p
 
 `r table_header("mh_y_bisbas")`
 
-**Measure description:** A self-report questionnaire designed to measure two motivational systems: the behavioral inhibition system (BIS), which corresponds to motivation to avoid aversive outcomes, and the behavioral activation system (BAS), which corresponds to motivation to approach goal-oriented outcomes. The scale has four subscales that were derived via factor analysis. One subscale corresponds to the BIS and has seven items that contribute to this score (e.g., "Criticism or scolding hurts me quite a bit"). The remaining three subscales correspond to three components of BAS (Drive, Reward Responsiveness, and Fun Seeking). BAS Drive measures the motivation to follow one's goals and has four items that contribute to this score (e.g., "When I want something I usually go all-out to get it"). BAS Reward Responsiveness measures the sensitivity to pleasant reinforcers in the environment and has four items that contribute to this score (e.g., "It would excite me to win a contest"). BAS Fun Seeking measures the  motivation to find novel rewards spontaneously has five items that contribute to this score (e.g., "I crave excitement and new sensations"). Participants respond to each item using a 4-point Likert scale: 1 (very true for me), 2 (somewhat true for me), 3 (somewhat false for me), and 4 (very false for me). 
+**Measure description:** A self-report questionnaire designed to measure two motivational systems: the behavioral inhibition system (BIS), which corresponds to motivation to avoid aversive outcomes, and the behavioral activation system (BAS), which corresponds to motivation to approach goal-oriented outcomes. The scale has four subscales that were derived via factor analysis. One subscale corresponds to the BIS and has seven items that contribute to this score (e.g., "Criticism or scolding hurts me quite a bit"). The remaining three subscales correspond to three components of BAS (Drive, Reward Responsiveness, and Fun Seeking). BAS Drive measures the motivation to follow one's goals and has four items that contribute to this score (e.g., "When I want something I usually go all-out to get it"). BAS Reward Responsiveness measures the sensitivity to pleasant reinforcers in the environment and has four items that contribute to this score (e.g., "It would excite me to win a contest"). BAS Fun Seeking measures the  motivation to find novel rewards spontaneously has five items that contribute to this score (e.g., "I crave excitement and new sensations"). Participants respond to each item using a Likert scale: 0 (not true), 1 (somewhat true), 2 (true), and 3 (very true). 
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_y_bisbas`"}
 **7.0**
@@ -400,6 +400,12 @@ Youth 6-year, one question was added
 `r table_header("mh_y_resil")`
 
 **Measure description:** A short survey on the number of friends.
+
+::: {.callout-caution collapse="true" title="Release notes: `mh_y_resil`"}
+**7.0**
+
+-   [**Missing data**](../release_notes/7_0.qmd#other-resilience): A data compilation error in the 7.0 release caused `mh_y_resil` to only include data for ses-06A and ses-07A.
+:::
 
 **Key reference:** `r full_cite("barch2018")`
 

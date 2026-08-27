@@ -16,3 +16,7 @@ trackdown/
 .positai
 /dev/brand-transition-kit
 /dev
+
+**/.claude/**
+Plans.md
+out/progress-snapshot.html

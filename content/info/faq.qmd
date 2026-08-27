@@ -64,8 +64,15 @@ No, this is not permitted. Inputting ABCD data to generative AI tools, such as C
 :::
 
 ::: {.callout-tip collapse="true" title="Is there any guidance regarding suppression of cell count in data reporting?"}
-For ABCD study data, NIDA requires a threshold minimum n of 10 in public reporting of data, including scientific publications and presentations. Their recommendations can be found here. {{< downloadthis ../assets/files/NIDA_recommendations.docx
-dname="NIDA Recommendations" label="NIDA_recommendations.docx" type="light" >}}
+For ABCD study data, NIDA requires a threshold minimum n of 10 in public reporting of data, including scientific publications and presentations. Their recommendations can be found here. {{< downloadthis ../assets/files/NIDA_recommendations.docx dname="NIDA Recommendations" label="NIDA_recommendations.docx" type="light" >}}
+:::
+
+# Non-Imaging Data
+
+::: {.callout-tip collapse="true" title="Where can I access Genetics, EARS, Fitbit data?"}
+
+Genetics, Fitbit, EARS data are released as file-based concatenated data. That is, they are not released through DEAP, which only releases the curated tabulated dataset (one row per participant/event) because these data have a different structure (time-series data by minute, day, or week). To download them, one needs to access [NBDC Data Access Platform](https://www.nbdc-datahub.org/) and download them using Globus like one would for the imaging data. See [Data structure](../documentation/curation/structure.qmd) for more info.
+
 :::
 
 # Imaging Data

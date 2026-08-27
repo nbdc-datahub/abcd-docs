@@ -175,3 +175,8 @@ render_glossary(
 :::
 
 {{< downloadthis "../../assets/tbl/documentation/curation/glossary.csv" dname="abcd_glossary" label="Download glossary" >}}
+
+# Stata naming convention
+
+Stata has a character limit that is not compatible with the current naming convention. As such, we added an additional name that is used when people are exporting data from DEAP and choose Stata as the output format. We created `name_stata` by concatenating tablename and a number which we get from ordersort (which is the order of variables within a table). When that order changes between releases, `name_stata` will be different between releases. See [DEAP documentation](https://docs.deapscience.com/datasets/my_datasets.html#stat_spss) for more information. 
+

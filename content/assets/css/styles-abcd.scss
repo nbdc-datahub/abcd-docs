@@ -1285,3 +1285,165 @@ table.nbdc-table .format-icons img {
   height: auto;
   object-fit: contain;
 }
+
+/*-- Landing page animations (index page only) --------------------------------
+
+   Additive, CSS-only motion for content/index.qmd. All rules are scoped under
+   `body.index-page` so no other page is affected, and no existing rule above is
+   modified. Scroll-driven effects use the native CSS scroll/view timelines
+   (Chromium 115+); Safari/Firefox degrade gracefully because every hidden
+   initial state lives inside `@supports (animation-timeline: ...)`. Continuous
+   time-based motion (hero brain) runs everywhere. `prefers-reduced-motion`
+   disables all of it.
+----------------------------------------------------------------------------- */
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// "Draw-on" wipe: progressively un-clips the icon left-to-right so it appears to
+// be drawn in. Works on both Font Awesome glyphs and <img> SVG icons.
+@keyframes icon-draw-on {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes brain-drift-up {
+  from {
+    transform: translateY(45px);
+  }
+  to {
+    transform: translateY(-45px);
+  }
+}
+
+@keyframes brain-drift-down {
+  from {
+    transform: translateY(-45px);
+  }
+  to {
+    transform: translateY(45px);
+  }
+}
+
+body.index-page {
+  // --- Hero brain (assets/img/logos/abcd-brain.svg) ---
+  // All hero brain motion (radial grow-in show-up, then the looping neuron-fire
+  // transmit) lives inside the SVG itself; no page-level whole-image animation.
+
+  // --- Icon hover lift ---
+  // The wrapper itself carries no scroll animation (the inner .icon-svg does),
+  // so this hover transform is never overridden by a filling animation.
+  .jump-link-card:hover .icon-wrapper {
+    transform: translateY(-3px) scale(1.08);
+  }
+
+  // --- Scroll-driven reveals & icon entrance (Chromium 115+) ---
+  // Hidden initial states are guarded so unsupported browsers keep content visible.
+  @supports (animation-timeline: view()) {
+    .section-header {
+      opacity: 0;
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+
+    .jump-link-card {
+      opacity: 0;
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+
+    // Gentle left-to-right stagger across the three columns of each row.
+    .row .col-md-4:nth-child(2) .jump-link-card {
+      animation-range: entry 5% cover 33%;
+    }
+    .row .col-md-4:nth-child(3) .jump-link-card {
+      animation-range: entry 10% cover 36%;
+    }
+
+    // Help section opt-out (scroll reveal only): its header + cards stay at 100%
+    // opacity with no fade-up. Help ICONS still draw (handled below). Isolated
+    // via the existing `.help-icons` class.
+    .section-wrapper:has(.help-icons) .section-header,
+    .section-wrapper:has(.help-icons) .jump-link-card {
+      opacity: 1;
+      animation: none;
+    }
+  }
+
+  // --- Icon "draw-on" wipe (JS scroll-trigger) ---
+  // A tiny IntersectionObserver (in index.qmd) adds `.in-view` to each card when
+  // it scrolls into view and `.js-draw` to <body>. Unlike a scroll-LINKED view()
+  // timeline (which froze icons half-clipped when you stopped scrolling), this
+  // plays the wipe ONCE on entry and the `forwards` fill keeps it fully drawn.
+  // `.js-draw` gates the clipped initial state, so without JS — or under
+  // reduced-motion — icons are simply shown in full. Works on BOTH Font Awesome
+  // <i> glyphs and the <img> SVG icons; Help-section icons draw too.
+  &.js-draw .icon-svg {
+    clip-path: inset(0 100% 0 0);
+  }
+  &.js-draw .jump-link-card.in-view .icon-svg {
+    animation: icon-draw-on 0.7s ease-out forwards;
+  }
+
+  // Gentle per-column cascade when a row scrolls in together.
+  &.js-draw .row .col-md-4:nth-child(2) .jump-link-card.in-view .icon-svg {
+    animation-delay: 0.08s;
+  }
+  &.js-draw .row .col-md-4:nth-child(3) .jump-link-card.in-view .icon-svg {
+    animation-delay: 0.16s;
+  }
+  &.js-draw .row .col-md-4:nth-child(4) .jump-link-card.in-view .icon-svg {
+    animation-delay: 0.24s;
+  }
+
+  // --- Background brain parallax (assets/img/logos/background-brain-*.svg) ---
+  // Subtle, opposite-direction drift tied to page scroll. Translate-only so the
+  // brains' resting weight/opacity is unchanged.
+  @supports (animation-timeline: scroll()) {
+    .gray-brain-1 {
+      animation: brain-drift-up linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0% 100%;
+    }
+
+    .gray-brain-2 {
+      animation: brain-drift-down linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0% 100%;
+    }
+  }
+}
+
+// Respect users who prefer reduced motion: hold everything in its final, static
+// state with no movement.
+@media (prefers-reduced-motion: reduce) {
+  body.index-page {
+    .hero-image img,
+    .section-header,
+    .jump-link-card,
+    .icon-svg,
+    .gray-brain-1,
+    .gray-brain-2 {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      clip-path: none !important;
+    }
+  }
+}
+
+/*-- End landing page animations --*/

@@ -17,14 +17,18 @@ expect_series <- readr::read_csv(
 
 This document details how to obtain information, metrics, and imaging files from the magnetic resonance imaging (MRI) components of the ABCD Study. An in-depth discussion and reference resource on the ABCD processing pipeline is available at <https://doi.org/10.1016/j.neuroimage.2019.116091>.
 
+::: {.callout-note title="Imaging data"}
+Imaging data are collected on even years. To cross-reference with non-imaging protocols, please refer to the [Non-imaging section](../non_imaging/index.qmd).
+:::
+
 ::: {.callout-caution collapse="true" title="Imaging Release Notes"}
 **7.0**
 
 -   [**MRI info**](../release_notes/7_0.qmd#mri-info): The form of the serial number anonymization has been standardized across these data types and a new categorical variable is used to reduce number of software version.
 
--   [**All imaging**](../release_notes/7_0.qmd#all-imaging): ~50 visits that differ for across all modalities, related to recovery of previous processing failures and some re-evaluation of raw QC.
+-   [**All imaging**](../release_notes/7_0.qmd#all-imaging): \~50 visits that differ for across all modalities, related to recovery of previous processing failures and some re-evaluation of raw QC.
 
--   [**rsfMRI**](../release_notes/7_0.qmd#rsfrmi): Tabulated data now is based on concatenated data. There are also some changes regarding the processing of data. 
+-   [**rsfMRI**](../release_notes/7_0.qmd#rsfrmi): Tabulated data now is based on concatenated data. There are also some changes regarding the processing of data.
 
 -   [**dMRI**](../release_notes/7_0.qmd#dmri): Previously, there was a mismatch of rows in the DTI data files. This has been fixed in 7.0.
 
@@ -32,9 +36,11 @@ This document details how to obtain information, metrics, and imaging files from
 
 -   [**MID**](../release_notes/7_0.qmd#mid): There are changes between how the tabulated data was prepared for 7.0 vs. 6.0 data release.
 
--   [**Post QC**](../release_notes/7_0.qmd#post-qc): ~100-900 visits with differences, depending on modality revisions to previous scores, mostly for FreeSurfer QC.
+-   [**Post QC**](../release_notes/7_0.qmd#post-qc): \~100-900 visits with differences, depending on modality revisions to previous scores, mostly for FreeSurfer QC.
 
 -   [**Missing data on Siemens `XA30`**](../release_notes/7_0.qmd#missing-data-on-siemens-xa30): Anatomical scans (T1w and T2w) and field map scans (for both dMRI and fMRI) were inadvertently excluded from the sourcedata and rawdata BIDS datasets for the 889 scan sessions collected on Siemens scanners with software version `XA30`.
+
+-   [**Registration quality issue for concatenated voxelwise data**](../release_notes/7_0.qmd#registration-quality-issue-for-concatenated-voxelwise-data): A bug has been identified in the registration pipeline used to produce the ABCD 7.0 concatenated voxelwise data.
 
 **6.0**
 
@@ -47,7 +53,7 @@ This document details how to obtain information, metrics, and imaging files from
 -   [**Scanner issue**](../release_notes/6_0.qmd#known-issue-scanner-issue-for-site15)
 :::
 
-::: {.callout-warning collapse="true" title="Data consideration: Scanner issue" #scanner-issue}
+::: {#scanner-issue .callout-warning collapse="true" title="Data consideration: Scanner issue"}
 There was a scanner service issue that affects dMRI and fMRI data acquired prior to August 2018 at one of the ABCD sites (Site ID: site15, DeviceSerialNumber: d06b7afa24778649d21924836f3816031db95e5c7a5db0e475f640bb805cdf9f). It is suggested that users should consider excluding dMRI and fMRI data from that scanner collected prior to August 2018.
 
 There was an intermittent spiking problem, thought to be caused by a hardware malfunction, visible as white pixel noise in some scans. The scanner was serviced and the problem fixed in July 2018. The issue was not detected via visual review, but some dMRI- and fMRI-derived measures from scans acquired prior to August 2018 exhibited an offset in group mean values, resulting, for example, in biased estimates of age-related change.
@@ -59,72 +65,72 @@ Every table in the Imaging domain has the prefix `mr_y_` (`mr`: domain = "imagin
 
 **Subdomain**
 
-- Administrative: `adm`
-- Quality Control: `qc`
-- Diffusion MRI (DTI): `dti`
-- Diffusion MRI (RSI): `rsi`
-- Resting State fMRI: `rsfmr`
-- Structural MRI: `smr`
-- Task fMRI: `tfmr`
+-   Administrative: `adm`
+-   Quality Control: `qc`
+-   Diffusion MRI (DTI): `dti`
+-   Diffusion MRI (RSI): `rsi`
+-   Resting State fMRI: `rsfmr`
+-   Structural MRI: `smr`
+-   Task fMRI: `tfmr`
 
 **Metric**
 
-- *Diffusion MRI (DTI)*
-  - Fractional Anisotropy: `fa`
-  - Longitudinal Diffusivity: `ld`
-  - Mean Diffusivity: `md`
-  - Transverse Diffusivity: `td`
-  - Volume: `vol`
-- *Diffusion MRI (RSI)*
-  - Free Normalized Isotropic: `fni`
-  - Hindered Normalized Directional: `hnd`
-  - Hindered Normalized Isotropic: `hni`
-  - Hindered Normalized Total: `hnt`
-  - Restricted Normalized Directional: `rnd`
-  - Restricted Normalized Isotropic: `rni`
-  - Restricted Normalized Total: `rnt`
-- *Resting State fMRI*
-  - Correlation: `cor`
-  - Temporal Variance: `var`
-- *Structural MRI*
-  - Cortical Thickness: `thk`
-  - Sulcal Depth: `sulc`
-  - Surface Area: `area`
-  - T1 Intensity: `t1`
-  - T2 Intensity: `t2`
-  - Volume: `vol`
-- *Task fMRI*
-  - Emotional N-Back: `nback`
-  - Monetary Incentive Delay: `mid`
-  - Stop Signal Task: `sst`
+-   *Diffusion MRI (DTI)*
+    -   Fractional Anisotropy: `fa`
+    -   Longitudinal Diffusivity: `ld`
+    -   Mean Diffusivity: `md`
+    -   Transverse Diffusivity: `td`
+    -   Volume: `vol`
+-   *Diffusion MRI (RSI)*
+    -   Free Normalized Isotropic: `fni`
+    -   Hindered Normalized Directional: `hnd`
+    -   Hindered Normalized Isotropic: `hni`
+    -   Hindered Normalized Total: `hnt`
+    -   Restricted Normalized Directional: `rnd`
+    -   Restricted Normalized Isotropic: `rni`
+    -   Restricted Normalized Total: `rnt`
+-   *Resting State fMRI*
+    -   Correlation: `cor`
+    -   Temporal Variance: `var`
+-   *Structural MRI*
+    -   Cortical Thickness: `thk`
+    -   Sulcal Depth: `sulc`
+    -   Surface Area: `area`
+    -   T1 Intensity: `t1`
+    -   T2 Intensity: `t2`
+    -   Volume: `vol`
+-   *Task fMRI*
+    -   Emotional N-Back: `nback`
+    -   Monetary Incentive Delay: `mid`
+    -   Stop Signal Task: `sst`
 
 **Atlas**
 
-- *Diffusion MRI (DTI)*
-  - AtlasTrack: `at`
-  - Desikan: `dsk`
-  - Destrieux: `dst`
-  - Subcortical: `aseg`
-- *Diffusion MRI (RSI)*
-  - AtlasTrack: `at`
-  - Desikan: `dsk`
-  - Destrieux: `dst`
-  - Subcortical: `aseg`
-- *Resting State fMRI*
-  - Desikan: `dsk`
-  - Destrieux: `dst`
-  - Gordon Parcellations: `gp`
-  - Subcortical: `aseg`
-- *Structural MRI*
-  - Desikan: `dsk`
-  - Destrieux: `dst`
-  - Fuzzy Clustering: `fzy`
-  - Subcortical: `aseg`
-- *Task fMRI*
-  - Behavior: `beh`
-  - Desikan: `dsk`
-  - Destrieux: `dst`
-  - Subcortical: `aseg`
+-   *Diffusion MRI (DTI)*
+    -   AtlasTrack: `at`
+    -   Desikan: `dsk`
+    -   Destrieux: `dst`
+    -   Subcortical: `aseg`
+-   *Diffusion MRI (RSI)*
+    -   AtlasTrack: `at`
+    -   Desikan: `dsk`
+    -   Destrieux: `dst`
+    -   Subcortical: `aseg`
+-   *Resting State fMRI*
+    -   Desikan: `dsk`
+    -   Destrieux: `dst`
+    -   Gordon Parcellations: `gp`
+    -   Subcortical: `aseg`
+-   *Structural MRI*
+    -   Desikan: `dsk`
+    -   Destrieux: `dst`
+    -   Fuzzy Clustering: `fzy`
+    -   Subcortical: `aseg`
+-   *Task fMRI*
+    -   Behavior: `beh`
+    -   Desikan: `dsk`
+    -   Destrieux: `dst`
+    -   Subcortical: `aseg`
 
 Within the different imaging modalities, variables are grouped into tables using additional criteria. The resulting tables are listed in more detail in the data documentations pages for each specific imaging modality. Users can use [DEAP (Data Exploration and Analysis Portal)](https://nbdc.deapscience.com) to explore what variables a given instrument contains and how instruments are hierarchically organized within the ABCD ontology. Abbreviations of anatomical locations for the ROI-based tabulated imaging tables are detailed in [*Supplementary Imaging Tables*](data_suppl.qmd).
 
@@ -168,11 +174,11 @@ MR images are corrected for distortions and head motion, and cross-modality regi
 
 Finally, ROI analysis results are compiled across participants and summarized in tabulated form. Information on the different tabulated imaging data instruments is detailed in modality-specific release notes:
 
-- [Structural Magnetic Resonance Imaging](type_smri.qmd)
-- [Diffusion Magnetic Resonance Imaging](type_dmri.qmd)
-- [Resting-State Functional Magnetic Resonance Imaging](type_rsfmri.qmd)
-- [Task-Based Functional Magnetic Resonance Imaging (task-fMRI)](type_tfmri.qmd)
-- [Behavioral Performance During Task-Based fMRI](type_tfmribeh.qmd)
+-   [Structural Magnetic Resonance Imaging](type_smri.qmd)
+-   [Diffusion Magnetic Resonance Imaging](type_dmri.qmd)
+-   [Resting-State Functional Magnetic Resonance Imaging](type_rsfmri.qmd)
+-   [Task-Based Functional Magnetic Resonance Imaging (task-fMRI)](type_tfmri.qmd)
+-   [Behavioral Performance During Task-Based fMRI](type_tfmribeh.qmd)
 
 Despite the convenience of ROI-based analyses and the advantages related to reduced numbers of statistical comparisons, there are inherent limitations to this approach. Effects of interest (e.g., associations between cortical morphometry and cognitive variables, or task- related fMRI activation) could potentially straddle multiple ROIs, or occupy a small region of a large ROI, thereby reducing the sensitivity of an ROI-based analysis relative to mapping-based approaches. For this reason, users should be cautious about interpreting the results of ROI- based analyses, particularly for task fMRI.
 
@@ -275,7 +281,7 @@ The finding dictionary defines the 85 controlled-vocabulary labels used in this 
 *Figure 2. The 30 most common incidental finding labels by unique subject count across all imaging timepoints. Pineal cysts are by far the most prevalent finding, followed by sinonasal findings, developmental venous anomalies, and white matter abnormalities.*
 
 |  |  |  |
-|--------------------------|--------------------|-------------------------|
+|----|----|----|
 | **Finding Label** | **Finding Label** | **Finding Label** |
 | Absence of the Septum Pellucidum | Empty/Partially Empty Sella | Optic Nerve/Chiasm/Tract |
 | Aqueductal Stenosis/Web | Encephalocele | Parotid/Lymphoepithelial Cyst(s) |
@@ -319,8 +325,7 @@ For task fMRI, series were also excluded due to E-Prime problems including missi
 
 Behavioral measures calculated from participant button presses during task fMRI acquisition are also included (see [Behavioral Performance During Task-Based fMRI](type_tfmribeh.qmd) release note). Based on those measures, behavioral performance flags are provided, indicating whether a subject's performance for each task was within acceptable standards. It is suggested that users exclude subjects from group analysis based on sub-optimal performance and possibly additional criteria such as the number of degrees of freedom (reduced by motion censoring) in the individual subject task-fMRI analysis and/or based on outlier detection on the ROI-averages themselves. Users should choose inclusion/exclusion performance criteria that are appropriate for their analyses.
 
-::: {.callout-important collapse="true" title="Responsible use consideration: Head motion" #use-head}
-
+::: {#use-head .callout-important collapse="true" title="Responsible use consideration: Head motion"}
 Head motion is a serious issue for neuroimaging, and especially for resting state fMRI. It creates brain-wide artifactual effects including elevated short-distance connectivity and attenuated long-distance connectivity [@power2012]. In order to guard against artifactual effects due to head motion, researchers typically implement a variety of strategies that operate at multiple points of the data collection and processing pipeline, with guidance regularly evolving over time [@power2014; @power2015; @satterthwaite2013; @siegel2017; @gratton2020]. Some of these strategies include discarding entire runs of data that exceed certain motion thresholds and discarding individual functional imaging frames that are proximal to motion events (i.e., "motion censoring"). These strategies in particular typically lead to the exclusion of some participants from further analysis for lack of sufficient data. Levels of head motion differ according to demographic factors such as sex, race/ethnicity, and SES [@cosgrove2022]. Therefore, strategies to deal with head motion may lead to differential exclusions across demographic groups. In addition, data quality procedures cause sessions to vary by the amount of data remaining. Such variability may continue to inflate findings especially in the presence of conditions that may correlate with the motion artifact like autism or ADHD [@eggebrecht2017]. One strategy that avoids this confound is to strictly control the degrees of freedom, where functional connectivity measures are calculated with the exact same amount of data. To aid researchers in exploring this impact further, the ABCD study has released 5 minute- and 10 minute-trimmed and untrimmed functional connectivity datasets. Researchers interested in examining brain-behavior associations or multivariate predictions should follow strategies such as those in @eggebrecht2017: 1) assess how missing data impacts dependent, independent variables and covariates, 2) examine the association between the degrees of freedom and non-FC variables, 3) use trimmed FC measures when needed to mitigate artifacts due to data quality.
 
 For more information please see: ["Resting-state fMRI Data Documentation"](type_rsfmri.qmd).
@@ -336,7 +341,7 @@ One recommended approach is to include scanner ID and software version as covari
 
 ![](../../assets/img/documentation/imaging/palmer_model)
 
-Investigators should make informed decisions based on the analytic goals. For example, some investigators have recommended including "site", either as a fixed or random effect, in regression models [@dick2021]. However,  it may be unnecessary to model "site" as a fixed effect if "scanner ID" is included, but this also may depend on whether random effects are modeled as nested effects (e.g., subject within family within site). In some cases, scanner variables may be collinear with other predictors of interest. For example, if one is examining a specific sub-sample, scanner upgrades may occur between scheduled data collection, increasing the probability that age is collinear with changes in scanner software. Investigators should carefully check their statistical models for issues with multicollinearity. Indeed, in some cases statistical packages will fail to return a result for collinear variables. For example, depending on the analysis, R may fail to return a result, or return a "Singular fit" warning. Investigators may want to assess the Variance Inflation Factor from the car package (e.g., vif(model)), which will return values that indicate the degree of collinearity for each variable in the model. Investigators can manually remove predictors that are collinear.
+Investigators should make informed decisions based on the analytic goals. For example, some investigators have recommended including "site", either as a fixed or random effect, in regression models [@dick2021]. However, it may be unnecessary to model "site" as a fixed effect if "scanner ID" is included, but this also may depend on whether random effects are modeled as nested effects (e.g., subject within family within site). In some cases, scanner variables may be collinear with other predictors of interest. For example, if one is examining a specific sub-sample, scanner upgrades may occur between scheduled data collection, increasing the probability that age is collinear with changes in scanner software. Investigators should carefully check their statistical models for issues with multicollinearity. Indeed, in some cases statistical packages will fail to return a result for collinear variables. For example, depending on the analysis, R may fail to return a result, or return a "Singular fit" warning. Investigators may want to assess the Variance Inflation Factor from the car package (e.g., vif(model)), which will return values that indicate the degree of collinearity for each variable in the model. Investigators can manually remove predictors that are collinear.
 
 When running FEMA for voxel- or vertex-wise data analysis, the custom R function makeDesign will check the rank of the design matrix during its construction, and drop columns that are collinear (see <https://github.com/cmig-research-group/cmig_tools/blob/main/cmig_tools_utils/r/makeDesign.R>).
 
@@ -348,7 +353,7 @@ To facilitate whole-brain analyses of 3D volumes at the voxel-level and cortical
 
 # Voxelwise data
 
-To establish anatomical correspondence across all observations, the ABCD atlas was synthesized using the Multimodal Image Normalisation Tool (MINT) developed by the DAIRC. The MINT ABCD atlas is generated from baseline and two-year follow up imaging data and all observations included in Data Release 6.0 from all modalities were registered to the ABCD atlas.  Below is a brief overview, for more details please see @pecheva2022.
+To establish anatomical correspondence across all observations, the ABCD atlas was synthesized using the Multimodal Image Normalisation Tool (MINT) developed by the DAIRC. The MINT ABCD atlas is generated from baseline and two-year follow up imaging data and all observations included in Data Release 6.0 from all modalities were registered to the ABCD atlas. Below is a brief overview, for more details please see @pecheva2022.
 
 # Methods
 
@@ -586,9 +591,9 @@ We modified our code for extracting event timing information from ABCD E-prime f
 
 #### E-Prime timing errors for GE scanners
 
-In a relatively small, though substantial, subset of task fMRI acquisitions collected on GE scanners (~9% of runs), the time between the 1st and 16th trigger pulse sent from the scanner does not match the expected 12 seconds.
+In a relatively small, though substantial, subset of task fMRI acquisitions collected on GE scanners (\~9% of runs), the time between the 1st and 16th trigger pulse sent from the scanner does not match the expected 12 seconds.
 
-We modified our task fMRI analysis pipeline to calculate trigger pulse timing discrepancies to identify E-prime runs for which the delay between the first trigger pulse and last recorded trigger pulse does not match the expectation (12 seconds for GE scanners). In cases where the discrepancy was either 0.8, 1.6, or 2.4 seconds (or within 0.01 seconds of those values), indicating missed (undetected) trigger pulses (~3% of runs), we adjusted the start time (used as the reference for subsequent events) by subtracting the discrepancy. We further modified the task fMRI analysis pipeline to exclude from processing any other runs that had a start time discrepancy (absolute difference from expectation relative to initial trigger pulse) larger than 0.5 seconds (~6% of runs), as such cases reflect irregular trigger timing and make it difficult or impossible to be sure when the stimulus run started relative to the imaging scan. For imaging visits with no valid task fMRI runs due to timing discrepancies, no derived results will be produced, and the imaging inclusion flags for the corresponding task will be set to 0. See [Data Documentation](type_tfmri.qmd).
+We modified our task fMRI analysis pipeline to calculate trigger pulse timing discrepancies to identify E-prime runs for which the delay between the first trigger pulse and last recorded trigger pulse does not match the expectation (12 seconds for GE scanners). In cases where the discrepancy was either 0.8, 1.6, or 2.4 seconds (or within 0.01 seconds of those values), indicating missed (undetected) trigger pulses (\~3% of runs), we adjusted the start time (used as the reference for subsequent events) by subtracting the discrepancy. We further modified the task fMRI analysis pipeline to exclude from processing any other runs that had a start time discrepancy (absolute difference from expectation relative to initial trigger pulse) larger than 0.5 seconds (\~6% of runs), as such cases reflect irregular trigger timing and make it difficult or impossible to be sure when the stimulus run started relative to the imaging scan. For imaging visits with no valid task fMRI runs due to timing discrepancies, no derived results will be produced, and the imaging inclusion flags for the corresponding task will be set to 0. See [Data Documentation](type_tfmri.qmd).
 
 We also sought to identify runs for which the delay between the start of the run and the onset of the first fixation does not match the expectation (500 msec for 1st nBack run on GE scanners, 0 msec otherwise). Runs with an onset time delay greater than 5 seconds were excluded from processing. Smaller discrepancies (i.e., up to 5 seconds) were allowed for this type of delay, because they do not introduce an error in the time series analysis, like an unknown delay between the start of the scan and the start of the run would. Instead, there is merely a shift in the timing of events relative to the start of the run, which can be correctly modeled.
 

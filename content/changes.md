@@ -1,5 +1,17 @@
+-   **Release Notes**
+    -   Previous release notes have been uploaded for users to view and download
+    -   Added Non-imaging 7.0 release notes regarding a data issue in `mh_y_resil`
+    -   Added Imaging 7.0 release notes regarding registration quality issue for concatenated voxelwise data 
 -   **Non-Imaging**
-    -   Friends, Family, & Community: Added a user-friendly dictionary for the Experiences with Unfair Treatment measure
-
--   **ABCC**
-    -   Updated ABCC with a historical context infobox and addressed known issues
+    -   General: Added data warning regarding number of sites
+    -   Mental Health: Updated note on Behavioral Inhibition / Behavioral Approach System Scales coding
+    -   Neurocognition: Updated note regarding an Emotional Stroop Task randomization issue
+-   **Imaging**
+    -   Updated `mr_y_qc__mot__rsfmri__vol__censor_count` variable in `mr_y_qc__mot` table 
+-   **Acknowledgment**
+    -   Update language regarding reporting data from a versioned release
+    -   Removed section regarding 5.1 data users 
+-   **Curation & Structure**
+    -   Added note regarding updated stata naming convention
+    -   Updated content regarding structure for file-based data
+    -   Changed “neurocognitive experiments” to “neurocognitive assessments”

@@ -148,6 +148,10 @@ There are 4 participants who are more than 0.1 less than 9, or over 11 years old
 The `ab_g_dyn__design_site` variable describes the site at which a participant completed a given event.
 :::
 
+::: {.callout-warning collapse="false" title="Data consideration: Site numbers"}
+The number of site labels across the study's history is 22, but not the number of active sites, which is 21. In particular, Site 22 discontinued after baseline and most of its participants were transferred, primarily to Site 21. There are different ways to handle these participants' data: keep all 22 levels for baseline-only analyses; use a time-invariant site (baseline or current) for random intercepts; recode to the currently enrolled site if using fixed-effect site dummies, etc.
+:::
+
 ::: {.callout-note collapse="false" title="Schools and School Districts"}
 Using data from the National Center for Education Statistics (NCES), pseudo-identifiers were generated and assigned to each school and school district:
 

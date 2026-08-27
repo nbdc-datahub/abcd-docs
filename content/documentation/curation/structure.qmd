@@ -18,7 +18,7 @@ The tabulated data resource can be queried and accessed using different [tools](
 
 # File-based data <span class="pill-file-based">file-based</span> {#file-based}
 
-ABCD's file-based data resource consists of raw and processed data files generated from various instruments and modalities, including magnetic resonance imaging (MRI), genetic analyses, wearable sensors, neurocognitive experiments, and other assessments. The resulting data are provided either as individual-level files (one file, or collection of files, per participant/event) or in a concatenated format (one file per instrument or modality, containing data for all participants/events).
+ABCD's file-based data resource consists of raw and processed data files generated from various instruments and modalities, including magnetic resonance imaging (MRI), genetic analyses, wearable sensors, neurocognitive assessments, and other assessments. The resulting data are provided either as individual-level files (one file, or collection of files, per participant/event) or in a concatenated format (one file per instrument or modality, containing data for all participants/events).
 
 ## Brain Imaging Data Structure (BIDS)
 
@@ -71,6 +71,10 @@ The `concatenated/` directory contains concatenated data files for various instr
 The BIDS specification does not account for concatenated data (besides the tabulated data, which is organized as one file per table in the `rawdata/phenotype/` directory; see [below](#rawdata)). As such, the `concatenated/` directory is not part of the BIDS structure but is an ABCD-specific addition to the file-based data resource.
 
 Files in the `concatenated/` directory are provided in a variety of formats, depending on the data type and intended use. In the `linked_external/`, `novel_technologies/`, `substance_use/`, and `substudies/` directories, the same data are made available in both `csv` (plain-text) format and `parquet` format (see [below](#file-formats) for more information about these formats).
+
+Genetic, Fitbit, EARS data are released as file-based concatenated data. That is, they are not released through DEAP, which only releases the curated tabulated dataset (one row per participant/event) because these data have a different structure (time-series data by minute, day, or week). To download them, one needs to access [NBDC Data Access Platform](https://www.nbdc-datahub.org/) and download them using Globus like one would for the imaging data.
+
+![](../../assets/img/documentation/concat.png)
 :::
 
 ## Derivatives
@@ -122,7 +126,7 @@ abcd
     └── ...
 ```
 
-The `rawdata/` directory contains raw data from MR imaging, neurocognitive experiments, and wearable sensors, as well as a copy of the tabulated data resource and is organized as follows:
+The `rawdata/` directory contains raw data from MR imaging, neurocognitive assessments, and wearable sensors, as well as a copy of the tabulated data resource and is organized as follows:
 
 - `rawdata/phenotype/`: Tabulated data, with one file per database table provided in both `tsv` (plain-text) and `parquet` formats, along with a [BIDS sidecar](https://bids-specification.readthedocs.io/en/stable/modality-agnostic-files.html#phenotypic-and-assessment-data) `json` file that provides metadata for each table (see the domain-specific documentation pages).
 - `rawdata/sub-<participant>/`: Raw imaging data (in `NIfTI` format), neurocognitive data, and wearable data, with one directory per participant and, nested within each participant, one directory per event (see [here](../imaging/data_source_raw.qmd#rawdata) for imaging raw data and the domain-specific documentation pages for raw data from other domains).

@@ -53,7 +53,7 @@ website:
           - text: "Curation & structure"
             file: documentation/curation/structure.qmd
           - text: "Non-imaging"
-            file: documentation/non_imaging/ab.qmd
+            file: documentation/non_imaging/index.qmd
           - text: "Imaging"
             file: documentation/imaging/index.qmd
           - text: "Substudies"

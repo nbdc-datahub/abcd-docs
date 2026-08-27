@@ -232,11 +232,11 @@ Welcome to the data documentation website of the Adolescent Brain Cognitive Deve
     <div class="col-md-4">
       <a href="tools/packages.html" class="jump-link-card">
         <div class="icon-wrapper tools-icons">
-          <i class="fa-brands fa-r-project icon-svg"></i>
+          <i class="fa-solid fa-cubes icon-svg"></i>
         </div>
         <div class="content">
-          <h3>R Packages</h3>
-          <p>R packages for accessing, processing, and analyzing ABCD data.</p>
+          <h3>Software Packages</h3>
+          <p>Packages for accessing, processing, and analyzing ABCD data.</p>
         </div>
       </a>
     </div>
@@ -295,6 +295,32 @@ Welcome to the data documentation website of the Adolescent Brain Cognitive Deve
 </div>
 
 </div>
+
+<script>
+// Landing-page only: draw each card icon once as it scrolls into view.
+// `.js-draw` on <body> gates the clipped initial state in styles-abcd.scss, so
+// without JS (or under reduced-motion) icons are simply shown in full.
+(function () {
+  var body = document.body;
+  if (!body || !body.classList.contains("index-page")) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  body.classList.add("js-draw");
+  var cards = document.querySelectorAll(".index-links .jump-link-card");
+  if (!("IntersectionObserver" in window)) {
+    cards.forEach(function (c) { c.classList.add("in-view"); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("in-view");
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.25, rootMargin: "0px 0px -8% 0px" });
+  cards.forEach(function (c) { io.observe(c); });
+})();
+</script>
 ```
 
 :::

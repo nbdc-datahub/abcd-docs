@@ -11,7 +11,7 @@ for (file in list.files("../../../R", full.names = TRUE)) source(file)
 
 # Domain overview
 ```{r}
-render_table_info("sub_domain == 'Quality Control'")
+render_table_info_imaging("sub_domain == 'Quality Control'")
 ```
 
 <!-- [Download table as a pdf](../../assets/files/documentation/imaging/6_1_mr_qc.pdf){style="display: block; text-align: right; margin-top: 4px;"} -->
@@ -88,7 +88,7 @@ rsfMRI series meets all criteria for inclusion (`mr_y_qc__incl__rsfmri_indicator
 |---------------------------------------------|------------------------------------------------|-----------------------------------------------------------|
 | *rsfMRI tfMRI series passed rawQC*          | `r link_table("mr_y_qc__raw__rsfmri")`         | `mr_y_qc__raw__rsfmri__pass__qc__comp_count > 0`          |
 | *T~1~ series passed rawQC*                  | `r link_table("mr_y_qc__raw__smri__t1")`       | `mr_y_qc__raw__smri__t1__pass__qc__comp_count > 0`        |
-| *rsfMRI number of frames after censoring*   | `r link_table("mr_y_qc__mot")`                 | `mr_y_qc__mot__rsfmri__point_count > 375`                 |
+| *rsfMRI number of frames after censoring*   | `r link_table("mr_y_qc__mot")`                 | `mr_y_qc__mot__rsfmri__vol__censor_count > 375`                 |
 | *fMRI B0 unwarp available*                  | `r link_table("mr_y_qc__post__aut")`           | `mr_y_qc__post__aut__fmri__b0__unwarp_indicator = 1`      |
 | *FreeSurfer QC not failed*                  | `r link_table("mr_y_qc__post__man__fsurf")`    | `mr_y_qc__post__man__fsurf_score != 0`                    |
 | *fMRI manual post-processing QC not failed* | `r link_table("mr_y_qc__post__man__fmri")`     | `mr_y_qc__post__man__fmri_score != 0`                     |
