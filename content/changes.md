@@ -1,17 +1,13 @@
--   **Release Notes**
-    -   Previous release notes have been uploaded for users to view and download
-    -   Added Non-imaging 7.0 release notes regarding a data issue in `mh_y_resil`
-    -   Added Imaging 7.0 release notes regarding registration quality issue for concatenated voxelwise data 
 -   **Non-Imaging**
-    -   General: Added data warning regarding number of sites
-    -   Mental Health: Updated note on Behavioral Inhibition / Behavioral Approach System Scales coding
-    -   Neurocognition: Updated note regarding an Emotional Stroop Task randomization issue
+    -   Substance Use: Added notes and special considerations in Toxicology (Youth) regarding potential biases due to hair styles
+    -   Physical Health: Updated Pubertal Development Scale regarding maximum scoring
+    -   Genetics: Updated note regarding GENESIS derived genetic principal component
+    -   Novel Technologies: Updated Fitbit data dictionaries and levels tables
 -   **Imaging**
-    -   Updated `mr_y_qc__mot__rsfmri__vol__censor_count` variable in `mr_y_qc__mot` table 
--   **Acknowledgment**
-    -   Update language regarding reporting data from a versioned release
-    -   Removed section regarding 5.1 data users 
--   **Curation & Structure**
-    -   Added note regarding updated stata naming convention
-    -   Updated content regarding structure for file-based data
-    -   Changed “neurocognitive experiments” to “neurocognitive assessments”
+    -   Added Diffusion MRI data consideration regarding potential body-size dependent effects in ABCD diffusion MRI (dMRI) data
+    -   Updated Monetary Incentive Delay (Mid) task note regarding a change from previous release
+    -   Added Imaging Methods changes for 7.0 data
+-   **Release Notes**
+    -   Added 7.0 General release notes regarding `ab_g_stc__cohort_ethnrace__aou` table
+    -   Added 6.0 Physical Health release notes regarding coding for the Pubertal Development Scale
+    

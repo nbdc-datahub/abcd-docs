@@ -1,8 +1,8 @@
 name,label,type_data,type_level
 participant_id,Participant ID,text,nominal
 session_id,Session ID,character,nominal
-wk,Week number starting from first day of 21 day protocol period,integer,ratio
-day,Day number starting from first day of 21 day protocol period,integer,ratio
+wk,Week number starting from first day of 21 day protocol period (longer in the COVID protocol),integer,ratio
+day,Day number starting from first day of 21 day protocol period (longer in the COVID protocol),integer,ratio
 dt,Date of participant wear,date,interval
 dt_day,Day of the week,character,ordinal
 dt_wknd,Is this day a weekend day (Saturday or Sunday)?,logical,nominal

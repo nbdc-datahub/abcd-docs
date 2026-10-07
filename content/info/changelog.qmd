@@ -4,6 +4,29 @@ order: 3
 ---
 
 
+# 7.0.4
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2026-10-07<br>
+**URL:** [https://docs.abcdstudy.org/v/7_0_4](https://docs.abcdstudy.org/v/7_0_4)
+</span>
+
+-   **Non-Imaging**
+    -   Substance Use: Added notes and special considerations in Toxicology (Youth) regarding potential biases due to hair styles
+    -   Physical Health: Updated Pubertal Development Scale regarding maximum scoring
+    -   Genetics: Updated note regarding GENESIS derived genetic principal component
+    -   Novel Technologies: Updated Fitbit data dictionaries and levels tables
+-   **Imaging**
+    -   Added Diffusion MRI data consideration regarding potential body-size dependent effects in ABCD diffusion MRI (dMRI) data
+    -   Updated Monetary Incentive Delay (Mid) task note regarding a change from previous release
+    -   Added Imaging Methods changes for 7.0 data
+-   **Release Notes**
+    -   Added 7.0 General release notes regarding `ab_g_stc__cohort_ethnrace__aou` table
+    -   Added 6.0 Physical Health release notes regarding coding for the Pubertal Development Scale
+    
+
+
+
+
 # 7.0.3
 <span style="font-size: 0.85em; color: gray;">
 **Date:** 2026-08-27<br>

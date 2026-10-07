@@ -138,6 +138,13 @@ The file-based directory structure has been updated: the `concat` directory has 
 
 NAA mean scores were added in the `ab_p_demo` where the Native American Acculturation items were asked to parents, the new item is `ab_p_demo__ntvam_mean`.
 
+### Recover All of Us variables
+
+**`ab_g_stc__cohort_ethnrace__aou`** table contains the RECOVER All of Us (aou) race determinations. These are cross listings from the RECOVER data, which are added in 7.0 (i.e., different than the other race variable summary scores in `ab_g_stc`.)
+
+For additional documentation, see: [Recover data documentation](../substudies/recover.qmd).
+
+
 ## Friends, Family, & Community
 
 ### New FC tables
@@ -433,7 +440,9 @@ Beginning at the initial (baseline) appointment of ABCD, researchers collected n
 
 ## RECOVER
 
-The [RECOVER data](../substudies/recover.qmd) have been processed and included in the 7.0 Release. All survey questions were completed by the parent or caregiver. This includes surveys marked as “youth”. As such, the table information in the data documentation is all listed under “parent”/`_p_`, as the caregiver completed both the surveys about themselves and the surveys about the youth. For measures that are asked about both the youth and caregiver, the caregiver directed table ends with the suffix `cg` in the table name. The antibody test was completed by the youth directly, which is why it is marked as a youth table.
+The [RECOVER data](../substudies/recover.qmd) have been processed and included in the 7.0 Release. All survey questions were completed by the parent or caregiver. This includes surveys marked as “youth”. As such, the table information in the data documentation is all listed under “parent”/`_p_`, as the caregiver completed both the surveys about themselves and the surveys about the youth. For measures that are asked about both the youth and caregiver, the caregiver directed table ends with the suffix `cg` in the table name. The antibody test was completed by the youth directly, which is why it is marked as a youth table. The race variable summary scores are also cross listed in the `ab_g_stc__cohort_ethnrace__aou` table. 
+
+For additional documentation, see: [Recover data documentation](../substudies/recover.qmd).
 
 ### COVID Symptoms Surveys: Known Variable Naming Issues
 

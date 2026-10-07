@@ -2,13 +2,25 @@
 title: "Diffusion MRI"
 ---
 
-
 ```{r}
 #| label: setup
 #| include: false 
 
 for (file in list.files("../../../R", full.names = TRUE)) source(file)
 ```
+
+::: {#dmri-issue .callout-warning collapse="false" title="Data consideration: Potential body-size dependent effects in ABCD diffusion MRI (dMRI) data "}
+
+We have identified a potential body-size dependent effect in dMRI data acquired on Siemens scanners running the MGH sequence on VE11 software. This issue affects ABCD dMRI data, and not HBCD dMRI data. The impact of this confound on derived ABCD dMRI data is still being evaluated.  
+
+**Technical Details.** The nominal 90°/180° flip angles in the protocol are reduced for all ABCD dMRI scans acquired using VE11 software, with larger participants showing greater reduction. This appears to be due to the sequence requesting RF transmitter coil voltages that exceed hardware limits.  
+
+Such reduced flip angles are expected to reduce the measured signal amplitude. Most diffusion metrics are based on relative signal intensities (e.g., [Fractional Anisotropy \[FA\]](https://docs.abcdstudy.org/latest/documentation/imaging/type_dmri.html#mr_y_dti), [Mean Diffusivity \[MD\]](https://docs.abcdstudy.org/latest/documentation/imaging/type_dmri.html#mr_y_dti)), so would not be directly biased by systematic reductions in signal. However, when the signal approaches the noise floor (which may be the case for high b-values acquisitions; e.g., [Restriction Spectrum Imaging \[RSI\]](https://docs.abcdstudy.org/latest/documentation/imaging/type_dmri.html#mr_y_rsi), [Diffusion Kurtosis Imaging \[DKI\]](https://docs.abcdstudy.org/latest/documentation/imaging/abcc_qsiprep-qsirecon.html#qsirecon)) the increased relative noise can introduce an indirect bias into the measured signal. This body-size dependent bias and or any variable correlated with it may propagate to derived diffusion metrics, however, the full extent of this effect on traditional longitudinal and population level analyses is yet to be determined.
+
+**Scope and Next Steps.** While we have established that a potential bias exists, it has not been fully characterized yet. We do not believe that this is a problem on other software versions, such as the CMRR sequence run on Siemens XA30, or other vendors. Thus, it should not affect the HBCD study, which uses CMRR sequences on Siemen’s platforms. However, any dataset collected on a VE11 Siemens scanner using the standard product diffusion sequence may show the same body-size-dependent reduction in flip angle (since the MGH sequence was based primarily on Siemens product libraries). At this stage we do not have sufficient evidence to support recommendations for changes to analyses, such as exclusion criteria, covariates or harmonization strategies. 
+
+**Updates and More Information.** We will provide updates as our investigations progress. 
+:::
 
 # Domain overview
 ```{r}

@@ -592,6 +592,28 @@ Variable names were swapped for four items in the `ph_y_pq` table. The left and 
 
 Some dates are missing for the `ph_p_sds` data (mostly at baseline and 1 year followup). Please use the visit date `ab_g_dyn__visit_dtt` instead of the sds specific dtt for the missing data.
 
+### Pubertal Development Scale & Menstrual Cycle Survey History (Youth)
+
+The youth PDS menarche item `ph_y_pds__f_002` ("Have you begun to menstruate (started to have your period)?") is coded `0` = No, `1` = Yes. Every other PDS item is still coded 1–4. In the past releases (prior to 6.0 when released via NDA)  the same item was coded `1` = No, `4` = Yes. The value `1` has flipped meaning: it used to mean "not yet menstruating" and now means "has begun menstruating."  The prior 1/4 coding was in line with the schema used in @petersen1988. The new coding is in effort to standardize all ‘Yes/No’ variables with common curation values (1/0). Anyone who subsets, recodes, hand-scores, or uses this item as a covariate with the old coding in mind will get wrong results without any error or warning.
+
+If users wish to recode to the original 1/4 variable response codes they can use the following code: 
+
+R:
+```r
+df <- df %>% 
+      mutate(pds_menarche_1988 = case_when( 
+            ph_y_pds__f_002 == 1 ~ 4, 
+            ph_y_pds__f_002 == 0 ~ 1, 
+            .default= NA_real_
+      )) 
+
+```
+
+Python (pandas):
+```python
+df["pds_menarche_1988"] = df["ph_y_pds__f_002"].map({0: 1, 1: 4}) 
+```
+
 ## Substance Use
 
 ### TLFB corrections

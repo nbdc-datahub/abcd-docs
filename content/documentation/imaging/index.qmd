@@ -608,3 +608,53 @@ The column names in the table [`mr_y_rsfmri__corr__gpnet__aseg`](https://abcd.de
 The behavioral performance flag for SST (`mr_y_tfmri__sst__beh__qc_indicator`) has been changed from `0` (fail) to `1` (pass) for 3524 participant-events. The criteria for acceptable behavioral performance for SST were adjusted to allow for as few as 280 "Go" trials instead of the previously required 300 Go trials. This change was made to allow for the inclusion of participant-events in which the SST runs contained "Stop too early" (STE) trials, which are defined as trials in which the participant made their button press response during a stop trial before the stop signal would have been presented. In the version of the SST task used since August 2021, when STE trials occurred, the stop signal was then not presented on that trial, and the subsequent trial was replaced by another "Stop" trial, thus reducing the number of Go trials. Of all participant-events with SST behavioral results in the 6.1 release, \~85% of participant-events have exactly 300 Go trials and over \~96% have at least 295 Go trails. For time series modeling, STE trials are currently modeled as a separate condition of no interest. In the upcoming 7.0 release, STE trials will be recoded as Go trials.
 
 As a consequence of the change to the behavioral performance flag noted above, the imaging inclusion flag for SST (`mr_y_qc__incl__tfmri__sst_indicator`) has also been changed from `0` (exclude) to `1` (include) for 3152 participant-events. Note that this number is less than the number of participant-events with changed performance flag due to additional reasons for exclusion.
+
+## Changes to 7.0
+
+The ABCD 7.0 data release (May 13, 2026) includes new data from events and sessions newly completed since the 6.0 release. The following processing and analysis changes were implemented relative to Release 6.1.
+
+### General
+
+#### Scanner metadata: serial number anonymization and software version categorization
+
+The form of the serial number anonymization has been standardized across data types, and a new categorical variable has been introduced to reduce the number of distinct software versions reported.
+
+#### Reprocessed visits
+
+Approximately 50 visits differ across all imaging modalities, related to recovery of previous processing failures and some re-evaluation of raw QC.
+
+### rsfMRI
+
+#### Tabulated data now derived from concatenated timeseries pipeline
+
+This is the most substantial rsfMRI processing change in Release 7.0. In prior releases, minimally processed voxelwise data underwent additional processing (motion and global signal regression, interpolation of censored frames, bandpass filtering) followed by calculation of average ROI timeseries and ROI-ROI correlations; correlations were computed separately for each scan and then averaged across scans. Beginning with Release 7.0, average ROI timeseries are first calculated from minimally processed data, followed by additional timeseries processing (regression, interpolation, bandpass filtering), and then calculation of ROI-ROI correlations. Processed timeseries are now concatenated across scans before correlation computation, rather than correlations being averaged across scans.
+
+#### New motion variables in concatenated data
+
+Concatenated rsfMRI data now include additional motion-related variables: mean FD (censored), mean FD (uncensored), and mean displacement in each of the six motion parameters (dx, dy, dz, rx, ry, rz).
+
+#### Respiratory filter removed from motion timeseries
+
+The re-application of a respiratory filter to motion timeseries during creation of concatenated data has been eliminated. This affects motion metrics (e.g., mean FD) and censoring, but results in relatively small differences to ROI-ROI correlations.
+
+#### Mean FD (uncensored) calculation revised
+
+The calculation of mean FD (uncensored) has been updated to include all scans, even those that do not have enough valid time points after censoring to be included in the calculation of ROI-ROI correlations.
+
+### dMRI
+
+#### DTI row mismatch corrected
+
+A row mismatch in diffusion tensor imaging (DTI) tabulated data was identified and corrected.
+
+### sMRI
+
+#### Revised QC scores
+
+Approximately 100–900 visits received revised quality control scores, with changes primarily affecting FreeSurfer-derived measures.
+
+### tfMRI
+
+#### Stop Signal Task: reclassification of “Stop too early” trials
+
+“Stop too early” trials are now reclassified as “Go” trials for purposes of Stop Signal Task behavioral performance calculations.

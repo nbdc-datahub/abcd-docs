@@ -168,11 +168,17 @@ Due to a change in branching logic, some menstrual cycle items [`ph_y_pds__f_002
 
 **Notes and special considerations:**
 
-In 2023, as the year-6 follow-up of the study was underway, it was brought to our attention that many youth had completed pubertal maturation and were no longer recording changes in this scale. As such, if participants reported a maximum score on the PDS for two years in a row, then the PDS was discontinued.
+- Starting at `ses-08A` the pubertal development questions are automatically skipped for participants who already reported that every applicable developmental change was complete and reported it that way at both of their two previous visits in a row.  The branching is set up as an all-or-nothing check on the combined total across those two visits, so if even one answer was anything less than "complete," or if the child said "I don't know" or declined to answer, they still get the full set of questions. The menstruation questions are given always independent of if participants have maxed out other pubertal scores.
 
 - Years 2-5 PDS collection was impacted by the pandemic, with the largest proportion of missingness in Year 3. Researchers will want to examine sample biases, particularly in Year 3, when using PDS scores. Occasionally, responses may indicate inconsistent developmental patterns, including apparent reversals in pubertal development stages based on parent or youth reports. Researchers should carefully examine these instances when interpreting data.. We have opted not to modify this data, but will leave it up to the user to make an informed decision on how to handle these variances in the parent or youth reports. Articles referenced below will provide additional details on how to handle these variables.
 
 - Researchers can find more details on pubertal development scale data, methods, meaningful covariates and decision-making for determining final analytical sample in @cheng2021 and @herting2021
+
+::: {.callout-caution collapse="true" title="Release notes: `ph_y_pds`"}
+**6.0**
+
+-   [**Recoded variable**](../release_notes/6_0.qmd#pubertal-development-scale-menstrual-cycle-survey-history-youth): The youth PDS menarche item `ph_y_pds__f_002` ("Have you begun to menstruate (started to have your period)?") is coded `0` = No, `1` = Yes. Every other PDS item is still coded 1–4.
+:::
 
 **Key references:** 
 
@@ -560,7 +566,9 @@ For the non-baseline variables, we have detected several cases in which parents 
 
 **Measure description:** Parent survey of pubertal stage and menstrual phase (for postmenarcheal girls).
 
-**Notes and special considerations:** In 2023, as follow-up of the study was underway, it was brought to our attention that many youth had completed pubertal maturation and no longer recording further development. As such, if participants reported a maximum score on the PDS for two years in a row, the PDS was not administered.
+**Notes and special considerations:** 
+
+- Starting at `ses-08A` the pubertal development questions are automatically skipped for participants who already reported that every applicable developmental change was complete and reported it that way at both of their two previous visits in a row.  The branching is set up as an all-or-nothing check on the combined total across those two visits, so if even one answer was anything less than "complete," or if the child said "I don't know" or declined to answer, they still get the full set of questions. The menstruation questions are given always independent of if participants have maxed out other pubertal scores.
 
 - Years 2-5 PDS collection was impacted by the pandemic, with peak missingness in Year 3. Researchers will want to examine sample biases, particularly in Year 3, when using PDS scores. Occasionally, responses may indicate inconsistent developmental patterns, including apparent reversals in pubertal development stages based on parent or youth reports. Researchers should carefully examine these instances when interpreting data. We have opted not to modify this data, but will leave it up to the user to make an informed decision on how to handle these variances in the parent or youth reports. Articles referenced below will provide additional details on how to handle these variables.
 

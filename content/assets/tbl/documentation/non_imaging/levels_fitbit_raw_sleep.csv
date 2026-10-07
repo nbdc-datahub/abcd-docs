@@ -7,3 +7,5 @@ stage,light,light
 stage,deep,deep
 stage,rem,rem
 stage,unknown,unknown
+res,30,30-second epochs
+res,60,60-second epochs
