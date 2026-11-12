@@ -181,19 +181,19 @@ XCP-D-ModelArray outputs include cohort-level HDF5 arrays aggregating structural
 ```default
 abcd/
 └── derivatives/
-    └── abcc-xcp_d_v0.13.0-ModelArray/
+    └── abcc-xcp_d_v26.1.1-ModelArray/
 
     # Surface morphometry [1]
-        ├── xcp_d_v0.13.0_param-<curv|sulc|thickness>.h5
-        ├── xcp_d_v0.13.0_param-<curv|sulc|thickness>.csv
+        ├── xcp_d_v26.1.1_param-<curv|sulc|thickness>.h5
+        ├── xcp_d_v26.1.1_param-<curv|sulc|thickness>.csv
 
     # Functional maps [2]
-        ├── xcp_d_v0.13.0_param-<alff|reho>.h5
-        ├── xcp_d_v0.13.0_param-<alff|reho>.csv
+        ├── xcp_d_v26.1.1_param-<alff|reho>.h5
+        ├── xcp_d_v26.1.1_param-<alff|reho>.csv
 
     # Resting-state functional connectivity [3]
-        ├── xcp_d_v0.13.0_task-rest_seg-<ATLAS>_param-pearsoncorrelation.h5
-        └── xcp_d_v0.13.0_task-rest_seg-<ATLAS>_param-pearsoncorrelation.csv
+        ├── xcp_d_v26.1.1_task-rest_seg-<ATLAS>_param-pearsoncorrelation.h5
+        └── xcp_d_v26.1.1_task-rest_seg-<ATLAS>_param-pearsoncorrelation.csv
 ```
 
 <!-- `<PARAM>` values for surface morphometry and functional maps:
@@ -210,9 +210,18 @@ abcd/
 
 ## ReproTM 
 
+::: {.callout-caution title="ABCD-HCP BIDS Pipeline Deprecation"}
+ABCC no longer includes [ABCD-HCP BIDS](https://abcd-hcp-pipeline.readthedocs.io/) derivatives.
+:::
+
 Reproducible Template Matching ([ReproTM](https://github.com/KateJGodfrey/ReproTM)) [@godfrey2026reprotm] is a Python pipeline that generates individualized (i.e., subject-specific) functional network maps from dense functional connectivity data using the template matching network detection algorithm [@gordon2017; @hermosillo2024]. 
 
-ReproTM compares the functional connectivity profile of each greyordinate against a set of canonical resting-state functional network templates to produce subject-specific functional network assignments. The primary output is a labeled CIFTI (`.dlabel.nii`) file assigning each greyordinate to one of 15 functional networks defined within the ABCC 2026 template.
+ReproTM compares the functional connectivity profile of each greyordinate against a set of canonical resting-state functional network templates to produce subject-specific functional network assignments. The primary output is a labeled CIFTI (`.dlabel.nii`) file assigning each surface and subcortical greyordinate to one of 15 functional networks defined within the ABCC 2026 template.
+
+ReproTM outputs were generated for two analyses:
+
+  - **Resting-state:** Functional network maps derived from resting-state data.
+  - **Across tasks:** Functional network maps derived from a combined timeseries created by concatenating the denoised CIFTI timeseries (`.dtseries.nii`) across all four tasks: MID, SST, nBack, and rest. A single combined timeseries was generated for each subject/session and used to generate the corresponding dense connectivity matrix (`.dconn.nii`), which was then processed using the same ReproTM workflow and parameters as the resting-state analysis.
 
 ### ABCC 2026 Template Networks
 
@@ -238,8 +247,8 @@ abcc-ReproTM/
 └── sub-<label>/
     └── ses-<label>/
         └── func/
-            ├── *.dlabel.nii    # Final network assignments
-            └── *.mat           # Intermediate metrics and assignments
+            ├── *_task-{rest|all}_*.dlabel.nii    # Final network assignments
+            └── *_task-{rest|all}_*.mat           # Intermediate metrics and assignments
 ```
 
  - The **`.dlabel.nii`** file contains greyordinate-wise functional network assignments derived from the preprocessed and denoised BOLD timeseries using the ABCC 2026 template networks. 
@@ -247,14 +256,22 @@ abcc-ReproTM/
     - Similarity values (eta and linear bivariate r) for each greyordinate to every template network
     - Network assignments pre- and post-SCAN network refinements
 
+For the across-task analysis, these outputs reflect the combined functional connectivity profile derived from the concatenated MID, SST, nBack, and resting-state timeseries.
+
 ::: {.callout-note collapse="true" title="Full Output Filenames"}
 ```
-sub-<label>_ses-<label>_task-rest
-  _space-fsLR_den-91k
-  _desc-denoised-spatially-interpolated-smoothed-2.25mm-censor-ReproTM
-  _template-ABCC-a3-9to16
-  _refine-SCAN_minsize-30
-  _boldmap.{dlabel.nii|mat}
+  1. sub-<label>_ses-<label>_task-rest
+    _space-fsLR_den-91k
+    _desc-denoised-spatially-interpolated-smoothed-2.25mm-censor-ReproTM
+    _template-ABCC-a3-9to16
+    _refine-SCAN_minsize-30
+    _boldmap.{dlabel.nii|mat}
+  2. sub-<label>_ses-<label>_**task-all**
+    _space-fsLR_den-91k
+    _desc-denoised-spatially-interpolated-smoothed-2.25mm-censor-ReproTM
+    _template-ABCC-a3-9to16
+    _refine-SCAN_minsize-30
+    _boldmap.{dlabel.nii|mat}
 ```
 :::
 
@@ -262,17 +279,23 @@ sub-<label>_ses-<label>_task-rest
 
 ### Processing
 
-Prior to running ReproTM, subject-level dense connectivity matrices (`dconn.nii`) were generated from XCP-D resting state timeserives derivatives using [cifti-connectivity](https://github.com/DCAN-Labs/cifti-connectivity). ReproTM v1.0.0 was then applied to compare dense connectivity matrices to the ABCC 2026 group-level template file provided in the derivatives and in the ReproTM Github repository.
+The ReproTM workflow was applied separately to resting-state data and to a combined across-task timeseries.
+
+Subject-level dense connectivity matrices (`.dconn.nii`) were generated using [cifti-connectivity](https://github.com/DCAN-Labs/cifti-connectivity) from XCP-D denoised CIFTI timeseries (`.dtseries.nii`), using resting-state data alone for the resting-state analysis and a single timeseries created by concatenating MID, SST, nBack, and rest data for the across-task analysis.
+
+For both analyses, ReproTM v1.0.0 was then applied to compare resulting dense connectivity matrices to the ABCC 2026 group-level template file provided in the derivatives and in the ReproTM Github repository. All subsequent connectivity preprocessing, template matching, network refinement, filtering, and output generation steps used the same workflow and parameters.
 
 **Cifti-Connectivity Workflow & Parameters**
 
-1. Interpolate timeseries for zero-value greyordinates using the mean and standard deviation of greyordinates in the same structure.
-2. Spatial smoothing.
-3. Dense connectivity matrix generation with motion censoring.
+1. For the across-task analysis, concatenate denoised CIFTI timeseries across MID, SST, nBack, and rest into a single subject/session timeseries.
+2. Interpolate timeseries for zero-value greyordinates using the mean and standard deviation of greyordinates in the same structure.
+3. Spatial smoothing.
+4. Dense connectivity matrix generation with motion censoring.
 
 ::: {.callout-note collapse="true" title="Detailed `cifti-connectivity` Parameters"}
 - **Input data:**
-  - Denoised resting-state CIFTI timeseries (`*_desc-denoised_bold.dtseries.nii`)
+  - Denoised resting-state CIFTI timeseries (`*_desc-denoised_bold.dtseries.nii`) for resting-state analysis. 
+  - Denoised CIFTI timeseries from MID, SST, nBack, and rest for the across-task analysis.
   - Anatomical surface files in fsLR 32k space
   - Quality control outputs (`*_desc-abcc_qc.hdf5`)
 - **Parameters:**
@@ -283,6 +306,8 @@ Prior to running ReproTM, subject-level dense connectivity matrices (`dconn.nii`
 :::
 
 **ReproTM Workflow & Parameters**
+
+Following dense connectivity matrix generation, the same ReproTM processing steps were used for both analyses:
 
 4. Z-score connectivity matrices across greyordinates
 5. Perform template matching with initial template network thresholding (z=1.00)
@@ -307,4 +332,91 @@ python3 ReproTM_v1.0.0.py \
 ```
 :::
 
+## Automated Quality Assurance
+The following are automated metrics for evaluating data quality of processed structural and functional data. Structural metrics reflect registration and acquisition quality while assessment of functional data quality concerns issues with BOLD acquisitions only, including motion and signal.
 
+Population-based assessment is included as well via outlier detection for both structural and functional metrics. This was done in part because functional population-based metrics may pick up on anatomical issues due to the pipeline’s dependency on good anatomical data. Therefore, for cortical thickness/surface-based analyses, investigators using the data will find it useful to examine how many measures are outliers for a given subject (e.g. out of 352 ROIs, volume is an outlier for X number of ROIs). 
+
+See [abcc_automated_qc](https://github.com/DCAN-Labs/abcc_automated_QC/tree/main) for more details
+
+### Structural and Functional Metrics & QA Requirements
+The following metrics are quantified for each BOLD image/run. Overall QA (PASS or FAIL) is then assessed for an image based on whether they meet the requirements described below for both structural and functional metrics.
+
+**1. Structural:** 
+
+Brain coverage quantifies the proportion of BOLD acquisition cut off compared to the brain mask in both (1) ventral/inferior and (2) dorsal/superior planes.
+To receive a PASS for structural QA, there must be less than 10% cutoff in BOTH planes.
+
+**2. Functional**: Presence of parcellated connectivity matrices for each parcellation scheme
+
+This metric marks whether the data includes pconns derived from 5 and 10 minutes of functional data after correcting for motion using a frame displacement threshold of 0.2 mm ([Power et al. 2012](https://docs.abcdstudy.org/v/6_0_0/documentation/imaging/abcc_qualitycontrol.html#ref-power2012)), serving as a quick indicator of whether there is a sufficient amount of low-motion data present after motion correction.
+To receive a PASS for functional QA, a concatenated dense time series must have enough low-motion data to generate pconn files from 5 and/or 10 minutes of data.
+
+### Population-Based Outlier Detection
+In addition to the metrics mentioned above, we also perform [outlier detection](https://github.com/DCAN-Labs/abcc_automated_QC/tree/main) to quantify the number of structural and functional outliers for each subject session, defined for any given measure as those falling more than 3 standard deviations from the population mean.
+
+**1. Structural measures:** number of outliers in (1) subcortical segmentation volume sizes and (2) cortical morphometry split by regions of interest
+
+**2. Functional measures:** number of outliers in connectivity matrices for both (1) 5 minutes and (2) 10 minutes of data post-motion correction
+
+### Outputs
+
+Automated QC derivatives include  TSV QC files for each subject/session under `abcc-automated-qc/`:
+
+```default
+abcc-automated-qc/
+└── sub-<label>/
+    └── ses-<label>/
+        └── *_desc-abcc-automated-qc.tsv        # TSV with QC columns
+
+```
+
+
+ - The `*_desc-abcc-automated-qc.tsv` file contains the following columns:
+
+    - **Filename:** File from which the QC values were calculated.
+    - **QC_pass_fail:** Overall QC status (PASS or FAIL), based on the applicable QA criteria.
+    - **bc_per_vox:** Brain-coverage percentage used to assign the status in the QC_pass_fail column.
+    - **total_measuments (N):** Total number of measurements evaluated.
+    - **outlier_count:** Number of measurements identified as population-based outliers.
+
+
+### Processing
+
+**Automated QC Workflow & Parameters**
+
+The automated QC workflow is implemented in [abcc_automated_QC](https://github.com/DCAN-Labs/abcc_automated_QC/tree/main) with following workflow:
+
+1. Identify subject/session data and locate the relevant anatomical and functional processing outputs.
+2. Evaluate structural brain coverage by quantifying the proportion of the BOLD acquisition cut off in the ventral/inferior and dorsal/superior planes.
+3. Evaluate functional QC by checking for the presence of parcellated connectivity matrices generated from 5 and 10 minutes of low-motion functional data.
+4. Assess population-based outliers in subcortical segmentation volumes, cortical morphometry measures, and functional connectivity matrices.
+5. Generate subject/session-level QC TSV files containing the applicable QC metrics, pass/fail status, and outlier counts.
+
+
+::: {.callout-note collapse="true" title="Detailed `Automated QC` Parameters"}
+*The workflow is configured through `config/config.yaml`. The following parameters describe the configuration used by the workflow:*
+
+
+```{=html}
+<pre><code class="language-yaml">output_filename: desc-abcc-automated-qc
+
+tasks:
+  - rest
+  - mid
+  - sst
+  - nback
+
+atlases:
+  - Gordon
+  - MIDB
+  - HCP
+
+coverage_threshold: 0.90
+brain_coverage_pass: 90
+
+outlier_sigma: 3
+
+n_jobs: 32</code></pre>
+
+:::

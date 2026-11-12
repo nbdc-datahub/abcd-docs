@@ -29,7 +29,7 @@ order: 3
 [XCP-D](https://xcp-d.readthedocs.io/en/latest/) ingests minimally preprocessed fMRIPrep outputs to generate denoised BOLD images, parcellated time series, functional connectivity matrices, and quality assessment reports [@mehta2024].
 
 ::: {.callout-note collapse="true" title="Processing Description"}
-ABCC data were processed using XCP-D v0.13.0 with the following parameters:
+ABCC data were processed using XCP-D v26.1.1 with the following parameters:
 
  - `--mode abcd`  
   Applies the ABCD-specific preprocessing workflow, including ABCD-tailored default settings for denoising, censoring, and quality control.
@@ -38,7 +38,7 @@ ABCC data were processed using XCP-D v0.13.0 with the following parameters:
   Applies a notch filter to the motion parameters to remove respiratory-frequency artifacts from head motion estimates prior to framewise displacement (FD) calculation.
 
  - `--create-matrices 300 600 all`  
-  Generates functional connectivity matrices (correlation matrices) using only time points with at least 300 seconds, 600 seconds, or all available uncensored data retained after motion censoring.
+  Generates functional connectivity matrices (correlation matrices) from concatenated low-motion timeseries across runs, using time points retained after motion censoring. The 300- and 600-frame matrices use the first 300 or 600 seconds of available concatenated data, respectively, while the all matrix uses all available data. Timeseries data are z-scored prior to concatenation across runs.
 
  - `--atlases Gordon HCP MIDB`  
   Parcellates the BOLD signal using three atlases:
@@ -61,7 +61,7 @@ As with fMRIPrep, XCP-D derivatives are organized under `anat/` and `func/` subf
 ```default
 abcd/
 └── derivatives/
-    └── abcc-xcp_d_v0.13.0/
+    └── abcc-xcp_d_v26.1.1/
         └── sub-<SUBJECT_ID>/
             └── ses-<SESSION_ID>/
                 ├── anat/ 
@@ -188,7 +188,7 @@ func/
 ├── *_task-<TASK>_space-fsLR_seg-<ATLAS>_stat-reho_bold.tsv   
 ```
 
-::: {.callout-warning}
+<!-- ::: {.callout-warning}
 The current release is affected by two known XCP-D issues:
 
 - Connectivity matrices generated with `--create-matrices 300 600 all` were not produced as intended. While the full-timeseries (`all`) matrix was generated from the concatenated low-motion timeseries across runs, the `300-` and `600-`frame matrices were incorrectly generated separately for individual BOLD runs rather than from the concatenated low-motion timeseries.
@@ -197,7 +197,7 @@ The current release is affected by two known XCP-D issues:
 These issues have been resolved in XCP-D v26.0.3 and will be corrected in a future ABCC release processed with XCP-D v26.0.3 or later.
 
 For additional details and information about affected outputs, see the [Known Issues section here](abcc_start_page.html#known-issues).
-:::
+::: -->
 
 
 **Includes:**

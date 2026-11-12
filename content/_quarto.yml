@@ -28,7 +28,7 @@ website:
   announcement:
     icon: info-circle
     dismissable: true
-    content: The ABCD 7.0 data has been released, and the Data Documentation has been updated with the 7.0 data release notes.
+    content: The ABCD 7.1 data have been released, and the Data Documentation has been updated with the 7.1 data release notes.
     type: primary
     position: below-navbar
   reader-mode: false

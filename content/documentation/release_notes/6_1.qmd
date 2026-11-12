@@ -1,7 +1,7 @@
 ---
 title: "6.1 data release"
 lightbox: true
-order: 2
+order: 3
 ---
 
 ```{r}

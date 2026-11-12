@@ -57,19 +57,21 @@ Processing pipelines used to generate the ABCC derivatives follow community stan
 
 ---
 
-## <i class="fa-regular fa-note-sticky icon-heading"></i> Release Notes (v4.0.0)
+## <i class="fa-regular fa-note-sticky icon-heading"></i> Release Notes (v4.1.0)
 
-::: {.callout-note title="Release Date: 2026-05-13"}
+::: {.callout-note title="Release Date: 2026-11-18"}
 :::
 
 ### Core Data
 
 The ABCC includes data processed through the following pipelines:
 
-- **Structural & Functional MRI** <span style="color: red; font-style: italic; font-weight: 600;">[NEW]</span>
+- **Structural & Functional MRI** 
     - [fMRIPrep v25.1.4](https://fmriprep.org/): Minimal functional pre-processing
-    - [XCP-D v0.13.0](https://xcp-d.readthedocs.io/): Functional post-processing, including denoising & connectivity 
-    - [ReproTM](https://github.com/KateJGodfrey/ReproTM): Individualized functional network maps via template matching
+    - [XCP-D v26.1.1](https://xcp-d.readthedocs.io/) <span style="color: red; font-style: italic; font-weight: 600;">[NEW]</span>: Functional post-processing, including denoising & connectivity 
+    - [ReproTM](https://github.com/KateJGodfrey/ReproTM) <span style="color: red; font-style: italic; font-weight: 600;">[NEW]</span> : Individualized functional network maps via template matching for following tasks:
+        - resting-state 
+        - across all tasks ( MID, SST, nBack, rest ) 
 - **Diffusion MRI**
     - [QSIPrep](https://qsiprep.readthedocs.io/): Pre-processing 
     - [QSIRecon](https://qsirecon.readthedocs.io/): Reconstruction workflows
@@ -77,6 +79,8 @@ The ABCC includes data processed through the following pipelines:
     - <a href="https://modelarrayio.readthedocs.io/">ModelArrayIO</a> outputs (HDF/CSV) for efficient voxel- and/or vertex-wise statistical modeling with the [ModelArray R package](https://github.com/ModelArray/ModelArray), including:
         - QSIRecon-ModelArray multi-model diffusion metrics
         - XCP-D-ModelArray connectivity, ALFF, ReHo, and morphometrics 
+- **Automated QC** <span style="color: red; font-style: italic; font-weight: 600;">[NEW]</span>
+    - Automated structural and functional data quality metrics, including population-based outlier detection across subjects and ROIs. *see [release notes](abcc_postproc.qmd#automated-qc) for details*
 
 ::: {.callout-caution title="ABCD-HCP BIDS Pipeline Deprecation"}
 ABCC no longer includes [ABCD-HCP BIDS](https://abcd-hcp-pipeline.readthedocs.io/) derivatives: *see [release notes](#abcd-hcp-pipeline-deprecation) for details*.
@@ -119,21 +123,16 @@ Comparison of the counts and means for each of these factors shows that ARMS-1 a
 ![ABCD Resource Demographics table comparing sociodemographic characteristics across ARMS-1, ARMS-2, and ARMS-3.](../../assets/img/documentation/imaging/matched_groups.png){width=100%}
 :::
 
-### Demographically Matched Subsets
-
-The `matched_group` field of the [participants.tsv](https://abcd-docs-private.lassoinformatics.com/data_documentation/imaging/6.0_imaging_abcc.html) file signifies each participant's assignment to one of the ABCD Reproducible Matched Samples (ARMS). In Release 2.0, ABCD data were split into 3 demographically matched groups: ARMS-1 (N=5,786) and ARMS-2 (N=5,786) for use as independent datasets, and ARMS-3 (N=305) for template building and model testing. These group assignments have been carried over into the current release, with the following updated counts: ARMS-1 (N=5,752), ARMS-2 (N=5,745), and ARMS-3 (N=301).
-
-::: {.callout-note collapse="true" title="How Matched Groups Were Created"}
-To create the matched ARMS, 9 salient sociodemographic factors were selected based on their relevance to developmental outcomes: site, age, sex, ethnicity, grade, highest level of parental education, handedness, combined family income, and exposure to anesthesia. Family structure was also accounted for [@marek2019]. Anesthesia exposure was included as a matching variable to account for differences in major medical interventions and their possible effects on behavioral and neurodevelopmental outcomes [@schneuer2018]. To maximize the relative independence of the two datasets, family members were kept together in the same ARM, and the groups were matched to have equivalent numbers of sibling and twin pairs, and triplets.
-
-Comparison of the counts and means for each of these factors shows that ARMS-1 and ARMS-2 are negligibly and not statistically different samples. Gender shows the largest absolute difference of 2.5%; no other demographic variables differ by more than 1%. See @feczko2021 for a full description of how these matched groups were generated. The code used is available at: <https://github.com/DCAN-Labs/automated-subset-analysis>.
-
-![ABCD Resource Demographics table comparing sociodemographic characteristics across ARMS-1, ARMS-2, and ARMS-3.](../../assets/img/documentation/imaging/matched_groups.png){width=100%}
-:::
 
 ### Key Revisions
 
 Starting with Release 7.0, ABCC distributions include the following updates. Documentation for prior releases remains available via the **Version** dropdown menu located in the upper right-hand corner of the ABCD Data Documentation site.
+
+#### Revisions / Bug Fixes
+
+- Connectivity Matrices: Fixed connectivity matrix generation to compute 300- and 600-frame matrices from concatenated low-motion timeseries across runs, while generating a single matrix per run using all available low-motion frames.
+
+- Timeseries Z-scoring: Fixed the issue where timeseries were not z-scored before concatenation.
 
 #### Raw BIDS Consolidation 
 
@@ -151,19 +150,7 @@ Associated documentation is available in the 6.1.3 legacy documentation: see [Pr
 
 ### Known Issues
 
-#### [1] Connectivity matrices from individual runs
-Connectivity matrices generated using `--create-matrices 300 600 all` were incorrectly computed separately for each BOLD run rather than the concatenated low-motion timeseries across runs. As a result:
- 
-- For concatenated data, only the matrix generated from the full timeseries (`all`) is available
-- Run-specific 300-frame matrices may be present for runs with a sufficient amount of low-motion data in addition to the matrix generated from `all`
-
-The next release (processed through XCP-D v26.0.3 or later) will include the `300-` and `600-`frame matrices generated from concatenated low-motion timeseries across runs, and only a single matrix will be generated per run from all available low-motion frames.
-
-#### [2] Timeseries not z-scored prior to concatenation
-
-Timeseries data were not z-scored before concatenation. This issue will be addressed in a future release using XCP-D v26.0.3.
-
-#### [3] Missing cases from duplicate run reprocessing
+#### [1] Missing cases from duplicate run reprocessing
 
 Four cases failed due to out-of-memory errors during reprocessing of duplicate functional runs and are excluded from this release. Derivatives for these cases remain available in prior releases. [(View affected cases)](https://abcd-docs-private.lassoinformatics.com/data_documentation/imaging/6.0_imaging_abcc.html)
 
@@ -171,8 +158,7 @@ Four cases failed due to out-of-memory errors during reprocessing of duplicate f
 
 ## <i class="fa-solid fa-bullhorn icon-heading"></i> Coming Soon
 
-- **Imaging derivatives for remaining subjects**: [fMRIPrep v25.1.4](https://fmriprep.org) minimal preprocessing outputs, along with confound estimates for all processed subjects, and [XCP-D v26.0.3](https://xcp-d.readthedocs.io) post-processing outputs
-- **ReproTM** individualized functional network maps for all functional tasks ( MID, SST, nBack)
+- **Imaging derivatives for remaining subjects**: [fMRIPrep v25.1.4](https://fmriprep.org) minimal preprocessing outputs, along with confound estimates for all processed subjects, and [XCP-D v26.1.1](https://xcp-d.readthedocs.io) post-processing outputs
 - **Task fMRI analysis results**
 - **BrainSwipes Quality Control**: structural/functional QC of XCP-D outputs generated via BrainSwipes, a gamified crowdsourcing platform for high-volume manual QC 
 
@@ -186,6 +172,7 @@ BrainSwipes is a community-driven effort and we encourage all ABCC users to part
 
 | Version | Release Date |    Release Notes   |
 |:-------|:------------|:------------------|
+| **4.0.0**   |   2025-05-13 | [View Release Notes](https://docs.abcdstudy.org/v/7_0_3/documentation/imaging/abcc_start_page.html) |
 | **3.1.0**   |   2025-12-03 | [View Release Notes](https://docs.abcdstudy.org/v/6_1_3/documentation/imaging/abcc_start_page.html#release-notes-v310) |
 | **3.0.0**   |   2025-06-26 | [View Release Notes](https://docs.abcdstudy.org/v/6_0_3/documentation/imaging/abcc_start_page.html#whats-in-release-3.0.0-2025-06-26) |
 

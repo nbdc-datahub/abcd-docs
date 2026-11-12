@@ -22,6 +22,12 @@ Imaging data are collected on even years. To cross-reference with non-imaging pr
 :::
 
 ::: {.callout-caution collapse="true" title="Imaging Release Notes"}
+**7.1**
+
+-   [**Concatenated voxelwise data**](../release_notes/7_1.qmd#concatenated-voxelwise-data): There was a bug fix regarding registration quality issue for concatenated voxelwise data in the 7.0 release. All voxelwise data have been updated to fix the registration error. 
+
+-   [**Removed data files**](../release_notes/7_1.qmd#removed-data-files): The SST “stop too early” (STE) trials “ss” data files are removed in release 7.1.
+
 **7.0**
 
 -   [**MRI info**](../release_notes/7_0.qmd#mri-info): The form of the serial number anonymization has been standardized across these data types and a new categorical variable is used to reduce number of software version.
@@ -40,7 +46,10 @@ Imaging data are collected on even years. To cross-reference with non-imaging pr
 
 -   [**Missing data on Siemens `XA30`**](../release_notes/7_0.qmd#missing-data-on-siemens-xa30): Anatomical scans (T1w and T2w) and field map scans (for both dMRI and fMRI) were inadvertently excluded from the sourcedata and rawdata BIDS datasets for the 889 scan sessions collected on Siemens scanners with software version `XA30`.
 
--   [**Registration quality issue for concatenated voxelwise data**](../release_notes/7_0.qmd#registration-quality-issue-for-concatenated-voxelwise-data): A bug has been identified in the registration pipeline used to produce the ABCD 7.0 concatenated voxelwise data.
+-   [**Registration quality issue for concatenated voxelwise data**](../release_notes/7_0.qmd#registration-quality-issue-for-concatenated-voxelwise-data)
+
+-   [**Incorrect gray white contrast values**](../release_notes/7_0.qmd#incorrect-graywhite-contrast-values-for-inner-shell-dti-transverse-diffusivity-td-for-destrieux-parcels): The tabulated gray/white contrast of transverse diffusivity (TD)
+from the inner-shell DTI fit contains the white matter values instead of the gray/white contrast.
 
 **6.0**
 

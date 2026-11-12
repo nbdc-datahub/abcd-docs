@@ -1,0 +1,200 @@
+---
+title: "7.1 data release"
+lightbox: true
+order: 1
+---
+
+```{r}
+#| label: setup
+#| include: false 
+
+for (file in list.files("../../../R", full.names = TRUE)) source(file)
+
+metadata_diff_overview <- readr::read_csv(
+  "../../assets/tbl/documentation/release_notes/diff_metadata_7_1_1.csv"
+)
+
+metadata_diff_cases <- readr::read_csv(
+  "../../assets/tbl/documentation/release_notes/diff_metadata_7_1_2.csv"
+)
+
+renames_7_0 <- readr::read_csv(
+  "../../assets/tbl/documentation/release_notes/7_0_renames.csv"
+)
+
+ksads_mapping <- readr::read_csv(
+  "../../assets/tbl/documentation/non_imaging/ksads_item_mapping.csv"
+)
+```
+
+# Overview
+
+The 7.1 data release (on 11/11/2026) addresses data-related and other minor issues from the 7.0 data release. All [7.0 data release notes](https://docs.abcdstudy.org/latest/documentation/release_notes/7_0.html) remain available, and researchers working with 7.1 data should review both the 7.0 and 7.1 notes to ensure they have all relevant information, as this page only covers updates specific to the 7.1 data release. Although the sample is the same across both releases, several updates were made to the data and data dictionary. Below are diff files showing the metadata changes made in the 7.1 release (overview and cases). 
+
+::: {.callout-note collapse="true" title="7.1 Metadata Diff File"}
+::: {.panel-tabset}
+
+### Overview
+```{r}
+metadata_diff_overview |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+
+### Cases
+```{r}
+metadata_diff_cases |>
+  reactable(
+    defaultPageSize = 10,
+    searchable = TRUE,
+    resizable = TRUE,
+    showPageSizeOptions = TRUE,
+    pageSizeOptions = c(10, 25, 50, 100)
+  )
+```
+:::
+:::
+
+
+# Sample
+
+The 7.1 data release (on 11/11/2026) includes data from *11,860 participants*, representing the full ABCD cohort (N = 11,880), except for participants who withdrew consent to share their data, and *16 events*. Data are considered complete through the 5-year follow-up and nearly complete for the 6-year follow-up. Data from the 7-year and 7.5-year follow-up events are also included; however, data collection for events at and beyond the 6-year follow-up was still ongoing at the time of the data freeze (cutoff date: August 1, 2025). As a result, these events include only participants who had assented by the cutoff date. No data are included from events after the 7.5-year follow-up to ensure sufficient event completion.
+
+The following table shows the number of participants per *core study* event:
+
+| **Session/event ID** | **Session/event label** | **n** |
+|----------------------|-------------------------|-------|
+| ses-00S              | Screener                | 11859 |
+| ses-00A              | Baseline                | 11860 |
+| ses-00M              | 0.5 Year                | 11371 |
+| ses-01A              | 1 Year                  | 11220 |
+| ses-01M              | 1.5 Year                | 11076 |
+| ses-02A              | 2 Year                  | 10989 |
+| ses-02M              | 2.5 Year                | 10255 |
+| ses-03A              | 3 Year                  | 10516 |
+| ses-03M              | 3.5 Year                | 9584  |
+| ses-04A              | 4 Year                  | 9792  |
+| ses-04M              | 4.5 Year                | 7219  |
+| ses-05A              | 5 Year                  | 9050  |
+| ses-05M              | 5.5 Year                | 7149  |
+| ses-06A              | 6 Year                  | 9539  |
+| ses-07A              | 7 Year                  | 8564  |
+| ses-07M              | 7.5 Year                | 4871  |
+
+The ABCD 7.1 data release also includes data from associated substudies: COVID-19, Endocannabinoid, Hurricane Irma, MR Spectroscopy, Social Development, and the newly added RECOVER, SIPS, and Baby Teeth substudies. Some of these substudy assessments are conducted during the same visits as the main study, while others have independent event structures.
+
+The following table shows the number of participants with data per substudy event (substudies that don’t have their own event structure are not listed):
+
+| **Substudy**       | **Session/event ID** | **Session/event label** | **n** |
+|--------------------|----------------------|-------------------------|-------|
+| COVID-19           | ses-C01              | COVID Wave 1            | 10380 |
+| COVID-19           | ses-C02              | COVID Wave 2            | 10377 |
+| COVID-19           | ses-C03              | COVID Wave 3            | 10367 |
+| COVID-19           | ses-C04              | COVID Wave 4            | 10357 |
+| COVID-19           | ses-C05              | COVID Wave 5            | 10347 |
+| COVID-19           | ses-C06              | COVID Wave 6            | 10009 |
+| COVID-19           | ses-C07              | COVID Wave 7            | 10006 |
+| Social Development | ses-S01              | SDev Wave 1             | 2424  |
+| Social Development | ses-S02              | SDev Wave 2             | 2128  |
+| Social Development | ses-S03              | SDev Wave 3             | 1942  |
+| Social Development | ses-S04              | SDev Wave 4             | 1907  |
+| Social Development | ses-S05              | SDev Wave 5             | 1896  |
+| Social Development | ses-S06              | SDev Wave 6             | 1684  |
+| Social Development | ses-S07              | SDev Wave 7             | 822   |
+| RECOVER            | ses-REC              | RECOVER                 | 6009  |
+| SIPS               | ses-SIP              | SIPS                    | 559   |
+
+# Core Study
+
+## Mental Health
+
+### Other Resilience
+
+In the 7.0 data release, `mh_y_resil` only had data for Year 6 and 7 due to a backend data compilation issue. The previous years' data have been re-added in the 7.1 patch release.
+
+### KSADS 
+
+#### Updated Data
+
+The KSADS data have been updated to ensure data for KSADS1 is correctly included in all relevant variables. Further corrections of errant data at incorrect time points will be addressed in the 8.0 release.
+
+#### Removed Variables
+
+`mh_y_ksads__cond__forcesex__past_sx` and `mh_y_ksads__cond__forcesex__pres_sx` were not supposed to be included in releases as they are not administered by RAs. Variables were removed in 7.1.
+
+## Neurocognition
+
+### Administrative Variables
+
+Neurocognitive tasks often shared administrative tracking variables. However, not all tasks are administered at each timepoint. In previous releases administrative-neurocognitive variables were included in tables of tasks even if they were not administered at that timepoint. This has been corrected so now tables only have administrative data if the task was administered during that session.
+
+## Novel Technologies
+
+### Fitbit
+
+The Fitbit scoring algorithm has been updated to compute new data. Corrections made included:
+
+
+1. Removal of Non-Session Data From Sleep Scores
+Issue: The initial sleep scores inadvertently included records that were not associated with valid sleep sessions.
+Resolution: Non-session data points were identified and removed from score calculations.
+
+2. Query Correction for Sleep Minutes Quantification
+Issue: The original query used to calculate valid sleep minutes was incorrect, leading to inaccurate quantification of total sleep duration.
+Resolution: The query logic was corrected to properly count and aggregate valid sleep minutes across all sessions.
+
+3. Removal of Non-Session Data From Activity Raw File
+Issue: The daily activity raw file contained records with session_id values that were incorrectly labeled (e.g., activity assigned to session 8A was recorded as session 6A). This resulted in data being attributed to the wrong study session.
+Resolution: Session ID assignments were corrected in the raw activity file to ensure each record is properly attributed to its correct study session.
+
+4. Sleep classification in covid data
+Issue: is_slp classification in minute-level raw activity data for days where day_no > 21 was incorrect, causing errors in downstream daily and weekly sleep score calculations.
+Resolution: Fixed the is_slp classification algorithm for day_no > 21, reprocessed raw minute-level data with corrected logic, and recalculated all sleep-based scores.
+
+## Substance Use
+
+### Composite scores
+
+The algorithm for SU composite scores has been updated (i.e. excluding the `777` and `888` responses) to recompute the new scores. All static and dynamic scores should be updated.
+
+## Imaging
+
+### Concatenated voxelwise data
+
+There was a bug fix regarding registration quality issue for concatenated voxelwise data in the 7.0 release. All voxelwise data have been updated to fix the registration error. 
+
+### Removed data files
+
+Through release 6.1, SST "stop too early" (STE) trials were modeled as a separate condition of no interest, “ss". STE trials are trials where the participant pressed a button before the stop signal appeared. Starting with release 7.0, STE trials are reclassified as Go trials (see [Stop Signal Task: reclassification of "Stop too early”](https://docs.abcdstudy.org/latest/documentation/imaging/index.html#stop-signal-task-reclassification-of-stop-too-early-trials) trials and [Changes to task fMRI behavioral performance and inclusion flags for SST (stop signal task)](https://docs.abcdstudy.org/latest/documentation/imaging/index.html#stop-signal-task-reclassification-of-stop-too-early-trials)). Although still included in release 7.0, “ss" did not contain meaningful data, and it was removed in release 7.1. The other SST contrasts are defined as before.
+
+### ABCD-BIDS Community Collection (ABCC)
+
+The ABCD-BIDS Community Collection (ABCC) has been updated as well. To learn more, see the [ABCC documentation](../imaging/abcc_start_page.qmd).
+
+# Substudies
+
+## RECOVER
+
+### COVID Symptoms Surveys: Known Variable Naming Issues
+
+There was a systematic variable naming error affecting 346 variables in COVID Symptoms survey tables (`recover_p_ps` youth-report and recover_p_pscg caregiver-report). This is corrected in the 7.1 data release and labels have been updated to improve clarity and uniformity with other RECOVER variables. 
+
+### Long COVID data
+
+There are 2 variables in the dataset that can be used to determine if someone had Long COVID, using the Long COVID Research Index [@gross2024].
+
+The 2 level variable (`recover_p_ps_lcri__2lvl`) identifies whether someone meets criteria for Long COVID or not (yes vs no). 
+The 3 level variable (`recover_p_ps_lcri__3lvl`) breaks down the categories into: Long COVID “Probable”, “Possible”, and “Not Likely”. Participants in the Long COVID Possible group have some symptoms consistent with Long COVID, but did not meet criteria for the Long COVID Research Index.  
+
+## SIPS
+
+### SIPS substudy group assignment
+
+In the 7.1 data release, `sips_y_intro_group__001` is now correctly included in both the youth and caregiver tables (`sips_p_intro_group__001`), since there are some participants for whom only caregivers participated (and thus group data was not available for these individuals in the 7.0 data). 
+
+

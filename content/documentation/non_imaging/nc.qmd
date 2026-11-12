@@ -48,9 +48,13 @@ Some adjustments in testing procedures were required for remote testing.
 :::
 
 ::: {.callout-caution collapse="true" title="Release notes: `nc`"}
+**7.1**
+
+- [**Administrative variables**](../release_notes/7_1.qmd#administrative-variables): Now tables only have administrative data if the task was administered during that session.
+
 **6.0**
 
-- [**Administrative variables**](../release_notes/6_0.qmd#neurocognition): In the 6.0 data release we removed the neurocognition administration table and added all relevant variables specific to a task’s administration to the tables themselves.
+- [**Administrative variables**](../release_notes/6_0.qmd#neurocognition)
 :::
 
 ::: {#use-nc .callout-important collapse="true" title="Responsible use consideration: Neurocognition domain general"}

@@ -194,6 +194,12 @@ ksads_mapping |>
 :::
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_y_ksads`"}
+**7.1**
+
+-   [**KSADS updated data**](../release_notes/7_1.qmd#updated-data): The KSADS data have been updated to ensure data for KSADS1 is correctly included in all relevant variables.
+
+-   [**KSADS removed variables**](../release_notes/7_1.qmd#removed-variables): `mh_y_ksads__cond__forcesex__past_sx` and `mh_y_ksads__cond__forcesex__pres_sx` were not supposed to be included in releases as they are not administered by RAs. Variables were removed in 7.1.
+
 **7.0**
  
 -   [**KSADS item-level data**](../release_notes/7_0.qmd#ksads-item-level-data): The item-level KSADS data have been processed and included in the 7.0 Release.
@@ -402,9 +408,13 @@ Youth 6-year, one question was added
 **Measure description:** A short survey on the number of friends.
 
 ::: {.callout-caution collapse="true" title="Release notes: `mh_y_resil`"}
+**7.1**
+
+-   [**Updated data**](../release_notes/7_1.qmd#other-resilience): In the 7.0 data release, `mh_y_resil` only had data for Year 6 and 7 due to a backend data compilation issue. The previous years' data have been re-added in the 7.1 patch release.
+
 **7.0**
 
--   [**Missing data**](../release_notes/7_0.qmd#other-resilience): A data compilation error in the 7.0 release caused `mh_y_resil` to only include data for ses-06A and ses-07A.
+-   [**Missing data**](../release_notes/7_0.qmd#other-resilience)
 :::
 
 **Key reference:** `r full_cite("barch2018")`

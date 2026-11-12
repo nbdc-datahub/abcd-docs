@@ -1,13 +1,13 @@
--   **Non-Imaging**
-    -   Substance Use: Added notes and special considerations in Toxicology (Youth) regarding potential biases due to hair styles
-    -   Physical Health: Updated Pubertal Development Scale regarding maximum scoring
-    -   Genetics: Updated note regarding GENESIS derived genetic principal component
-    -   Novel Technologies: Updated Fitbit data dictionaries and levels tables
--   **Imaging**
-    -   Added Diffusion MRI data consideration regarding potential body-size dependent effects in ABCD diffusion MRI (dMRI) data
-    -   Updated Monetary Incentive Delay (Mid) task note regarding a change from previous release
-    -   Added Imaging Methods changes for 7.0 data
 -   **Release Notes**
-    -   Added 7.0 General release notes regarding `ab_g_stc__cohort_ethnrace__aou` table
-    -   Added 6.0 Physical Health release notes regarding coding for the Pubertal Development Scale
+    -   Added the 7.1 release notes pertaining to the 7.1 data release
+    -   Added the 7.0 release notes regarding a transverse diffusivity (TD) issue
+-   **Non-Imaging**
+    -   Updated relevant content, see the 7.1 release notes
+    -   Physical Health: Added clarification note regarding Anthropometrics waist measure
+-   **Imaging**
+    -   Updated relevant content, see the 7.1 release notes
+-   **ABCC**
+    -   Updated ABCC with the changes pertaining to 7.1 data release
+-   **Substudies**
+    -   Updated relevant content, see the 7.1 release notes
     

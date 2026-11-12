@@ -55,6 +55,12 @@ The SIPS data have been processed and included in the 7.0 Release. This single-t
 
 **Measure description:** This module assesses first-degree family history of psychotic disorders according to youth report. Endorsement response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item). The module also includes participant group membership.
 
+::: {.callout-caution collapse="true" title="Release notes: sips_y_intro"}
+**7.1**
+
+-   [**SIPS substudy group assignment**](../release_notes/7_1.qmd#sips-substudy-group-assignment): `sips_y_intro_group__001` is now correctly included in both the youth and caregiver tables (`sips_p_intro_group__001`).
+:::
+
 ## Perceptual Abnormalities (Youth) {#sips_y_percabn}
 
 `r table_header("sips_y_percabn")`
@@ -120,6 +126,12 @@ Some qualitative response data has been re-coded into categorical items which ar
 `r table_header("sips_p_intro")`
 
 **Measure description:** This module assesses caregiver report of youth’s first-degree family history of psychotic disorders. Response options were yes, no, ‘No Information’ (indicating that the interviewer was not able to provide a response, for example if the interviewer did not have sufficient time to ask the item), ‘Don’t Know’ (indicating that the participant was not able to answer the item), and ‘Decline to Answer’ (indicating that the participant chose not to answer the item).
+
+::: {.callout-caution collapse="true" title="Release notes: sips_p_intro"}
+**7.1**
+
+-   [**SIPS substudy group assignment**](../release_notes/7_1.qmd#sips-substudy-group-assignment): `sips_y_intro_group__001` is now correctly included in both the youth and caregiver tables (`sips_p_intro_group__001`).
+:::
 
 ## Perceptual Abnormalities (Parent) {#sips_p_percabn}
 

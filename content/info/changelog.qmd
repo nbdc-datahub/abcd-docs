@@ -4,6 +4,29 @@ order: 3
 ---
 
 
+# 7.1.0
+<span style="font-size: 0.85em; color: gray;">
+**Date:** 2026-11-11<br>
+**URL:** [https://docs.abcdstudy.org/v/7_1_0](https://docs.abcdstudy.org/v/7_1_0)
+</span>
+
+-   **Release Notes**
+    -   Added the 7.1 release notes pertaining to the 7.1 data release
+    -   Added the 7.0 release notes regarding a transverse diffusivity (TD) issue
+-   **Non-Imaging**
+    -   Updated relevant content, see the 7.1 release notes
+    -   Physical Health: Added clarification note regarding Anthropometrics waist measure
+-   **Imaging**
+    -   Updated relevant content, see the 7.1 release notes
+-   **ABCC**
+    -   Updated ABCC with the changes pertaining to 7.1 data release
+-   **Substudies**
+    -   Updated relevant content, see the 7.1 release notes
+    
+
+
+
+
 # 7.0.4
 <span style="font-size: 0.85em; color: gray;">
 **Date:** 2026-10-07<br>

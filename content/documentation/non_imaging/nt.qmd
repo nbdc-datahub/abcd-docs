@@ -317,6 +317,42 @@ For the 2-year and 4-year follow-up waves, Fitbit data were extracted using Fita
 
 To download these raw data, follow the instructions on the ['Access & Download' page](../../usage/access.qmd).
 
+::: {.callout-caution collapse="true" title="Release notes: `Fitbit data`"}
+**7.1** 
+
+-   [**Updated scoring algorithm**](../release_notes/7_1.qmd#fitbit): The Fitbit scoring algorithm has been updated to compute new data. Corrections made included:
+
+1. Removal of Non-Session Data From Sleep Scores
+Issue: The initial sleep scores inadvertently included records that were not associated with valid sleep sessions.
+Resolution: Non-session data points were identified and removed from score calculations.
+
+2. Query Correction for Sleep Minutes Quantification
+Issue: The original query used to calculate valid sleep minutes was incorrect, leading to inaccurate quantification of total sleep duration.
+Resolution: The query logic was corrected to properly count and aggregate valid sleep minutes across all sessions.
+
+3. Removal of Non-Session Data From Activity Raw File
+Issue: The daily activity raw file contained records with session_id values that were incorrectly labeled (e.g., activity assigned to session 8A was recorded as session 6A). This resulted in data being attributed to the wrong study session.
+Resolution: Session ID assignments were corrected in the raw activity file to ensure each record is properly attributed to its correct study session.
+
+4. Sleep classification in covid data
+Issue: is_slp classification in minute-level raw activity data for days where day_no > 21 was incorrect, causing errors in downstream daily and weekly sleep score calculations.
+Resolution: Fixed the is_slp classification algorithm for day_no > 21, reprocessed raw minute-level data with corrected logic, and recalculated all sleep-based scores.
+
+**7.0**
+
+-   [**Raw data files**](../release_notes/7_0.qmd#fitbit-raw-data-files): The known issues from 6.0 have been fixed for the 7.0 Release.
+    The qc_300min quality control flag in the sleep daily output was computed using min_total_slp > 299 rather than min_total_slp >= 300. Because min_total_slp is a floating-point value, the > 299 condition passes any value strictly greater than 299, meaning days with fewer than 300 valid sleep minutes (e.g., 299.5) may incorrectly pass QC. Users relying on this flag to enforce a 300-minute minimum should be aware that affected records may be present in their data.
+
+    Sleep daily and weekly summary outputs were not filtered to exclude pre-session records which can be identified by day = 0 and wk = 0. Users should apply filter(day != 0) before using daily data and apply filter(wk != 0) before using corresponding weekly summaries.
+
+    Records in fitbit_raw_metrics belonging to `session_id` ses-08A were incorrectly labeled with `session_id = 08A`.
+
+
+**6.0**
+
+-   [**Raw data errors**](../release_notes/6_0.qmd#fitbit-raw-data-files)
+:::
+
 ### Data processing
 
 Fitbit data were processed through wave-specific pipelines due to differences in raw data structure. Earlier waves (2- and 4-year) provided sleep data at a fixed 30-second epoch resolution, whereas later waves (6- and 8-year) provided sleep data as stage-based intervals with associated durations. To harmonize these formats, stage-based records were expanded into uniform 30-second and 60-second epochs prior to downstream computation. In cases where stage-based records were provided only in 30-second staging classifications, stages were recoded into 60-second staging for the 60-second sleep raw dataset:
@@ -345,22 +381,6 @@ The pipeline drew from four source inputs: fitbit_raw_sleep_30 (30-second sleep 
 The two sleep epoch files were harmonized into a single released dataset (fitbit_raw_sleep) to maximize temporal coverage, since the 30-second and 60-second datasets do not fully overlap. The 60-second epoch data were expanded to 30-second resolution and merged with the 30-second epoch dataset, with duplicate epochs resolved by preferentially retaining 30-second records. Heart rate, recorded at 60-second resolution, was appended to each 30-second sleep epoch by mapping to the corresponding base-minute timestamp (i.e., :00).
 
 ### Raw data
-
-::: {.callout-caution collapse="true" title="Release notes: `Fitbit raw data`"}
-**7.0**
-
--   [**Raw data files**](../release_notes/7_0.qmd#fitbit-raw-data-files): The known issues from 6.0 have been fixed for the 7.0 Release.
-    The qc_300min quality control flag in the sleep daily output was computed using min_total_slp > 299 rather than min_total_slp >= 300. Because min_total_slp is a floating-point value, the > 299 condition passes any value strictly greater than 299, meaning days with fewer than 300 valid sleep minutes (e.g., 299.5) may incorrectly pass QC. Users relying on this flag to enforce a 300-minute minimum should be aware that affected records may be present in their data.
-
-    Sleep daily and weekly summary outputs were not filtered to exclude pre-session records which can be identified by day = 0 and wk = 0. Users should apply filter(day != 0) before using daily data and apply filter(wk != 0) before using corresponding weekly summaries.
-
-    Records in fitbit_raw_metrics belonging to `session_id` ses-08A were incorrectly labeled with `session_id = 08A`.
-
-
-**6.0**
-
--   [**Raw data errors**](../release_notes/6_0.qmd#fitbit-raw-data-files)
-:::
 
 #### Activity
 

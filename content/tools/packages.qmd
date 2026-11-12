@@ -8,6 +8,7 @@ The ABCD Data Analysis, Informatics, & Resource Center (DAIRC) develops and rele
 ## ABCDscores {#ABCDscores}
 
 <span style="font-size: 0.85em; color: gray;">
+**Manuscript:** [@zhang2026a]<br>
 **Documentation website:** [https://software.nbdc-datahub.org/ABCDscores](https://software.nbdc-datahub.org/ABCDscores)<br>
 **GitHub repository:** [https://github.com/nbdc-datahub/ABCDscores](https://github.com/nbdc-datahub/ABCDscores)
 </span>
@@ -18,14 +19,15 @@ One of the goals of the package is to support transparency and reproducibility o
 
 Furthermore, while clearly specifying how the official ABCD summary scores were computed, all functions in the package allow users some level of flexibility to change the computation and retrieve alternative scores. For example, while most functions specify a certain level of missingness that is allowed to still compute a given summary score (typically >=80% completion is required), users can change a function parameter to apply a stricter or more lenient criterion. For some types of scores, the package even provides a set of basic functions that can be used flexibly to compute a variety of different scores (see, e.g., the functions to compute [Timeline Followback summary scores](https://software.nbdc-datahub.org/ABCDscores/articles/tlfb.html)).
 
-## NBDCtools {#NBDCtools}
+## NBDC Data Tools {#nbdc-data-tools}
 
 <span style="font-size: 0.85em; color: gray;">
-***R Package:***<br>
+**Manuscript:** [@zhang2026b]<br>
+***R Package NBDCtools:***<br>
 **Documentation website:** [https://software.nbdc-datahub.org/NBDCtools](https://software.nbdc-datahub.org/NBDCtools)<br>
 **GitHub repository:** [https://github.com/nbdc-datahub/NBDCtools](https://github.com/nbdc-datahub/NBDCtools)<br>
 <br>
-***Python Package:***<br>
+***Python Package nbdctools:***<br>
 **Documentation website:** [https://software.nbdc-datahub.org/nbdctools-py](https://software.nbdc-datahub.org/nbdctools-py)<br>
 **GitHub repository:** [https://github.com/nbdc-datahub/nbdctools-py](https://github.com/nbdc-datahub/nbdctools-py)
 </span>

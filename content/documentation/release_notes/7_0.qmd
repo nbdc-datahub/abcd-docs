@@ -1,7 +1,7 @@
 ---
 title: "7.0 data release"
 lightbox: true
-order: 1
+order: 2
 ---
 
 ```{r}
@@ -430,7 +430,19 @@ In the ABCD 7.0 data release, anatomical scans (T1w and T2w) and field map scans
 
 ###  Registration quality issue for concatenated voxelwise data 
 
-A bug has been identified in the registration pipeline used to produce the ABCD 7.0 concatenated voxelwise data. An outdated version of the target image for the 11th channel of the ABCD3 atlas was used in the multimodal registration. The 11th channel in the multimodal registration is a grey matter segmentation mask. The outdated target image did not include cerebellar gray matter, while participants' input (moving) image did. This mismatch between the target and moving images resulted in systematically degrading alignment quality for that channel across all participants. Mean correlation between participant scan and atlas template for the 11th channel decreased by ~0.23 compared to release 6.0. Overall, mean correlation between participants' scans and the atlas (across all 11 channels) was reduced by 0.0108. Any QC filter based on mean correlation to atlas will exclude a greater proportion of participants comapred to release 6.0. 
+A bug has been identified in the registration pipeline used to produce the ABCD 7.0 concatenated voxelwise data. An outdated version of the target image for the 11th channel of the ABCD3 atlas was used in the multimodal registration. The 11th channel in the multimodal registration is a grey matter segmentation mask. The outdated target image did not include cerebellar gray matter, while participants' input (moving) image did. This mismatch between the target and moving images resulted in systematically degrading alignment quality for that channel across all participants. Mean correlation between participant scan and atlas template for the 11th channel decreased by ~0.23 compared to release 6.0. Overall, mean correlation between participants' scans and the atlas (across all 11 channels) was reduced by 0.0108. Any QC filter based on mean correlation to atlas will exclude a greater proportion of participants compared to release 6.0. 
+
+### Incorrect gray/white contrast values for inner-shell DTI transverse diffusivity (TD) for Destrieux parcels
+
+In the ABCD 7.0 data release, the tabulated gray/white contrast of transverse diffusivity (TD)
+from the inner-shell DTI fit, for the Destrieux cortical parcellation (table
+`mr_y_dti__is__td__gwc__dst`, 151 variables), contains the white matter values instead of the
+gray/white contrast: every variable is identical to the corresponding variable of
+`mr_y_dti__is__td__wm__dst`. This was caused by an error in mapping the processed results to
+the release variable names; the underlying processed data are unaffected. The gray/white
+contrast of the other inner-shell DTI measures (FA, MD and LD), the inner-shell transverse
+diffusivity contrast for the Desikan-Killiany parcellation (`mr_y_dti__is__td__gwc__dsk`), and all full-shell DTI contrasts are not affected. Users of these variables can recompute the contrast from the released gray and white matter values as (`wm` - `gm`) / ((`wm` + `gm`) / 2), with `gm` from `mr_y_dti__is__td__gm__dst` and `wm` from `mr_y_dti__is__td__wm__dst`. This will be corrected
+in Release 8.0.
 
 # Substudies
 
